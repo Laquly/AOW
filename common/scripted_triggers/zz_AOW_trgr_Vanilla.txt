@@ -1,0 +1,83 @@
+has_ringworld_output_boost = {
+	OR = {
+		is_ringworld = yes
+		is_planet_class = pc_starcage_world
+	}
+}
+
+has_any_megastructure_in_empire = {
+	any_owned_megastructure = {
+		exists = this
+	}
+}
+
+can_build_megastructures = {
+	OR = {
+		has_technology = AOW_TECH_space_sensor_station
+		has_technology = AOW_TECH_space_arena
+		has_technology = AOW_TECH_asteroid_mining_station
+
+		has_technology = AOW_TECH_nebula_refining_center
+		has_technology = AOW_TECH_orbital_acquisition_system
+		has_technology = AOW_TECH_hyperlane_controller
+		has_technology = AOW_TECH_prosperous_trade_station
+		has_technology = AOW_TECH_artifacts_transcription_palace
+		has_technology = AOW_TECH_deep_space_prison
+		has_technology = AOW_TECH_cemetery_of_martyrs
+		has_technology = AOW_TECH_naval_command_base
+		has_technology = AOW_TECH_synthetic_food_factory
+		has_technology = AOW_TECH_zro_sublimator
+		has_technology = AOW_TECH_planetary_mining_station
+		has_technology = AOW_TECH_nanites_activator
+		has_technology = AOW_TECH_nanites_transmutation
+
+		has_technology = AOW_TECH_void_vortex
+		has_technology = AOW_TECH_star_picker
+		has_technology = AOW_TECH_psychic_device
+		has_technology = AOW_TECH_zero_element_furnace
+		has_technology = AOW_TECH_pulsar_clock
+		has_technology = AOW_TECH_curvature_pressurization_field
+
+		has_technology = AOW_TECH_multi_dimensional_warehouse
+		has_technology = AOW_TECH_star_transfer
+		has_technology = AOW_TECH_quindecillion_stellar_quantum_matrix
+		has_technology = AOW_TECH_heaven_navigation_bureau
+		has_technology = AOW_TECH_miraculous_shipyard
+		has_technology = AOW_TECH_material_recombination_instrument
+
+		has_technology = tech_science_nexus
+		has_technology = tech_sentry_array
+		has_technology = tech_strategic_coordination
+		has_technology = tech_interstellar_assembly
+		has_technology = tech_mega_art
+		has_technology = tech_gateway_construction
+		has_technology = tech_dyson_sphere
+		has_technology = tech_matter_decompressor
+		has_technology = tech_ring_world
+	}
+}
+#has_no_non_gate_megastructure = {
+#	OR = {
+#		has_any_megastructure = no
+#		any_system_megastructure = { NOT = { exists = planet } }
+#	}
+#}
+can_dismantle_megastructure = {
+	is_upgrading = no
+	solar_system = {
+		is_owned_by = from
+	}
+	if = {
+		limit = { has_global_flag = can_dismantle_megastructure_at_war }
+		from = {
+			has_technology = $TECH$
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_global_flag = can_dismantle_megastructure_at_war } }
+		from = {
+			has_technology = $TECH$
+			is_at_war = no
+		}
+	}
+}

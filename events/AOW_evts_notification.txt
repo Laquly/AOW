@@ -1,0 +1,2017 @@
+#这里写各种巨构的建成事件
+
+namespace = AOW_mega_notification
+
+
+country_event = {
+	id = AOW_mega_notification.1
+	title = AOW_mega_notification.1.title
+	desc = AOW_mega_notification.1.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_yellow_alert
+	location = from
+	trigger = { NOT = { has_country_flag = AOW_flag_CNTR_no_mega_cap_notification } }
+	option = {
+		name = AOW_mega_notification.1.a
+	}
+	option = {
+		name = AOW_mega_notification.1.b
+		set_country_flag = AOW_flag_CNTR_no_mega_cap_notification
+	}
+	option = {
+		name = AOW_mega_notification.1.c
+		country_event = { id = AOW_core.100 }
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2
+	title = AOW_mega_notification.2.title
+	desc = AOW_mega_notification.2.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_yellow_alert
+	location = from
+	option = {
+		name = AOW_mega_notification.2.a
+	}
+	option = {
+		name = AOW_mega_notification.2.b
+		country_event = { id = AOW_core.100 }
+	}
+}
+
+country_event = {
+	id = AOW_mega_notification.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+
+	}
+}
+# root = country
+# this = country
+# from = system
+# fromfrom = country
+# fromfromfrom = megastructure
+
+#############################################################################
+#小型巨构
+#############################################################################
+
+#星空传感站
+country_event = {
+	id = AOW_mega_notification.10
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.10.desc
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	show_sound = event_construction
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.10.a
+	}
+}
+#星状开采站
+country_event = {
+	id = AOW_mega_notification.20
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_asteroid } } }
+		text = AOW_mega_notification.20.desc
+	}
+	desc = {
+		trigger = {
+			fromfromfrom = {
+				planet = {
+					OR = {
+						is_planet_class = pc_crystal_asteroid
+						is_planet_class = pc_rare_crystal_asteroid
+					}
+				}
+			}
+		}
+		text = AOW_mega_notification.20.crystal.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_ice_asteroid } } }
+		text = AOW_mega_notification.20.ice.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_asteroid_field
+	show_sound = event_construction
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.20.a
+	}
+}
+#星光竞技场
+country_event = {
+	id = AOW_mega_notification.30
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = { is_gestalt = no }
+		text = AOW_mega_notification.30.a.desc
+	}
+	desc = {
+		trigger = { is_machine_empire = yes }
+		text = AOW_mega_notification.30.b.desc
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = AOW_mega_notification.30.c.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_arena
+	show_sound = event_construction
+	location = fromfromfrom
+	option = {
+		trigger = { is_gestalt = no }
+		name = AOW_mega_notification.30.a
+	}
+	option = {
+		trigger = { is_machine_empire = yes }
+		name = AOW_mega_notification.30.b
+	}
+	option = {
+		trigger = { is_hive_empire = yes }
+		name = AOW_mega_notification.30.c
+	}
+}
+
+#############################################################################
+#普通巨构
+#############################################################################
+
+########################################################行星开采仪
+country_event = {
+	id = AOW_mega_notification.1010
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1010.desc
+	is_triggered_only = yes
+	picture = GFX_evt_mining_operations
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1010.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1011
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1011.desc
+	is_triggered_only = yes
+	picture = GFX_evt_mining_operations
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1011.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1012
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = { fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } } }
+		text = AOW_mega_notification.1012.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_molten } } }
+		text = AOW_mega_notification.1012.molten.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_toxic } } }
+		text = AOW_mega_notification.1012.toxic.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_hothouse } } }
+		text = AOW_mega_notification.1012.hothouse.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_frozen } } }
+		text = AOW_mega_notification.1012.frozen.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_hydrocarbon } } }
+		text = AOW_mega_notification.1012.hydrocarbon.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_iron } } }
+		text = AOW_mega_notification.1012.iron.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_chthonian } } }
+		text = AOW_mega_notification.1012.chthonian.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_diamond } } }
+		text = AOW_mega_notification.1012.diamond.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_ethane_ocean } } }
+		text = AOW_mega_notification.1012.ethane_ocean.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_volcanic } } }
+		text = AOW_mega_notification.1012.volcanic.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_mining_operations
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1012.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1013
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = {
+			fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			fromfrom = { country_uses_consumer_goods = yes }
+		}
+		text = AOW_mega_notification.1013.common.desc
+	}
+	desc = {
+		trigger = {
+			fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			fromfrom = { country_uses_consumer_goods = no }
+		}
+		text = AOW_mega_notification.1013.no_consumer_goods.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_molten } } }
+		text = AOW_mega_notification.1013.molten.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_toxic } } }
+		text = AOW_mega_notification.1013.toxic.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_hothouse } } }
+		text = AOW_mega_notification.1013.hothouse.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_frozen } } }
+		text = AOW_mega_notification.1013.frozen.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_hydrocarbon } } }
+		text = AOW_mega_notification.1013.hydrocarbon.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_iron } } }
+		text = AOW_mega_notification.1013.iron.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_chthonian } } }
+		text = AOW_mega_notification.1013.chthonian.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_diamond } } }
+		text = AOW_mega_notification.1013.diamond.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_ethane_ocean } } }
+		text = AOW_mega_notification.1013.ethane_ocean.desc
+	}
+	desc = {
+		trigger = { fromfromfrom = { planet = { is_planet_class = pc_volcanic } } }
+		text = AOW_mega_notification.1013.volcanic.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_mining_operations
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {#原样
+		trigger = {
+			fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			fromfrom = { country_uses_consumer_goods = yes }
+		}
+		name = AOW_mega_notification.1013.a
+	}
+	option = {#消费品
+		trigger = {
+			fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			fromfrom = { country_uses_consumer_goods = yes }
+		}
+		name = AOW_mega_notification.1013.b
+		fromfromfrom = { set_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods }
+		ai_chance = { factor = 5 }
+	}
+	option = {#确认
+		trigger = {
+			fromfromfrom = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			fromfrom = { country_uses_consumer_goods = no }
+		}
+		name = AOW_mega_notification.1013.c
+	}
+}
+
+########################################################轨道采集器
+country_event = {
+	id = AOW_mega_notification.1020
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1020.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gas_giant
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1020.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1021
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1021.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gas_giant
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1021.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1022
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1022.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gas_giant
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1022.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1023
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1023.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gas_giant
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1023.a
+	}
+}
+
+########################################################合成食物厂
+country_event = {
+	id = AOW_mega_notification.1030
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1030.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_synthetic_food_factory
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1030.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1031
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1031.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_synthetic_food_factory
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1031.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1032
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1032.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_synthetic_food_factory
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1032.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1033
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1033.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_synthetic_food_factory
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1033.a
+	}
+}
+
+########################################################星云精炼中心
+country_event = {
+	id = AOW_mega_notification.1040
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1040.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1040.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1041
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1041.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1041.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1042
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1042.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1042.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1043
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1043.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1043.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1044
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1044.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1044.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1045
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1045.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_pillars_of_creation
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1045.a
+	}
+}
+
+########################################################泽珞升华器
+country_event = {
+	id = AOW_mega_notification.1050
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1050.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1050.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1051
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1051.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1051.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1052
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1052.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1052.a
+	}
+}
+
+########################################################纳米变形器
+country_event = {
+	id = AOW_mega_notification.1060
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1060.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1060.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1061
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1061.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1061.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1062
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1062.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1062.a
+	}
+}
+
+########################################################纳米激活器
+country_event = {
+	id = AOW_mega_notification.1070
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1070.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1070.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1071
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1071.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1071.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1072
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1072.desc
+	is_triggered_only = yes
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1072.a
+	}
+}
+
+########################################################深空监狱
+country_event = {
+	id = AOW_mega_notification.1080
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1080.desc
+	is_triggered_only = yes
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1080.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1081
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1081.desc
+	is_triggered_only = yes
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1081.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1082
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1082.desc
+	is_triggered_only = yes
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1082.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1083
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1083.desc
+	is_triggered_only = yes
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1083.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1084
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1084.desc
+	is_triggered_only = yes
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1084.a
+	}
+}
+
+########################################################星轨
+country_event = {
+	id = AOW_mega_notification.1090
+	title = AOW_mega_notification.1090.name
+	desc = AOW_mega_notification.1090.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_dyson_sphere_build_start
+	location = from
+	immediate = {
+		from = { set_star_flag = AOW_flag_SSTM_hc_start@root }
+	}
+	option = { name = AOW_mega_notification.1090.a }
+}
+country_event = {
+	id = AOW_mega_notification.1091
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			save_event_target_as = AOW_tgt_SSTM_hc_end
+			random_system_megastructure = {
+				limit = { is_megastructure_type = AOW_MEGA_hyperlane_controller }
+				save_event_target_as = AOW_tgt_MEGA_hc_end
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = AOW_flag_SSTM_hc_start@root }
+			save_event_target_as = AOW_tgt_SSTM_hc_start
+			random_system_megastructure = {
+				limit = { is_megastructure_type = AOW_MEGA_hyperlane_controller }
+				save_event_target_as = AOW_tgt_MEGA_hc_start
+			}
+			remove_star_flag = AOW_flag_SSTM_hc_start@root
+		}
+		event_target:AOW_tgt_SSTM_hc_end = {
+			if = {#如果没有超空间航道
+				limit = { event_target:AOW_tgt_SSTM_hc_end = { NOT = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start } } }
+				set_spawn_system_batch = begin
+				add_hyperlane = {
+					from = event_target:AOW_tgt_SSTM_hc_start
+					to = event_target:AOW_tgt_SSTM_hc_end
+				}
+				set_spawn_system_batch = end
+				root = { set_country_flag = AOW_flag_CNTR_add_hyperlane_with_HC }
+			}
+			else_if = {#如果有超空间航道
+				limit = { event_target:AOW_tgt_SSTM_hc_end = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start } }
+				event_target:AOW_tgt_SSTM_hc_end = { AOW_eft_SSTM_destroy_hyper_relay = yes }
+				event_target:AOW_tgt_SSTM_hc_start = { AOW_eft_SSTM_destroy_hyper_relay = yes }
+				set_spawn_system_batch = begin
+				remove_hyperlane = {
+					from = event_target:AOW_tgt_SSTM_hc_start
+					to = event_target:AOW_tgt_SSTM_hc_end
+				}
+				set_spawn_system_batch = end
+				root = { set_country_flag = AOW_flag_CNTR_remove_hyperlane_with_HC }
+			}
+		}
+		fromfrom = { country_event = { id = AOW_mega_notification.1092 } }
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_start
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_end
+		fromfrom = { add_resource = { alloys = 5000 } }
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1092
+	title = AOW_mega_notification.1092.name
+	desc = {#移除航道
+		trigger = {
+			event_target:AOW_tgt_SSTM_hc_end = { NOT = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start } }
+		}
+		text = AOW_mega_notification.1092.a.desc
+	}
+	desc = {#建设航道
+		trigger = {
+			event_target:AOW_tgt_SSTM_hc_end = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start }
+		}
+		text = AOW_mega_notification.1092.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfrom
+	option = {#移除航道成功
+		trigger = {
+			event_target:AOW_tgt_SSTM_hc_end = { NOT = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start } }
+		}
+		name = AOW_mega_notification.1092.a
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_start
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_end
+	}
+	option = {#建设航道成功
+		trigger = {
+			event_target:AOW_tgt_SSTM_hc_end = { has_hyperlane_to = event_target:AOW_tgt_SSTM_hc_start }
+		}
+		name = AOW_mega_notification.1092.b
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_start
+		remove_megastructure = event_target:AOW_tgt_MEGA_hc_end
+	}
+}
+
+########################################################繁荣贸易站
+country_event = {
+	id = AOW_mega_notification.1100
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_board_meeting
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1100.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1101
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1101.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1102
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1102.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1103
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+			}
+			country_event = { id = AOW_prosperous_trade_station.2 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.1103.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1104
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1104.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+			}
+			country_event = { id = AOW_prosperous_trade_station.2 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.1104.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1105
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1105.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+			}
+			country_event = { id = AOW_prosperous_trade_station.2 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.1105.a
+	}
+}
+
+########################################################英灵殿
+country_event = {
+	id = AOW_mega_notification.1110
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1110.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_cemetery_of_martyrs
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1110.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1111
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1111.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_cemetery_of_martyrs
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1111.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1112
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1112.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_cemetery_of_martyrs
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1112.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1113
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1113.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_cemetery_of_martyrs
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1113.a
+	}
+}
+
+########################################################文物誊录宫
+country_event = {
+	id = AOW_mega_notification.1120
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1120.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1120.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1121
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1121.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1121.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1122
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1122.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1122.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1123
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1123.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1123.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1124
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1124.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1124.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1125
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1125.desc
+	is_triggered_only = yes
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1125.a
+	}
+}
+
+########################################################海军指挥基地
+country_event = {
+	id = AOW_mega_notification.1130
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1130.desc
+	is_triggered_only = yes
+	picture = GFX_evt_salute
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1130.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1131
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1131.desc
+	is_triggered_only = yes
+	picture = GFX_evt_salute
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1131.a
+		
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1132
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1132.desc
+	is_triggered_only = yes
+	picture = GFX_evt_salute
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1132.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1133
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1133.desc
+	is_triggered_only = yes
+	picture = GFX_evt_salute
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1133.a
+	}
+}
+########################################################以太
+country_event = {
+	id = AOW_mega_notification.1140
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1140.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1140.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1141
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1141.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1141.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1142
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1142.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1142.a
+	}
+}
+########################################################星网
+country_event = {
+	id = AOW_mega_notification.1150
+	title = AOW_mega_notification.1150.title
+	desc = AOW_mega_notification.1150.desc
+	is_triggered_only = yes
+	picture = GFX_evt_federation_fleet
+	show_sound = event_mystic_reveal
+	location = from
+	option = {
+		name = AOW_mega_notification.1150.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1151
+	title = AOW_mega_notification.1151.title
+	desc = AOW_mega_notification.1151.desc
+	is_triggered_only = yes
+	picture = GFX_evt_federation_fleet
+	show_sound = event_mystic_reveal
+	location = from
+	option = {
+		name = AOW_mega_notification.1151.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1152
+	title = AOW_mega_notification.1152.title
+	desc = AOW_mega_notification.1152.desc
+	is_triggered_only = yes
+	picture = GFX_evt_federation_fleet
+	show_sound = event_mystic_reveal
+	location = from
+	option = {
+		name = AOW_mega_notification.1152.a
+	}
+}
+
+#############################################################################
+#星河奇迹
+#############################################################################
+
+########################################################环世界扩张
+planet_event = {
+	id = AOW_mega_notification.2001
+	title = AOW_mega_notification.2001.name
+	desc = AOW_mega_notification.2001.desc
+	is_triggered_only = yes
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = this
+	option = { name = GOOD }
+}
+
+planet_event = {
+	id = AOW_mega_notification.2002
+	title = AOW_mega_notification.2002.name
+	desc = AOW_mega_notification.2002.desc
+	is_triggered_only = yes
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = solar_system
+	option = { name = GOOD }
+}
+
+planet_event = {
+	id = AOW_mega_notification.2003
+	title = AOW_mega_notification.2003.name
+	desc = AOW_mega_notification.2003.desc
+	is_triggered_only = yes
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = solar_system
+	option = { name = GOOD }
+}
+
+planet_event = {
+	id = AOW_mega_notification.2004
+	title = AOW_mega_notification.2004.name
+	desc = AOW_mega_notification.2004.desc
+	is_triggered_only = yes
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = solar_system
+	option = { name = GOOD }
+}
+
+########################################################摘星者
+country_event = {
+	id = AOW_mega_notification.2020
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2020.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2020.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2021
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2021.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.2020 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.2021.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2022
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2022.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2022.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2023
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2023.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2023.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2024
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2024.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2024.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2025
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2025.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.2021 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.2025.a
+	}
+}
+
+########################################################灵能井
+country_event = {
+	id = AOW_mega_notification.2030
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2030.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2030.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2031
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2031.desc
+	is_triggered_only = yes
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2031.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2032
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2032.desc
+	is_triggered_only = yes
+	picture = GFX_evt_zro_3
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2032.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2033
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2033.desc
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.2031 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.2033.a
+		custom_tooltip = AOW_mega_notification.2033.a.tooltip
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2034
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+	immediate = {
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2035
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_megastructure = AOW_MEGA_psychic_device_3 }
+	immediate = {
+		remove_modifier = shroud_neg_happiness
+		remove_modifier = shroud_neg_ethic
+		remove_modifier = shroud_neg_armor
+		remove_modifier = shroud_neg_growth
+		remove_modifier = shroud_neg_research
+		remove_modifier = shroud_neg_influence
+		remove_modifier = shroud_neg_unity
+		remove_modifier = shroud_neg_speed
+		remove_modifier = shroud_neg_morale
+		remove_modifier = shroud_neg_sensors
+	}
+}
+
+########################################################曲率增压场
+country_event = {
+	id = AOW_mega_notification.2050
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2050.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_curvature_pressurization_field
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2050.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2051
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2051.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_curvature_pressurization_field
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.2050 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.2051.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2052
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.2052.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_curvature_pressurization_field
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.2052.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.2053
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = { from = { is_star_class = sc_black_hole } }
+		text = AOW_mega_notification.2053.a.desc
+	}
+	desc = {
+		trigger = { from = { is_star_class = sc_neutron_star } }
+		text = AOW_mega_notification.2053.b.desc
+	}
+	desc = {
+		trigger = { from = { is_star_class = sc_pulsar } }
+		text = AOW_mega_notification.2053.c.desc
+	}
+	is_triggered_only = yes
+	picture = {
+		trigger = { from = { is_star_class = sc_black_hole } }
+		picture = GFX_evt_black_hole
+	}
+	picture = {
+		trigger = { from = { is_star_class = sc_neutron_star } }
+		picture = GFX_evt_star_neutron
+	}
+	picture = {
+		trigger = { from = { is_star_class = sc_pulsar } }
+		picture = GFX_evt_star_pulsar
+	}
+	show_sound = event_dyson_sphere_build_complete
+	location = from
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.2051 }
+		}
+	}
+	option = {
+		trigger = { from = { is_star_class = sc_black_hole } }
+		name = AOW_mega_notification.2053.a
+	}
+	option = {
+		trigger = { from = { is_star_class = sc_neutron_star } }
+		name = AOW_mega_notification.2053.b
+	}
+	option = {
+		trigger = { from = { is_star_class = sc_pulsar } }
+		fromfromfrom.planet = { change_pc = pc_pulsar }
+		name = AOW_mega_notification.2053.c
+	}
+}
+
+########################################################行星波动炮
+country_event = {
+	id = AOW_mega_notification.1160
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1160.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1160.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1161
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1161.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1161.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1162
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1162.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1162.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1163
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1163.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1163.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1164
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1164.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.1164.a
+	}
+}
+country_event = {#修复完成
+	id = AOW_mega_notification.1165
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.1165.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_complete
+	location = event_target:AOW_tgt_PLNT_planetary_blaster_system
+	option = {
+		name = AOW_mega_notification.1165.a
+	}
+}
+# This = starbase being destroyed
+# From = fleet that destroyed the starbase
+starbase_event = {
+	id = AOW_mega_notification.1166
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_starbase_size = AOW_shipsize_planetary_blaster_system
+				exists = planet
+			}
+			planet = {
+				set_planet_flag = AOW_flag_PLNT_ruined_pbs
+				remove_planet_flag = has_megastructure
+				save_event_target_as = AOW_tgt_PLNT_ruined_pbs
+			}
+			solar_system = {
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = AOW_MEGA_planetary_blaster_system_4
+						planet = { is_same_value = event_target:AOW_tgt_PLNT_ruined_pbs }
+					}
+					solar_system = {
+						spawn_megastructure = {
+							type = "AOW_MEGA_planetary_blaster_system_ruined"
+							planet = event_target:AOW_tgt_PLNT_ruined_pbs
+							init_effect = {
+								set_owner = space_owner
+								set_megastructure_flag = AOW_flag_MEGA_was_built_by_@root.this.owner
+							}
+						}
+					}
+					remove_megastructure = this
+				}
+			}
+		}
+	}
+}
+# Called when a Starbase changes owner
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+ship_event = {
+	id = AOW_mega_notification.1167
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = starbase
+		starbase = { has_starbase_size = AOW_shipsize_planetary_blaster_system }
+	}
+	immediate = {
+		starbase = {
+			planet = { save_event_target_as = AOW_tgt_PLNT_ruined_pbs }
+			solar_system = {
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = AOW_MEGA_planetary_blaster_system_4
+						planet = { is_same_value = event_target:AOW_tgt_PLNT_ruined_pbs }
+					}
+					solar_system = {
+						spawn_megastructure = {
+							type = "AOW_MEGA_planetary_blaster_system_ruined"
+							planet = event_target:AOW_tgt_PLNT_ruined_pbs
+							init_effect = {
+								set_owner = space_owner
+								set_megastructure_flag = AOW_flag_MEGA_planetary_blaster_system_@from
+							}
+						}
+					}
+					remove_megastructure = this
+				}
+			}
+		}
+		destroy_ship = this
+	}
+}
+country_event = {
+	id = AOW_mega_notification.1168
+	title = AOW_mega_notification.1168.title
+	desc = AOW_mega_notification.1168.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
+	show_sound = event_dyson_sphere_build_complete
+	location = from
+	option = {
+		name = OK
+	}
+}
+#############################################################################
+#天外神迹
+#############################################################################
+
+########################################################多维仓库
+country_event = {
+	id = AOW_mega_notification.3010
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3010.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3010.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3011
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3011.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3011.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3012
+	title = AOW_mega_notification_title
+	desc = {
+		trigger = { NOT = { has_modifier = AOW_mod_multi_dimensional_experiment_finished } }
+		text = AOW_mega_notification.3012.a.desc
+	}
+	desc = {
+		trigger = { has_modifier = AOW_mod_multi_dimensional_experiment_finished }
+		text = AOW_mega_notification.3012.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	after = {
+		if = {
+			limit = { NOT = { has_modifier = AOW_mod_multi_dimensional_experiment_finished } }
+			add_modifier = { modifier = AOW_mod_multi_dimensional_experiment_finished days = -1 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3012.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3013
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3013.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3013.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3014
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3014.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3014.a
+	}
+}
+
+
+########################################################天界领航局
+country_event = {
+	id = AOW_mega_notification.3030
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3030.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3030.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3031
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3031.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3030 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3031.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3032
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3032.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3032.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3033
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3033.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3033.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3034
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3034.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3034.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3035
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3035.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3031 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3035.a
+	}
+}
+
+########################################################物质重构盘
+country_event = {
+	id = AOW_mega_notification.3040
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3040.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3040.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3041
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3041.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3040 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3041.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3042
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3042.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3042.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3043
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3043.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3043.a
+	}
+}
+
+country_event = {
+	id = AOW_mega_notification.3044
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3044.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3044.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3045
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3045.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_material_recombination_instrument
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3041 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3045.a
+	}
+}
+
+
+########################################################奇迹船坞
+country_event = {
+	id = AOW_mega_notification.3050
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3050.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3050.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3051
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3051.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_upgrade_frame
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3050 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3051.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3052
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3052.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3052.a
+		custom_tooltip = AOW_mega_notification.3052.a.tooltip
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3053
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3053.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3053.a
+		custom_tooltip = AOW_mega_notification.3053.a.tooltip
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3054
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3054.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3054.a
+		custom_tooltip = AOW_mega_notification.3054.a.tooltip
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3055
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3055.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3051 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3055.a
+		custom_tooltip = AOW_mega_notification.3055.a.tooltip
+	}
+}
+
+########################################################千载星辰
+country_event = {
+	id = AOW_mega_notification.3060
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3060.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3060.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3061
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3061.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_upgrade
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3060 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3061.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3062
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3062.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_upgrade
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3062.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3063
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3063.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_upgrade
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3063.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3064
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3064.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_upgrade
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_notification.3064.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification.3065
+	title = AOW_mega_notification_title
+	desc = AOW_mega_notification.3065.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_think_tank_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_mega_others_notification.3061 }
+		}
+	}
+	option = {
+		name = AOW_mega_notification.3065.a
+	}
+}

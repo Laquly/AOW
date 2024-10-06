@@ -1,0 +1,123 @@
+particle={
+	name="AOW_m_fire_file"
+	subsystem={
+		name="muzzle_flash"
+		max_amount=20
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=no
+		hide=no
+		texture={
+			file="gfx/particles/AOW_fire_effect.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x={ 255 20 }
+			y={ 70 20 }
+			z={ 50 20 }
+			alpha={ 70,slow_fade 10 }
+		}
+		position={
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ -90 5 }
+		velocity_yaw=0
+		life={ 0.8 0.2 }
+		emission=15
+		size={ 150,grow 20 }
+		particle_yaw={ 0 90 }
+		particle_pitch={ 0 0 }
+		rotation={ 90 0 }
+		rotation_speed={ 0 0 }
+	}
+	animation={
+		name="alpha_fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.28235 0.98438 0.756 0.258 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="grow"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0.32813 1 1 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="slow_fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.48529 0.96094 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="shrink"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 1 1 0.71875 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.1 1 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	force={
+		type="planar"
+		name="force0"
+		position={
+			0 0 0 
+		}
+		direction={
+			0 1 0 
+		}
+		local_force=yes
+		yaw=0
+		division=16
+		amount=5
+	}
+}

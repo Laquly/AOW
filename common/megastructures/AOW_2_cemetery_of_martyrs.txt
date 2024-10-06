@@ -1,0 +1,204 @@
+AOW_MEGA_cemetery_of_martyrs_0 = {
+	entity = "construction_platform_entity" #"starcage_world_entity" #
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_COM_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_COM_0_COST_alloys
+			unity = @AOW_var_COM_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_COM_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_cemetery_of_martyrs
+		category = megastructures
+		alloys = @AOW_var_COM_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_cemetery_of_martyrs" }
+	potential = { AOW_trigger_mega_potential = { KEY = cemetery_of_martyrs } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_cemetery_of_martyrs } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为已调查的非宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是卫星或小行星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_militarist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = cemetery_of_martyrs
+			constructing = AOW_MEGA_cemetery_of_martyrs_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1110 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_cemetery_of_martyrs_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_cemetery_of_martyrs_1 = {
+	entity = "cemetery_of_martyrs_01_entity"
+	construction_entity = "cemetery_of_martyrs_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_COM_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_COM_1_COST_alloys
+			unity = @AOW_var_COM_1_COST_unity
+		}
+		upkeep = { energy = @AOW_var_COM_1_UPKP_energy }
+		produces = { unity = @AOW_var_COM_1_PRDC_unity }
+	}
+	country_modifier = {
+		planet_army_build_speed_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.05
+		country_leader_cap_add = 1
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_cemetery_of_martyrs
+		category = megastructures
+		alloys = @AOW_var_COM_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_cemetery_of_martyrs" }
+	upgrade_from = { AOW_MEGA_cemetery_of_martyrs_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1111 } }
+	}
+}
+AOW_MEGA_cemetery_of_martyrs_2 = {
+	entity = "cemetery_of_martyrs_02_entity"
+	construction_entity = "cemetery_of_martyrs_02_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_COM_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_COM_2_COST_alloys
+			unity = @AOW_var_COM_2_COST_unity
+		}
+		upkeep = { energy = @AOW_var_COM_2_UPKP_energy }
+		produces = { unity = @AOW_var_COM_2_PRDC_unity }
+	}
+	country_modifier = {
+		planet_army_build_speed_mult = 0.2
+		starbase_shipyard_build_speed_mult = 0.1
+		country_leader_cap_add = 2
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_cemetery_of_martyrs
+		category = megastructures
+		alloys = @AOW_var_COM_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_cemetery_of_martyrs" }
+	upgrade_from = { AOW_MEGA_cemetery_of_martyrs_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1112 } }
+	}
+}
+AOW_MEGA_cemetery_of_martyrs_3 = {
+	entity = "cemetery_of_martyrs_03_entity"
+	construction_entity = "cemetery_of_martyrs_03_construction_entity"
+	portrait = "GFX_megastructure_cemetery_of_martyrs_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_COM_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_COM_3_COST_alloys
+			unity = @AOW_var_COM_3_COST_unity
+		}
+		upkeep = { energy = @AOW_var_COM_3_UPKP_energy }
+		produces = { unity = @AOW_var_COM_3_PRDC_unity }
+	}
+	country_modifier = {
+		planet_army_build_speed_mult = 0.3
+		starbase_shipyard_build_speed_mult = 0.15
+		country_leader_cap_add = 3
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_cemetery_of_martyrs
+		category = megastructures
+		alloys = @AOW_var_COM_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_cemetery_of_martyrs" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_cemetery_of_martyrs_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = AOW_mega_notification.1113 }
+		}
+	}
+}

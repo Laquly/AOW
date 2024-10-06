@@ -1,0 +1,4 @@
+every_system_megastructure = {
+    limit = { is_megastructure_type = AOW_MEGA_celestial_shield_bunker_ring }
+    remove_megastructure = this
+}

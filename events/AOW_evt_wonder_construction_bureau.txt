@@ -1,0 +1,60 @@
+namespace = AOW_evt_wonder_construction_bureau
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+	id = AOW_evt_wonder_construction_bureau.100
+	title = AOW_mega_notification_title
+	desc = AOW_evt_wonder_construction_bureau.100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_wonder_construction_bureau
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_wonder_construction_bureau.100.a
+	}
+}
+country_event = {
+	id = AOW_evt_wonder_construction_bureau.101
+	title = AOW_mega_notification_title
+	desc = AOW_evt_wonder_construction_bureau.101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_wonder_construction_bureau
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_wonder_construction_bureau.101.a
+	}
+}
+country_event = {
+	id = AOW_evt_wonder_construction_bureau.102
+	title = AOW_mega_notification_title
+	desc = AOW_evt_wonder_construction_bureau.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_wonder_construction_bureau
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_wonder_construction_bureau.102.a
+	}
+}
+country_event = {
+	id = AOW_evt_wonder_construction_bureau.103
+	title = AOW_mega_notification_title
+	desc = AOW_evt_wonder_construction_bureau.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_wonder_construction_bureau
+	show_sound = event_dyson_sphere_build_complete
+	location = from
+	option = {
+		name = AOW_evt_wonder_construction_bureau.103.a
+	}
+}
+##################################################################################
+#修复巨构2
+##################################################################################
+
+##################################################################################
+#通知他国3
+##################################################################################

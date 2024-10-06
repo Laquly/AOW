@@ -1,0 +1,189 @@
+spriteTypes = {
+	#星光竞技场
+	spriteType = {
+		name = "GFX_megastructure_space_arena_background"
+		textureFile = "gfx/interface/planetview/space_arena.dds"
+	}
+	#星状开采站
+	spriteType = {
+		name = "GFX_megastructure_asteroid_mining_station_background"
+		textureFile = "gfx/interface/planetview/asteroid_mining_station.dds"
+	}
+	#星空传感站
+	spriteType = {
+		name = "GFX_megastructure_space_sensor_station_background"
+		textureFile = "gfx/interface/planetview/space_sensor_station.dds"
+	}
+
+	#奇观建设局
+	spriteType = {
+		name = "GFX_megastructure_wonder_construction_bureau_background"
+		textureFile = "gfx/interface/planetview/wonder_construction_bureau.dds"
+	}
+	#暗物质曲率陷阱
+	spriteType = {
+		name = "GFX_megastructure_dark_matter_curvature_trap_background"
+		textureFile = "gfx/interface/planetview/dark_matter_curvature_trap.dds"
+	}
+	#文物誊录宫
+	spriteType = {
+		name = "GFX_megastructure_artifacts_transcription_palace_background"
+		textureFile = "gfx/interface/planetview/artifacts_transcription_palace.dds"
+	}
+	#行星开采器
+	spriteType = {
+		name = "GFX_megastructure_planetary_mining_station_background"
+		textureFile = "gfx/interface/planetview/planetary_mining_station.dds"
+	}
+	#繁荣贸易站
+	spriteType = {
+		name = "GFX_megastructure_prosperous_trade_station_background"
+		textureFile = "gfx/interface/planetview/prosperous_trade_station.dds"
+	}
+	#星云精炼中心
+	spriteType = {
+		name = "GFX_megastructure_nebula_refining_center_background"
+		textureFile = "gfx/interface/planetview/nebula_refining_center.dds"
+	}
+	#巨型监狱
+	spriteType = {
+		name = "GFX_megastructure_mega_prison_background"
+		textureFile = "gfx/interface/planetview/mega_prison.dds"
+	}
+	#合成食物
+	spriteType = {
+		name = "GFX_megastructure_synthetic_food_factory_background"
+		textureFile = "gfx/interface/planetview/synthetic_food_factory.dds"
+	}
+	#星轨
+	spriteType = {
+		name = "GFX_megastructure_hyperlane_controller_background"
+		textureFile = "gfx/interface/planetview/hyperlane_controller.dds"
+	}
+	#英灵殿
+	spriteType = {
+		name = "GFX_megastructure_cemetery_of_martyrs_background"
+		textureFile = "gfx/interface/planetview/cemetery_of_martyrs.dds"
+	}
+	#行星波动炮
+	spriteType = {
+		name = "GFX_megastructure_planetary_blaster_system_background"
+		textureFile = "gfx/interface/planetview/planetary_blaster_system.dds"
+	}
+
+
+	#环世界
+	spriteType = {
+		name = "GFX_megastructure_ringworld_background"
+		textureFile = "gfx/interface/planetview/ringworld.dds"
+	}
+	#摘星者
+	spriteType = {
+		name = "GFX_megastructure_star_picker_background"
+		textureFile = "gfx/interface/planetview/star_picker.dds"
+	}
+	#灵能井
+	spriteType = {
+		name = "GFX_megastructure_psychic_device_background"
+		textureFile = "gfx/interface/planetview/psychic_device.dds"
+	}
+	#脉冲时记
+	spriteType = {
+		name = "GFX_megastructure_pulsar_clock_background"
+		textureFile = "gfx/interface/planetview/pulsar_clock.dds"
+	}
+	#零素熔炉
+	spriteType = {
+		name = "GFX_megastructure_zero_element_furnace_background"
+		textureFile = "gfx/interface/planetview/zero_element_furnace.dds"
+	}
+	#天体解压器
+	spriteType = {
+		name = "GFX_megastructure_celestial_decompressor_background"
+		textureFile = "gfx/interface/planetview/celestial_decompressor.dds"
+	}
+	#曲率增压场
+	spriteType = {
+		name = "GFX_megastructure_curvature_pressurization_field_background"
+		textureFile = "gfx/interface/planetview/curvature_pressurization_field.dds"
+	}
+	#恒星吞噬者
+	spriteType = {
+		name = "GFX_megastructure_stellar_eater_background"
+		textureFile = "gfx/interface/planetview/stellar_eater.dds"
+	}
+
+	#多维仓库
+	spriteType = {
+		name = "GFX_megastructure_multi_dimensional_warehouse_background"
+		textureFile = "gfx/interface/planetview/multi_dimensional_warehouse.dds"
+	}
+	#御星天炉
+	spriteType = {
+		name = "GFX_megastructure_star_transfer_background"
+		textureFile = "gfx/interface/planetview/star_transfer.dds"
+	}
+	#千载星辰
+	spriteType = {
+		name = "GFX_megastructure_qsqm_background"
+		textureFile = "gfx/interface/planetview/quindecillion_stellar_quantum_matrix.dds"
+	}
+	#天界领航塔
+	spriteType = {
+		name = "GFX_megastructure_heaven_navigation_bureau_background"
+		textureFile = "gfx/interface/planetview/heaven_navigation_bureau.dds"
+	}
+	#物质重组仪
+	spriteType = {
+		name = "GFX_megastructure_material_recombination_instrument_background"
+		textureFile = "gfx/interface/planetview/material_recombination_instrument.dds"
+	}
+	#星笼世界
+	spriteType = {
+		name = "GFX_megastructure_starcage_world_background"
+		textureFile = "gfx/interface/planetview/starcage_world.dds"
+	}
+	#天枢圣盾
+	spriteType = {
+		name = "GFX_megastructure_celestial_shield_background"
+		textureFile = "gfx/interface/planetview/celestial_shield.dds"
+	}
+	#掩体星环
+	spriteType = {
+		name = "GFX_megastructure_bunker_ring_background"
+		textureFile = "gfx/interface/planetview/bunker_ring.dds"
+	}
+	#坠星天矛
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_background"
+		textureFile = "gfx/interface/planetview/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_O_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_O.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_B_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_B.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_A_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_A.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_F_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_F.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_G_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_G.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_K_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_K.dds"
+	}
+	spriteType = {
+		name = "GFX_megastructure_starfall_spear_M_background"
+		textureFile = "gfx/interface/planetview/starfall_spear_M.dds"
+	}
+}

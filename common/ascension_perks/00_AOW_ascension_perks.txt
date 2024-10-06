@@ -1,0 +1,85 @@
+#天外神迹
+ap_cosmic_wonders = {
+	on_enabled = {
+		if = {
+			limit = {
+				NOT = { has_technology = tech_space_science_5 }
+				NOT = { has_technology = tech_basic_science_lab_3 }
+			}
+			custom_tooltip = "ap_cosmic_wonders_effects_without53"
+		}
+		if = {
+			limit = {
+				NOT = { has_technology = tech_space_science_5 }
+				has_technology = tech_basic_science_lab_3
+			}
+			custom_tooltip = "ap_cosmic_wonders_effects_without5"
+		}
+		if = {
+			limit = {
+				has_technology = tech_space_science_5
+				NOT = { has_technology = tech_basic_science_lab_3 }
+			}
+			custom_tooltip = "ap_cosmic_wonders_effects_without3"
+		}
+		if = {
+			limit = {
+				has_technology = tech_space_science_5
+				has_technology = tech_basic_science_lab_3
+			}
+			custom_tooltip = "ap_cosmic_wonders_effects"
+		}
+		add_research_option = AOW_TECH_multidimensional_space_channel
+		hidden_effect = { country_event = { id = AOW_ap.0 } }
+	}
+	possible = {
+		has_technology = tech_space_science_5
+		has_technology = tech_basic_science_lab_3
+		has_technology = AOW_TECH_spatiotemporal_curvature_manipulation
+		custom_tooltip = {
+			fail_text = "requires_ap_galactic_wonders"
+			has_galactic_wonders = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_built_or_repaired_galactic_wonders"
+			has_country_flag = has_built_or_repaired_galactic_wonders
+		}
+	}
+	potential = {
+		NOT = { has_ascension_perk = ap_cosmic_wonders }
+	}
+	ai_weight = { factor = 1000 } #高价值飞升，AI必点
+}
+
+#威慑纪元
+ap_era_of_deterrence = {
+	on_enabled = {
+		custom_tooltip = "ap_era_of_deterrence_effects"
+		hidden_effect = { add_research_option = tech_planetary_ship }
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+		country_power_projection_influence_produces_add = 1
+		country_trust_growth = -0.25
+		envoy_improve_relations_mult = -0.25
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ap_galactic_wonders"
+			has_galactic_wonders = yes
+		}
+		has_ascension_perk = ap_colossus
+		has_technology = AOW_TECH_planetary_blaster_system
+	}
+	potential = {
+		NOT = { has_ascension_perk = ap_era_of_deterrence }
+		if = {
+			limit = { is_ai = yes }
+			OR = {
+				NOT = { has_global_flag = AOW_flag_GLBL_no_ai_planetary_ship }
+				#NOT = { has_global_flag = AOW_flag_GLBL_no_ai_starfall_spear }
+			}
+		}
+	}
+	ai_weight = { factor = 1000 } #高价值飞升，AI必点
+}

@@ -1,0 +1,33 @@
+#多维实验完成
+AOW_mod_multi_dimensional_experiment_finished = {
+	megastructure_build_speed_mult = 1
+	country_megastructure_build_cap_add = 1
+	country_resource_max_add = 100000
+}
+
+#巨构花费
+AOW_mod_CNTR_mega_cost = {
+	icon = "gfx/interface/icons/modifiers/megastructures_cost_mult.dds"
+	megastructures_cost_mult = 1
+	megastructures_influence_cost_mult = -1
+	megastructures_unity_cost_mult = -1
+}
+#巨构维护费
+AOW_mod_CNTR_mega_upkp = {
+	icon = "gfx/interface/icons/modifiers/megastructures_upkeep_mult.dds"
+	megastructures_upkeep_mult = 1
+}
+#巨构产出
+AOW_mod_CNTR_mega_prdc = {
+	icon = "gfx/interface/icons/modifiers/megastructures_produces_mult.dds"
+	megastructures_produces_mult = 1
+}
+
+#巨构建造速度
+AOW_mod_CNTR_mega_build_speed = {
+	megastructure_build_speed_mult = 1
+}
+#巨构建造队列
+AOW_mod_CNTR_mega_build_cap = {
+	country_megastructure_build_cap_add = 1
+}

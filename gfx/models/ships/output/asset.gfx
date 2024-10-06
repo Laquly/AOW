@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "asset1_mesh"
+		file = "gfx/models/ships/output/asset.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "SS_13__blinn1_0Shape"
+			index = 0
+			texture_diffuse = "SS_17_D.dds"
+			texture_normal = "SS_17_N.dds"
+			texture_specular = "SS_17_S.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

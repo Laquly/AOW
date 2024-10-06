@@ -1,0 +1,351 @@
+namespace = AOW_evt_zero_element_furnace
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+	id = AOW_evt_zero_element_furnace.100
+	title = AOW_evt_mega_notification_title
+	desc = AOW_evt_zero_element_furnace.100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_zero_element_furnace.100.a
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.101
+	title = AOW_evt_mega_notification_title
+	desc = AOW_evt_zero_element_furnace.101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_upgrade_frame
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_evt_zero_element_furnace.300 }
+		}
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.101.a
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.102
+	title = AOW_evt_mega_notification_title
+	desc = AOW_evt_zero_element_furnace.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_zero_element_furnace.102.a
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.103
+	title = AOW_evt_mega_notification_title
+	desc = AOW_evt_zero_element_furnace.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_zero_element_furnace.103.a
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.104
+	title = AOW_evt_mega_notification_title
+	desc = AOW_evt_zero_element_furnace.104.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_evt_zero_element_furnace.301 }
+		}
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_global_flag =  AOW_flag_GLBL_found_strange_matter }
+				NOT = { exists = event_target:AOW_tgt_MEGA_zero_element_furnace }
+			}
+			random_list = {
+				1 = {}
+				1 = {
+					set_global_flag = AOW_flag_GLBL_found_strange_matter
+					fromfromfrom = { save_global_event_target_as = AOW_tgt_MEGA_zero_element_furnace }
+					country_event = { id = AOW_evt_zero_element_furnace.400 days = 360 random = 360 }
+				}
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.104.a
+	}
+}
+
+##################################################################################
+#修复巨构2
+##################################################################################
+ship_event = {
+	id = AOW_evt_zero_element_furnace.200
+	title = "AOW_evt_zero_element_furnace.200.name"
+	desc = "AOW_evt_zero_element_furnace.200.desc"
+	picture = GFX_evt_ruined_system
+	show_sound = event_radio_chatter
+	location = from
+	is_triggered_only = yes
+	trigger = {
+		from = { has_megastructure = AOW_MEGA_zero_element_furnace_ruined }
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.200.a
+		trigger = {
+			owner = {
+				OR = {
+					has_megastructure = AOW_MEGA_zero_element_furnace_1
+					has_megastructure = AOW_MEGA_zero_element_furnace_2
+					has_megastructure = AOW_MEGA_zero_element_furnace_3
+					has_megastructure = AOW_MEGA_zero_element_furnace_4
+				}
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.200.b
+		trigger = {
+			NOT = {
+				owner = {
+					OR = {
+						has_megastructure = AOW_MEGA_zero_element_furnace_1
+						has_megastructure = AOW_MEGA_zero_element_furnace_2
+						has_megastructure = AOW_MEGA_zero_element_furnace_3
+						has_megastructure = AOW_MEGA_zero_element_furnace_4
+					}
+				}
+			}
+		}
+		hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+	}
+}
+country_event = {#修复破碎归墟
+	id = AOW_evt_zero_element_furnace.201
+	title = AOW_mega_restored_title
+	desc = AOW_evt_zero_element_furnace.201.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			create_message = {
+				type = ALIEN_MEGASTRUCTURE_BUILT
+				localization = MESSAGE_ALIEN_MEGASTRUCTURE_BUILT
+				days = 30
+				target = root.from # the Go To
+				variable = {
+					type = name
+					localization = COUNTRY
+					scope = root
+				}
+				variable = {
+					type = name
+					localization = MEGASTRUCTURE
+					scope = root.fromfromfrom
+				}
+				variable = {
+					type = name
+					localization = SYSTEM
+					scope = root.from
+				}
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.201.a
+	}
+}
+##################################################################################
+#通知他国3
+##################################################################################
+country_event = {
+	id = AOW_evt_zero_element_furnace.300
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_1 } }
+		text = AOW_evt_zero_element_furnace.300.a.desc
+	}
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_2 } }
+		text = AOW_evt_zero_element_furnace.300.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_1 }
+		}
+		name = AOW_evt_zero_element_furnace.300.a
+	}
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_2 }
+		}
+		name = AOW_evt_zero_element_furnace.300.b
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.301
+	title = AOW_mega_others_notification_title
+	desc = AOW_evt_zero_element_furnace.301.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_evt_zero_element_furnace.301.a }
+}
+
+##################################################################################
+#专属故事4
+##################################################################################
+country_event = {
+	id = AOW_evt_zero_element_furnace.400
+	title = AOW_evt_zero_element_furnace.400.name
+	desc = AOW_evt_zero_element_furnace.400.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mystic_reveal
+	location = fromfromfromfrom
+	immediate = {
+		set_country_flag = AOW_flag_CNTR_found_strange_matter
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.400.a
+		custom_tooltip = AOW_evt_zero_element_furnace.400.a.tooltip
+		enable_special_project = {
+			name = AOW_sp_strange_matter
+			location = fromfromfromfrom.planet
+			owner = root
+		}#AOW_evt_zero_element_furnace.410 #AOW_evt_zero_element_furnace.411
+		fromfromfromfrom = {
+			add_modifier = {
+				modifier = AOW_mod_MEGA_reduce_power
+				multiplier  = 0.25
+				days = -1
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_zero_element_furnace.400.b
+		custom_tooltip = AOW_evt_zero_element_furnace.400.b.tooltip
+		fromfromfromfrom = {
+			add_modifier = {
+				modifier = AOW_mod_MEGA_increase_power
+				multiplier  = 0.25
+				days = -1
+			}
+		}
+		hidden_effect = {
+			country_event = { id = AOW_evt_zero_element_furnace.420 days = 900 random = 360 }
+		}
+	}
+}
+
+ship_event = {
+	id = AOW_evt_zero_element_furnace.410
+	title = AOW_evt_zero_element_furnace.410.name
+	desc = AOW_evt_zero_element_furnace.410.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mystic_reveal
+	location = event_target:AOW_tgt_MEGA_zero_element_furnace
+	immediate = {
+		event_target:AOW_tgt_MEGA_zero_element_furnace = {
+			remove_modifier = AOW_mod_MEGA_reduce_power
+		}
+	}
+	option = {#稳定化
+		name = AOW_evt_zero_element_furnace.410.a
+		custom_tooltip = AOW_evt_zero_element_furnace.410.a.tooltip
+		owner = { add_research_option = AOW_TECH_stabilization_of_strange_matter }
+	}
+	option = {#武器化
+		name = AOW_evt_zero_element_furnace.410.b
+		custom_tooltip = AOW_evt_zero_element_furnace.410.b.tooltip
+		owner = { add_research_option = AOW_TECH_weaponization_of_strange_matter }
+	}
+	option = {#我全都要
+		name = AOW_evt_zero_element_furnace.410.c
+		custom_tooltip = AOW_evt_zero_element_furnace.410.c.tooltip
+		allow = {
+			fromfrom = {
+				resource_stockpile_compare = { resource = energy value >= 5000 }
+				resource_stockpile_compare = { resource = unity value >= 5000 }
+			}
+		}
+		fromfrom = {
+			add_resource = { energy = -5000 }
+			add_resource = { unity = -5000 }
+			add_research_option = AOW_TECH_stabilization_of_strange_matter
+			add_research_option = AOW_TECH_weaponization_of_strange_matter
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.411
+	title = AOW_evt_zero_element_furnace.411.name
+	desc = AOW_evt_zero_element_furnace.411.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mystic_reveal
+	location = event_target:AOW_tgt_PLNT_has_strange_matter
+	immediate = {
+		event_target:AOW_tgt_MEGA_zero_element_furnace = {
+			planet = {
+				set_planet_flag = AOW_flag_PLNT_has_strange_matter
+				save_event_target_as = AOW_tgt_PLNT_has_strange_matter
+			}
+			remove_megastructure = this
+		}
+	}
+	after = { clear_global_event_target = AOW_tgt_MEGA_zero_element_furnace }
+	option = {
+		name = AOW_evt_zero_element_furnace.411.a
+		custom_tooltip = AOW_evt_zero_element_furnace.411.a.tooltip
+	}
+}
+country_event = {
+	id = AOW_evt_zero_element_furnace.420
+	title = AOW_evt_zero_element_furnace.420.name
+	desc = AOW_evt_zero_element_furnace.420.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	show_sound = event_mystic_reveal
+	location = event_target:AOW_tgt_PLNT_has_strange_matter
+	immediate = {
+		event_target:AOW_tgt_MEGA_zero_element_furnace = {
+			planet = {
+				set_planet_flag = AOW_flag_PLNT_has_strange_matter
+				save_event_target_as = AOW_tgt_PLNT_has_strange_matter
+			}
+			remove_megastructure = this
+		}
+		add_resource = { alloys = 25000 }
+	}
+	after = { clear_global_event_target = AOW_tgt_MEGA_zero_element_furnace }
+	option = {
+		name = AOW_evt_zero_element_furnace.420.a
+		custom_tooltip = AOW_evt_zero_element_furnace.420.a.tooltip
+		tooltip = { add_resource = { alloys = 25000 } }
+	}
+}

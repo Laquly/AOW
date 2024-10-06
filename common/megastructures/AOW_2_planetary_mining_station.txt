@@ -1,0 +1,437 @@
+AOW_MEGA_planetary_mining_station_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	#construction_blocks_and_blocked_by = none
+	build_time = @AOW_var_PMS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PLANETARY_MINING_STATION"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PMS_0_COST_alloys
+			unity = @AOW_var_PMS_0_COST_unity
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_mining_station
+		category = megastructures
+		alloys = @AOW_var_PMS_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_mining_station" }
+	potential = { AOW_trigger_mega_potential = { KEY = planetary_mining_station } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_planetary_mining_station } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {#不能是宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是小行星、卫星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AOW_trgr_PLNT_ordinary_planet = yes
+						is_planet_class = pc_iron#铁星球
+						is_planet_class = pc_chthonian#气陨星核
+						is_planet_class = pc_hydrocarbon#烃
+						is_planet_class = pc_volcanic#火山
+					}
+				}
+				always = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_molten
+						is_planet_class = pc_ethane_ocean#乙烷海洋星球
+					}
+				}
+				custom_tooltip = {#易爆颗粒
+					fail_text = "AOW_mega_requires_PLNT_tech_mine_volatile_motes"
+					from = { has_technology = tech_mine_volatile_motes }
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_toxic
+						is_planet_class = pc_hothouse#温室星球
+					}
+				}
+				custom_tooltip = {#异星天然气
+					fail_text = "AOW_mega_requires_PLNT_tech_mine_exotic_gases"
+					from = { has_technology = tech_mine_exotic_gases }
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_frozen
+						is_planet_class = pc_diamond#金刚石星球
+					}
+				}
+				custom_tooltip = {#稀有水晶
+					fail_text = "AOW_mega_requires_PLNT_tech_mine_rare_crystals"
+					from = { has_technology = tech_mine_rare_crystals }
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = "AOW_mega_requires_PLNT_ordinary_planets"
+					always = no
+				}
+			}
+			#custom_tooltip = {#不能为肃正星球
+			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
+			#	NOT = { has_planet_flag = crisis_vital_planet }
+			#}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = planetary_mining_station
+			constructing = AOW_MEGA_planetary_mining_station_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1010 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_planetary_mining_station_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_planetary_mining_station_1 = {
+	entity = "planetary_mining_station_1_entity"
+	construction_entity = "planetary_mining_station_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_PMS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PMS_1_COST_alloys
+			unity = @AOW_var_PMS_1_COST_unity
+		}
+		upkeep = { energy = @AOW_var_PMS_1_UPKP_energy }
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_mining_station
+		category = megastructures
+		alloys = @AOW_var_PMS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_mining_station" }
+	upgrade_from = { AOW_MEGA_planetary_mining_station_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		fromfrom.planet = {
+			if = {
+				limit = { has_modifier = terraforming_candidate }
+				remove_modifier = terraforming_candidate
+			}
+		}
+		from = { country_event = { id = AOW_mega_notification.1011 } }
+	}
+}
+AOW_MEGA_planetary_mining_station_2 = {
+	entity = "planetary_mining_station_2_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_PMS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PMS_2_COST_energy
+			unity = @AOW_var_PMS_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PMS_2_UPKP_energy
+		}
+		produces = {
+			trigger = { planet = { AOW_trgr_PLNT_ordinary_planet = yes } }
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Common
+		}
+		produces = {
+			trigger = {
+				planet = { has_resource = { type = sr_living_metal amount > 0 } }
+				owner = { has_technology = tech_mine_living_metal }
+			}
+			sr_living_metal = @AOW_var_PMS_2_PRDC_metal
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_molten } }#熔融星球
+			energy = @AOW_var_PMS_2_PRDC_energy_Molten
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Molten
+			alloys = @AOW_var_PMS_2_PRDC_alloys_Molten
+			volatile_motes = @AOW_var_PMS_2_PRDC_motes_Molten
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_toxic#剧毒星球
+						is_planet_class = pc_hothouse#温室星球
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Toxic
+			exotic_gases = @AOW_var_PMS_2_PRDC_gases_Toxic
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_frozen#冰封星球
+						is_planet_class = pc_diamond#金刚石星球
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Frozen
+			rare_crystals = @AOW_var_PMS_2_PRDC_crystals_Frozen
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_ethane_ocean } }#乙烷海洋星球
+			minerals = @AOW_var_PMS_2_PRDC_minerals_EthaneOcean
+			volatile_motes = @AOW_var_PMS_2_PRDC_motes_EthaneOcean
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_iron#铁星球
+						is_planet_class = pc_chthonian#气陨星核
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Iron
+			alloys = @AOW_var_PMS_2_PRDC_alloys_Iron
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_hydrocarbon } }#烃星球
+			energy = @AOW_var_PMS_2_PRDC_energy_Hydrocarbon
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Hydrocarbon
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_volcanic } }#火山星球
+			energy = @AOW_var_PMS_2_PRDC_energy_Volcanic
+			minerals = @AOW_var_PMS_2_PRDC_minerals_Volcanic
+			alloys = @AOW_var_PMS_2_PRDC_alloys_Volcanic
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_mining_station
+		category = megastructures
+		alloys = @AOW_var_PMS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_mining_station" }
+	upgrade_from = { AOW_MEGA_planetary_mining_station_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		fromfrom.planet = {
+			if = {
+				limit = { has_modifier = terraforming_candidate }
+				remove_modifier = terraforming_candidate
+			}
+		}
+		from = { country_event = { id = AOW_mega_notification.1012 } }
+	}
+}
+AOW_MEGA_planetary_mining_station_3 = {
+	entity = "planetary_mining_station_3_entity"
+	construction_entity = "planetary_mining_station_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	show_in_outliner = no
+	build_time = @AOW_var_PMS_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PMS_3_COST_alloys
+			unity = @AOW_var_PMS_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PMS_3_UPKP_energy
+		}
+		upkeep = {
+			trigger = {
+				planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+				AND = {
+					has_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods
+					owner = { country_uses_consumer_goods = yes }
+				}
+			}
+			energy = @AOW_var_PMS_3_UPKP_energy
+		}
+		produces = {
+			trigger = {
+				planet = { has_resource = { type = sr_living_metal amount > 0 } }
+				owner = { has_technology = tech_mine_living_metal }
+			}
+			sr_living_metal = @AOW_var_PMS_3_PRDC_metal
+		}
+		produces = {
+			trigger = {
+				planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+				owner = { country_uses_consumer_goods = no }
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Common
+		}
+		produces = {
+			trigger = {
+				planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+				AND = {
+					NOT = { has_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods }
+					owner = { country_uses_consumer_goods = yes }
+				}
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Common
+		}
+		produces = {
+			trigger = {
+				planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+				AND = {
+					has_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods
+					owner = { country_uses_consumer_goods = yes }
+				}
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_CG
+			consumer_goods = @AOW_var_PMS_3_PRDC_goods_CG
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_molten } }#熔融星球
+			energy = @AOW_var_PMS_3_PRDC_energy_Molten
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Molten
+			alloys = @AOW_var_PMS_3_PRDC_alloys_Molten
+			volatile_motes = @AOW_var_PMS_3_PRDC_motes_Molten
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_toxic#剧毒星球
+						is_planet_class = pc_hothouse#温室星球
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Toxic
+			exotic_gases = @AOW_var_PMS_3_PRDC_gases_Toxic
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_frozen#冰封星球
+						is_planet_class = pc_diamond#金刚石星球
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Frozen
+			rare_crystals = @AOW_var_PMS_3_PRDC_crystals_Frozen
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_ethane_ocean } }#乙烷海洋星球
+			minerals = @AOW_var_PMS_3_PRDC_minerals_EthaneOcean
+			volatile_motes = @AOW_var_PMS_3_PRDC_motes_EthaneOcean
+		}
+		produces = {
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_iron#铁星球
+						is_planet_class = pc_chthonian#气陨星核
+					}
+				}
+			}
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Iron
+			alloys = @AOW_var_PMS_3_PRDC_alloys_Iron
+		}
+		produces = {
+			trigger = { planet = { is_planet_class = pc_hydrocarbon } }#烃星球
+			energy = @AOW_var_PMS_3_PRDC_energy_Hydrocarbon
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Hydrocarbon
+		}
+		produces = {#火山
+			trigger = { planet = { is_planet_class = pc_volcanic } }
+			energy = @AOW_var_PMS_3_PRDC_energy_Volcanic
+			minerals = @AOW_var_PMS_3_PRDC_minerals_Volcanic
+			alloys = @AOW_var_PMS_3_PRDC_alloys_Volcanic
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_mining_station
+		category = megastructures
+		alloys = @AOW_var_PMS_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_mining_station" }
+	upgrade_from = { AOW_MEGA_planetary_mining_station_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		fromfrom.planet = {
+			if = {
+				limit = { has_modifier = terraforming_candidate }
+				remove_modifier = terraforming_candidate
+			}
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = AOW_mega_notification.1013 }
+		}
+	}
+}

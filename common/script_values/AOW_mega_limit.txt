@@ -1,0 +1,68 @@
+#星状开采站
+AOW_var_asteroid_mining_station_limit = {
+    base = 0
+    modifier = {
+        has_technology = AOW_TECH_asteroid_mining_station
+        add = 3
+    } #基础
+    add = asteroid_mining_station_limit_add #变量
+    add = modifier:asteroid_mining_station_limit_add #修正
+}
+#居住站
+AOW_var_habitat_limit = {
+    base = 0
+    modifier = {
+        has_technology = tech_habitat_1
+        add = 1
+    } #基础
+    add = habitat_limit_add #变量
+    add = modifier:habitat_limit_add #修正
+}
+#自己建造过的巨构数量+工程船正在建造的巨构数量
+AOW_var_num_of_mega = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = count_megastructure
+        parameters = {
+            limit = { has_megastructure_flag = AOW_flag_MEGA_$KEY$_@root.from }
+        }
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = count_owned_fleet
+        parameters = {
+            limit = {
+                is_ship_size = constructor
+                is_constructing = $MEGA$
+            }
+        }
+        mode = add
+    }
+    min = 0
+}
+#拥有宜居星球的星系数量+工程船正在建造的巨构数量
+AOW_var_num_of_habitat_mega = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = count_system_within_border
+        parameters = {
+            limit = {
+                any_system_planet = {
+                    is_planet_class = $PLANET$
+                }
+            }
+        }
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = count_owned_ship
+        parameters = {
+            limit = {
+                is_ship_size = constructor
+                is_constructing = $MEGA$
+            }
+        }
+        mode = add
+    }
+    min = 0
+}

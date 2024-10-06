@@ -1,0 +1,21 @@
+#已启用
+	allow = { always = yes }
+	potential = {
+		from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } }
+		event_target:global_event_country = {
+			check_variable = { which = AOW_var_$PorA$_mega_cap_$KEY$ value > 0 }
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_$PorA$_mega_is_enabled
+		hidden_effect = {
+			event_target:global_event_country = {
+				set_variable = { which = AOW_var_$PorA$_mega_cap_$KEY$ value = $VALUE$ }
+				inline_script = {
+					script = AOW_set_remove_global_flag
+					PorA = $PorA$
+					KEY = $KEY$
+				}
+			}
+		}
+	}

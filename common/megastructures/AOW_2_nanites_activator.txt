@@ -1,0 +1,172 @@
+AOW_MEGA_nanites_activator_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_NA_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_GrayGoo_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NA_0_COST_alloys
+			unity = @AOW_var_NA_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NA_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nanites_activator
+		category = megastructures
+		alloys = @AOW_var_NA_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nanites_activator" }
+	potential = { AOW_trigger_mega_potential = { KEY = nanites_activator } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_nanites_activator } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为已调查的非宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#必须为纳米星球
+				fail_text = "AOW_mega_requires_PLNT_GrayGoo"
+				OR = {
+					is_planet_class = pc_gray_goo
+					has_resource = { type = nanites amount > 0 }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			#custom_tooltip = {#不能为肃正星球
+			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
+			#	NOT = { has_planet_flag = crisis_vital_planet }
+			#}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = nanites_activator
+			constructing = AOW_MEGA_nanites_activator_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1070 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_nanites_activator_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_nanites_activator_1 = {
+	entity = "nanites_activator_1_entity"
+	construction_entity = "nanites_activator_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_NA_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NA_1_COST_alloys
+			unity = @AOW_var_NA_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NA_1_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nanites_activator
+		category = megastructures
+		alloys = @AOW_var_NA_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nanites_activator" }
+	upgrade_from = { AOW_MEGA_nanites_activator_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1071 } }
+	}
+}
+AOW_MEGA_nanites_activator_2 = {
+	entity = "nanites_activator_2_entity"
+	construction_entity = "nanites_activator_2_entity"
+	portrait = "GFX_megastructure_construction_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_NA_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_NA_2_COST_energy
+			alloys = @AOW_var_NA_2_COST_alloys
+			unity = @AOW_var_NA_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NA_2_UPKP_energy
+		}
+		produces = {
+			trigger = { owner = { NOT = { has_deficit = energy } } }
+			nanites = @AOW_var_NA_2_PRDC_nanites
+		}
+		produces = {
+			trigger = {
+				planet = { is_planet_class = pc_gray_goo }
+				owner = { NOT = { has_deficit = energy } }
+			}
+			nanites = @AOW_var_NA_2_PRDC_nanites_GrayGoo
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nanites_activator
+		category = megastructures
+		alloys = @AOW_var_NA_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nanites_activator" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_nanites_activator_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1072 }
+			set_country_flag = has_built_or_repaired_megastructure
+		}
+	}
+}

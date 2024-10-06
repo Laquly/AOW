@@ -1,0 +1,30 @@
+AOW_eft_SSTM_destroy_hyper_relay = {
+	every_system_megastructure = {
+		limit = {
+			OR = {
+				is_megastructure_type = hyper_relay
+				is_megastructure_type = hyper_relay_restored
+			}
+		}
+		if = {
+			limit = { exists = solar_system.space_owner }
+			solar_system = {
+				spawn_megastructure = {
+					type = "hyper_relay_ruined"
+					coords_from = prev
+					owner = space_owner
+				}
+			}
+		}
+		else_if = {
+			limit = { NOT = { exists = solar_system.space_owner } }
+			solar_system = {
+				spawn_megastructure = {
+					type = "hyper_relay_ruined"
+					coords_from = prev
+				}
+			}
+		}
+		remove_megastructure = this
+	}
+}

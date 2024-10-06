@@ -1,0 +1,87 @@
+create_leader_laquly = {
+	if = {
+		limit = { NOT = { exists = event_target:AOW_target_species_red_dawn } }
+		create_species = {
+			name = "NAME_red_dawn"
+			class = MOL
+			portrait = red_dawn_snail
+			traits = {
+				trait = trait_pc_nuked_preference
+				trait = trait_cybernetic
+				trait = trait_excessive_endurance
+				trait = trait_elevated_synapses
+				trait = trait_cyborg_efficient_processors
+				trait = trait_cyborg_logic_engines
+				trait = trait_cyborg_durable
+				trait = trait_cyborg_streamlined_protocols
+				trait = trait_cyborg_bulky
+			}
+			effect = {
+				if = {
+					limit = { exists = event_target:AOW_target_species_red_dawn }
+					clear_global_event_target = AOW_target_species_red_dawn
+				}
+				save_global_event_target_as = AOW_target_species_red_dawn
+			}
+		}
+	}
+	create_leader = {
+		class = official
+		species = event_target:AOW_target_species_red_dawn
+		name = NAME_laquly
+		event_leader = yes
+		skill = 10
+		set_age = 23
+		skip_background_generation = yes
+		custom_catch_phrase = laquly_catch_phrase
+		custom_description = laquly_backstory
+		background_ethic = ethic_egalitarian
+		gender = $gender$
+		traits = {
+			trait = subclass_official_economy_councilor #国务顾问
+			trait = leader_trait_laquly
+			trait = leader_trait_red_dawn
+			trait = leader_trait_cultural_focus_3 #文宣专精（专精）
+			trait = leader_trait_reformer_3 #改革家
+			trait = leader_trait_bureaucrat_2 #上下同心
+			trait = leader_trait_cyborg
+		}
+		effect = {
+			set_leader_flag = legendary_leader
+			set_leader_flag = immune_to_negative_traits
+			set_leader_flag = leader_laquly
+			change_leader_portrait = $portrait$
+		}
+	}
+	last_created_leader = {
+		set_leader_flag = has_gained_level_trait
+		remove_all_traits = yes
+		add_trait_no_notify = subclass_official_economy_councilor
+		add_trait_no_notify = leader_trait_laquly
+		add_trait_no_notify = leader_trait_red_dawn
+		add_trait_no_notify = leader_trait_cultural_focus_3 #文宣专精（专精）
+		add_trait_no_notify = leader_trait_reformer_3 #改革家
+		add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
+		add_trait_no_notify = leader_trait_cyborg
+		save_event_target_as = AOW_target_leader
+	}
+}
+
+create_dummy_leader_laquly = {
+	create_country = {
+		name = "NAME_leader_country"
+		type = faction
+		auto_delete = yes
+		flag = random
+		effect = {
+			save_event_target_as = leader_country
+		}
+	}
+	event_target:leader_country = {
+		create_leader_laquly = { portrait = $portrait$ gender = $gender$ }
+	}
+}
+
+#create_leader_laquly = { portrait = red_dawn_male gender = male } #男性
+#create_leader_laquly = { portrait = red_dawn_female gender = female } #女性
+#create_leader_laquly = { portrait = red_dawn_snail gender = indeterminable } #原版

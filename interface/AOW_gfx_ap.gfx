@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = { #天外神迹
+		name = "GFX_ap_cosmic_wonders"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_cosmic_wonders.dds"
+		alwaystransparent = yes
+	}
+	spriteType = { #威慑纪元
+		name = "GFX_ap_era_of_deterrence"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_era_of_deterrence.dds"
+		alwaystransparent = yes
+	}
+}

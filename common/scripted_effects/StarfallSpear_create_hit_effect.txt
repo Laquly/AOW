@@ -1,0 +1,110 @@
+AOW_eft_SSTM_create_hit_effect = {
+	if = {#来自O型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_O
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_o_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自B型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_B
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_b_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自A型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_A
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_a_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自F型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_F
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_f_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自G型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_G
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_g_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自K型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_K
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_k_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	else_if = {#来自M型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_MEGA_starfall_spear = {
+				is_megastructure_type = AOW_MEGA_starfall_spear_fire_M
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_m_system_hit_effect"
+			location = star
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_offset = { min = 0 max = 0 }
+		}
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = AOW_flag_AO_starfall_spear_@event_target:AOW_tgt_MEGA_starfall_spear
+	}
+}

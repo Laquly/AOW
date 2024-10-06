@@ -1,0 +1,41 @@
+#前置条件
+AOW_btn_hyperlane_controller_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_hyperlane_controller_desc
+		if = {
+			limit = { has_technology = AOW_TECH_hyperlane_controller }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			has_technology = tech_hyper_drive_3
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_hyperlane_controller
+		}
+	}
+	effect = { custom_tooltip = AOW_text_hyperlane_controller_desc }
+}
+#AI
+AOW_btn_hyperlane_controller_ai_disable = {#已禁用
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	effect = { custom_tooltip = AOW_text_hyperlane_controller_ai_disable }
+}
+#玩家
+AOW_btn_hyperlane_controller_player_disable = {#已禁用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = hyperlane_controller
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_hyperlane_controller_player_infinite = {#已启用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = hyperlane_controller
+		PorA = player
+		VALUE = 0
+	}
+}

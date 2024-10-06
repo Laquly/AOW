@@ -1,0 +1,341 @@
+AOW_MEGA_multi_dimensional_warehouse_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+	build_time = @AOW_var_MDW_0_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_MDW_0_COST_alloys
+			unity = @AOW_var_MDW_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	potential = { AOW_trigger_mega_potential = { KEY = multi_dimensional_warehouse } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_multi_dimensional_warehouse } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#该星系内不能有其他高维仓库
+			fail_text = "AOW_mega_requires_SSTM_no_multi_dimensional_warehouse"
+			NOR = {
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_0
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_1
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_2
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_3
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_4
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_5
+				has_megastructure = AOW_MEGA_multi_dimensional_warehouse_6
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			always = no
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 500
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_0_UPKP_energy } } }
+		#位置限制
+		modifier = { factor = 10	from.capital_scope.solar_system = { is_same_value = root } }
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = multi_dimensional_warehouse
+			constructing = AOW_MEGA_multi_dimensional_warehouse_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3010 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_multi_dimensional_warehouse_@owner }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_1 = {
+	entity = "multi_dimensional_warehouse_1_entity"
+	construction_entity = "multi_dimensional_warehouse_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_MDW_1_COST_alloys
+			volatile_motes = @AOW_var_MDW_1_COST_sr
+			exotic_gases = @AOW_var_MDW_1_COST_sr
+			rare_crystals = @AOW_var_MDW_1_COST_sr
+			unity = @AOW_var_MDW_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_1_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_0 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_1_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3011 } }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_2 = {#1
+	entity = "multi_dimensional_warehouse_2_entity"
+	construction_entity = "multi_dimensional_warehouse_2_construction_entity"
+	portrait = "GFX_megastructure_multi_dimensional_warehouse_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_MDW_2_COST_energy
+			unity = @AOW_var_MDW_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_2_UPKP_energy
+			sr_dark_matter = @AOW_var_MDW_2_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		country_resource_max_add = @AOW_var_MDW_2_resource_max_add
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_1 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_2_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3012 } }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_3 = {#2
+	entity = "multi_dimensional_warehouse_3_entity"
+	construction_entity = "multi_dimensional_warehouse_3_entity"
+	portrait = "GFX_megastructure_multi_dimensional_warehouse_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_MDW_2_COST_energy
+			alloys = @AOW_var_MDW_1_COST_alloys
+			volatile_motes = @AOW_var_MDW_1_COST_sr
+			exotic_gases = @AOW_var_MDW_1_COST_sr
+			rare_crystals = @AOW_var_MDW_1_COST_sr
+			unity = @AOW_var_MDW_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_3_UPKP_energy
+			sr_dark_matter = @AOW_var_MDW_3_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		country_resource_max_add = @AOW_var_MDW_3_resource_max_add
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_2 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_3_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3013 } }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_4 = {#3
+	entity = "multi_dimensional_warehouse_4_entity"
+	construction_entity = "multi_dimensional_warehouse_4_entity"
+	portrait = "GFX_megastructure_multi_dimensional_warehouse_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_MDW_2_COST_energy
+			alloys = @AOW_var_MDW_1_COST_alloys
+			volatile_motes = @AOW_var_MDW_1_COST_sr
+			exotic_gases = @AOW_var_MDW_1_COST_sr
+			rare_crystals = @AOW_var_MDW_1_COST_sr
+			unity = @AOW_var_MDW_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_4_UPKP_energy
+			sr_dark_matter = @AOW_var_MDW_4_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		country_resource_max_add = @AOW_var_MDW_4_resource_max_add
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_3 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_4_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3013 } }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_5 = {#4
+	entity = "multi_dimensional_warehouse_5_entity"
+	construction_entity = "multi_dimensional_warehouse_5_entity"
+	portrait = "GFX_megastructure_multi_dimensional_warehouse_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_MDW_2_COST_energy
+			alloys = @AOW_var_MDW_1_COST_alloys
+			volatile_motes = @AOW_var_MDW_1_COST_sr
+			exotic_gases = @AOW_var_MDW_1_COST_sr
+			rare_crystals = @AOW_var_MDW_1_COST_sr
+			unity = @AOW_var_MDW_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_5_UPKP_energy
+			sr_dark_matter = @AOW_var_MDW_5_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		country_resource_max_add = @AOW_var_MDW_5_resource_max_add
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_4 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_5_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3013 } }
+	}
+}
+AOW_MEGA_multi_dimensional_warehouse_6 = {#5
+	entity = "multi_dimensional_warehouse_6_entity"
+	construction_entity = "multi_dimensional_warehouse_6_entity"
+	portrait = "GFX_megastructure_multi_dimensional_warehouse_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_MDW_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_MDW_2_COST_energy
+			alloys = @AOW_var_MDW_1_COST_alloys
+			volatile_motes = @AOW_var_MDW_1_COST_sr
+			exotic_gases = @AOW_var_MDW_1_COST_sr
+			rare_crystals = @AOW_var_MDW_1_COST_sr
+			unity = @AOW_var_MDW_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_MDW_6_UPKP_energy
+			sr_dark_matter = @AOW_var_MDW_6_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		country_resource_max_add = @AOW_var_MDW_6_resource_max_add
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_MDW_1_COST_alloys
+		minerals = 0
+		vm = @AOW_var_MDW_1_COST_sr eg = @AOW_var_MDW_1_COST_sr rc = @AOW_var_MDW_1_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	upgrade_from = { AOW_MEGA_multi_dimensional_warehouse_5 }
+	ai_weight = {
+		factor = 10
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_6_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3014 } }
+	}
+}

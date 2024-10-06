@@ -1,0 +1,4 @@
+event_target:AOW_target_planet = {
+    remove_planet_flag = has_megastructure
+    remove_planet_flag = ruined_orbital_ring_planet
+}

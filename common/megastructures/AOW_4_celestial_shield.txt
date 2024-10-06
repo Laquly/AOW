@@ -1,0 +1,371 @@
+AOW_MEGA_celestial_shield_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = 1800
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_STAR"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+			unity = 10000
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		category = megastructures
+		alloys = 10000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	potential = {
+		AOW_trigger_mega_potential = {  KEY = celestial_shield }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_celestial_shield } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#必须是单恒星星系
+			fail_text = "AOW_mega_requires_SSTM_single_star"
+			AOW_trgr_SSTM_single_star_system = yes
+		}
+		custom_tooltip = {#不能有其他天枢圣盾
+			fail_text = "AOW_mega_requires_SSTM_no_celestial_shield"
+			NOR = {
+				has_megastructure = AOW_MEGA_celestial_shield_0
+				has_megastructure = AOW_MEGA_celestial_shield_1
+				has_megastructure = AOW_MEGA_celestial_shield_2
+				has_megastructure = AOW_MEGA_celestial_shield_3
+				has_megastructure = AOW_MEGA_celestial_shield_4
+				has_megastructure = AOW_MEGA_celestial_shield_create_bunker_rings
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = celestial_shield }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		modifier = {
+			factor = 100
+			any_playable_country = {
+				has_established_contact = root.from
+				is_country_type = default
+				has_technology = AOW_TECH_starfall_spear
+			}
+		}
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = celestial_shield
+			constructing = AOW_MEGA_celestial_shield_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = AOW_flag_CNTR_celestial_shield_1 } }
+				set_country_flag = AOW_flag_CNTR_celestial_shield_1
+			}
+			else_if = {
+				limit = { has_country_flag = AOW_flag_CNTR_celestial_shield_1 }
+				remove_country_flag = AOW_flag_CNTR_celestial_shield_1
+				set_country_flag = AOW_flag_CNTR_celestial_shield_2
+			}
+			country_event = { id = AOW_evt_celestial_shield.100 }
+		}
+		fromfrom = {
+			set_megastructure_flag = celestial_shield
+			set_megastructure_flag = AOW_flag_MEGA_celestial_shield_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_celestial_shield_1 = {
+	entity = "celestial_shield_1_entity"
+	construction_entity = "celestial_shield_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 3600
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10000
+			alloys = 15000
+			unity = 10000
+		}
+		upkeep = {
+			energy = 25
+			alloys = 25
+			sr_dark_matter = 12.5
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 0.25
+		shipclass_military_station_hull_mult = 0.25
+		shipclass_military_station_damage_mult = 0.25
+		starbase_defense_platform_capacity_add = 8
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		category = megastructures
+		alloys = 15000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	upgrade_from = { AOW_MEGA_celestial_shield_0 }
+	on_build_complete = {
+		fromfrom.planet = {
+			if = { limit = { planet_size > 30 } }
+			set_planet_size = 30
+		}
+		from = { country_event = { id = AOW_evt_celestial_shield.101 } }
+	}
+}
+AOW_MEGA_celestial_shield_2 = {
+	entity = "celestial_shield_2_entity"
+	construction_entity = "celestial_shield_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 3600
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10000
+			alloys = 15000
+			unity = 10000
+		}
+		upkeep = {
+			energy = 50
+			alloys = 50
+			sr_dark_matter = 25
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 0.5
+		shipclass_military_station_hull_mult = 0.5
+		shipclass_military_station_damage_mult = 0.5
+		starbase_defense_platform_capacity_add = 16
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		category = megastructures
+		alloys = 15000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	upgrade_from = { AOW_MEGA_celestial_shield_1 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_celestial_shield.102 } }
+	}
+}
+AOW_MEGA_celestial_shield_3 = {
+	entity = "celestial_shield_3_entity"
+	construction_entity = "celestial_shield_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 3600
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10000
+			alloys = 15000
+			unity = 10000
+		}
+		upkeep = {
+			energy = 75
+			alloys = 75
+			sr_dark_matter = 37.5
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 0.75
+		shipclass_military_station_hull_mult = 0.75
+		shipclass_military_station_damage_mult = 0.75
+		starbase_defense_platform_capacity_add = 24
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		category = megastructures
+		alloys = 15000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	upgrade_from = { AOW_MEGA_celestial_shield_2 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_celestial_shield.103 } }
+	}
+}
+AOW_MEGA_celestial_shield_4 = {
+	entity = "celestial_shield_4_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_celestial_shield_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 3600
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 15000
+			alloys = 20000
+			unity = 10000
+		}
+		upkeep = {
+			energy = 100
+			alloys = 100
+			sr_dark_matter = 50
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 1
+		shipclass_military_station_hull_mult = 1
+		shipclass_military_station_damage_mult = 1
+		starbase_defense_platform_capacity_add = 32
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure_with_effects
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		key = celestial_shield
+		category = megastructures
+		alloys = 15000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_celestial_shield_3 }
+	on_build_start = { fromfrom = { set_megastructure_flag = AOW_flag_MEGA_first_completion } }
+	on_build_complete = {
+		if = {
+			limit = { fromfrom = { has_megastructure_flag = AOW_flag_MEGA_first_completion } }
+			from = { country_event = { id = AOW_evt_celestial_shield.104 } }
+		}
+		fromfrom.planet = { save_event_target_as = AOW_target_planet }
+		AOW_eft_create_bunker_ring = yes
+	}
+}
+AOW_MEGA_celestial_shield_create_bunker_rings = {
+	entity = "celestial_shield_4_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_celestial_shield_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 720
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 5000
+			alloys = 10000
+		}
+		upkeep = {
+			energy = 100
+			alloys = 100
+			sr_dark_matter = 50
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 1
+		shipclass_military_station_hull_mult = 1
+		shipclass_military_station_damage_mult = 1
+		starbase_defense_platform_capacity_add = 32
+	}
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	possible = {
+		count_system_megastructure = {
+			limit = { is_megastructure_type = AOW_MEGA_celestial_shield_bunker_ring }
+			count <= 4
+		}
+	}
+	upgrade_from = { AOW_MEGA_celestial_shield_4 }
+	upgrade_desc = hide
+	ai_weight = { factor = 100 }
+	on_build_complete = {
+		fromfrom.planet = { save_event_target_as = AOW_target_planet }
+		AOW_eft_create_bunker_ring = yes
+		from = {
+			set_country_flag = AOW_flag_CNTR_can_build_bunker_ring
+			country_event = { id = AOW_evt_celestial_shield.105 }
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_celestial_shield_4"
+			owner = from
+			planet = fromfrom.planet
+			init_effect = {
+				set_megastructure_flag = AOW_flag_MEGA_celestial_shield_@root.from
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}
+AOW_MEGA_celestial_shield_bunker_ring = {
+	entity = celestial_shield_bunker_ring_mega_entity#"celestial_shield_bunker_ring_entity"
+	portrait = "GFX_megastructure_bunker_ring_background"
+	place_entity_on_planet_plane = yes
+	show_galactic_map_icon = no
+	show_in_outliner = no
+	build_time = 0
+	#scales_with_planet = yes
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 10
+			alloys = 10
+			sr_dark_matter = 10
+		}
+	}
+	country_modifier = {
+		shipclass_military_station_build_speed_mult = 0.05
+		shipclass_military_station_hull_mult = 0.05
+		shipclass_military_station_damage_mult = 0.05
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_celestial_shield
+		category = megastructures
+		alloys = 1250
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	potential = { always = no }
+}

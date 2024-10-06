@@ -1,0 +1,107 @@
+#星系有建造在行星上的巨构
+AOW_trgr_SSTM_non_star_has_megastructure = {
+	any_system_planet = {
+		is_star = no
+		has_any_megastructure = yes
+	}
+}
+#星系有会移除行星的巨构
+AOW_trgr_SSTM_has_planet_remover_megastructure = {
+	any_system_megastructure = {
+		OR = {
+			is_megastructure_type = ring_world_1
+			is_megastructure_type = AOW_MEGA_pulsar_clock_0
+			is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_0
+			is_megastructure_type = AOW_MEGA_miraculous_shipyard_0
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_0
+			AOW_trgr_MEGA_is_qsqm_0 = yes
+			is_megastructure_type = AOW_MEGA_starfall_spear_0
+			is_megastructure_type = uf_hyperdimensional_matter_core_1
+			is_megastructure_type = SRA_Barrier_megastructure_0
+			is_megastructure_type = exe_black_hole_facility_platform
+			is_megastructure_type = kuat_ring_world_1
+			is_megastructure_type = TAC_Unknown_structure_01
+			is_megastructure_type = azur_01_ring_world_1
+			is_megastructure_type = azur_02_ring_world_1
+		}
+	}
+}
+#星系有宜居星球
+AOW_trgr_SSTM_has_habitable_planets = {
+	any_system_planet = {
+		is_star = no
+		OR = {
+			is_colonizable = yes
+			is_colony = yes
+		}
+	}
+}
+#星系有非人工、非土著的殖民地
+AOW_trgr_SSTM_has_non_artificial_non_primitive_colony = {
+	any_system_planet = {
+		OR = {
+			has_colony_progress > 0
+			is_colony = yes
+		}
+		is_artificial = no
+		exists = owner
+		owner = { is_primitive = no }
+	}
+}
+#可以侵略性干扰土著
+AOW_trgr_SSTM_can_aggressively_interfere_with_pre_ftl = {
+	if = {
+		limit = {
+			any_system_planet = {
+				exists = owner
+				owner = { is_primitive = yes }
+			}
+		}
+		from = { has_policy_flag = interference_aggressive }
+	}
+}
+#星系有会生成宜居星球的巨构
+AOW_trgr_SSTM_has_habitable_megastructures = {
+	OR = {
+		has_megastructure = ring_world_1
+		has_megastructure = ring_world_2
+		has_megastructure = ring_world_3_intermediate
+		has_megastructure = ring_world_ruined
+		has_megastructure = ring_world_restored
+		has_megastructure = AOW_MEGA_ring_world_2_0
+		has_megastructure = AOW_MEGA_ring_world_2_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_2_1
+		has_megastructure = AOW_MEGA_ring_world_2_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_0
+		has_megastructure = AOW_MEGA_ring_world_3_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_1
+		has_megastructure = AOW_MEGA_ring_world_3_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_0
+		has_megastructure = AOW_MEGA_ring_world_4_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_1
+		has_megastructure = AOW_MEGA_ring_world_4_2_intermediate
+		has_megastructure = kuat_ring_world_1
+		has_megastructure = kuat_ring_world_2_intermediate
+		has_megastructure = kuat_ring_world_2
+		has_megastructure = kuat_ring_world_3_intermediate
+		has_megastructure = azur_01_ring_world_1
+		has_megastructure = azur_01_ring_world_2_intermediate
+		has_megastructure = azur_01_ring_world_2
+		has_megastructure = azur_01_ring_world_3_intermediate
+		has_megastructure = azur_02_ring_world_1
+		has_megastructure = azur_02_ring_world_2_intermediate
+		has_megastructure = azur_02_ring_world_2
+		has_megastructure = azur_02_ring_world_3_intermediate
+	}
+}
+#任意邻近星系不在己方控制下
+AOW_trgr_SSTM_neighbor_didnt_undercontrol = {
+	any_neighbor_system = {
+		exists = owner
+		NOT = { owner = { is_same_value = from } }
+	}
+}
+#单恒星星系
+AOW_trgr_SSTM_single_star_system = {
+	count_system_planet = { limit = { is_star = yes } count = 1 }
+}

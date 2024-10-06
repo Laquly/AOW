@@ -1,0 +1,195 @@
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+@MRI_scale = 0.08
+entity = {
+	name = "MRI_mining_unit_entity"
+	#pdxmesh = "matter_decompressor_01_stage_2_mesh"
+	#meshsettings = {
+	#	name = "g_body1Shape"
+	#	index = 0
+	#	texture_diffuse = "mammalian_01_matter_decompressor_diffuse.dds"
+	#	texture_normal = "mammalian_01_matter_decompressor_normal.dds"
+	#	texture_specular = "mammalian_01_matter_decompressor_normal.dds"
+	#	shader = "PdxMeshShip"
+	#}
+	#default_state = "idle"
+	#state = { name = "idle" animation = "idle" }
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = molluscoid_01_mining_station_section_entity }
+	scale = 0.75
+}
+entity = {
+	name = "MRI_ring_mining_entity"
+	locator = { name = "root" position = { 0 0 38 } rotation = { 0 0 0 } }
+	attach = { root = MRI_mining_unit_entity }
+}
+entity = {
+	name = "MRI_ring_frame_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 90 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 -90 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 180 0 0 } }
+	attach = { loc1 = MRI_ring_mining_entity }
+	attach = { loc2 = MRI_ring_mining_entity }
+	attach = { loc3 = MRI_ring_mining_entity }
+	attach = { loc4 = MRI_ring_mining_entity }
+	playback_rate = 0
+	scale = 8
+}
+entity = {#横平面环
+	name = "MRI_ring_a_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { root = MRI_ring_frame_entity }
+}
+entity = {#竖平面环
+	name = "MRI_ring_b_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 90 0 0 } }
+	attach = { root = MRI_ring_frame_entity }
+}
+
+@MRI_animation_speed = 1.0
+@scale_1 = 0.75
+@scale_2 = 1.1
+@scale_3 = 1.6
+@scale_4 = 2.3
+@scale_5 = 3.3
+
+entity = {#横平面左右旋转
+	name = "MRI_ration_ring_x_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = MRI_ring_a_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+	scale = 1
+}
+entity = {#竖平面左右旋转
+	name = "MRI_ration_ring_z_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = MRI_ring_b_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+	scale = 1
+}
+entity = {#竖平面前后旋转
+	name = "MRI_ration_ring_y_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { root = MRI_ration_ring_z_entity }
+	scale = @scale_1
+}
+
+
+entity = {#2环旋转
+	name = "MRI_ration_ring_2_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = @scale_2 }
+	default_state = idle
+	attach = { root = MRI_ration_ring_y_entity }
+	attach = { loc1 = MRI_ration_ring_z_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+}
+entity = {#外环静止，2环旋转
+	name = "MRI_ration_ring_3x_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 90 } scale = @scale_3 }#外环
+	attach = { root = MRI_ration_ring_2_entity }
+	attach = { loc1 = MRI_ring_b_entity }
+}
+entity = {#3环旋转
+	name = "MRI_ration_ring_3_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = MRI_ration_ring_3x_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+}
+entity = {#外环静止，3环旋转
+	name = "MRI_ration_ring_4x_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 90 } scale = @scale_4 }#外环
+	attach = { root = MRI_ration_ring_3_entity }
+	attach = { loc1 = MRI_ring_b_entity }
+}
+entity = {#4环旋转
+	name = "MRI_ration_ring_4_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = MRI_ration_ring_4x_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+}
+entity = {#外环静止，4环旋转
+	name = "MRI_ration_ring_5x_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 90 } scale = @scale_5 }#外环
+	attach = { root = MRI_ration_ring_4_entity }
+	attach = { loc1 = MRI_ring_b_entity }
+}
+entity = {#5环旋转
+	name = "MRI_ration_ring_5_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = MRI_ration_ring_5x_entity }
+	state = { name = "idle" animation = "idle" animation_speed = @MRI_animation_speed looping = yes }
+}
+
+
+
+
+
+
+entity = {
+	name = "material_recombination_instrument_1_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } scale = @scale_1 }
+	attach = { root = MRI_ration_ring_z_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_2_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = @scale_2 }
+	attach = { loc1 = MRI_ring_a_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = MRI_ration_ring_2_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_3_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = @scale_3 }
+	attach = { loc1 = MRI_ring_a_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = MRI_ration_ring_3_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_4_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = @scale_4 }
+	attach = { loc1 = MRI_ring_a_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = MRI_ration_ring_4_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_5_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = @scale_5 }
+	attach = { loc1 = MRI_ring_a_entity }
+	scale = @MRI_scale
+}
+entity = {
+	name = "material_recombination_instrument_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = MRI_ration_ring_5_entity }
+	scale = @MRI_scale
+}

@@ -1,0 +1,5 @@
+entity = {
+	name = "space_sensor_station_1_entity"
+	pdxmesh = "space_sensor_station_mesh"
+	scale = 0.8
+}

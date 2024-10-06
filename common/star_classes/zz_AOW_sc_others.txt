@@ -1,0 +1,19 @@
+AOW_sc_binary_ds_zef = {
+	class		= b_star
+	icon            	= AOW_sc_binary_ds_zef
+	icon_scale		= 2
+	planet = {#戴森球
+		key = pc_b_star
+		class = b_star
+	}
+	planet = {#零素熔炉
+		key = pc_neutron_star
+		class = neutron_star
+	}
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+	is_environmental_hazard = yes
+	modifier = {
+		ship_speed_reduction = 0.5
+	}
+}

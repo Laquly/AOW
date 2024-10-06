@@ -1,0 +1,450 @@
+AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_OBAFGKM_STAR_WITHOUT_HABITABLE_PLANET"
+	build_time = @AOW_var_QSQM_0_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_0_COST_alloys
+			unity = @AOW_var_QSQM_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_QSQM_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	potential = { AOW_trigger_mega_potential = { KEY = quindecillion_stellar_quantum_matrix } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_quindecillion_stellar_quantum_matrix } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		if = {
+			limit = {
+				from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+			}
+			custom_tooltip = {#必须是单恒星星系
+				fail_text = "AOW_mega_requires_SSTM_single_star"
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+			custom_tooltip = {#不能有宜居星球
+				fail_text = "requires_no_habitable_planets"
+				AOW_trgr_SSTM_has_habitable_planets = no
+			}
+			custom_tooltip = {#不能有建造在非恒星上的巨构
+				fail_text = "AOW_mega_requires_SSTM_no_planetary_megastructure"
+				AOW_trgr_SSTM_non_star_has_megastructure = no
+			}
+			custom_tooltip = {#不能建造在肃正星系
+				fail_text = "AOW_mega_requires_SSTM_no_ai_system"
+				NOT = { has_star_flag = AI_hub }
+			}
+		}
+		custom_tooltip = {#星系内不能有宜居巨构
+			fail_text = "AOW_mega_requires_SSTM_no_habitable_megastructures"
+			AOW_trgr_SSTM_has_habitable_megastructures = no
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星
+				fail_text = "AOW_mega_requires_PLNT_obafgkm_star"
+				AOW_trgr_PLNT_obafgkm_star = yes
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = quindecillion_stellar_quantum_matrix }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 500
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+		modifier = { factor = 1.5	from = { is_materialist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = quindecillion_stellar_quantum_matrix
+			constructing = AOW_MEGA_quindecillion_stellar_quantum_matrix_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = AOW_flag_CNTR_qsqm_1 } }
+				set_country_flag = AOW_flag_CNTR_qsqm_1
+			}
+			else_if = {
+				limit = { has_country_flag = AOW_flag_CNTR_qsqm_1 }
+				remove_country_flag = AOW_flag_CNTR_qsqm_1
+				set_country_flag = AOW_flag_CNTR_qsqm_2
+			}
+			country_event = { id = AOW_mega_notification.3060 }
+		}
+		fromfrom = {
+			set_megastructure_flag = quindecillion_stellar_quantum_matrix
+			set_megastructure_flag = AOW_flag_MEGA_quindecillion_stellar_quantum_matrix_@owner
+			planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+			if = {
+				limit = { planet = { AOW_trgr_PLNT_hyper_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_hyper
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_super_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_super
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_o_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_O
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_b_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_B
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_giant_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_giant
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_a_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_A
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_f_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_F
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_g_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_G
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_k_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_K
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_m_star = yes } }
+				upgrade_megastructure_to = AOW_MEGA_qsqm_0_M
+				finish_upgrade = yes
+			}
+		}
+		AOW_eft_SSTM_set_planet_flag_has_megastructure = yes #如果有会移除行星的巨构，则该星系不能再在行星上建造巨构了
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_1 = {
+	entity = "qsqm_1_entity"
+	construction_entity = "qsqm_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_1_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_1_COST_alloys
+			unity = @AOW_var_QSQM_1_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_1_PRDC_research
+			society_research = @AOW_var_QSQM_1_PRDC_research
+			engineering_research = @AOW_var_QSQM_1_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_1_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_1_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_1_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		AOW_eft_SSTM_empty_system = yes
+		from = { country_event = { id = AOW_mega_notification.3061 } }
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_2 = {
+	entity = "qsqm_2_entity"
+	construction_entity = "qsqm_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_2_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_2_COST_alloys
+			unity = @AOW_var_QSQM_2_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_2_PRDC_research
+			society_research = @AOW_var_QSQM_2_PRDC_research
+			engineering_research = @AOW_var_QSQM_2_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_2_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_2_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_2_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3062 } }
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_3 = {
+	entity = "qsqm_3_entity"
+	construction_entity = "qsqm_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_3_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_3_COST_alloys
+			unity = @AOW_var_QSQM_3_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_3_PRDC_research
+			society_research = @AOW_var_QSQM_3_PRDC_research
+			engineering_research = @AOW_var_QSQM_3_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_3_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_3_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_3_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3063 } }
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_4 = {
+	entity = "qsqm_4_entity"
+	construction_entity = "qsqm_4_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_4_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_4_COST_alloys
+			unity = @AOW_var_QSQM_4_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_4_PRDC_research
+			society_research = @AOW_var_QSQM_4_PRDC_research
+			engineering_research = @AOW_var_QSQM_4_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_4_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_4_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_3 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.3064 } }
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
+	entity = "qsqm_5_entity"
+	construction_entity = "qsqm_5_construction_entity"
+	portrait = "GFX_megastructure_qsqm_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_5_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_5_COST_alloys
+			unity = @AOW_var_QSQM_5_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_5_PRDC_research
+			society_research = @AOW_var_QSQM_5_PRDC_research
+			engineering_research = @AOW_var_QSQM_5_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_5_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_5_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_5_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_4 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		AOW_eft_SSTM_qsqm_set_star_class = yes
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_mega_notification.3065 }
+		}
+	}
+}
+
+
+
+AOW_MEGA_quindecillion_stellar_quantum_matrix_ruined = {
+	entity = "qsqm_ruined_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	potential = { always = no }
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_restored = {
+	entity = "qsqm_5_entity"
+	portrait = "GFX_megastructure_qsqm_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_QSQM_5_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_QSQM_5_COST_alloys
+			unity = @AOW_var_QSQM_5_COST_unity
+		}
+		produces = {
+			physics_research = @AOW_var_QSQM_5_PRDC_research
+			society_research = @AOW_var_QSQM_5_PRDC_research
+			engineering_research = @AOW_var_QSQM_5_PRDC_research
+		}
+		upkeep = {
+			alloys = @AOW_var_QSQM_5_UPKP_alloys
+			sr_dark_matter = @AOW_var_QSQM_5_UPKP_darkmatter
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = @AOW_var_QSQM_5_research_speed
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_multi_dimensional_warehouse
+		category = megastructures
+		alloys = @AOW_var_QSQM_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	possible = { from = { has_ascension_perk = ap_cosmic_wonders } }
+	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_ruined }
+	on_build_complete = {
+		every_system_ambient_object = {
+			limit = { is_ambient_object_type = large_debris_object }
+			destroy_ambient_object = this
+		}
+		AOW_eft_SSTM_qsqm_set_star_class = yes
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_mega_notification.3065 }
+		}
+	}
+}

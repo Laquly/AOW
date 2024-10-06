@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "se_orbit_mesh"
+		file = "gfx/models/ships/megastructures/stellar_eater/orbit.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "orbitshape"
+			index = 0
+			texture_diffuse = "dreadnought_01_diffuse.dds"
+			texture_normal = "dreadnought_01_normal.dds"
+			texture_specular = "dreadnought_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

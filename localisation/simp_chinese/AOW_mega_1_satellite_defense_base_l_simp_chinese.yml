@@ -1,0 +1,51 @@
+﻿l_simp_chinese:
+
+ AOW_text_satellite_defense_base_desc:0"$AOW_mega_lv_1$\n\n§H名字：§!$AOW_MEGA_satellite_defense_base$\n§H类别：§!军事类\n§H作用：§!只能建造在小行星或卫星上，生成一个不可移动的防御站，提供火力输出。"
+ AOW_var_ai_mega_cap_satellite_defense_base:0"§Y[event_target:global_event_country.AOW_var_ai_mega_cap_satellite_defense_base]§!"
+ AOW_var_player_mega_cap_satellite_defense_base:0"§E[event_target:global_event_country.AOW_var_player_mega_cap_satellite_defense_base]§!"
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_satellite_defense_base:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_TECH_satellite_defense_base_desc:0"一种大型防御平台，其战斗力可以随着战舰科技的提升而提升，由于体积较小，只适合建造在小型天体上。"
+ AOW_TECH_satellite_defense_base_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_satellite_defense_base$"
+ AOW_TECH_satellite_defense_base_effect_desc:0"§H$AOW_MEGA_satellite_defense_base$§!\n\n只能建造在小行星或卫星上，生成一个不可移动的防御站，提供火力输出。"
+ AOW_TECH_satellite_defense_base_hull_1:0"改进$AOW_MEGA_satellite_defense_base$船体"
+ AOW_TECH_satellite_defense_base_hull_1_desc:0"基于最近战舰科技的突破，我们的$AOW_MEGA_satellite_defense_base$在防御性能方面也得到了一定的提升。"
+ AOW_TECH_satellite_defense_base_hull_2:0"先进$AOW_MEGA_satellite_defense_base$船体"
+ AOW_TECH_satellite_defense_base_hull_2_desc:0"基于最近战舰科技的突破，我们的$AOW_MEGA_satellite_defense_base$在防御性能方面也得到了一定的提升。"
+ mod_shipsize_AOW_shipsize_satellite_defense_base_hull_add:0"$AOW_MEGA_satellite_defense_base$船体值"
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_satellite_defense_base_1:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_MEGA_satellite_defense_base_1_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在§Y小行星§!或§Y卫星§!上\n\n$EFFECTS_HEADER$\n$t$—生成一个不可移动的防御站，提供火力输出。"
+ AOW_MEGA_satellite_defense_base_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$以小型天体为指挥基址和补给站，为围绕其运动的防御站提供能量和目标指引。"
+ AOW_MEGA_satellite_defense_base_1_DESC:0""
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_satellite_defense_base.100.desc:0"为了在境内灵活部署防线，我们特地设计了这款适用于小型天体的防御平台，并且可根据我们的战舰科技而加装新的武器，它的存在对我们的防线构筑起到了不可忽视的作用。"
+ AOW_evt_satellite_defense_base.100.a:0"坚固防线！"
+
+ AOW_shipsize_satellite_defense_base:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_shipsize_satellite_defense_base_plural:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_section_satellite_defense_base_core_1_1:0"初始-导弹核心"
+ AOW_section_satellite_defense_base_core_1_2:0"初始-航母核心"
+ AOW_section_satellite_defense_base_core_1_3:0"初始-进攻核心"
+ AOW_section_satellite_defense_base_core_2_1:0"高级-导弹核心"
+ AOW_section_satellite_defense_base_core_2_2:0"高级-航母核心"
+ AOW_section_satellite_defense_base_core_2_3:0"高级-进攻核心"
+ AOW_section_satellite_defense_base_core_3_1:0"泰坦-导弹核心"
+ AOW_section_satellite_defense_base_core_3_2:0"泰坦-航母核心"
+ AOW_section_satellite_defense_base_core_3_3:0"泰坦-进攻核心"
+ AOW_SDB_FISSION_REACTOR: "$FISSION_REACTOR$"
+ AOW_SDB_FUSION_REACTOR: "$FUSION_REACTOR$"
+ AOW_SDB_COLD_FUSION_REACTOR: "$COLD_FUSION_REACTOR$"
+ AOW_SDB_ANTIMATTER_REACTOR: "$ANTIMATTER_REACTOR$"
+ AOW_SDB_ZERO_POINT_REACTOR: "$ZERO_POINT_REACTOR$"
+ AOW_SDB_DARK_MATTER_REACTOR: "$DARK_MATTER_REACTOR$"
+ AOW_SDB_PERDITION_BEAM_TITAN: "$PERDITION_BEAM$"

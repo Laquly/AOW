@@ -1,0 +1,148 @@
+AOW_MEGA_plane_siphon_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	build_time = @AOW_var_PS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PS_0_COST_alloys
+			unity = @AOW_var_PS_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PS_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_plane_siphon
+		category = megastructures
+		alloys = @AOW_var_PS_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_plane_siphon" }
+	potential = { AOW_trigger_mega_potential = { KEY = plane_siphon } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_plane_siphon } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#一个星系只能有一个
+			fail_text = "AOW_mega_requires_SSTM_no_plane_siphon"
+			NOR = {
+				has_megastructure = AOW_MEGA_plane_siphon_0
+				has_megastructure = AOW_MEGA_plane_siphon_1
+				has_megastructure = AOW_MEGA_plane_siphon_2
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			always = no
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#资源限制
+		modifier = { factor = 0.1	from = { has_monthly_income = { resource = astral_threads value >= 100 } } }
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = plane_siphon
+			constructing = AOW_MEGA_plane_siphon_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_plane_siphon.100 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_plane_siphon_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_plane_siphon_1 = {
+	entity = "plane_siphon_1_entity"
+	construction_entity = "plane_siphon_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_PS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PS_1_COST_alloys
+			unity = @AOW_var_PS_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PS_1_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_plane_siphon
+		category = megastructures
+		alloys = @AOW_var_PS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_plane_siphon" }
+	upgrade_from = { AOW_MEGA_plane_siphon_0 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_plane_siphon.101 } }
+	}
+}
+AOW_MEGA_plane_siphon_2 = {
+	entity = "plane_siphon_2_entity"
+	construction_entity = "plane_siphon_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_PS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PS_2_COST_energy
+			alloys = @AOW_var_PS_2_COST_alloys
+			unity = @AOW_var_PS_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PS_2_UPKP_energy
+		}
+		produces = {
+			astral_threads = @AOW_var_PS_2_PRDC_astral_threads
+		}
+	}
+	country_modifier = {
+		country_resource_max_astral_threads_add = @AOW_var_PS_2_PRDC_country_resource_max_astral_threads
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_plane_siphon
+		category = megastructures
+		alloys = @AOW_var_PS_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_plane_siphon" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_plane_siphon_1 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_evt_plane_siphon.102 }
+			set_country_flag = has_built_or_repaired_megastructure
+		}
+	}
+}

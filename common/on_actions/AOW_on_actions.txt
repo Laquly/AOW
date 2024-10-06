@@ -1,0 +1,120 @@
+on_game_start = {
+	events = {
+		AOW_core.1	#开局事件	set_global_flag = AOW_installed
+	}
+}
+
+#重新载入存档触发的事件
+on_single_player_save_game_load = {
+	events = {
+		AOW_core.10
+	}
+}
+
+# This = 按下开始按钮的国家
+#on_press_begin = {
+#	events = {
+#
+#	}
+#}
+
+# This = 国家
+on_tech_increased = {
+	events = {
+		AOW_ap.1
+	}
+}
+
+# THIS = 被建立分部的星球
+# FROM = 建立分部的国家
+on_branch_office_established = {
+	events = {
+		AOW_prosperous_trade_station.1	#建立分部，设置country_flag
+	}
+}
+
+# Scope = 舰船
+# From = 星系
+# FromFrom = 国家
+on_entering_system_first_time = {
+	events = {
+		AOW_evt_void_vortex.200	#第一次进入“曙光破灭”星系
+		AOW_evt_zero_element_furnace.200	#第一次进入破碎零素提取器星系
+		AOW_evt_pulsar_clock.200	#第一次进入破碎脉冲时记星系
+		AOW_evt_planetary_ship.10 #第一次进入行星战舰星系
+		AOW_evt_ring_world.200 #第一次进入废弃环世界星系
+	}
+}
+
+#This = 星系
+#From = 摧毁者 (如果使用了焚天神兵)
+on_destroy_star_system = {
+	events = {
+		AOW_vanilla_expansion.2	#清除残留的planet_flag (megastructure, has_megastructure)
+		AOW_vanilla_expansion.3
+	}
+}
+# This = 被摧毁的恒星基地 (not ship!)
+# From = 摧毁恒星基地的舰船
+on_starbase_destroyed = {
+	events = {
+		AOW_mega_notification.1166
+	}
+}
+# Called when a Starbase changes owner
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+on_starbase_transfer = {
+	events = {
+		AOW_mega_notification.1167
+	}
+}
+
+# A Megastructure has been upgraded
+# Root = 国家
+# From = 巨构
+# FromFrom = 星系
+on_megastructure_upgraded = {
+	events = {
+	}
+}
+
+# Executed when a megastructure has a new owner
+# this = 新拥有者
+# from = 巨构
+# fromfrom = 旧拥有者 (如果存在)
+on_megastructure_change_owner = {
+	events = {
+		
+	}
+}
+
+# Executed when a megastructure is rendered ownerless
+# this = 包含巨构的星系
+# from = 巨构
+# fromfrom = 旧拥有者 (如果存在)
+on_megastructure_ownerless = {
+	events = {
+		
+	}
+}
+
+on_yearly_pulse_country = {
+	events = {
+		AOW_mega_notification.2035
+		red_dawn.1
+	}
+}
+
+# this = country
+on_five_year_pulse_country = {
+	events = {
+	}
+}
+
+
+on_destroy_planet_with_AOW_PLANET_KILLER_celestial_orbit_deployment_system = {
+	events = {
+		AOW_evt_star_transfer.500
+	}
+}

@@ -1,0 +1,320 @@
+AOW_MEGA_star_picker_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_SP_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_STAR_PICKER"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_0_COST_alloys
+			unity = @AOW_var_SP_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SP_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_star_picker" }
+	potential = { AOW_trigger_mega_potential = { KEY = star_picker } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_star_picker } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#不能是新星、超新星
+			fail_text = "AOW_mega_requires_SSTM_no_Nova_Microquasar"
+			NOR = {
+				is_star_class = sc_nova_1
+				is_star_class = sc_nova_2
+				is_star_class = sc_microquasar_1
+				is_star_class = sc_microquasar_2
+			}
+		}
+		custom_tooltip = {#必须是单恒星星系
+			fail_text = "AOW_mega_requires_SSTM_single_star"
+			OR = {
+				from = { has_technology = AOW_TECH_dimension_hiding }
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星和白矮星
+				fail_text = "AOW_mega_requires_PLNT_obafgkm_star_d_star"
+				OR = {
+					AOW_trgr_PLNT_obafgkm_star = yes
+					is_planet_class = pc_d_star		#白矮星
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = star_picker }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 300
+		#位置限制
+		modifier = { factor = 0
+			fromfrom.planet = {
+				OR = {
+					AOW_trgr_PLNT_o_spectrum = yes
+					AOW_trgr_PLNT_b_spectrum = yes
+					AOW_trgr_PLNT_a_spectrum = yes
+				}
+			}
+		}
+		modifier = { factor = 0.1	fromfrom.planet = { AOW_trgr_PLNT_f_spectrum = yes } }
+		modifier = { factor = 1.25	fromfrom.planet = { AOW_trgr_PLNT_k_spectrum = yes } }
+		modifier = { factor = 1.5	fromfrom.planet = { AOW_trgr_PLNT_m_spectrum = yes } }
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = star_picker
+			constructing = AOW_MEGA_star_picker_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = AOW_flag_CNTR_star_picker_1 } }
+				set_country_flag = AOW_flag_CNTR_star_picker_1
+			}
+			else_if = {
+				limit = { has_country_flag = AOW_flag_CNTR_star_picker_1 }
+				remove_country_flag = AOW_flag_CNTR_star_picker_1
+				set_country_flag = AOW_flag_CNTR_star_picker_2
+			}
+			country_event = { id = AOW_mega_notification.2020 }
+		}
+		fromfrom = {
+			set_megastructure_flag = star_picker
+			set_megastructure_flag = AOW_flag_MEGA_star_picker_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_star_picker_1 = {
+	entity = "star_picker_01_entity"
+	construction_entity = "star_picker_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = @AOW_var_SP_1_TIME
+	scales_with_planet = yes
+	use_planet_resource = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_1_COST_alloys
+			unity = @AOW_var_SP_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SP_1_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_SP_1_UPKP_energy_MultiStar
+			alloys = @AOW_var_SP_1_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_star_picker_0 }
+	prerequisites = { "AOW_TECH_star_picker" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2021 } }
+	}
+}
+AOW_MEGA_star_picker_2 = {
+	entity = "star_picker_02_entity"
+	construction_entity = "star_picker_02_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = @AOW_var_SP_2_TIME
+	scales_with_planet = yes
+	use_planet_resource = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_2_COST_alloys
+			unity = @AOW_var_SP_2_COST_unity
+		}
+		produces = {
+			minerals = @AOW_var_SP_2_PRDC_minerals
+			alloys = @AOW_var_SP_2_PRDC_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SP_2_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_SP_2_UPKP_energy_MultiStar
+			alloys = @AOW_var_SP_2_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_star_picker_1 }
+	prerequisites = { "AOW_TECH_star_picker" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2022 } }
+	}
+}
+AOW_MEGA_star_picker_3 = {
+	entity = "star_picker_03_entity"
+	construction_entity = "star_picker_03_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = @AOW_var_SP_3_TIME
+	scales_with_planet = yes
+	use_planet_resource = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_3_COST_alloys
+			unity = @AOW_var_SP_3_COST_unity
+		}
+		produces = {
+			minerals = @AOW_var_SP_3_PRDC_minerals
+			alloys = @AOW_var_SP_3_PRDC_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SP_3_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_SP_3_UPKP_energy_MultiStar
+			alloys = @AOW_var_SP_3_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_star_picker_2 }
+	prerequisites = { "AOW_TECH_star_picker" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2023 } }
+	}
+}
+AOW_MEGA_star_picker_4 = {
+	entity = "star_picker_04_entity"
+	construction_entity = "star_picker_04_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = @AOW_var_SP_4_TIME
+	scales_with_planet = yes
+	use_planet_resource = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_4_COST_alloys
+			unity = @AOW_var_SP_4_COST_unity
+		}
+		produces = {
+			minerals = @AOW_var_SP_4_PRDC_minerals
+			alloys = @AOW_var_SP_4_PRDC_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SP_4_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_SP_4_UPKP_energy_MultiStar
+			alloys = @AOW_var_SP_4_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_star_picker_3 }
+	prerequisites = { "AOW_TECH_star_picker" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2024 } }
+	}
+}
+AOW_MEGA_star_picker_5 = {
+	entity = "star_picker_05_entity"
+	construction_entity = "star_picker_05_construction_entity"
+	portrait = "GFX_megastructure_star_picker_background"
+	build_time = @AOW_var_SP_5_TIME
+	show_in_outliner = no
+	scales_with_planet = yes
+	use_planet_resource = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SP_5_COST_alloys
+			unity = @AOW_var_SP_5_COST_unity
+		}
+		produces = {
+			minerals = @AOW_var_SP_5_PRDC_minerals
+			alloys = @AOW_var_SP_5_PRDC_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SP_5_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_SP_5_UPKP_energy_MultiStar
+			alloys = @AOW_var_SP_5_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_picker
+		category = megastructures
+		alloys = @AOW_var_SP_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_star_picker_4 }
+	prerequisites = { "AOW_TECH_star_picker" }
+	show_prereqs = yes
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_mega_notification.2025 }
+		}
+	}
+}

@@ -1,0 +1,33 @@
+arc_furnace_tooltip = {
+	custom_tooltip = {
+		success_text = arc_furnace_system_tt
+		exists = from
+		from = {
+			has_technology = tech_orbital_arc_furnace
+		}
+		any_system_planet = {
+			is_planet_class = pc_molten
+			has_anomaly = no
+			AOW_trgr_PLNT_existing_megastructure = no
+		}
+	}
+}
+
+habitat_tooltip = {
+	custom_tooltip = {
+		success_text = habitat_system_tt
+		exists = from
+		from = {
+			OR = {
+				has_technology = tech_habitat_1
+				has_civic = civic_diadochi
+				has_civic = civic_great_khans_legacy
+				has_country_flag = democratic_khanate_flag
+			}
+		}
+		NOT = {
+			has_megastructure = habitat_central_complex_ruined
+			has_star_flag = solarpunk_system_02
+		}
+	}
+}

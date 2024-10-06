@@ -1,0 +1,882 @@
+##############################################################################
+#物理学
+##############################################################################
+#极速超空间中继器
+AOW_TECH_faster_hyper_relay = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { particles }
+	#prerequisites = { tech_hyper_relays tech_gateway_activation }
+	weight = @tier4weight3
+	is_rare = yes
+	# modifier = {
+	# 	relay_bypass_empire_windup_mult = 1
+	# }
+	potential = { always = no }
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#时空曲率操纵
+AOW_TECH_spatiotemporal_curvature_manipulation = {
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_mine_dark_matter" }
+	weight = @tier5weight3
+	weight_modifier = {
+		factor = 10
+	}
+	ai_weight = {
+		factor = 20
+	}
+}
+#暗物质曲率陷阱
+AOW_TECH_dark_matter_curvature_trap = {
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_mega_engineering" "AOW_TECH_spatiotemporal_curvature_manipulation" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = dark_matter_curvature_trap } }
+		}
+	}
+	ai_weight = {
+		factor = 20
+	}
+}
+#星云精炼中心
+AOW_TECH_nebula_refining_center = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_mine_volatile_motes" "tech_mine_rare_crystals" "tech_mine_exotic_gases" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = nebula_refining_center } }
+		}
+		modifier = {
+			factor = 0.1
+			any_planet_within_border = { is_inside_nebula = no }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_nebula_refining_center }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#位面虹吸器
+AOW_TECH_plane_siphon = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_astral_harvesting" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = plane_siphon } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_plane_siphon }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#轨道采集器
+AOW_TECH_orbital_acquisition_system = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_mine_exotic_gases" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = orbital_acquisition_system } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_orbital_acquisition_system }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#行星波动炮
+AOW_TECH_planetary_blaster_system = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_combat_computers_2" "tech_ftl_inhibitor" "tech_titans" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = planetary_blaster_system } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_planetary_blaster_system }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#固态行星能量释放
+AOW_TECH_solid_planetary_energy_release = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "AOW_TECH_planetary_blaster_system" }
+	weight = @tier6weight3
+	is_rare = yes
+	prereqfor_desc = {
+		custom = {
+			title = "AOW_TECH_solid_planetary_energy_release_effect_title"
+			desc = "AOW_TECH_solid_planetary_energy_release_effect_desc"
+		}
+	}
+	weight_modifier = {
+		modifier = {#没有建造或者修复过行星波动炮，就不能刷出这个科技
+			factor = 0
+			NOT = { has_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_solid_planetary_energy_release }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#星轨
+AOW_TECH_hyperlane_controller = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_hyper_drive_3" }
+	potential = { is_ai = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = hyperlane_controller } }
+		}
+		modifier = {
+			factor = 5
+			has_technology = tech_jump_drive_1
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_hyperlane_controller }
+			}
+		}
+	}
+	ai_weight = { factor = 0 }
+}
+#星网
+AOW_TECH_advanced_hyperlane_controller = {
+	area = physics
+	cost = @tier6cost1
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_hyperlane_controller" }
+	potential = { is_ai = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = advanced_hyperlane_controller } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = AOW_flag_CNTR_add_hyperlane_with_HC }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = AOW_flag_CNTR_remove_hyperlane_with_HC }
+		}
+		modifier = {
+			factor = 5
+			has_technology = tech_jump_drive_1
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_advanced_hyperlane_controller }
+			}
+		}
+	}
+	ai_weight = { factor = 0 }
+}
+##############################################################################
+#社会学
+##############################################################################
+#繁荣贸易站
+AOW_TECH_prosperous_trade_station = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { statecraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_galactic_markets" }
+	potential = { is_gestalt = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = prosperous_trade_station } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = AOW_flag_CNTR_branch_office_established }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_prosperous_trade_station }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#银河珍宝馆
+AOW_TECH_artifacts_transcription_palace = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { statecraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_archaeostudies" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = artifacts_transcription_palace } }
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { has_relic = r_rubricator }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_artifacts_transcription_palace }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#深空监狱
+AOW_TECH_deep_space_prison = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { statecraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = deep_space_prison } }
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_artificial_moral_codes
+				has_technology = tech_unity_of_purpose
+			}
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_deep_space_prison }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#英灵殿
+AOW_TECH_cemetery_of_martyrs = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = cemetery_of_martyrs } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_cemetery_of_martyrs }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#海军指挥基地
+AOW_TECH_naval_command_base = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = naval_command_base } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_naval_command_base }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#合成食物工厂
+AOW_TECH_synthetic_food_factory = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { biology }
+	is_rare = yes
+	prerequisites = { "tech_mega_engineering" "tech_nano_vitality_crops" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = synthetic_food_factory } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_synthetic_food_factory }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#泽珞升华器
+AOW_TECH_zro_sublimator = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { psionics }
+	is_rare = yes
+	prerequisites = { "AOW_TECH_planetary_mining_station" "tech_mine_zro" }
+	weight = @tier5weight3
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = zro_sublimator } }
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { has_ascension_perk = ap_transcendence }
+		}
+		modifier = {
+			factor = 5
+			has_ascension_perk = ap_mind_over_matter
+		}
+		modifier = {
+			factor = 10
+			has_ascension_perk = ap_transcendence
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_zro_sublimator }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+##############################################################################
+#工程学
+##############################################################################
+
+#建设效率提升
+AOW_TECH_improved_construction_efficiency_2 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { industry }
+	is_rare = yes
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_1" "tech_mega_engineering" }
+	weight = @tier4weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_master_builders }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_improved_construction_efficiency_2 }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#行星开采站
+AOW_TECH_planetary_mining_station = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { industry }
+	is_rare = yes
+	prereqfor_desc = {
+		custom = {
+			title = "AOW_TECH_planetary_mining_station_effect_title"
+			desc = "AOW_TECH_planetary_mining_station_effect_desc"
+		}
+	}
+	prerequisites = { "AOW_TECH_asteroid_mining_station" "tech_mega_engineering" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = planetary_mining_station } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_planetary_mining_station }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#奇观建设局
+AOW_TECH_wonder_construction_bureau = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { industry }
+	is_rare = yes
+	#potential = { always = no }
+	prerequisites = { "tech_mine_living_metal" "tech_mega_engineering" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = wonder_construction_bureau } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_wonder_construction_bureau }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#纳米激活器
+AOW_TECH_nanites_activator = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { materials }
+	is_rare = yes
+	prerequisites = { "tech_mega_engineering" "tech_nanite_transmutation" "tech_volatile_motes" "tech_rare_crystals" "tech_exotic_gases" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = nanites_activator } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_nanites_activator }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#纳米变形器
+AOW_TECH_nanites_transmutation = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { materials }
+	is_rare = yes
+	prerequisites = { "tech_mega_engineering" "tech_nanite_transmutation" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = nanites_transmutation } }
+		}
+		modifier = {
+			factor = 2
+			has_galactic_wonders = yes
+		}
+		modifier = {
+			factor = 6
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_nanites_transmutation }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}

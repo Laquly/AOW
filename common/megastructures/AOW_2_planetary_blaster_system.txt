@@ -1,0 +1,398 @@
+AOW_MEGA_planetary_blaster_system_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -6 y = -6 }
+	build_time = @AOW_var_PBS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PLANETARY_BLASTER_SYSTEM"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PBS_0_COST_alloys
+			influence = @AOW_var_PBS_0_COST_influence
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_blaster_system" }
+	potential = { AOW_trigger_mega_potential = { KEY = planetary_blaster_system } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_planetary_blaster_system } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能是小行星、卫星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_gas_giant
+						is_planet_class = pc_cold_gas_giant
+						is_planet_class = pc_hot_gas_giant
+						is_planet_class = pc_cloudless_gas_giant
+						is_planet_class = pc_dwarf_gas_giant
+					}
+				}
+				always = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_barren
+						is_planet_class = pc_barren_cold
+						is_planet_class = pc_molten
+						is_planet_class = pc_toxic
+						is_planet_class = pc_frozen
+						is_planet_class = pc_iron
+						is_planet_class = pc_carbon
+						is_planet_class = pc_chthonian
+						is_planet_class = pc_diamond
+						is_planet_class = pc_hothouse
+						is_planet_class = pc_volcanic
+						is_planet_class = pc_ethane_ocean
+						is_planet_class = pc_hydrocarbon
+					}
+				}
+				custom_tooltip = {#必须为气态行星
+					fail_text = "AOW_mega_requires_PLNT_gas_giant"
+					from = { has_technology = AOW_TECH_solid_planetary_energy_release }
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = "AOW_mega_requires_PLNT_no_planetary_blaster_system"
+					always = no
+				}
+			}
+			#custom_tooltip = {#不能为肃正星球
+			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
+			#	NOT = { has_planet_flag = crisis_vital_planet }
+			#}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 50
+		#位置限制
+		modifier = {
+			factor = 0.1
+			any_system_megastructure = {
+				OR = {
+					is_megastructure_type = AOW_MEGA_planetary_blaster_system_0
+					is_megastructure_type = AOW_MEGA_planetary_blaster_system_1
+					is_megastructure_type = AOW_MEGA_planetary_blaster_system_2
+					is_megastructure_type = AOW_MEGA_planetary_blaster_system_3
+					is_megastructure_type = AOW_MEGA_planetary_blaster_system_4
+				}
+			}
+		}
+		modifier = { factor = 5	any_system_planet = { is_colony = yes } }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = planetary_blaster_system
+			constructing = AOW_MEGA_planetary_blaster_system_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1160 }
+		}
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_planetary_blaster_system_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_planetary_blaster_system_1 = {
+	entity = "planetary_blaster_system_1_entity"
+	construction_entity = "planetary_blaster_system_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PBS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PBS_1_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_1_UPKP_energy 
+			alloys = @AOW_var_PBS_1_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_blaster_system" }
+	upgrade_from = { AOW_MEGA_planetary_blaster_system_0 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1161 }
+		}
+	}
+}
+AOW_MEGA_planetary_blaster_system_2 = {
+	entity = "planetary_blaster_system_2_entity"
+	construction_entity = "planetary_blaster_system_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PBS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PBS_2_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_2_UPKP_energy
+			alloys = @AOW_var_PBS_2_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_blaster_system" }
+	upgrade_from = { AOW_MEGA_planetary_blaster_system_1 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1162 }
+		}
+	}
+}
+AOW_MEGA_planetary_blaster_system_3 = {
+	entity = "planetary_blaster_system_3_entity"
+	construction_entity = "planetary_blaster_system_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PBS_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PBS_3_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_3_UPKP_energy
+			alloys = @AOW_var_PBS_3_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_blaster_system" }
+	upgrade_from = { AOW_MEGA_planetary_blaster_system_2 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1163 }
+		}
+	}
+}
+AOW_MEGA_planetary_blaster_system_4 = {
+	entity = AOW_shipsize_frame_entity#"planetary_blaster_system_4_entity"
+	portrait = "GFX_megastructure_planetary_blaster_system_background"
+	hide_name = yes
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PBS_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PBS_4_COST_energy
+			volatile_motes = @AOW_var_PBS_4_COST_sr
+			exotic_gases = @AOW_var_PBS_4_COST_sr
+			rare_crystals = @AOW_var_PBS_4_COST_sr
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_4_UPKP_energy
+			alloys = @AOW_var_PBS_4_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_3_COST_alloys
+		minerals = 0
+		vm = @AOW_var_PBS_4_COST_sr
+		eg = @AOW_var_PBS_4_COST_sr
+		rc = @AOW_var_PBS_4_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_planetary_blaster_system" }
+	possible = {
+		custom_tooltip = {
+			fail_text = "btn_requires_only_one_pbs_design"
+			from = {
+				count_owned_design = {
+					limit = { is_ship_size = AOW_shipsize_planetary_blaster_system }
+					count = 1
+				}
+			}
+		}
+	}
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_planetary_blaster_system_3 }
+	on_build_complete = {
+		fromfrom.planet = {
+			create_starbase = {
+				size = AOW_shipsize_planetary_blaster_system
+				owner = root.from
+				#module = <starbase_module>
+				#building = <starbase_building>
+				effect = {  }
+			}
+		}
+		from = {
+			country_event = { id = AOW_mega_notification.1164 }
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
+		}
+		#remove_megastructure = fromfrom
+	}
+}
+
+
+
+AOW_MEGA_planetary_blaster_system_ruined = {
+	entity = "planetary_blaster_system_ruined_entity"
+	portrait = "GFX_megastructure_planetary_blaster_system_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	potential = { always = no }
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_3_COST_alloys
+		minerals = 0
+		vm = @AOW_var_PBS_4_COST_sr
+		eg = @AOW_var_PBS_4_COST_sr
+		rc = @AOW_var_PBS_4_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+}
+AOW_MEGA_planetary_blaster_system_restored = {
+	entity = AOW_shipsize_frame_entity#"planetary_blaster_system_4_entity"
+	portrait = "GFX_megastructure_planetary_blaster_system_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PBSr_TIME
+	resources = {
+		category = megastructures
+		cost = {#如果不是自己造的，修复就得花费影响力
+			trigger = { NOT ={ has_megastructure_flag = AOW_flag_MEGA_was_built_by_@owner } }
+			influence = @AOW_var_PBS_0_COST_influence
+		}
+		cost = {
+			energy = @AOW_var_PBSr_COST_energy
+			alloys = @AOW_var_PBSr_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_PBS_4_UPKP_energy
+			alloys = @AOW_var_PBS_4_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_planetary_blaster_system
+		category = megastructures
+		alloys = @AOW_var_PBS_3_COST_alloys
+		minerals = 0
+		vm = @AOW_var_PBS_4_COST_sr
+		eg = @AOW_var_PBS_4_COST_sr
+		rc = @AOW_var_PBS_4_COST_sr
+		lm = 0 zo = 0 dm = 0
+	}
+	possible = {
+		from = { has_technology = tech_mega_engineering }
+		custom_tooltip = {
+			fail_text = "btn_requires_only_one_pbs_design"
+			from = {
+				count_owned_design = {
+					limit = { is_ship_size = AOW_shipsize_planetary_blaster_system }
+					count = 1
+				}
+			}
+		}
+	}
+	upgrade_from = { AOW_MEGA_planetary_blaster_system_ruined }
+	on_build_complete = {
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_planetary_blaster_system_@owner }
+		fromfrom.planet = {
+			create_starbase = {
+				size = AOW_shipsize_planetary_blaster_system
+				owner = root.from
+				#module = <starbase_module>
+				#building = <starbase_building>
+				effect = {  }
+			}
+			save_event_target_as = AOW_tgt_PLNT_planetary_blaster_system
+		}
+		from = {
+			country_event = { id = AOW_mega_notification.1165 }
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
+		}
+		#remove_megastructure = fromfrom
+	}
+}

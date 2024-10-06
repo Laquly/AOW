@@ -1,0 +1,263 @@
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_1_entity
+	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "RJD_base_entity" }
+}
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_2_construction_entity
+	locator = { name = angle_1 position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = angle_2 position = { 0 0 0 } rotation = { 72 0 0 } }
+	locator = { name = angle_3 position = { 0 0 0 } rotation = { 144 0 0 } }
+	locator = { name = angle_4 position = { 0 0 0 } rotation = { 216 0 0 } }
+	locator = { name = angle_5 position = { 0 0 0 } rotation = { 288 0 0 } }
+	attach = { angle_1 = "RJD_bottom_entity" }
+	attach = { angle_2 = "RJD_bottom_entity" }
+	attach = { angle_3 = "RJD_bottom_entity" }
+	attach = { angle_4 = "RJD_bottom_entity" }
+	attach = { angle_5 = "RJD_bottom_entity" }
+}
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_2_entity
+	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_1_entity" }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_2_construction_entity" }
+}
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_3_construction_entity
+	locator = { name = angle_1 position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = angle_2 position = { 0 0 0 } rotation = { 72 0 0 } }
+	locator = { name = angle_3 position = { 0 0 0 } rotation = { 144 0 0 } }
+	locator = { name = angle_4 position = { 0 0 0 } rotation = { 216 0 0 } }
+	locator = { name = angle_5 position = { 0 0 0 } rotation = { 288 0 0 } }
+	attach = { angle_1 = "RJD_top_entity" }
+	attach = { angle_2 = "RJD_top_entity" }
+	attach = { angle_3 = "RJD_top_entity" }
+	attach = { angle_4 = "RJD_top_entity" }
+	attach = { angle_5 = "RJD_top_entity" }
+}
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_3_entity
+	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_1_entity" }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_2_construction_entity" }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_3_construction_entity" }
+}
+entity = {
+	name = AOW_MEGA_storm_trigger_tower_4_entity
+	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_1_entity" }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_2_construction_entity" }
+	attach = { root = "AOW_MEGA_storm_trigger_tower_3_construction_entity" }
+}
+entity = {
+	name = "AOW_MEGA_storm_trigger_tower_4_entity"
+	scale = 20
+	#动画
+	default_state = "working"
+	state = { name = "idle" state_time = 10 looping = no }
+	state = { name = "working" state_time = 10 next_state = "working_looping" looping = no }
+	state = { name = "working_looping" state_time = 10 looping = no
+		event = { node = root entity = RJD_effect_entity trigger_once = yes keep_particle = yes sound = { soundeffect = abandoned_ship_idle } }
+	}
+	state = { name = "closing" state_time = 10 next_state = "idle" looping = no }
+	#点位
+	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = angle_1 position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = angle_2 position = { 0 0 0 } rotation = { 72 0 0 } }
+	locator = { name = angle_3 position = { 0 0 0 } rotation = { 144 0 0 } }
+	locator = { name = angle_4 position = { 0 0 0 } rotation = { 216 0 0 } }
+	locator = { name = angle_5 position = { 0 0 0 } rotation = { 288 0 0 } }
+	#基础圆环+上下基址
+	attach = { root = "RJD_base_entity" }
+	#顶部枪口
+	attach = { angle_1 = "RJD_top_entity" }
+	attach = { angle_2 = "RJD_top_entity" }
+	attach = { angle_3 = "RJD_top_entity" }
+	attach = { angle_4 = "RJD_top_entity" }
+	attach = { angle_5 = "RJD_top_entity" }
+	#底部翅膀
+	attach = { angle_1 = "RJD_bottom_entity" }
+	attach = { angle_2 = "RJD_bottom_entity" }
+	attach = { angle_3 = "RJD_bottom_entity" }
+	attach = { angle_4 = "RJD_bottom_entity" }
+	attach = { angle_5 = "RJD_bottom_entity" }
+}
+
+entity = {
+	name = "RJD_base_entity"
+	pdxmesh = "RJD_base_mesh"
+	scale = 1
+
+	default_state = "idle"
+	get_state_from_parent = no
+	state = {
+		name = "idle" animation = "idle" animation_blend_time = 0 animation_speed = 0.2 looping = yes
+	}
+	#定位点 portal Y轴正100距离处
+}
+
+entity = {
+	name = "RJD_top_entity"
+	pdxmesh = "RJD_top_mesh"
+	scale = 1
+
+	default_state = "idle"
+	state = { #关闭状态
+		name = "idle" animation = "idle" animation_blend_time = 0 animation_speed = 1 looping = no 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+				"closing" = 100
+			}
+		}
+	}
+	state = { #打开
+		name = "working" animation = "op" animation_blend_time = 0 animation_speed = 1 looping = no next_state = "working_looping"
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+				"closing" = 0
+			}
+		}
+	}
+	state = { #维持打开状态
+		name = "working_looping" animation = "op_idle" animation_blend_time = 0 animation_speed = 1 looping = no 
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+				"closing" = 0
+			}
+		}
+	}
+	state = { #关闭
+		name = "closing" animation = "ed" animation_blend_time = 0 animation_speed = 1 looping = no next_state = "idle"
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+				"closing" = 0
+			}
+		}
+	}
+}
+
+entity = {
+	name = "RJD_bottom_entity"
+	pdxmesh = "RJD_bottom_mesh"
+	scale = 1
+
+	default_state = "idle"
+	state = { #关闭状态
+		name = "idle" animation = "idle" animation_blend_time = 0 animation_speed = 1 looping = no 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+				"closing" = 100
+			}
+		}
+	}
+	state = { #打开
+		name = "working" animation = "op" animation_blend_time = 0 animation_speed = 1 looping = no next_state = "working_looping"
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+				"closing" = 0
+			}
+		}
+	}
+	state = { #维持打开状态
+		name = "working_looping" animation = "op_idle" animation_blend_time = 0 animation_speed = 1 looping = no 
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+				"closing" = 0
+			}
+		}
+	}
+	state = { #关闭
+		name = "closing" animation = "ed" animation_blend_time = 0 animation_speed = 1 looping = no next_state = "idle"
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+				"closing" = 0
+			}
+		}
+	}
+}
+
+entity = {
+	name = "RJD_effect_entity"
+	pdxmesh = "RJD_effect_mesh"
+	scale = 1
+	default_state = "idle"
+	get_state_from_parent = no
+	state = {
+		name = "idle" looping = no 
+	}
+	game_data = {
+		uv_animation_speed 		= 0.5
+		uv_animation_direction 	= { -1.0 3 }
+		bloom_factor = 0.75
+	}
+	#定位器点：
+	#radiator_loc_1-5 底部打开部分的位置点
+	#radiator_beam_1-5 顶部凹槽中心的定位点
+	#effect_beam_up 顶部 Y朝上的定位点
+	#effect_beam_dn 底部 Y朝下的定位点
+}
+
+animation = {
+	name = RJD_open
+	file = RJD_open.anim
+}
+
+animation = {
+	name = RJD_open_idle
+	file = RJD_open_idle.anim
+}
+
+animation = {
+	name = RJD_idle
+	file = RJD_idle.anim
+}
+
+animation = {
+	name = RJD_close
+	file = RJD_close.anim
+}
+
+animation = {
+	name = RJD_ring_idle
+	file = RJD_ring_idle.anim
+}

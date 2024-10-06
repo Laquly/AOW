@@ -1,0 +1,24 @@
+potential = {
+    from = { has_active_event = { AOW_evt_starcage_world.500 } }
+}
+allow = {
+    custom_tooltip = {
+        fail_text = AOW_requires_our_starcage_world
+        is_scope_type = planet
+        is_pc_starcage_world = yes
+        exists = owner
+        owner = { is_same_value = from }
+    }
+}
+effect = {
+    custom_tooltip = AOW_text_increase_points_$value$
+    hidden_effect = {
+        if = {
+            limit = {
+                check_variable = { which = AOW_var_sw_points value >= $value$ }
+            }
+            change_variable = { which = AOW_var_sw_points value = -$value$ }
+            change_variable = { which = AOW_var_sw_points_$type$ value = $value$ }
+        }
+    }
+}

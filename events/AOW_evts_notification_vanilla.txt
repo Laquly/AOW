@@ -1,0 +1,140 @@
+#这里写原版巨构没有建成事件的补充
+
+namespace = AOW_mega_notification_vanilla
+
+# root = country
+# this = country
+# from = system
+# fromfrom = country
+# fromfromfrom = megastructure
+
+#is_megastructure_type = mega_shipyard_0
+#is_megastructure_type = spy_orb_0
+#is_megastructure_type = spy_orb_2
+#is_megastructure_type = spy_orb_3
+#is_megastructure_type = matter_decompressor_0
+#is_megastructure_type = strategic_coordination_center_0
+#is_megastructure_type = mega_art_installation_0
+#is_megastructure_type = interstellar_assembly_0
+
+#is_megastructure_type = ring_world_3_intermediate
+#is_megastructure_type = matter_decompressor_0
+
+#星际集会
+country_event = {
+	id = AOW_mega_notification_vanilla.1010
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	picture = GFX_evt_interstellar_assembly
+	show_sound = event_mystic_reveal
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = { name = OK }
+}
+#巨构艺术
+country_event = {
+	id = AOW_mega_notification_vanilla.1020
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	picture = GFX_evt_mega_art_installation
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	location = fromfromfrom
+	option = { name = OK }
+}
+#巨型船坞
+country_event = {
+	id = AOW_mega_notification_vanilla.1030
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	picture = GFX_evt_megashipyard
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	location = fromfromfrom
+	option = { name = OK }
+}
+#哨兵阵列
+country_event = {
+	id = AOW_mega_notification_vanilla.1041
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	picture = GFX_evt_spy_orb
+	show_sound = event_spy_orb_build_upgrade
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = { name = OK }
+}
+#战略指挥中心
+country_event = {
+	id = AOW_mega_notification_vanilla.1050
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	picture = GFX_evt_strategic_coordination_center
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	location = fromfromfrom
+	option = { name = OK }
+}
+#戴森球
+country_event = {
+	id = AOW_mega_notification_vanilla.2011
+	title = AOW_mega_notification_vanilla.2011.title
+	desc = AOW_mega_notification_vanilla.2011.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_frame
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = AOW_mega_notification_vanilla.2011.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification_vanilla.2012
+	title = AOW_mega_notification_vanilla.2012.title
+	desc = AOW_mega_notification_vanilla.2012.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = AOW_mega_notification_vanilla.2012.a
+	}
+}
+country_event = {
+	id = AOW_mega_notification_vanilla.2015
+	title = AOW_mega_notification_vanilla.2015.title
+	desc = AOW_mega_notification_vanilla.2015.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = finished_dyson_sphere
+	}
+	option = {
+		name = AOW_mega_notification_vanilla.2015.a
+	}
+}
+#物质解压器
+country_event = {
+	id = AOW_mega_notification_vanilla.2020
+	title = AOW_mega_notification_vanilla_title
+	desc = AOW_mega_notification_vanilla_desc
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_matter_decompressor
+	is_triggered_only = yes
+	location = fromfromfrom
+	option = { name = OK }
+}
+
+#环世界
+country_event = {
+	id = AOW_mega_notification_vanilla.2030
+	title = AOW_mega_notification_vanilla.2030.title
+	desc = AOW_mega_notification_vanilla.2030.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = { name = OK }
+}

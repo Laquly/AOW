@@ -1,0 +1,198 @@
+AOW_opinion_super_weapon_builder = {
+	opinion = { base = -25 }
+	accumulative = yes
+	max = 200
+	decay = {
+		base = 2
+		modifier = {
+			add = 0.5
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			add = 1
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			add = -0.5
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			add = -1
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			add = 2
+			from = { has_policy_flag = AOW_policy_SS_no_first_use }
+		}
+		modifier = {
+			add = -1
+			from = { has_policy_flag = AOW_policy_SS_unlimited }
+		}
+	}
+}
+
+#隔离
+AOW_opinion_isolated_my_system = {
+	opinion = { base = -50 }
+	accumulative = yes
+	min = -200
+	decay = {
+		base = 2
+		modifier = {
+			add = 8
+			has_global_flag = galactic_crisis_happened
+		}
+	}
+}
+
+#灭杀
+AOW_opinion_swept_my_planet = {#受害者
+	opinion = { base = -800 }
+	accumulative = yes
+	min = -4000
+	decay = { base = 1 }
+}
+AOW_opinion_swept_a_planet = {#第三方
+	opinion = { base = -80 }
+	accumulative = yes
+	min = -400
+	decay = { base = 1 }
+}
+AOW_opinion_swept_a_primitive_planet = {#土著的第三方
+	opinion = { base = -40 }
+	accumulative = yes
+	min = -200
+	decay = { base = 1 }
+}
+
+#震荡
+AOW_opinion_shook_my_planet = {#受害者
+	opinion = { base = -100 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+AOW_opinion_shook_a_planet = {#第三方
+	opinion = { base = -10 }
+	accumulative = yes
+	min = -50
+	decay = { base = 1 }
+}
+AOW_opinion_shook_a_primitive_planet = {#土著的第三方
+	opinion = { base = -5 }
+	accumulative = yes
+	min = -25
+	decay = { base = 1 }
+}
+
+AOW_opinion_shook_my_system = {#星系受害者
+	opinion = { base = -100 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_shook_a_system = {#星系第三方
+	opinion = { base = -10 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+
+#星辰陨落
+AOW_opinion_destroyed_my_planet = {#受害者
+	opinion = { base = -1000 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_destroyed_a_planet = {#第三方
+	opinion = { base = -100 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+AOW_opinion_destroyed_a_primitive_planet = {#土著的第三方
+	opinion = { base = -60 }
+	accumulative = yes
+	min = -300
+	decay = { base = 1 }
+}
+
+AOW_opinion_destroyed_my_system = {#星系受害者
+	opinion = { base = -500 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_destroyed_a_system = {#星系第三方
+	opinion = { base = -50 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+
+#奇异物质
+AOW_opinion_melted_my_planet = {#受害者
+	opinion = { base = -1000 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_melted_a_planet = {#第三方
+	opinion = { base = -100 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+AOW_opinion_melted_a_primitive_planet = {#土著的第三方
+	opinion = { base = -60 }
+	accumulative = yes
+	min = -300
+	decay = { base = 1 }
+}
+
+AOW_opinion_melted_my_system = {#星系受害者
+	opinion = { base = -500 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_melted_a_system = {#星系第三方
+	opinion = { base = -50 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+
+#死亡献祭
+AOW_opinion_sacrificed_my_planet = {#受害者
+	opinion = { base = -1000 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_sacrificed_a_planet = {#第三方
+	opinion = { base = -100 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}
+AOW_opinion_sacrificed_a_primitive_planet = {#土著的第三方
+	opinion = { base = -60 }
+	accumulative = yes
+	min = -300
+	decay = { base = 1 }
+}
+
+AOW_opinion_sacrificed_my_system = {#星系受害者
+	opinion = { base = -500 }
+	accumulative = yes
+	min = -5000
+	decay = { base = 1 }
+}
+AOW_opinion_sacrificed_a_system = {#星系第三方
+	opinion = { base = -50 }
+	accumulative = yes
+	min = -500
+	decay = { base = 1 }
+}

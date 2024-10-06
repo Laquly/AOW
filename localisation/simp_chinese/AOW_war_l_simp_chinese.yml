@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+
+ casus_belli_cb_starfall_spear:0"$AOW_MEGA_starfall_spear$"
+ casus_belli_cb_stop_starfall_spear:0"阻止$AOW_MEGA_starfall_spear$"
+
+ war_goal_wg_starfall_spear:0"$war_goal_wg_colossus$"
+ war_goal_wg_starfall_spear_desc:0"用$AOW_MEGA_starfall_spear$给敌人带来终结。"
+ war_goal_wg_end_threat_starfall_spear:0"$war_goal_wg_end_threat$"
+ war_goal_wg_end_threat_starfall_spear_desc:0"战争的目的是为了结束敌人的$AOW_MEGA_starfall_spear$威慑。"

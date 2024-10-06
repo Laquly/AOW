@@ -1,0 +1,243 @@
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+
+entity = {#大环
+	name = "cd_big_ring_entity"
+	pdxmesh = "interstellar_assembly_01_stage_1_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 1 }
+	meshsettings = {
+		name = "body_1Shape"
+		index = 0
+		texture_diffuse = "humanoid_01_interstellar_assembly_diffuse.dds"
+		texture_normal = "humanoid_01_interstellar_assembly_normal.dds"
+		texture_specular = "humanoid_01_interstellar_assembly_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = 0.14
+}
+entity = {#小环
+	name = "cd_small_ring_entity"
+	pdxmesh = "interstellar_assembly_01_stage_1_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.5 }
+	meshsettings = {
+		name = "body_1Shape"
+		index = 0
+		texture_diffuse = "humanoid_01_interstellar_assembly_diffuse.dds"
+		texture_normal = "humanoid_01_interstellar_assembly_normal.dds"
+		texture_specular = "humanoid_01_interstellar_assembly_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = 0.09
+}
+entity = {#小环
+	name = "cd_bh_ring_entity"
+	pdxmesh = "cs_small_ring_mesh"
+}
+
+
+@celestial_decompressor_scale = 1.5
+
+entity = {#十字黑洞
+	name = "celestial_decompressor_a_entity"
+	locator = { name = "bh" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1.1 }
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 90 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 0 90 } }
+	attach = { bh = "AOW_dormant_black_hole_entity" }
+	attach = { loc1 = "cd_bh_ring_entity" }
+	attach = { loc2 = "cd_bh_ring_entity" }
+	attach = { loc3 = "cd_bh_ring_entity" }
+}
+entity = {#旋转
+	name = "celestial_decompressor_a1_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_decompressor_a_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 10 looping = no next_state = idle }
+}
+entity = {
+	name = "celestial_decompressor_a11_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = celestial_decompressor_a1_entity }
+}
+entity = {#旋转
+	name = "celestial_decompressor_a2_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_decompressor_a11_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 10 looping = no next_state = idle }
+}
+entity = {
+	name = "celestial_decompressor_a21_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { root = celestial_decompressor_a2_entity }
+}
+entity = {#旋转十字框架带黑洞
+	name = "celestial_decompressor_bh_unit_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_decompressor_a21_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 10 looping = no next_state = idle }
+}
+
+
+
+entity = {#闪电
+	name = "celestial_decompressor_lightning_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	default_state = "idle"
+	state = { name = idle	state_time = 5
+		event = { time = 0 node = "root" particle = "quantum_catapult_lightning_stage_1_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "quantum_catapult_outer_stage_1_effect" keep_particle = yes trigger_once = yes }
+	}
+	game_data = {
+		shader_type = VFX
+		bloom_factor			= 1.5
+		uv_animation_speed 		= 0.6
+		uv_animation_direction 	= { 0.6 0.7 }
+		wpo_animation_speed = 1.2
+		wpo_animation_direction = { 0.5 1.0 }
+		wpo_animation_scale = 0.70
+		wpo_animation_big_scale = 1.
+		wpo_animation_offset_strength = 20.0
+	}
+}
+entity = {#火花
+	name = "celestial_decompressor_spark_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0.8 particle = "AOW_grow_spark_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 0.065
+}
+entity = {#改造特效
+	name = "celestial_decompressor_laser_entity"
+	locator = { name = "laser" position = { 0 0 0 } rotation ={ -90 0 0 } }
+	locator = { name = "outburst" position = { 2 0 0 } rotation ={ 0 0 -90 } }
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { node = "laser" time = 0 particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		#event = { node = "outburst" time = 0 particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 1.8
+}
+entity = {
+	name = "celestial_decompressor_unit_entity"
+	locator = { name = "loc1" position = { -20 0 0 } rotation ={ 0 0 0 } scale = 0.01 }
+	locator = { name = "loc2" position = { -20 0 0 } rotation ={ 0 0 0 } scale = 0.09 }
+	locator = { name = "loc3" position = { -18.5 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc4" position = { -17 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc5" position = { -20.5 0 0 } rotation ={ 90 0 0 } scale = 0.05 }
+	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.8 }
+	attach = { loc1 = "Portal_entity" }
+	attach = { loc2 = "celestial_decompressor_bh_unit_entity" }
+	attach = { loc3 = "cd_big_ring_entity" }
+	attach = { loc4 = "cd_small_ring_entity" }
+	attach = { loc5 = "celestial_decompressor_lightning_entity" }
+	attach = { loc6 = "celestial_decompressor_laser_entity" }
+	scale = 0.8
+}
+
+
+entity = {
+	name = "celestial_decompressor_1a_entity"
+	locator = { name = "loc1" position = { -20 0 0 } rotation ={ 0 0 0 } scale = 0.01 }
+	locator = { name = "loc3" position = { -18.5 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc4" position = { -17 0 0 } rotation ={ 0 0 90 } }
+	attach = { loc1 = "Portal_entity" }
+	attach = { loc3 = "cd_big_ring_entity" }
+	attach = { loc4 = "cd_small_ring_entity" }
+	scale = 0.8
+}
+entity = {
+	name = "celestial_decompressor_1_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 45 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 135 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ -45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation ={ -135 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 0 -90 } }
+	attach = { loc1 = "celestial_decompressor_1a_entity" }
+	attach = { loc2 = "celestial_decompressor_1a_entity" }
+	attach = { loc3 = "celestial_decompressor_1a_entity" }
+	attach = { loc4 = "celestial_decompressor_1a_entity" }
+	attach = { loc5 = "celestial_decompressor_1a_entity" }
+	attach = { loc6 = "celestial_decompressor_1a_entity" }
+}
+entity = {
+	name = "celestial_decompressor_2a_entity"
+	locator = { name = "loc2" position = { -20 0 0 } rotation ={ 0 0 0 } scale = 0.09 }
+	attach = { loc2 = "celestial_decompressor_bh_unit_entity" }
+	scale = 0.8
+}
+entity = {
+	name = "celestial_decompressor_2_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 45 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 135 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ -45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation ={ -135 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 0 -90 } }
+	attach = { loc1 = "celestial_decompressor_2a_entity" }
+	attach = { loc2 = "celestial_decompressor_2a_entity" }
+	attach = { loc3 = "celestial_decompressor_2a_entity" }
+	attach = { loc4 = "celestial_decompressor_2a_entity" }
+	attach = { loc5 = "celestial_decompressor_2a_entity" }
+	attach = { loc6 = "celestial_decompressor_2a_entity" }
+}
+entity = {
+	name = "celestial_decompressor_2x_entity"
+	locator = { name = "loc2" position = { -20 0 0 } rotation ={ 0 0 0 } scale = 0.09 }
+	locator = { name = "loc5" position = { -20.5 0 0 } rotation ={ 90 0 0 } scale = 0.05 }
+	#locator = { name = "loc6" position = { -20 0 0 } rotation ={ 0 0 0 } }
+	attach = { loc2 = "celestial_decompressor_bh_unit_entity" }
+	attach = { loc5 = "celestial_decompressor_lightning_entity" }
+	#attach = { loc6 = "celestial_decompressor_laser_entity" }
+	scale = 0.8
+}
+entity = {
+	name = "celestial_decompressor_2x_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 45 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 135 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ -45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation ={ -135 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 0 -90 } }
+	attach = { loc1 = "celestial_decompressor_2x_entity" }
+	attach = { loc2 = "celestial_decompressor_2x_entity" }
+	attach = { loc3 = "celestial_decompressor_2x_entity" }
+	attach = { loc4 = "celestial_decompressor_2x_entity" }
+	attach = { loc5 = "celestial_decompressor_2x_entity" }
+	attach = { loc6 = "celestial_decompressor_2x_entity" }
+}
+entity = {
+	name = "celestial_decompressor_2_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { loc1 = "celestial_decompressor_1_entity" }
+	attach = { loc1 = "celestial_decompressor_2x_construction_entity" }
+}
+entity = {
+	name = "celestial_decompressor_3a_entity"
+	locator = { name = "loc6" position = { -20 0 0 } rotation ={ 0 0 0 } }
+	attach = { loc6 = "celestial_decompressor_laser_entity" }
+	scale = 0.8
+}
+entity = {
+	name = "celestial_decompressor_3_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 45 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 135 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ -45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation ={ -135 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 90 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 0 -90 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { loc1 = "celestial_decompressor_3a_entity" }
+	attach = { loc2 = "celestial_decompressor_3a_entity" }
+	attach = { loc3 = "celestial_decompressor_3a_entity" }
+	attach = { loc4 = "celestial_decompressor_3a_entity" }
+	attach = { loc5 = "celestial_decompressor_3a_entity" }
+	attach = { loc6 = "celestial_decompressor_3a_entity" }
+	attach = { loc7 = "celestial_decompressor_spark_entity" }
+}

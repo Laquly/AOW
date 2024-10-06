@@ -1,0 +1,73 @@
+#御星天炉
+AOW_shipsize_star_transfer = {
+	graphical_culture = no
+	entity = AOW_shipsize_frame_entity
+	max_speed = 100
+	acceleration = 0.3
+	rotation_speed = 0.2
+	collision_radius = 12
+	max_hitpoints = 50000
+	modifier = {
+		ship_evasion_add = 10
+	}
+	ship_modifier = {
+		ship_hull_regen_add_static = 500
+		ship_shield_add = 50000
+		ship_shield_regen_add_static = 500
+		ship_armor_add = 50000
+		ship_armor_regen_add_static = 500
+		ship_jumpdrive_cooldown_mult = -1
+		ship_ftl_jumpdrive_range_mult = 1
+	}
+	size_multiplier = 32
+	fleet_slot_size = 1
+	section_slots = { "core" = { locator = "root" } }
+	num_target_locators = 1
+	is_space_station = no
+	icon = ship_size_military_32
+	combat_disengage_chance = 2.0
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	potential_country = {
+		is_ai = no	#限制AI
+		has_technology = AOW_TECH_star_transfer
+	}
+	is_designable = yes
+	auto_upgrade = no
+	components_add_to_cost = yes
+	uses_name_prefix = no
+	takes_name_from_ship_design = yes
+	can_have_federation_design = no
+	class = shipclass_military_special
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	valid_target_aggressive_stance = no
+
+	resources = {
+		category = ships
+		cost = {	#限制AI
+			energy =20000
+			alloys = 70000
+			unity = 50000
+			volatile_motes = 750
+			exotic_gases = 750
+			rare_crystals = 750
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+	min_upgrade_cost = {
+		alloys = 100
+	}
+	ai_ship_data = {#限制AI
+		fraction = {
+			base = 0
+			modifier = {
+				factor = 0
+				always = yes
+			}
+		}
+	}
+}

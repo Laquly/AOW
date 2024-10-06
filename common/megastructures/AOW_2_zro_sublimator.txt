@@ -1,0 +1,135 @@
+AOW_MEGA_zro_sublimator_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	#construction_blocks_and_blocked_by = none
+	build_time = @AOW_var_ZS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SHROUDED_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZS_0_COST_alloys
+			unity = @AOW_var_ZS_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_ZS_0_UPKP_energy
+		}
+	}
+	prerequisites = { "AOW_TECH_zro_sublimator" }
+	potential = { AOW_trigger_mega_potential = { KEY = zro_sublimator } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_zro_sublimator } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为虚境星球
+				fail_text = "AOW_mega_requires_PLNT_shrouded"
+				is_planet_class = pc_shrouded
+			}
+			#custom_tooltip = {#不能为肃正星球
+			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
+			#	NOT = { has_planet_flag = crisis_vital_planet }
+			#}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 200
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = zro_sublimator
+			constructing = AOW_MEGA_zro_sublimator_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1050 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_zro_sublimator_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_zro_sublimator_1 = {
+	entity = "sr_zro_sublimator_1_entity"
+	construction_entity = "sr_zro_sublimator_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZS_1_COST_alloys
+			unity = @AOW_var_ZS_1_COST_unity
+		}
+		upkeep = {
+			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
+			energy = @AOW_var_ZS_1_UPKP_energy
+		}
+	}
+	prerequisites = { "AOW_TECH_zro_sublimator" }
+	upgrade_from = { AOW_MEGA_zro_sublimator_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1051 } }
+	}
+}
+AOW_MEGA_zro_sublimator_2 = {
+	entity = "sr_zro_sublimator_2_entity"
+	construction_entity = "sr_zro_sublimator_2_entity"
+	portrait = "GFX_megastructure_construction_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_ZS_2_COST_energy
+			alloys = @AOW_var_ZS_2_COST_alloys
+			unity = @AOW_var_ZS_2_COST_unity
+		}
+		upkeep = {
+			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
+			energy = @AOW_var_ZS_2_UPKP_energy
+		}
+		produces = {
+			sr_zro = @AOW_var_ZS_2_PRDC_zro
+		}
+		produces = {
+			trigger = { owner = { has_relic = r_zro_crystal } }
+			sr_zro = @AOW_var_ZS_2_PRDC_zro
+		}
+	}
+	prerequisites = { "AOW_TECH_zro_sublimator" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_zro_sublimator_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1052 } }
+	}
+}

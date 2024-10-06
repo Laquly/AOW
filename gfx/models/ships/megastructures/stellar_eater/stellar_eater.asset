@@ -1,0 +1,139 @@
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+@SE_scale = 0.9
+entity = {#外环
+	name = "se_ring_1_entity"
+	pdxmesh = "cs_small_ring_mesh"
+}
+entity = {
+	name = "se_ring_1_ration_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = se_ring_1_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 2 looping = no next_state = idle }
+}
+entity = {#中环
+	name = "se_ring_2_entity"
+	pdxmesh = "se_orbit_mesh"
+}
+entity = {
+	name = "se_ring_2_ration_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = se_ring_2_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 3 looping = no next_state = idle }
+}
+entity = {#内环
+	name = "se_ring_3_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+}
+entity = {
+	name = "se_ring_3a_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { root = se_ring_3_entity }
+}
+entity = {
+	name = "se_ring_3_ration_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = se_ring_3a_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 5 looping = no next_state = idle }
+}
+
+entity = {
+	name = "stellar_eater_1_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1.3 }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.8 }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.4 }
+	attach = { loc1 = "se_ring_1_ration_entity" }
+	attach = { loc2 = "se_ring_2_ration_entity" }
+	attach = { loc3 = "se_ring_3_ration_entity" }
+	scale = @SE_scale
+}
+
+@bh_y1 = 23
+@bh_y2 = -23
+
+entity = {
+	name = "se_black_hole_entity"
+	locator = { name = "bk" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { bk = AOW_dormant_black_hole_entity }
+	attach = { loc1 = se_ring_1_ration_entity }
+	scale = 0.2
+}
+entity = {
+	name = "stellar_eater_2_construction_entity"
+	locator = { name = "loc1" position = { 0 @bh_y1 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc2" position = { 0 @bh_y2 0 } rotation ={ 0 0 0 } }
+	attach = { loc1 = "se_black_hole_entity" }
+	attach = { loc2 = "se_black_hole_entity" }
+	scale = @SE_scale
+}
+entity = {
+	name = "stellar_eater_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "stellar_eater_1_entity" }
+	attach = { root = "stellar_eater_2_construction_entity" }
+}
+
+
+entity = {
+	name = "se_outbursts_entity"
+	pdxmesh = "pulsar_outbursts_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0.0 node = "polar_effect_1" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes  sound = { soundeffect = "pulsar_star_idle_hum" } }
+		event = { time = 0.0 node = "polar_effect_2" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes }
+	}
+	game_data = {
+		uv_animation_speed = -0.1
+		uv_animation_direction  = { 0.4 0.4 }
+		bloom_factor = 0.5
+	}
+	scale = 2.5
+}
+entity = {
+	name = "se_outbursts_ration_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = se_outbursts_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 5 looping = no next_state = idle }
+}
+entity = {#中心特效
+	name = "se_swirl_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 particle = "AOW_grow_spark_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 0.07
+}
+entity = {#黑洞特效
+	name = "se_black_hole_effect_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0.8 particle = "AOW_shrink_swirl_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 0.015
+}
+entity = {
+	name = "stellar_eater_3_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc1" position = { 0 @bh_y1 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc2" position = { 0 @bh_y2 0 } rotation ={ 0 0 0 } }
+	attach = { root = "se_outbursts_ration_entity" }
+	attach = { root = "se_swirl_entity" }
+	attach = { loc1 = "se_black_hole_effect_entity" }
+	attach = { loc2 = "se_black_hole_effect_entity" }
+	scale = @SE_scale
+}
+entity = {
+	name = "stellar_eater_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "stellar_eater_2_entity" }
+	attach = { root = "stellar_eater_3_construction_entity" }
+}

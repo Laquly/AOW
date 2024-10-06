@@ -1,0 +1,318 @@
+@power = 500000
+
+#能源
+utility_component_template = {
+	key = "AOW_CELESTIAL_SHIELD_STAR_REACTOR"
+	size = large
+	icon = "GFX_ship_part_aura_electromagnetic_disruptor"
+	icon_frame = 1
+	power = @power
+
+	component_set = "power_core"
+	size_restriction = { AOW_shipsize_bunker_ring }
+
+	ai_weight = { weight = 9999 }
+}
+
+#光环
+utility_component_template = {
+	key = "AOW_SHIP_AURA_F1"
+	size = medium
+	icon = "GFX_ship_part_ship_part_nanite_repair_system"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "NAME_AOW_SHIP_AURA_F1"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_friendly_f1
+			priority = 1
+		}
+		modifier = {
+			ship_shield_regen_add_perc = 0.25
+			ship_hull_regen_add_perc = 0.25
+			ship_armor_regen_add_perc = 0.25
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_F2"
+	size = medium
+	icon = "GFX_ship_part_aura_battlefield_repairs"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "NAME_AOW_SHIP_AURA_F2"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_friendly_f2
+			priority = 1
+		}
+		modifier = {
+			ship_weapon_damage = 0.1
+			ship_fire_rate_mult = 0.25
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_F3"
+	size = medium
+	icon = "GFX_ship_part_aura_range"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "NAME_AOW_SHIP_AURA_F3"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_friendly_f3
+			priority = 1
+		}
+		modifier = {
+			ship_weapon_range_mult = 0.1
+			ship_tracking_add = 10
+			ship_accuracy_add = 10
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_F4"
+	size = medium
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "NAME_AOW_SHIP_AURA_F4"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_friendly_f4
+			priority = 1
+		}
+		modifier = {
+			ship_disengage_opportunities_add = 2
+			ship_ftl_jumpdrive_range_mult = 0.5
+			ship_evasion_mult = 0.25
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_H1"
+	size = medium
+	icon = "GFX_ship_part_aura_shield_dampener"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "NAME_AOW_SHIP_AURA_H1"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_hostile_h1
+			priority = 1
+		}
+		modifier = {
+			ship_shield_mult = -0.25
+			ship_armor_mult = -0.25
+			ship_hull_mult = -0.25
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_H2"
+	size = medium
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "NAME_AOW_SHIP_AURA_H2"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_hostile_h2
+			priority = 1
+		}
+		modifier = {
+        			ship_base_speed_mult = -0.5
+			ship_evasion_mult = -0.5
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_H3"
+	size = medium
+	icon = "GFX_ship_part_aura_minefield"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "NAME_AOW_SHIP_AURA_H3"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_hostile_h3
+			priority = 1
+		}
+		modifier = {
+			ship_weapon_range_mult = -0.2
+			ship_tracking_mult = -0.2
+			ship_accuracy_mult = -0.2
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+utility_component_template = {
+	key = "AOW_SHIP_AURA_H4"
+	size = medium
+	icon = "GFX_ship_part_aura_quantum_destabilizer"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { AOW_shipsize_bunker_ring }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "NAME_AOW_SHIP_AURA_H4"
+		system_wide = yes
+		apply_on = ships
+		stack_info = { #A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = aow_hostile_h4
+			priority = 1
+		}
+		modifier = {
+			ship_weapon_damage = -0.1
+			ship_fire_rate_mult = -0.25
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}

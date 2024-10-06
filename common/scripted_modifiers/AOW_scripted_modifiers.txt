@@ -1,0 +1,15 @@
+starfall_spear_cooldown_mult = {
+	percentage = yes
+	good = no
+	category = country
+}
+starfall_spear_cooldown_speed_mult = {
+	percentage = yes
+	good = yes
+	category = country
+}
+starfall_spear_cooldown_speed_add = {
+	percentage = no
+	good = yes
+	category = country
+}

@@ -1,0 +1,487 @@
+namespace = utopia
+
+# Ring World Completed
+country_event = {
+	id = utopia.2004
+	title = "utopia.2004.name"
+	desc = {
+		text = utopia.2004.desc.a
+		trigger = {
+			NOT = { has_country_flag = finished_ringworld }
+		}
+	}
+	desc = {
+		text = utopia.2004.desc.b
+		trigger = {
+			has_country_flag = finished_ringworld
+		}
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = FROMFROM
+	is_triggered_only = yes
+	trigger = {
+		always = no
+		#FROM = { is_megastructure_type = ring_world_3_intermediate }
+		#FROMFROM = {
+		#	NOT = {
+		#		any_system_megastructure = { is_megastructure_type = ring_world_2 }
+		#	}
+		#}
+	}
+	immediate = {
+		set_country_flag = built_ringworld
+		FROMFROM = { save_event_target_as = completed_ringworld_system }
+		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = ROOT }
+				OR = {
+					has_intel_level = {
+						who = root
+						category = economy
+						level >= 1
+					}
+					has_intel_level = {
+						who = root
+						category = technology
+						level >= 1
+					}
+				}
+			}
+			hidden_effect = { country_event = { id = utopia.2005 } }
+		}
+	}
+	after = {
+		hidden_effect = { country_event = { id = utopia.2006 days = 5 } }
+	}
+	option = {
+		name = "utopia.2004.a"
+	}
+}
+
+country_event = {
+	id = utopia.4000
+	title = utopia.4000.name
+	desc = utopia.4000.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_start
+	location = FROMFROM
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			AOW_trgr_MEGA_is_dyson_sphere_0 = yes
+		}
+	}
+	option = {
+		name = utopia.4000.a
+	}
+}
+# Dyson Sphere Frame Built Notification (HIDDEN)
+country_event = {
+	id = utopia.4001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			AOW_trgr_MEGA_is_dyson_sphere_1 = yes
+		}
+	}
+	immediate = {
+		FROMFROM = { save_event_target_as = dyson_system }
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+				OR = {
+					has_intel_level = {
+						who = root
+						category = economy
+						level >= 1
+					}
+					has_intel_level = {
+						who = root
+						category = technology
+						level >= 1
+					}
+				}
+			}
+			country_event = { id = utopia.4002 }
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = started_first_dyson_sphere }
+			}
+			set_country_flag = started_first_dyson_sphere
+		}
+		else_if = {
+			limit = {
+				has_country_flag = started_first_dyson_sphere
+			}
+			set_country_flag = started_first_dyson_sphere_2
+		}
+	}
+}
+# Neighbor begins building Dyson Sphere
+country_event = {
+	id = utopia.4002
+	title = utopia.4002.name
+	desc = {
+		text = utopia.4002.desc.a
+		trigger = {
+			FROM = {
+				has_country_flag = started_first_dyson_sphere
+				NOT = { has_country_flag = started_first_dyson_sphere_2 }
+			}
+		}
+	}
+	desc = {
+		text = utopia.4002.desc.b
+		trigger = {
+			FROM = {
+				has_country_flag = started_first_dyson_sphere_2
+			}
+		}
+	}
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_mega_structure_other_empire_build_start
+	location = event_target:dyson_system
+
+	is_triggered_only = yes
+
+	option = { # has built own Dyson Sphere
+		trigger = {
+			any_owned_megastructure = {
+				AOW_trgr_MEGA_is_dyson_sphere = yes
+			}
+		}
+		name = utopia.4002.a
+	}
+	option = { # has no Dyson Sphere
+		trigger = {
+			NOT = {
+				any_owned_megastructure = {
+					AOW_trgr_MEGA_is_dyson_sphere = yes
+				}
+			}
+		}
+		name = utopia.4002.b
+	}
+}
+# Dyson Sphere Frame built
+country_event = {
+	id = utopia.4003
+	title = utopia.4003.name
+	desc = utopia.4003.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_frame
+	location = FROMFROM
+	is_triggered_only = yes
+	trigger = {
+		FROM = { AOW_trgr_MEGA_is_dyson_sphere_1 = yes }
+	}
+	option = {
+		name = utopia.4003.a
+	}
+}
+# Dyson Sphere partially completed
+country_event = {
+	id = utopia.4004
+	title = utopia.4004.name
+	desc = utopia.4004.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = FROMFROM
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			OR = {
+				AOW_trgr_MEGA_is_dyson_sphere_2 = yes
+				AOW_trgr_MEGA_is_dyson_sphere_3 = yes
+				AOW_trgr_MEGA_is_dyson_sphere_4 = yes
+			}
+		}
+	}
+	option = {
+		name = utopia.4004.a
+	}
+}
+# Dyson Sphere completed
+country_event = {
+	id = utopia.4005
+	title = utopia.4005.name
+	desc = utopia.4005.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = FROMFROM
+	is_triggered_only = yes
+	trigger = {
+		FROM = { AOW_trgr_MEGA_is_dyson_sphere_5 = yes }
+	}
+	immediate = {
+		set_country_flag = finished_dyson_sphere
+		#every_relation = {
+		#	limit = {
+		#		is_ai = no
+		#		has_communications = root
+		#	}
+		#	country_event = { id = utopia.4010 }
+		#}
+	}
+	option = {
+		name = utopia.4005.a
+	}
+}
+
+
+
+# Alert Messages for intermediate steps
+country_event = {
+	id = utopia.4006
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		create_message = {
+			type = MEGASTRUCTURE_UPGRADED
+			localization = MESSAGE_MEGASTRUCTURE_UPGRADED
+			days = 30
+			target = from # the Go To
+			variable = {
+				type = name
+				localization = MEGASTRUCTURE
+				scope = from
+			}
+			variable = {
+				type = name
+				localization = SYSTEM
+				scope = fromfrom
+			}
+		}
+	}
+}
+
+# Alert Messages for initial step
+country_event = {
+	id = utopia.4007
+	hide_window = yes
+	is_triggered_only = yes
+
+	#title = utopia.4010.name
+	#desc = utopia.4010.desc
+	#picture = GFX_evt_dyson_sphere
+	#show_sound = event_mega_structure_other_empire_build_complete
+	#location = FROMFROM
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		create_message = {
+			type = MEGASTRUCTURE_BUILT
+			localization = MESSAGE_MEGASTRUCTURE_BUILT
+			days = 30
+			target = from # the Go To
+			variable = {
+				type = name
+				localization = MEGASTRUCTURE
+				scope = from
+			}
+			variable = {
+				type = name
+				localization = SYSTEM
+				scope = fromfrom
+			}
+		}
+	}
+}
+
+
+namespace = situation
+
+# Kaleidoscope could get a Dyson sphere?
+situation_event = {
+	id = situation.2048
+	title = situation.2048.name
+	desc = situation.2048.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_kaleidoscopic_lights
+	is_triggered_only = yes
+	location = target
+	situation = this
+
+	# Only triggers if you're NOT trying to starve the Kaleidoscope
+	trigger = {
+		NOT = { current_situation_approach = approach_no_food }
+		owner = {
+			is_xenophobe = no
+			NOT = { has_country_flag = can_build_disco_sphere }
+			any_owned_megastructure = {
+				OR = {
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_hyper
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_super
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_O
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_B
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_giant
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_A
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_F
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_G
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_K
+					is_megastructure_type = AOW_MEGA_dyson_sphere_5_M
+					is_megastructure_type = dyson_sphere_5
+					is_megastructure_type = dyson_sphere_restored
+				}
+			}
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = value:kaleidoscope_positive_events_value
+		}
+	}
+	option = {
+		name = situation.2048.a
+		custom_tooltip = situation.2048.a.tooltip
+		owner = {
+			set_country_flag = can_build_disco_sphere
+		}
+	}
+	option = {
+		name = situation.2048.b
+	}
+}
+
+
+namespace = toxoids
+
+planet_event = {
+	id = toxoids.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_building = building_coordinated_fulfillment_center_1
+			has_building = building_coordinated_fulfillment_center_2
+		}
+		NOR = {
+			is_artificial = yes	#本MOD新增
+			is_ringworld = yes	#本MOD新增
+			is_planet_class = pc_nuked
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			uses_district_set = habitat
+			uses_district_set = ring_world
+			uses_district_set = shattered_ring_world
+		}
+		exists = owner
+		owner = { is_relentless_industrialist_empire = yes }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				owner = { has_policy_flag = relentless_industrialists_cleanup }
+				check_variable = {
+					which = relentless_industrialists_var
+					value > 0
+				}
+			}
+			subtract_variable = {
+				which = relentless_industrialists_var
+				value = 1
+			}
+		}
+		else = {
+			if = {
+				limit = { has_active_building = building_coordinated_fulfillment_center_1 }
+				change_variable = {
+					which = relentless_industrialists_var
+					value = 1
+				}
+			}
+			else_if = { #ruined or disabled
+				limit = { has_building = building_coordinated_fulfillment_center_1 }
+				change_variable = {
+					which = relentless_industrialists_var
+					value = 0.5
+				}
+			}
+			else_if = {
+				limit = { has_active_building = building_coordinated_fulfillment_center_2 }
+				change_variable = {
+					which = relentless_industrialists_var
+					value = 2
+				}
+			}
+			else = {
+				change_variable = {
+					which = relentless_industrialists_var
+					value = 1
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				check_variable = {
+					which = relentless_industrialists_var
+					value >= 30
+				}
+				NOT = {
+					owner = {
+						OR = {
+							has_policy_flag = relentless_industrialists_cleanup
+							country_has_situation = { SITUATION = relentless_industrialists_situation }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						owner = { has_country_flag = relentless_industrialists_situation_happened }
+					}
+				}
+				planet_event = { id = toxoids.5 days = 15 random = 180 }
+			}
+			else = {
+				change_pc = pc_nuked
+				if = {
+					limit = {
+						owner = { has_country_flag = relentless_industrialists_climate_apocalypse_sad }
+					}
+					add_modifier = {
+						modifier = relentless_industrialists_tomb
+						years = 10
+					}
+				}
+				create_message = {
+					type = TOMB_WORLD_FROM_INDUSTRY_MESSAGE_TYPE
+					localization = TOMB_WORLD_FROM_INDUSTRY_MESSAGE_TYPE_DESC
+					days = 20
+					target = this
+				}
+				if = {
+					limit = {
+						OR = {
+							is_active_resolution = "resolution_ecology_environmental_control_board"
+							is_active_resolution = "resolution_ecology_paradise_initiative"
+						}
+					}
+					owner = {
+						set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+					}
+				}
+			}
+		}
+	}
+}

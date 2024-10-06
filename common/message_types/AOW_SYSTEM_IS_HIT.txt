@@ -1,0 +1,18 @@
+message_type = {
+	key = "AOW_SYSTEM_STRIKE_INTERCEPTED"
+	icon = "GFX_message_planet_destroyed"
+	icon_frame = 1
+
+	name = "AOW_SYSTEM_STRIKE_INTERCEPTED_TITLE"
+	sound = "event_air_raid_siren"
+	ping = "mixed_notification_red"
+}
+message_type = {
+	key = "AOW_INTERCEPTED_SYSTEM_STRIKE"
+	icon = "GFX_message_planet_destroyed"
+	icon_frame = 1
+
+	name = "AOW_INTERCEPTED_SYSTEM_STRIKE_TITLE"
+	sound = "event_air_raid_siren"
+	ping = "mixed_notification_red"
+}

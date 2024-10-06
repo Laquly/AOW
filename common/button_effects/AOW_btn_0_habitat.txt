@@ -1,0 +1,93 @@
+#前置条件
+AOW_btn_habitat_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_habitat_desc
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_habitat_1
+					has_civic = civic_diadochi
+					has_civic = civic_great_khans_legacy
+					has_country_flag = democratic_khanate_flag
+				}
+			}
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_starbase_3
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_toxic_knights
+				custom_tooltip = {
+					text = AOW_requires_need_dlc_Utopia
+					host_has_dlc = "Utopia"
+				}
+			}
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_habitat_1
+		}
+	}
+	effect = { custom_tooltip = AOW_text_habitat_desc }
+}
+#AI
+AOW_btn_habitat_ai_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = habitat
+		PorA = ai
+		VALUE = 1
+	}
+}
+AOW_btn_habitat_ai_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = habitat
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_habitat_ai_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = habitat
+		PorA = ai
+		VALUE = 0
+	}
+}
+AOW_btn_habitat_ai_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = habitat
+		PorA = ai
+		LIMIT = -1
+	}
+}
+AOW_btn_habitat_ai_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = habitat
+		PorA = ai
+		LIMIT = 20
+	}
+}
+#玩家
+AOW_btn_habitat_player_disable = {#已禁用，设为无限
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = habitat
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_habitat_player_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = habitat
+		PorA = player
+		VALUE = 0
+	}
+}

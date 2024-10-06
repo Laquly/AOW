@@ -1,0 +1,52 @@
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {
+	name = "NCB_shipyard_entity"
+	pdxmesh = "necroid_01_starbase_assemblyyard_section_mesh"
+	#pdxmesh = "avian_01_starbase_assemblyyard_section_mesh"
+	scale = 0.45
+}
+@NCB_scale = 6
+entity = {
+	name = "naval_command_base_1_entity"
+	pdxmesh = "avian_01_military_station_large_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		start_event = { trigger_once = yes sound = { soundeffect = "defense_station_idle_hum" } }
+	}
+	game_data = { size = 14 emissive_recolor_crunch = 5.0 }
+	scale = @NCB_scale
+}
+entity = {
+	name = "naval_command_base_2_entity"
+	pdxmesh = "avian_01_military_station_large_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		start_event = { trigger_once = yes sound = { soundeffect = "defense_station_idle_hum" } }
+	}
+	game_data = { size = 14 emissive_recolor_crunch = 5.0 }
+	attach = { part1 = NCB_shipyard_entity }
+	attach = { part2 = NCB_shipyard_entity }
+	attach = { part3 = NCB_shipyard_entity }
+	attach = { part4 = NCB_shipyard_entity }
+	scale = @NCB_scale
+}
+entity = {
+	name = "naval_command_base_3_entity"
+	pdxmesh = "avian_01_military_station_large_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		start_event = { trigger_once = yes sound = { soundeffect = "defense_station_idle_hum" } }
+	}
+	game_data = { size = 14 emissive_recolor_crunch = 5.0 }
+	attach = { part1 = NCB_shipyard_entity }
+	attach = { part2 = NCB_shipyard_entity }
+	attach = { part3 = NCB_shipyard_entity }
+	attach = { part4 = NCB_shipyard_entity }
+	attach = { part5 = NCB_shipyard_entity }
+	attach = { part6 = NCB_shipyard_entity }
+	attach = { part7 = NCB_shipyard_entity }
+	attach = { part8 = NCB_shipyard_entity }
+	scale = @NCB_scale
+}

@@ -1,0 +1,4 @@
+entity = {#框架
+	name = "AOW_shipsize_frame_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+}

@@ -1,0 +1,104 @@
+#前置条件
+AOW_btn_cemetery_of_martyrs_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_cemetery_of_martyrs_desc
+		if = {
+			limit = { has_technology = AOW_TECH_cemetery_of_martyrs }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_cemetery_of_martyrs
+		}
+	}
+	effect = { custom_tooltip = AOW_text_cemetery_of_martyrs_desc }
+}
+#AI
+AOW_btn_cemetery_of_martyrs_ai_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = cemetery_of_martyrs
+		PorA = ai
+		VALUE = 1
+	}
+}
+AOW_btn_cemetery_of_martyrs_ai_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = cemetery_of_martyrs
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_cemetery_of_martyrs_ai_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = cemetery_of_martyrs
+		PorA = ai
+		VALUE = 0
+	}
+}
+AOW_btn_cemetery_of_martyrs_ai_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = cemetery_of_martyrs
+		PorA = ai
+		LIMIT = -1
+	}
+}
+AOW_btn_cemetery_of_martyrs_ai_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = cemetery_of_martyrs
+		PorA = ai
+		LIMIT = 20
+	}
+}
+#玩家
+AOW_btn_cemetery_of_martyrs_player_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = cemetery_of_martyrs
+		PorA = player
+		VALUE = 1
+	}
+}
+AOW_btn_cemetery_of_martyrs_player_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = cemetery_of_martyrs
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_cemetery_of_martyrs_player_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = cemetery_of_martyrs
+		PorA = player
+		VALUE = 0
+	}
+}
+AOW_btn_cemetery_of_martyrs_player_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = cemetery_of_martyrs
+		PorA = player
+		LIMIT = -1
+	}
+}
+AOW_btn_cemetery_of_martyrs_player_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = cemetery_of_martyrs
+		PorA = player
+		LIMIT = 20
+	}
+}

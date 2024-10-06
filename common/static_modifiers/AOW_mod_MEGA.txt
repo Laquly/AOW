@@ -1,0 +1,23 @@
+AOW_mod_MEGA_increase_power = {
+	megastructures_upkeep_mult = 1
+	megastructures_produces_mult = 1
+}
+AOW_mod_MEGA_reduce_power = {
+	megastructures_upkeep_mult = -1
+	megastructures_produces_mult = -1
+}
+
+AOW_mod_MEGA_build_speed_adjustment = {
+	megastructure_build_speed_mult = 0.01
+}
+
+
+AOW_mod_test_1 = {
+	megastructures_cost_mult = -1
+	megastructures_alloys_cost_mult = -1
+	megastructures_alloys_cost_add = -100
+}
+AOW_mod_test_2 = {
+	country_cost_mult = -1
+	country_alloys_cost_mult = -1
+}

@@ -1,0 +1,170 @@
+﻿l_simp_chinese:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_ring_world_expansion:0"环世界扩张"
+ AOW_TECH_ring_world_expansion_desc:0"我们目前对环世界的空间利用效率仅仅达到了三分之一，而剩下的区段因为设施问题不得不暴露在太空中，或许我们可以将这些区段重新改造并利用起来，进一步扩张我们的环世界。"
+
+ AOW_TECH_ring_world_2:0"$AOW_MEGA_ring_world_2$"
+ AOW_TECH_ring_world_2_desc:0""
+
+ AOW_TECH_ring_world_3:0"$AOW_MEGA_ring_world_3$"
+ AOW_TECH_ring_world_3_desc:0""
+
+ AOW_TECH_ring_world_4:0"$AOW_MEGA_ring_world_4$"
+ AOW_TECH_ring_world_4_desc:0""
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_ring_world_2_0:0"$AOW_MEGA_ring_world_2$ 基址"
+ AOW_MEGA_ring_world_2_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$每段$AOW_MEGA_ring_world_2$相当于§Y两段§!$pc_ringworld_habitable$。"
+ AOW_MEGA_ring_world_2_0_DESC:0"$ring_world_1_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y200§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y20§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_2_1_intermediate:0"$AOW_MEGA_ring_world_2$ 框架"
+ AOW_MEGA_ring_world_2_1_intermediate_DESC:0"$ring_world_2_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y200§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y20§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_2_1:0"$AOW_MEGA_ring_world_2$ 区段框架"
+ AOW_MEGA_ring_world_2_1_DESC:0"$ring_world_2_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y200§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y20§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_2_2_intermediate:0"已完成的$AOW_MEGA_ring_world_2$区段"
+ AOW_MEGA_ring_world_2_2_intermediate_DESC:0"$ring_world_2_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y200§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y20§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_2_ruined:0"废弃的$AOW_MEGA_ring_world_2$区段"
+ AOW_MEGA_ring_world_2_ruined_MEGASTRUCTURE_DETAILS:0""
+ AOW_MEGA_ring_world_2_ruined_DESC:0"一个巨大的环形世界，但已经损毁到无法居住了，想要让其再次运转需要更加先进的科技和大量资源的支持。"
+ AOW_MEGA_ring_world_2_restored:0"$AOW_MEGA_ring_world_2_2_intermediate$"
+ AOW_MEGA_ring_world_2_restored_DESC:0"$AOW_MEGA_ring_world_2_2_intermediate_DESC$"
+
+ AOW_MEGA_ring_world_3_0:0"$AOW_MEGA_ring_world_3$ 基址"
+ AOW_MEGA_ring_world_3_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$每段$AOW_MEGA_ring_world_3$相当于§Y三段§!$pc_ringworld_habitable$。"
+ AOW_MEGA_ring_world_3_0_DESC:0"$ring_world_1_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y300§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y30§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_3_1_intermediate:0"$AOW_MEGA_ring_world_3$ 框架"
+ AOW_MEGA_ring_world_3_1_intermediate_DESC:0"$ring_world_2_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y300§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y30§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_3_1:0"$AOW_MEGA_ring_world_3$ 区段框架"
+ AOW_MEGA_ring_world_3_1_DESC:0"$ring_world_2_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y300§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y30§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_3_2_intermediate:0"已完成的$AOW_MEGA_ring_world_3$区段"
+ AOW_MEGA_ring_world_3_2_intermediate_DESC:0"$ring_world_3_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y300§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y30§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_3_ruined:0"废弃的$AOW_MEGA_ring_world_3$区段"
+ AOW_MEGA_ring_world_3_ruined_MEGASTRUCTURE_DETAILS:0""
+ AOW_MEGA_ring_world_3_ruined_DESC:0"一个体型极其巨大的环形世界，哪怕已经损毁到无法居住了，但还在忠诚地围绕母星旋转，其建造者所拥有的科技水平恐怕比我们想象的更先进。若要让其再次运转则需要更加先进的科技和大量资源的支持。"
+ AOW_MEGA_ring_world_3_restored:0"$AOW_MEGA_ring_world_3_2_intermediate$"
+ AOW_MEGA_ring_world_3_restored_DESC:0"$AOW_MEGA_ring_world_3_2_intermediate_DESC$"
+
+ AOW_MEGA_ring_world_4_0:0"$AOW_MEGA_ring_world_4$ 基址"
+ AOW_MEGA_ring_world_4_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$每段$AOW_MEGA_ring_world_4$相当于§Y四段§!$pc_ringworld_habitable$。"
+ AOW_MEGA_ring_world_4_0_DESC:0"$ring_world_1_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y400§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y40§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_4_1_intermediate:0"$AOW_MEGA_ring_world_4$ 框架"
+ AOW_MEGA_ring_world_4_1_intermediate_DESC:0"$ring_world_2_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y400§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y40§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_4_1:0"$AOW_MEGA_ring_world_4$ 区段框架"
+ AOW_MEGA_ring_world_4_1_DESC:0"$ring_world_2_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y400§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y40§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_4_2_intermediate:0"已完成的$AOW_MEGA_ring_world_4$区段"
+ AOW_MEGA_ring_world_4_2_intermediate_DESC:0"$ring_world_3_intermediate_DESC$\n\n选择§Y产能增幅设施§!：为一环增加§Y400§!虚拟人口容量\n选择§Y独立环形世界§!：生成§Y40§!格大小的宜居环世界"
+ AOW_MEGA_ring_world_4_ruined:0"废弃的$AOW_MEGA_ring_world_4$区段"
+ AOW_MEGA_ring_world_4_ruined_MEGASTRUCTURE_DETAILS:0""
+ AOW_MEGA_ring_world_4_ruined_DESC:0"一个无与伦比的环形世界，任何人都足以想象出其曾经的繁荣景象，即使损毁，但其主体结构依旧还在惊人地运转，建造该环世界的古代文明也无法避免地消逝在历史长河中。若要让其再次运转则需要极其先进的科技和天文数字般资源的投入。"
+ AOW_MEGA_ring_world_4_restored:0"$AOW_MEGA_ring_world_4_2_intermediate$"
+ AOW_MEGA_ring_world_4_restored_DESC:0"$AOW_MEGA_ring_world_4_2_intermediate_DESC$"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+
+ AOW_mega_notification_vanilla.2030.title:0"环形世界建成"
+ AOW_mega_notification_vanilla.2030.desc:0"环形世界在[from.GetName]星系建造完成。"
+
+ AOW_mega_notification.2001.name:0"环形世界扩张"
+ AOW_mega_notification.2001.desc:0"位于[solar_system.GetName]星系的环世界[this.GetName]已经扩张到它周围的两段原本不宜居的环世界，现在，它的宜居空间已经全部被用于容纳自动化产能设施，目前可额外容纳10个自动化产能设施。"
+
+ AOW_mega_notification.2002.name:0"$AOW_MEGA_ring_world_2$扩张"
+ AOW_mega_notification.2002.desc:0"位于[solar_system.GetName]星系的环世界[this.GetName]的管控范围已经扩张到$AOW_MEGA_ring_world_2$的两段本不宜居的区段，现在，它的宜居空间已经全部被用于容纳自动化产能设施，目前可额外容纳20个自动化产能设施。"
+
+ AOW_mega_notification.2003.name:0"$AOW_MEGA_ring_world_3$扩张"
+ AOW_mega_notification.2003.desc:0"位于[solar_system.GetName]星系的环世界[this.GetName]的管控范围已经扩张到$AOW_MEGA_ring_world_3$的两段本不宜居的区段，现在，它的宜居空间已经全部被用于容纳自动化产能设施，目前可额外容纳30个自动化产能设施。"
+
+ AOW_mega_notification.2004.name:0"$AOW_MEGA_ring_world_4$扩张"
+ AOW_mega_notification.2004.desc:0"位于[solar_system.GetName]星系的环世界[this.GetName]的管控范围已经扩张到$AOW_MEGA_ring_world_4$的两段本不宜居的区段，现在，它的宜居空间已经全部被用于容纳自动化产能设施，目前可额外容纳40个自动化产能设施。"
+
+ AOW_evt_ring_world.101.title:0"环形世界框架完成"
+ AOW_evt_ring_world.101.desc:0"$utopia.2003.desc$"
+ AOW_evt_ring_world.101.a:0"$utopia.2003.a$"
+ AOW_evt_ring_world.102.title:0"环形世界区段完成"
+ AOW_evt_ring_world.102.desc:0"环形世界的部分区段在位于[from.GetName]星系建造完成。"
+ AOW_evt_ring_world.102.a:0"完成了！"
+ AOW_evt_ring_world.103.title:0"环形世界完工"
+ AOW_evt_ring_world.103.desc:0"今天，我们的工程师和行星生态学家完成了位于[from.GetName]星系的$AOW_MEGA_ring_world_2$最后一个宜居区间的建造，$AOW_MEGA_ring_world_2$现在已经全部竣工了。\n\n这个伟大的巨型结构必将成为[Root.GetName]工程学和生态学上的又一伟大里程碑，拥有两倍于普通环世界的容量，如今正等我们上前享受！"
+ AOW_evt_ring_world.103.b.desc:0"今天，我们的工程师和行星生态学家完成了位于[from.GetName]星系的$AOW_MEGA_ring_world_2$最后一个宜居区间的建造。同样的，新完工的$AOW_MEGA_ring_world_2$区段被并入到[from.GetName]星系内的第一环世界的管控之下，现在每个第一环世界可额外容纳§Y50§!虚拟人口，一共§Y200§!虚拟人口。\n\n这个伟大的巨型结构必将成为[Root.GetName]行星管理学历史上的开创性里程碑，$AOW_MEGA_ring_world_2$被完全置于第一环世界的掌控之下，避免了同时管理大量独立运转的殖民地的行政问题。"
+ AOW_evt_ring_world.103.a:0"完成了！"
+
+ AOW_evt_ring_world.110.desc:0"纵使我们拥有了环世界这样巨大的人造居住区，对于在一个恒星系内集成更多的居住空间的追求仍旧让我们决定开始建造第二层环世界的计划。在已经有环世界的星系建造第二圈环世界是一个巨大的难题，他的工程量也远比普通的环世界更加巨大。\n\n这个框架所需的资源与矿物更为庞大的，我们成百上千最优秀的工程师已经准备好开始采集[fromfromfrom.planet.GetName]本身的物质，将这些物质用于$AOW_MEGA_ring_world_2$的建造。"
+ AOW_evt_ring_world.110.a:0"宏伟计划的开始。"
+ AOW_evt_ring_world.111.title:0"§H$AOW_MEGA_ring_world_2$§!框架完成"
+ AOW_evt_ring_world.111.desc:0"这个周长近几十亿千米的$AOW_MEGA_ring_world_2$的框架已经基本竣工，曾经在我们看来有些异想天开的计划如今似乎有了实现的可能。框架的建立意味着对多重环世界的工程学结构合理性进行了有力的证明，接下来，只需完善宜居区段的建设即可。\n\n接下来，关于扩张出的巨大居住区的管理出现了三种方案：\n方案一：建设为§Y独立环形世界§!，正常建造为独立的、需要单独殖民并发展的、更为巨大的环世界。\n方案二：建设为§Y附属环形世界§!，多重环世界的区划上限将分配至一环，一环拥有更多区划上限。\n方案三：建设为§Y产能增幅设施§!，多重环世界的空间将分配至一环，用于容纳虚拟人口，现实人口转化为虚拟人口可辅助增加岗位产出。\n\n我们要如何决定§Y[from.GetName]§!星系的环世界建设计划？"
+ AOW_evt_ring_world.111.a:0"建设为§Y独立环形世界§!。"
+ AOW_evt_ring_world.111.a.tooltip:0"§Y[from.GetName]§!星系所建设的§Y$AOW_MEGA_ring_world_2$§!、§Y$AOW_MEGA_ring_world_3$§!和§Y$AOW_MEGA_ring_world_4$§!都将会建设为§Y独立环形世界§!，并且确定后再也§R无法更改§!。\n\n§L作者建议：电脑不卡、追求奇观、追求代入感可选，适配产业革命mod§!"
+ AOW_evt_ring_world.111.b:0"建设为§Y附属环形世界§!。"
+ AOW_evt_ring_world.111.b.tooltip:0"§Y[from.GetName]§!星系所建设的§Y$AOW_MEGA_ring_world_2$§!、§Y$AOW_MEGA_ring_world_3$§!和§Y$AOW_MEGA_ring_world_4$§!都将会建设为§Y附属环形世界§!，并且确定后再也§R无法更改§!。\n\n§L作者建议：想全部填满需要不少人口，会卡，可用产业革命mod解决§!"
+ AOW_evt_ring_world.111.c:0"建设为§Y产能增幅设施§!。"
+ AOW_evt_ring_world.111.c.tooltip:0"§Y[from.GetName]§!星系所建设的§Y$AOW_MEGA_ring_world_2$§!、§Y$AOW_MEGA_ring_world_3$§!和§Y$AOW_MEGA_ring_world_4$§!都将会建设为§Y产能增幅设施§!，并且确定后再也§R无法更改§!。\n\n§L作者建议：此方案会吞人口减缓卡顿，没有产业革命mod可选此方案，§R不适配产业革命mod§!§!"
+
+ AOW_evt_ring_world.112.title:0"§H$AOW_MEGA_ring_world_2$§!区段完成"
+ AOW_evt_ring_world.112.desc:0"位于[from.GetName]星系的$AOW_MEGA_ring_world_2$框架上已经建成了一个宜居区段，它拥有比第一环世界更为巨大的宜居空间，这将在一段时间内吸引更多的居民来此居住。"
+ AOW_evt_ring_world.112.a:0"继续建设。"
+ AOW_evt_ring_world.112.b.tooltip:0"该星系的每个宜居环世界将额外增加§Y5§!个£district£区划上限。"
+ AOW_evt_ring_world.112.c.tooltip:0"该星系的每个宜居环世界可额外容纳§Y50§!单位用于增产的§B虚拟人口§!。"
+ AOW_evt_ring_world.113.title:0"§H$AOW_MEGA_ring_world_2$§!完工"
+ AOW_evt_ring_world.113.a.desc:0"文明的发展便是每一次将不可能变为可能而铸就的奇迹。[from.GetName]星系中因为环世界施工拆除了全部天体所遗留的巨大宇宙空间又被我们再一次利用了起来。毫无疑问，$AOW_MEGA_ring_world_2$的建造是对我们工程学和生态学的又一次考验，显而易见，它已经成为了我们的又一个伟大里程碑。\n\n如今我们已经开始幻想建造更多层环世界的可能，我们也相信，$AOW_MEGA_ring_world_2$的建成不是一个工程的结束，而很有可能是一个更大工程的开始。"
+ AOW_evt_ring_world.113.b.desc:0"文明的发展便是每一次将不可能变为可能而铸就的奇迹。[from.GetName]星系中因为环世界施工拆除了全部天体所遗留的巨大宇宙空间又被我们再一次利用了起来。毫无疑问，$AOW_MEGA_ring_world_2$的建造是对我们工程学和生态学的又一次考验，显而易见，它已经成为了我们的又一个伟大里程碑。"
+ AOW_evt_ring_world.113.a:0"将这个星系，变成我们想要的样子。"
+ AOW_evt_ring_world.113.b.tooltip:0"该星系的每个宜居环世界将额外增加§Y20§!个£district£区划上限。"
+ AOW_evt_ring_world.113.c.tooltip:0"该星系的每个宜居环世界现可容纳§Y200§!单位用于增产的§B虚拟人口§!。"
+
+ AOW_evt_ring_world.120.desc:0"三重环世界，这是个令人瞠目结舌的想法，虽然我们已经有了建造天外神迹的工程学技术，但在同一星系建造三圈环世界也是咋听之下无法实现的想法。尽管如此，随着工程的开始，相关的工程团队仍旧做好了面对这一计划所有困难的准备。不过可以预见的是，这一工程即使是$AOW_MEGA_ring_world_2$的建设比起它来也不过如垒土筑沙一般简单。\n\n这个工程所需的资源与矿物已经不能被[from.GetName]星系所满足了，我们成百上千最勇敢的探索者开始通过多维空间在各个星系间采集我们所需的物质，并将这些物质用于$AOW_MEGA_ring_world_3$的建造。"
+ AOW_evt_ring_world.120.a:0"我们已经创造了无数的奇迹，再来一个也无妨。"
+ AOW_evt_ring_world.121.title:0"§H$AOW_MEGA_ring_world_3$§!框架完成"
+ AOW_evt_ring_world.121.desc:0"在[from.GetName]星系，三圈在恒星的光芒下反射出银白色的明亮圆环已经开始熠熠生辉。犹如三串银白色的项链，在这个曾经空荡的星系显得光彩夺目。不过，$AOW_MEGA_ring_world_3$的光照已经无法借由恒星发出的自然光来获取，因此$AOW_MEGA_ring_world_3$将采用在一部分结构接合处的巨大零点能反应堆来驱动覆盖整个环世界宜居区的人造天幕来提供光源，$AOW_MEGA_ring_world_3$的建造难度也因此显得更加困难。"
+ AOW_evt_ring_world.121.a:0"这将是奇迹真正实现的开始。"
+ AOW_evt_ring_world.122.title:0"§H$AOW_MEGA_ring_world_3$§!区段完成"
+ AOW_evt_ring_world.122.a.desc:0"一部分$AOW_MEGA_ring_world_3$的宜居区划已经建成，接下来可以开始新的$AOW_MEGA_ring_world_3$宜居区段的殖民开发工作。"
+ AOW_evt_ring_world.122.b.desc:0"一部分$AOW_MEGA_ring_world_3$的宜居区划已经建成，其相关行政管理设施也成功连接到了对应区段的一层环世界上，[from.GetName]星系扩张出的规模巨大的居住区势必会吸引庞大的人口来此定居。"
+ AOW_evt_ring_world.122.a:0"更进一步！"
+ AOW_evt_ring_world.122.a.tooltip:0"该星系的每个第一环世界可额外容纳§Y75§!单位用于增产的§B虚拟人口§!。"
+ AOW_evt_ring_world.123.title:0"§H$AOW_MEGA_ring_world_3$§!完工"
+ AOW_evt_ring_world.123.a.desc:0"随着最后一块宜居区段的完成，[from.GetName]星系内的空间已经被我们尽可能的充分利用了，三重亮银色圆环反射着恒星的光芒，使得[from.GetName]星系在宇宙中的无数星辰显得与众不同，这便是属于我们文明的奇迹。\n\n这个伟大的巨型结构必将成为[Root.GetName]工程学和生态学上的伟大里程碑，拥有三倍于第一环世界的容量，如今正等我们上前享受！"
+ AOW_evt_ring_world.123.b.desc:0"随着最后一块宜居区段的完成，[from.GetName]星系内的空间已经被我们尽可能的充分利用了，三重亮银色圆环反射着恒星的光芒，使得[from.GetName]星系在宇宙中的无数星辰显得与众不同，这便是属于我们文明的奇迹。"
+ AOW_evt_ring_world.123.a:0"这是文明的骄傲，但我们不一定止步于此。"
+ AOW_evt_ring_world.123.a.tooltip:0"该星系的每个第一环世界现可容纳§Y300§!单位用于增产的§B虚拟人口§!。"
+
+ AOW_evt_ring_world.130.desc:0"在实现了第一环世界，$AOW_MEGA_ring_world_2$和$AOW_MEGA_ring_world_3$的奇迹之后，我们试图挑战一个真正不可能的恒星系工程：建造一个大到难以置信的，其半径甚至要到达星系边缘的超级巨环作为环世界计划的收尾。这自然是一个肆言如狂的计划，但我们无数次的在这片星河中，构造出一个又一个不属于自然的宏伟神迹，或许，将整个恒星系彻底变成人造结构也不是不可能。\n\n这个框架所需的资源与矿物已经不能被[from.GetName]星系所满足了，我们成百上千最勇敢的探索者开始通过多维空间在各个星系间采集我们所需的物质，并将这些物质用于$AOW_MEGA_ring_world_4$的建造。"
+ AOW_evt_ring_world.130.a:0"将星尘变为砂石，构筑属于我们的造物。"
+ AOW_evt_ring_world.131.title:0"§H$AOW_MEGA_ring_world_4$§!框架完成"
+ AOW_evt_ring_world.131.desc:0"由于过于远离恒星，$AOW_MEGA_ring_world_4$不再像内部的三圈环世界一样反射恒星的光芒从而在远处显现出亮银色的外观，取而代之的则是根本看不出像是一个圆环的，就像是一条漆黑的直线笔直的将星空一分为二。在这样的工程面前，任何生命都显得渺小如沙尘。\n\n因为过于远离恒星，原则上讲按照天文学，这片星系区域事实上不再适合居住，不过，我们可以将诸多自动化的工程设施，通过嵌合在框架上的无数台奇点反应堆驱动来进行建设工作。"
+ AOW_evt_ring_world.131.a:0"如此奇迹，真正展现了我们对宇宙空间的掌控能力。"
+ AOW_evt_ring_world.132.title:0"§H$AOW_MEGA_ring_world_4$§!区段完成"
+ AOW_evt_ring_world.132.a.desc:0"$AOW_MEGA_ring_world_4$的一个宜居区段已经完工，无边无际的人工天幕覆盖了一望无际的宜居区段，维持着天堂般的生态系统。接下来可以对这个宜居区段进行殖民建设工作了，这些比$AOW_MEGA_ring_world_3$区段更加庞大的宜居区段需要更多额外的能源维持生态系统运转，若要达到最佳生产水平恐怕也需要一笔庞大的维护费开支。"
+ AOW_evt_ring_world.132.b.desc:0"无数巨大如小型巨构工程的自动化机械被安装在这个无边无际的环世界框架上，这些自动化装置连接着第一层环世界的控制终端，将整个多重环世界的生产规模扩大到难以想象的规模。"
+ AOW_evt_ring_world.132.a:0"继续建设。"
+ AOW_evt_ring_world.132.a.tooltip:0"该星系的每个第一环世界可额外容纳§Y100§!单位用于增产的§B虚拟人口§!。"
+ AOW_evt_ring_world.133.title:0"§H$AOW_MEGA_ring_world_4$§!完工"
+ AOW_evt_ring_world.133.a.desc:0"[from.GetName]星系的巨大星际空间此刻已经近乎完全被人工结构占据，我们可以说这是尝试征服整个恒星系范围的巨大宇宙空间的开始，随着$AOW_MEGA_ring_world_4$全部工程的结束，这个星系原先的行星结构已经替换为了四重巨大的圆环。这四重环世界，代表着文明工程学的最高成就，也意味着我们真正拥有了掌握恒星系的力量。\n\n它拥有四倍于普通环世界的容量，是我们目前建造的最大也是最不可思议的环形世界，竣工当天，星系内的绝大部分科学家和大量的平民都慕名前来参观这个超$AOW_MEGA_ring_world_2$，无不惊叹于我们那看似魔法的高超工程技术。"
+ AOW_evt_ring_world.133.b.desc:0"奇迹对于我们而言并非空前绝后，[from.GetName]星系的宇宙空间也被$AOW_MEGA_ring_world_4$彻底占据，将整个星河重塑成我们想要的样子，现在我们真正的拥有了这个能力。"
+ AOW_evt_ring_world.133.a:0"星球塑形师？星海塑形师！"
+ AOW_evt_ring_world.133.a.tooltip:0"该星系的每个第一环世界现可容纳§Y400§!单位用于增产的§B虚拟人口§!。"
+
+
+ AOW_evt_ring_world.200.name:0"环世界坟墓"
+ AOW_evt_ring_world.200.a.desc:0"我们的船员在[from.GetName]星系发现了一系列巨大的条状结构，在靠内的废墟判断为是一个相对较为明显的环世界废墟，但在正常的环世界废墟外面一些巨大的条状结构环绕中央恒星形成了一个半径约为4天文单位的巨型圆环。\n\n初步推测这些条状结构可能是某个远古文明建造的巨大环世界的残骸，但这样巨大的环世界结构很明显在工程建设上是极其困难的。能够建造如此巨大的环世界绝对是一个工程学极其先进的文明"
+ AOW_evt_ring_world.200.b.desc:0"我们的船员在[from.GetName]星系发现了一个异常的天体系统！在这个恒星系没有明显的行星，取而代之的是三圈巨大的类似环世界废墟的结构，断裂的环世界结构所形成的巨大条形天体成为了环绕在这个星系恒星附近的奇特“行星”，无数的断裂碎片形成了这个行星的不自然的“小行星带”。\n\n想要建造如此规模的环世界结构似乎是极其困难的，这几乎已经超出了我们所认可的工程学极限，毋庸置疑的是倘若这个奇特星系真的是某个文明建造的三层环世界的废墟，那么这个文明一定拥有着难以置信的先进技术。"
+ AOW_evt_ring_world.200.c.desc:0"早在我们的船员尚未抵达[from.GetName]星系之时，传感器就探测到[from.GetName]星系有着极不寻常的天体结构，而当他们真正抵达并且差点与一块目测有一颗气态行星巨大的巨型人造结构碎片擦肩而过时，这才真正见识到了这个星系难以置信的天体结构。\n\n它就像是一个正常的天体系统，但是本来是行星的轨道上却换成了无数的环世界碎片！这些环世界碎片覆盖了整个星系，甚至延伸到了星系引力阱的边缘。没人知道这个星系原有的样子究竟是什么，但很明显，这个星系曾被彻底的人工改造，猜测原先环绕这个星系的环世界很可能有整整四重，覆盖了从1到30天文单位的巨大星际空间。\n\n这简直是银河罕有的宇宙奇观，建造这个巨大人造结构的文明想必在整个银河的历史中也是可称极致的存在。"
+ AOW_evt_ring_world.200.a:0"未来或许可以利用这些残骸。"
+ AOW_evt_ring_world.200.b:0"这样的先进技术令银河望尘莫及，但我们或许可以触碰到这样的技术水平。"
+ AOW_evt_ring_world.200.c:0"虽说是极致的造物，可最终却化为尘埃，不得不慨叹宇宙之无情。"
+
+
+
+ AOW_evt_ring_world.210.title:0"环世界开始修复"
+ AOW_evt_ring_world.210.desc:0"我们开始着手修复这个超巨型环世界了，由于这些多重环世界的规模过于庞大，关于多重环世界修复好后的的运转模式出现了以下三种方案：\n\n方案一：建设为§Y独立环形世界§!，正常建造为独立的、需要单独殖民并发展的、更为巨大的环世界。\n方案二：建设为§Y附属环形世界§!，多重环世界的区划上限将分配至一环，一环拥有更多区划上限。\n方案三：建设为§Y产能增幅设施§!，多重环世界的空间将分配至一环，用于容纳虚拟人口，现实人口转化为虚拟人口可辅助增加岗位产出。\n\n我们要如何决定§Y[from.GetName]§!星系的环世界建设计划？"
+
+ AOW_evt_ring_world.211.title:0"$AOW_MEGA_ring_world_2$区段修复完毕"
+ AOW_evt_ring_world.211.desc:0"$AOW_MEGA_ring_world_2$区段现已修复完毕。\n\n这个庞大的环形世界拥有着近乎于两倍普通环世界的居住空间，由于我们是在文明废墟上重构的宜居空间，这导致处理废墟都花费了我们不少时间，好在废墟本身拥有大量的建筑原材料，我们并不需要花费过多的资源就足以将其修复完毕。"
+ AOW_evt_ring_world.221.title:0"$AOW_MEGA_ring_world_3$区段修复完毕"
+ AOW_evt_ring_world.221.desc:0"$AOW_MEGA_ring_world_3$区段现已修复完毕。\n\n这个庞大的环形世界拥有着近乎于三倍普通环世界的居住空间，这工作量让不少工程师废寝忘食，好在它所携带的多维空间结构稳定系统在该环世界废弃后依旧持续运行了数十万年，在它的维持下，我们的修复工作才不需要暗物质的维持。"
+ AOW_evt_ring_world.231.title:0"$AOW_MEGA_ring_world_4$区段修复完毕"
+ AOW_evt_ring_world.231.desc:0"$AOW_MEGA_ring_world_4$区段现已修复完毕。\n\n这个庞大的环形世界拥有着近乎于四倍普通环世界的居住空间，这是我们目前所见证过的最大的废弃居住站，一眼看过去就能让人窥见其曾经辉煌的岁月，在环世界建造者的多维空间结构稳定系统、我们的先进技术、天文数字般的资源...等多方面的加持下，总算是修好了这一超巨型结构。"

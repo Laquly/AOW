@@ -1,0 +1,123 @@
+particle={
+	name="AOW_k_planet_break_effect"
+	subsystem={#不断散开的射线
+		name="rays"
+		max_amount=10
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/blast.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x={ 255 20 }
+			y={ 70 20 }
+			z={ 50 20 }
+			alpha={ 255,alpha_fade 20 }
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ -90 5 }
+		velocity_yaw={ 0 5 }
+		velocity={ 0.4 0.1 }
+		life=1
+		emission=4
+		size={ 200,grow 10 }
+		rotation={ 0 180 }
+		rotation_speed={ 0 0 }
+	}
+	animation={
+		name="alpha_fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.28235 0.98438 0.756 0.258 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="grow"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0.32813 1 1 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="slow_fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.48529 0.96094 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="shrink"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 1 1 0.71875 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="fade"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.1 1 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	force={
+		type="planar"
+		name="force0"
+		position={
+			0 0 0 
+		}
+		direction={
+			0 1 0 
+		}
+		local_force=yes
+		yaw=0
+		division=16
+		amount=5
+	}
+}

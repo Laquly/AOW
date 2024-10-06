@@ -1,0 +1,51 @@
+site_planetary_ship = {
+	desc = site_planetary_ship_desc
+	picture = GFX_evt_planetary_ship_megastructures_2
+	stages = 6
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_C1
+		event = AOW_evt_planetary_ship.11
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_C2
+		event = AOW_evt_planetary_ship.12
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_C3
+		event = AOW_evt_planetary_ship.13
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_C4
+		event = AOW_evt_planetary_ship.14
+	}
+	stage = {
+		difficulty = 7
+		icon = GFX_archaeology_runes_C5
+		event = AOW_evt_planetary_ship.15
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_archaeology_runes_C6
+		event = AOW_evt_planetary_ship.16
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

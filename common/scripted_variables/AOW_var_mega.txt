@@ -1,0 +1,1256 @@
+#【时间】@AOW_var_[巨构简写]_[巨构阶段]_TIME
+#【资源】@AOW_var_[巨构简写]_[巨构阶段]_[COST/UPKP/PRDC]_[具体资源]_[特定行星]
+#【修正】@AOW_var_[巨构简写]_[巨构阶段]_[修正代码]
+
+
+######################## 小型巨构 ########################
+
+#星光竞技场
+@AOW_var_SA_1_TIME = 360
+@AOW_var_SA_1_COST_alloys = 500
+@AOW_var_SA_1_COST_unity = 750
+@AOW_var_SA_1_UPKP_energy = 10
+@AOW_var_SA_1_PRDC_unity = 30
+@AOW_var_SA_1_PRDC_research = 10
+
+#星状开采站
+@AOW_var_AMS_1_TIME = 360
+@AOW_var_AMS_1_COST_alloys = 500
+@AOW_var_AMS_1_COST_unity = 500
+@AOW_var_AMS_1_UPKP_energy = 10
+@AOW_var_AMS_1_PRDC_minerals_Asteroid = 50
+@AOW_var_AMS_1_PRDC_motes_Asteroid = 2
+@AOW_var_AMS_1_PRDC_minerals_CrystalAsteroid = 50
+@AOW_var_AMS_1_PRDC_crystal_CrystalAsteroid = 2
+@AOW_var_AMS_1_PRDC_energy_IceAsteroid = 25
+@AOW_var_AMS_1_PRDC_minerals_IceAsteroid = 25
+@AOW_var_AMS_1_PRDC_crystal_IceAsteroid = 2
+
+#星空传感站
+@AOW_var_SSS_1_time = 360
+@AOW_var_SSS_1_COST_alloys = 500
+@AOW_var_SSS_1_COST_unity = 500
+@AOW_var_SSS_1_UPKP_energy = 5
+@AOW_var_SSS_1_sensor_range = 8
+@AOW_var_SSS_1_hyperlane_range = 10
+
+#卫星防御基地
+@AOW_var_SDB_1_TIME = 900
+@AOW_var_SDB_1_COST_alloys = 1000
+@AOW_var_SDB_1_COST_unity = 500
+
+######################## 普通巨构 ########################
+#奇观建设局
+@AOW_var_WCB_0_TIME = 1800
+@AOW_var_WCB_0_COST_alloys = 5000
+@AOW_var_WCB_0_COST_unity = 2500
+@AOW_var_WCB_0_UPKP_energy = 10
+@AOW_var_WCB_1_TIME = 3600
+@AOW_var_WCB_1_COST_alloys = 15000
+@AOW_var_WCB_1_COST_unity = 2500
+@AOW_var_WCB_1_PRDC_living_metal = 5
+@AOW_var_WCB_1_UPKP_alloys = 40
+@AOW_var_WCB_1_UPKP_energy = 40
+@AOW_var_WCB_1_UPKP_minerals = 80
+@AOW_var_WCB_2_TIME = 3600
+@AOW_var_WCB_2_COST_alloys = 15000
+@AOW_var_WCB_2_COST_unity = 2500
+@AOW_var_WCB_2_PRDC_living_metal = 10
+@AOW_var_WCB_2_UPKP_alloys = 80
+@AOW_var_WCB_2_UPKP_energy = 80
+@AOW_var_WCB_2_UPKP_minerals = 160
+@AOW_var_WCB_3_TIME = 3600
+@AOW_var_WCB_3_COST_alloys = 15000
+@AOW_var_WCB_3_COST_unity = 2500
+@AOW_var_WCB_3_PRDC_living_metal = 15
+@AOW_var_WCB_3_UPKP_alloys = 120
+@AOW_var_WCB_3_UPKP_energy = 120
+@AOW_var_WCB_3_UPKP_minerals = 240
+
+#行星波动炮
+@AOW_var_PBS_0_TIME = 1800
+@AOW_var_PBS_0_COST_alloys = 3000
+@AOW_var_PBS_0_COST_influence = 100
+@AOW_var_PBS_0_UPKP_energy = 10
+@AOW_var_PBS_1_TIME = 1800
+@AOW_var_PBS_1_COST_alloys = 7500
+@AOW_var_PBS_1_UPKP_energy = 12.5
+@AOW_var_PBS_1_UPKP_alloys = 12.5
+@AOW_var_PBS_2_TIME = 1800
+@AOW_var_PBS_2_COST_alloys = 7500
+@AOW_var_PBS_2_UPKP_energy = 25
+@AOW_var_PBS_2_UPKP_alloys = 25
+@AOW_var_PBS_3_TIME = 1800
+@AOW_var_PBS_3_COST_alloys = 7500
+@AOW_var_PBS_3_UPKP_energy = 37.5
+@AOW_var_PBS_3_UPKP_alloys = 37.5
+@AOW_var_PBS_4_TIME = 720
+@AOW_var_PBS_4_COST_energy = 10000
+@AOW_var_PBS_4_COST_sr = 250
+@AOW_var_PBS_4_UPKP_energy = 50
+@AOW_var_PBS_4_UPKP_alloys = 50
+
+@AOW_var_PBSr_TIME = 1800
+@AOW_var_PBSr_COST_energy = 10000
+@AOW_var_PBSr_COST_alloys = 10000
+
+
+#海军指挥基地
+@AOW_var_NCB_0_TIME = 1800
+@AOW_var_NCB_0_COST_alloys = 5000
+@AOW_var_NCB_0_COST_unity = 2500
+@AOW_var_NCB_0_UPKP_energy = 25
+@AOW_var_NCB_1_TIME = 3600
+@AOW_var_NCB_1_COST_alloys = 15000
+@AOW_var_NCB_1_COST_unity = 2500
+@AOW_var_NCB_1_UPKP_energy = 50
+@AOW_var_NCB_1_naval_cap_add = 100
+@AOW_var_NCB_1_command_limit_add = 10
+@AOW_var_NCB_2_TIME = 3600
+@AOW_var_NCB_2_COST_alloys = 15000
+@AOW_var_NCB_2_COST_unity = 2500
+@AOW_var_NCB_2_UPKP_energy = 75
+@AOW_var_NCB_2_naval_cap_add = 200
+@AOW_var_NCB_2_command_limit_add = 20
+@AOW_var_NCB_3_TIME = 3600
+@AOW_var_NCB_3_COST_alloys = 15000
+@AOW_var_NCB_3_COST_unity = 2500
+@AOW_var_NCB_3_UPKP_energy = 100
+@AOW_var_NCB_3_naval_cap_add = 300
+@AOW_var_NCB_3_command_limit_add = 30
+
+#文物誊录宫
+@AOW_var_ATP_0_TIME = 1800
+@AOW_var_ATP_0_COST_alloys = 5000
+@AOW_var_ATP_0_COST_unity = 2500
+@AOW_var_ATP_0_UPKP_energy = 10
+@AOW_var_ATP_1_TIME = 2700
+@AOW_var_ATP_1_COST_alloys = 10000
+@AOW_var_ATP_1_COST_unity = 2500
+@AOW_var_ATP_1_PRDC_artifacts = 20
+@AOW_var_ATP_1_UPKP_energy = 20
+@AOW_var_ATP_2_TIME = 2700
+@AOW_var_ATP_2_COST_alloys = 10000
+@AOW_var_ATP_2_COST_unity = 2500
+@AOW_var_ATP_2_PRDC_artifacts = 40
+@AOW_var_ATP_2_UPKP_energy = 25
+@AOW_var_ATP_3_TIME = 2700
+@AOW_var_ATP_3_COST_alloys = 10000
+@AOW_var_ATP_3_COST_unity = 2500
+@AOW_var_ATP_3_PRDC_artifacts = 60
+@AOW_var_ATP_3_UPKP_energy = 50
+@AOW_var_ATP_4_TIME = 2700
+@AOW_var_ATP_4_COST_alloys = 10000
+@AOW_var_ATP_4_COST_unity = 2500
+@AOW_var_ATP_4_PRDC_artifacts = 80
+@AOW_var_ATP_4_UPKP_energy = 75
+@AOW_var_ATP_5_TIME = 2700
+@AOW_var_ATP_5_COST_alloys = 10000
+@AOW_var_ATP_5_COST_unity = 2500
+@AOW_var_ATP_5_PRDC_artifacts = 100
+@AOW_var_ATP_5_UPKP_energy = 100
+
+#纳米激活器
+@AOW_var_NA_0_TIME = 1800
+@AOW_var_NA_0_COST_alloys = 5000
+@AOW_var_NA_0_COST_unity = 2500
+@AOW_var_NA_0_UPKP_energy = 5
+@AOW_var_NA_1_TIME = 3600
+@AOW_var_NA_1_COST_alloys = 10000
+@AOW_var_NA_1_COST_unity = 3750
+@AOW_var_NA_1_UPKP_energy = 10
+@AOW_var_NA_2_TIME = 3600
+@AOW_var_NA_2_COST_energy = 5000
+@AOW_var_NA_2_COST_alloys = 10000
+@AOW_var_NA_2_COST_unity = 3750
+@AOW_var_NA_2_UPKP_energy = 25
+@AOW_var_NA_2_PRDC_nanites = 10
+@AOW_var_NA_2_PRDC_nanites_GrayGoo = 15
+
+#纳米转换器
+@AOW_var_NT_0_TMIE = 1800
+@AOW_var_NT_0_COST_alloys = 5000
+@AOW_var_NT_0_COST_unity = 2500
+@AOW_var_NT_0_UPKP_energy = 5
+@AOW_var_NT_1_TIME = 3600
+@AOW_var_NT_1_COST_alloys = 10000
+@AOW_var_NT_1_COST_nanites = 100
+@AOW_var_NT_1_COST_unity = 3750
+@AOW_var_NT_1_UPKP_energy = 50
+@AOW_var_NT_1_UPKP_nanites = 10
+@AOW_var_NT_1_PRDC_motes = 25
+@AOW_var_NT_1_PRDC_gases = 25
+@AOW_var_NT_1_PRDC_crystals = 25
+@AOW_var_NT_2_TIME = 3600
+@AOW_var_NT_2_COST_alloys = 10000
+@AOW_var_NT_2_COST_nanites = 100
+@AOW_var_NT_2_COST_unity = 3750
+@AOW_var_NT_2_UPKP_energy = 100
+@AOW_var_NT_2_UPKP_nanites = 20
+@AOW_var_NT_2_PRDC_motes = 50
+@AOW_var_NT_2_PRDC_gases = 50
+@AOW_var_NT_2_PRDC_crystals = 50
+
+#轨道采集器
+@AOW_var_OAS_0_TIME = 1800
+@AOW_var_OAS_0_COST_alloys = 5000
+@AOW_var_OAS_0_COST_unity = 2500
+@AOW_var_OAS_1_TIME = 2700
+@AOW_var_OAS_1_COST_alloys = 7500
+@AOW_var_OAS_1_COST_unity = 2500
+@AOW_var_OAS_1_UPKP_energy = 10
+@AOW_var_OAS_2_TIME = 2700
+@AOW_var_OAS_2_COST_energy = 12500
+@AOW_var_OAS_2_COST_unity = 2500
+@AOW_var_OAS_2_PRDC_energy = 325
+@AOW_var_OAS_2_PRDC_gases = 15
+@AOW_var_OAS_2_PRDC_no_gases = -15
+@AOW_var_OAS_3_TIME = 3600
+@AOW_var_OAS_3_COST_energy = 2500
+@AOW_var_OAS_3_COST_alloys = 10000
+@AOW_var_OAS_3_COST_unity = 2500
+@AOW_var_OAS_3_PRDC_energy = 650
+@AOW_var_OAS_3_PRDC_gases = 30
+@AOW_var_OAS_3_PRDC_no_gases = -30
+
+#行星开采器
+@AOW_var_PMS_0_TIME = 1800
+@AOW_var_PMS_0_COST_alloys = 5000
+@AOW_var_PMS_0_COST_unity = 2500
+@AOW_var_PMS_1_TIME = 2700
+@AOW_var_PMS_1_COST_alloys = 7500
+@AOW_var_PMS_1_COST_unity = 2500
+@AOW_var_PMS_1_UPKP_energy = 10
+@AOW_var_PMS_2_TIME = 2700
+@AOW_var_PMS_2_COST_energy = 10000
+@AOW_var_PMS_2_COST_unity = 2500
+@AOW_var_PMS_2_UPKP_energy = 25
+@AOW_var_PMS_2_UPKP_motes = 0
+@AOW_var_PMS_2_PRDC_metal = 10
+@AOW_var_PMS_2_PRDC_minerals_Common = 400
+@AOW_var_PMS_2_PRDC_energy_Molten = 175
+@AOW_var_PMS_2_PRDC_minerals_Molten = 175
+@AOW_var_PMS_2_PRDC_alloys_Molten = 0
+@AOW_var_PMS_2_PRDC_motes_Molten = 10
+@AOW_var_PMS_2_PRDC_minerals_Toxic = 350
+@AOW_var_PMS_2_PRDC_gases_Toxic = 10
+@AOW_var_PMS_2_PRDC_minerals_Frozen = 350
+@AOW_var_PMS_2_PRDC_crystals_Frozen = 10
+@AOW_var_PMS_2_PRDC_minerals_EthaneOcean = 350
+@AOW_var_PMS_2_PRDC_motes_EthaneOcean = 10
+@AOW_var_PMS_2_PRDC_minerals_Iron = 350
+@AOW_var_PMS_2_PRDC_alloys_Iron = 25
+@AOW_var_PMS_2_PRDC_energy_Hydrocarbon = 200
+@AOW_var_PMS_2_PRDC_minerals_Hydrocarbon = 200
+@AOW_var_PMS_2_PRDC_energy_Volcanic = 175
+@AOW_var_PMS_2_PRDC_minerals_Volcanic = 175
+@AOW_var_PMS_2_PRDC_alloys_Volcanic = 25
+@AOW_var_PMS_3_TIME = 3600
+@AOW_var_PMS_3_COST_alloys = 10000
+@AOW_var_PMS_3_COST_unity = 2500
+@AOW_var_PMS_3_UPKP_energy = 50
+@AOW_var_PMS_3_PRDC_metal = 20
+@AOW_var_PMS_3_PRDC_minerals_Common = 800
+@AOW_var_PMS_3_PRDC_minerals_CG = 600 #CG is consumer_goods
+@AOW_var_PMS_3_PRDC_goods_CG = 200
+@AOW_var_PMS_3_PRDC_energy_Molten = 350
+@AOW_var_PMS_3_PRDC_minerals_Molten =350
+@AOW_var_PMS_3_PRDC_alloys_Molten = 0
+@AOW_var_PMS_3_PRDC_motes_Molten = 20
+@AOW_var_PMS_3_PRDC_minerals_Toxic = 700
+@AOW_var_PMS_3_PRDC_gases_Toxic = 20
+@AOW_var_PMS_3_PRDC_minerals_Frozen = 700
+@AOW_var_PMS_3_PRDC_crystals_Frozen = 20
+@AOW_var_PMS_3_PRDC_minerals_EthaneOcean = 700
+@AOW_var_PMS_3_PRDC_motes_EthaneOcean = 20
+@AOW_var_PMS_3_PRDC_minerals_Iron = 700
+@AOW_var_PMS_3_PRDC_alloys_Iron = 50
+@AOW_var_PMS_3_PRDC_energy_Hydrocarbon = 300
+@AOW_var_PMS_3_PRDC_minerals_Hydrocarbon = 500
+@AOW_var_PMS_3_PRDC_energy_Volcanic = 350
+@AOW_var_PMS_3_PRDC_minerals_Volcanic = 350
+@AOW_var_PMS_3_PRDC_alloys_Volcanic = 50
+
+#合成食物工厂
+@AOW_var_SFF_0_TIME = 1800
+@AOW_var_SFF_0_COST_alloys = 5000
+@AOW_var_SFF_0_COST_unity = 2500
+@AOW_var_SFF_0_UPKP_energy = 5
+@AOW_var_SFF_1_TIME = 2700
+@AOW_var_SFF_1_COST_alloys = 10000
+@AOW_var_SFF_1_COST_unity = 2500
+@AOW_var_SFF_1_UPKP_energy = 15
+@AOW_var_SFF_1_PRDC_society = 50
+@AOW_var_SFF_2_TIME = 3600
+@AOW_var_SFF_2_COST_alloys = 7500
+@AOW_var_SFF_2_COST_gases = 125
+@AOW_var_SFF_2_COST_unity = 2500
+@AOW_var_SFF_2_UPKP_energy = 25
+@AOW_var_SFF_2_UPKP_gases = 15
+@AOW_var_SFF_2_PRDC_food = 400
+@AOW_var_SFF_2_PRDC_society = 200
+@AOW_var_SFF_2_PRDC_unity = 50
+@AOW_var_SFF_3_TIME = 3600
+@AOW_var_SFF_3_COST_alloys = 7500
+@AOW_var_SFF_3_COST_gases = 125
+@AOW_var_SFF_3_COST_unity = 2500
+@AOW_var_SFF_3_UPKP_energy = 50
+@AOW_var_SFF_3_UPKP_gases = 30
+@AOW_var_SFF_3_PRDC_food = 800
+@AOW_var_SFF_3_PRDC_society = 400
+@AOW_var_SFF_3_PRDC_unity = 100
+
+#暗物质曲率陷阱
+@AOW_var_DMCT_0_TIME = 1800
+@AOW_var_DMCT_0_COST_alloys = 5000
+@AOW_var_DMCT_0_COST_unity = 2500
+@AOW_var_DMCT_0_UPKE_energy = 5
+@AOW_var_DMCT_1_TIME = 3600
+@AOW_var_DMCT_1_COST_energy = 5000
+@AOW_var_DMCT_1_COST_alloys = 7500
+@AOW_var_DMCT_1_COST_unity = 3750
+@AOW_var_DMCT_1_PRDC_darkmatter = 12.5
+@AOW_var_DMCT_1_UPKP_energy = 50
+@AOW_var_DMCT_2_TIME = 3600
+@AOW_var_DMCT_2_COST_energy = 5000
+@AOW_var_DMCT_2_COST_alloys = 7500
+@AOW_var_DMCT_2_COST_unity = 3750
+@AOW_var_DMCT_2_PRDC_darkmatter = 25
+@AOW_var_DMCT_2_UPKP_energy = 100
+
+#泽珞升华器
+@AOW_var_ZS_0_TIME = 1800
+@AOW_var_ZS_0_COST_alloys = 5000
+@AOW_var_ZS_0_COST_unity = 2500
+@AOW_var_ZS_0_UPKP_energy = 5
+@AOW_var_ZS_1_TIME = 3600
+@AOW_var_ZS_1_COST_alloys = 10000
+@AOW_var_ZS_1_COST_unity = 3750
+@AOW_var_ZS_1_UPKP_energy = 25
+@AOW_var_ZS_2_TIME = 3600
+@AOW_var_ZS_2_COST_energy = 5000
+@AOW_var_ZS_2_COST_alloys = 10000
+@AOW_var_ZS_2_COST_unity = 3750
+@AOW_var_ZS_2_UPKP_energy = 50
+@AOW_var_ZS_2_PRDC_zro = 20
+
+#深空监狱
+@AOW_var_DSP_0_TIME = 1800
+@AOW_var_DSP_0_COST_alloys = 5000
+@AOW_var_DSP_0_COST_unity = 2500
+@AOW_var_DSP_0_UPKE_energy = 5
+@AOW_var_DSP_1_TIME = 1800
+@AOW_var_DSP_1_COST_alloys = 7500
+@AOW_var_DSP_1_COST_energy = 3000
+@AOW_var_DSP_1_COST_unity = 2500
+@AOW_var_DSP_1_PRDC_unity = 50
+@AOW_var_DSP_1_UPKE_energy = 25
+@AOW_var_DSP_2_TIME = 1800
+@AOW_var_DSP_2_COST_alloys = 7500
+@AOW_var_DSP_2_COST_energy = 3000
+@AOW_var_DSP_2_COST_unity = 2500
+@AOW_var_DSP_2_PRDC_unity = 100
+@AOW_var_DSP_2_UPKE_energy = 50
+@AOW_var_DSP_3_TIME = 1800
+@AOW_var_DSP_3_COST_alloys = 7500
+@AOW_var_DSP_3_COST_energy = 3000
+@AOW_var_DSP_3_COST_unity = 2500
+@AOW_var_DSP_3_PRDC_unity = 150
+@AOW_var_DSP_3_UPKE_energy = 75
+@AOW_var_DSP_4_TIME = 1800
+@AOW_var_DSP_4_COST_alloys = 7500
+@AOW_var_DSP_4_COST_energy = 9000
+@AOW_var_DSP_4_COST_unity = 2500
+@AOW_var_DSP_4_PRDC_unity = 200
+@AOW_var_DSP_4_UPKE_energy = 100
+
+#星轨
+@AOW_var_HC_TIME = 900
+@AOW_var_HC_COST_alloys = 5000
+@AOW_var_HC_COST_energy = 5000
+@AOW_var_HC_COST_influence = 100
+
+#星网
+@AOW_var_AHC_TIME = 1800
+@AOW_var_AHC_COST_alloys = 5000
+@AOW_var_AHC_COST_energy = 500
+@AOW_var_AHC_COST_influence = 200
+
+#星云提取器
+@AOW_var_NRC_0_TIME = 1800
+@AOW_var_NRC_0_COST_alloys = 5000
+@AOW_var_NRC_0_COST_unity = 2500
+@AOW_var_NRC_0_UPKP_energy = 5
+@AOW_var_NRC_1_TIME = 2700
+@AOW_var_NRC_1_COST_alloys = 8100
+@AOW_var_NRC_1_COST_unity = 2000
+@AOW_var_NRC_1_UPKP_energy = 20
+@AOW_var_NRC_1_PRDC_minerals = 100
+@AOW_var_NRC_1_PRDC_sr = 5
+@AOW_var_NRC_1_PRDC_zro = 1
+@AOW_var_NRC_1_PRDC_darkmatter = 1
+@AOW_var_NRC_2_TIME = 2700
+@AOW_var_NRC_2_COST_alloys = 8100
+@AOW_var_NRC_2_COST_unity = 2000
+@AOW_var_NRC_2_UPKP_energy = 40
+@AOW_var_NRC_2_PRDC_minerals = 200
+@AOW_var_NRC_2_PRDC_sr = 10
+@AOW_var_NRC_2_PRDC_zro = 2
+@AOW_var_NRC_2_PRDC_darkmatter = 2
+@AOW_var_NRC_3_TIME = 2700
+@AOW_var_NRC_3_COST_alloys = 8100
+@AOW_var_NRC_3_COST_unity = 2000
+@AOW_var_NRC_3_UPKP_energy = 60
+@AOW_var_NRC_3_PRDC_minerals = 300
+@AOW_var_NRC_3_PRDC_sr = 15
+@AOW_var_NRC_3_PRDC_zro = 3
+@AOW_var_NRC_3_PRDC_darkmatter = 3
+@AOW_var_NRC_4_TIME = 2700
+@AOW_var_NRC_4_COST_alloys = 8100
+@AOW_var_NRC_4_COST_unity = 2000
+@AOW_var_NRC_4_UPKP_energy = 80
+@AOW_var_NRC_4_PRDC_minerals = 400
+@AOW_var_NRC_4_PRDC_sr = 20
+@AOW_var_NRC_4_PRDC_zro = 4
+@AOW_var_NRC_4_PRDC_darkmatter = 4
+@AOW_var_NRC_5_TIME = 2700
+@AOW_var_NRC_5_COST_alloys = 8100
+@AOW_var_NRC_5_COST_unity = 2000
+@AOW_var_NRC_5_UPKP_energy = 100
+@AOW_var_NRC_5_PRDC_minerals = 500
+@AOW_var_NRC_5_PRDC_sr = 25
+@AOW_var_NRC_5_PRDC_zro = 5
+@AOW_var_NRC_5_PRDC_darkmatter = 5
+
+#繁荣贸易站
+@AOW_var_PTS_0_TIME = 1800
+@AOW_var_PTS_0_COST_alloys = 5000
+@AOW_var_PTS_0_COST_unity = 2500
+@AOW_var_PTS_0_UPKP_energy = 5
+@AOW_var_PTS_1_TIME = 1800
+@AOW_var_PTS_1_COST_alloys = 10000
+@AOW_var_PTS_1_COST_unity = 2500
+@AOW_var_PTS_1_UPKP_energy = 25
+@AOW_var_PTS_1_envoys_add = 1
+@AOW_var_PTS_2_TIME = 1800
+@AOW_var_PTS_2_COST_alloys = 10000
+@AOW_var_PTS_2_COST_crystals = 250
+@AOW_var_PTS_2_COST_unity = 2500
+@AOW_var_PTS_2_UPKP_energy = 50
+@AOW_var_PTS_2_UPKP_crystals = 10
+@AOW_var_PTS_2_envoys_add = 1
+@AOW_var_PTS_2_trade_value_add = 100
+@AOW_var_PTS_2_trade_value_mult = 0.05
+@AOW_var_PTS_2_branch_office_value_mult = 0.05
+@AOW_var_PTS_3_TIME = 1800
+@AOW_var_PTS_3_COST_alloys = 10000
+@AOW_var_PTS_3_COST_crystals = 250
+@AOW_var_PTS_3_COST_unity = 2500
+@AOW_var_PTS_3_UPKP_energy = 75
+@AOW_var_PTS_3_UPKP_crystals = 20
+@AOW_var_PTS_3_PRDC_unity = 100
+@AOW_var_PTS_3_envoys_add = 1
+@AOW_var_PTS_3_trade_value_mult = 0.1
+@AOW_var_PTS_3_branch_office_value_mult = 0.1
+@AOW_var_PTS_4_TIME = 1800
+@AOW_var_PTS_4_COST_energy = 5000
+@AOW_var_PTS_4_COST_influence = 150
+@AOW_var_PTS_4_UPKP_energy = 100
+@AOW_var_PTS_4_PRDC_unity = 200
+@AOW_var_PTS_4_envoys_add = 1
+@AOW_var_PTS_4_trade_value_mult = 0.2
+@AOW_var_PTS_4_branch_office_value_mult = 0.2
+@AOW_var_PTS_5_TIME = 1800
+@AOW_var_PTS_5_COST_energy = 5000
+@AOW_var_PTS_5_COST_influence = 150
+@AOW_var_PTS_5_UPKP_energy = 100
+@AOW_var_PTS_5_PRDC_unity = 300
+@AOW_var_PTS_5_envoys_add = 1
+@AOW_var_PTS_5_trade_value_mult = 0.3
+@AOW_var_PTS_5_branch_office_value_mult = 0.3
+
+#英灵殿
+@AOW_var_COM_0_TIME = 1800
+@AOW_var_COM_0_COST_alloys = 5000
+@AOW_var_COM_0_COST_unity = 2500
+@AOW_var_COM_0_UPKP_energy = 5
+@AOW_var_COM_1_TIME = 2700
+@AOW_var_COM_1_COST_alloys = 10000
+@AOW_var_COM_1_COST_unity = 2500
+@AOW_var_COM_1_UPKP_energy = 20
+@AOW_var_COM_1_PRDC_unity = 100
+@AOW_var_COM_1_modifier = 0.1
+@AOW_var_COM_2_TIME = 1800
+@AOW_var_COM_2_COST_alloys = 10000
+@AOW_var_COM_2_COST_unity = 2500
+@AOW_var_COM_2_UPKP_energy = 40
+@AOW_var_COM_2_PRDC_unity = 200
+@AOW_var_COM_2_modifier = 0.2
+@AOW_var_COM_3_TIME = 1800
+@AOW_var_COM_3_COST_alloys = 10000
+@AOW_var_COM_3_COST_unity = 2500
+@AOW_var_COM_3_UPKP_energy = 60
+@AOW_var_COM_3_PRDC_unity = 300
+@AOW_var_COM_3_modifier = 0.3
+
+#位面虹吸器
+@AOW_var_PS_0_TIME = 1800
+@AOW_var_PS_0_COST_alloys = 5000
+@AOW_var_PS_0_COST_unity = 2500
+@AOW_var_PS_0_UPKP_energy = 5
+@AOW_var_PS_1_TIME = 3600
+@AOW_var_PS_1_COST_alloys = 10000
+@AOW_var_PS_1_COST_unity = 3750
+@AOW_var_PS_1_UPKP_energy = 25
+@AOW_var_PS_2_TIME = 3600
+@AOW_var_PS_2_COST_energy = 10000
+@AOW_var_PS_2_COST_alloys = 10000
+@AOW_var_PS_2_COST_unity = 3750
+@AOW_var_PS_2_UPKP_energy = 100
+@AOW_var_PS_2_PRDC_astral_threads = 50
+@AOW_var_PS_2_PRDC_country_resource_max_astral_threads = 10000
+
+######################## 星河奇迹 ########################
+#戴森球
+@AOW_var_DS_UPKP_energy = 5
+@AOW_var_DS_TIME = 3600
+@AOW_var_DS_COST_alloys = 10000
+@AOW_var_DS_COST_unity = 5000
+@AOW_var_DS_2_PRDC_energy = 1000
+@AOW_var_DS_3_PRDC_energy = 2000
+@AOW_var_DS_4_PRDC_energy = 3000
+@AOW_var_DS_5_PRDC_energy = 4000
+@AOW_var_DS_1_UPKP_energy_MultiStar = 5
+@AOW_var_DS_1_UPKP_alloys_MultiStar = 5
+@AOW_var_DS_2_UPKP_energy_MultiStar = 10
+@AOW_var_DS_2_UPKP_alloys_MultiStar = 10
+@AOW_var_DS_3_UPKP_energy_MultiStar = 20
+@AOW_var_DS_3_UPKP_alloys_MultiStar = 20
+@AOW_var_DS_4_UPKP_energy_MultiStar = 30
+@AOW_var_DS_4_UPKP_alloys_MultiStar = 30
+@AOW_var_DS_5_UPKP_energy_MultiStar = 40
+@AOW_var_DS_5_UPKP_alloys_MultiStar = 40
+
+#戴森球特超巨星	3.0
+@AOW_var_DShs_TIME = 10800
+#戴森球超巨星	2.5
+@AOW_var_DSss_TIME = 9000
+#戴森球O		2.25
+@AOW_var_DSo_TIME = 8100
+#戴森球B		2
+@AOW_var_DSb_TIME = 7200
+#戴森球巨星	1.75
+@AOW_var_DSgs_TIME = 6300
+#戴森球A		1.5
+@AOW_var_DSa_TIME = 5400
+#戴森球F		1.25
+@AOW_var_DSf_TIME = 4500
+#戴森球G		1
+@AOW_var_DSg_TIME = 3600
+#戴森球K		0.75
+@AOW_var_DSk_TIME = 2700
+#戴森球M		0.5
+@AOW_var_DSm_TIME = 1800
+
+#奇迹球
+@AOW_var_DSDhs_TIME = 1080
+@AOW_var_DSDss_TIME = 900
+@AOW_var_DSDo_TIME = 810
+@AOW_var_DSDb_TIME = 720
+@AOW_var_DSDgs_TIME = 630
+@AOW_var_DSDa_TIME = 540
+@AOW_var_DSDf_TIME = 450
+@AOW_var_DSDg_TIME = 360
+@AOW_var_DSDk_TIME = 270
+@AOW_var_DSDm_TIME = 180
+@AOW_var_DSD_COST_rc = 2500
+@AOW_var_DSD_COST_unity = 3000
+@AOW_var_DSD_UPKP_energy = 30
+@AOW_var_DSD_PRDC_unity = 500
+@AOW_var_DSD_planet_amenities_mult = 0.3
+
+#摘星者
+@AOW_var_SP_0_TIME = 1800
+@AOW_var_SP_0_COST_alloys = 5000
+@AOW_var_SP_0_COST_unity = 5000
+@AOW_var_SP_0_UPKP_energy = 5
+@AOW_var_SP_1_TIME = 3600
+@AOW_var_SP_1_COST_alloys = 12500
+@AOW_var_SP_1_COST_unity = 3200
+@AOW_var_SP_1_UPKP_energy = 10
+@AOW_var_SP_1_UPKP_energy_MultiStar = 5
+@AOW_var_SP_1_UPKP_alloys_MultiStar = 5
+@AOW_var_SP_2_TIME = 3600
+@AOW_var_SP_2_COST_alloys = 12500
+@AOW_var_SP_2_COST_unity = 3200
+@AOW_var_SP_2_PRDC_minerals = 375		#500
+@AOW_var_SP_2_PRDC_alloys = 62.5
+@AOW_var_SP_2_UPKP_energy = 50
+@AOW_var_SP_2_UPKP_energy_MultiStar = 10
+@AOW_var_SP_2_UPKP_alloys_MultiStar = 10
+@AOW_var_SP_3_TIME = 3600
+@AOW_var_SP_3_COST_alloys = 12500
+@AOW_var_SP_3_COST_unity = 3200
+@AOW_var_SP_3_PRDC_minerals = 750		#1000
+@AOW_var_SP_3_PRDC_alloys = 125
+@AOW_var_SP_3_UPKP_energy = 100
+@AOW_var_SP_3_UPKP_energy_MultiStar = 20
+@AOW_var_SP_3_UPKP_alloys_MultiStar = 20
+@AOW_var_SP_4_TIME = 3600
+@AOW_var_SP_4_COST_alloys = 12500
+@AOW_var_SP_4_COST_unity = 3200
+@AOW_var_SP_4_PRDC_minerals = 1125	#1500
+@AOW_var_SP_4_PRDC_alloys = 187.5
+@AOW_var_SP_4_UPKP_energy = 150
+@AOW_var_SP_4_UPKP_energy_MultiStar = 30
+@AOW_var_SP_4_UPKP_alloys_MultiStar = 30
+@AOW_var_SP_5_TIME = 3600
+@AOW_var_SP_5_COST_alloys = 12500
+@AOW_var_SP_5_COST_unity = 3200
+@AOW_var_SP_5_PRDC_minerals = 1500	#2000
+@AOW_var_SP_5_PRDC_alloys = 250
+@AOW_var_SP_5_UPKP_energy = 200
+@AOW_var_SP_5_UPKP_energy_MultiStar = 40
+@AOW_var_SP_5_UPKP_alloys_MultiStar = 40
+
+#风暴激发塔
+@AOW_var_STT_0_TIME = 1800
+@AOW_var_STT_0_COST_alloys = 5000
+@AOW_var_STT_0_COST_unity = 5000
+@AOW_var_STT_0_UPKP_energy = 5
+@AOW_var_STT_1_TIME = 3600
+@AOW_var_STT_1_COST_alloys = 12500
+@AOW_var_STT_1_COST_unity = 5000
+@AOW_var_STT_1_UPKP_energy = 25
+@AOW_var_STT_2_TIME = 3600
+@AOW_var_STT_2_COST_alloys = 12500
+@AOW_var_STT_2_COST_unity = 5000
+@AOW_var_STT_2_UPKP_energy = 50
+@AOW_var_STT_3_TIME = 3600
+@AOW_var_STT_3_COST_alloys = 12500
+@AOW_var_STT_3_COST_unity = 5000
+@AOW_var_STT_3_UPKP_energy = 75
+@AOW_var_STT_4_TIME = 1800
+@AOW_var_STT_4_COST_energy = 10000
+@AOW_var_STT_4_COST_unity = 5000
+@AOW_var_STT_4_UPKP_energy = 100
+
+
+#归墟
+@AOW_var_VV_0_TIME = 1800
+@AOW_var_VV_0_COST_alloys = 5000
+@AOW_var_VV_0_COST_unity = 5000
+@AOW_var_VV_0_UPKP_energy = 5
+@AOW_var_VV_1_TIME = 2700
+@AOW_var_VV_1_COST_alloys = 7500
+@AOW_var_VV_1_COST_unity = 3000
+@AOW_var_VV_1_UPKP_energy = 10
+@AOW_var_VV_1_UPKP_alloys = 20
+@AOW_var_VV_2_TIME = 2700
+@AOW_var_VV_2_COST_alloys = 7500
+@AOW_var_VV_2_COST_crystals = 250
+@AOW_var_VV_2_COST_unity = 3000
+@AOW_var_VV_2_PRDC_energy = 500
+@AOW_var_VV_2_PRDC_physics = 150
+@AOW_var_VV_2_PRDC_darkmatter = 10
+@AOW_var_VV_2_UPKP_crystals = 6
+@AOW_var_VV_3_TIME = 2700
+@AOW_var_VV_3_COST_alloys = 7500
+@AOW_var_VV_3_COST_crystals = 250
+@AOW_var_VV_3_COST_unity = 3000
+@AOW_var_VV_3_PRDC_energy = 1000
+@AOW_var_VV_3_PRDC_physics = 300
+@AOW_var_VV_3_PRDC_darkmatter = 20
+@AOW_var_VV_3_UPKP_crystals = 12
+@AOW_var_VV_4_TIME = 2700
+@AOW_var_VV_4_COST_alloys = 7500
+@AOW_var_VV_4_COST_crystals = 250
+@AOW_var_VV_4_COST_unity = 3000
+@AOW_var_VV_4_PRDC_energy = 1500
+@AOW_var_VV_4_PRDC_physics = 450
+@AOW_var_VV_4_PRDC_darkmatter = 30
+@AOW_var_VV_4_UPKP_crystals = 18
+@AOW_var_VV_5_TIME = 2700
+@AOW_var_VV_5_COST_alloys = 7500
+@AOW_var_VV_5_COST_crystals = 250
+@AOW_var_VV_5_COST_unity = 3000
+@AOW_var_VV_5_PRDC_energy = 2000
+@AOW_var_VV_5_PRDC_physics = 600
+@AOW_var_VV_5_PRDC_darkmatter = 40
+@AOW_var_VV_5_UPKP_crystals = 24
+@AOW_var_VV_6_TIME = 1800
+@AOW_var_VV_6_COST_alloys = 7500
+@AOW_var_VV_6_COST_unity = 5000
+@AOW_var_VV_6_PRDC_energy = 2000
+@AOW_var_VV_6_PRDC_physics = 600
+@AOW_var_VV_6_PRDC_darkmatter = 50
+@AOW_var_VV_6_UPKP_crystals = 30
+@AOW_var_VVr_TIME = 5400
+@AOW_var_VVr_COST_alloys = 15000
+@AOW_var_VVr_COST_crystals = 500
+@AOW_var_VVr_COST_unity = 7500
+@AOW_var_VVrx_TIME = 3600
+@AOW_var_VVrx_COST_alloys = 10000
+@AOW_var_VVrx_COST_crystals = 250
+@AOW_var_VVrx_COST_unity = 5000
+
+#灵能井
+@AOW_var_PD_0_TIME = 1800
+@AOW_var_PD_0_COST_alloys = 5000
+@AOW_var_PD_0_COST_unity = 5000
+@AOW_var_PD_0_UPKP_energy = 5
+@AOW_var_PD_1_TIME = 3600
+@AOW_var_PD_1_COST_alloys = 7500
+@AOW_var_PD_1_COST_zro = 250
+@AOW_var_PD_1_COST_unity = 7000
+@AOW_var_PD_1_UPKP_energy = 25
+@AOW_var_PD_1_pop_government_ethic_attraction = 0.25
+@AOW_var_PD_2_TIME = 3600
+@AOW_var_PD_2_COST_alloys = 7500
+@AOW_var_PD_2_COST_zro = 250
+@AOW_var_PD_2_COST_unity = 7000
+@AOW_var_PD_2_UPKP_energy = 50
+@AOW_var_PD_2_pop_government_ethic_attraction = 0.5
+@AOW_var_PD_3_TIME = 3600
+@AOW_var_PD_3_COST_energy = 7500
+@AOW_var_PD_3_COST_zro = 500
+@AOW_var_PD_3_COST_unity = 7000
+@AOW_var_PD_3_PRDC_darkmatter = 25
+@AOW_var_PD_3_UPKP_energy = 100
+@AOW_var_PD_3_UPKP_zro = 50
+@AOW_var_PD_3_jobs_research_prdc_mult = 0.2
+@AOW_var_PD_3_jobs_energy_prdc_mult = 0.2
+@AOW_var_PD_3_pop_government_ethic_attraction = 1
+
+#脉冲时记
+@AOW_var_PC_0_TIME = 1800
+@AOW_var_PC_0_COST_alloys = 5000
+@AOW_var_PC_0_COST_unity = 5000
+@AOW_var_PC_0_UPKP_energy = 5
+@AOW_var_PC_1_TIME = 1800
+@AOW_var_PC_1_COST_alloys = 7500
+@AOW_var_PC_1_COST_unity = 5000
+@AOW_var_PC_1_PRDC_unity = 125
+@AOW_var_PC_1_UPKP_energy = 25
+@AOW_var_PC_2_TIME = 3600
+@AOW_var_PC_2_COST_alloys = 10000
+@AOW_var_PC_2_COST_unity = 5000
+@AOW_var_PC_2_PRDC_unity = 250
+@AOW_var_PC_2_UPKP_energy = 50
+@AOW_var_PC_3_TIME = 5400
+@AOW_var_PC_3_COST_alloys = 12500
+@AOW_var_PC_3_COST_unity = 5000
+@AOW_var_PC_3_PRDC_unity = 500
+@AOW_var_PC_3_UPKP_energy = 75
+@AOW_var_PC_4_TIME = 1800
+@AOW_var_PC_4_COST_energy = 12500
+@AOW_var_PC_4_COST_unity = 5000
+@AOW_var_PC_4_PRDC_unity = 1000
+@AOW_var_PC_4_UPKP_energy = 100
+@AOW_var_PCr_TIME = 5400
+@AOW_var_PCr_COST_energy = 10000
+@AOW_var_PCr_COST_alloys = 15000
+@AOW_var_PCr_COST_unity = 7500
+
+#曲率增压场
+@AOW_var_CPF_0_TIME = 1800
+@AOW_var_CPF_0_COST_alloys = 5000
+@AOW_var_CPF_0_COST_unity = 5000
+@AOW_var_CPF_0_UPKP_energy = 5
+@AOW_var_CPF_1_TIME = 3600
+@AOW_var_CPF_1_COST_alloys = 12500
+@AOW_var_CPF_1_COST_unity = 7000
+@AOW_var_CPF_1_UPKP_energy = 50
+@AOW_var_CPF_2_TIME = 3600
+@AOW_var_CPF_2_COST_alloys = 12500
+@AOW_var_CPF_2_COST_unity = 7000
+@AOW_var_CPF_2_UPKP_energy = 100
+@AOW_var_CPF_3_TIME = 3600
+@AOW_var_CPF_3_COST_unity = 7000
+@AOW_var_CPF_3_COST_energy_BlackHole = 50000
+@AOW_var_CPF_3_COST_energy_NeutronStar = 40000
+@AOW_var_CPF_3_COST_energy_Pulsar = 45000
+@AOW_var_CPF_3_COST_energy_Magnetar = 45000
+@AOW_var_CPF_3_COST_darkmatter_BlackHole = 500
+@AOW_var_CPF_3_COST_darkmatter_NeutronStar = 400
+@AOW_var_CPF_3_COST_darkmatter_Pulsar= 450
+@AOW_var_CPF_3_COST_darkmatter_Magnetar = 450
+
+#零素熔炉
+@AOW_var_ZEF_0_TIME = 1800
+@AOW_var_ZEF_0_COST_alloys = 5000
+@AOW_var_ZEF_0_COST_unity = 5000
+@AOW_var_ZEF_0_UPKP_energy = 5
+@AOW_var_ZEF_1_TIME = 3600
+@AOW_var_ZEF_1_COST_alloys = 15000
+@AOW_var_ZEF_1_COST_unity = 5000
+@AOW_var_ZEF_1_UPKP_energy = 50
+@AOW_var_ZEF_1_UPKP_energy_MultiStar = 10
+@AOW_var_ZEF_1_UPKP_alloys_MultiStar = 10
+@AOW_var_ZEF_2_TIME = 3600
+@AOW_var_ZEF_2_COST_alloys = 15000
+@AOW_var_ZEF_2_COST_unity = 5000
+@AOW_var_ZEF_2_PRDC_alloys = 500
+@AOW_var_ZEF_2_PRDC_engineering = 200
+@AOW_var_ZEF_2_UPKP_energy = 100
+@AOW_var_ZEF_2_UPKP_energy_MultiStar = 20
+@AOW_var_ZEF_2_UPKP_alloys_MultiStar = 20
+@AOW_var_ZEF_2_ship_hull_mult = 0.05
+@AOW_var_ZEF_2_ship_armor_mult = 0.05
+@AOW_var_ZEF_2_army_health = 0.1
+@AOW_var_ZEF_3_TIME = 3600
+@AOW_var_ZEF_3_COST_alloys = 15000
+@AOW_var_ZEF_3_COST_unity = 5000
+@AOW_var_ZEF_3_PRDC_alloys = 1000
+@AOW_var_ZEF_3_PRDC_engineering = 400
+@AOW_var_ZEF_3_UPKP_energy = 200
+@AOW_var_ZEF_3_UPKP_energy_MultiStar = 30
+@AOW_var_ZEF_3_UPKP_alloys_MultiStar = 30
+@AOW_var_ZEF_3_ship_hull_mult = 0.1
+@AOW_var_ZEF_3_ship_armor_mult = 0.1
+@AOW_var_ZEF_3_army_health = 0.2
+@AOW_var_ZEF_4_TIME = 3600
+@AOW_var_ZEF_4_COST_alloys = 15000
+@AOW_var_ZEF_4_COST_unity = 5000
+@AOW_var_ZEF_4_PRDC_alloys = 1500
+@AOW_var_ZEF_4_PRDC_engineering = 600
+@AOW_var_ZEF_4_UPKP_energy = 300
+@AOW_var_ZEF_4_UPKP_energy_MultiStar = 40
+@AOW_var_ZEF_4_UPKP_alloys_MultiStar = 40
+@AOW_var_ZEF_4_ship_hull_mult = 0.15
+@AOW_var_ZEF_4_ship_armor_mult = 0.15
+@AOW_var_ZEF_4_army_health = 0.3
+
+#星空守护者
+@AOW_var_SG_0_TIME = 1800
+@AOW_var_SG_0_COST_alloys = 5000
+@AOW_var_SG_0_COST_unity = 5000
+@AOW_var_SG_0_UPKP_energy = 10
+@AOW_var_SG_1_TIME = 3600
+@AOW_var_SG_1_COST_alloys = 15000
+@AOW_var_SG_1_COST_unity = 7000
+@AOW_var_SG_1_UPKP_energy = 33
+@AOW_var_SG_1_UPKP_alloys = 33
+@AOW_var_SG_2_TIME = 2700
+@AOW_var_SG_2_COST_alloys = 7500
+@AOW_var_SG_2_COST_unity = 7000
+@AOW_var_SG_2_UPKP_energy = 67
+@AOW_var_SG_2_UPKP_alloys = 67
+@AOW_var_SG_3_TIME = 2700
+@AOW_var_SG_3_COST_alloys = 7500
+@AOW_var_SG_3_COST_unity = 7000
+@AOW_var_SG_3_UPKP_energy = 100
+@AOW_var_SG_3_UPKP_alloys = 100
+
+######################## 天外奇迹 ########################
+#多维仓库
+@AOW_var_MDW_0_TIME = 1800
+@AOW_var_MDW_0_COST_alloys = 10000
+@AOW_var_MDW_0_COST_unity = 10000
+@AOW_var_MDW_0_UPKP_energy = 10
+@AOW_var_MDW_1_TIME = 3600
+@AOW_var_MDW_1_COST_alloys = 7500
+@AOW_var_MDW_1_COST_sr = 250	#5
+@AOW_var_MDW_1_COST_unity = 4000
+@AOW_var_MDW_1_UPKP_energy = 25
+@AOW_var_MDW_2_TIME = 3600
+@AOW_var_MDW_2_COST_energy = 10000
+@AOW_var_MDW_2_COST_unity = 4000
+@AOW_var_MDW_2_UPKP_energy = 50
+@AOW_var_MDW_2_UPKP_darkmatter = 10
+@AOW_var_MDW_2_resource_max_add = 200000
+@AOW_var_MDW_3_TIME = 3600
+@AOW_var_MDW_3_COST_unity = 8000
+@AOW_var_MDW_3_UPKP_energy = 100
+@AOW_var_MDW_3_UPKP_darkmatter = 20
+@AOW_var_MDW_3_resource_max_add = 400000
+@AOW_var_MDW_4_UPKP_energy = 150
+@AOW_var_MDW_4_UPKP_darkmatter = 30
+@AOW_var_MDW_4_resource_max_add = 600000
+@AOW_var_MDW_5_UPKP_energy = 200
+@AOW_var_MDW_5_UPKP_darkmatter = 40
+@AOW_var_MDW_5_resource_max_add = 800000
+@AOW_var_MDW_6_UPKP_energy = 250
+@AOW_var_MDW_6_UPKP_darkmatter = 50
+@AOW_var_MDW_6_resource_max_add = 1000000
+
+#御星天炉
+@AOW_var_ST_0_TIME = 1800
+@AOW_var_ST_0_COST_alloys = 10000
+@AOW_var_ST_0_COST_unity = 10000
+@AOW_var_ST_0_UPKP_energy = 10
+@AOW_var_ST_1_TIME = 3600
+@AOW_var_ST_1_COST_alloys = 20000
+@AOW_var_ST_1_COST_sr = 250	#3
+@AOW_var_ST_1_COST_unity = 10000
+@AOW_var_ST_1_UPKP_energy = 50
+@AOW_var_ST_1_UPKP_darkmatter = 12.5
+@AOW_var_ST_2_TIME = 3600
+@AOW_var_ST_2_COST_alloys = 20000
+@AOW_var_ST_2_COST_unity = 10000
+@AOW_var_ST_2_UPKP_energy = 100
+@AOW_var_ST_2_UPKP_darkmatter = 25
+@AOW_var_ST_3_TIME = 3600
+@AOW_var_ST_3_COST_alloys = 20000
+@AOW_var_ST_3_COST_unity = 10000
+@AOW_var_ST_3_UPKP_energy = 150
+@AOW_var_ST_3_UPKP_darkmatter = 37.5
+@AOW_var_ST_4_TIME = 7200
+@AOW_var_ST_4_COST_energy =20000
+@AOW_var_ST_4_COST_unity = 10000
+@AOW_var_ST_4_UPKP_energy = 200
+@AOW_var_ST_4_UPKP_darkmatter = 50
+@AOW_var_ST_5_TIME = 1800
+
+#坠星天矛
+@AOW_var_SS_0_TIME = 1800
+@AOW_var_SS_0_COST_alloys = 10000
+@AOW_var_SS_0_COST_unity = 10000
+@AOW_var_SS_0_COST_influence = 600
+@AOW_var_SS_0_UPKP_energy = 100
+@AOW_var_SS_1_TIME = 5400
+@AOW_var_SS_1_COST_alloys = 25000
+@AOW_var_SS_1_UPKP_energy = 250
+@AOW_var_SS_1_UPKP_alloys = 250
+@AOW_var_SS_1_UPKP_darkmatter = 12.5
+@AOW_var_SS_2_TIME = 5400
+@AOW_var_SS_2_COST_alloys = 27500
+@AOW_var_SS_2_UPKP_energy = 500
+@AOW_var_SS_2_UPKP_alloys = 500
+@AOW_var_SS_2_UPKP_darkmatter = 25
+@AOW_var_SS_3_TIME = 7200
+@AOW_var_SS_3_COST_alloys = 30000
+@AOW_var_SS_3_UPKP_energy = 750
+@AOW_var_SS_3_UPKP_alloys = 750
+@AOW_var_SS_3_UPKP_darkmatter = 37.5
+@AOW_var_SS_4_TIME = 3600
+@AOW_var_SS_4_COST_energy = 50000
+@AOW_var_SS_4_COST_alloys = 10000
+@AOW_var_SS_4_UPKP_energy = 1000
+@AOW_var_SS_4_UPKP_alloys = 1000
+@AOW_var_SS_4_UPKP_darkmatter = 50
+@AOW_var_SS_4_PRDC_menace = 500
+
+#天界领航塔	85
+@AOW_var_HNB_0_TIME = 1800
+@AOW_var_HNB_0_COST_alloys = 10000
+@AOW_var_HNB_0_COST_unity = 10000
+@AOW_var_HNB_0_UPKP_energy = 10
+@AOW_var_HNB_1_TIME = 6480
+@AOW_var_HNB_1_COST_alloys = 20000
+@AOW_var_HNB_1_COST_unity = 8000
+@AOW_var_HNB_1_UPKP_energy = 40
+@AOW_var_HNB_1_UPKP_darkmatter = 10
+@AOW_var_HNB_1_ship_windup_mult = -0.1
+@AOW_var_HNB_1_rb_windup_mult = -0.5
+@AOW_var_HNB_1_ship_interstellar_speed_mult = 0.2
+@AOW_var_HNB_1_ship_ftl_jumpdrive_range_mult = 0.2
+@AOW_var_HNB_2_TIME = 6480
+@AOW_var_HNB_2_COST_alloys = 20000
+@AOW_var_HNB_2_COST_unity = 8000
+@AOW_var_HNB_2_UPKP_energy = 80
+@AOW_var_HNB_2_UPKP_darkmatter = 20
+@AOW_var_HNB_2_ship_windup_mult = -0.2
+@AOW_var_HNB_2_ship_interstellar_speed_mult = 0.4
+@AOW_var_HNB_2_ship_ftl_jumpdrive_range_mult = 0.4
+@AOW_var_HNB_3_TIME = 6480
+@AOW_var_HNB_3_COST_alloys = 20000
+@AOW_var_HNB_3_COST_unity = 8000
+@AOW_var_HNB_3_UPKP_energy = 120
+@AOW_var_HNB_3_UPKP_darkmatter = 30
+@AOW_var_HNB_3_ship_windup_mult = -0.3
+@AOW_var_HNB_3_ship_interstellar_speed_mult = 0.6
+@AOW_var_HNB_3_ship_ftl_jumpdrive_range_mult = 0.6
+@AOW_var_HNB_4_TIME = 6480
+@AOW_var_HNB_4_COST_alloys = 20000
+@AOW_var_HNB_4_COST_unity = 8000
+@AOW_var_HNB_4_UPKP_energy = 160
+@AOW_var_HNB_4_UPKP_darkmatter = 40
+@AOW_var_HNB_4_ship_windup_mult = -0.4
+@AOW_var_HNB_4_ship_interstellar_speed_mult = 0.8
+@AOW_var_HNB_4_ship_ftl_jumpdrive_range_mult = 0.8
+@AOW_var_HNB_5_TIME = 6480
+@AOW_var_HNB_5_COST_energy = 20000
+@AOW_var_HNB_5_COST_alloys = 20000
+@AOW_var_HNB_5_COST_unity = 8000
+@AOW_var_HNB_5_UPKP_energy = 200
+@AOW_var_HNB_5_UPKP_darkmatter = 50
+@AOW_var_HNB_5_ship_windup_mult = -0.5
+@AOW_var_HNB_5_ship_interstellar_speed_mult = 1
+@AOW_var_HNB_5_ship_ftl_jumpdrive_range_mult = 1
+
+#奇迹船坞		95 3600*9=32400
+@AOW_var_MS_0_TIME = 1800
+@AOW_var_MS_0_COST_alloys = 10000
+@AOW_var_MS_0_COST_unity = 10000
+@AOW_var_MS_0_UPKP_energy = 50
+@AOW_var_MS_1_TIME = 5400
+@AOW_var_MS_1_COST_alloys = 20000
+@AOW_var_MS_1_COST_unity = 8000
+@AOW_var_MS_1_UPKP_energy = 40
+@AOW_var_MS_1_UPKP_alloys = 20
+@AOW_var_MS_1_UPKP_darkmatter = 10
+@AOW_var_MS_1_starbase_shipyard_build_speed_mult = 0.4
+@AOW_var_MS_1_country_naval_cap_add = 200
+@AOW_var_MS_2_TIME = 5400
+@AOW_var_MS_2_COST_alloys = 20000
+@AOW_var_MS_2_COST_unity = 8000
+@AOW_var_MS_2_UPKP_energy = 80
+@AOW_var_MS_2_UPKP_alloys = 40
+@AOW_var_MS_2_UPKP_darkmatter = 20
+@AOW_var_MS_2_starbase_shipyard_build_speed_mult = 0.8
+@AOW_var_MS_2_country_naval_cap_add = 400
+@AOW_var_MS_3_TIME = 5400
+@AOW_var_MS_3_COST_alloys = 20000
+@AOW_var_MS_3_COST_unity = 8000
+@AOW_var_MS_3_UPKP_energy = 120
+@AOW_var_MS_3_UPKP_alloys = 60
+@AOW_var_MS_3_UPKP_darkmatter = 30
+@AOW_var_MS_3_starbase_shipyard_build_speed_mult = 1.2
+@AOW_var_MS_3_country_naval_cap_add = 600
+@AOW_var_MS_4_TIME = 5400
+@AOW_var_MS_4_COST_alloys = 20000
+@AOW_var_MS_4_COST_unity = 8000
+@AOW_var_MS_4_UPKP_energy = 160
+@AOW_var_MS_4_UPKP_alloys = 80
+@AOW_var_MS_4_UPKP_darkmatter = 40
+@AOW_var_MS_4_starbase_shipyard_build_speed_mult = 1.6
+@AOW_var_MS_4_country_naval_cap_add = 800
+@AOW_var_MS_5_TIME = 10800
+@AOW_var_MS_5_COST_alloys = 25000
+@AOW_var_MS_5_COST_unity = 8000
+@AOW_var_MS_5_UPKP_energy = 200
+@AOW_var_MS_5_UPKP_alloys = 100
+@AOW_var_MS_5_UPKP_darkmatter = 50
+@AOW_var_MS_5_starbase_shipyard_build_speed_mult = 2
+@AOW_var_MS_5_country_naval_cap_add = 1000
+
+#星笼世界
+@AOW_var_SW_0_TIME = 1800
+@AOW_var_SW_0_COST_alloys = 10000
+@AOW_var_SW_0_COST_influence = 600
+@AOW_var_SW_0_UPKP_energy = 10
+
+@AOW_var_SW_1_TIME = 3600
+@AOW_var_SW_1_COST_energy = 20000
+@AOW_var_SW_1_COST_alloys = 10000
+@AOW_var_SW_1_UPKP_energy = 20
+@AOW_var_SW_1_UPKP_alloys = 20
+@AOW_var_SW_1_UPKP_darkmatter = 5
+
+@AOW_var_SW_2_TIME = 5400
+@AOW_var_SW_2_COST_minerals = 40000
+@AOW_var_SW_2_COST_alloys = 20000
+@AOW_var_SW_2_UPKP_energy = 30
+@AOW_var_SW_2_UPKP_alloys = 30
+@AOW_var_SW_2_UPKP_darkmatter = 7.5
+
+@AOW_var_SW_3_TIME = 10800
+@AOW_var_SW_3_COST_minerals = 80000
+@AOW_var_SW_3_COST_alloys = 40000
+@AOW_var_SW_3_UPKP_energy = 90
+@AOW_var_SW_3_UPKP_alloys = 90
+@AOW_var_SW_3_UPKP_darkmatter = 22.5
+
+@AOW_var_SW_4_TIME = 21600
+@AOW_var_SW_4_COST_minerals = 160000
+@AOW_var_SW_4_COST_alloys = 80000
+@AOW_var_SW_4_UPKP_energy = 170
+@AOW_var_SW_4_UPKP_alloys = 170
+@AOW_var_SW_4_UPKP_darkmatter = 42.5
+
+@AOW_var_SW_5_TIME = 3600
+@AOW_var_SW_5_COST_energy = 20000
+@AOW_var_SW_5_COST_alloys = 10000
+@AOW_var_SW_5_UPKP_energy = 200
+@AOW_var_SW_5_UPKP_alloys = 200
+@AOW_var_SW_5_UPKP_darkmatter = 50
+
+#物质重组仪
+@AOW_var_MRI_0_TIME = 1800
+@AOW_var_MRI_0_COST_alloys = 10000
+@AOW_var_MRI_0_COST_unity = 10000
+@AOW_var_MRI_0_UPKP_energy = 50
+
+@AOW_var_MRI_1_TIME = 3600
+@AOW_var_MRI_1_COST_alloys = 10000
+@AOW_var_MRI_1_COST_unity = 5000
+@AOW_var_MRI_1_PRDC_alloys = 5
+@AOW_var_MRI_1_PRDC_consumergoods = 10
+@AOW_var_MRI_1_PRDC_sr1 = 1
+@AOW_var_MRI_1_PRDC_sr2 = 0.5
+@AOW_var_MRI_1_PRDC_nanites = 0.25
+@AOW_var_MRI_1_UPKP_energy = 5
+@AOW_var_MRI_1_UPKP_minerals = 5
+@AOW_var_MRI_1_UPKP_darkmatter = 5
+
+@AOW_var_MRI_2_TIME = 5400
+@AOW_var_MRI_2_COST_alloys = 15000
+@AOW_var_MRI_2_COST_unity = 7500
+@AOW_var_MRI_2_PRDC_alloys = 12.5
+@AOW_var_MRI_2_PRDC_consumergoods = 50
+@AOW_var_MRI_2_PRDC_sr1 = 2.5
+@AOW_var_MRI_2_PRDC_sr2 = 1.25
+@AOW_var_MRI_2_PRDC_nanites = 0.625
+@AOW_var_MRI_2_UPKP_energy = 12.5
+@AOW_var_MRI_2_UPKP_minerals = 12.5
+@AOW_var_MRI_2_UPKP_darkmatter = 12.5
+
+@AOW_var_MRI_3_TIME = 7200
+@AOW_var_MRI_3_COST_alloys = 20000
+@AOW_var_MRI_3_COST_unity = 10000
+@AOW_var_MRI_3_PRDC_alloys = 22.5
+@AOW_var_MRI_3_PRDC_consumergoods = 45
+@AOW_var_MRI_3_PRDC_sr1 = 4.50
+@AOW_var_MRI_3_PRDC_sr2 = 2.25
+@AOW_var_MRI_3_PRDC_nanites = 1.125
+@AOW_var_MRI_3_UPKP_energy = 22.5
+@AOW_var_MRI_3_UPKP_minerals = 22.5
+@AOW_var_MRI_3_UPKP_darkmatter = 17.5
+
+@AOW_var_MRI_4_TIME = 9000
+@AOW_var_MRI_4_COST_alloys = 25000
+@AOW_var_MRI_4_COST_unity = 12500
+@AOW_var_MRI_4_PRDC_alloys = 35
+@AOW_var_MRI_4_PRDC_consumergoods = 70
+@AOW_var_MRI_4_PRDC_sr1 = 7
+@AOW_var_MRI_4_PRDC_sr2 = 3.5
+@AOW_var_MRI_4_PRDC_nanites = 1.75
+@AOW_var_MRI_4_UPKP_energy = 35
+@AOW_var_MRI_4_UPKP_minerals = 35
+@AOW_var_MRI_4_UPKP_darkmatter = 35
+
+@AOW_var_MRI_5_TIME = 10800
+@AOW_var_MRI_5_COST_alloys = 30000
+@AOW_var_MRI_5_COST_unity = 15000
+@AOW_var_MRI_5_PRDC_alloys = 50
+@AOW_var_MRI_5_PRDC_consumergoods = 100
+@AOW_var_MRI_5_PRDC_sr1 = 10
+@AOW_var_MRI_5_PRDC_sr2 = 5
+@AOW_var_MRI_5_PRDC_nanites = 2.5
+@AOW_var_MRI_5_UPKP_energy = 50
+@AOW_var_MRI_5_UPKP_minerals = 50
+@AOW_var_MRI_5_UPKP_darkmatter = 50
+
+
+
+
+
+
+#千载星辰		117.5
+@AOW_var_QSQM_0_TIME = 1800	#5
+@AOW_var_QSQM_1_TIME = 3600	#10	#10
+@AOW_var_QSQM_2_TIME = 5400	#15	#25
+@AOW_var_QSQM_3_TIME = 7200	#20	#45
+@AOW_var_QSQM_4_TIME = 9000	#25	#70
+@AOW_var_QSQM_5_TIME = 10800	#30	#100	#10+15+20+25+30=100
+@AOW_var_QSQM_0_COST_alloys = 10000
+@AOW_var_QSQM_0_COST_unity = 10000
+@AOW_var_QSQM_0_UPKP_energy = 50
+
+@AOW_var_QSQM_1_COST_alloys = 15000
+@AOW_var_QSQM_2_COST_alloys = 22500
+@AOW_var_QSQM_3_COST_alloys = 30000
+@AOW_var_QSQM_4_COST_alloys = 37500
+@AOW_var_QSQM_5_COST_alloys = 45000
+@AOW_var_QSQM_1_COST_unity = 5000
+@AOW_var_QSQM_2_COST_unity = 7500
+@AOW_var_QSQM_3_COST_unity = 10000
+@AOW_var_QSQM_4_COST_unity = 12500
+@AOW_var_QSQM_5_COST_unity = 15000
+@AOW_var_QSQM_1_PRDC_research = 500
+@AOW_var_QSQM_2_PRDC_research = 1250
+@AOW_var_QSQM_3_PRDC_research = 2250
+@AOW_var_QSQM_4_PRDC_research = 3500
+@AOW_var_QSQM_5_PRDC_research = 5000
+@AOW_var_QSQM_1_PRDC_al = 125
+@AOW_var_QSQM_2_PRDC_al = 312.5
+@AOW_var_QSQM_3_PRDC_al = 562.5
+@AOW_var_QSQM_4_PRDC_al = 875
+@AOW_var_QSQM_5_PRDC_al = 1250
+@AOW_var_QSQM_1_UPKP_alloys = 20
+@AOW_var_QSQM_2_UPKP_alloys = 50
+@AOW_var_QSQM_3_UPKP_alloys = 90
+@AOW_var_QSQM_4_UPKP_alloys = 140
+@AOW_var_QSQM_5_UPKP_alloys = 200
+@AOW_var_QSQM_1_UPKP_darkmatter = 5
+@AOW_var_QSQM_2_UPKP_darkmatter = 12.5
+@AOW_var_QSQM_3_UPKP_darkmatter = 22.5
+@AOW_var_QSQM_4_UPKP_darkmatter = 35
+@AOW_var_QSQM_5_UPKP_darkmatter = 50
+
+@AOW_var_QSQM_1_research_speed = 0.05
+@AOW_var_QSQM_2_research_speed = 0.125
+@AOW_var_QSQM_3_research_speed = 0.225
+@AOW_var_QSQM_4_research_speed = 0.35
+@AOW_var_QSQM_5_research_speed = 0.50
+
+#千载星辰特超巨星	3
+@AOW_var_QSQMhs_1_TIME = 10800
+@AOW_var_QSQMhs_2_TIME = 16200
+@AOW_var_QSQMhs_3_TIME = 21600
+@AOW_var_QSQMhs_4_TIME = 27000
+@AOW_var_QSQMhs_5_TIME = 32400
+
+#千载星辰超巨星	2.5
+@AOW_var_QSQMss_1_TIME = 9000
+@AOW_var_QSQMss_2_TIME = 13500
+@AOW_var_QSQMss_3_TIME = 18000
+@AOW_var_QSQMss_4_TIME = 22500
+@AOW_var_QSQMss_5_TIME = 27000
+
+#千载星辰O	2.25
+@AOW_var_QSQMo_1_TIME = 8100
+@AOW_var_QSQMo_2_TIME = 12150
+@AOW_var_QSQMo_3_TIME = 16200
+@AOW_var_QSQMo_4_TIME = 20250
+@AOW_var_QSQMo_5_TIME = 24300
+
+#千载星辰B	2
+@AOW_var_QSQMb_1_TIME = 7200
+@AOW_var_QSQMb_2_TIME = 10800
+@AOW_var_QSQMb_3_TIME = 14400
+@AOW_var_QSQMb_4_TIME = 18000
+@AOW_var_QSQMb_5_TIME = 21600
+
+#千载星辰巨星	1.75
+@AOW_var_QSQMgs_1_TIME = 6300
+@AOW_var_QSQMgs_2_TIME = 9450
+@AOW_var_QSQMgs_3_TIME = 12600
+@AOW_var_QSQMgs_4_TIME = 15750
+@AOW_var_QSQMgs_5_TIME = 18900
+
+#千载星辰A	1.5
+@AOW_var_QSQMa_1_TIME = 5400
+@AOW_var_QSQMa_2_TIME = 8100
+@AOW_var_QSQMa_3_TIME = 10800
+@AOW_var_QSQMa_4_TIME = 13500
+@AOW_var_QSQMa_5_TIME = 16200
+
+#千载星辰F	1.25
+@AOW_var_QSQMf_1_TIME = 4500
+@AOW_var_QSQMf_2_TIME = 6750
+@AOW_var_QSQMf_3_TIME = 9000
+@AOW_var_QSQMf_4_TIME = 11250
+@AOW_var_QSQMf_5_TIME = 13500
+
+#千载星辰G	1
+@AOW_var_QSQMg_1_TIME = 3600
+@AOW_var_QSQMg_2_TIME = 5400
+@AOW_var_QSQMg_3_TIME = 7200
+@AOW_var_QSQMg_4_TIME = 9000
+@AOW_var_QSQMg_5_TIME = 10800
+
+#千载星辰K	0.75
+@AOW_var_QSQMk_1_TIME = 2700
+@AOW_var_QSQMk_2_TIME = 4050
+@AOW_var_QSQMk_3_TIME = 5400
+@AOW_var_QSQMk_4_TIME = 6750
+@AOW_var_QSQMk_5_TIME = 8100
+
+#千载星辰M	0.5
+@AOW_var_QSQMm_1_TIME = 1800
+@AOW_var_QSQMm_2_TIME = 2700
+@AOW_var_QSQMm_3_TIME = 3600
+@AOW_var_QSQMm_4_TIME = 4500
+@AOW_var_QSQMm_5_TIME = 5400

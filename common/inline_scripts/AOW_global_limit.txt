@@ -1,0 +1,10 @@
+
+	potential = {
+		from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } }
+		NOT = { has_global_flag = AOW_flag_GLBL_$KEY$_$PorA$_country_limit }
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_set_$PorA$_country_limit
+		set_global_flag = AOW_flag_GLBL_$KEY$_$PorA$_country_limit
+	}

@@ -1,0 +1,451 @@
+AOW_MEGA_void_vortex_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_VV_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_BLACKHOLE"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_0_COST_alloys
+			unity = @AOW_var_VV_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_VV_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	potential = { AOW_trigger_mega_potential = { KEY = void_vortex } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_void_vortex } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#必须是单恒星星系
+			fail_text = "AOW_mega_requires_SSTM_single_star"
+			OR = {
+				from = { has_technology = AOW_TECH_dimension_hiding }
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为黑洞
+				fail_text = "AOW_mega_requires_PLNT_BlackHole"
+				is_planet_class = pc_black_hole
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = void_vortex }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 300
+		#位置限制
+		modifier = { factor = 1.5	fromfrom.planet = { has_resource = { type = sr_dark_matter amount > 0 } } }
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+		modifier = { factor = 1.5	from = { is_materialist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = void_vortex
+			constructing = AOW_MEGA_void_vortex_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = AOW_flag_CNTR_void_vortex_1 } }
+				set_country_flag = AOW_flag_CNTR_void_vortex_1
+			}
+			else_if = {
+				limit = { has_country_flag = AOW_flag_CNTR_void_vortex_1 }
+				remove_country_flag = AOW_flag_CNTR_void_vortex_1
+				set_country_flag = AOW_flag_CNTR_void_vortex_2
+			}
+			country_event = { id = AOW_evt_void_vortex.100 }
+		}
+		fromfrom = {
+			set_megastructure_flag = void_vortex
+			set_megastructure_flag = AOW_flag_MEGA_void_vortex_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_void_vortex_1 = {
+	entity = "void_vortex_01_entity"
+	construction_entity = "void_vortex_frame_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_1_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_1_COST_alloys
+			unity = @AOW_var_VV_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_VV_1_UPKP_energy
+			alloys = @AOW_var_VV_1_UPKP_alloys
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	upgrade_from = { AOW_MEGA_void_vortex_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_void_vortex.101 } }
+	}
+}
+AOW_MEGA_void_vortex_2 = {
+	entity = "void_vortex_02_entity"
+	construction_entity = "void_vortex_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_2_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_2_COST_alloys
+			rare_crystals = @AOW_var_VV_2_COST_crystals
+			unity = @AOW_var_VV_2_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_2_PRDC_energy
+			physics_research = @AOW_var_VV_2_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_2_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_2_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_2_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_2_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	upgrade_from = { AOW_MEGA_void_vortex_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_void_vortex.102 } }
+	}
+}
+AOW_MEGA_void_vortex_3 = {
+	entity = "void_vortex_03_entity"
+	construction_entity = "void_vortex_2_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_3_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_3_COST_alloys
+			rare_crystals = @AOW_var_VV_3_COST_crystals
+			unity = @AOW_var_VV_3_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_3_PRDC_energy
+			physics_research = @AOW_var_VV_3_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_3_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_3_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_3_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_3_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	upgrade_from = { AOW_MEGA_void_vortex_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_void_vortex.103 } }
+	}
+}
+AOW_MEGA_void_vortex_4 = {
+	entity = "void_vortex_04_entity"
+	construction_entity = "void_vortex_3_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_4_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_4_COST_alloys
+			rare_crystals = @AOW_var_VV_4_COST_crystals
+			unity = @AOW_var_VV_4_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_4_PRDC_energy
+			physics_research = @AOW_var_VV_4_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_4_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_4_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_4_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_4_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	upgrade_from = { AOW_MEGA_void_vortex_3 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_void_vortex.104 } }
+	}
+}
+AOW_MEGA_void_vortex_5 = {
+	entity = "void_vortex_05_entity"
+	construction_entity = "void_vortex_4_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_5_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_5_COST_alloys
+			rare_crystals = @AOW_var_VV_5_COST_crystals
+			unity = @AOW_var_VV_5_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_5_PRDC_energy
+			physics_research = @AOW_var_VV_5_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_5_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_5_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_5_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_5_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	upgrade_from = { AOW_MEGA_void_vortex_4 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_void_vortex.105 } }
+	}
+}
+AOW_MEGA_void_vortex_6 = {
+	entity = "void_vortex_06_entity"
+	construction_entity = "void_vortex_06_construction_entity"
+	portrait = "GFX_megastructure_dyson_sphere_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_VV_6_TIME
+	show_in_outliner = no
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VV_6_COST_alloys
+			unity = @AOW_var_VV_6_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_6_PRDC_energy
+			physics_research = @AOW_var_VV_6_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_6_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_6_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_6_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_6_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_5_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_void_vortex" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_void_vortex_5 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_void_vortex.106 }
+		}
+	}
+}
+
+#废弃归墟
+AOW_MEGA_void_vortex_ruined = {
+	entity = "void_vortex_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	scales_with_planet = yes
+	potential = { always = no }
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VV_6_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VV_5_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	on_build_complete = {
+		fromfrom = { set_megastructure_flag = void_vortex }
+	}
+}
+AOW_MEGA_void_vortex_restored = {
+	entity = "void_vortex_06_entity"
+	construction_entity = "void_vortex_06_entity"
+	portrait = "GFX_megastructure_dyson_sphere_background"
+	show_in_outliner = no
+	use_planet_resource = yes
+	build_time = @AOW_var_VVr_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_VVr_COST_alloys
+			rare_crystals = @AOW_var_VVr_COST_crystals
+			unity = @AOW_var_VVr_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_VV_6_PRDC_energy
+			physics_research = @AOW_var_VV_6_PRDC_physics
+			sr_dark_matter = @AOW_var_VV_6_PRDC_darkmatter
+		}
+		produces = {
+			trigger = {
+				has_global_flag = acot_activated
+				owner = { has_technology = tech_mine_dark_energy }
+			}
+			acot_sr_dark_energy = @AOW_var_VV_6_PRDC_darkmatter
+		}
+		upkeep = {
+			rare_crystals = @AOW_var_VV_6_UPKP_crystals
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_void_vortex
+		category = megastructures
+		alloys = @AOW_var_VVr_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = @AOW_var_VVr_COST_crystals lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_void_vortex_ruined }
+	possible = {
+		from = {
+			has_technology = tech_mega_engineering
+			has_technology = tech_mine_dark_matter
+		}
+	}
+	on_build_start = { fromfrom = { set_graphical_culture = root.from } }
+	on_build_complete = {
+		every_system_ambient_object = {
+			limit = {
+				OR = {
+					is_ambient_object_type = large_debris_object
+					is_ambient_object_type = medium_debris_01_object
+					is_ambient_object_type = medium_debris_02_object
+					is_ambient_object_type = small_debris_object
+				}
+			}
+			destroy_ambient_object = this
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_void_vortex.201 }
+		}
+		fromfrom = { set_megastructure_flag = void_vortex }
+	}
+}

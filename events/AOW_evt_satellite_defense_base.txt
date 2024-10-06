@@ -1,0 +1,17 @@
+namespace = AOW_evt_satellite_defense_base
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+	id = AOW_evt_satellite_defense_base.100
+	title = AOW_mega_notification_title
+	desc = AOW_evt_satellite_defense_base.100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_satellite_defense_base.100.a
+	}
+}

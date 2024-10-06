@@ -1,0 +1,279 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+entity = {
+	name = "planetary_blaster_system_light_0_entity"
+	pdxmesh = "interstellar_assembly_effect_2_mesh"
+	game_data = {
+		bloom_factor		= 2
+		uv_animation_speed	= -0.2
+		uv_animation_direction	= { 0.10 1.0 }
+	}
+	scale = 7
+}
+entity = {
+	name = "planetary_blaster_system_aurora_entity"
+	locator = { name = "x" position = { 0 0 0 } rotation = { 0 0 0 } scale = 1.25 }
+
+	locator = { name = "a1" position = { 0 5.8 0 } rotation = { 0 90 0 } scale = 0.2 }
+	locator = { name = "a2" position = { 0 -5.8 0 } rotation = { 0 -90 0 } scale = 0.2 }
+
+	locator = { name = "x3" position = { 0 9.6 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "x2" position = { 0 9.5 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "x1" position = { 0 9.4 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "y1" position = { 0 -9.4 0 } rotation = { 0 -90 0 } scale = 0.08 }
+	locator = { name = "y2" position = { 0 -9.5 0 } rotation = { 0 -90 0 } scale = 0.08 }
+	locator = { name = "y3" position = { 0 -9.6 0 } rotation = { 0 -90 0 } scale = 0.08 }
+
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "x" particle = "b_class_star_particle" keep_particle = yes trigger_once = yes }
+
+		event = { time = 0 node = "a1" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes }#极光圆环
+		event = { time = 0 node = "a2" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes }#极光圆环
+
+		event = { time = 0 node = "x3" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "x2" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "x1" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y1" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y2" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y3" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+	}
+}
+#########################################################################################################
+entity = {
+	name = "planetary_blaster_system_1_entity"
+	locator = { name = "a1" position = { 0 185 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "a2" position = { 0 175 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "a3" position = { 0 165 0 } rotation = { 0 0 0 } scale = 0.09 }
+	locator = { name = "a4" position = { 0 145 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "a5" position = { 0 140 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "a6" position = { 0 135 0 } rotation = { 0 0 0 } scale = 0.06 }
+	locator = { name = "a" position = { 0 25 0 } rotation = { 0 0 0 } }
+
+	locator = { name = "b" position = { 0 -25 0 } rotation = { 0 0 180 } }
+	locator = { name = "b6" position = { 0 -135 0 } rotation = { 0 0 0 } scale = 0.06 }
+	locator = { name = "b5" position = { 0 -140 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "b4" position = { 0 -145 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "b3" position = { 0 -165 0 } rotation = { 0 0 0 } scale = 0.09 }
+	locator = { name = "b2" position = { 0 -175 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "b1" position = { 0 -185 0 } rotation = { 0 0 0 } scale = 0.12 }
+
+	attach = { a1 = "aow_ringworld_100_entity" }
+	attach = { a2 = "aow_ringworld_100_entity" }
+	attach = { a3 = "aow_ringworld_100_entity" }
+	attach = { a4 = "aow_ringworld_100_entity" }
+	attach = { a5 = "aow_ringworld_100_entity" }
+	attach = { a6 = "aow_ringworld_100_entity" }
+
+	attach = { b6 = "aow_ringworld_100_entity" }
+	attach = { b5 = "aow_ringworld_100_entity" }
+	attach = { b4 = "aow_ringworld_100_entity" }
+	attach = { b3 = "aow_ringworld_100_entity" }
+	attach = { b2 = "aow_ringworld_100_entity" }
+	attach = { b1 = "aow_ringworld_100_entity" }
+	attach = { b1 = "aow_ringworld_100_entity" }
+
+	scale = 0.05
+}
+entity = {
+	name = "planetary_blaster_system_2_construction_entity"
+	locator = { name = "x1" position = { 0 0 160 } rotation = { 0 0 0 } scale = 18 }
+	locator = { name = "x2" position = { 160 0 0 } rotation = { 90 0 0 } scale = 18 }
+	locator = { name = "x3" position = { -160 0 0 } rotation = { -90 0 0 } scale = 18 }
+	attach = { x1 = "mammalian_01_orbital_ring_hub_tier_02_entity" }
+	attach = { x2 = "mammalian_01_orbital_ring_hub_tier_02_entity" }
+	attach = { x3 = "mammalian_01_orbital_ring_hub_tier_02_entity" }
+	scale = 0.05
+}
+entity = {
+	name = "planetary_blaster_system_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "planetary_blaster_system_1_entity" }
+	attach = { root = "planetary_blaster_system_2_construction_entity" }
+}
+entity = {
+	name = "planetary_blaster_system_3_construction_entity"
+	locator = { name = "loc1" position = { 0 0 -130 } rotation = { 0 90 0 } scale = 0.12 }
+	locator = { name = "loc2" position = { 0 0 -145 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc3" position = { 0 0 -160 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "loc4" position = { 0 0 -175 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc5" position = { 0 0 -185 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc6" position = { 0 0 -195 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc7" position = { 0 0 -205 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc8" position = { 0 0 -215 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc9" position = { 0 0 -225 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc10" position = { 0 0 -235 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc11" position = { 0 0 -245 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc12" position = { 0 0 -255 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc13" position = { 0 0 -265 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc14" position = { 0 0 -275 } rotation = { 0 90 0 } scale = 0.10 }
+
+	attach = { loc1 = "aow_ringworld_100_entity" }
+	attach = { loc2 = "aow_ringworld_100_entity" }
+	attach = { loc3 = "aow_ringworld_100_entity" }
+	attach = { loc4 = "aow_ringworld_100_entity" }
+	attach = { loc5 = "aow_ringworld_100_entity" }
+	attach = { loc6 = "aow_ringworld_100_entity" }
+	attach = { loc7 = "aow_ringworld_100_entity" }
+	attach = { loc8 = "aow_ringworld_100_entity" }
+	attach = { loc9 = "aow_ringworld_100_entity" }
+	attach = { loc10 = "aow_ringworld_100_entity" }
+	attach = { loc11 = "aow_ringworld_100_entity" }
+	attach = { loc12 = "aow_ringworld_100_entity" }
+	attach = { loc13 = "aow_ringworld_100_entity" }
+	attach = { loc14 = "aow_ringworld_100_entity" }
+	scale = 0.05
+}
+entity = {
+	name = "planetary_blaster_system_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "planetary_blaster_system_1_entity" }
+	attach = { root = "planetary_blaster_system_2_construction_entity" }
+	attach = { root = "planetary_blaster_system_3_construction_entity" }
+}
+entity = {
+	name = "planetary_blaster_system_light_entity"
+	locator = { name = "a" position = { 0 25 0 } rotation = { 0 0 0 } }
+	locator = { name = "b" position = { 0 -25 0 } rotation = { 0 0 180 } }
+	attach = { a = "planetary_blaster_system_light_0_entity" }
+	attach = { b = "planetary_blaster_system_light_0_entity" }
+	scale = 0.05
+}
+entity = {
+	name = "planetary_blaster_system_4_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	locator = { name = "aurora" position = { 0 0 0 } rotation = { 0 0 0 } }
+	default_state = idle
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = no next_state = idle }
+	attach = { root = "planetary_blaster_system_3_entity" }
+	attach = { root = "planetary_blaster_system_light_entity" }
+	attach = { aurora = "planetary_blaster_system_aurora_entity" }
+	scale = 1
+}
+
+
+entity = {
+	name = "planetary_blaster_system_4_static_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+
+	locator = { name = "x" position = { 0 0 0 } rotation = { 0 0 0 } scale = 1.25 }
+
+	locator = { name = "a1" position = { 0 5.8 0 } rotation = { 0 90 0 } scale = 0.2 }
+	locator = { name = "a2" position = { 0 -5.8 0 } rotation = { 0 -90 0 } scale = 0.2 }
+
+	locator = { name = "x3" position = { 0 9.6 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "x2" position = { 0 9.5 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "x1" position = { 0 9.4 0 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "y1" position = { 0 -9.4 0 } rotation = { 0 -90 0 } scale = 0.08 }
+	locator = { name = "y2" position = { 0 -9.5 0 } rotation = { 0 -90 0 } scale = 0.08 }
+	locator = { name = "y3" position = { 0 -9.6 0 } rotation = { 0 -90 0 } scale = 0.08 }
+
+	attach = { root = "planetary_blaster_system_3_entity" }
+	attach = { root = "planetary_blaster_system_light_entity" }
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "x" particle = "b_class_star_particle" keep_particle = yes trigger_once = yes }
+
+		event = { time = 0 node = "a1" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes }#极光圆环
+		event = { time = 0 node = "a2" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes }#极光圆环
+
+		event = { time = 0 node = "x3" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "x2" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "x1" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y1" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y2" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "y3" particle = "AOW_pbs_core_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 1
+}
+
+
+
+
+
+entity = {
+	name = "pbs_satellite_ruined_entity"
+	pdxmesh = "orbital_ring_01_hub_tier_02_mesh"
+	meshsettings = {
+		name = "tier_02Shape"
+		index = 0
+		texture_diffuse = "destroyed_orbital_ring_diffuse.dds"
+		texture_normal = "destroyed_orbital_ring_normal.dds"
+		texture_specular = "destroyed_orbital_ring_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "planetary_blaster_system_ruined_entity"
+	locator = { name = "a1" position = { 0 185 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "a2" position = { 0 175 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "a3" position = { 0 165 0 } rotation = { 0 0 0 } scale = 0.09 }
+	locator = { name = "a4" position = { 0 145 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "a5" position = { 0 140 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "a6" position = { 0 135 0 } rotation = { 0 0 0 } scale = 0.06 }
+
+	locator = { name = "b6" position = { 0 -135 0 } rotation = { 0 0 0 } scale = 0.06 }
+	locator = { name = "b5" position = { 0 -140 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "b4" position = { 0 -145 0 } rotation = { 0 0 0 } scale = 0.07 }
+	locator = { name = "b3" position = { 0 -165 0 } rotation = { 0 0 0 } scale = 0.09 }
+	locator = { name = "b2" position = { 0 -175 0 } rotation = { 0 0 0 } scale = 0.12 }
+	locator = { name = "b1" position = { 0 -185 0 } rotation = { 0 0 0 } scale = 0.12 }
+
+	locator = { name = "x1" position = { 0 0 160 } rotation = { 0 38 0 } scale = 18 }
+	locator = { name = "x2" position = { 160 0 0 } rotation = { 90 0 20 } scale = 18 }
+	locator = { name = "x3" position = { -160 0 0 } rotation = { -90 0 -15 } scale = 18 }
+
+	locator = { name = "loc1" position = { 0 0 -130 } rotation = { 0 90 0 } scale = 0.12 }
+	locator = { name = "loc2" position = { 0 0 -145 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc3" position = { 0 0 -160 } rotation = { 0 90 0 } scale = 0.08 }
+	locator = { name = "loc4" position = { 0 0 -175 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc5" position = { 0 0 -185 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc6" position = { 0 0 -195 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc7" position = { 0 0 -205 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc8" position = { 0 0 -215 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc9" position = { 0 0 -225 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc10" position = { 0 0 -235 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc11" position = { 0 0 -245 } rotation = { 0 90 0 } scale = 0.05 }
+	locator = { name = "loc12" position = { 0 0 -255 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc13" position = { 0 0 -265 } rotation = { 0 90 0 } scale = 0.10 }
+	locator = { name = "loc14" position = { 0 0 -275 } rotation = { 0 90 0 } scale = 0.10 }
+
+	attach = { a1 = "aow_ringworld_100_entity" }
+	attach = { a2 = "aow_ringworld_100_entity" }
+	attach = { a3 = "aow_ringworld_100_entity" }
+	attach = { a4 = "aow_ringworld_100_entity" }
+	attach = { a5 = "aow_ringworld_100_entity" }
+	attach = { a6 = "aow_ringworld_100_entity" }
+
+	attach = { b6 = "aow_ringworld_100_entity" }
+	attach = { b5 = "aow_ringworld_100_entity" }
+	attach = { b4 = "aow_ringworld_100_entity" }
+	attach = { b3 = "aow_ringworld_100_entity" }
+	attach = { b2 = "aow_ringworld_100_entity" }
+	attach = { b1 = "aow_ringworld_100_entity" }
+	attach = { b1 = "aow_ringworld_100_entity" }
+
+	attach = { x1 = "pbs_satellite_ruined_entity" }
+	attach = { x2 = "pbs_satellite_ruined_entity" }
+	attach = { x3 = "pbs_satellite_ruined_entity" }
+
+	attach = { loc1 = "aow_ringworld_100_entity" }
+	attach = { loc2 = "aow_ringworld_100_entity" }
+	attach = { loc3 = "aow_ringworld_100_entity" }
+	attach = { loc4 = "aow_ringworld_100_entity" }
+	attach = { loc5 = "aow_ringworld_100_entity" }
+	attach = { loc6 = "aow_ringworld_100_entity" }
+	attach = { loc7 = "aow_ringworld_100_entity" }
+	attach = { loc8 = "aow_ringworld_100_entity" }
+	attach = { loc9 = "aow_ringworld_100_entity" }
+	attach = { loc10 = "aow_ringworld_100_entity" }
+	attach = { loc11 = "aow_ringworld_100_entity" }
+	attach = { loc12 = "aow_ringworld_100_entity" }
+	attach = { loc13 = "aow_ringworld_100_entity" }
+	attach = { loc14 = "aow_ringworld_100_entity" }
+
+	scale = 0.05
+}

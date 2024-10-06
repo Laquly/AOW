@@ -1,0 +1,1329 @@
+guiTypes = {
+	containerWindowType = {
+		name = "AOW_presets_option"
+		position = { x = 0 y = 0 }
+		size = { width = 280 height = 40 }
+		moveable = no
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_AOW_button_enter"
+			position = { x = 0 y = 0 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0 y = 0 }
+			size = { x = 65 y = 28 }
+		}
+	}
+	@p_x1 = 10
+	@p_x2 = 155
+	@p_x3 = 300
+	@p_x4 = 445
+
+	@p_y1 = 10
+	@p_y2 = 45
+	@p_y3 = 80
+	@p_y4 = 115
+	@p_y5 = 150
+	@p_y6 = 185
+	@p_y7 = 220
+	@p_y8 = 255
+	@p_y9 = 290
+	@p_y10 = 325
+	@p_y11 = 360
+	@p_y12 = 395
+	@p_y13 = 430
+	@p_y14 = 465
+	@p_y15 = 500
+	@p_y16 = 535
+	@p_y17 = 570
+	@p_y18 = 605
+	@p_y19 = 640
+	@p_y20 = 675
+	@p_y21 = 710
+	@p_y22 = 745
+	@p_y23 = 780
+	@p_y24 = 815
+	@p_y25 = 850
+	@p_y26 = 885
+	@p_y27 = 920
+	@p_y28 = 955
+#35
+
+	@width = 615
+	containerWindowType = {
+		name = "AOW_presets"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = @width height = 400 }
+		#不同分辨率，不同高度
+		if_resolution = { min_height = 720 size = { width = @width height = 640 } }
+		if_resolution = { min_height = 768 size = { width = @width height = 678 } }
+		if_resolution = { min_height = 800 size = { width = @width height = 706 } }
+		if_resolution = { min_height = 864 size = { width = @width height = 763 } }
+		if_resolution = { min_height = 900 size = { width = @width height = 795 } }
+		if_resolution = { min_height = 960 size = { width = @width height = 848 } }
+		if_resolution = { min_height = 1024 size = { width = @width height = 905 } }
+		if_resolution = { min_height = 1050 size = { width = @width height = 928 } }
+		if_resolution = { min_height = 1080 size = { width = @width height = 954 } }
+		#if_resolution = { min_height = 1200 size = { width = @width height = 1060 } }
+		#if_resolution = { min_height = 1400 size = { width = @width height = 1237 } }
+		background = { #整体背景图
+			name = "background"
+			quadTextureSprite = "GFX_tile_large_bg_plain"
+		}
+		iconType = { #下划线
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_center_short"
+			position = { x = -155 y = 30 }
+			orientation = CENTER_UP
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = { #标题
+			name = "aow_title"
+			font = "malgun_goth_24" #"cg_16b"
+			position = { x = 0 y = 10 }
+			maxwidth = @width
+			maxHeight = 30
+			alwaysTransparent = yes
+			fixedSize = no
+			format = center
+			text = AOW_core.101.title
+		}
+		buttonType = { #关闭按钮
+			name = "close"
+			quadTextureSprite = "GFX_main_close_button"
+			position = { x= -44 y = 6 }
+			Orientation = UPPER_RIGHT
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}#关闭按钮
+		containerWindowType = {#按钮容器
+			name = "buttons"
+			size = { width = 595 height = -10 }
+			position = { x = 10 y = 50 }
+			background = { name = "background" spriteType = "GFX_AOW_filled_dark_area_white_frame_cut_8" }
+			verticalScrollbar = "AOW_right_vertical_slider"
+			effectButtonType = {
+				name = AOW_btn_preinstall_xxx
+				position = { x = @p_x1 y = 1000 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_laquly
+				effect = AOW_btn_preinstall_laquly
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_laquly
+				position = { x = @p_x1 y = @p_y1 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_laquly
+				effect = AOW_btn_preinstall_laquly
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ShanLiangDeXiaoHuLi
+				position = { x = @p_x2 y = @p_y1 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ShanLiangDeXiaoHuLi
+				effect = AOW_btn_preinstall_ShanLiangDeXiaoHuLi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZhuanDaMoZheng
+				position = { x = @p_x3 y = @p_y1 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZhuanDaMoZheng
+				effect = AOW_btn_preinstall_ZhuanDaMoZheng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XiaoXiaoYingHuoChong
+				position = { x = @p_x4 y = @p_y1 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XiaoXiaoYingHuoChong
+				effect = AOW_btn_preinstall_XiaoXiaoYingHuoChong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_GaoChengBenGaoHuiBao
+				position = { x = @p_x1 y = @p_y2 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_GaoChengBenGaoHuiBao
+				effect = AOW_btn_preinstall_GaoChengBenGaoHuiBao
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_KuaiLeLianJi
+				position = { x = @p_x2 y = @p_y2 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_KuaiLeLianJi
+				effect = AOW_btn_preinstall_KuaiLeLianJi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MoZhengRen
+				position = { x = @p_x3 y = @p_y2 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MoZhengRen
+				effect = AOW_btn_preinstall_MoZhengRen
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_665
+				position = { x = @p_x4 y = @p_y2 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_665
+				effect = AOW_btn_preinstall_665
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_KaiGuaDeShuZi
+				position = { x = @p_x1 y = @p_y3 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_KaiGuaDeShuZi
+				effect = AOW_btn_preinstall_KaiGuaDeShuZi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZiSiDeWanJia
+				position = { x = @p_x2 y = @p_y3 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZiSiDeWanJia
+				effect = AOW_btn_preinstall_ZiSiDeWanJia
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_QianLiYuTang
+				position = { x = @p_x3 y = @p_y3 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_QianLiYuTang
+				effect = AOW_btn_preinstall_QianLiYuTang
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ShiYuQingDuMoZheng
+				position = { x = @p_x4 y = @p_y3 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ShiYuQingDuMoZheng
+				effect = AOW_btn_preinstall_ShiYuQingDuMoZheng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_DaSong
+				position = { x = @p_x1 y = @p_y4 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_DaSong
+				effect = AOW_btn_preinstall_DaSong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_HuaWaiYin
+				position = { x = @p_x2 y = @p_y4 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_HuaWaiYin
+				effect = AOW_btn_preinstall_HuaWaiYin
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_JiaoHuaDeLFD
+				position = { x = @p_x3 y = @p_y4 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_JiaoHuaDeLFD
+				effect = AOW_btn_preinstall_JiaoHuaDeLFD
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Aruand
+				position = { x = @p_x4 y = @p_y4 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Aruand
+				effect = AOW_btn_preinstall_Aruand
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZaiXiaKuangFeng
+				position = { x = @p_x1 y = @p_y5 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZaiXiaKuangFeng
+				effect = AOW_btn_preinstall_ZaiXiaKuangFeng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Ayame
+				position = { x = @p_x2 y = @p_y5 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Ayame
+				effect = AOW_btn_preinstall_Ayame
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LueWeiPingHeng
+				position = { x = @p_x3 y = @p_y5 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LueWeiPingHeng
+				effect = AOW_btn_preinstall_LueWeiPingHeng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_WuJinZhiLian
+				position = { x = @p_x4 y = @p_y5 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_WuJinZhiLian
+				effect = AOW_btn_preinstall_WuJinZhiLian
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_GuanXiZuiSuChuanShuo
+				position = { x = @p_x1 y = @p_y6 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_GuanXiZuiSuChuanShuo
+				effect = AOW_btn_preinstall_GuanXiZuiSuChuanShuo
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LG684
+				position = { x = @p_x2 y = @p_y6 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LG684
+				effect = AOW_btn_preinstall_LG684
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Yuan
+				position = { x = @p_x3 y = @p_y6 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Yuan
+				effect = AOW_btn_preinstall_Yuan
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LvRen
+				position = { x = @p_x4 y = @p_y6 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LvRen
+				effect = AOW_btn_preinstall_LvRen
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MoZhengRenLianJi
+				position = { x = @p_x1 y = @p_y7 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MoZhengRenLianJi
+				effect = AOW_btn_preinstall_MoZhengRenLianJi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Try
+				position = { x = @p_x2 y = @p_y7 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Try
+				effect = AOW_btn_preinstall_Try
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_GongPingJingJi
+				position = { x = @p_x3 y = @p_y7 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_GongPingJingJi
+				effect = AOW_btn_preinstall_GongPingJingJi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YaoJiLe
+				position = { x = @p_x4 y = @p_y7 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YaoJiLe
+				effect = AOW_btn_preinstall_YaoJiLe
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_GuGuXing
+				position = { x = @p_x1 y = @p_y8 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_GuGuXing
+				effect = AOW_btn_preinstall_GuGuXing
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Andrew
+				position = { x = @p_x2 y = @p_y8 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Andrew
+				effect = AOW_btn_preinstall_Andrew
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_WanJiaYouShi
+				position = { x = @p_x3 y = @p_y8 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_WanJiaYouShi
+				effect = AOW_btn_preinstall_WanJiaYouShi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Kyle
+				position = { x = @p_x4 y = @p_y8 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Kyle
+				effect = AOW_btn_preinstall_Kyle
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_emmmzh
+				position = { x = @p_x1 y = @p_y9 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_emmmzh
+				effect = AOW_btn_preinstall_emmmzh
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_KaiBai
+				position = { x = @p_x2 y = @p_y9 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_KaiBai
+				effect = AOW_btn_preinstall_KaiBai
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Huifon
+				position = { x = @p_x3 y = @p_y9 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Huifon
+				effect = AOW_btn_preinstall_Huifon
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_atk
+				position = { x = @p_x4 y = @p_y9 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_atk
+				effect = AOW_btn_preinstall_atk
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LongShen
+				position = { x = @p_x1 y = @p_y10 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LongShen
+				effect = AOW_btn_preinstall_LongShen
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_VIOLET
+				position = { x = @p_x2 y = @p_y10 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_VIOLET
+				effect = AOW_btn_preinstall_VIOLET
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_TangShuang
+				position = { x = @p_x3 y = @p_y10 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_TangShuang
+				effect = AOW_btn_preinstall_TangShuang
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_6.2
+				position = { x = @p_x4 y = @p_y10 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_6.2
+				effect = AOW_btn_preinstall_6.2
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ChaoJiLianHe
+				position = { x = @p_x1 y = @p_y11 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ChaoJiLianHe
+				effect = AOW_btn_preinstall_ChaoJiLianHe
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MengXinYeGeEr
+				position = { x = @p_x2 y = @p_y11 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MengXinYeGeEr
+				effect = AOW_btn_preinstall_MengXinYeGeEr
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_JiaoHuaDePiXiu
+				position = { x = @p_x3 y = @p_y11 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_JiaoHuaDePiXiu
+				effect = AOW_btn_preinstall_JiaoHuaDePiXiu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_PianYuanBanWeiPingHeng
+				position = { x = @p_x4 y = @p_y11 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_PianYuanBanWeiPingHeng
+				effect = AOW_btn_preinstall_PianYuanBanWeiPingHeng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MoZhengDeMiaoDingE
+				position = { x = @p_x1 y = @p_y12 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MoZhengDeMiaoDingE
+				effect = AOW_btn_preinstall_MoZhengDeMiaoDingE
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YiYe
+				position = { x = @p_x2 y = @p_y12 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YiYe
+				effect = AOW_btn_preinstall_YiYe
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XingQiongLiuYing
+				position = { x = @p_x3 y = @p_y12 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XingQiongLiuYing
+				effect = AOW_btn_preinstall_XingQiongLiuYing
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XiaoJiDeZuoBi
+				position = { x = @p_x4 y = @p_y12 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XiaoJiDeZuoBi
+				effect = AOW_btn_preinstall_XiaoJiDeZuoBi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ShiYouZaiDaWa
+				position = { x = @p_x1 y = @p_y13 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ShiYouZaiDaWa
+				effect = AOW_btn_preinstall_ShiYouZaiDaWa
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YuanBanShaoJiaQiang
+				position = { x = @p_x2 y = @p_y13 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YuanBanShaoJiaQiang
+				effect = AOW_btn_preinstall_YuanBanShaoJiaQiang
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XiaoBaiTan
+				position = { x = @p_x3 y = @p_y13 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XiaoBaiTan
+				effect = AOW_btn_preinstall_XiaoBaiTan
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_VSDeZuoBi
+				position = { x = @p_x4 y = @p_y13 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_VSDeZuoBi
+				effect = AOW_btn_preinstall_VSDeZuoBi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MeiZhongYiGeSuZao
+				position = { x = @p_x1 y = @p_y14 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MeiZhongYiGeSuZao
+				effect = AOW_btn_preinstall_MeiZhongYiGeSuZao
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LongTianXing
+				position = { x = @p_x2 y = @p_y14 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LongTianXing
+				effect = AOW_btn_preinstall_LongTianXing
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_DiChengBenGaoHuiBao
+				position = { x = @p_x3 y = @p_y14 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_DiChengBenGaoHuiBao
+				effect = AOW_btn_preinstall_DiChengBenGaoHuiBao
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_KuaiLeZhongTian
+				position = { x = @p_x4 y = @p_y14 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_KuaiLeZhongTian
+				effect = AOW_btn_preinstall_KuaiLeZhongTian
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LiuXun
+				position = { x = @p_x1 y = @p_y15 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LiuXun
+				effect = AOW_btn_preinstall_LiuXun
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ShanLiangRenChangYu
+				position = { x = @p_x2 y = @p_y15 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ShanLiangRenChangYu
+				effect = AOW_btn_preinstall_ShanLiangRenChangYu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_HN
+				position = { x = @p_x3 y = @p_y15 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_HN
+				effect = AOW_btn_preinstall_HN
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Rhy
+				position = { x = @p_x4 y = @p_y15 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Rhy
+				effect = AOW_btn_preinstall_Rhy
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MuQiEYangZhiYong
+				position = { x = @p_x1 y = @p_y16 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MuQiEYangZhiYong
+				effect = AOW_btn_preinstall_MuQiEYangZhiYong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_JikeYeger
+				position = { x = @p_x2 y = @p_y16 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_JikeYeger
+				effect = AOW_btn_preinstall_JikeYeger
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZhenZiDePeiZhi
+				position = { x = @p_x3 y = @p_y16 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZhenZiDePeiZhi
+				effect = AOW_btn_preinstall_ZhenZiDePeiZhi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_JunHeng
+				position = { x = @p_x4 y = @p_y16 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_JunHeng
+				effect = AOW_btn_preinstall_JunHeng
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YouLingDaShu
+				position = { x = @p_x1 y = @p_y17 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YouLingDaShu
+				effect = AOW_btn_preinstall_YouLingDaShu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ShenKongXingHai
+				position = { x = @p_x2 y = @p_y17 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ShenKongXingHai
+				effect = AOW_btn_preinstall_ShenKongXingHai
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_yantianyi
+				position = { x = @p_x3 y = @p_y17 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_yantianyi
+				effect = AOW_btn_preinstall_yantianyi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_54aaa
+				position = { x = @p_x4 y = @p_y17 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_54aaa
+				effect = AOW_btn_preinstall_54aaa
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZiYuZiLe
+				position = { x = @p_x1 y = @p_y18 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZiYuZiLe
+				effect = AOW_btn_preinstall_ZiYuZiLe
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_TianTangDeMao
+				position = { x = @p_x2 y = @p_y18 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_TianTangDeMao
+				effect = AOW_btn_preinstall_TianTangDeMao
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Zzzz
+				position = { x = @p_x3 y = @p_y18 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Zzzz
+				effect = AOW_btn_preinstall_Zzzz
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZiDangChengFengLanYue
+				position = { x = @p_x4 y = @p_y18 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZiDangChengFengLanYue
+				effect = AOW_btn_preinstall_ZiDangChengFengLanYue
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_1510
+				position = { x = @p_x1 y = @p_y19 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_1510
+				effect = AOW_btn_preinstall_1510
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XiaoNun
+				position = { x = @p_x2 y = @p_y19 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XiaoNun
+				effect = AOW_btn_preinstall_XiaoNun
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_CaiJiDe59
+				position = { x = @p_x3 y = @p_y19 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_CaiJiDe59
+				effect = AOW_btn_preinstall_CaiJiDe59
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XianYuZiYong666
+				position = { x = @p_x4 y = @p_y19 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XianYuZiYong666
+				effect = AOW_btn_preinstall_XianYuZiYong666
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_SanGao
+				position = { x = @p_x1 y = @p_y20 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_SanGao
+				effect = AOW_btn_preinstall_SanGao
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_LeiKeErSi
+				position = { x = @p_x2 y = @p_y20 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_LeiKeErSi
+				effect = AOW_btn_preinstall_LeiKeErSi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_WoFangDaYouShi
+				position = { x = @p_x3 y = @p_y20 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_WoFangDaYouShi
+				effect = AOW_btn_preinstall_WoFangDaYouShi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_25YearsFasterGame
+				position = { x = @p_x4 y = @p_y20 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_25YearsFasterGame
+				effect = AOW_btn_preinstall_25YearsFasterGame
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XueZhiYi
+				position = { x = @p_x1 y = @p_y21 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XueZhiYi
+				effect = AOW_btn_preinstall_XueZhiYi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_HuaFeiYu
+				position = { x = @p_x2 y = @p_y21 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_HuaFeiYu
+				effect = AOW_btn_preinstall_HuaFeiYu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YueYueDePeiZhi
+				position = { x = @p_x3 y = @p_y21 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YueYueDePeiZhi
+				effect = AOW_btn_preinstall_YueYueDePeiZhi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_Bronya
+				position = { x = @p_x4 y = @p_y21 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_Bronya
+				effect = AOW_btn_preinstall_Bronya
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_zqxZiYong
+				position = { x = @p_x1 y = @p_y22 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_zqxZiYong
+				effect = AOW_btn_preinstall_zqxZiYong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_HouQiFaLi
+				position = { x = @p_x2 y = @p_y22 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_HouQiFaLi
+				effect = AOW_btn_preinstall_HouQiFaLi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_MuSuiShiYi
+				position = { x = @p_x3 y = @p_y22 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_MuSuiShiYi
+				effect = AOW_btn_preinstall_MuSuiShiYi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_WanCiPeiZhi
+				position = { x = @p_x4 y = @p_y22 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_WanCiPeiZhi
+				effect = AOW_btn_preinstall_WanCiPeiZhi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XingYueYe
+				position = { x = @p_x1 y = @p_y23 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XingYueYe
+				effect = AOW_btn_preinstall_XingYueYe
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YueNing
+				position = { x = @p_x2 y = @p_y23 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YueNing
+				effect = AOW_btn_preinstall_YueNing
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_YangLaoWanJiaZhuanShu
+				position = { x = @p_x3 y = @p_y23 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_YangLaoWanJiaZhuanShu
+				effect = AOW_btn_preinstall_YangLaoWanJiaZhuanShu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_BeiMingZiYong
+				position = { x = @p_x4 y = @p_y23 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_BeiMingZiYong
+				effect = AOW_btn_preinstall_BeiMingZiYong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ysDeZiYong
+				position = { x = @p_x1 y = @p_y24 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ysDeZiYong
+				effect = AOW_btn_preinstall_ysDeZiYong
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZhangSanDePeiZhi
+				position = { x = @p_x2 y = @p_y24 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZhangSanDePeiZhi
+				effect = AOW_btn_preinstall_ZhangSanDePeiZhi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_HuaHuaDeUI
+				position = { x = @p_x3 y = @p_y24 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_HuaHuaDeUI
+				effect = AOW_btn_preinstall_HuaHuaDeUI
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ZiYuanChongZu
+				position = { x = @p_x4 y = @p_y24 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ZiYuanChongZu
+				effect = AOW_btn_preinstall_ZiYuanChongZu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_STEINS
+				position = { x = @p_x1 y = @p_y25 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_STEINS
+				effect = AOW_btn_preinstall_STEINS
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_aiTuiSan
+				position = { x = @p_x2 y = @p_y25 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_aiTuiSan
+				effect = AOW_btn_preinstall_aiTuiSan
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_1553506674
+				position = { x = @p_x3 y = @p_y25 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_1553506674
+				effect = AOW_btn_preinstall_1553506674
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XunGuo
+				position = { x = @p_x4 y = @p_y25 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XunGuo
+				effect = AOW_btn_preinstall_XunGuo
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ChunShuXuGou
+				position = { x = @p_x1 y = @p_y26 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ChunShuXuGou
+				effect = AOW_btn_preinstall_ChunShuXuGou
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_XingChenQiangHuaQi
+				position = { x = @p_x2 y = @p_y26 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_XingChenQiangHuaQi
+				effect = AOW_btn_preinstall_XingChenQiangHuaQi
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_BeiLunJiu
+				position = { x = @p_x2 y = @p_y26 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_BeiLunJiu
+				effect = AOW_btn_preinstall_BeiLunJiu
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_JiZhan1
+				position = { x = @p_x3 y = @p_y26 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_JiZhan1
+				effect = AOW_btn_preinstall_JiZhan1
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_jx15390940187
+				position = { x = @p_x4 y = @p_y26 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_jx15390940187
+				effect = AOW_btn_preinstall_jx15390940187
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_iiwm
+				position = { x = @p_x1 y = @p_y27 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_iiwm
+				effect = AOW_btn_preinstall_iiwm
+			}
+		}#按钮容器
+################################################################################
+################################################################################
+################################################################################以下全部隐藏
+################################################################################
+################################################################################
+		### 事件选项框 ###
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 10 y = -10 }
+			size = { width = 9999 height = 9999 }
+			orientation = lower_left
+			origo = lower_left
+			moveable = no
+			instantTextBoxType={#事件标题文字
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 400
+				alwaysTransparent = yes
+			}
+			instantTextBoxType={
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+			listboxType = {#选项栏
+				name = "option_list"
+				position = { x = 0 y = 0 }
+				#backGround=""
+				size = { width = 280 height = 40 }
+				spacing = 1
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				#Orientation = left_down
+			}
+		}
+		instantTextBoxType = { #外交信息
+			name = "alien_message"
+			font = "malgun_goth_24" #"cg_16b"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 1220
+			maxHeight = 30
+			format = left
+			alwaysTransparent = yes
+			scrollbartype = "standardtext_slider"
+		}
+		buttonType = {#聚焦按钮
+			name = "focus_button"
+			position = { x = 9999 y = 9999 }
+			orientation = "UPPER_RIGHT"
+			spriteType = "GFX_fleetview_focus"
+			buttonFont = "cg_16b"
+			shortcut = "q"
+		}
+		instantTextBoxType = {#信号传输接入
+			name = "heading"
+			font = "malgun_goth_24"
+			text = "DIPLOMACY"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 543
+			maxHeight = 22
+			fixedSize = yes
+			alwaysTransparent = yes
+		}
+		buttonType = {#按钮特效
+			name = "confirm_button"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x= 9999 y = 9999 }
+			Orientation = "UPPER_RIGHT"
+			font = "cg_16b"
+			text = "MESSAGE_OK"
+			clicksound = "confirmation"
+		}
+		###肖像 ###
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			iconType = {
+				name = "event_picture"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = -6 y = -5 }
+			}
+			iconType = {
+				name = "portrait"
+				position = { x = 250 y = 0 }
+				spriteType = "GFX_portrait_character"
+			}	
+		}
+		containerWindowType = {
+			name = "portrait"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+				alwaysTransparent = yes
+			}	
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+				position = { x = -4 y = -5}
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame_trader"
+				position = { x = -6 y = -5 }
+				alwaysTransparent = yes
+			}
+		}
+		### 帝国信息 ###
+		iconType = {
+			name = "empire_info_bg"
+			spriteType = "GFX_diplomacy_dark_fade_bg"
+			position = { x = 9999 y = 9999 }
+			alwaysTransparent = yes
+		}
+		instantTextBoxType={
+			name = "empire_name"
+			font = "malgun_goth_24"
+			text = "Kammarian Galactic Concordat"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 450
+			maxHeight = 16
+			format = LEFT
+			text_color_code = "E"
+			fixedsize = yes
+		}
+		instantTextBoxType={
+			name = "empire_government_type"
+			font = "cg_16b"
+			text = "Autocracy"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+			text_color_code = "Y"
+		}
+		instantTextBoxType={
+			name = "empire_personality_type"
+			font = "cg_16b"
+			text = "Despicable Neutrals"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+		}
+		OverlappingElementsBoxType = {
+			name = "empire_ethics_icons"
+			position = { x = 9999 y = 9999 }
+			size = { x = 240 y = 30 }
+			spacing = 2.0
+			format = left
+		}
+		buttonType = {
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_128_trader"
+			position = { x = 9999 y = 9999 }
+			orientation = UPPER_LEFT
+		}
+		#领袖细节
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = 9999 y = 9999 }
+			containerWindowType = {
+				name = "empire_traits_box"
+				position = { x = 0 y = -5 }
+				size = { width = 210 height = 75 }
+				background = {
+					name = "ethics_bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+			}
+			instantTextBoxType = {
+				name = "empire_traits_label"
+				position = { x = 214 y = 37 }
+				font = "cg_16b"
+				maxWidth = 230
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				#text_color_code = "E"
+				text = "RULER_TRAITS"
+				alwaysTransparent = yes
+			}
+			overlappingElementsBoxType = {
+				name = "leader_traits"
+				position = { x = 215 y = 55 }
+				size = { x = 125 y = 330 }
+			}
+			instantTextBoxType = {
+				name = "leader_name"
+				position = { x = 10 y = 0 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				text = "Leader Name"
+				text_color_code = "E"
+			}
+			instantTextBoxType = {
+				name = "leader_species"
+				position = { x = 10 y = 18 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				text = "Leader Species"
+				format = left
+			}
+		}
+		#外交评价
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = 9999 y = 9999 }
+			size = { width = 94 height = 30 }
+			# Use this for tooltip area, picture comes from somewhere else
+			background = {
+				name = "opinion_bg"
+				spriteType = "GFX_tiled_window_transparent"
+			}
+			iconType = {
+				name = "their_opinion_icon"
+				spriteType = "GFX_diplomacy_opinion"
+				position = { x = 7 y = 4 }
+				alwaysTransparent = yes
+			}
+			instantTextBoxType = {
+				name = "their_opinion"
+				font = "cg_16b"
+				maxWidth = 40
+				position = { x = 40 y = 7 }
+				format = left
+				text = "100"
+				alwaysTransparent = yes
+			}
+		}
+	}
+}

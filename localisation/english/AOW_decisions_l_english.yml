@@ -1,0 +1,35 @@
+﻿l_english:
+
+ AOW_decision_ring_world_capacity_growth_facilities:0"$AOW_d_ringworld_capacity_growth_facilities$"
+ AOW_decision_ring_world_capacity_growth_facilities_effect:0"Randomly select a unit of pop and send them to maintain a massive $AOW_d_ringworld_capacity_growth_facilities$ on the central server.\n\nIf there are unemployed pops, they can be dispatched all at once\nIf there are no unemployed pops, they can be dispatched one by one\n§RWhen there are too many unemployed pops, dispatching them all at once may cause a slight delay, which is normal.§!\n\nCurrent Maintenance Pop: §Y[this.AOW_var_PLNT_virtual_pops]§!\nMaximum Maintenance Pop Capacity: §Y[this.AOW_var_virtual_pop_capacity]§!\n\n§HThe following effects will be produced for each dispatched unit of pop: §!\n    §EModifiers: §!\n        §W$mod_planet_jobs_produces_mult$: §!§G+1%§!\n        §WPop £unity£Unity Output: §!§G+0.25§!\n        §W$MOD_PLANET_AMENITIES_ADD$:§!§G+1§!\n        §W$MOD_PLANET_HOUSING_ADD$: §!§R-0.1§!\n    §EUpkeep: §!\n        £energy£§R1§!"
+ AOW_decision_ring_world_capacity_growth_facilities_desc:0"Due to the special nature of the technology, the pop only needs to use their brainpower to remotely control these facilities, without any physical labor. Therefore, the pop that has been specially trained and transformed will only occupy a small amount of space and can only stay in those huge server units for life. Of course, we allow them to imagine and use whatever they want in their own world.\n\nIncreasing the capacity to Maintenance Pop by building larger ring worlds."
+ AOW_need_pops_greater_than_1:0"$TRIGGER_FAIL$The number of non-unintelligent and non-purified pop needs to be greater than §Y1§!"
+ AOW_virtual_pop_exceeds_capacity:0"$TRIGGER_FAIL$The Maintenance Pop §Y[this.AOW_var_PLNT_virtual_pops]§! has reached its maximum capacity §Y[this.AOW_var_virtual_pop_capacity]§!"
+
+ AOW_decision_ring_world_automation_facilities:0"$AOW_d_ringworld_automation_facilities$"
+ AOW_decision_ring_world_automation_facilities_effect:0"Build a $AOW_d_ringworld_automation_facilities$, it will produce different resources according to the district types and their proportions owned by the ring world.\n\n§HWhen having §Y$district_rw_generator$§!: §!\n    §EProduces: §!£energy£§G240§W*(Proportion of $district_rw_generator$)§!\n§HWhen having §Y$district_rw_commercial$§!: §!\n    §EProduces: §!£energy£§G240§W*(Proportion of $district_rw_generator$)§!\n§HWhen having §Y$district_rw_farming$§!: §!\n    §EProduces: §!£food£§G240§W*(Proportion of $district_rw_farming$)§!\n§HWhen having §Y$district_rw_industrial$§L(Forge World)§!§!: §!\n    §EProduces: §!£alloys£§G120§W*(Proportion of $district_rw_industrial$)§!\n§HWhen having §Y$district_rw_industrial$§L(Factory World)§!§!: §!\n    §EProduces: §!£consumer_goods£§G240§W*(Proportion of $district_rw_industrial$)§!\n§HWhen having §Y$district_rw_industrial$§!: §!\n    §EProduces: §!£alloys£§G60§W*(Proportion of $district_rw_industrial$)§! £consumer_goods£§G120§W*(Proportion of $district_rw_industrial$)§!\n§HWhen having §Y$district_rw_science$§!: §!\n    §EProduces: §!£physics_research£ £society_research£ £engineering_research£§G160§W*(Proportion of $district_rw_science$)§!\n§HUpkeep: §!\n    £energy£§R20§! £minerals£§R20§! £alloys£§R10§!"
+ AOW_decision_ring_world_automation_facilities_desc:0"$AOW_d_ringworld_automation_facilities$ is a fully automated device that does not require any pop, can achieve autonomous production and repair, and produces corresponding resources according to the district plan of the ring world.\n\nIncreasing capacity through the decision of Ring World Expansion."
+ AOW_automation_facilities_exceeds_capacity:0"$TRIGGER_FAIL$The number of $AOW_d_ringworld_automation_facilities$ has reached the maximum capacity of §Y[this.AOW_var_automation_facilities_capacity]§!"
+
+ AOW_decision_ring_world_1_expansion:0"Ring World Expansion: 1st Expansion"
+ AOW_decision_ring_world_1_expansion_desc:0"With the completion of this ring world, there are still two sections that are currently uninhabitable, and we can now expand the habitable sections of the ring world there."
+ AOW_decision_ring_world_1_expansion_effect:0"Increase the capacity of §Y10§! $AOW_d_ringworld_automation_facilities$."
+ #AOW_decision_ring_world_1_expansion_effect:0"§Y将其余两个非宜居区段并入此处的管理之中，并获得以下增益效果: §!\n$MOD_PLANET_CRIME_ADD$§G-10§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-5%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-5%§!\n$mod_planet_jobs_productive_produces_mult$§G+5%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+5%§!"
+
+ AOW_decision_ring_world_2_expansion:0"Ring World Expansion: 2nd Expansion"
+ AOW_decision_ring_world_2_expansion_desc:0"Expand $AOW_MEGA_ring_world_2$ and link the spatial capacity of the expanded $AOW_MEGA_ring_world_2$ to this for unified management."
+ AOW_decision_ring_world_2_expansion_effect:0"Increase the capacity of §Y20§! $AOW_d_ringworld_automation_facilities$."
+ #AOW_decision_ring_world_2_expansion_effect:0"§Y将$AOW_MEGA_ring_world_2$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果: §!\n$MOD_PLANET_CRIME_ADD$§G-20§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-10%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-10%§!\n$mod_planet_jobs_productive_produces_mult$§G+10%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+10%§!"
+
+ AOW_decision_ring_world_3_expansion:0"Ring World Expansion: 3rd Expansion"
+ AOW_decision_ring_world_3_expansion_desc:0"Expand $AOW_MEGA_ring_world_3$ and link the spatial capacity of the expanded $AOW_MEGA_ring_world_3$ to this for unified management."
+ AOW_decision_ring_world_3_expansion_effect:0"Increase the capacity of §Y30§! $AOW_d_ringworld_automation_facilities$."
+ #AOW_decision_ring_world_3_expansion_effect:0"§Y将$AOW_MEGA_ring_world_3$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果: §!\n$MOD_PLANET_CRIME_ADD$§G-30§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-15%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-15%§!\n$mod_planet_jobs_productive_produces_mult$§G+15%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+15%§!"
+
+ AOW_decision_ring_world_4_expansion:0"Ring World Expansion: 4th Expansion"
+ AOW_decision_ring_world_4_expansion_desc:0"Expand $AOW_MEGA_ring_world_4$ and link the spatial capacity of the expanded $AOW_MEGA_ring_world_4$ to this for unified management."
+ AOW_decision_ring_world_4_expansion_effect:0"Increase the capacity of §Y40§! $AOW_d_ringworld_automation_facilities$."
+ #AOW_decision_ring_world_4_expansion_effect:0"§Y将$AOW_MEGA_ring_world_4$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果: §!\n$MOD_PLANET_CRIME_ADD$§G-40§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-20%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-20%§!\n$mod_planet_jobs_productive_produces_mult$§G+20%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+20%§!"
+
+ AOW_decision_remove_planetary_mining_station:0"Remove Description of $AOW_MEGA_planetary_mining_station$"
+ AOW_decision_remove_planetary_mining_station_desc:0"This planet does not require it, just remove it."

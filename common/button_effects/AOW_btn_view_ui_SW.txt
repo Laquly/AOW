@@ -1,0 +1,970 @@
+AOW_btn_view_ui_sw_default = {#默认
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = { always = yes }
+}
+AOW_btn_view_ui_sw_background = {#背景图片
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = AOW_requires_our_starcage_world
+			is_scope_type = planet
+			is_pc_starcage_world = yes
+			exists = owner
+			owner = { is_same_value = from }
+		}
+	}
+}
+AOW_btn_view_ui_sw_repair = {#修复
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = AOW_requires_our_starcage_world
+			is_scope_type = planet
+			is_pc_starcage_world = yes
+			exists = owner
+			owner = { is_same_value = from }
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_sw_repair_points_desc
+		hidden_effect = {
+			set_variable = { which = AOW_var_sw_points_technician	value = 0 }
+			set_variable = { which = AOW_var_sw_points_miner	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_farmer	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_trader	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_researcher	value = 0 }
+			set_variable = { which = AOW_var_sw_points_bureaucrat	value = 0 }
+			set_variable = { which = AOW_var_sw_points_artisan	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_foundry	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_chemist	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_refiner	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_translucer	value = 0 }
+			set_variable = { which = AOW_var_sw_points_soldier	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_amenities	value = 0 }
+			set_variable = { which = AOW_var_sw_points_enforcer	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+			set_variable = { which = AOW_var_sw_points  value = 45 }
+		}
+	}
+}
+#技工
+AOW_btn_view_ui_sw_max_technician = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = technician
+	}
+}
+AOW_btn_view_ui_sw_complete_technician = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = technician
+	}
+}
+AOW_btn_view_ui_sw_reset_technician = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = technician
+	}
+}
+AOW_btn_view_ui_sw_increase_technician_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = technician
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_technician_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = technician
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_technician_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = technician
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_technician_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = technician
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_technician_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = technician
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_technician_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = technician
+		value = 10
+	}
+}
+#矿工
+AOW_btn_view_ui_sw_max_miner = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = miner
+	}
+}
+AOW_btn_view_ui_sw_complete_miner = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = miner
+	}
+}
+AOW_btn_view_ui_sw_reset_miner = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = miner
+	}
+}
+AOW_btn_view_ui_sw_increase_miner_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = miner
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_miner_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = miner
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_miner_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = miner
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_miner_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = miner
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_miner_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = miner
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_miner_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = miner
+		value = 10
+	}
+}
+#农夫
+AOW_btn_view_ui_sw_max_farmer = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = farmer
+	}
+}
+AOW_btn_view_ui_sw_complete_farmer = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = farmer
+	}
+}
+AOW_btn_view_ui_sw_reset_farmer = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = farmer
+	}
+}
+AOW_btn_view_ui_sw_increase_farmer_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = farmer
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_farmer_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = farmer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_farmer_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = farmer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_farmer_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = farmer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_farmer_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = farmer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_farmer_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = farmer
+		value = 10
+	}
+}
+#商贩
+AOW_btn_view_ui_sw_max_trader = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = trader
+	}
+}
+AOW_btn_view_ui_sw_complete_trader = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = trader
+	}
+}
+AOW_btn_view_ui_sw_reset_trader = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = trader
+	}
+}
+AOW_btn_view_ui_sw_increase_trader_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = trader
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_trader_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = trader
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_trader_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = trader
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_trader_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = trader
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_trader_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = trader
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_trader_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = trader
+		value = 10
+	}
+}
+#研究
+AOW_btn_view_ui_sw_max_researcher = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = researcher
+	}
+}
+AOW_btn_view_ui_sw_complete_researcher = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = researcher
+	}
+}
+AOW_btn_view_ui_sw_reset_researcher = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = researcher
+	}
+}
+AOW_btn_view_ui_sw_increase_researcher_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = researcher
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_researcher_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = researcher
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_researcher_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = researcher
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_researcher_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = researcher
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_researcher_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = researcher
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_researcher_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = researcher
+		value = 10
+	}
+}
+#行政
+AOW_btn_view_ui_sw_max_bureaucrat = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = bureaucrat
+	}
+}
+AOW_btn_view_ui_sw_complete_bureaucrat = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = bureaucrat
+	}
+}
+AOW_btn_view_ui_sw_reset_bureaucrat = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = bureaucrat
+	}
+}
+AOW_btn_view_ui_sw_increase_bureaucrat_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bureaucrat
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_bureaucrat_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bureaucrat
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_bureaucrat_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bureaucrat
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_bureaucrat_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bureaucrat
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_bureaucrat_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bureaucrat
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_bureaucrat_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bureaucrat
+		value = 10
+	}
+}
+#消费
+AOW_btn_view_ui_sw_max_artisan = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = artisan
+	}
+}
+AOW_btn_view_ui_sw_complete_artisan = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = artisan
+	}
+}
+AOW_btn_view_ui_sw_reset_artisan = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = artisan
+	}
+}
+AOW_btn_view_ui_sw_increase_artisan_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = artisan
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_artisan_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = artisan
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_artisan_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = artisan
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_artisan_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = artisan
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_artisan_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = artisan
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_artisan_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = artisan
+		value = 10
+	}
+}
+#合金
+AOW_btn_view_ui_sw_max_foundry = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = foundry
+	}
+}
+AOW_btn_view_ui_sw_complete_foundry = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = foundry
+	}
+}
+AOW_btn_view_ui_sw_reset_foundry = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = foundry
+	}
+}
+AOW_btn_view_ui_sw_increase_foundry_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = foundry
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_foundry_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = foundry
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_foundry_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = foundry
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_foundry_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = foundry
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_foundry_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = foundry
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_foundry_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = foundry
+		value = 10
+	}
+}
+#颗粒
+AOW_btn_view_ui_sw_max_chemist = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = chemist
+	}
+}
+AOW_btn_view_ui_sw_complete_chemist = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = chemist
+	}
+}
+AOW_btn_view_ui_sw_reset_chemist = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = chemist
+	}
+}
+AOW_btn_view_ui_sw_increase_chemist_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = chemist
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_chemist_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = chemist
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_chemist_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = chemist
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_chemist_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = chemist
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_chemist_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = chemist
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_chemist_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = chemist
+		value = 10
+	}
+}
+#气体
+AOW_btn_view_ui_sw_max_refiner = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = refiner
+	}
+}
+AOW_btn_view_ui_sw_complete_refiner = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = refiner
+	}
+}
+AOW_btn_view_ui_sw_reset_refiner = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = refiner
+	}
+}
+AOW_btn_view_ui_sw_increase_refiner_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = refiner
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_refiner_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = refiner
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_refiner_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = refiner
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_refiner_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = refiner
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_refiner_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = refiner
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_refiner_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = refiner
+		value = 10
+	}
+}
+#水晶
+AOW_btn_view_ui_sw_max_translucer = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = translucer
+	}
+}
+AOW_btn_view_ui_sw_complete_translucer = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = translucer
+	}
+}
+AOW_btn_view_ui_sw_reset_translucer = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = translucer
+	}
+}
+AOW_btn_view_ui_sw_increase_translucer_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = translucer
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_translucer_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = translucer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_translucer_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = translucer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_translucer_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = translucer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_translucer_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = translucer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_translucer_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = translucer
+		value = 10
+	}
+}
+#士兵
+AOW_btn_view_ui_sw_max_soldier = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = soldier
+	}
+}
+AOW_btn_view_ui_sw_complete_soldier = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = soldier
+	}
+}
+AOW_btn_view_ui_sw_reset_soldier = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = soldier
+	}
+}
+AOW_btn_view_ui_sw_increase_soldier_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = soldier
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_soldier_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = soldier
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_soldier_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = soldier
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_soldier_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = soldier
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_soldier_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = soldier
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_soldier_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = soldier
+		value = 10
+	}
+}
+#舒适
+AOW_btn_view_ui_sw_max_amenities = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = amenities
+	}
+}
+AOW_btn_view_ui_sw_complete_amenities = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = amenities
+	}
+}
+AOW_btn_view_ui_sw_reset_amenities = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = amenities
+	}
+}
+AOW_btn_view_ui_sw_increase_amenities_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = amenities
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_amenities_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = amenities
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_amenities_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = amenities
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_amenities_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = amenities
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_amenities_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = amenities
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_amenities_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = amenities
+		value = 10
+	}
+}
+#警察
+AOW_btn_view_ui_sw_max_enforcer = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = enforcer
+	}
+}
+AOW_btn_view_ui_sw_complete_enforcer = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = enforcer
+	}
+}
+AOW_btn_view_ui_sw_reset_enforcer = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = enforcer
+	}
+}
+AOW_btn_view_ui_sw_increase_enforcer_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = enforcer
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_enforcer_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = enforcer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_enforcer_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = enforcer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_enforcer_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = enforcer
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_enforcer_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = enforcer
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_enforcer_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = enforcer
+		value = 10
+	}
+}
+#手办
+AOW_btn_view_ui_sw_max_bio_trophy = {#最大
+	inline_script = {
+		script = megastructures/starcage_world/AOW_max_sw_points
+		type = bio_trophy
+	}
+}
+AOW_btn_view_ui_sw_complete_bio_trophy = {#补全
+	inline_script = {
+		script = megastructures/starcage_world/AOW_complete_sw_points
+		type = bio_trophy
+	}
+}
+AOW_btn_view_ui_sw_reset_bio_trophy = {#重置
+	inline_script = {
+		script = megastructures/starcage_world/AOW_reset_sw_points
+		type = bio_trophy
+	}
+}
+AOW_btn_view_ui_sw_increase_bio_trophy_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bio_trophy
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_bio_trophy_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bio_trophy
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_bio_trophy_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = bio_trophy
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_bio_trophy_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bio_trophy
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_bio_trophy_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bio_trophy
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_bio_trophy_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = bio_trophy
+		value = 10
+	}
+}

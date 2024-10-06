@@ -1,0 +1,54 @@
+#前置条件
+AOW_btn_ring_world_3_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_ring_world_3_desc
+		if = {
+			limit = { has_technology = AOW_TECH_ring_world_3 }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			host_has_dlc = "Utopia"
+			has_ascension_perk = ap_cosmic_wonders
+			has_technology = AOW_TECH_ring_world_2
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_ring_world_3
+		}
+	}
+	effect = { custom_tooltip = AOW_text_ring_world_3_desc }
+}
+#AI
+AOW_btn_ring_world_3_ai_disable = {#已禁用，设为无限
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = ring_world_3
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_ring_world_3_ai_infinite = {#已启用，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = ring_world_3
+		PorA = ai
+		VALUE = 0
+	}
+}
+#玩家
+AOW_btn_ring_world_3_player_disable = {#已禁用，设为无限
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = ring_world_3
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_ring_world_3_player_infinite = {#已启用，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = ring_world_3
+		PorA = player
+		VALUE = 0
+	}
+}

@@ -1,0 +1,12 @@
+spriteTypes = {
+	#星云精炼中心
+	spriteType = {
+		name = "GFX_spaceport_nebula_refinery_center"
+		texturefile = "gfx/interface/icons/modules/spaceport_nebula_refinery_center.dds"
+	}
+	#奇迹船坞上行链路
+	spriteType = {
+		name = "GFX_spaceport_miraculous_shipyard_uplink"
+		texturefile = "gfx/interface/icons/modules/spaceport_miraculous_shipyard_uplink.dds"
+	}
+}

@@ -1,0 +1,9 @@
+animation = {
+	name = "ring_world_ration_idle_animation"
+	file = "ring_world_ration_idle.anim"
+}
+
+animation = {
+	name = "ring_world_ration_back_idle_animation"
+	file = "ring_world_ration_back_idle.anim"
+}

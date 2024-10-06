@@ -1,0 +1,92 @@
+namespace = AOW_evt_starcage_world
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+    id = AOW_evt_starcage_world.100
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.100.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_start
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.100.a
+    }
+}
+country_event = {
+    id = AOW_evt_starcage_world.101
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.101.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_upgrade_frame
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.101.a
+    }
+}
+country_event = {
+    id = AOW_evt_starcage_world.102
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.102.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.102.a
+    }
+}
+country_event = {
+    id = AOW_evt_starcage_world.103
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.103.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.103.a
+    }
+}
+country_event = {
+    id = AOW_evt_starcage_world.104
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.104.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.104.a
+    }
+}
+country_event = {
+    id = AOW_evt_starcage_world.105
+    title = AOW_mega_notification_title
+    desc = AOW_evt_starcage_world.105.desc
+    is_triggered_only = yes
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    show_sound = event_dyson_sphere_build_complete
+    location = fromfromfrom
+    option = {
+        name = AOW_evt_starcage_world.105.a
+        custom_tooltip = AOW_evt_starcage_world.105.a.tooltip
+    }
+}
+
+country_event = {
+    id = AOW_evt_starcage_world.500
+    title = AOW_evt_starcage_world.500.title
+    desc = OK
+    is_triggered_only = yes
+    diplomatic = yes
+    custom_gui = "AOW_starcage_world"
+    picture = GFX_evt_AOW_MEGA_starcage_world
+    option = {
+        custom_gui = "AOW_starcage_world_option"
+        name = OK
+    }
+}

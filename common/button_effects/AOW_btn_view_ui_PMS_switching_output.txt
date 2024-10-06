@@ -1,0 +1,35 @@
+AOW_btn_view_ui_pms_minerals = {
+	potential = {
+		exists = owner owner = { is_same_value = from }
+		from = { country_uses_consumer_goods = yes }
+		AND = {
+			is_megastructure_type = AOW_MEGA_planetary_mining_station_3
+			planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+		}
+		NOT = { has_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods }
+	}
+	effect = {
+		custom_tooltip = btn_effect_PMS_switch_to_m
+		hidden_effect = {
+			set_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods
+		}
+	}
+}
+
+AOW_btn_view_ui_pms_consumer_goods = {
+	potential = {
+		exists = owner owner = { is_same_value = from }
+		from = { country_uses_consumer_goods = yes }
+		AND = {
+			is_megastructure_type = AOW_MEGA_planetary_mining_station_3
+			planet = { AOW_trgr_PLNT_ordinary_planet = yes }
+		}
+		has_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods
+	}
+	effect = {
+		custom_tooltip = btn_effect_PMS_switch_to_cg
+		hidden_effect = {
+			remove_megastructure_flag = AOW_flag_MEGA_pms_consumer_goods
+		}
+	}
+}

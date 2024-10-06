@@ -1,0 +1,104 @@
+#前置条件
+AOW_btn_dyson_swarm_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {#已启用，设为无限（初始状态）
+		custom_tooltip = AOW_text_dyson_swarm_desc
+		if = {
+			limit = { has_technology = tech_dyson_swarm }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_machine_age_dlc = yes
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_dyson_swarm
+		}
+	}
+	effect = { custom_tooltip = AOW_text_dyson_swarm_desc }
+}
+#AI
+AOW_btn_dyson_swarm_ai_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = dyson_swarm
+		PorA = ai
+		VALUE = 1
+	}
+}
+AOW_btn_dyson_swarm_ai_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = dyson_swarm
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_dyson_swarm_ai_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = dyson_swarm
+		PorA = ai
+		VALUE = 0
+	}
+}
+AOW_btn_dyson_swarm_ai_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = dyson_swarm
+		PorA = ai
+		LIMIT = -1
+	}
+}
+AOW_btn_dyson_swarm_ai_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = dyson_swarm
+		PorA = ai
+		LIMIT = 20
+	}
+}
+#玩家
+AOW_btn_dyson_swarm_player_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = dyson_swarm
+		PorA = player
+		VALUE = 1
+	}
+}
+AOW_btn_dyson_swarm_player_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = dyson_swarm
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_dyson_swarm_player_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = dyson_swarm
+		PorA = player
+		VALUE = 0
+	}
+}
+AOW_btn_dyson_swarm_player_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = dyson_swarm
+		PorA = player
+		LIMIT = -1
+	}
+}
+AOW_btn_dyson_swarm_player_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = dyson_swarm
+		PorA = player
+		LIMIT = 20
+	}
+}

@@ -1,0 +1,57 @@
+AOW_shipsize_planetary_blaster_system = {
+	graphical_culture = no
+	entity = AOW_shipsize_frame_entity
+	max_speed = 0.0
+	rotation_speed = 10
+	acceleration = 0
+	modifier = {
+		ship_evasion_mult = -1
+		#starbase_defense_platform_capacity_add = 16
+		#starbase_module_capacity_add = 6
+		#starbase_building_capacity_add = 6
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 1
+		ship_weapon_range_mult = 1
+		ship_shield_add = 50000
+		ship_armor_add = 50000
+	}
+	max_hitpoints = 500000
+	base_buildtime = 0
+	resources = {
+		category = starbase_stations
+	}
+
+	combat_size_multiplier = 64
+	size_multiplier = 64
+	fleet_slot_size = 64
+	section_slots = { "core" = { locator = "root" } }
+
+	potential_construction = { always = no }
+	possible_construction = { always = no }
+	potential_country = {
+		has_technology = AOW_TECH_planetary_blaster_system
+	}
+	is_designable = yes
+	num_target_locators = 0
+	is_space_station = no
+	can_have_federation_design = no
+	is_civilian = no
+	components_add_to_cost = no
+	can_disable = no
+	flip_control_on_disable = no
+	auto_upgrade = no
+
+	enable_default_design = yes
+	class = shipclass_starbase
+
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ftl_inhibitor"
+
+	build_block_radius = 40
+	formation_priority = 1
+	icon_frame = 7
+	scales_with_planet = yes
+}

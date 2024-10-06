@@ -1,0 +1,627 @@
+AOW_MEGA_starfall_spear_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = 25 y = 25 }
+	build_time = @AOW_var_SS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_OBAFGKM_STAR_WITHOUT_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SS_0_COST_alloys
+			influence = @AOW_var_SS_0_COST_influence
+		}
+		upkeep = { energy = @AOW_var_SS_0_UPKP_energy }
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_starfall_spear
+		category = megastructures
+		alloys = @AOW_var_SS_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_starfall_spear" }
+	potential = {
+		is_ai = no
+		AOW_trigger_mega_potential = {  KEY = starfall_spear }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_starfall_spear } }
+		}
+		custom_tooltip = {#必须在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		if = {
+			limit = {
+				from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+			}
+			custom_tooltip = {#必须是单恒星星系
+				fail_text = "AOW_mega_requires_SSTM_single_star"
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+			custom_tooltip = {#不能有宜居星球
+				fail_text = "requires_no_habitable_planets"
+				AOW_trgr_SSTM_has_habitable_planets = no
+			}
+			custom_tooltip = {#不能有建造在非恒星上的巨构
+				fail_text = "AOW_mega_requires_SSTM_no_planetary_megastructure"
+				AOW_trgr_SSTM_non_star_has_megastructure = no
+			}
+			custom_tooltip = {#不能建造在肃正星系
+				fail_text = "AOW_mega_requires_SSTM_no_ai_system"
+				NOT = { has_star_flag = AI_hub }
+			}
+		}
+		custom_tooltip = {#不能有其他坠星天矛
+			fail_text = "AOW_mega_requires_SSTM_no_starfall_spear"
+			NOR = {
+				has_megastructure = AOW_MEGA_starfall_spear_0
+				has_megastructure = AOW_MEGA_starfall_spear_1
+				has_megastructure = AOW_MEGA_starfall_spear_2
+				has_megastructure = AOW_MEGA_starfall_spear_3
+				has_megastructure = AOW_MEGA_starfall_spear_4
+				has_megastructure = AOW_MEGA_starfall_spear_standby
+				has_megastructure = AOW_MEGA_starfall_spear_launch
+				has_megastructure = AOW_MEGA_starfall_spear_fire_O
+				has_megastructure = AOW_MEGA_starfall_spear_fire_B
+				has_megastructure = AOW_MEGA_starfall_spear_fire_A
+				has_megastructure = AOW_MEGA_starfall_spear_fire_F
+				has_megastructure = AOW_MEGA_starfall_spear_fire_G
+				has_megastructure = AOW_MEGA_starfall_spear_fire_K
+				has_megastructure = AOW_MEGA_starfall_spear_fire_M
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星
+				fail_text = "AOW_mega_requires_PLNT_obafgkm_star"
+				AOW_trgr_PLNT_obafgkm_star = yes
+			}
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = starfall_spear }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = { weight = 0 }
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = starfall_spear
+			constructing = AOW_MEGA_starfall_spear_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_starfall_spear.100 } }
+		fromfrom = {
+			set_megastructure_flag = starfall_spear
+			set_megastructure_flag = AOW_flag_MEGA_starfall_spear_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+		AOW_eft_SSTM_set_planet_flag_has_megastructure = yes #如果有会移除行星的巨构，则该星系不能再在行星上建造巨构了
+	}
+}
+
+AOW_MEGA_starfall_spear_1 = {
+	entity = "starfall_spear_01_entity"
+	construction_entity = "starfall_spear_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_SS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SS_1_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SS_1_UPKP_energy
+			alloys = @AOW_var_SS_1_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_1_UPKP_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_starfall_spear
+		category = megastructures
+		alloys = @AOW_var_SS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_starfall_spear_0 }
+	potential = { is_ai = no }
+	prerequisites = { "AOW_TECH_starfall_spear" }
+	on_build_complete = {
+		AOW_eft_SSTM_empty_system = yes
+		from = { country_event = { id = AOW_evt_starfall_spear.101 } }
+	}
+}
+
+AOW_MEGA_starfall_spear_2 = {
+	entity = "starfall_spear_02_entity"
+	construction_entity = "starfall_spear_02_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_SS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SS_2_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SS_2_UPKP_energy
+			alloys = @AOW_var_SS_2_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_2_UPKP_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_starfall_spear
+		category = megastructures
+		alloys = @AOW_var_SS_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_starfall_spear_1 }
+	potential = { is_ai = no }
+	prerequisites = { "AOW_TECH_starfall_spear" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_starfall_spear.102 } }
+	}
+}
+AOW_MEGA_starfall_spear_3 = {
+	entity = "starfall_spear_03_entity"
+	construction_entity = "starfall_spear_03_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_SS_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SS_3_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SS_3_UPKP_energy
+			alloys = @AOW_var_SS_3_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_3_UPKP_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_starfall_spear
+		category = megastructures
+		alloys = @AOW_var_SS_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_starfall_spear_2 }
+	potential = { is_ai = no }
+	prerequisites = { "AOW_TECH_starfall_spear" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_starfall_spear.103 } }
+	}
+}
+AOW_MEGA_starfall_spear_4 = {
+	entity = "starfall_spear_04_entity"
+	construction_entity = "starfall_spear_04_construction_entity"
+	portrait = "GFX_megastructure_starfall_spear_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_SS_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_SS_4_COST_energy
+			alloys = @AOW_var_SS_4_COST_alloys
+		}
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	upgrade_from = { AOW_MEGA_starfall_spear_3 }
+	potential = { is_ai = no }
+	prerequisites = { "AOW_TECH_starfall_spear" }
+	show_prereqs = yes
+	on_build_start = {}
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_starfall_spear.104 }
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_starfall_spear_standby"
+			owner = from
+			planet = fromfrom.planet
+			init_effect = {
+				set_megastructure_flag = starfall_spear
+				set_megastructure_flag = AOW_flag_MEGA_starfall_spear_@owner
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}
+
+#待机状态取代完成阶段
+
+AOW_MEGA_starfall_spear_standby = {#待机状态
+	entity = "starfall_spear_04_entity"
+	construction_entity = "starfall_spear_04_construction_entity"
+	portrait = "GFX_megastructure_starfall_spear_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		upkeep = {
+			trigger = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_is_cooling } }
+			energy = @AOW_var_SS_4_UPKP_energy
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = {
+		AOW_MEGA_starfall_spear_fire_O
+		AOW_MEGA_starfall_spear_fire_B
+		AOW_MEGA_starfall_spear_fire_A
+		AOW_MEGA_starfall_spear_fire_F
+		AOW_MEGA_starfall_spear_fire_G
+		AOW_MEGA_starfall_spear_fire_K
+		AOW_MEGA_starfall_spear_fire_M
+	}
+	upgrade_desc = hide
+	on_build_start = {}
+	on_build_complete = {
+		fromfrom = {
+			set_megastructure_flag = starfall_spear
+			set_megastructure_flag = AOW_flag_MEGA_starfall_spear_@owner
+		}
+	}
+}
+AOW_MEGA_starfall_spear_launch = {#发射
+	entity = "starfall_spear_04_entity"
+	portrait = "GFX_megastructure_starfall_spear_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	construction_blocks_and_blocked_by = none
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10000
+		}
+	}
+	upgrade_from = { AOW_MEGA_starfall_spear_standby }
+	upgrade_desc = hide
+	potential = {
+		is_ai = no
+		has_technology = AOW_TECH_starfall_spear
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "AOW_mega_requires_not_at_cooling_time"
+			NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_is_cooling }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_mega_requires_only_one_can_be_launched_at_a_time"
+			from = { NOT = { has_active_event = { AOW_evt_starfall_spear.500 } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_mega_requires_only_one_starfall_spear"
+			count_system_megastructure = {
+				limit = { is_megastructure_type = AOW_MEGA_starfall_spear_standby }
+				count = 1
+			}
+		}
+	}
+	on_build_start = { fromfrom = { finish_upgrade = yes } }
+	on_build_complete = {
+		fromfrom = {
+			set_megastructure_flag = starfall_spear
+			if = {
+				limit = { planet = { AOW_trgr_PLNT_o_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_O
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_b_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_B
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_a_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_A
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_f_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_F
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_g_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_G
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_k_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_K
+				finish_upgrade = yes
+			}
+			else_if = {
+				limit = { planet = { AOW_trgr_PLNT_m_spectrum = yes } }
+				upgrade_megastructure_to = AOW_MEGA_starfall_spear_fire_M
+				finish_upgrade = yes
+			}
+			save_event_target_as = AOW_tgt_MEGA_starfall_spear
+		}
+		from = {
+			country_event = { id = AOW_evt_starfall_spear.500 }#选取
+			country_event = { id = AOW_evt_starfall_spear.501 }#教程
+		}
+	}
+}
+AOW_MEGA_starfall_spear_launching = {#发射中
+	entity = "starfall_spear_o_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_O_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+	on_build_complete = {
+		fromfrom = { set_megastructure_flag = starfall_spear }
+	}
+}
+AOW_MEGA_starfall_spear_fire_O = {#发射状态
+	entity = "starfall_spear_o_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_O_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}
+AOW_MEGA_starfall_spear_fire_B = {
+	entity = "starfall_spear_b_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_B_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}
+AOW_MEGA_starfall_spear_fire_A = {
+	entity = "starfall_spear_a_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_A_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}
+AOW_MEGA_starfall_spear_fire_F = {
+	entity = "starfall_spear_f_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_F_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}
+AOW_MEGA_starfall_spear_fire_G = {
+	entity = "starfall_spear_g_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_G_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}
+AOW_MEGA_starfall_spear_fire_K = {
+	entity = "starfall_spear_k_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_K_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_desc = hide
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+}
+AOW_MEGA_starfall_spear_fire_M = {
+	entity = "starfall_spear_m_complete_entity"
+	portrait = "GFX_megastructure_starfall_spear_M_background"
+	scales_with_planet = yes
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = @AOW_var_SS_4_UPKP_energy
+			alloys = @AOW_var_SS_4_UPKP_alloys
+			sr_dark_matter = @AOW_var_SS_4_UPKP_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_ascension_perk = ap_become_the_crisis } }
+			menace = @AOW_var_SS_4_PRDC_menace
+		}
+		produces = { influence = 1 }
+	}
+	country_modifier = {
+		diplo_weight_naval_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	potential = { always = no }
+	upgrade_from = { AOW_MEGA_starfall_spear_launch }
+	upgrade_desc = hide
+}

@@ -1,0 +1,233 @@
+namespace = AOW_evt_void_vortex
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+	id = AOW_evt_void_vortex.100
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_void_vortex.100.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.101
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_frame
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_evt_void_vortex.150 }
+		}
+	}
+	option = {
+		name = AOW_evt_void_vortex.101.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.102
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_void_vortex.102.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.103
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_void_vortex.103.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.104
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.104.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_void_vortex.104.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.105
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.105.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_void_vortex.105.a
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.106
+	title = AOW_mega_notification_title
+	desc = AOW_evt_void_vortex.106.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			country_event = { id = AOW_evt_void_vortex.151 }
+		}
+	}
+	option = {
+		name = AOW_evt_void_vortex.106.a
+	}
+}
+
+country_event = {
+	id = AOW_evt_void_vortex.150
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_void_vortex_1 }
+		}
+		text = AOW_evt_void_vortex.150.a.desc
+	}
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_void_vortex_2 }
+		}
+		text = AOW_evt_void_vortex.150.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_void_vortex_1 }
+		}
+		name = AOW_evt_void_vortex.150.a
+	}
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_void_vortex_2 }
+		}
+		name = AOW_evt_void_vortex.150.b
+	}
+}
+country_event = {
+	id = AOW_evt_void_vortex.151
+	title = AOW_mega_others_notification_title
+	desc = AOW_evt_void_vortex.151.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		name = AOW_evt_void_vortex.151.a
+	}
+}
+
+##################################################################################
+#修复巨构2
+##################################################################################
+ship_event = {
+	id = AOW_evt_void_vortex.200
+	title = "AOW_evt_void_vortex.200.name"
+	desc = "AOW_evt_void_vortex.200.desc"
+	picture = GFX_evt_ruined_system
+	show_sound = event_radio_chatter
+	location = from
+	is_triggered_only = yes
+	trigger = {
+		from = { has_megastructure = AOW_MEGA_void_vortex_ruined }
+	}
+	option = {
+		name = AOW_evt_void_vortex.200.a
+		trigger = {
+			owner = {
+				OR = {
+					has_megastructure = AOW_MEGA_void_vortex_1
+					has_megastructure = AOW_MEGA_void_vortex_2
+					has_megastructure = AOW_MEGA_void_vortex_3
+					has_megastructure = AOW_MEGA_void_vortex_4
+					has_megastructure = AOW_MEGA_void_vortex_5
+					has_megastructure = AOW_MEGA_void_vortex_6
+				}
+			}
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			NOT = {
+				owner = {
+					OR = {
+						has_megastructure = AOW_MEGA_void_vortex_1
+						has_megastructure = AOW_MEGA_void_vortex_2
+						has_megastructure = AOW_MEGA_void_vortex_3
+						has_megastructure = AOW_MEGA_void_vortex_4
+						has_megastructure = AOW_MEGA_void_vortex_5
+						has_megastructure = AOW_MEGA_void_vortex_6
+					}
+				}
+			}
+		}
+		hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+	}
+}
+country_event = {#修复破碎归墟
+	id = AOW_evt_void_vortex.201
+	title = AOW_mega_restored_title
+	desc = AOW_evt_void_vortex.201.desc
+	is_triggered_only = yes
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			create_message = {
+				type = ALIEN_MEGASTRUCTURE_BUILT
+				localization = MESSAGE_ALIEN_MEGASTRUCTURE_BUILT
+				days = 30
+				target = root.from # the Go To
+				variable = {
+					type = name
+					localization = COUNTRY
+					scope = root
+				}
+				variable = {
+					type = name
+					localization = MEGASTRUCTURE
+					scope = root.fromfromfrom
+				}
+				variable = {
+					type = name
+					localization = SYSTEM
+					scope = root.from
+				}
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_void_vortex.201.a
+	}
+}

@@ -1,0 +1,21 @@
+spriteTypes = {
+	##############################################################################
+	# 原版UI ####################################################################
+	##############################################################################
+
+	#分割线
+	spriteType = {
+		name = "GFX_AOW_split_line"
+		textureFile = "gfx/interface/AOW_ui_icons/AOW_split_line.dds"
+	}
+	#进度条
+	progressbarType = {
+		name = "GFX_AOW_progressbar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/progressbars/progressbar_933.dds"
+		textureFile2 = "gfx/interface/progressbars/progressbar_933_empty.dds"
+		size = { x = 580 y = 32 }
+		effectFile = "gfx/FX/progress_startend.shader"
+	}
+}

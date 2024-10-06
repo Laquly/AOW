@@ -1,0 +1,15 @@
+component_set = {
+	key = "AOW_PBS_WAVE_BEAM"
+	icon = "GFX_ship_part_world_cracker"
+	icon_frame = 1
+}
+component_set = {
+	key = "AOW_PBS_RIPPER_LIGHT_BEAM"
+	icon = "GFX_ship_part_perdition_beam"
+	icon_frame = 1
+}
+component_set = {
+	key = "AOW_PLANET_KILLER_celestial_orbit_deployment_system"
+	icon = "GFX_ship_part_celestial_orbit_deployment_system"
+	icon_frame = 1
+}

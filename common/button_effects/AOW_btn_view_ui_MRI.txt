@@ -1,0 +1,1777 @@
+#打开
+AOW_btn_view_ui_mri_open_console = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		NOT = { has_megastructure_flag = AOW_flag_MEGA_open_mri_console }
+		OR = {
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_1
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_2
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_3
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_4
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_5
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_open_console
+		set_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+}
+#关闭
+AOW_btn_view_ui_mri_close_console = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+		OR = {
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_1
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_2
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_3
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_4
+			is_megastructure_type = AOW_MEGA_material_recombination_instrument_5
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_close_console
+		remove_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+}
+#控制台背景
+AOW_btn_view_ui_mri_background = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {}
+}
+#全部重置
+AOW_btn_view_ui_mri_reset = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_reset
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+#复制产出
+AOW_btn_view_ui_mri_copy = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_copy_desc
+		hidden_effect = {
+			save_event_target_as = AOW_targert_mega
+			owner = {
+				random_owned_megastructure = {
+					limit = {
+						NOT = { is_same_value = event_target:AOW_targert_mega }
+						OR = {
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_1
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_2
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_3
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_4
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_5
+						}
+						OR = {
+							check_variable = { which = AOW_var_mri_points_alloys value != event_target:AOW_targert_mega.AOW_var_mri_points_alloys }
+							check_variable = { which = AOW_var_mri_points_cg value != event_target:AOW_targert_mega.AOW_var_mri_points_cg }
+							check_variable = { which = AOW_var_mri_points_vm value != event_target:AOW_targert_mega.AOW_var_mri_points_vm }
+							check_variable = { which = AOW_var_mri_points_eg value != event_target:AOW_targert_mega.AOW_var_mri_points_eg }
+							check_variable = { which = AOW_var_mri_points_rc value != event_target:AOW_targert_mega.AOW_var_mri_points_rc }
+							check_variable = { which = AOW_var_mri_points_lm value != event_target:AOW_targert_mega.AOW_var_mri_points_lm }
+							check_variable = { which = AOW_var_mri_points_zro value != event_target:AOW_targert_mega.AOW_var_mri_points_zro }
+							check_variable = { which = AOW_var_mri_points_dm value != event_target:AOW_targert_mega.AOW_var_mri_points_dm }
+							check_variable = { which = AOW_var_mri_points_nanites value != event_target:AOW_targert_mega.AOW_var_mri_points_nanites }
+						}
+					}
+					set_variable = { which = AOW_var_mri_points_alloys value = event_target:AOW_targert_mega.AOW_var_mri_points_alloys }
+					set_variable = { which = AOW_var_mri_points_cg value = event_target:AOW_targert_mega.AOW_var_mri_points_cg }
+					set_variable = { which = AOW_var_mri_points_vm value = event_target:AOW_targert_mega.AOW_var_mri_points_vm }
+					set_variable = { which = AOW_var_mri_points_eg value = event_target:AOW_targert_mega.AOW_var_mri_points_eg }
+					set_variable = { which = AOW_var_mri_points_rc value = event_target:AOW_targert_mega.AOW_var_mri_points_rc }
+					set_variable = { which = AOW_var_mri_points_lm value = event_target:AOW_targert_mega.AOW_var_mri_points_lm }
+					set_variable = { which = AOW_var_mri_points_zro value = event_target:AOW_targert_mega.AOW_var_mri_points_zro }
+					set_variable = { which = AOW_var_mri_points_dm value = event_target:AOW_targert_mega.AOW_var_mri_points_dm }
+					set_variable = { which = AOW_var_mri_points_nanites value = event_target:AOW_targert_mega.AOW_var_mri_points_nanites }
+				}
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_copy_all = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_copy_all_desc
+		hidden_effect = {
+			save_event_target_as = AOW_targert_mega
+			owner = {
+				every_owned_megastructure = {
+					limit = {
+						NOT = { is_same_value = event_target:AOW_targert_mega }
+						OR = {
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_1
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_2
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_3
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_4
+							is_megastructure_type = AOW_MEGA_material_recombination_instrument_5
+						}
+					}
+					set_variable = { which = AOW_var_mri_points_alloys value = event_target:AOW_targert_mega.AOW_var_mri_points_alloys }
+					set_variable = { which = AOW_var_mri_points_cg value = event_target:AOW_targert_mega.AOW_var_mri_points_cg }
+					set_variable = { which = AOW_var_mri_points_vm value = event_target:AOW_targert_mega.AOW_var_mri_points_vm }
+					set_variable = { which = AOW_var_mri_points_eg value = event_target:AOW_targert_mega.AOW_var_mri_points_eg }
+					set_variable = { which = AOW_var_mri_points_rc value = event_target:AOW_targert_mega.AOW_var_mri_points_rc }
+					set_variable = { which = AOW_var_mri_points_lm value = event_target:AOW_targert_mega.AOW_var_mri_points_lm }
+					set_variable = { which = AOW_var_mri_points_zro value = event_target:AOW_targert_mega.AOW_var_mri_points_zro }
+					set_variable = { which = AOW_var_mri_points_dm value = event_target:AOW_targert_mega.AOW_var_mri_points_dm }
+					set_variable = { which = AOW_var_mri_points_nanites value = event_target:AOW_targert_mega.AOW_var_mri_points_nanites }
+				}
+			}
+		}
+	}
+}
+#合金
+AOW_btn_view_ui_mri_alloys = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_alloys
+	}
+}
+AOW_btn_view_ui_mri_min_alloys = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_min_alloys
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_alloys = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_max_alloys
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 100 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_alloys_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_alloys value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_alloys value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_alloys_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_alloys value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_alloys value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_alloys_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_alloys value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_alloys value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_alloys_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_alloys value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_alloys value = -10 }
+			}
+		}
+	}
+}
+
+#消费品
+AOW_btn_view_ui_mri_cg = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_cg
+	}
+}
+AOW_btn_view_ui_mri_min_cg = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_min_cg
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_cg = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_max_cg
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 100 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_cg_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_cg value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_cg value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_cg_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_cg value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_cg value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_cg_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_cg value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_cg value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_cg_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_cg value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_cg value = -10 }
+			}
+		}
+	}
+}
+
+#易爆颗粒
+AOW_btn_view_ui_mri_vm = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_vm
+	}
+}
+AOW_btn_view_ui_mri_min_vm = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_min_vm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_vm = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_max_vm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 100 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_vm_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_vm value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_vm value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_vm_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_vm value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_vm value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_vm_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_vm value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_vm value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_vm_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_vm value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_vm value = -10 }
+			}
+		}
+	}
+}
+
+#异星天然气
+AOW_btn_view_ui_mri_eg = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_eg
+	}
+}
+AOW_btn_view_ui_mri_min_eg = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_min_eg
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_eg = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_max_eg
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 100 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_eg_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_eg value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_eg value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_eg_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_eg value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_eg value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_eg_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_eg value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_eg value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_eg_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_eg value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_eg value = -10 }
+			}
+		}
+	}
+}
+
+#稀有水晶
+AOW_btn_view_ui_mri_rc = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_rc
+	}
+}
+AOW_btn_view_ui_mri_min_rc = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_min_rc
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_rc = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_max_rc
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 100 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_rc_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_rc value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_rc value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_rc_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_rc value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_rc value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_rc_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_rc value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_rc value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_rc_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_rc value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_rc value = -10 }
+			}
+		}
+	}
+}
+
+#活体金属
+AOW_btn_view_ui_mri_lm = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_lm
+	}
+}
+AOW_btn_view_ui_mri_min_lm = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_min_lm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_lm = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_max_lm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 100 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_lm_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_lm value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_lm value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_lm_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_lm value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_lm value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_lm_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_lm value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_lm value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_lm_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_living_metal
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_lm value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_lm value = -10 }
+			}
+		}
+	}
+}
+
+#泽珞
+AOW_btn_view_ui_mri_zro = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_zro
+	}
+}
+AOW_btn_view_ui_mri_min_zro = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_min_zro
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_zro = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_max_zro
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 100 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_zro_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_zro value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_zro value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_zro_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_zro value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_zro value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_zro_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_zro value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_zro value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_zro_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = tech_mine_zro
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_zro value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_zro value = -10 }
+			}
+		}
+	}
+}
+
+#暗物质
+AOW_btn_view_ui_mri_dm = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_dm
+	}
+}
+AOW_btn_view_ui_mri_min_dm = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_min_dm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_dm = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_max_dm
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 100 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_dm_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_dm value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_dm value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_dm_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_dm value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_dm value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_dm_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_dm value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_dm value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_dm_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_dm value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_dm value = -10 }
+			}
+		}
+	}
+}
+
+#纳米机器人
+AOW_btn_view_ui_mri_nanites = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_nanites
+	}
+}
+AOW_btn_view_ui_mri_min_nanites = {#最小
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_min_nanites
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_max_nanites = {#最大
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_max_nanites
+		hidden_effect = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 0 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 100 }
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_nanites_10 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_10
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_nanites value <= 90 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 90 }
+				}
+				change_variable = { which = AOW_var_mri_points_nanites value = 10 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_increase_nanites_1 = {#增加
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_add_1
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = AOW_var_mri_points_nanites value <= 99 }
+					check_variable_arithmetic = { which = value:AOW_var_mri_all_points value <= 99 }
+				}
+				change_variable = { which = AOW_var_mri_points_nanites value = 1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_nanites_1 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_1
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_nanites value >= 1 } }
+				change_variable = { which = AOW_var_mri_points_nanites value = -1 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_mri_decrease_nanites_10 = {#减少
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+		has_megastructure_flag = AOW_flag_MEGA_open_mri_console
+	}
+	allow = {
+		owner = {
+			has_technology = AOW_TECH_nanites_activator
+			if = {
+				limit = { NOT = { has_global_flag = tidy_tradition_active } }
+				custom_tooltip = {
+					fail_text = "requires_tidy_tradition_active"
+					has_global_flag = tidy_tradition_active
+					has_tradition = tr_tt_wonders_5
+				}
+			}
+			else = {
+				has_tradition = tr_tt_wonders_adopt
+				has_tradition = tr_tt_wonders_5
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_mri_sub_10
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { which = AOW_var_mri_points_nanites value >= 10 } }
+				change_variable = { which = AOW_var_mri_points_nanites value = -10 }
+			}
+		}
+	}
+}

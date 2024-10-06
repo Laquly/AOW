@@ -1,0 +1,38 @@
+﻿l_simp_chinese:
+
+ AOW_decision_ring_world_capacity_growth_facilities:0"$AOW_d_ringworld_capacity_growth_facilities$"
+ AOW_decision_ring_world_capacity_growth_facilities_effect:0"随机选择一单位人口，派遣他们去中央服务器维护庞大的$AOW_d_ringworld_capacity_growth_facilities$。\n\n若有失业人口，则可一次性派遣所有失业人口\n若无失业人口，则一个一个地派遣在岗人口\n§R失业人口过多时，一次性派遣会导致一小会的卡顿，属正常现象§!\n\n现有虚拟人口数：§Y[this.AOW_var_PLNT_virtual_pops]§!\n虚拟人口最大容量：§Y[this.AOW_var_virtual_pop_capacity]§!\n\n§H每派遣一单位人口将产生以下效果：§!\n    §E修正：§!\n        §W$mod_planet_jobs_produces_mult$: §!§G+0.5%§!\n        §W$MOD_PLANET_AMENITIES_ADD$:§!§G+2§!\n        §W$MOD_PLANET_HOUSING_ADD$: §!§R-0.1§!\n    §E产出：§!\n        £unity£§G5§!\n    §E维护费：§!\n        £energy£§R5§!"
+ AOW_decision_ring_world_capacity_growth_facilities_desc:0"由于技术的特殊性，人口只需要动用脑力就能远程操控这些设施，完全不需要任何的体力劳动，因此，经过特殊训练改造后的人口只会占用少量的空间，并且只能终身待在那些庞大的服务器机组中。当然我们允许他们在自己的世界中想象并使用任何他们想要的。\n\n通过建造更大的环世界来提升虚拟人口的容量。"
+ AOW_need_pops_greater_than_1:0"$TRIGGER_FAIL$非未开智的、非净化中的人口数目需要大于§Y1§!"
+ AOW_virtual_pop_exceeds_capacity:0"$TRIGGER_FAIL$虚拟人口数§Y[this.AOW_var_PLNT_virtual_pops]§!已达到最大容量§Y[this.AOW_var_virtual_pop_capacity]§!"
+
+ AOW_decision_ring_world_automation_facilities:0"$AOW_d_ringworld_automation_facilities$"
+ AOW_decision_ring_world_automation_facilities_effect:0"建设一个$AOW_d_ringworld_automation_facilities$，根据环世界拥有的区划类型以及该区划的占比而产出不同的资源。\n\n§H拥有§Y发电区划§!时：§!\n    §E生产：§!£energy£§G120§W*(发电区划占比)§!\n§H拥有§Y商业区划§!时：§!\n    §E生产：§!£energy£§G120§W*(商业区划占比)§!\n§H拥有§Y农业区划§!时：§!\n    §E生产：§!£food£§G120§W*(农业区划占比)§!\n§H拥有§Y工业区划§L（铸造星球类型）§!§!时：§!\n    §E生产：§!£alloys£§G60§W*(工业区划占比)§!\n§H拥有§Y工业区划§L（工厂星球类型）§!§!时：§!\n    §E生产：§!£consumer_goods£§G120§W*(工业区划占比)§!\n§H拥有§Y工业区划§!时：§!\n    §E生产：§!£alloys£§G30§W*(工业区划占比)§! £consumer_goods£§G60§W*(工业区划占比)§!\n§H拥有§Y研究区划§!时：§!\n    §E生产：§!£physics_research£ £society_research£ £engineering_research£§G80§W*(研究区划占比)§!\n§H地块维护费：§!\n    £energy£§R20§! £minerals£§R20§! £alloys£§R10§!"
+ AOW_decision_ring_world_automation_facilities_desc:0"$AOW_d_ringworld_automation_facilities$是一种无需任何人口的全自动装置，可实现自主产能、自主修复，并会根据环世界的区划规划情况产出对应的资源。\n\n通过§H决议§!§Y环形世界扩张§!提升容量"
+ AOW_automation_facilities_exceeds_capacity:0"$TRIGGER_FAIL$$AOW_d_ringworld_automation_facilities$数量已达到最大容量§Y[this.AOW_var_automation_facilities_capacity]§!"
+
+ AOW_decision_ring_world_1_expansion:0"环形世界：第1重扩张"
+ AOW_decision_ring_world_1_expansion_desc:0"随着这个环世界一起完工的，还有两段目前暂时无法居住的区段，而我们现在正好可以将环世界的宜居区段扩张到那里去。"
+ AOW_decision_ring_world_1_expansion_effect:0"增加§Y10§!$AOW_d_ringworld_automation_facilities$容量"
+ #AOW_decision_ring_world_1_expansion_effect:0"§Y将其余两个非宜居区段并入此处的管理之中，并获得以下增益效果：§!\n$MOD_PLANET_CRIME_ADD$§G-10§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-5%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-5%§!\n$mod_planet_jobs_productive_produces_mult$§G+5%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+5%§!"
+
+ AOW_decision_ring_world_2_expansion:0"环形世界：第2重扩张"
+ AOW_decision_ring_world_2_expansion_desc:0"扩张$AOW_MEGA_ring_world_2$，并将扩张出来的$AOW_MEGA_ring_world_2$空间容量链接至此，进行统一管理。"
+ AOW_decision_ring_world_2_expansion_effect:0"增加§Y20§!$AOW_d_ringworld_automation_facilities$容量"
+ #AOW_decision_ring_world_2_expansion_effect:0"§Y将$AOW_MEGA_ring_world_2$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果：§!\n$MOD_PLANET_CRIME_ADD$§G-20§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-10%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-10%§!\n$mod_planet_jobs_productive_produces_mult$§G+10%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+10%§!"
+
+ AOW_decision_ring_world_3_expansion:0"环形世界：第3重扩张"
+ AOW_decision_ring_world_3_expansion_desc:0"扩张$AOW_MEGA_ring_world_3$，并将扩张出来的$AOW_MEGA_ring_world_3$空间容量链接至此，进行统一管理。"
+ AOW_decision_ring_world_3_expansion_effect:0"增加§Y30§!$AOW_d_ringworld_automation_facilities$容量"
+ #AOW_decision_ring_world_3_expansion_effect:0"§Y将$AOW_MEGA_ring_world_3$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果：§!\n$MOD_PLANET_CRIME_ADD$§G-30§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-15%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-15%§!\n$mod_planet_jobs_productive_produces_mult$§G+15%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+15%§!"
+
+ AOW_decision_ring_world_4_expansion:0"环形世界：第4重扩张"
+ AOW_decision_ring_world_4_expansion_desc:0"扩张$AOW_MEGA_ring_world_4$，并将扩张出来的$AOW_MEGA_ring_world_4$空间容量链接至此，进行统一管理。"
+ AOW_decision_ring_world_4_expansion_effect:0"增加§Y40§!$AOW_d_ringworld_automation_facilities$容量"
+ #AOW_decision_ring_world_4_expansion_effect:0"§Y将$AOW_MEGA_ring_world_4$的其余两个非宜居区段并入此处的管理之中，并获得以下增益效果：§!\n$MOD_PLANET_CRIME_ADD$§G-40§!\n$MOD_POP_HOUSING_USAGE_MULT$§G-20%§!\n$MOD_POP_AMENITIES_USAGE_MULT$§G-20%§!\n$mod_planet_jobs_productive_produces_mult$§G+20%§!\n$mod_planet_jobs_productive_upkeep_mult$§R+20%§!"
+
+ AOW_decision_remove_stellar_variation:0"人造环境协调"
+ AOW_decision_remove_stellar_variation_desc:0"人为介入生态环境，模拟往日恒星环境，逐渐过渡至当前环境，加速生态系统自我修复。"
+
+ AOW_decision_remove_planetary_mining_station:0"移除$AOW_MEGA_planetary_mining_station$的介绍"
+ AOW_decision_remove_planetary_mining_station_desc:0"这颗星球不需要$AOW_MEGA_planetary_mining_station$的介绍了，移除它吧！"

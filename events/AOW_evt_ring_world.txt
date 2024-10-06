@@ -1,0 +1,459 @@
+namespace = AOW_evt_ring_world
+
+##################################################################################
+#建造通知1
+##################################################################################
+#一环
+country_event = {
+	id = AOW_evt_ring_world.101
+	title = AOW_evt_ring_world.101.title
+	desc = AOW_evt_ring_world.101.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.101.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.102
+	title = AOW_evt_ring_world.102.title
+	desc = AOW_evt_ring_world.102.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.102.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.103
+	title = "utopia.2004.name"
+	desc = {
+		trigger = { NOT = { has_country_flag = finished_ringworld } }
+		text = utopia.2004.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = finished_ringworld }
+		text = utopia.2004.desc.b
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = built_ringworld
+		FROMFROM = { save_event_target_as = completed_ringworld_system }
+		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = ROOT }
+				OR = {
+					has_intel_level = {
+						who = root
+						category = economy
+						level >= 1
+					}
+					has_intel_level = {
+						who = root
+						category = technology
+						level >= 1
+					}
+				}
+			}
+			hidden_effect = { country_event = { id = utopia.2005 } }
+		}
+	}
+	after = {
+		hidden_effect = { country_event = { id = utopia.2006 days = 5 } }
+	}
+	option = {
+		name = AOW_evt_ring_world.103.a
+	}
+}
+#二环
+country_event = {
+	id = AOW_evt_ring_world.110
+	title = AOW_mega_notification_title
+	desc = AOW_evt_ring_world.110.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_start
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.110.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.111
+	title = AOW_evt_ring_world.111.title
+	desc = AOW_evt_ring_world.111.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
+	after = {
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_confirmed }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.a
+		custom_tooltip = AOW_evt_ring_world.111.a.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_independent }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.b
+		custom_tooltip = AOW_evt_ring_world.111.b.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_affiliated }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.c
+		custom_tooltip = AOW_evt_ring_world.111.c.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_auxiliary }
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.112
+	title = AOW_evt_ring_world.112.title
+	desc = AOW_evt_ring_world.112.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.112.a
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_affiliated } }
+			custom_tooltip = AOW_evt_ring_world.112.b.tooltip
+		}
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_auxiliary } }
+			custom_tooltip = AOW_evt_ring_world.112.c.tooltip
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.113
+	title = AOW_evt_ring_world.113.title
+	desc = {
+		trigger = { NOT = { has_country_flag = AOW_flag_CNTR_finished_ringworld2 } }
+		text = AOW_evt_ring_world.113.a.desc
+	}
+	desc = {
+		trigger = { has_country_flag = AOW_flag_CNTR_finished_ringworld2 }
+		text = AOW_evt_ring_world.113.b.desc
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	after = { set_country_flag = AOW_flag_CNTR_finished_ringworld2 }
+	option = {
+		name = AOW_evt_ring_world.113.a
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.113.b.tooltip
+		}
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.113.c.tooltip
+		}
+	}
+}
+#三环
+country_event = {
+	id = AOW_evt_ring_world.120
+	title = AOW_mega_notification_title
+	desc = AOW_evt_ring_world.120.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_start
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.120.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.121
+	title = AOW_evt_ring_world.121.title
+	desc = AOW_evt_ring_world.121.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.121.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.122
+	title = AOW_evt_ring_world.122.title
+	desc = {
+		trigger = {
+			from = {
+				has_star_flag = AOW_flag_SSTM_ringworld_independent
+			}
+		}
+		text = AOW_evt_ring_world.122.a.desc
+	}
+	desc = {
+		trigger = {
+			from = {
+				NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent }
+			}
+		}
+		text = AOW_evt_ring_world.122.b.desc
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.122.a
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.122.a.tooltip
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.123
+	title = AOW_evt_ring_world.123.title
+	desc = {
+		trigger = { NOT = { has_country_flag = AOW_flag_CNTR_finished_ringworld3 } }
+		text = AOW_evt_ring_world.123.a.desc
+	}
+	desc = {
+		trigger = { has_country_flag = AOW_flag_CNTR_finished_ringworld3 }
+		text = AOW_evt_ring_world.123.b.desc
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	after = { set_country_flag = AOW_flag_CNTR_finished_ringworld3 }
+	option = {
+		name = AOW_evt_ring_world.123.a
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.123.a.tooltip
+		}
+	}
+}
+#四环
+country_event = {
+	id = AOW_evt_ring_world.130
+	title = AOW_mega_notification_title
+	desc = AOW_evt_ring_world.130.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_start
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.130.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.131
+	title = AOW_evt_ring_world.131.title
+	desc = AOW_evt_ring_world.131.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.131.a
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.132
+	title = AOW_evt_ring_world.132.title
+	desc = {
+		trigger = {
+			from = {
+				has_star_flag = AOW_flag_SSTM_ringworld_independent
+			}
+		}
+		text = AOW_evt_ring_world.132.a.desc
+	}
+	desc = {
+		trigger = {
+			from = {
+				NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent }
+			}
+		}
+		text = AOW_evt_ring_world.132.b.desc
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = AOW_evt_ring_world.132.a
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.132.a.tooltip
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.133
+	title = AOW_evt_ring_world.133.title
+	desc = {
+		trigger = { NOT = { has_country_flag = AOW_flag_CNTR_finished_ringworld4 } }
+		text = AOW_evt_ring_world.133.a.desc
+	}
+	desc = {
+		trigger = { has_country_flag = AOW_flag_CNTR_finished_ringworld4 }
+		text = AOW_evt_ring_world.133.b.desc
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	after = { set_country_flag = AOW_flag_CNTR_finished_ringworld4 }
+	option = {
+		name = AOW_evt_ring_world.133.a
+		if = {
+			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
+			custom_tooltip = AOW_evt_ring_world.133.a.tooltip
+		}
+	}
+}
+##################################################################################
+#修复巨构2
+##################################################################################
+ship_event = {
+	id = AOW_evt_ring_world.200
+	title = "AOW_evt_ring_world.200.name"
+	desc = {
+		trigger = {
+			from = {
+				NOT = { has_megastructure = AOW_MEGA_ring_world_3_ruined }
+				NOT = { has_megastructure = AOW_MEGA_ring_world_4_ruined }
+			}
+		}
+		text = "AOW_evt_ring_world.200.a.desc"
+	}
+	desc = {
+		trigger = {
+			from = {
+				has_megastructure = AOW_MEGA_ring_world_3_ruined
+				NOT = { has_megastructure = AOW_MEGA_ring_world_4_ruined }
+			}
+		}
+		text = "AOW_evt_ring_world.200.b.desc"
+	}
+	desc = {
+		trigger = { from = { has_megastructure = AOW_MEGA_ring_world_4_ruined } }
+		text = "AOW_evt_ring_world.200.c.desc"
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_mystic_reveal
+	location = from
+	is_triggered_only = yes
+	trigger = {
+		from = { has_megastructure = AOW_MEGA_ring_world_2_ruined }
+	}
+	after = { hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } } }
+	option = {
+		name = AOW_evt_ring_world.200.a
+		trigger = {
+			from = {
+				NOT = { has_megastructure = AOW_MEGA_ring_world_3_ruined }
+				NOT = { has_megastructure = AOW_MEGA_ring_world_4_ruined }
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_ring_world.200.b
+		trigger = {
+			from = {
+				has_megastructure = AOW_MEGA_ring_world_3_ruined
+				NOT = { has_megastructure = AOW_MEGA_ring_world_4_ruined }
+			}
+		}
+	}
+	option = {
+		name = AOW_evt_ring_world.200.c
+		trigger = {
+			from = { has_megastructure = AOW_MEGA_ring_world_4_ruined }
+		}
+	}
+}
+#二环
+country_event = {
+	id = AOW_evt_ring_world.210
+	title = AOW_evt_ring_world.210.title
+	desc = AOW_evt_ring_world.210.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_start
+	location = from
+	is_triggered_only = yes
+	trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
+	immediate = { hidden_effect = { fromfromfrom = { set_halted = -1 } } }
+	after = {
+		hidden_effect = { fromfromfrom = { set_halted = 0 } }
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_confirmed }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.a
+		custom_tooltip = AOW_evt_ring_world.111.a.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_independent }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.b
+		custom_tooltip = AOW_evt_ring_world.111.b.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_affiliated }
+	}
+	option = {
+		name = AOW_evt_ring_world.111.c
+		custom_tooltip = AOW_evt_ring_world.111.c.tooltip
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_auxiliary }
+	}
+}
+country_event = {
+	id = AOW_evt_ring_world.211
+	title = AOW_evt_ring_world.211.title
+	desc = AOW_evt_ring_world.211.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+	}
+}
+#三环
+country_event = {
+	id = AOW_evt_ring_world.221
+	title = AOW_evt_ring_world.221.title
+	desc = AOW_evt_ring_world.221.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+	}
+}
+#四环
+country_event = {
+	id = AOW_evt_ring_world.231
+	title = AOW_evt_ring_world.231.title
+	desc = AOW_evt_ring_world.231.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_complete
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+	}
+}
+
+##################################################################################
+#通知他国3
+##################################################################################
+

@@ -1,0 +1,44 @@
+objectTypes = {
+	pdxmesh = {
+		name = "dmct_1_mesh"
+		file = "gfx/models/ships/megastructures/dark_matter_curvature_trap/dmct_1.mesh"
+		scale = 1.0
+		animation = {
+			id = "idle"
+			type = "dmct_1_idle"
+		}
+		meshsettings = {
+			name = "Rings1_Holo_WIRE_WireFrame_Sector1_MAT_0Shape"
+			index = 0
+			texture_diffuse = "reptilian_construction_platform_01_diffuse.dds"
+			texture_normal = "reptilian_construction_platform_01_normal.dds"
+			texture_specular = "reptilian_construction_platform_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {
+		name = "dmct_2_mesh"
+		file = "gfx/models/ships/megastructures/dark_matter_curvature_trap/dmct_2.mesh"
+		scale = 1.0
+		animation = {
+			id = "idle"
+			type = "dmct_2_idle"
+		}
+		meshsettings = {
+			name = "Rings1_Holo_WIRE_WireFrame_Sector1_MAT_0Shape"
+			index = 0
+			texture_diffuse = "reptilian_construction_platform_01_diffuse.dds"
+			texture_normal = "reptilian_construction_platform_01_normal.dds"
+			texture_specular = "reptilian_construction_platform_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+		meshsettings = {
+			name = "box1_Holo_WIRE_WireFrame_Sector1_MAT_0Shape"
+			index = 0
+			texture_diffuse = "reptilian_construction_platform_01_diffuse.dds"
+			texture_normal = "reptilian_construction_platform_01_normal.dds"
+			texture_specular = "reptilian_construction_platform_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

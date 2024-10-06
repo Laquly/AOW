@@ -1,0 +1,34 @@
+AOW_eft_SSTM_add_war_exhaustion = {
+	if = {
+		limit = {
+			exists = space_owner
+			space_owner = { NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear } }
+			space_owner = { is_at_war_with = event_target:AOW_tgt_CNTR_starfall_spear }
+		}
+		space_owner = {
+			add_static_war_exhaustion = {
+				attacker = event_target:AOW_tgt_CNTR_starfall_spear
+				location = root.star
+				value_for_planet_destruction = 2.0
+			}
+			add_threat = { who = event_target:AOW_tgt_CNTR_starfall_spear amount = 5 }
+		}
+	}
+}
+AOW_eft_PLNT_add_war_exhaustion = {
+	if = {
+		limit = {
+			exists = owner
+			owner = { NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear } }
+			owner = { is_at_war_with = event_target:AOW_tgt_CNTR_starfall_spear }
+		}
+		owner = {
+			add_static_war_exhaustion = {
+				attacker = event_target:AOW_tgt_CNTR_starfall_spear
+				location = prev
+				value_for_planet_destruction = $value$
+			}
+			add_threat = { who = event_target:AOW_tgt_CNTR_starfall_spear amount = 1 }
+		}
+	}
+}

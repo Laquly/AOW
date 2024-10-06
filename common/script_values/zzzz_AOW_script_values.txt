@@ -1,0 +1,6 @@
+AOW_var_megastructure_dismantle_refund = {
+    base = 0
+    add = modifier:megastructure_dismantle_refund_mult
+    min = 0
+    max = 1
+}

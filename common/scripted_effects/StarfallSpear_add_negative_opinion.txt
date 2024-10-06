@@ -1,0 +1,143 @@
+AOW_eft_CNTR_planet_add_negative_opinion = {
+	if = {#击毁非土著星球
+		limit = {
+			NOT = { is_country_type = primitive }
+		}
+		add_opinion_modifier = {
+			modifier = $opinion_victim$
+			who = event_target:AOW_tgt_CNTR_starfall_spear
+		}
+		every_playable_country = {#适合添加评价的第三者
+			limit = {
+				NOR = {#不是发射者和被打击者，也不是跟发射者同一个联邦
+					is_same_value = event_target:AOW_tgt_CNTR_starfall_spear
+					is_same_value = prev
+					AND = {
+						has_federation = yes
+						is_in_federation_with = event_target:AOW_tgt_CNTR_starfall_spear
+					}
+				}
+				#跟发射者和跟被打击者有联系
+				has_communications = event_target:AOW_tgt_CNTR_starfall_spear
+				has_communications = prev
+				OR = {
+					AND = {#要么跟被打击者同一个联邦
+						has_federation = yes
+						is_in_federation_with = prev
+					}
+					AND = {#要么对受害者友好
+						opinion_level = {
+							who = prev
+							level > neutral
+						}
+						opinion_level = {
+							who = event_target:AOW_tgt_CNTR_starfall_spear
+							level <= neutral
+						}
+					}
+					AND = {#要么对打击者不友好
+						opinion_level = {
+							who = prev
+							level >= neutral
+						}
+						opinion_level = {
+							who = event_target:AOW_tgt_CNTR_starfall_spear
+							level < neutral
+						}
+					}
+				}
+			}
+			add_opinion_modifier = {
+				modifier = $opinion_third_party$
+				who = event_target:AOW_tgt_CNTR_starfall_spear
+			}
+		}
+	}
+	if = {#击毁土著星球
+		limit = {
+			#has_owner = yes
+			#owner = { is_country_type = primitive }
+			is_country_type = primitive
+		}
+		every_country = {#适合添加评价的第三者
+			limit = {
+				NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear }
+				NOT = { is_same_value = prev }
+				has_communications = event_target:AOW_tgt_CNTR_starfall_spear
+				has_communications = prev
+				is_xenophile = yes
+			}
+			add_opinion_modifier = {
+				modifier = $opinion_primitive_third_party$
+				who = event_target:AOW_tgt_CNTR_starfall_spear
+			}
+		}
+	}
+}
+
+AOW_eft_SSTM_add_negative_opinion = {
+	if = {
+		limit = {#被炸星系有拥有者，且拥有者不是发射者
+			exists = space_owner
+			space_owner = { NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear } }
+		}
+		space_owner = {
+			add_opinion_modifier = {
+				modifier = $opinion_victim$
+				who = event_target:AOW_tgt_CNTR_starfall_spear
+			}
+			if = {
+				limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+				add_modifier = {
+					modifier = AOW_mod_CNTR_starfall_spear_victim
+					days = 3600 # 10 years
+				}
+			}
+		}
+		every_playable_country = {#第三者加负面评价
+			limit = {
+				NOR = {#不是发射者和被打击者，也不是跟发射者同一个联邦
+					is_same_value = event_target:AOW_tgt_CNTR_starfall_spear
+					is_same_value = prev.space_owner
+					AND = {
+						has_federation = yes
+						is_in_federation_with = event_target:AOW_tgt_CNTR_starfall_spear
+					}
+				}
+				#跟发射者和跟被打击者有联系
+				has_communications = event_target:AOW_tgt_CNTR_starfall_spear
+				has_communications = prev.space_owner
+				OR = {
+					AND = {#要么跟被打击者同一个联邦
+						has_federation = yes
+						is_in_federation_with = prev.space_owner
+					}
+					AND = {#要么对受害者友好
+						opinion_level = {
+							who = prev.owner
+							level > neutral
+						}
+						opinion_level = {
+							who = event_target:AOW_tgt_CNTR_starfall_spear
+							level <= neutral
+						}
+					}
+					AND = {#要么对打击者不友好
+						opinion_level = {
+							who = prev.owner
+							level >= neutral
+						}
+						opinion_level = {
+							who = event_target:AOW_tgt_CNTR_starfall_spear
+							level < neutral
+						}
+					}
+				}
+			}
+			add_opinion_modifier = {
+				modifier = $opinion_third_party$
+				who = event_target:AOW_tgt_CNTR_starfall_spear
+			}
+		}
+	}
+}

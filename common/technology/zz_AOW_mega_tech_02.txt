@@ -1,0 +1,405 @@
+##############################################################################
+#物理学
+##############################################################################
+
+#巨舰牵引力场
+AOW_TECH_giant_warship_traction_field = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	potential = {
+		always = no
+	}
+	prereqfor_desc = {
+		custom = {
+			title = AOW_TECH_giant_warship_traction_field_effect
+			desc = AOW_TECH_giant_warship_traction_field_effect_desc
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#曲率增压场
+AOW_TECH_curvature_pressurization_field = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "AOW_TECH_spatiotemporal_curvature_manipulation" }
+	potential = { is_ai = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = curvature_pressurization_field } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+#天体解压器
+AOW_TECH_celestial_decompressor = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "AOW_TECH_spatiotemporal_curvature_manipulation" "tech_matter_decompressor" "AOW_TECH_zero_element_furnace" }
+	potential = { is_ai = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = celestial_decompressor } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+#恒星吞噬者
+AOW_TECH_stellar_eater = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "AOW_TECH_spatiotemporal_curvature_manipulation" "AOW_TECH_star_picker" }
+	potential = { is_ai = no }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = stellar_eater } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+#归墟
+AOW_TECH_void_vortex = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" "tech_mine_dark_matter" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = void_vortex } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#摘星者
+AOW_TECH_star_picker = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = star_picker } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#零素熔炉
+AOW_TECH_zero_element_furnace = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = zero_element_furnace } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#奇异物质稳定化
+AOW_TECH_stabilization_of_strange_matter = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			add = 10
+			has_federation = yes
+			federation = {
+				any_member = { has_technology = AOW_TECH_stabilization_of_strange_matter }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#奇异物质武器化
+AOW_TECH_weaponization_of_strange_matter = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = all
+	prereqfor_desc = {
+		custom = {
+			title = "AOW_TECH_weaponization_of_strange_matter_effect_title"
+			desc = "AOW_TECH_weaponization_of_strange_matter_effect_desc"
+		}
+	}
+	weight = 0
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			add = 10
+			has_federation = yes
+			federation = {
+				any_member = { has_technology = AOW_TECH_stabilization_of_strange_matter }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+##############################################################################
+#社会学
+##############################################################################
+#灵能井
+AOW_TECH_psychic_device = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { psionics }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = psychic_device } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = breached_shroud }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#脉冲星时钟
+AOW_TECH_pulsar_clock = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { statecraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = pulsar_clock } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#建设效率提升
+AOW_TECH_improved_construction_efficiency_3 = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { statecraft }
+	is_rare = yes
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_2" "tech_mega_engineering" }
+	weight = @tier5weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_master_builders }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_improved_construction_efficiency_3 }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#星空守护者
+AOW_TECH_star_guardian = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { military_theory }
+	ai_update_type = all
+	potential = { always = no }
+	#prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = star_guardian } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+##############################################################################
+#工程学
+##############################################################################
+#环世界扩张
+AOW_TECH_ring_world_expansion = {
+	area = engineering
+	cost = @tier5cost3
+	tier = 5
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_ring_world" }
+	weight = @tier5weight3
+	is_rare = yes
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { is_planet_class = pc_ringworld_habitable } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#二重环世界
+AOW_TECH_ring_world_2 = {
+	area = engineering
+	cost = @tier6cost1
+	tier = 5
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_ring_world" }
+	weight = @tier6weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = ring_world_2 } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_galactic_wonders = yes }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}

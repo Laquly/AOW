@@ -1,0 +1,4 @@
+AOW_btn_star_transfer_ui_StarMass = {
+	potential = { always = yes }
+	effect = { custom_tooltip = AOW_text_btn_star_mass_desc }
+}

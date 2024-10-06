@@ -1,0 +1,118 @@
+AOW_ruined_void_vortex_system = {
+	class = sc_black_hole
+
+	name = "NAME_ruined_void_vortex_system"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 50
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+		modifier = {
+			add = 1000
+			any_neighbor_system = {
+				any_neighbor_system = {
+					any_neighbor_system = {
+						any_neighbor_system = {
+							exists = space_owner
+							space_owner = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+	}
+	max_instances = 1	#最多只能生成一个
+	flags = { AOW_flag_SSTM_void_vortex_ruined }
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		size = 20
+
+		init_effect = {
+			prevent_anomaly = yes
+			while = {
+				count = 30
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 0 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 50
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					entity_offset_height = { min = -0 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 36
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 50
+				create_ambient_object = {
+					type = "medium_debris_02_object"
+					entity_offset_height = { min = -0 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 36
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 100
+				create_ambient_object = {
+					type = "small_debris_object"
+					entity_offset_height = { min = -0 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 36
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_barren_cold"
+		name = "NAME_void_vortex_planet"
+		orbit_distance = 120
+		size = 18
+		has_ring = no
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "AOW_MEGA_void_vortex_ruined"
+			planet = star
+		}
+		every_system_planet = { clear_deposits = yes }
+	}
+}

@@ -1,0 +1,141 @@
+AOW_MEGA_star_guardian_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	build_time = @AOW_var_SG_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SG_0_COST_alloys
+			unity = @AOW_var_SG_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SG_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_star_guardian
+		category = megastructures
+		alloys = @AOW_var_SG_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	potential = { always = no }
+	#prerequisites = { "AOW_TECH_star_guardian" }
+	#potential = { AOW_trigger_mega_potential = { KEY = star_guardian } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_star_guardian } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			always = no
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 500
+		#位置限制
+		modifier = { factor = 1.5	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = star_guardian
+			constructing = AOW_MEGA_star_guardian_0
+		}
+	}
+	on_build_complete = {
+		#from = { country_event = { id = AOW_evt_star_guardian.100 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_star_guardian_@owner }
+	}
+}
+AOW_MEGA_star_guardian_1 = {
+	entity = "star_guardian_1_entity"
+	construction_entity = "star_guardian_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_SG_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SG_1_COST_alloys
+			unity = @AOW_var_SG_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SG_1_UPKP_energy
+			alloys = @AOW_var_SG_1_UPKP_alloys
+		}
+	}
+	#prerequisites = { "AOW_TECH_star_guardian" }
+	upgrade_from = { AOW_MEGA_star_guardian_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		#from = { country_event = { id = AOW_evt_star_guardian.101 } }
+	}
+}
+AOW_MEGA_star_guardian_2 = {
+	entity = "star_guardian_2_entity"
+	construction_entity = "star_guardian_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_SG_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SG_2_COST_alloys
+			unity = @AOW_var_SG_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SG_2_UPKP_energy
+			alloys = @AOW_var_SG_2_UPKP_alloys
+		}
+	}
+	#prerequisites = { "AOW_TECH_star_guardian" }
+	upgrade_from = { AOW_MEGA_star_guardian_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		#from = { country_event = { id = AOW_evt_star_guardian.102 } }
+	}
+}
+AOW_MEGA_star_guardian_3 = {
+	entity = "star_guardian_3_entity"
+	construction_entity = "star_guardian_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_SG_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SG_3_COST_alloys
+			unity = @AOW_var_SG_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SG_3_UPKP_energy
+			alloys = @AOW_var_SG_3_UPKP_alloys
+		}
+	}
+	#prerequisites = { "AOW_TECH_star_guardian" }
+	upgrade_from = { AOW_MEGA_star_guardian_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		#from = {
+		#		set_country_flag = has_built_or_repaired_megastructure
+		#		set_country_flag = has_built_or_repaired_galactic_wonders
+		#		country_event = { id = AOW_evt_star_guardian.103 }
+		#}
+	}
+}

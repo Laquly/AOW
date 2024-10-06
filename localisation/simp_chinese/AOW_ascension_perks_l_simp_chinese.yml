@@ -1,0 +1,14 @@
+﻿l_simp_chinese:
+
+ ap_cosmic_wonders:0"天外神迹"
+ ap_cosmic_wonders_desc:0"人外有人，天外有天。超越巨构的，自然是我们将建造的，足亦横跨星系的超巨型结构。"
+ ap_cosmic_wonders_effects:0"解锁§Y天外神迹§!级别的巨构科技路线\n一种花费巨大、耗时巨长的超巨型结构，需要以暗物质作为维护费，但可以为我们带来极大的收益。\n\n"
+ ap_cosmic_wonders_effects_without53:0"$ap_cosmic_wonders_effects$§E需求科技提示：§!\n£physics_research£§Y$tech_space_science_5$§!\n$t$—图标有一个V，效果：$mod_station_researchers_produces_mult$: §G+10%§!\n£physics_research£§Y$tech_basic_science_lab_3$§!\n$t$—3级研究楼，解锁建筑：$building_research_lab_3$\n\n"
+ ap_cosmic_wonders_effects_without3:0"$ap_cosmic_wonders_effects$§E需求科技提示：§!\n£physics_research£§Y$tech_basic_science_lab_3$§!\n$t$—3级研究楼，解锁建筑：$building_research_lab_3$\n\n"
+ ap_cosmic_wonders_effects_without5:0"$ap_cosmic_wonders_effects$§E需求科技提示：§!\n£physics_research£§Y$tech_space_science_5$§!\n$t$—图标有一个V，效果：$mod_station_researchers_produces_mult$: §G+10%§!\n\n"
+
+ ap_era_of_deterrence:0"威慑纪元"
+ ap_era_of_deterrence_desc:0"随着威慑理论在国内愈发流行，一些足以颠覆我们认知的巨型武器构思被提了出来，它们被认为是目前这个星系中最强的威慑力量。既然我们构建巨型结构的技术已经实现了飞跃，为何不将其融入军事技术以实现军事力量的飞跃呢？"
+ ap_era_of_deterrence_effects:0"\n§E解锁科技路线：§!\n$t$£engineering_research£§Y行星战舰§!\n$t$£physics_research£§Y$AOW_MEGA_starfall_spear$§!\n$t$£society_research£§Y$AOW_MEGA_celestial_shield$§!"
+
+ ap_master_builders_effects:0"§Y解锁系列法令：§!巨构建设效率提升\n$t$—花费额外资源以大幅度提升巨构建造速度的五个法令"

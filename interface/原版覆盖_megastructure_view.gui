@@ -1,0 +1,1430 @@
+#这里饱含了针对所有巨构（包括其他MOD）的定位功能、奇观拓展的大量自带功能
+#一旦被覆盖，将全部失效，还请看到这里的各位modder们手下留情，谢谢！
+
+#It is full of positioning functions for all megastructures (including other MODS), and a large number of built-in functions of Age Of Wonder. 
+#Once it is covered, it will all become invalid. Please see that modders here shows mercy. Thank you!
+
+guiTypes = {
+	containerWindowType = {
+		name = "megastructure_view"
+		position = { x = 35 y = -91 }
+		size = { width = 660 height = 640 }
+		orientation = lower_left
+		origo = lower_left
+		moveable = yes
+		clipping = no
+		upsound = click
+		background = { name = "bg" spriteType = "GFX_tile_large_bg" }
+		containerWindowType = {#底下按钮
+			name = "tabs"
+			position = { x = -20 y = 48 }
+			size = { width = 100% height = 50 }
+			orientation = lower_left
+			origo = lower_left
+			buttonType = {
+				name = "megastructure_tab"
+				quadTextureSprite = "GFX_tab_1_inactive"
+				position = { x= 0 y = 0 }
+				buttonText = "MEGASTRUCTURE"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "z"
+			}
+			buttonType = {
+				name = "megastructure_tab_active"
+				quadTextureSprite = "GFX_tab_1_active"
+				position = { x= 0 y = 0 }
+				buttonText = "MEGASTRUCTURE"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "z"
+			}
+			buttonType = {
+				name = "shipyard_tab"
+				quadTextureSprite = "GFX_tab_2_inactive"
+				position = { x= 129 y = 0 }
+				buttonText = "STARBASE_SHIPYARD_TAB"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "x"
+			}
+			buttonType = {
+				name = "shipyard_tab_active"
+				quadTextureSprite = "GFX_tab_2_active"
+				position = { x= 129 y = 0 }
+				buttonText = "STARBASE_SHIPYARD_TAB"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "x"
+			}
+		}
+		### WINDOW HEADER ###
+		buttonType = {#关闭按钮
+			name = "close"
+			spriteType = "GFX_close_button"
+			position = { x = -46 y = 16 }
+			orientation = upper_right
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE_TITLE"
+			clicksound = "back_click"
+		}
+		buttonType = {#聚焦按钮
+			name = "focus"
+			spriteType = "GFX_fleetview_focus"
+			position = { x = -82 y = 16 }
+			orientation = upper_right
+			shortcut = "q"
+			pdx_tooltip = "TOOLTIP_AMBIENT_OBJECT_FOCUS"
+			clicksound = "back_click"
+		}
+		buttonType = {#拆除按钮
+			name = "dismantle"
+			spriteType = "GFX_dismantle_megastructure"
+			position = { x = -118 y = 16 }
+			orientation = upper_right
+			pdx_tooltip = "DISMANTLE"
+			clicksound = "back_click"
+		}
+
+		iconType = {#下划线
+			name = "header_line"
+			spriteType = "GFX_line_medium"#"GFX_line_center"
+			position = { x = -77 y = 38 }
+			orientation = center_up
+			centerPosition = yes
+			alwaysTransparent = yes
+		}
+		buttonType = {#国旗
+			name = "flag"
+			quadTextureSprite = "GFX_empire_flag_64"
+			position = { x = -6 y = -20 }
+		}
+		instantTextBoxType = {#巨构名字
+			name = "title"
+			font = "malgun_goth_24"
+			position = { x = -267 y = 7 }
+			orientation = center_up
+			maxWidth = 500
+			maxHeight = 40
+			fixedSize = yes
+			format = left#center
+			alwaysTransparent = yes
+		}
+		containerWindowType = {#巨构按钮界面
+			name = "megastructure_tab"
+			size = { width = 100% height = 100% }
+			effectButtonType = {#定位按钮
+				name = "AOW_locator_button"
+				position = { x = -46 y = 52 }
+				spriteType = "GFX_button_planet"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_locator
+				clicksound = interface
+				oversound = mouse_over
+			}
+
+			effectButtonType = {#行星开采器产出切换
+				name = "AOW_pms_consumer_goods"
+				position = { x = -46 y = 88 }
+				spriteType = "GFX_AOW_button_consumer_goods"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_pms_consumer_goods
+				clicksound = interface
+				oversound = mouse_over
+			}
+			effectButtonType = {#行星开采器产出切换
+				name = "AOW_pms_minerals"
+				position = { x = -46 y = 88 }
+				spriteType = "GFX_AOW_button_minerals"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_pms_minerals
+				clicksound = interface
+				oversound = mouse_over
+			}
+
+			effectButtonType = {#行星波动炮升级
+				name = "AOW_pbs_upgrade"
+				position = { x = -46 y = 88 }
+				spriteType = "GFX_fleet_action_button_upgrade"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_pbs_upgrade
+				clicksound = interface
+				oversound = mouse_over
+			}
+
+			effectButtonType = {#物质重组仪
+				name = "AOW_mri_open"
+				position = { x = -46 y = 88 }
+				spriteType = "GFX_button_left"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_mri_open_console
+				clicksound = interface
+				oversound = mouse_over
+			}
+			effectButtonType = {#物质重组仪
+				name = "AOW_mri_close"
+				position = { x = -46 y = 88 }
+				spriteType = "GFX_button_right"
+				orientation = upper_right
+				effect = AOW_btn_view_ui_mri_close_console
+				clicksound = interface
+				oversound = mouse_over
+			}
+			containerWindowType = {
+				name = "AOW_mri_bg"
+				position = { x = 0 y = 86 }
+				orientation = upper_right
+				effectButtonType = {
+					name = "AOW_mri_bg"
+					position = { x = 0 y = 0 }
+					size = { width = 164 height = 554 }
+					spriteType = "GFX_tiles_dark_area_cut_8"
+					effect = AOW_btn_view_ui_mri_background
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_points"
+				position = { x = 6 y = 92 }
+				orientation = upper_right
+				effectButtonType = {
+					name = "AOW_mri_points"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_points_bg"
+					effect = AOW_btn_view_ui_mri_reset
+					text = AOW_text_var_mri_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_alloys"
+				position = { x = 6 y = 128 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_alloys"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_alloys"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_alloys
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_alloys"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_alloys
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_alloys_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_alloys_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_alloys_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_alloys_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_alloys_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_alloys
+					text = AOW_text_var_mri_points_alloys
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_alloys_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_alloys_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_alloys_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_alloys_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_alloys"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_alloys
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_cg"
+				position = { x = 6 y = 164 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_cg"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_cg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_cg
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_cg"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_cg
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_cg_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_cg_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_cg_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_cg_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_cg_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_cg
+					text = AOW_text_var_mri_points_cg
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_cg_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_cg_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_cg_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_cg_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_cg"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_cg
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_vm"
+				position = { x = 6 y = 200 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_vm"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_vm"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_vm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_vm"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_vm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_vm_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_vm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_vm_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_vm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_vm_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_vm
+					text = AOW_text_var_mri_points_vm
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_vm_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_vm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_vm_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_vm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_vm"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_vm
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_eg"
+				position = { x = 6 y = 236 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_eg"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_eg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_eg
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_eg"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_eg
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_eg_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_eg_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_eg_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_eg_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_eg_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_eg
+					text = AOW_text_var_mri_points_eg
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_eg_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_eg_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_eg_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_eg_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_eg"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_eg
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_rc"
+				position = { x = 6 y = 272 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_rc"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_rc"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_rc
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_rc"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_rc
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_rc_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_rc_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_rc_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_rc_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_rc_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_rc
+					text = AOW_text_var_mri_points_rc
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_rc_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_rc_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_rc_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_rc_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_rc"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_rc
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_lm"
+				position = { x = 6 y = 308 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_lm"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_lm"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_lm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_lm"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_lm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_lm_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_lm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_lm_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_lm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_lm_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_lm
+					text = AOW_text_var_mri_points_lm
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_lm_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_lm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_lm_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_lm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_lm"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_lm
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_zro"
+				position = { x = 6 y = 344 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_zro"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_zro"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_zro
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_zro"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_zro
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_zro_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_zro_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_zro_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_zro_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_zro_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_zro
+					text = AOW_text_var_mri_points_zro
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_zro_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_zro_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_zro_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_zro_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_zro"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_zro
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_dm"
+				position = { x = 6 y = 380 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_dm"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_dm"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_dm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_dm"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_dm
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_dm_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_dm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_dm_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_dm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_dm_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_dm
+					text = AOW_text_var_mri_points_dm
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_dm_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_dm_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_dm_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_dm_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_dm"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_dm
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_mri_nanites"
+				position = { x = 6 y = 416 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_mri_nanites"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_nanites"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_nanites
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_min_nanites"
+					position = { x = 31 y = 2 }
+					spriteType = "GFX_AOW_button_ai_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_min_nanites
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_nanites_10"
+					position = { x = 43 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_nanites_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_decrease_nanites_1"
+					position = { x = 55 y = 2 }
+					spriteType = "GFX_AOW_button_player_left"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_decrease_nanites_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_nanites_points"
+					position = { x = 68 y = 0 }
+					spriteType = "GFX_AOW_button_mri_variable_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_nanites
+					text = AOW_text_var_mri_points_nanites
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_nanites_1"
+					position = { x = 114 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_nanites_1
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_increase_nanites_10"
+					position = { x = 126 y = 2 }
+					spriteType = "GFX_AOW_button_player_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_increase_nanites_10
+					clicksound = interface
+					oversound = mouse_over
+				}
+				effectButtonType = {
+					name = "AOW_mri_max_nanites"
+					position = { x = 138 y = 2 }
+					spriteType = "GFX_AOW_button_ai_right"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_max_nanites
+					clicksound = interface
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {
+				name = "AOW_btn_view_ui_mri_copy"
+				position = { x = 6 y = 452 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_btn_view_ui_mri_copy"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_points_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_copy
+					text = AOW_text_mri_copy
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}
+			containerWindowType = {
+				name = "AOW_btn_view_ui_mri_copy_all"
+				position = { x = 6 y = 488 }
+				orientation = upper_right
+				#size = { width = 152 height = 30 }
+				effectButtonType = {
+					name = "AOW_btn_view_ui_mri_copy"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_AOW_button_mri_points_bg"
+					orientation = upper_right
+					effect = AOW_btn_view_ui_mri_copy_all
+					text = AOW_text_mri_copy_all
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "megastructure_portrait_window"
+				size = { width = 560 height = 188 }
+				position = { x = 0 y = 40 }
+				orientation = center_up
+				origo = center_up
+				clipping = yes
+				iconType = {#巨构背景图
+					name = "megastructure_portrait"
+					spriteType = "GFX_megastructure_construction_background"
+					position = { x = -270 y = 12 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "black_frame"
+					spriteType = "GFX_planetview_black_frame"
+					position = { x = -270 y = 13 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "stripes_1"
+					spriteType = "GFX_planetview_stripes_1"
+					position = { x = -276 y = 12 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "city_frame"
+					spriteType = "GFX_city_frame"
+					position = { x = -275 y = 9 }
+					orientation = center_up
+				}
+			}
+			containerWindowType = {
+				name = "desc_background"
+				size = { width = 600 height = 410 }
+				position = { x = 0 y = 220 }
+				orientation = center_up
+				origo = center_up
+				containerWindowType = {#巨构介绍的背景
+					name = "desc_box"
+					size = { width = 600 height = 150 }
+					position = { x = 0 y = 15 }
+					orientation = center_up
+					origo = center_up
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				@box_y = 175
+				containerWindowType = {#效果背景
+					name = "effects_box"
+					size = { width = 193 height = 90 }
+					position = { x = 0 y = @box_y }
+				}
+				containerWindowType = {#效果背景
+					#name = "effects_box"
+					name = "effects_box_background"
+					size = { width = 193 height = 90 }
+					position = { x = 0 y = @box_y }
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#产出背景
+					name = "production_box_background"
+					size = { width = 193 height = 90 }
+					position = { x = 203 y = @box_y }
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#维护费背景
+					name = "upkeep_boxbackground"
+					size = { width = 193 height = 90 }
+					position = { x = 407 y = @box_y }
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#升级背景
+					name = "upgrades_box"
+					size = { width = 600 height = 130 }
+					position = { x = 0 y = 275 }
+					#orientation = center_up
+					#origo = center_up
+					background = {#背景
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+			}
+			### CONTENT ###
+			@text_y = 400
+			@desc_y = 420
+			@desc_w = 193
+			@desc_h = 70
+			@effect_x = 32
+			@production_x = 235
+			@upkeep_x = 439
+			instantTextBoxType = {#巨构介绍
+				name = "desc"
+				font = "malgun_goth_24"
+				position = { x = 35 y = 245 }
+				maxWidth = 590
+				maxHeight = 145
+				text = ""
+				format = center
+				text_color_code = "W"
+				scrollbarType = "standardtext_slider_small"
+			}
+			instantTextBoxType = {#效果
+				name = "effects_header"
+				font = "cg_16b"
+				position = { x = @effect_x y = @text_y }
+				maxWidth = @desc_w
+				maxHeight = 20
+				fixedSize = yes
+				text = "EFFECTS"
+				format = center
+			}
+			instantTextBoxType = {#效果介绍
+				name = "effects_desc"
+				font = "cg_16b"
+				position = { x = @effect_x y = @desc_y }
+				maxWidth = @desc_w
+				maxHeight = @desc_h
+				fixedSize = yes
+				text = "EFFECTS"
+				format = center
+			}
+			containerWindowType = {#产出
+				name = "production_box"
+				position = { x = @production_x y = @text_y }
+				size = { width = @desc_w height = 90 }
+				instantTextBoxType = {
+					name = "production_header"
+					font = "cg_16b"
+					text = "PRODUCTION"
+					appendText = ":"
+					position = { x = 0 y = 0 }
+					maxWidth = @desc_w
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					text_color_code = "G"
+				}
+				instantTextBoxType = {
+					name = "production_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = @desc_w
+					maxHeight = @desc_h
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#维护费
+				name = "upkeep_box"
+				position = { x = @upkeep_x y = @text_y }
+				size = { width = @desc_w height = 90 }
+				instantTextBoxType = {
+					name = "upkeep_header"
+					font = "cg_16b"
+					text = "MAINTENANCE"
+					appendText = ":"
+					position = { x = 0 y = 0 }
+					maxWidth = @desc_w
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					text_color_code = "R"
+				}
+				instantTextBoxType = {
+					name = "upkeep_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = @desc_w
+					maxHeight = @desc_h
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#可能的升级选项
+				name = "possible_upgrades_content"
+				position = { x = 0 y = 500 }
+				size = { width = 600 height = 170 }
+				orientation = center_up
+				origo = center_up
+				smoothListboxType = {#升级按钮
+					name = "upgrades"
+					position = { x = 10 y = 5 }
+					size = { x = 580 y = 128 }
+					borderSize = { x = 0 y = 0 }
+					spacing = 0
+					scrollbarType = "standardlistbox_slider"
+					offset = { x = 0 y = 0 }
+				}
+			}
+			containerWindowType = {#升级进度
+				name = "upgrading_content"
+				position = { x = 0 y = 500 }
+				size = { width = 600 height = 170 }
+				iconType = {#升级进度条
+					name = "upgrade_progress"
+					spriteType = "GFX_AOW_progressbar"
+					position = { x = 40 y = 5 }
+				}
+				instantTextBoxType = {#升级剩余时间
+					name = "upgrade_remaining"
+					font = "malgun_goth_24"
+					position = { x = 40 y = 7 }
+					maxWidth = 580
+					maxHeight = 30
+					fixedSize = yes
+					format = center
+					text = "(clock) X days remaining."
+					alwaysTransparent = yes
+				}
+			}
+			containerWindowType = {#拆除进度
+				name = "dismantle_window"
+				position = { x = 0 y = 545 }
+				iconType = {#拆除进度条
+					name = "dismantle_progress"
+					spriteType = "GFX_AOW_progressbar"
+					position = { x = 40 y = 0 }
+				}
+				instantTextBoxType = {#文字“拆除进度”
+					name = "dismantle_title"
+					font = "malgun_goth_24" #"cg_16b"
+					position = { x = 40 y = 2 }
+					text = "DISMANTLE_IN_PROGRESS"
+					maxWidth = 580
+					maxHeight = 30
+					fixedSize = yes
+					format = center
+					alwaysTransparent = yes
+				}
+				buttonType = {#停止拆除按钮
+					name = "abort_dismantle"
+					size = { x = 264 y = 35 }
+					position = { x = 198 y = 25 }
+					spriteType = "GFX_standard_button_240_34_button"
+					buttonFont = "cg_16b"
+					text = "ABORT"
+					font = "cg_16b"
+					clicksound = planet_view_menu_click_01
+					oversound = mouse_over
+				}
+			}
+		}
+		containerWindowType = {#船坞按钮界面
+			name = "shipyard_tab"
+			position = { x = 0 y = 50 }
+			size = { width = 100% height = 100%% }
+			containerWindowType = {
+				name = "capacity_info"
+				position = { x = 30 y = 10 }
+				size = { width = 295 height = 74 }
+				clipping = no
+				background = {
+					name = "orbitals_background"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+				iconType = {
+					name = "shipyard_icon"
+					spriteType = "GFX_starbase_shipyard"
+					position = { x = 8 y = -65 }
+					orientation = LOWER_LEFT
+				}
+				instantTextBoxType = {
+					name = "shipyard_capacity"
+					position = { x = 70 y = -50 }
+					font = "malgun_goth_24"
+					text = "STARBASE_SHIPYARD_CAPACITY"
+					maxWidth = 200
+					maxHeight = 40
+					fixedSize = yes
+					format = left
+					pdx_tooltip = "STARBASE_SHIPYARD_CAPACITY_DESC"
+					orientation = LOWER_LEFT
+				}
+			}
+			containerWindowType = {#停泊的舰船
+				name = "fleets_info"
+				position = { x = 30 y = 94 }
+				size = { width = 295 height = -10 }
+				background = {
+					name = "orbitals_background"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+				instantTextBoxType = {
+					name = "orbitals_label"
+					font = "malgun_goth_24"
+					text = "DOCKED"
+					position = { x = 0 y = 6 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					alwaysTransparent = yes
+				}
+				instantTextBoxType = {
+					name = "no_orbitals"
+					font = "cg_16b"
+					text = "PLANETVIEW_NO_DOCKED"
+					position = { x = 0 y = 46 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					alwaysTransparent = yes
+				}
+				smoothListBoxType = {
+					name = "fleets_list"
+					position = { x = 10 y = 43 }
+					size = { x = 271 y = 440 }
+					borderSize = { x = 0 y = 0 }
+					scrollbarType = "standardlistbox_slider"
+					autohide_scrollbar = no
+					spacing = 3
+				}
+			}
+			containerWindowType = {
+				name = "modifiers_info"
+				position = { x = 350 y = 10 }
+				size = { width = 285 height = 74 }
+				background = {
+					name = "orbitals_background"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+				gridBoxType = {
+					name = "modifiers_grid"
+					position = { x = 6 y = -40 }
+					size = { width = 248 height = 30 }
+					format = "UPPER_LEFT"
+					slotSize = { width = 91 height = 30 }
+					add_horizontal = yes
+					max_slots_horizontal = 3
+					orientation = LOWER_LEFT
+				}
+				instantTextBoxType = {
+					name = "title"
+					font = "cg_16b"
+					text = "STARBASE_MODIFIER_EFFECTS"
+					position = { x = 0 y = -64 }
+					maxWidth = 285
+					maxHeight = 50
+					fixedSize = yes
+					orientation = LOWER_LEFT
+					#text_color_code = "E"
+					format = CENTER
+					alwaysTransparent = yes
+				}
+			}
+			containerWindowType = {#建造队列
+				name = "build_queue_info"
+				position = { x = 350 y = 94 }
+				size = { width = 285 height = -10 }
+				background = {
+					name = "build_queue_background"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+				instantTextBoxType = {
+					name = "no_constructions"
+					font = "malgun_goth_24"
+					text = "SHIPYARD_QUEUE"
+					position = { x = 0 y = 6 }
+					maxWidth = 285
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					alwaysTransparent = yes
+				}
+				smoothListBoxType = {
+					name = "build_queue_list"
+					position = { x = 14 y = 43 }
+					size = { x = 258 y = 440 }
+					borderSize = { x = 0 y = 0 }
+					scrollbarType = "standardlistbox_slider"
+					autohide_scrollbar = no
+					spacing = 3
+					offset = { x = -1 y = 0 }
+				}
+				buttonType = {
+					name = "open_catalog"
+					size = { x = 0 y = 0 }
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_tiled_window_transparent"
+					alwaysTransparent = yes
+					#text = "STARBASE_OPEN_SHIP_DESIGNS"
+				}
+			}
+		}
+	}
+	containerWindowType = {#侧边舰船选项列表
+		name = "megastructure_side_view"
+		position = { x = 663 y = 9 }
+		size = { width = 400 height = 632 }
+		background = {
+			name = "planet_view_spaceport_construction_panel_background"
+			quadTextureSprite = "GFX_tile_large_bg_plain"#"GFX_ui_tile_large_bg_plain"
+		}
+		iconType = {#蜂巢状飘带
+			name = "header_hex_bg"
+			spriteType = "GFX_hex_center_bg"
+			position = { x = -273 y = -8 }
+			orientation = center_up
+			alwaysTransparent = yes
+		}
+		iconType = {#下划线
+			name = "header_line"
+			spriteType = "GFX_line_center_short"
+			position = { x = -155 y = 28 }
+			orientation = center_up
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = {
+			name = "title"
+			font = "malgun_goth_24"
+			text = "STARBASE_SHIPS"
+			position = { x = 10 y = 10 }
+			maxWidth = 380
+			maxHeight = 20
+			fixedSize = yes
+			format = CENTER
+		}
+		# Close Button
+		buttonType = {
+			name = "close"
+			size = { x = 0 y = 0 }
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiled_window_transparent"
+			alwaysTransparent = yes
+		}
+		smoothListboxType = {
+			name = "entries_list"
+			position = { x = 10 y = 53 }
+			size = { x = 378 y = 606 }
+			scrollbarType = "standardlistbox_slider"
+			borderSize = { x = 0 y = 0 }
+			offset = { x = -3 y = 0 }
+			spacing = 1
+		}
+	}
+	containerWindowType = {#升级按钮
+		name = "megastructure_upgrade_entry"
+		size = { width = 580 height = 32 }
+		background = {#背景
+			name = "bg"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_AOW_megastructure_upgrade_entry"
+			clicksound = "megastructure_upgraded"
+		}
+		instantTextBoxType = {#升级的巨构名字
+			name = "title"
+			font = "cg_16b"
+			position = { x = 10 y = 0 }
+			maxWidth = 300
+			maxHeight = 32
+			format = left
+			vertical_alignment = center
+			text_color_code = "H"
+			text = "ring_world_2_intermediate"
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = {#升级所需时间和花费
+			name = "cost"
+			font = "cg_16b"
+			position = { x = 170 y = 0 }
+			maxWidth = 400
+			maxHeight = 32
+			format = right
+			vertical_alignment = center
+			text = "DBG_MEGA_STRUCTURE_GUI_TEXT"
+			alwaysTransparent = yes
+		}
+	}
+}

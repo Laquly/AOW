@@ -1,0 +1,13 @@
+portraits = {
+	red_dawn_male = { texturefile = "gfx/portraits/portraits/red_dawn_male.dds" }
+	red_dawn_female = { texturefile = "gfx/portraits/portraits/red_dawn_female.dds" }
+	red_dawn_snail = {
+		entity = "portrait_molluscoid_18_entity"
+		clothes_selector = "no_texture"
+		attachment_selector = "no_texture"
+		greeting_sound = "cute_molluscoid_snail_greetings" 
+		character_textures = {
+			"gfx/portraits/portraits/molluscoid_18_red.dds"
+		}
+	}
+}

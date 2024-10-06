@@ -1,0 +1,12 @@
+potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+allow = { always = yes }
+effect = {
+    custom_tooltip = AOW_text_increase_increase_country_limit
+    hidden_effect = {
+        if = {
+            limit = { NOT = { is_variable_set = $KEY$_limit_add } }
+            set_variable = { which = $KEY$_limit_add value = 0 }
+        }
+        change_variable = { which = $KEY$_limit_add value = 1 }
+    }
+}

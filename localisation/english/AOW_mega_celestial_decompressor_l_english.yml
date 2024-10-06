@@ -1,0 +1,41 @@
+﻿l_english:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_celestial_decompressor:0"$AOW_MEGA_celestial_decompressor$"
+ AOW_TECH_celestial_decompressor_desc:0"Extreme gravitational celestial bodies such as black holes and neutron stars seem to be irreversible as the final destination of star evolution. However, with our research on the structure and changes of spacetime, the gravitational field can be counteracted by reversing the curvature of spacetime to revive these stellar remains."
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_celestial_decompressor_0:0"$AOW_MEGA_celestial_decompressor$ Site"
+ AOW_MEGA_celestial_decompressor_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$—Must be built on black hole, neutron star, or pulsar.\n\n$EFFECTS_HEADER$\n$t$—Reversing black hole, neutron star, or pulsar to young Class G star."
+ AOW_MEGA_celestial_decompressor_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$This megastructure can “prop up” the spacetime structure, releasing matter that is strongly gravitationally constrained, thus reversing neutron stars, black holes, and other dense celestial bodies into new main-sequence stars."
+ AOW_MEGA_celestial_decompressor_0_DESC:0"Countless advanced engineering teams and physicists are gathered at this huge space engineering base, and a crazy plan to reverse the fate of star death is about to begin from this platform."
+ AOW_MEGA_celestial_decompressor_1:0"$AOW_MEGA_celestial_decompressor$ Frame"
+ AOW_MEGA_celestial_decompressor_1_DESC:0"This megastructure uses six axial tensor contravariant field generators to “prop up” the spacetime structure, counteracting the enormous gravitational constraints of strong gravitational celestial bodies such as black holes and neutron stars, thus reviving the “dead ashes” of stars."
+ AOW_MEGA_celestial_decompressor_2:0"$AOW_MEGA_celestial_decompressor$ Transform"
+ AOW_MEGA_celestial_decompressor_2_DESC:0"This $AOW_MEGA_celestial_decompressor$ props up the spacetime structure, and the central celestial body is being counteracted by gravity, allowing other interactions to resist gravitational compression."
+ AOW_MEGA_celestial_decompressor_3:0"$AOW_MEGA_celestial_decompressor$ Restore to Main Sequence Star"
+ AOW_MEGA_celestial_decompressor_3_DESC:0"Reversing the dense celestial bodies such as black holes, neutron stars, pulsars, etc. to a young Class G star."
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_celestial_decompressor.100.desc:0"Once we thought that stars were eternal, that they would not be destroyed, nor would they move, and they would always remain in a fixed position in the sky. However, as our understanding of the universe deepens, we realize that stars are not eternal. They move at a fairly fast speed and have their own heroic funerals. If left unattended, when all the stars in the universe die, our universe will be plunged into endless darkness.\n\nFortunately, with our sufficient knowledge of spacetime structures and various stars, we can attempt an almost impossible fantasy, which is to reverse the death of stars and reverse the remains of stars into young main-sequence stars.\n\nWe give stars life; stars give the universe light."
+ AOW_evt_celestial_decompressor.100.a:0"Give the future light."
+ AOW_evt_celestial_decompressor.101.desc:0"With the support of vast resources, the construction of the megastructure named $AOW_MEGA_celestial_decompressor$ has been completed.\n\nThese six axial tensor contravariant field generators will produce a huge gravitational contravariant field by loading a small black hole, forcibly “propping up” spacetime by reversing spacetime curvature, releasing matter trapped in a strong gravitational field, causing celestial bodies to undergo anomalous expansion and become young stars again."
+ AOW_evt_celestial_decompressor.101.a:0"Ready to embrace change…"
+ AOW_evt_celestial_decompressor.102.desc:0"The small black hole is loaded and slowly generates a gravitational contravariant field. Although the celestial bodies that could originally produce neutron stars or even black holes must be massive stars that exceed the white dwarf mass limit, the waste caused by the supernova explosion and reverse restoration of the original celestial body has led to the fact that the star produced by the $AOW_MEGA_celestial_decompressor$ can only be a yellow dwarf star (ordinary Class G star) at most.\n\nAfter the reverse restoration is completed, a violent supernova explosion will occur here, and the $AOW_MEGA_celestial_decompressor$ will bear and isolate the full power of this supernova explosion, which will destroy this huge artificial structure."
+ AOW_evt_celestial_decompressor.102.a:0"Let’s start reversing the future."
+ AOW_evt_celestial_decompressor.103.desc:0"A small-scale supernova occurred in [from.GetName], and its light will illuminate the entire galaxy in hundreds of thousands of years to declare the miracle we have created. Revealed by this supernova is a small mass star that has been reversed from a strong gravitational celestial body, illuminating the dead space of [from.GetName] again."
+ AOW_evt_celestial_decompressor.103.a:0"Our ability to control celestial bodies has reached unprecedented heights."
+ AOW_evt_celestial_decompressor.103.b:0"Even now, we can revive stars."
+ AOW_evt_celestial_decompressor.103.c:0"Our reversal of the eternal threat called death."
+
+ AOW_evt_celestial_decompressor.300.desc:0"$AOW_others_mega_build_1$\n\nAccording to intelligence, we have learned that [from.GetName] is preparing to build a megastructure in [fromfrom.GetName] that is powerful enough to shake dense celestial bodies and may ultimately lead to the rebirth of these dense celestial bodies.\n\nIt is not yet known why they want to modify this star, perhaps to build other more strategically significant megastructures."
+ AOW_evt_celestial_decompressor.300.a:0"Keep monitoring"
+ AOW_evt_celestial_decompressor.301.desc:0"According to numerous tachyon messages, a strong gravitational celestial body in [fromfrom.GetName] underwent anomalous expansion, causing the place that was originally a dense celestial body to become a young G-type star again. This impossible celestial activity must have been caused by human intervention, and there is reason to suspect that [from.GetName] has revived a star through some kind of megastructure."
+ AOW_evt_celestial_decompressor.301.a:0"Extreme control of celestial bodies by civilization."
+ AOW_evt_celestial_decompressor.301.b:0"Reviving a star is meaningless, what’s the point?"

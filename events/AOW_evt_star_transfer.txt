@@ -1,0 +1,2350 @@
+namespace = AOW_evt_star_transfer
+
+##################################################################################
+#建造通知1
+##################################################################################
+country_event = {
+	id = AOW_evt_star_transfer.100
+	title = AOW_mega_notification_title
+	desc = AOW_evt_star_transfer.100.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_dyson_sphere_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_star_transfer.100.a
+	}
+}
+country_event = {
+	id = AOW_evt_star_transfer.101
+	title = AOW_mega_notification_title
+	desc = AOW_evt_star_transfer.101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	immediate = {
+		every_relation = {
+			limit = { AOW_trgr_CNTR_can_be_notified_mega_built = yes }
+			#country_event = { id = AOW_mega_others_notification.3020 }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.101.a
+	}
+}
+country_event = {
+	id = AOW_evt_star_transfer.102
+	title = AOW_mega_notification_title
+	desc = AOW_evt_star_transfer.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_star_transfer.102.a
+	}
+}
+country_event = {
+	id = AOW_evt_star_transfer.103
+	title = AOW_mega_notification_title
+	desc = AOW_evt_star_transfer.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_star_transfer.103.a
+	}
+}
+country_event = {
+	id = AOW_evt_star_transfer.104
+	title = AOW_mega_notification_title
+	desc = AOW_evt_star_transfer.104.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_dyson_sphere_build_complete
+	location = fromfromfrom
+	trigger = {
+		fromfromfrom = { has_megastructure_flag = AOW_flag_MEGA_first_completion }
+	}
+	option = {
+		name = AOW_evt_star_transfer.104.a
+	}
+}
+country_event = {#化为舰船
+	id = AOW_evt_star_transfer.108
+	title = AOW_evt_star_transfer.108.title
+	desc = AOW_evt_star_transfer.108.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mystic_reveal
+	location = from
+	option = {
+		name = AOW_evt_star_transfer.108.a
+	}
+}
+
+##################################################################################
+#通知他国2
+##################################################################################
+country_event = {
+	id = AOW_evt_star_transfer.3020
+	title = AOW_mega_others_notification_title
+	desc = AOW_evt_star_transfer.3020.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_evt_star_transfer.3020.a }
+}
+country_event = {
+	id = AOW_evt_star_transfer.3021
+	title = AOW_evt_star_transfer.3021.title
+	desc = AOW_evt_star_transfer.3021.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_evt_star_transfer.3021.a }
+}
+
+##################################################################################
+#专属故事3~4
+##################################################################################
+
+
+##################################################################################
+#基础功能5
+##################################################################################
+planet_event = {
+	id = AOW_evt_star_transfer.500
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		from.owner = {
+			country_event = { id = AOW_evt_star_transfer.501 }
+		}
+		delete_fleet = from
+		solar_system = {
+			spawn_megastructure = {
+				type = "AOW_MEGA_star_transfer_5"
+				owner = root.from
+				planet = root
+			}
+		}
+	}
+}
+country_event = {#重新部署
+	id = AOW_evt_star_transfer.501
+	title = AOW_evt_star_transfer.501.title
+	desc = AOW_evt_star_transfer.501.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mystic_reveal
+	location = from
+	option = {
+		name = AOW_evt_star_transfer.501.a
+	}
+}
+country_event = {#准备改变恒星
+	id = AOW_evt_star_transfer.502
+	title = AOW_evt_star_transfer.502.name
+	desc = AOW_evt_star_transfer.502.1.desc
+	desc = AOW_evt_star_transfer.502.2.desc
+	desc = AOW_evt_star_transfer.502.3.desc
+	desc = AOW_evt_star_transfer.502.4.desc
+	desc = AOW_evt_star_transfer.502.5.desc
+	desc = AOW_evt_star_transfer.502.6.desc
+	desc = AOW_evt_star_transfer.502.7.desc
+	desc = AOW_evt_star_transfer.502.8.desc
+	desc = AOW_evt_star_transfer.502.8.desc
+	desc = AOW_evt_star_transfer.502.10.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = root.owner.leader
+		planet_background = root.owner
+		graphical_culture = root.owner
+		city_level = root.owner
+		room = root.owner
+	}
+	custom_gui = "AOW_new_diplomacy_ui"
+	force_open = yes
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfromfrom
+	after = {
+		hidden_effect = { fromfromfrom = { set_halted = 0 } } #完事后，取消巨构升级暂停
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.quit
+		custom_gui = AOW_new_diplomacy_ui_option
+		hidden_effect = { fromfromfrom = { finish_upgrade = yes } }
+	}
+	option = {#星云25
+		name = AOW_evt_star_transfer.502.nebula_25
+		custom_tooltip = AOW_evt_star_transfer.502.nebula.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = { from = { is_inside_nebula = no } }
+		allow = {
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 1000 }
+		}
+		add_resource = { sr_dark_matter = -1000 }
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 0.1 } }
+		}
+	}
+	option = {#星云50
+		name = AOW_evt_star_transfer.502.nebula_50
+		custom_tooltip = AOW_evt_star_transfer.502.nebula.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = { from = { is_inside_nebula = no } }
+		allow = {
+			resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
+		}
+		add_resource = { sr_dark_matter = -4000 }
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 0.2 } }
+		}
+	}
+	option = {#行星
+		name = AOW_evt_star_transfer.502.planet
+		custom_tooltip = AOW_evt_star_transfer.502.planet.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = { fromfromfrom.planet = { is_star = yes } }
+		allow = {
+			custom_tooltip = {
+				fail_text = "AOW_requires_SSTM_multiple_stars"
+				from = { AOW_trgr_SSTM_single_star_system = no }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_requires_PLNT_non_primary_star"
+				fromfromfrom.planet = { is_primary_star = no }
+			}
+			resource_stockpile_compare = {
+				resource = sr_dark_matter
+				value >= 100
+			}
+		}
+		add_resource = { sr_dark_matter = -100 }
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 10.0 } }
+		}
+	}
+	option = {#黑洞
+		name = AOW_evt_star_transfer.502.black_hole
+		custom_tooltip = AOW_evt_star_transfer.502.black_hole.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_black_hole }
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = sr_dark_matter
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_black_hole|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		add_resource = { sr_dark_matter = -1000 }
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_black_hole|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 10.1 } }
+		}
+	}
+	option = {#中子星
+		name = AOW_evt_star_transfer.502.neutron_star
+		custom_tooltip = AOW_evt_star_transfer.502.neutron_star.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_neutron_star }
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = sr_dark_matter
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_neutron_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		add_resource = { sr_dark_matter = -1000 }
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_neutron_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 10.2 } }
+		}
+	}
+	option = {#脉冲星
+		name = AOW_evt_star_transfer.502.pulsar
+		custom_tooltip = AOW_evt_star_transfer.502.pulsar.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_pulsar }
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = sr_dark_matter
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_pulsar|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		add_resource = { sr_dark_matter = -1000 }
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_pulsar|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 10.3 } }
+		}
+	}
+	option = {#磁星
+		name = AOW_evt_star_transfer.502.magnetar
+		custom_tooltip = AOW_evt_star_transfer.502.magnetar.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_magnetar }
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = sr_dark_matter
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_magnetar|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		add_resource = { sr_dark_matter = -1000 }
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_magnetar|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 10.4 } }
+		}
+	}
+	option = {#O型特超巨星
+		name = AOW_evt_star_transfer.502.o_hyper
+		custom_tooltip = AOW_evt_star_transfer.502.o_hyper.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_o_hyper_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.4 } }
+		}
+	}
+	option = {#高光度亮变蓝星
+		name = AOW_evt_star_transfer.502.lbv_blue
+		custom_tooltip = AOW_evt_star_transfer.502.lbv_blue.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_lbv_blue_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.41 } }
+		}
+	}
+	option = {#高光度亮变蓝星
+		name = AOW_evt_star_transfer.502.lbv_green
+		custom_tooltip = AOW_evt_star_transfer.502.lbv_green.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_lbv_green_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.42 } }
+		}
+	}
+	option = {#高光度亮变蓝星
+		name = AOW_evt_star_transfer.502.lbv_red
+		custom_tooltip = AOW_evt_star_transfer.502.lbv_red.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_lbv_red_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.43 } }
+		}
+	}
+	option = {#沃尔夫拉叶恒星
+		name = AOW_evt_star_transfer.502.w_azure
+		custom_tooltip = AOW_evt_star_transfer.502.w_azure.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_w_azure_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.21 } }
+		}
+	}
+	option = {#沃尔夫拉叶恒星
+		name = AOW_evt_star_transfer.502.w_red
+		custom_tooltip = AOW_evt_star_transfer.502.w_red.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_w_red_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.22 } }
+		}
+	}
+	option = {#沃尔夫拉叶恒星
+		name = AOW_evt_star_transfer.502.w_green
+		custom_tooltip = AOW_evt_star_transfer.502.w_green.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_w_green_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.23 } }
+		}
+	}
+	option = {#沃尔夫拉叶恒星
+		name = AOW_evt_star_transfer.502.w_purple
+		custom_tooltip = AOW_evt_star_transfer.502.w_purple.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_w_purple_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.24 } }
+		}
+	}
+	option = {#M型特超巨星
+		name = AOW_evt_star_transfer.502.m_hyper
+		custom_tooltip = AOW_evt_star_transfer.502.m_hyper.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_m_hyper_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_hyper_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_hyper_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 1.4 } }
+		}
+	}
+	#超巨星
+	option = {
+		name = AOW_evt_star_transfer.502.o_super
+		custom_tooltip = AOW_evt_star_transfer.502.o_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_o_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_o_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_o_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.b_super
+		custom_tooltip = AOW_evt_star_transfer.502.b_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_b_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_b_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_b_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 6.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.ae
+		custom_tooltip = AOW_evt_star_transfer.502.ae.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_ae_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_b_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_b_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 6.11 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.a_super
+		custom_tooltip = AOW_evt_star_transfer.502.a_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_a_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_a_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_a_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 5.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.f_super
+		custom_tooltip = AOW_evt_star_transfer.502.f_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_f_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_f_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_f_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 4.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.g_super
+		custom_tooltip = AOW_evt_star_transfer.502.g_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_g_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_g_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_g_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 3.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.fu
+		custom_tooltip = AOW_evt_star_transfer.502.fu.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_fu_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_g_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_g_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 3.31 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.k_super
+		custom_tooltip = AOW_evt_star_transfer.502.k_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_k_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_k_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_k_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 2.3 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.m_super
+		custom_tooltip = AOW_evt_star_transfer.502.m_super.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_m_super_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_m_super_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_m_super_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 1.3 } }
+		}
+	}
+	#巨星和矮星
+	option = {
+		name = AOW_evt_star_transfer.502.o
+		custom_tooltip = AOW_evt_star_transfer.502.o.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_o_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_o_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_o_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 7.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.b
+		custom_tooltip = AOW_evt_star_transfer.502.b.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_b_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_b_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_b_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 6.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.g_giant
+		custom_tooltip = AOW_evt_star_transfer.502.g_giant.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_g_giant_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_giant_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_giant_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 3.2 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.k_giant
+		custom_tooltip = AOW_evt_star_transfer.502.k_giant.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_k_giant_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_giant_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_giant_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 2.2 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.s_giant
+		custom_tooltip = AOW_evt_star_transfer.502.s_giant.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_s_giant_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_giant_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_giant_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 2.21 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.m_giant
+		custom_tooltip = AOW_evt_star_transfer.502.m_giant.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_m_giant_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_giant_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_giant_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 1.2 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.c_giant
+		custom_tooltip = AOW_evt_star_transfer.502.c_giant.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_c_giant_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_giant_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_giant_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 1.21 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.a
+		custom_tooltip = AOW_evt_star_transfer.502.a.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_a_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_a_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_a_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 5.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.f
+		custom_tooltip = AOW_evt_star_transfer.502.f.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_f_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_f_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_f_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 4.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.tt_white
+		custom_tooltip = AOW_evt_star_transfer.502.tt_white.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_tt_white_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_f_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_f_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 4.11 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.g
+		custom_tooltip = AOW_evt_star_transfer.502.g.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_g_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_g_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_g_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 3.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.tt_orange
+		custom_tooltip = AOW_evt_star_transfer.502.tt_orange.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_tt_orange_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_g_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_g_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 3.11 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.k
+		custom_tooltip = AOW_evt_star_transfer.502.k.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_k_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_k_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_k_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 2.1 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.tt_red
+		custom_tooltip = AOW_evt_star_transfer.502.tt_red.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			has_global_flag = has_real_space_mod
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_tt_red_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_k_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_k_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 2.11 } }
+		}
+	}
+	option = {
+		name = AOW_evt_star_transfer.502.m
+		custom_tooltip = AOW_evt_star_transfer.502.m.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		trigger = {
+			fromfromfrom.planet = {
+				is_star = yes
+				NOT = { is_planet_class = pc_m_star }
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					fromfromfrom.planet = {
+						OR = {
+							is_planet_class = pc_black_hole
+							AOW_trgr_PLNT_composed_of_neutron = yes
+						}
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 1000
+				}
+			}
+			else = {
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= 500
+				}
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1
+				mult = value:AOW_var_add_and_subtract|Add|@AOW_var_m_star|Sub|fromfromfrom.planet.value:AOW_var_star_value|
+			}
+		}
+		if = {
+			limit = {
+				fromfromfrom.planet = {
+					OR = {
+						is_planet_class = pc_black_hole
+						AOW_trgr_PLNT_composed_of_neutron = yes
+					}
+				}
+			}
+			add_resource = { sr_dark_matter = -1000 }
+		}
+		else = {
+			add_resource = { sr_dark_matter = -500 }
+		}
+		add_resource = {
+			energy = 1
+			mult = value:AOW_var_add_and_subtract|Add|fromfromfrom.planet.value:AOW_var_star_value|Sub|@AOW_var_m_star|
+		}
+		hidden_effect = {
+			fromfromfrom = { set_variable = { which = AOW_var_MEGA_star_class value = 1.1 } }
+		}
+	}
+}
+country_event = {#完成恒星改造
+	id = AOW_evt_star_transfer.106
+	title = AOW_evt_star_transfer.106.title
+	desc = AOW_evt_star_transfer.106.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mystic_reveal
+	location = event_target:AOW_target_planet
+	option = { name = OK }
+}
+country_event = {#成功创造星云
+	id = AOW_evt_star_transfer.107
+	title = AOW_evt_star_transfer.107.title
+	desc = AOW_evt_star_transfer.107.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_transfer
+	show_sound = event_mystic_reveal
+	location = from
+	option = { name = OK }
+}

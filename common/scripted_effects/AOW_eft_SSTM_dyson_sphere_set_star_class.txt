@@ -1,0 +1,304 @@
+#戴森球改变星系类型
+AOW_eft_SSTM_dyson_sphere_set_star_class = {
+	#O型
+	if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_o_star }
+			is_star_class = sc_o
+		}
+		set_star_class = AOW_sc_dyson_sphere_o
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_o_super_star }
+			is_star_class = sc_o_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_o_super
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_o_hyper_star }
+			is_star_class = sc_o_hyper
+		}
+		set_star_class = AOW_sc_dyson_sphere_o_hyper
+	}
+	#B型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_b_star }
+			is_star_class = sc_b
+		}
+		set_star_class = AOW_sc_dyson_sphere_b
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_b_super_star }
+			is_star_class = sc_b_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_b_super
+	}
+	#A型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_a_star }
+			is_star_class = sc_a
+		}
+		set_star_class = AOW_sc_dyson_sphere_a
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_a_super_star }
+			is_star_class = sc_a_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_a_super
+	}
+	#F型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_f_star }
+			is_star_class = sc_f
+		}
+		set_star_class = AOW_sc_dyson_sphere_f
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_f_super_star }
+			is_star_class = sc_f_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_f_super
+	}
+	#G型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_g_star }
+			is_star_class = sc_g
+		}
+		set_star_class = AOW_sc_dyson_sphere_g
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_g_giant_star }
+			is_star_class = sc_g_giant
+		}
+		set_star_class = AOW_sc_dyson_sphere_g_giant
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_g_super_star }
+			is_star_class = sc_g_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_g_super
+	}
+	#K型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_k_star }
+			is_star_class = sc_k
+		}
+		set_star_class = AOW_sc_dyson_sphere_k
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_k_giant_star }
+			is_star_class = sc_k_giant
+		}
+		set_star_class = AOW_sc_dyson_sphere_k_giant
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_k_super_star }
+			is_star_class = sc_k_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_k_super
+	}
+	#M型
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_m_star }
+			is_star_class = sc_m
+		}
+		set_star_class = AOW_sc_dyson_sphere_m
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_m_giant_star }
+			is_star_class = sc_m_giant
+		}
+		set_star_class = AOW_sc_dyson_sphere_m_giant
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_m_super_star }
+			is_star_class = sc_m_super
+		}
+		set_star_class = AOW_sc_dyson_sphere_m_super
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_m_hyper_star }
+			is_star_class = sc_m_hyper
+		}
+		set_star_class = AOW_sc_dyson_sphere_m_hyper
+	}
+	#D型恒星（白矮星）
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_d_star }
+			is_star_class = sc_d
+		}
+		set_star_class = AOW_sc_dyson_sphere_d
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_d_star }
+			is_star_class = sc_p_purple
+		}
+		set_star_class = AOW_sc_dyson_sphere_p_purple
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_d_star }
+			is_star_class = sc_p_green
+		}
+		set_star_class = AOW_sc_dyson_sphere_p_green
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_d_star }
+			is_star_class = sc_p_red
+		}
+		set_star_class = AOW_sc_dyson_sphere_p_red
+	}
+	#C型恒星（碳恒星）
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_c_giant_star }
+			is_star_class = sc_c_giant
+		}
+		set_star_class = AOW_sc_dyson_sphere_c_giant
+	}
+	#S型恒星（锆恒星）
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_s_giant_star }
+			is_star_class = sc_s_giant
+		}
+		set_star_class = AOW_sc_dyson_sphere_s_giant
+	}
+	#W型恒星（沃尔夫-拉叶恒星）
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_w_azure_star }
+			is_star_class = sc_w_azure
+		}
+		set_star_class = AOW_sc_dyson_sphere_w_azure
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_w_red_star }
+			is_star_class = sc_w_red
+		}
+		set_star_class = AOW_sc_dyson_sphere_w_red
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_w_green_star }
+			is_star_class = sc_w_green
+		}
+		set_star_class = AOW_sc_dyson_sphere_w_green
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_w_purple_star }
+			is_star_class = sc_w_purple
+		}
+		set_star_class = AOW_sc_dyson_sphere_w_purple
+	}
+	#原恒星
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_protostar }
+			is_star_class = sc_protostar
+		}
+		set_star_class = AOW_sc_dyson_sphere_protostar
+	}
+	#高光度亮变蓝星
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_lbv_blue_star }
+			is_star_class = sc_lbv_blue
+		}
+		set_star_class = AOW_sc_dyson_sphere_lbv_blue
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_lbv_green_star }
+			is_star_class = sc_lbv_green
+		}
+		set_star_class = AOW_sc_dyson_sphere_lbv_green
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_lbv_red_star }
+			is_star_class = sc_lbv_red
+		}
+		set_star_class = AOW_sc_dyson_sphere_lbv_red
+	}
+	#金牛座T星
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_tt_red_star }
+			AOW_trgr_SSTM_single_star_system = yes
+			is_star_class = sc_tt_red
+		}
+		set_star_class = AOW_sc_dyson_sphere_tt_red
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_tt_orange_star }
+			AOW_trgr_SSTM_single_star_system = yes
+			is_star_class = sc_tt_orange
+		}
+		set_star_class = AOW_sc_dyson_sphere_tt_orange
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_tt_white_star }
+			AOW_trgr_SSTM_single_star_system = yes
+			is_star_class = sc_tt_white
+		}
+		set_star_class = AOW_sc_dyson_sphere_tt_white
+	}
+	#赫比格星
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_ae_star }
+			is_star_class = sc_ae
+		}
+		set_star_class = AOW_sc_dyson_sphere_ae
+	}
+	#猎户座FU变星
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_fu_star }
+			is_star_class = sc_fu
+		}
+		set_star_class = AOW_sc_dyson_sphere_fu
+	}
+
+
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_b_star }
+			is_star_class = sc_binary_2
+		}
+		set_star_class = AOW_sc_binary_ds_n
+	}
+	else_if = {
+		limit = {
+			fromfrom.planet = { is_planet_class = pc_b_star }
+			is_star_class = AOW_sc_binary_ds_n
+		}
+		set_star_class = AOW_sc_binary_ds_zef
+	}
+}

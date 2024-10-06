@@ -1,0 +1,78 @@
+﻿l_english:
+
+ ############### 巨构列表 ###############$$
+ #这里的巨构名字决定了所有相关文本的巨构名字，改此处其他地方跟着改变
+
+ AOW_MEGA_space_sensor_station:0"Space Sensor Station"
+ AOW_MEGA_space_arena:0"Astral Arena"
+ AOW_MEGA_asteroid_mining_station:0"Asteroid Mining Station"
+
+ AOW_MEGA_advanced_hyperlane_controller:0"Starnet"
+ AOW_MEGA_artifacts_transcription_palace:0"Artifacts Transcription Palace"
+ AOW_MEGA_cemetery_of_martyrs:0"Valhalla"
+ AOW_MEGA_dark_matter_curvature_trap:0"Ether Potential Well"
+ AOW_MEGA_deep_space_prison:0"Deep Space Prison"
+ AOW_MEGA_hyperlane_controller:0"Star Trails"
+ AOW_MEGA_nanites_activator:0"Nanites Activator"
+ AOW_MEGA_nanites_transmutation:0"Nanites Transmutation"
+ AOW_MEGA_naval_command_base:0"Naval Command Base"
+ AOW_MEGA_nebula_refining_center:0"Nebula Refining Center"
+ AOW_MEGA_orbital_acquisition_system:0"Orbital Acquisition System"
+ AOW_MEGA_planetary_mining_station:0"Planetary Mining Station"
+ AOW_MEGA_prosperous_trade_station:0"Prosperous Trade Station"
+ AOW_MEGA_synthetic_food_factory:0"Synthetic Food Factory"
+ AOW_MEGA_zro_sublimator:0"Zro Sublimator"
+ AOW_MEGA_planetary_blaster_system:0"Planetary Blaster System"
+
+ AOW_MEGA_ring_world_2:0"Double Ring World"
+ AOW_MEGA_void_vortex:0"Void Vortex"
+ AOW_MEGA_star_picker:0"Star Picker"
+ AOW_MEGA_psychic_device:0"Psionic Well"
+ AOW_MEGA_pulsar_clock:0"Pulsar Clock"
+ AOW_MEGA_zero_element_furnace:0"Neutronium Furnace"
+ AOW_MEGA_curvature_pressurization_field:0"Curvature Pressurization Field"
+ AOW_MEGA_celestial_decompressor:0"Celestial Decompressor"
+ AOW_MEGA_stellar_eater:0"Stellar Eater"
+
+ AOW_MEGA_multi_dimensional_warehouse:0"Multi-dimensional Warehouse"
+ AOW_MEGA_ring_world_3:0"Triple Ring World"
+ AOW_MEGA_ring_world_4:0"Quadruple Ring World"
+ AOW_MEGA_star_transfer:0"Fornax"
+ AOW_MEGA_quindecillion_stellar_quantum_matrix:0"Quindecillion Stellar Quantum Matrix"
+ AOW_MEGA_heaven_navigation_bureau:0"Celestial Navigation Pharos"
+ AOW_MEGA_miraculous_shipyard:0"Miraculous Shipyard"
+ AOW_MEGA_material_recombination_instrument:0"Material Recombination Instrument"
+ AOW_MEGA_starfall_spear:0"Starfall Spear"
+ AOW_MEGA_celestial_shield:0"Celestial Shield"
+
+ ############### 特殊项目 ###############
+
+ AOW_locator_chain_mega_title:0"£AOW_megastructures£§BMegastructure Locator§!£AOW_megastructures£"
+ AOW_locator_chain_mega_desc:0"It is only used to locate megastructures and supports all types of megastructures, including those of other mods."
+
+ AOW_locator_sp_mega:0"§Y[this.GetName]§!§L([this.solar_system.GetName])§!"
+ AOW_locator_sp_mega_DESC:0"§Y[this.GetName]§! megastructure in §Y[this.solar_system.GetName]§! system."
+
+ AOW_sp_planet_locator:0"The name bar of [this.GetName]"
+ AOW_sp_planet_locator_DESC:0"This project is only used to display the name bar of §Y[this.GetName]§! so that the planet can be selected.\n\n§YCommon application scenarios: §!Star X is completely obscured by the Dyson sphere, the mouse can not click to star X, but this project can display the name bar of the star X, and the mouse can click the name bar to select the star."
+
+ ############### 星基建筑 ###############
+
+ sm_AOW_nebula_refinery_center:0"Nebula Refinery Center"
+ sm_AOW_nebula_refinery_center_desc:0"The refining industry of the whole system flourished because of it."
+
+ sm_AOW_miraculous_shipyard_uplink:0"$AOW_MEGA_miraculous_shipyard$ Uplink"
+ sm_AOW_miraculous_shipyard_uplink_desc:0"$AOW_MEGA_miraculous_shipyard$ Uplink can reduce the cost of shipbuilding by the same amount to the star base, and the ships staying here can also get good rest and maintenance."
+
+ ############### 其他 ###############
+
+ breached_shroud:0"Breached Shroud"
+ has_market_access:0"Accessible to the Galactic Market"
+ AOW_flag_CNTR_branch_office_established:0"Branch Office Established"
+ AOW_flag_CNTR_add_hyperlane_with_HC:0"Built hyperlane with $AOW_MEGA_hyperlane_controller$"
+ AOW_flag_CNTR_remove_hyperlane_with_HC:0"Removed hyperlane with $AOW_MEGA_hyperlane_controller$"
+ AOW_flag_CNTR_can_research_planetary_ship:0"There is data on ancient planetary ship"
+
+ AOW_bypass_advanced_hyperlane_controller_active:0"$AOW_MEGA_advanced_hyperlane_controller$ in the receiving state."
+ AOW_bypass_advanced_hyperlane_controller_active_desc:0"This system has a $AOW_MEGA_advanced_hyperlane_controller$ in the receiving state."
+

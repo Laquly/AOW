@@ -1,0 +1,310 @@
+entity = {#框架环
+	name = "zero_element_furnace_a_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 8
+}
+entity = {#聚能环
+	name = "zero_element_furnace_b_entity"
+	pdxmesh = "mega_art_institution_01_stage_1_mesh"
+	meshsettings = {
+		name = "polySurface15Shape"
+		index = 0
+		texture_diffuse = "nemesis_01_mega_art_institution_diffuse.dds"
+		texture_normal = "nemesis_01_mega_art_institution_normal.dds"
+		texture_specular = "nemesis_01_mega_art_institution_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	scale = 4
+}
+entity = {#初阶段提取器
+	name = "zero_element_furnace_c_entity"
+	pdxmesh = "matter_decompressor_01_stage_1_mesh"
+	meshsettings = {
+		name = "g_body1Shape"
+		index = 0
+		texture_diffuse = "mammalian_01_matter_decompressor_diffuse.dds"
+		texture_normal = "mammalian_01_matter_decompressor_normal.dds"
+		texture_specular = "mammalian_01_matter_decompressor_normal.dds"
+		shader = "PdxMeshShip"
+	}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+	}
+	scale = 4
+}
+entity = {#最终阶段提取器
+	name = "zero_element_furnace_d_entity"
+	pdxmesh = "matter_decompressor_01_stage_3_mesh"
+	meshsettings = {
+		name = "g_body1Shape"
+		index = 0
+		texture_diffuse = "mammalian_01_matter_decompressor_diffuse.dds"
+		texture_normal = "mammalian_01_matter_decompressor_normal.dds"
+		texture_specular = "mammalian_01_matter_decompressor_normal.dds"
+		shader = "PdxMeshShip"
+	}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+	}
+	scale = 4
+}
+
+
+
+
+@zero_element_furnace_scale = 0.7
+
+entity = {
+	name = "zero_element_furnace_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { -30 0 90 } }
+	locator = { name = "loc102" position = { 0 0 0 } rotation = { -30 90 90 } }
+	locator = { name = "loc103" position = { 0 0 0 } rotation = { 0 180 0 } }
+	attach = { "loc101" = "zero_element_furnace_a_entity" }
+	attach = { "loc102" = "zero_element_furnace_a_entity" }
+	attach = { "loc103" = "zero_element_furnace_a_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_2_construction_entity"
+	#cull_radius = 500
+
+	locator = { name = "locc101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locc102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locc103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locc104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locc105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locc106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "locc101" = "zero_element_furnace_c_entity" }
+	attach = { "locc102" = "zero_element_furnace_c_entity" }
+	attach = { "locc103" = "zero_element_furnace_c_entity" }
+	attach = { "locc104" = "zero_element_furnace_c_entity" }
+	attach = { "locc105" = "zero_element_furnace_c_entity" }
+	attach = { "locc106" = "zero_element_furnace_c_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_2_entity"
+	#cull_radius = 500
+	locator = { name = "loca101" position = { 0 0 0 } rotation = { -30 0 90 } }
+	locator = { name = "loca102" position = { 0 0 0 } rotation = { -30 90 90 } }
+	locator = { name = "loca103" position = { 0 0 0 } rotation = { 0 180 0 } }
+
+	locator = { name = "locc101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locc102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locc103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locc104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locc105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locc106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "loca101" = "zero_element_furnace_a_entity" }
+	attach = { "loca102" = "zero_element_furnace_a_entity" }
+	attach = { "loca103" = "zero_element_furnace_a_entity" }
+
+	attach = { "locc101" = "zero_element_furnace_c_entity" }
+	attach = { "locc102" = "zero_element_furnace_c_entity" }
+	attach = { "locc103" = "zero_element_furnace_c_entity" }
+	attach = { "locc104" = "zero_element_furnace_c_entity" }
+	attach = { "locc105" = "zero_element_furnace_c_entity" }
+	attach = { "locc106" = "zero_element_furnace_c_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_3_construction_entity"
+	#cull_radius = 500
+
+	locator = { name = "locd101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locd102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locd103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locd104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locd105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locd106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "locd101" = "zero_element_furnace_d_entity" }
+	attach = { "locd102" = "zero_element_furnace_d_entity" }
+	attach = { "locd103" = "zero_element_furnace_d_entity" }
+	attach = { "locd104" = "zero_element_furnace_d_entity" }
+	attach = { "locd105" = "zero_element_furnace_d_entity" }
+	attach = { "locd106" = "zero_element_furnace_d_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_3_entity"
+	#cull_radius = 500
+	locator = { name = "loca101" position = { 0 0 0 } rotation = { -30 0 90 } }
+	locator = { name = "loca102" position = { 0 0 0 } rotation = { -30 90 90 } }
+	locator = { name = "loca103" position = { 0 0 0 } rotation = { 0 180 0 } }
+
+	locator = { name = "locd101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locd102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locd103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locd104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locd105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locd106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "loca101" = "zero_element_furnace_a_entity" }
+	attach = { "loca102" = "zero_element_furnace_a_entity" }
+	attach = { "loca103" = "zero_element_furnace_a_entity" }
+
+	attach = { "locd101" = "zero_element_furnace_d_entity" }
+	attach = { "locd102" = "zero_element_furnace_d_entity" }
+	attach = { "locd103" = "zero_element_furnace_d_entity" }
+	attach = { "locd104" = "zero_element_furnace_d_entity" }
+	attach = { "locd105" = "zero_element_furnace_d_entity" }
+	attach = { "locd106" = "zero_element_furnace_d_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_4_construction_entity"
+	#cull_radius = 500
+
+	locator = { name = "locb101" position = { 185 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "locb102" position = { -185 0 0 } rotation = { 0 0 -90 } }
+	locator = { name = "locb103" position = { 0 0 185 } rotation = { 0 -90 0 } }#前
+	locator = { name = "locb104" position = { 0 0 -185 } rotation = { 0 90 0 } }#后
+	locator = { name = "locb105" position = { 0 185 0 } rotation = { 0 180 0 } }#上
+	locator = { name = "locb106" position = { 0 -185 0 } rotation = { 0 0 0 } }#下
+
+	attach = { "locb101" = "zero_element_furnace_b_entity" }
+	attach = { "locb102" = "zero_element_furnace_b_entity" }
+	attach = { "locb103" = "zero_element_furnace_b_entity" }
+	attach = { "locb104" = "zero_element_furnace_b_entity" }
+	attach = { "locb105" = "zero_element_furnace_b_entity" }
+	attach = { "locb106" = "zero_element_furnace_b_entity" }
+	scale = @zero_element_furnace_scale
+}
+entity = {
+	name = "zero_element_furnace_4_entity"
+	#cull_radius = 500
+	locator = { name = "loca101" position = { 0 0 0 } rotation = { -30 0 90 } }
+	locator = { name = "loca102" position = { 0 0 0 } rotation = { -30 90 90 } }
+	locator = { name = "loca103" position = { 0 0 0 } rotation = { 0 180 0 } }
+
+	locator = { name = "locb101" position = { 185 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "locb102" position = { -185 0 0 } rotation = { 0 0 -90 } }
+	locator = { name = "locb103" position = { 0 0 185 } rotation = { 0 -90 0 } }#前
+	locator = { name = "locb104" position = { 0 0 -185 } rotation = { 0 90 0 } }#后
+	locator = { name = "locb105" position = { 0 185 0 } rotation = { 0 180 0 } }#上
+	locator = { name = "locb106" position = { 0 -185 0 } rotation = { 0 0 0 } }#下
+
+	locator = { name = "locd101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locd102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locd103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locd104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locd105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locd106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "loca101" = "zero_element_furnace_a_entity" }
+	attach = { "loca102" = "zero_element_furnace_a_entity" }
+	attach = { "loca103" = "zero_element_furnace_a_entity" }
+
+	attach = { "locb101" = "zero_element_furnace_b_entity" }
+	attach = { "locb102" = "zero_element_furnace_b_entity" }
+	attach = { "locb103" = "zero_element_furnace_b_entity" }
+	attach = { "locb104" = "zero_element_furnace_b_entity" }
+	attach = { "locb105" = "zero_element_furnace_b_entity" }
+	attach = { "locb106" = "zero_element_furnace_b_entity" }
+
+	attach = { "locd101" = "zero_element_furnace_d_entity" }
+	attach = { "locd102" = "zero_element_furnace_d_entity" }
+	attach = { "locd103" = "zero_element_furnace_d_entity" }
+	attach = { "locd104" = "zero_element_furnace_d_entity" }
+	attach = { "locd105" = "zero_element_furnace_d_entity" }
+	attach = { "locd106" = "zero_element_furnace_d_entity" }
+	scale = @zero_element_furnace_scale
+}
+
+
+############################ 损毁的
+
+entity = {#框架环
+	name = "ruined_zero_element_furnace_a_entity"
+	pdxmesh = "AOW_ruined_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 8
+}
+entity = {#提取器
+	name = "ruined_zero_element_furnace_b_entity"
+	pdxmesh = "matter_decompressor_destroyed_01_mesh"
+	locator = { name = "debris"	position = { 0 0 0 } }	
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "spy_orb_destroyed" stop_on_state_change = yes } }
+	}
+	meshsettings = {
+		name = "g_bodyShape"
+		index = 0
+		texture_diffuse = "matter_decompressor_01_destroyed_diffuse.dds"
+		texture_normal = "matter_decompressor_01_destroyed_normal.dds"
+		texture_specular = "matter_decompressor_01_destroyed_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	attach = { debris = "debris_small_01_entity" }
+	scale = 4
+}
+entity = {
+	name = "zero_element_furnace_ruined_entity"
+	#cull_radius = 500
+	locator = { name = "loca101" position = { 0 0 0 } rotation = { -30 0 90 } }
+	locator = { name = "loca102" position = { 0 0 0 } rotation = { -30 90 90 } }
+	locator = { name = "loca103" position = { 0 0 0 } rotation = { 0 180 0 } }
+
+	locator = { name = "locb101" position = { 300 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "locb102" position = { -300 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "locb103" position = { 0 0 300 } rotation = { 0 0 0 } }#前
+	locator = { name = "locb104" position = { 0 0 -300 } rotation = { 180 0 0 } }#后
+	locator = { name = "locb105" position = { 0 300 0 } rotation = { 0 -90 0 } }#上
+	locator = { name = "locb106" position = { 0 -300 0 } rotation = { 0 90 0 } }#下
+
+	attach = { "loca101" = "ruined_zero_element_furnace_a_entity" }
+	attach = { "loca102" = "ruined_zero_element_furnace_a_entity" }
+	attach = { "loca103" = "ruined_zero_element_furnace_a_entity" }
+
+	attach = { "locb101" = "ruined_zero_element_furnace_b_entity" }
+	attach = { "locb102" = "ruined_zero_element_furnace_b_entity" }
+	attach = { "locb103" = "ruined_zero_element_furnace_b_entity" }
+	attach = { "locb104" = "ruined_zero_element_furnace_b_entity" }
+	attach = { "locb105" = "ruined_zero_element_furnace_b_entity" }
+	attach = { "locb106" = "ruined_zero_element_furnace_b_entity" }
+	scale = @zero_element_furnace_scale
+}

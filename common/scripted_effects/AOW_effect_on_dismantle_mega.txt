@@ -1,0 +1,129 @@
+AOW_effect_on_dismantle_start_save_planet_target = {
+    if = {
+        limit = { exists = fromfrom.planet }
+        fromfrom.planet = {
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_01_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_01_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_02_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_02_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_03_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_03_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_04_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_04_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_05_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_05_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_06_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_06_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_07_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_07_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_08_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_08_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_09_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_09_@root
+                break = yes
+            }
+            if = {
+                limit = { NOT = { exists = event_target:AOW_tgt_PLNT_$key$_10_@root } }
+                save_global_event_target_as = AOW_tgt_PLNT_$key$_10_@root
+                break = yes
+            }
+        }
+    }
+}
+AOW_effect_on_dismantle_cancel_clear_planet_target = {
+    if = {
+        limit = { exists = fromfrom.planet }
+        fromfrom.planet = {
+            switch = {
+                trigger = is_same_value
+                event_target:AOW_tgt_PLNT_$key$_01_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_01_@root }
+                event_target:AOW_tgt_PLNT_$key$_02_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_02_@root }
+                event_target:AOW_tgt_PLNT_$key$_03_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_03_@root }
+                event_target:AOW_tgt_PLNT_$key$_04_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_04_@root }
+                event_target:AOW_tgt_PLNT_$key$_05_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_05_@root }
+                event_target:AOW_tgt_PLNT_$key$_06_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_06_@root }
+                event_target:AOW_tgt_PLNT_$key$_07_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_07_@root }
+                event_target:AOW_tgt_PLNT_$key$_08_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_08_@root }
+                event_target:AOW_tgt_PLNT_$key$_09_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_09_@root }
+                event_target:AOW_tgt_PLNT_$key$_10_@root = { clear_global_event_target = AOW_tgt_PLNT_$key$_10_@root }
+            }
+        }
+    }
+}
+AOW_effect_on_dismantle_complete_get_target_planet = {
+    if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_01_@root }
+        event_target:AOW_tgt_PLNT_$key$_01_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_01_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_02_@root }
+        event_target:AOW_tgt_PLNT_$key$_02_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_02_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_03_@root }
+        event_target:AOW_tgt_PLNT_$key$_03_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_03_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_04_@root }
+        event_target:AOW_tgt_PLNT_$key$_04_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_04_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_05_@root }
+        event_target:AOW_tgt_PLNT_$key$_05_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_05_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_06_@root }
+        event_target:AOW_tgt_PLNT_$key$_06_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_06_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_07_@root }
+        event_target:AOW_tgt_PLNT_$key$_07_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_07_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_08_@root }
+        event_target:AOW_tgt_PLNT_$key$_08_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_08_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_09_@root }
+        event_target:AOW_tgt_PLNT_$key$_09_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_09_@root
+    }
+    else_if = {
+        limit = { exists = event_target:AOW_tgt_PLNT_$key$_10_@root }
+        event_target:AOW_tgt_PLNT_$key$_10_@root = { save_event_target_as = AOW_target_planet }
+        clear_global_event_target = AOW_tgt_PLNT_$key$_10_@root
+    }
+}

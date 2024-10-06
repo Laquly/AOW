@@ -1,0 +1,86 @@
+﻿l_english:
+ ######################################################################
+ # Economic Categories Modifiers
+ ######################################################################
+ mod_country_sr_dark_matter_produces_mult:0"Monthly  £sr_dark_matter£$sr_dark_matter$"
+
+ mod_megastructures_produces_mult:0"Megastructure Output"
+ mod_megastructures_energy_produces_mult:0"Megastructure £energy£Energy Output"
+ mod_megastructures_unity_produces_mult:0"Megastructure £unity£Unity Output"
+ mod_megastructures_sr_dark_matter_produces_mult:0"Megastructure £sr_dark_matter£Dark Matter Output"
+
+ mod_megastructures_upkeep_mult:0"Megastructure Upkeep"
+ mod_megastructures_energy_upkeep_mult:0"Megastructure £energy£Energy Upkeep"
+ mod_megastructures_unity_upkeep_mult:0"Megastructure £unity£Unity Upkeep"
+ mod_megastructures_sr_dark_matter_upkeep_mult:0"Megastructure £sr_dark_matter£Dark Matter Upkeep"
+
+ mod_megastructures_cost_mult:0"Megastructure Cost"
+ mod_megastructures_influence_cost_mult:0"Megastructure £influence£Influence Cost"
+ mod_megastructures_unity_cost_mult:0"Megastructure £unity£Unity Cost"
+ mod_megastructures_sr_dark_matter_cost_mult:0"Megastructure £sr_dark_matter£Dark Matter Cost"
+
+
+ ######################################################################
+ # Static Modifiers
+ ######################################################################
+ AOW_mod_multi_dimensional_experiment_finished:0"Multi-Dimensional Experiment Finished"
+ AOW_mod_multi_dimensional_experiment_finished_desc:0"Multi-Dimensional and Megastructure, what perfect experimental data."
+
+ AOW_mod_CNTR_mega_cost:0"Megastructure Cost Adjustment"
+ AOW_mod_CNTR_mega_upkp:0"Megastructure Upkeep Adjustment"
+ AOW_mod_CNTR_mega_prdc:0"Megastructure Output Adjustment"
+ AOW_mod_CNTR_mega_build_speed:0"Megastructure Build Speed Adjustment"
+ AOW_mod_CNTR_mega_build_cap:0"Megastructure Build Cap Adjustment"
+
+ AOW_mod_CNTR_starfall_spear_victim:0 "$AOW_MEGA_starfall_spear$ Civic Crisis"
+ AOW_mod_CNTR_starfall_spear_victim_desc:0 "The national trauma of the $AOW_MEGA_starfall_spear$ attack manifests in ideological shifts across broad demographics."
+
+ AOW_mod_MEGA_increase_power:0"Increase Power"
+ AOW_mod_MEGA_reduce_power:0"Reduce Power"
+
+ AOW_mod_MEGA_build_speed_adjustment:0"Megastructure Build Speed Adjustment"
+
+ ######################################################################
+ # Planetary Modifiers
+ ######################################################################
+ AOW_mod_PLNT_hell_of_death:0"Hell of Death"
+ AOW_mod_PLNT_hell_of_death_desc:0"It is full of broken eaves and countless corpses, and there is a strong interfering magnetic field left behind, and anyone who comes here will feel devastated."
+
+ AOW_mod_PLNT_planetary_mining_station:0 "$AOW_MEGA_planetary_mining_station$:Description of Values"
+ AOW_mod_PLNT_planetary_mining_station_desc:0"[this.GetPlanetaryMiningStationDesc]"
+ AOW_mod_PLNT_planetary_mining_station_tooptip:0"Tip:Building $AOW_MEGA_planetary_mining_station$ on different planets will produce different types of resources. We can check several different planets to see the specific output value; In addition, if the mining station is built on a planet with £sr_living_metal£ living metals, additional £sr_living_metal£ living metals will be produced."
+ AOW_text_planetary_mining_station_desc:0 "The current planet does not support the construction of $AOW_MEGA_planetary_mining_station$."
+ AOW_text_planetary_mining_station_0_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£minerals£400\n§GFinal Output:§!£minerals£800 §LOR§! £minerals£600 £consumer_goods£200§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_1_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£energy£175 £minerals£175 £volatile_motes£10\n§GFinal Output:§!£energy£350 £minerals£350 £volatile_motes£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_2_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£minerals£350 £exotic_gases£10\n§GFinal Output:§!£minerals£700 £exotic_gases£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_3_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£minerals£350 £rare_crystals£10\n§GFinal Output:§!£minerals£700 £rare_crystals£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_4_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£minerals£350 £alloys£25\n§GFinal Output:§!£minerals£700 £alloys£50§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_5_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£energy£200 £minerals£200\n§GFinal Output:§!£energy£400 £minerals£400§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_6_desc:0 "§WWhen building $AOW_MEGA_planetary_mining_station$ on this planet:§!\n\n§W§YIntermediate Output:§!£energy£175 £minerals£175 £alloys£10\n§GFinal Output:§!£energy£350 £minerals£350 £alloys£50§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+
+ AOW_mod_PLNT_stellar_spectrum:0"Stars and Megastructures:Description of Values"
+ AOW_mod_PLNT_stellar_spectrum_desc:0"[this.GetStellarSpectrumDesc]"
+ AOW_mod_PLNT_stellar_spectrum_tooptip:0"Hypergiant Star > Class O Supergiant > Class B Supergiant > Class A Supergiant > Class F Supergiant > Class G Supergiant > Class K Supergiant > Class M Supergiant> Class O Star > Class B Star > Giant Star > Class A Star > Class F Star > Class G Star > Class K Star > Class M Star\n\nHypergiant Star, Supergiant Star, Giant Star and Class O Star all need the support of the mod Real Space."
+ AOW_text_stellar_spectrum_desc:0 "The current star does not support the construction of Dyson Sphere or $AOW_MEGA_quindecillion_stellar_quantum_matrix$."
+ AOW_text_stellar_spectrum_hyper_desc:0 "§HCurrent Star:§!§WHypergiant Star§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!4.0 times\n§YMega Cost:§!3.0 times\n§RMega Upkeep:§!3.0 times\n§EBuild Time:§!3.0 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_o_super_desc:0 "§HCurrent Star:§!§WClass O Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!3.1 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_b_super_desc:0 "§HCurrent Star:§!§WClass B Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!3.0 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_a_super_desc:0 "§HCurrent Star:§!§WClass A Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.9 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_f_super_desc:0 "§HCurrent Star:§!§WClass F Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.8 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_g_super_desc:0 "§HCurrent Star:§!§WClass G Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.7 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_k_super_desc:0 "§HCurrent Star:§!§WClass K Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.6 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n\n§EBuild Time:§!2.5 times§!\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_m_super_desc:0 "§HCurrent Star:§!§WClass M Supergiant§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.5 times\n§YMega Cost:§!2.5 times\n§RMega Upkeep:§!2.5 times\n§EBuild Time:§!2.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_o_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type O§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.25 times\n§YMega Cost:§!2.25 times\n§RMega Upkeep:§!2.25 times\n§EBuild Time:§!2.25 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_b_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type B§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!2.0 times\n§YMega Cost:§!2.0 times\n§RMega Upkeep:§!2.0 times\n§EBuild Time:§!2.0 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_giant_desc:0 "§HCurrent Star:§!§WGiant Star§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!1.75 times\n§YMega Cost:§!1.75 times\n§RMega Upkeep:1.75 times§!\n§EBuild Time:§!1.75 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_a_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type A§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!1.5 times\n§YMega Cost:§!1.5 times\n§RMega Upkeep:§!1.5 times\n§EBuild Time:§!1.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_f_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type F§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!1.25 times\n§YMega Cost:§!1.25 times\n§RMega Upkeep:§!1.25 times\n§EBuild Time:§!1.25 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_g_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type G§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!1.0 times\n§YMega Cost:§!1.0 times\n§RMega Upkeep:§!1.0 times\n§EBuild Time:§!1.0 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_k_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type K§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!0.75 times\n§YMega Cost:§!0.75 times\n§RMega Upkeep:§!0.75 times\n§EBuild Time:§!0.75 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_m_desc:0 "§HCurrent Star:§!§WCommon stars with spectral type M§!\n\n§WWhen building a Dyson Sphere or a $AOW_MEGA_quindecillion_stellar_quantum_matrix$ on this star:\n\n§GMega Output:§!0.5 times\n§YMega Cost:§!0.5 times\n§RMega Upkeep:§!0.5 times\n§EBuild Time:§!0.5 times§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+
+ ######################################################################
+ # Vanilla Modifiers
+ ######################################################################
+ mod_relay_bypass_empire_windup_mult:0"$hyper_relay_plural$ Windup Speed"
+

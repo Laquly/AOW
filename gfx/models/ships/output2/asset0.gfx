@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "asset2_mesh"
+		file = "gfx/models/ships/output2/asset0.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "Box010_SpaceGlass_Hout_1Shape"
+			index = 0
+			texture_diffuse = "Eclipse_diff.dds"
+			texture_normal = "Eclipse_normal.dds"
+			texture_specular = "Eclipse_spe.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

@@ -1,0 +1,132 @@
+#能源
+utility_component_template = {
+	key = "AOW_PBS_PLANETARY_CORE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_aura_bombardment"
+	icon_frame = 1
+	power = 250000
+	resources = {
+		category = ship_components
+	}
+	component_set = "power_core"
+	size_restriction = { AOW_shipsize_planetary_blaster_system }
+	ai_weight = { weight = 9999 }
+}
+#电脑
+utility_component_template = {
+	key = "AOW_PBS_STARBASE_COMBAT_COMPUTER"
+	size = small
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	power = 0
+	size_restriction = { AOW_shipsize_planetary_blaster_system }
+	component_set = "combat_computers"
+	ship_behavior = "platform"
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+	ai_weight = { weight = 9999 }
+}
+#武器
+weapon_component_template = {
+	key = "AOW_PBS_WAVE_BEAM"
+	size = titanic
+	type = instant
+	prio_projectile = yes
+		
+	icon = "GFX_ship_part_world_cracker"
+	icon_frame = 1
+	
+	firing_arc = 10.0
+	min_range = 20.0
+	use_ship_kill_target = no
+	component_set = "AOW_PBS_WAVE_BEAM"
+	tags = { weapon_type_energy }
+	projectile_gfx = "stellarite_titan_laser"
+	size_restriction = { AOW_shipsize_planetary_blaster_system }
+	resources = { category = ship_components }
+
+	ai_weight = { weight = 9999 }
+
+	power = -1000
+	damage = { min = 10000 max = 20000 }
+	hull_damage = 1
+	shield_damage = 2
+	shield_penetration = 0
+	armor_damage = 2
+	armor_penetration = 0
+
+	windup = { min = 50 max = 75 }
+
+	total_fire_time = 180
+	range = 250
+	accuracy = 1
+	tracking = 0.5
+}
+weapon_component_template = {
+	key = "AOW_PBS_RIPPER_LIGHT_BEAM"
+	size = extra_large
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_perdition_beam"
+	icon_frame = 1
+	
+	firing_arc = 360.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	component_set = "AOW_PBS_RIPPER_LIGHT_BEAM"
+	tags = { weapon_type_energy }
+	projectile_gfx = "particle_lance"
+	size_restriction = { AOW_shipsize_planetary_blaster_system }
+	resources = { category = ship_components }
+
+	ai_weight = { weight = 9999 }
+
+	power = -500
+	damage = { min = 5000 max = 10000 }
+	hull_damage = 1.25
+	shield_damage = 1
+	shield_penetration = 1
+	armor_damage = 1
+	armor_penetration = 1
+
+	windup = { min = 25 max = 30 }
+
+	total_fire_time = 100
+	range = 200
+	accuracy = 0.85
+	tracking = 0.5
+}
+#光环
+utility_component_template = {
+	key = "AOW_PBS_AURA_FTL_INHIBITOR"
+	size = medium
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+	size_restriction = { AOW_shipsize_planetary_blaster_system }
+	#prerequisites = { "tech_ftl_inhibitor" }
+	component_set = "ftl_inhibitor"
+	ftl_inhibitor = yes
+	hostile_aura = {
+		name = "aura_starbase_ftl_inhibitor"
+		system_wide = yes
+		stack_info = {
+			id = hostile_flt_inhibitor_aura
+			priority = 10
+		}
+		modifier = {
+			ship_emergency_ftl_min_days_mult = 1
+			ship_ftl_jumpdrive_range_mult = -1
+			ship_jumpdrive_cooldown_mult = 1
+		}
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = { weight = 9999 }
+}

@@ -1,0 +1,80 @@
+#megastructure: on_build_start	巨构建造开始时，检查巨构上限，如果超过上限则返回资源
+
+AOW_effect_check_mega_cap = {
+	from = {
+		if = {
+			limit = {
+				is_ai = no
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_player_mega_cap_$key$ value > 0 }
+				}
+			}
+			if = {#自己建造过的巨构+工程船正在建造的巨构 超过 全局上限
+				limit = {
+					check_variable_arithmetic = {
+						which = value:AOW_var_num_of_mega|KEY|$key$|MEGA|$constructing$|
+						value > event_target:global_event_country.AOW_var_player_mega_cap_$key$
+					}
+				}
+				if = {
+					limit = {
+						count_megastructure = {
+							limit = { has_megastructure_flag = AOW_flag_MEGA_$key$_@root.from }
+							count >= event_target:global_event_country.AOW_var_player_mega_cap_$key$
+						}
+					}
+					set_country_flag = AOW_flag_CNTR_no_more_$key$
+					country_event = { id = AOW_mega_notification.1 }
+				}
+				else = {
+					set_timed_country_flag = { flag = AOW_flag_CNTR_no_more_$key$ days = 2 }
+					country_event = { id = AOW_mega_notification.1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$key$ value > 0 }
+				}
+			}
+			if = {#自己建造过的巨构+工程船正在建造的巨构 超过 全局上限
+				limit = {
+					check_variable_arithmetic = {
+						which = value:AOW_var_num_of_mega|KEY|$key$|MEGA|$constructing$|
+						value > event_target:global_event_country.AOW_var_ai_mega_cap_$key$
+					}
+				}
+				if = {
+					limit = {
+						count_megastructure = {
+							limit = { has_megastructure_flag = AOW_flag_MEGA_$key$_@root.from }
+							count >= event_target:global_event_country.AOW_var_ai_mega_cap_$key$
+						}
+					}
+					set_country_flag = AOW_flag_CNTR_no_more_$key$
+				}
+				else = {
+					set_timed_country_flag = { flag = AOW_flag_CNTR_no_more_$key$ days = 2 }
+				}
+			}
+		}
+	}
+}
+AOW_effect_check_ai_habitat_mega_cap = {
+	from = {
+		if = {
+			limit = { is_ai = yes }
+			if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = value:AOW_var_num_of_habitat_mega|PLANET|$planet$|MEGA|$constructing$|
+						value > event_target:global_event_country.AOW_var_ai_mega_cap_$key$
+					}
+				}
+				set_country_flag = AOW_flag_CNTR_no_more_$key$
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+
+entity = {
+	name = "eventship_08_entity"
+	pdxmesh = "eventship_08_mesh"
+	#pdxmesh = "eventship_08_mesh"
+	#locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	#attach = { loc1 = "space_arena_entity" }
+	#attach = { loc1 = eventship_08_mesh }
+	scale = 10
+}

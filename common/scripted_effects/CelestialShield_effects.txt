@@ -1,0 +1,88 @@
+AOW_eft_create_bunker_ring = {
+    every_system_megastructure = {
+        limit = {
+            has_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+        remove_megastructure = this
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 0
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 45
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 90
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 135
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 180
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 225
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 270
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+    spawn_megastructure = {
+        type = "AOW_MEGA_celestial_shield_bunker_ring"
+        orbit_angle = 315
+        orbit_distance = 40
+        owner = from
+        planet = fromfrom.planet
+        init_effect = {
+            set_megastructure_flag = AOW_flag_MEGA_bunker_ring_with_planet@event_target:AOW_target_planet
+        }
+    }
+}

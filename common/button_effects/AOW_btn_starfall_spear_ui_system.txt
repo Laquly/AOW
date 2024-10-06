@@ -1,0 +1,1280 @@
+AOW_btn_system_target = {
+	potential = { always = yes }
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_btn_requires_system"
+			this = {
+				OR = {
+					is_scope_type = planet
+					is_scope_type = megastructure
+					is_scope_type = fleet
+				}
+				exists = solar_system
+				solar_system = { exists = star }
+			}
+		}
+	}
+}
+
+AOW_btn_system_target_mode_01 = {#黑域封锁
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}
+		AOW_trigger_mega_potential = { KEY = hyperlane_controller }
+	}
+	allow = {
+		from = { has_technology = AOW_TECH_hyperlane_controller }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_same_value = root.from }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_same_value = root.from }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_not_isolated"
+			this.solar_system = { any_neighbor_system = { exists = this } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 10000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 1000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = energy value >= 10000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 1000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_01_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -10000
+					sr_dark_matter = -1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 10000
+					sr_dark_matter = 1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_01_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_01_tooltip
+	}
+}
+
+AOW_btn_system_target_mode_02 = {#净世圣灭
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+			this.solar_system = {
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = crisis_sphere_4
+							AND = {
+								is_megastructure_type = crisis_sphere_ruined
+								is_upgrading = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_has_colony"
+			this.solar_system = {
+				any_system_planet = {
+					is_colony = yes
+					num_pops >= 1
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 50000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 1000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = energy value >= 50000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 1000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_02_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -50000
+					sr_dark_matter = -1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 50000
+					sr_dark_matter = 1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_02_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_02_tooltip
+	}
+}
+
+
+AOW_btn_system_target_mode_03 = { #次元裂痕
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_has_hostile_fleets"
+			this.solar_system = {
+				any_fleet_in_system = {
+					owner = {
+						is_hostile = from
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+			this.solar_system = {
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = crisis_sphere_4
+							AND = {
+								is_megastructure_type = crisis_sphere_ruined
+								is_upgrading = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 50000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 1000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = energy value >= 50000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 1000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_03_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -50000
+					sr_dark_matter = -1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 50000
+					sr_dark_matter = 1000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_03_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_03_tooltip
+	}
+}
+
+
+AOW_btn_system_target_mode_04 = { #星辰陨落
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}	
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+			this.solar_system = {
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = crisis_sphere_4
+							AND = {
+								is_megastructure_type = crisis_sphere_ruined
+								is_upgrading = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 50000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 2000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 50000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_04_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -50000
+					sr_dark_matter = -2000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 50000
+					sr_dark_matter = 2000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_04_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_04_tooltip
+	}
+}
+
+
+AOW_btn_system_target_mode_05 = { #奇异物质
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}	
+	}
+	allow = {
+		from = { has_technology = AOW_TECH_weaponization_of_strange_matter }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+			this.solar_system = {
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = crisis_sphere_4
+							AND = {
+								is_megastructure_type = crisis_sphere_ruined
+								is_upgrading = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_neutron_star"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_neutron_star
+						is_planet_class = pc_pulsar
+						is_planet_class = pc_magnetar #磁星
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = sr_dark_matter value < 100000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 5000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 100000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 5000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_05_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -100000
+					sr_dark_matter = -5000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 100000
+					sr_dark_matter = 5000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_05_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_05_tooltip
+	}
+}
+
+
+AOW_btn_system_target_mode_06 = { #死亡献祭
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}
+	}
+	allow = {
+		from = {
+			has_megastructure = AOW_MEGA_psychic_device_3
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+			this.solar_system = {
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = crisis_sphere_4
+							AND = {
+								is_megastructure_type = crisis_sphere_ruined
+								is_upgrading = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 100000 }
+					resource_stockpile_compare = { resource = sr_zro value < 2000 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = energy value >= 50000 }
+				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_06_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -100000
+					sr_zro = -2000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 100000
+					sr_zro = 2000
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_06_tooltip
+	}
+}
+
+
+AOW_btn_system_target_mode_07 = { #枢纽风暴
+	potential = {
+		this = {
+			OR = {
+				is_scope_type = planet
+				is_scope_type = megastructure
+				is_scope_type = fleet
+			}
+			exists = solar_system
+			solar_system = { exists = star }
+		}
+	}
+	allow = {
+		from = { has_ascension_perk = ap_weather_control }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+			this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear } } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_only_one_target"
+			OR = {
+				from = { NOT = { has_country_flag = AOW_flag_CNTR_has_starfall_spear_target } }
+				this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_07_@root.from } }
+			}
+		}
+		if = {
+			limit = {
+				exists = this.solar_system.space_owner
+				this.solar_system.space_owner = { NOT = { is_same_value = root.from } }
+			}
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+				this.solar_system.space_owner = { has_communications = root.from }
+			}
+		}
+		if = {#不能是自家星系或盟友星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_unlimited } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+				this.solar_system = {
+					NOT = {
+						space_owner = {
+							OR = {
+								is_same_value = root.from
+								is_in_federation_with = from
+								is_overlord_to = from
+								from = { is_overlord_to = root }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系
+			limit = { from = { has_policy_flag = AOW_policy_SS_hostility } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_hostile = root.from }
+					}
+				}
+			}
+		}
+		else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+			limit = { from = { has_policy_flag = AOW_policy_SS_no_first_use } }
+			custom_tooltip = {
+				fail_text = "AOW_starfall_spear_requires_no_first_use"
+				this.solar_system = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							is_hostile = root.from
+							OR = {
+								root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+								has_ascension_perk = ap_become_the_crisis
+								has_crisis_level = crisis_cosmogenesis_level_5
+								if = {
+									limit = { has_global_flag = has_wsg_mod }
+									has_ascension_perk = ap_wg_crisis
+								}
+								is_crisis_faction = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_error"
+			this.solar_system = {
+				NOR = {
+					is_star_class = sc_kuat
+					has_star_flag = kuat_military_base_system_home
+					has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+				}
+			}
+		}
+		if = {
+			limit = {
+				this = {
+					solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root.from } }
+				}
+				from = {
+					resource_stockpile_compare = { resource = energy value < 50000 }
+					resource_stockpile_compare = { resource = sr_dark_matter value < 500 }
+				}
+			}
+			from = {
+				resource_stockpile_compare = { resource = energy value >= 50000 }
+				resource_stockpile_compare = { resource = sr_dark_matter value >= 500 }
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_07_tooltip
+	}
+	effect = {
+		if = {
+			limit = { this = { solar_system = { NOT = { has_star_flag = AOW_flag_SSTM_starfall_spear_07_@root.from } } } }
+			from = {
+				set_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = -50000
+					sr_dark_matter = -500
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						set_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						set_star_flag = AOW_flag_SSTM_starfall_spear_07_@root.from
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { this = { solar_system = { has_star_flag = AOW_flag_SSTM_starfall_spear_07_@root.from } } }
+			from = {
+				remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
+				add_resource = {
+					energy = 50000
+					sr_dark_matter = 500
+				}
+			}
+			hidden_effect = {
+				this = {
+					solar_system = {
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root.from
+						remove_star_flag = AOW_flag_SSTM_starfall_spear_07_@root.from
+					}
+				}
+			}
+		}
+		custom_tooltip = AOW_system_target_mode_07_tooltip
+	}
+}

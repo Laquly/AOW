@@ -1,0 +1,310 @@
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {#掩体星环 护盾
+	name = "bunker_ring_white_shield_entity"
+	pdxmesh = "bunker_ring_white_shield_mesh"
+	game_data = {
+		uv_animation_direction = { 0.5 0.25 }
+		uv_animation_speed = 1
+	}
+	scale = 9
+}
+entity = {#掩体星环 特效漩涡
+	name = "bunker_ring_white_vortex_entity"
+	default_state = "idle"
+	state = {
+		name = "idle" state_time = 5
+		event = { time = 0 node = "root" particle = "AOW_white_vortex_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 11
+}
+entity = {#掩体星环
+	name = "AOW_shipsize_bunker_ring_white_entity"
+	pdxmesh = "bunker_ring_white_sphere_mesh"
+	locator = { name = "loc0" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc0 = "bunker_ring_white_shield_entity" }
+	attach = { loc0 = "bunker_ring_white_vortex_entity" }
+	default_state = "idle"
+	state = { name = "idle" animation = "closed" animation_blend_time = 0 looping = yes next_state = "idle" }
+	scale = 0.5
+}
+entity = {#插根棍子
+	name = "celestial_shield_bunker_ring_entity"
+	locator = { name = "loc1" position = { 0 0 5 } rotation ={ 0 0 0 } scale = 0.005 }
+	attach = { loc1 = "AOW_shipsize_bunker_ring_white_entity" }
+}
+entity = {#围绕圆心旋转
+	name = "celestial_shield_bunker_ring_ration_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_shield_bunker_ring_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 9 looping = no next_state = idle }
+}
+
+
+entity = {#白色漩涡+白色喷流+黑洞
+	name = "celestial_shield_black_hole_entity"
+	default_state = "idle"
+	state = {
+		name = "idle" state_time = 2
+		event = { time = 0 node = "root" particle = "AOW_f_black_hole_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 4
+}
+entity = {#发散辐射线
+	name = "celestial_shield_rays_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 2
+		event = { time = 0 node = "core" particle = "AOW_f_planet_break_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}
+entity = {#收缩辐射线
+	name = "celestial_shield_contractile_rays_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 2
+		event = { time = 0 node = "core" particle = "AOW_contractile_rays_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}
+entity = {#短暂性十字闪光
+	name = "celestial_shield_cross_light_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 10 looping = yes
+		event = { time = 0 node = "core" particle = "AOW_cross_light_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}
+entity = {#持续性十字闪光
+	name = "celestial_shield_continuous_cross_light_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 10 looping = yes
+		event = { time = 0 node = "core" particle = "AOW_continuous_cross_light_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}
+entity = {#收缩的漩涡火花
+	name = "celestial_shield_swirl_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 1 particle = "AOW_shrink_spark_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 0.9
+}
+entity = {#白色漩涡+黑洞
+	name = "celestial_shield_white_vortex_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 1 particle = "AOW_white_vortex_black_hole_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 1
+}
+entity = {#特效版掩体星环：吸收能量的特效
+	name = "celestial_shield_absorb_energy_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 1 particle = "AOW_cs_absorb_energy_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 1
+}
+
+entity = {#巨构版掩体星环
+	name = "celestial_shield_bunker_ring_mega_entity"
+	locator = { name = "loc0" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 15 }
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 180 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 4 }
+	attach = { loc0 = "celestial_shield_cross_light_entity" }
+	attach = { loc1 = "celestial_shield_black_hole_entity" }
+	attach = { loc2 = "celestial_shield_black_hole_entity" }
+	attach = { loc1 = "celestial_shield_rays_entity" }
+	attach = { loc3 = "cs_pentagonal_shield_entity" }
+}
+entity = {#舰船版掩体星环
+	name = "celestial_shield_bunker_ring_ship_entity"
+	locator = { name = "loc0" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 15 }
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 5 }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1 }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 4 }
+	attach = { loc0 = "celestial_shield_continuous_cross_light_entity" }
+	attach = { loc1 = "celestial_shield_white_vortex_entity" }
+	attach = { loc2 = "celestial_shield_rays_entity" }
+	attach = { loc3 = "cs_pentagonal_shield_entity" }
+	scale = 0.5
+}
+entity = {#特效版掩体星环（独立单元）
+	name = "celestial_shield_bunker_ring_effect_entity"
+	locator = { name = "loc0" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 15 }
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 5 }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1 }
+	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 4 }
+	attach = { loc0 = "celestial_shield_continuous_cross_light_entity" }
+	attach = { loc1 = "celestial_shield_white_vortex_entity" }
+	attach = { loc2 = "celestial_shield_contractile_rays_entity" }
+	attach = { loc3 = "cs_pentagonal_shield_entity" }
+}
+entity = {
+	name = "celestial_shield_bunker_ring_system_effect_1_entity"
+	locator = { name = "loc1" position = { 50 0 0 } rotation ={ 0 0 0 } scale = 0.5 }
+	attach = { loc1 = "celestial_shield_bunker_ring_effect_entity" }
+}
+entity = {
+	name = "celestial_shield_bunker_ring_system_effect_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 5 }
+	locator = { name = "loc0" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.5 }
+	locator = { name = "loc1" position = { 0 100 0 } rotation ={ 0 0 0 } scale = 0.5 }
+	locator = { name = "loc2" position = { 86.6 -50 0 } rotation ={ 0 0 0 } scale = 0.5 }
+	locator = { name = "loc3" position = { -86.6 -50 0 } rotation ={ 0 0 0 } scale = 0.5 }
+	attach = { root = "celestial_shield_absorb_energy_entity" }
+	attach = { loc0 = "celestial_shield_bunker_ring_effect_entity" }
+	attach = { loc1 = "celestial_shield_bunker_ring_effect_entity" }
+	attach = { loc2 = "celestial_shield_bunker_ring_effect_entity" }
+	attach = { loc3 = "celestial_shield_bunker_ring_effect_entity" }
+}
+entity = {#星系防御阵列
+	name = "celestial_shield_bunker_ring_system_effect_entity"
+	locator = { name = "loc1" position = { 0 0 200 } rotation ={ 0 0 0 } }
+	attach = { loc1 = "celestial_shield_bunker_ring_system_effect_2_entity" }
+}
+entity = {#行星防御阵列
+	name = "celestial_shield_bunker_ring_planet_effect_entity"
+	locator = { name = "root" position = { 0 125 0 } rotation ={ 0 90 0 } scale = 1 }
+	locator = { name = "loc0" position = { 0 125 0 } rotation ={ 0 0 0 } scale = 0.25 }
+	attach = { root = "celestial_shield_absorb_energy_entity" }
+	attach = { loc0 = "celestial_shield_bunker_ring_effect_entity" }
+	scale = 0.01
+}
+
+
+
+
+entity = {#五角护盾
+	name = "cs_pentagonal_shield_entity"
+	pdxmesh = "cs_pentagonal_shield_mesh"
+}
+entity = {#三角护盾
+	name = "cs_triangle_shield_entity"
+	pdxmesh = "cs_triangle_shield_mesh"
+	game_data = {
+		uv_animation_direction = { 0.5 0.25 }
+		uv_animation_speed = 1
+	}
+	scale = 0.7
+}
+entity = {#大环
+	name = "cs_big_ring_entity"
+	pdxmesh = "cs_big_ring_mesh"
+}
+entity = {#小环
+	name = "cs_small_ring_entity"
+	pdxmesh = "cs_small_ring_mesh"
+}
+
+
+
+@celestial_shield_scale = 1.5
+
+entity = {#1静止
+	name = "celestial_shield_1x_entity"
+	locator = { name = "loc3" position = { 0 3 0 } rotation ={ 0 0 0 } scale = 0.45 }
+	locator = { name = "loc4" position = { 0 -3 0 } rotation ={ 0 0 0 } scale = 0.45 }
+	attach = { loc3 = "cs_small_ring_entity" }
+	attach = { loc4 = "cs_small_ring_entity" }
+}
+entity = {#1旋转
+	name = "celestial_shield_1_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_shield_1x_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1.5 looping = no next_state = idle }
+	scale = @celestial_shield_scale
+}
+entity = {#2施工静止
+	name = "celestial_shield_2_construction_entity"
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.6 }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.75 }
+	attach = { loc2 = "cs_big_ring_entity" }
+	attach = { loc5 = "cs_small_ring_entity" }
+	scale = @celestial_shield_scale
+}
+entity = {#2施工旋转
+	name = "celestial_shield_2x_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_shield_2_construction_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = no next_state = idle }
+}
+entity = {#2
+	name = "celestial_shield_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "celestial_shield_1_entity" }
+	attach = { root = "celestial_shield_2x_construction_entity" }
+}
+entity = {#3施工静止
+	name = "celestial_shield_3_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1.5 }
+	attach = { loc1 = "cs_pentagonal_shield_entity" }
+	#attach = { loc1 = "cs_triangle_shield_entity" }
+	scale = @celestial_shield_scale
+}
+entity = {#3施工旋转
+	name = "celestial_shield_3x_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = celestial_shield_3_construction_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 2 looping = no next_state = idle }
+}
+entity = {#3
+	name = "celestial_shield_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "celestial_shield_2_entity" }
+	attach = { root = "celestial_shield_3x_construction_entity" }
+}
+
+entity = {#特效
+	name = "celestial_shield_beam_effect_entity"
+	default_state = "idle"
+	state = {
+		name = "idle" state_time = 5
+		event = { time = 0 node = "root" particle = "AOW_cs_beam_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 1
+}
+entity = {
+	name = "celestial_shield_effect_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 180 0 } }
+	attach = { loc1 = "celestial_shield_beam_effect_entity" }
+	attach = { loc2 = "celestial_shield_beam_effect_entity" }
+	default_state = "idle"
+	state = {
+		name = "idle" state_time = 5
+		event = { time = 0 node = "root" particle = "AOW_cs_core_effect" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = { #4
+	name = "celestial_shield_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "celestial_shield_3_entity" }
+	attach = { root = "celestial_shield_effect_entity" }
+}
+
+
+
+entity = {
+	name = "celestial_shield_x_entity"
+	#cull_radius = 100.0
+	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 1.5 }
+	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.6 }
+	locator = { name = "loc3" position = { 0 3 0 } rotation ={ 0 0 0 } scale = 0.45 }
+	locator = { name = "loc4" position = { 0 -3 0 } rotation ={ 0 0 0 } scale = 0.45 }
+	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 0 0 } scale = 0.75 }
+	attach = { loc1 = "cs_pentagonal_shield_entity" }
+	attach = { loc2 = "cs_big_ring_entity" }
+	attach = { loc3 = "cs_small_ring_entity" }
+	attach = { loc4 = "cs_small_ring_entity" }
+	attach = { loc5 = "cs_small_ring_entity" }
+	scale = 1
+}

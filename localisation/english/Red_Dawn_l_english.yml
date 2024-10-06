@@ -1,0 +1,24 @@
+﻿l_english:
+
+ red_dawn.100.desc:0"§HHe piloted the interstellar shuttle to the sky above our capital, expressing his desire for peaceful communication. With communication connected, his snail like body was revealed before us...§!\n\nHello! My name is Laquly, and I come from a lost civilization called §RRed Dawn§!...\n\nSince I woke up from my hibernation chamber, which had been dormant for thousands of years, I have been traveling between galaxies for several years. Shortly thereafter, I discovered that your society has a strong potential for building megastructures. As a worker, I am very pleased because I am very interested in megastructures."
+ red_dawn.100.a:0"First of all, what is the Red Dawn?"
+ red_dawn.100.a.response:0"From the current perspective, she is likely to be classified as a lost civilization. I only know that she once maintained true communism throughout this galaxy for thousands of years, but I can't remember what happened afterwards."
+ red_dawn.100.b:0"Why did you stay in the hibernation chamber for thousands of years?"
+ red_dawn.100.b.response:0"The place where I slept was originally powered by a stable megastructure, but according to records, thousands of years ago, that megastructure had been interrupted due to a long-term lack of maintenance. Fortunately, the remaining energy supported me and I was forced to wake up by the system due to warnings of insufficient energy."
+ red_dawn.100.c:0"Why are you so interested in megastructures."
+ red_dawn.100.c.response:0"Because our civilization once treated giant space structures as infrastructure. In order to meet the needs, Red Dawn trained many talents who were skilled in massive infrastructure construction, and I am one of the beneficiaries."
+ red_dawn.100.common:0"Aren't you afraid that we don't agree with your so-called Red?"
+ red_dawn.100.common.response:0"Either I think people can change, or you don't think you can refuse me. I just came here to build some truly huge space structures, and of course, I don't rule out doing something else......"
+ red_dawn.100.egalitarian:0"I think we have something in common to some extent."
+ red_dawn.100.egalitarian.response:0"Yes, I can also see that our cooperation will bring great benefits."
+ red_dawn.100.gestalt:0"We are not fully compatible."
+ red_dawn.100.gestalt.response:0"I understand, so if you decide to recruit me, I will provide your "Core Leader" with an auxiliary intelligent plugin that adapts to node mode, and then I will leave."
+ red_dawn.100.hire_custom_tooltip:0 "§YLaquly§! joins our empire as a §HLeader§!."
+ red_dawn.100.gestalt.hire_custom_tooltip:0"Due to compatibility issues, §Y$leader_trait_governor_laquly_gestalt$§! will serve as a §HLeader Trait§! added to our "Core Leader"."
+
+ red_dawn:0"§RRed Dawn§!"
+ trait_red_dawn:0"§RRed Dawn§!"
+ trait_red_dawn_desc:0"This is the Red Dawn, a species that has implanted the concept of communism into their genes because it is the root of their growth and development."
+
+ laquly_backstory:0"A species from the legendary Red Dawn civilization, born into an ordinary worker's family in that civilization, has participated in worker strikes and uprisings that assisted other countries, overthrew oppressive dictatorships, and served as a mentor for the construction of megastructures."
+ laquly_catch_phrase:0"§L"Does this galaxy still have true stellar light..."§!"

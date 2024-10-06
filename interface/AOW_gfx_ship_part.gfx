@@ -1,0 +1,38 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_blue"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_cyan"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_cyan.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_green"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_green.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_orange"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_orange.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_purple"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_purple.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_red"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_red.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_white"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_white.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_SHIP_AURA_yellow"
+		textureFile = "gfx/interface/icons/ship_parts/AOW_SHIP_AURA_yellow.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_celestial_orbit_deployment_system"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_celestial_orbit_deployment_system.dds"
+	}
+}

@@ -1,0 +1,21 @@
+﻿l_simp_chinese:
+
+ edict_AOW_control_panel:0"奇观拓展：控制面板"
+ edict_AOW_control_panel_desc:0"这里可以重新召唤奇观拓展的控制面板。"
+
+ edict_AOW_stabilization_of_strange_matter:0"奇异物质冶金"
+ edict_AOW_stabilization_of_strange_matter_desc:0"$AOW_TECH_stabilization_of_strange_matter_desc$"
+
+ edict_AOW_dark_matter_trap:0"暗物质陷阱"
+ edict_AOW_dark_matter_trap_desc:0"在巨构上激活暗物质的独特性质，成倍增加巨构附近的时空曲率，以吸引更多暗物质。"
+
+ edict_AOW_improved_construction_efficiency_1:0"$AOW_TECH_improved_construction_efficiency_1$"
+ edict_AOW_improved_construction_efficiency_1_desc:0"$AOW_TECH_improved_construction_efficiency_1_desc$"
+ edict_AOW_improved_construction_efficiency_2:0"$AOW_TECH_improved_construction_efficiency_2$"
+ edict_AOW_improved_construction_efficiency_2_desc:0"$AOW_TECH_improved_construction_efficiency_2_desc$"
+ edict_AOW_improved_construction_efficiency_3:0"$AOW_TECH_improved_construction_efficiency_3$"
+ edict_AOW_improved_construction_efficiency_3_desc:0"$AOW_TECH_improved_construction_efficiency_3_desc$"
+ edict_AOW_improved_construction_efficiency_4:0"$AOW_TECH_improved_construction_efficiency_4$"
+ edict_AOW_improved_construction_efficiency_4_desc:0"$AOW_TECH_improved_construction_efficiency_4_desc$"
+ edict_AOW_improved_construction_efficiency_5:0 "$AOW_TECH_improved_construction_efficiency_5$"
+ edict_AOW_improved_construction_efficiency_5_desc:0 "$AOW_TECH_improved_construction_efficiency_5_desc$\n\n§Y时间花费计算公式：§!\n最终花费时间=基础花费时间/((1+加基础的修正)*(1+加百分比的修正))"

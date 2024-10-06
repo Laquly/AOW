@@ -1,0 +1,46 @@
+#恒星吞噬者
+AOW_btn_stellar_eater_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_stellar_eater_desc
+		if = {
+			limit = { has_technology = AOW_TECH_stellar_eater }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			custom_tooltip = {
+				fail_text = "requires_ap_galactic_wonders"
+				has_galactic_wonders = yes
+			}
+			has_technology = tech_mega_engineering
+			has_technology = AOW_TECH_spatiotemporal_curvature_manipulation
+			has_technology = AOW_TECH_star_picker
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_stellar_eater
+		}
+	}
+	effect = { custom_tooltip = AOW_text_stellar_eater_desc }
+}
+#AI
+AOW_btn_stellar_eater_ai_disable = {#已禁用
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	effect = { custom_tooltip = AOW_text_stellar_eater_ai_disable }
+}
+#玩家
+AOW_btn_stellar_eater_player_disable = {#已禁用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = stellar_eater
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_stellar_eater_player_infinite = {#已启用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = stellar_eater
+		PorA = player
+		VALUE = 0
+	}
+}

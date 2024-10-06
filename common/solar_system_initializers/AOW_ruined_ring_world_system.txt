@@ -1,0 +1,159 @@
+AOW_ruined_ring_world_system = {
+	class = sc_k
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 25
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+	max_instances = 1	#最多只能生成一个
+	flags = { AOW_flag_SSTM_ring_world_ruined }
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		size = 20
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 200
+		size = 18
+		has_ring = no
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			remove_planet = yes
+		}
+	}
+	init_effect = {
+		every_system_planet = { clear_deposits = yes }
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "small_debris_object"
+			location = solar_system
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 0
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 90
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 180
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 270
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_ring_world_2_ruined"
+			orbit_angle = 0
+			orbit_distance = 90
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_ring_world_2_ruined"
+			orbit_angle = 90
+			orbit_distance = 90
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_ring_world_2_ruined"
+			orbit_angle = 180
+			orbit_distance = 90
+		}
+		spawn_megastructure = {
+			type = "AOW_MEGA_ring_world_2_ruined"
+			orbit_angle = 270
+			orbit_distance = 90
+		}
+		random_list = {
+			9 = {}
+			1 = {
+				spawn_megastructure = {
+					type = "AOW_MEGA_ring_world_3_ruined"
+					orbit_angle = 0
+					orbit_distance = 135
+				}
+				spawn_megastructure = {
+					type = "AOW_MEGA_ring_world_3_ruined"
+					orbit_angle = 90
+					orbit_distance = 135
+				}
+				spawn_megastructure = {
+					type = "AOW_MEGA_ring_world_3_ruined"
+					orbit_angle = 180
+					orbit_distance = 135
+				}
+				spawn_megastructure = {
+					type = "AOW_MEGA_ring_world_3_ruined"
+					orbit_angle = 270
+					orbit_distance = 135
+				}
+				random_list = {
+					9 = {}
+					1 = {
+						spawn_megastructure = {
+							type = "AOW_MEGA_ring_world_4_ruined"
+							orbit_angle = 0
+							orbit_distance = 180
+						}
+						spawn_megastructure = {
+							type = "AOW_MEGA_ring_world_4_ruined"
+							orbit_angle = 90
+							orbit_distance = 180
+						}
+						spawn_megastructure = {
+							type = "AOW_MEGA_ring_world_4_ruined"
+							orbit_angle = 180
+							orbit_distance = 180
+						}
+						spawn_megastructure = {
+							type = "AOW_MEGA_ring_world_4_ruined"
+							orbit_angle = 270
+							orbit_distance = 180
+						}
+					}
+				}
+			}
+		}
+	}
+}

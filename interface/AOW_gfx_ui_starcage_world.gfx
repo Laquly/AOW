@@ -1,0 +1,48 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_planet_type_starcage_world"
+		textureFile = "gfx/interface/icons/pc_starcage_world.dds"
+	}
+
+	spriteType = {
+		name = "col_starcage_world_production"
+		textureFile = "gfx/interface/icons/col_starcage_world_production.dds"
+	}
+	spriteType = {
+		name = "col_starcage_world_maintenance"
+		textureFile = "gfx/interface/icons/col_starcage_world_maintenance.dds"
+	}
+	spriteType = {
+		name = "col_starcage_world_construction"
+		textureFile = "gfx/interface/icons/col_starcage_world_construction.dds"
+	}
+	spriteType = {
+		name = "GFX_col_starcage_world_unity"
+		textureFile = "gfx/interface/icons/col_starcage_world_unity.dds"
+	}
+
+	spriteType = {
+		name = "GFX_starcage_world_bg"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/bg.dds"
+	}
+	spriteType = {
+		name = "GFX_starcage_world_increase"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/increase.dds"
+	}
+	spriteType = {
+		name = "GFX_starcage_world_decrease"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/decrease.dds"
+	}
+	spriteType = {
+		name = "GFX_starcage_world_reset"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/reset.dds"
+	}
+	spriteType = {
+		name = "GFX_starcage_world_complete"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/complete.dds"
+	}
+	spriteType = {
+		name = "GFX_starcage_world_max"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_starcage_world/max.dds"
+	}
+}

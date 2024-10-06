@@ -1,0 +1,116 @@
+#星系有环世界巨构
+AOW_trgr_SSTM_has_ring_world_megastructures = {
+	OR = {
+		has_megastructure = ring_world_1
+		has_megastructure = ring_world_2
+		has_megastructure = ring_world_3_intermediate
+		has_megastructure = ring_world_ruined
+		has_megastructure = ring_world_restored
+		has_megastructure = AOW_MEGA_ring_world_2_0
+		has_megastructure = AOW_MEGA_ring_world_2_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_2_1
+		has_megastructure = AOW_MEGA_ring_world_2_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_0
+		has_megastructure = AOW_MEGA_ring_world_3_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_1
+		has_megastructure = AOW_MEGA_ring_world_3_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_0
+		has_megastructure = AOW_MEGA_ring_world_4_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_1
+		has_megastructure = AOW_MEGA_ring_world_4_2_intermediate
+	}
+}
+
+
+#星系有一环
+AOW_trgr_SSTM_has_ring_world_1 = {
+	OR = {
+		#has_star_flag = ring_world_built
+		has_megastructure = ring_world_1
+		has_megastructure = ring_world_2
+		has_megastructure = ring_world_3_intermediate
+		has_megastructure = ring_world_ruined
+		has_megastructure = ring_world_restored
+		any_system_planet = {
+			AOW_trgr_PLNT_ringworld_habitable = yes
+			distance = {
+				source = prev.star
+				min_distance >= 44
+				max_distance <= 46
+				same_solar_system = yes
+			}
+		}
+	}
+}
+#星系有二环
+AOW_trgr_SSTM_has_ring_world_2 = {
+	OR = {
+		has_megastructure = AOW_MEGA_ring_world_2_0
+		has_megastructure = AOW_MEGA_ring_world_2_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_2_1
+		has_megastructure = AOW_MEGA_ring_world_2_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_2_ruined
+		has_megastructure = AOW_MEGA_ring_world_2_restored
+		any_system_planet = {
+			OR = {
+				is_planet_class = pc_ringworld_tech
+				is_planet_class = pc_ringworld_seam
+			}
+			planet_size = 20
+			distance = {
+				source = prev.star
+				min_distance >= 89
+				max_distance <= 91
+				same_solar_system = yes
+			}
+		}
+	}
+}
+#星系有三环
+AOW_trgr_SSTM_has_ring_world_3 = {
+	OR = {
+		has_megastructure = AOW_MEGA_ring_world_3_0
+		has_megastructure = AOW_MEGA_ring_world_3_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_1
+		has_megastructure = AOW_MEGA_ring_world_3_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_3_ruined
+		has_megastructure = AOW_MEGA_ring_world_3_restored
+		any_system_planet = {
+			OR = {
+				is_planet_class = pc_ringworld_tech
+				is_planet_class = pc_ringworld_seam
+			}
+			planet_size = 30
+			distance = {
+				source = prev.star
+				min_distance >= 134
+				max_distance <= 136
+				same_solar_system = yes
+			}
+		}
+	}
+}
+#星系有四环
+AOW_trgr_SSTM_has_ring_world_4 = {
+	OR = {
+		has_megastructure = AOW_MEGA_ring_world_4_0
+		has_megastructure = AOW_MEGA_ring_world_4_1_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_1
+		has_megastructure = AOW_MEGA_ring_world_4_2_intermediate
+		has_megastructure = AOW_MEGA_ring_world_4_ruined
+		has_megastructure = AOW_MEGA_ring_world_4_restored
+		any_system_planet = {
+			OR = {
+				is_planet_class = pc_ringworld_tech
+				is_planet_class = pc_ringworld_seam
+			}
+			planet_size = 40
+			distance = {
+				source = prev.star
+				min_distance >= 179
+				max_distance <= 181
+				same_solar_system = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+#戴森球改变行星
+AOW_eft_SSTM_dyson_sphere_change_planets = {
+	every_system_planet = {
+		limit = {
+			OR = {
+				is_planet_class = pc_molten
+				is_planet_class = pc_toxic
+				habitable_planet = yes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_colony_progress > 0
+					is_colony = yes
+				}
+			}
+			every_owned_pop = {
+				kill_pop = yes
+			}
+			destroy_colony = yes
+		}
+		change_pc = pc_frozen
+	}
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_barren
+		}
+		change_pc = pc_barren_cold
+	}
+}

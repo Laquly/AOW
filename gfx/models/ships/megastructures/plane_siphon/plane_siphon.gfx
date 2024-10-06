@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "plane_siphon_energy_maintainer_mesh"
+		file = "gfx/models/ships/megastructures/plane_siphon/plane_siphon_energy_maintainer.mesh"
+	}
+	pdxmesh = {
+		name = "plane_siphon_planet_shaper_mesh"
+		file = "gfx/models/ships/megastructures/plane_siphon/plane_siphon_planet_shaper.mesh"
+	}
+}

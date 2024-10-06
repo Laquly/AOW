@@ -1,0 +1,48 @@
+AOW_site_red_dawn = {
+    desc = "AOW_site_red_dawn_desc"
+    picture = GFX_evt_city_ruins
+    stages = 5
+    weight = 0 #set via initialiser
+    allow = {
+        owner = { is_ai = no }
+        exists = leader
+        leader = { leader_class = scientist }
+    }
+    visible = {
+        is_ai = no
+        default_site_visible_trigger = yes
+    }
+    on_visible = {
+        country_event = { id = story.5 days = 30 }
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E1
+        event = red_dawn.10
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E2
+        event = red_dawn.20
+    }
+    stage = {
+        difficulty = 3
+        icon = GFX_archaeology_runes_E3
+        event = red_dawn.30
+    }
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_E4
+        event = red_dawn.40
+    }
+    stage = {
+        difficulty = 2
+        icon = GFX_archaeology_runes_E4
+        event = red_dawn.50
+    }
+    on_roll_failed = {
+        from = {
+            standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = no_events }
+        }
+    }
+}

@@ -1,0 +1,4 @@
+entity = {
+	name = "asset1_entity"
+	pdxmesh = "asset1_mesh"
+}

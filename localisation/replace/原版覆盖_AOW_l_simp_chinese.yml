@@ -1,0 +1,33 @@
+﻿l_simp_chinese:
+
+ #MEGASTRUCTURE_BUILD_OUTSIDE_GRAVITY_WELL:0"$TRIGGER_FAIL$不能将此巨构建造在恒星系的重力井内"
+
+ cosmogenesis_world_0_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_crisis$一座计算设施，可以有效消耗人口来产生§Y研究点§!和§Y超然逻辑§!。"
+ cosmogenesis_needle_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_crisis$为了飞升到我们自己创造的现实中，必须在永远离开这个宇宙之前，让我们的整个文明登上视界刺针。"
+
+ dyson_swarm_1_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_1$§Y$dyson_swarm_3$§!是一大组设计用于提升恒星产出的互联卫星。"
+ orbital_arc_furnace_1_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_1$使用熔融星球的洪荒之力，§Y$orbital_arc_furnace_4$§!解锁了此前无法获取的矿物，并提升了整个恒星系的采矿作业能力。"
+
+ hyper_relay_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$尽管单独不起作用，形成§Y链式结构的超空间中继器§!可以显著减少相邻恒星系间的转移时间。"
+ orbital_ring_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$$orbital_ring_tier_1_MEGASTRUCTURE_DETAILS$"
+ habitat_central_complex_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$§Y$habitat_complex$§!是一系列用于永久居住的自持空间站的集合体。"
+ major_orbital_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_1$一座§Y$major_orbital$§!$orbital_MEGASTRUCTURE_DETAILS_ENDING$"
+ minor_orbital_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_1$一座§Y$minor_orbital$§!$orbital_MEGASTRUCTURE_DETAILS_ENDING$"
+
+ gateway_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$一个允许舰船通过亚空间瞬间移动到其他星门的传送门。"
+ mega_shipyard_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$一个巨型恒星基地，专事舰船建造，这个$mega_shipyard_3$拥有20处用于建造及升级舰船的锚地。"
+ strategic_coordination_center_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$可以将全国上下恒星基地网络进行同步化处理的设施，提升基地的防御及攻击能力。"
+ mega_art_installation_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$星际规模的艺术信标。此设施可以鼓舞人民的士气。"
+ interstellar_assembly_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$星际各国的会议场地，可提高我国对外来移民的吸引力以及他国对我国的评价。"
+ spy_orb_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_2$随着工程的不断推进，§Y$spy_orb_4$§!会逐步的扩展传感器范围，最终将囊括整个星系。"
+ think_tank_0_MEGASTRUCTURE_DETAILS:0 "$AOW_mega_lv_2$§Y$think_tank_3$§!的研究实验室和数据库能够产出源源不断的原生数据流。"
+ quantum_catapult_0_MEGASTRUCTURE_DETAILS:0 "$AOW_mega_lv_2$一个用来汇聚中子星或脉冲星引力以扭曲空间，将舰队传送至遥远距离之外的装置。"
+
+ matter_decompressor_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$这个§Y$matter_decompressor_4$§!将黑洞的引力聚焦于一处，形成了一个引力钻头，我们可以用这个钻头从黑洞的奇点中钻取物质，并转化为£minerals£矿物。"
+ ring_world_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$一个§Y$pc_ringworld_habitable$§!容纳了数个行星大小的区块，但需要拆除星系中其他的行星天体作为材料。"
+ dyson_sphere_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$一个§Y$dyson_sphere_5$§!完全的包裹住一个特定的恒星，直接将恒星辐射输出转化为£energy£能量币。"
+
+
+
+ admiral_trait: "§c领袖特质§!\n£admiral£舰队司令类别"
+ scientist_trait: "§c领袖特质§!\n£scientist£科学官类别"

@@ -1,0 +1,78 @@
+entity = {
+	name = "prosperous_trade_station_a_entity"
+	locator = { name = "loc101" position = { 25 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "caravaneer_billboard_asteroid_01_entity" }
+	scale = 3
+}
+entity = {
+	name = "prosperous_trade_station_b_entity"
+	locator = { name = "loc101" position = { 23 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "caravaneer_billboard_asteroid_02_entity" }
+	scale = 2
+}
+entity = {
+	name = "prosperous_trade_station_c_entity"
+	locator = { name = "loc101" position = { 23 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "caravaneer_billboard_asteroid_03_entity" }
+	scale = 2
+}
+#playback_rate = 0
+
+entity = {
+	name = "prosperous_trade_station_1_entity"
+	cull_radius = 250
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = "caravaneer_station_01_section_entity" }
+	scale = 1.5
+}
+entity = {
+	name = "prosperous_trade_station_2_construction_entity"
+	cull_radius = 250
+	locator = { name = "loc101" position = { 0 -20 0 } rotation = { 60 0 0 } }
+	locator = { name = "loc102" position = { 0 -20 0 } rotation = { 120 0 0 } }
+	locator = { name = "loc103" position = { 0 -20 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc104" position = { 0 -20 0 } rotation = { 240 0 0 } }
+	locator = { name = "loc105" position = { 0 -20 0 } rotation = { 300 0 0 } }
+	locator = { name = "loc106" position = { 0 -20 0 } rotation = { 360 0 0 } }
+	attach = { "loc101" = "prosperous_trade_station_a_entity" }
+	attach = { "loc102" = "prosperous_trade_station_a_entity" }
+	attach = { "loc103" = "prosperous_trade_station_a_entity" }
+	attach = { "loc104" = "prosperous_trade_station_a_entity" }
+	attach = { "loc105" = "prosperous_trade_station_a_entity" }
+	attach = { "loc106" = "prosperous_trade_station_a_entity" }
+	scale = 1
+}
+entity = {
+	name = "prosperous_trade_station_2_entity"
+	cull_radius = 250
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = "prosperous_trade_station_1_entity" }
+	attach = { "root" = "prosperous_trade_station_2_construction_entity" }
+	scale = 1
+}
+entity = {
+	name = "prosperous_trade_station_3_construction_entity"
+	cull_radius = 250
+	locator = { name = "loc101" position = { 0 30 0 } rotation = { 60 0 0 } }
+	locator = { name = "loc102" position = { 0 30 0 } rotation = { 120 0 0 } }
+	locator = { name = "loc103" position = { 0 30 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc104" position = { 0 30 0 } rotation = { 240 0 0 } }
+	locator = { name = "loc105" position = { 0 30 0 } rotation = { 300 0 0 } }
+	locator = { name = "loc106" position = { 0 30 0 } rotation = { 360 0 0 } }
+	attach = { "loc101" = "prosperous_trade_station_b_entity" }
+	attach = { "loc102" = "prosperous_trade_station_c_entity" }
+	attach = { "loc103" = "prosperous_trade_station_b_entity" }
+	attach = { "loc104" = "prosperous_trade_station_c_entity" }
+	attach = { "loc105" = "prosperous_trade_station_b_entity" }
+	attach = { "loc106" = "prosperous_trade_station_c_entity" }
+	scale = 1
+}
+entity = {
+	name = "prosperous_trade_station_3_entity"
+	cull_radius = 250
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = "prosperous_trade_station_1_entity" }
+	attach = { "root" = "prosperous_trade_station_2_entity" }
+	attach = { "root" = "prosperous_trade_station_3_construction_entity" }
+	scale = 1
+}

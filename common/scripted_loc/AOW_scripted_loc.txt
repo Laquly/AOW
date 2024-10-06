@@ -1,0 +1,185 @@
+defined_text = {
+	name = AOW_var_system_num_non_minor_planetary_body
+	value = value:AOW_var_system_num_non_minor_planetary_body
+}
+
+defined_text = {
+	name = AOW_var_system_num_minor_planetary_body
+	value = value:AOW_var_system_num_minor_planetary_body
+}
+defined_text = {
+	name = AOW_var_system_num_planetary_body
+	value = value:AOW_var_system_num_planetary_body
+}
+defined_text = {
+	name = AOW_var_system_num_orbital_arc_furnace_planet
+	value = value:AOW_var_system_num_orbital_arc_furnace_planet
+}
+defined_text = {
+	name = AOW_var_system_num_habitat_energy
+	value = value:AOW_var_system_num_habitat_energy
+}
+defined_text = {
+	name = AOW_var_system_num_habitat_mining
+	value = value:AOW_var_system_num_habitat_mining
+}
+defined_text = {
+	name = AOW_var_system_num_habitat_research
+	value = value:AOW_var_system_num_habitat_research
+}
+defined_text = {
+	name = AOW_var_system_num_pc_asteroid
+	value = value:AOW_var_system_num_pc_asteroid
+}
+defined_text = {
+	name = AOW_var_system_num_pc_crystal_asteroid
+	value = value:AOW_var_system_num_pc_crystal_asteroid
+}
+defined_text = {
+	name = AOW_var_system_num_pc_ice_asteroid
+	value = value:AOW_var_system_num_pc_ice_asteroid
+}
+
+
+defined_text = {
+	name = AOW_var_virtual_pop_capacity
+	value = value:AOW_var_virtual_pop_capacity
+}
+
+defined_text = {
+ 	name = AOW_var_mri_remaining_points
+ 	value = value:AOW_var_mri_remaining_points
+}
+
+defined_text = {#独立肃正核心的功能描述
+	name = GetContingencyCoreEffect
+	text = {
+		trigger = {
+			has_relic = r_contingency_core
+		}
+		localization_key = AOW_text_contingency_core_effect
+	}
+	text = {
+		trigger = {
+			NOT = { has_relic = r_contingency_core }
+		}
+		localization_key = AOW_text_no_contingency_core_effect
+	}
+}
+############################################################
+
+defined_text = {#行星开采器的描述
+	name = GetPlanetaryMiningStationDesc
+	text = {
+		trigger = { AOW_trgr_PLNT_ordinary_planet = yes }
+		localization_key = AOW_text_planetary_mining_station_0_desc
+	}
+	text = {
+		trigger = { is_planet_class = pc_molten }
+		localization_key = AOW_text_planetary_mining_station_1_desc
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_planet_class = pc_toxic #剧毒星球
+				is_planet_class = pc_hothouse #温室星球
+			}
+		}
+		localization_key = AOW_text_planetary_mining_station_2_desc
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_planet_class = pc_frozen #冰封星球
+				is_planet_class = pc_diamond #金刚石星球
+			}
+		}
+		localization_key = AOW_text_planetary_mining_station_3_desc
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_planet_class = pc_iron #铁星球
+				is_planet_class = pc_chthonian #气陨星核
+			}
+		}
+		localization_key = AOW_text_planetary_mining_station_4_desc
+	}
+	text = {
+		trigger = { is_planet_class = pc_hydrocarbon }
+		localization_key = AOW_text_planetary_mining_station_5_desc
+	}
+	text = {
+		trigger = { is_planet_class = pc_volcanic }
+		localization_key = AOW_text_planetary_mining_station_6_desc
+	}
+	default = AOW_text_planetary_mining_station_desc
+}
+defined_text = {#恒星光谱的描述
+	name = GetStellarSpectrumDesc
+	text = {
+		trigger = { AOW_trgr_PLNT_hyper_star = yes }
+		localization_key = AOW_text_stellar_spectrum_hyper_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_o_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_o_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_b_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_b_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_a_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_a_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_f_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_f_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_g_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_g_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_k_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_k_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_m_super_star = yes }
+		localization_key = AOW_text_stellar_spectrum_m_super_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_o_star = yes }
+		localization_key = AOW_text_stellar_spectrum_o_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_b_star = yes }
+		localization_key = AOW_text_stellar_spectrum_b_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_giant_star = yes }
+		localization_key = AOW_text_stellar_spectrum_giant_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_a_star = yes }
+		localization_key = AOW_text_stellar_spectrum_a_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_f_star = yes }
+		localization_key = AOW_text_stellar_spectrum_f_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_g_star = yes }
+		localization_key = AOW_text_stellar_spectrum_g_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_k_star = yes }
+		localization_key = AOW_text_stellar_spectrum_k_desc
+	}
+	text = {
+		trigger = { AOW_trgr_PLNT_m_star = yes }
+		localization_key = AOW_text_stellar_spectrum_m_desc
+	}
+	default = AOW_text_stellar_spectrum_desc
+}

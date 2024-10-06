@@ -1,0 +1,31 @@
+AOW_trigger_mega_planet_has_megastructure = {
+    if = {
+        limit = {
+            from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+        }
+        custom_tooltip = {#放置处不能有巨构
+            fail_text = "requires_no_existing_megastructure"
+            AOW_trgr_PLNT_existing_megastructure = no
+        }
+    }
+    else_if = {
+        limit = {
+            from = { has_technology = AOW_TECH_hyperdimension_hiding }
+        }
+        custom_tooltip = {#放置处不能有巨构
+           fail_text = "requires_no_existing_megastructure"
+            AOW_trgr_PLNT_megastructure_planet = no
+            NOT = {
+                solar_system = {
+                    any_system_megastructure = {
+                        planet = { is_same_value = root }
+                        OR = {
+                            has_megastructure_flag = $key$
+                            has_megastructure_flag = no_stacking
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

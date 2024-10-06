@@ -1,0 +1,17 @@
+#物理学		physics
+#力场		field_manipulation
+#粒子		particles
+#计算机		computing
+
+#社会学		society
+#灵能		psionics
+#新世界		new_worlds
+#治国术		statecraft
+#生物学		biology
+#军事理论		military_theory
+
+#工程学		engineering
+#材料学		materials
+#推进学		propulsion
+#宇航		voidcraft
+#工业		industry

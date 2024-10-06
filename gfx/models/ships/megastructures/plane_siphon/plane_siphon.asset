@@ -1,0 +1,77 @@
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+
+entity = {
+	name = "plane_siphon_energy_maintainer_entity"
+	pdxmesh = "plane_siphon_energy_maintainer_mesh"
+	game_data = {
+		emissive_recolor_crunch = 5
+		bloom_factor = 1
+	}
+	scale = 3
+}
+entity = {
+	name = "plane_siphon_planet_shaper_entity"
+	pdxmesh = "plane_siphon_planet_shaper_mesh"
+	game_data = {
+		emissive_recolor_crunch = 5
+		bloom_factor = 1
+	}
+	scale = 1
+}
+
+entity = {
+	name = "plane_siphon_planet_shaper_a_entity"
+	locator = { name = loc1 position = { 0 43 0 } rotation = { 0 90 0 } }
+	attach = { loc1 = plane_siphon_planet_shaper_entity }
+}
+entity = {
+	name = "plane_siphon_beam_entity"
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+	}
+}
+entity = {
+	name = "plane_siphon_beam_a_entity"
+	locator = { name = loc1 position = { 0 66 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = plane_siphon_beam_entity }
+	scale = 0.76
+}
+
+entity = {
+	name = "plane_siphon_1_entity"
+	locator = { name = loc1 position = { 0 45 0 } rotation = { 0 0 -90 } }
+	locator = { name = loc2 position = { 0 0 0 } rotation = { 0 0 30 } }
+	locator = { name = loc3 position = { 0 0 0 } rotation = { 0 0 -30 } }
+	attach = { loc1 = plane_siphon_energy_maintainer_entity }
+	attach = { loc2 = plane_siphon_planet_shaper_a_entity }
+	attach = { loc3 = plane_siphon_planet_shaper_a_entity }
+	scale = 1.75
+}
+entity = {
+	name = "plane_siphon_2_construction_entity"
+	locator = { name = loc0 position = { 0 -30 0 } rotation = { 0 180 0 } scale = 0.2 }
+	attach = { loc0 = astral_scar_entity }
+	scale = 1.75
+}
+entity = {
+	name = "plane_siphon_2_entity"
+	locator = { name = loc0 position = { 0 -30 0 } rotation = { 0 180 0 } scale = 0.2 }
+	locator = { name = loc1 position = { 0 45 0 } rotation = { 0 0 -90 } }
+	locator = { name = loc2 position = { 0 0 0 } rotation = { 0 0 30 } }
+	locator = { name = loc3 position = { 0 0 0 } rotation = { 0 0 -30 } }
+	locator = { name = loc11 position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = loc21 position = { 0 0 0 } rotation = { 0 0 30 } }
+	locator = { name = loc31 position = { 0 0 0 } rotation = { 0 0 -30 } }
+	attach = { loc0 = astral_scar_entity }
+	attach = { loc1 = plane_siphon_energy_maintainer_entity }
+	attach = { loc2 = plane_siphon_planet_shaper_a_entity }
+	attach = { loc3 = plane_siphon_planet_shaper_a_entity }
+	attach = { loc11 = plane_siphon_beam_a_entity }
+	attach = { loc21 = plane_siphon_beam_a_entity }
+	attach = { loc31 = plane_siphon_beam_a_entity }
+	scale = 1.75
+}

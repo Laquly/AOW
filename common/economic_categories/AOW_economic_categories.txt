@@ -1,0 +1,102 @@
+megastructures = {
+	use_for_ai_budget = yes
+	ai_use_parent_for_resources_upkeep = {
+		energy
+		consumer_goods
+	}
+	parent = country
+	modifier_category = megastructure
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	triggered_produces_modifier = {
+		key = megastructure_dyson_sphere
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			AOW_trgr_MEGA_is_dyson_sphere = yes
+		}
+	}
+	triggered_upkeep_modifier = {
+		key = upgrading_megastructures
+		modifier_types = {
+			add
+			mult
+		}
+		trigger = {
+			is_upgrading = yes
+		}
+	}
+}
+
+
+pop_category_drones = {
+	generate_add_modifiers = {
+		upkeep
+		produces
+	}
+	parent = planet_pops
+}
+
+megastructures_habitat = {
+	use_for_ai_budget = yes
+	parent = megastructures
+	modifier_category = megastructure
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+}
+
+planet_refiners = {
+	parent = planet_jobs_productive
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}
+
+planet_translucers = {
+	parent = planet_jobs_productive
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}
+
+planet_chemists = {
+	parent = planet_jobs_productive
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}

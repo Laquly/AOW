@@ -1,0 +1,232 @@
+AOW_MEGA_wonder_construction_bureau_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_DMCT_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_WCB_0_COST_alloys
+			unity = @AOW_var_WCB_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_WCB_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_wonder_construction_bureau
+		category = megastructures
+		alloys = @AOW_var_WCB_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_wonder_construction_bureau" }
+	potential = { AOW_trigger_mega_potential = { KEY = wonder_construction_bureau } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_wonder_construction_bureau } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#不能是宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是小行星或卫星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 300
+		#位置限制
+		modifier = { factor = 10	from.capital_scope.solar_system = { is_same_value = root } }
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = wonder_construction_bureau
+			constructing = AOW_MEGA_wonder_construction_bureau_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_wonder_construction_bureau.100 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_wonder_construction_bureau_@owner }
+	}
+}
+AOW_MEGA_wonder_construction_bureau_1 = {
+	entity = "wonder_construction_bureau_01_entity"
+	construction_entity = "wonder_construction_bureau_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_WCB_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_WCB_1_COST_alloys
+			unity = @AOW_var_WCB_1_COST_unity
+		}
+		produces = {
+			sr_living_metal = @AOW_var_WCB_1_PRDC_living_metal
+		}
+		upkeep = {
+			energy = @AOW_var_WCB_1_UPKP_energy
+			minerals = @AOW_var_WCB_1_UPKP_minerals
+			alloys = @AOW_var_WCB_1_UPKP_alloys
+		}
+	}
+	country_modifier = {
+		shipclass_mining_station_build_speed_mult = 0.33
+		shipclass_research_station_build_speed_mult = 0.33
+		shipsize_starbase_outpost_build_speed_mult = 0.33
+		starbase_upgrade_speed_mult = 0.33
+		starbase_building_build_speed_mult = 0.33
+		starbase_module_build_speed_mult = 0.33
+		planet_building_build_speed_mult = 0.33
+		megastructure_build_speed_mult = 0.167
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_wonder_construction_bureau
+		category = megastructures
+		alloys = @AOW_var_WCB_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_wonder_construction_bureau" }
+	upgrade_from = { AOW_MEGA_wonder_construction_bureau_0 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_wonder_construction_bureau.101 } }
+	}
+}
+AOW_MEGA_wonder_construction_bureau_2 = {
+	entity = "wonder_construction_bureau_02_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_WCB_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_WCB_2_COST_alloys
+			unity = @AOW_var_WCB_2_COST_unity
+		}
+		produces = {
+			sr_living_metal = @AOW_var_WCB_2_PRDC_living_metal
+		}
+		upkeep = {
+			energy = @AOW_var_WCB_2_UPKP_energy
+			minerals = @AOW_var_WCB_2_UPKP_minerals
+			alloys = @AOW_var_WCB_2_UPKP_alloys
+		}
+	}
+	country_modifier = {
+		shipclass_mining_station_build_speed_mult = 0.67
+		shipclass_research_station_build_speed_mult = 0.67
+		shipsize_starbase_outpost_build_speed_mult = 0.67
+		starbase_upgrade_speed_mult = 0.67
+		starbase_building_build_speed_mult = 0.67
+		starbase_module_build_speed_mult = 0.67
+		planet_building_build_speed_mult = 0.67
+		megastructure_build_speed_mult = 0.333
+		country_megastructure_build_cap_add = 1
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_wonder_construction_bureau
+		category = megastructures
+		alloys = @AOW_var_WCB_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_wonder_construction_bureau" }
+	upgrade_from = { AOW_MEGA_wonder_construction_bureau_1 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_wonder_construction_bureau.102 } }
+	}
+}
+AOW_MEGA_wonder_construction_bureau_3 = {
+	entity = "wonder_construction_bureau_03_entity"
+	portrait = "GFX_megastructure_wonder_construction_bureau_background"
+	place_entity_on_planet_plane = no
+	show_in_outliner = no
+	build_time = @AOW_var_WCB_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_WCB_3_COST_alloys
+			unity = @AOW_var_WCB_3_COST_unity
+		}
+		produces = {
+			sr_living_metal = @AOW_var_WCB_3_PRDC_living_metal
+		}
+		upkeep = {
+			energy = @AOW_var_WCB_3_UPKP_energy
+			minerals = @AOW_var_WCB_3_UPKP_minerals
+			alloys = @AOW_var_WCB_3_UPKP_alloys
+		}
+	}
+	country_modifier = {
+		shipclass_mining_station_build_speed_mult = 1
+		shipclass_research_station_build_speed_mult = 1
+		shipsize_starbase_outpost_build_speed_mult = 1
+		starbase_upgrade_speed_mult = 1
+		starbase_building_build_speed_mult = 1
+		starbase_module_build_speed_mult = 1
+		planet_building_build_speed_mult = 1
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+		empire_size_districts_mult = 0.1
+		empire_size_colonies_mult = 0.1
+		empire_size_systems_mult = 0.1
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_wonder_construction_bureau
+		category = megastructures
+		alloys = @AOW_var_WCB_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_wonder_construction_bureau" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_wonder_construction_bureau_2 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_evt_wonder_construction_bureau.103 }
+			set_country_flag = has_built_or_repaired_megastructure
+		}
+	}
+}

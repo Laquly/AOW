@@ -1,0 +1,129 @@
+entity = {
+	name = "static_pulsar_clock_1_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 20
+}
+entity = {
+	name = "static_pulsar_clock_2_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 30
+}
+entity = {
+	name = "static_pulsar_clock_3_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 41
+}
+
+entity = {
+	name = "dynamic_pulsar_clock_1_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 10 }
+	scale = 20
+}
+entity = {
+	name = "dynamic_pulsar_clock_2_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 5 }
+	scale = 30
+}
+entity = {
+	name = "dynamic_pulsar_clock_3_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 1 }
+	scale = 41
+}
+
+###############################################################
+
+@pulsar_clock_scale = 0.4
+
+entity = {
+	name = "pulsar_clock_1_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 110 } }
+	attach = { "loc101" = "static_pulsar_clock_1_entity" }
+	scale = @pulsar_clock_scale
+}
+entity = {
+	name = "pulsar_clock_2_construction_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 70 } }
+	attach = { "loc101" = "static_pulsar_clock_2_entity" }
+	scale = @pulsar_clock_scale
+}
+entity = {
+	name = "pulsar_clock_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = "pulsar_clock_1_entity" }
+	attach = { "root" = "pulsar_clock_2_construction_entity" }
+}
+entity = {
+	name = "pulsar_clock_3_construction_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { "loc101" = "static_pulsar_clock_3_entity" }
+	scale = @pulsar_clock_scale
+}
+entity = {
+	name = "pulsar_clock_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = "pulsar_clock_1_entity" }
+	attach = { "root" = "pulsar_clock_2_construction_entity" }
+	attach = { "root" = "pulsar_clock_3_construction_entity" }
+}
+entity = {
+	name = "pulsar_clock_4_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 110 } }
+	locator = { name = "loc102" position = { 0 0 0 } rotation = { 0 0 70 } }
+	locator = { name = "loc103" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { "loc101" = "dynamic_pulsar_clock_1_entity" }
+	attach = { "loc102" = "dynamic_pulsar_clock_2_entity" }
+	attach = { "loc103" = "dynamic_pulsar_clock_3_entity" }
+	scale = @pulsar_clock_scale
+}
+
+
+##########################################################
+entity = {
+	name = "pulsar_clock_ruined_1_entity"
+	pdxmesh = "AOW_ruined_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 1 }
+	#playback_rate = 0
+	scale = 20
+}
+entity = {
+	name = "pulsar_clock_ruined_2_entity"
+	pdxmesh = "AOW_ruined_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.5 }
+	#playback_rate = 0
+	scale = 30
+}
+entity = {
+	name = "pulsar_clock_ruined_3_entity"
+	pdxmesh = "AOW_ruined_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.1 }
+	#playback_rate = 0
+	scale = 41
+}
+entity = {
+	name = "pulsar_clock_ruined_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 110 } }
+	locator = { name = "loc102" position = { 0 0 0 } rotation = { 0 0 70 } }
+	locator = { name = "loc103" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { "loc101" = "pulsar_clock_ruined_1_entity"}
+	attach = { "loc102" = "pulsar_clock_ruined_2_entity"}
+	attach = { "loc103" = "pulsar_clock_ruined_3_entity"}
+	scale = @pulsar_clock_scale
+}

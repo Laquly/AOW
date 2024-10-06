@@ -1,0 +1,165 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+@HNB_scale = 0.07
+animation = { name = "HNB_obelisk_idle_animation" file = "HNB_obelisk_idle.anim" }
+animation = { name = "HNB_obelisk_idle2_animation" file = "HNB_obelisk_idle2.anim" }
+entity = {
+	name = "HNB_effect_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { node = "root" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+}
+entity = {
+	name = "HNB_effect_0_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 -90 0 } }
+	attach = { root = "HNB_effect_entity" }
+	scale = 3
+}
+entity = {
+	name = "HNB_effect_1_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_effect_entity" }
+}
+entity = {
+	name = "HNB_effect_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 
+		event = { time = 0 node = "root" particle = "gateway_portal_effect" keep_particle = yes trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" } }
+	}
+	scale = 0.5
+}
+entity = {
+	name = "HNB_obelisk_a_entity"
+	pdxmesh = "HNB_obelisk_mesh"
+	game_data = { emissive_recolor_crunch = 0.0 }
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_blend_time = 0 animation_speed = 0 }
+	scale = 4
+}
+entity = {
+	name = "HNB_obelisk_b_entity"
+	pdxmesh = "HNB_obelisk_mesh"
+	game_data = { emissive_recolor_crunch = 0.0 }
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_blend_time = 0 animation_speed = 0 }
+	scale = 3
+}
+entity = {
+	name = "HNB_small_obelisk_entity"
+	locator = { name = "root" position = { 0 0 -80 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_obelisk_b_entity" }
+}
+entity = {
+	name = "HNB_unit_1_entity"
+	locator = { name = "root" position = { 0 200 0 } rotation ={ 0 0 0 }  }
+	locator = { name = "effect0" position = { 0 310 0 } rotation ={ 0 0 0 }  }
+	locator = { name = "effect1" position = { 0 310 0 } rotation ={ 60 0 0 }  }
+	locator = { name = "effect2" position = { 0 310 0 } rotation ={ 180 0 0 }  }
+	locator = { name = "effect3" position = { 0 310 0 } rotation ={ 300 0 0 }  }
+	locator = { name = "loc1" position = { 0 230 0 } rotation ={ 60 0 0 } }
+	locator = { name = "loc2" position = { 0 230 0 } rotation ={ 180 0 0 } }
+	locator = { name = "loc3" position = { 0 230 0 } rotation ={ 300 0 0 } }
+	attach = { root = "HNB_obelisk_a_entity" }
+	attach = { effect0 = "HNB_effect_0_entity" }
+	attach = { effect1 = "HNB_effect_1_entity" }
+	attach = { effect2 = "HNB_effect_1_entity" }
+	attach = { effect3 = "HNB_effect_1_entity" }
+	attach = { loc1 = "HNB_small_obelisk_entity" }
+	attach = { loc2 = "HNB_small_obelisk_entity" }
+	attach = { loc3 = "HNB_small_obelisk_entity" }
+	scale = 1
+}
+entity = {
+	name = "HNB_unit_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 180 0 }  }
+	attach = { root = "HNB_unit_1_entity" }
+}
+entity = {
+	name = "HNB_unit_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 90 0 }  }
+	attach = { root = "HNB_unit_1_entity" }
+}
+entity = {
+	name = "HNB_unit_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 120 0 0 }  }
+	attach = { root = "HNB_unit_3_entity" }
+}
+entity = {
+	name = "HNB_unit_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 240 0 0 }  }
+	attach = { root = "HNB_unit_3_entity" }
+}
+
+
+entity = {
+	name = "heaven_navigation_bureau_1_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_unit_1_entity" }
+	scale = @HNB_scale
+}
+entity = {
+	name = "heaven_navigation_bureau_2_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_unit_2_entity" }
+	scale = @HNB_scale
+}
+entity = {
+	name = "heaven_navigation_bureau_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "heaven_navigation_bureau_1_entity" }
+	attach = { root = "heaven_navigation_bureau_2_construction_entity" }
+}
+entity = {
+	name = "heaven_navigation_bureau_3_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_unit_3_entity" }
+	scale = @HNB_scale
+}
+entity = {
+	name = "heaven_navigation_bureau_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "heaven_navigation_bureau_1_entity" }
+	attach = { root = "heaven_navigation_bureau_2_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_3_construction_entity" }
+}
+entity = {
+	name = "heaven_navigation_bureau_4_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_unit_4_entity" }
+	scale = @HNB_scale
+}
+entity = {
+	name = "heaven_navigation_bureau_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "heaven_navigation_bureau_1_entity" }
+	attach = { root = "heaven_navigation_bureau_2_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_3_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_4_construction_entity" }
+}
+entity = {
+	name = "heaven_navigation_bureau_5_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "HNB_unit_5_entity" }
+	scale = @HNB_scale
+}
+entity = {
+	name = "heaven_navigation_bureau_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "effect" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "heaven_navigation_bureau_1_entity" }
+	attach = { root = "heaven_navigation_bureau_2_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_3_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_4_construction_entity" }
+	attach = { root = "heaven_navigation_bureau_5_construction_entity" }
+	attach = { effect = "HNB_effect_2_entity" }
+}

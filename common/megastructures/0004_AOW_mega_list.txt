@@ -1,0 +1,15 @@
+#为什么会有这么一个文件？
+#因为工程船的巨构建造列表是根据【优先级在上的巨构排序】而排序的。
+#不是你文件怎么排序，工程船那里就怎么排序的
+
+AOW_MEGA_ring_world_3_0 = {}
+AOW_MEGA_ring_world_4_0 = {}
+AOW_MEGA_multi_dimensional_warehouse_0 = {}
+AOW_MEGA_star_transfer_0 = {}
+AOW_MEGA_starfall_spear_0 = {}
+AOW_MEGA_heaven_navigation_bureau_0 = {}
+AOW_MEGA_miraculous_shipyard_0 = {}
+AOW_MEGA_material_recombination_instrument_0 = {}
+AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {}
+AOW_MEGA_celestial_shield_0 = {}
+AOW_MEGA_starcage_world_0 = {}

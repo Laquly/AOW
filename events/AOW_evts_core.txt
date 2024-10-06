@@ -1,0 +1,429 @@
+#本mod的核心事件
+
+namespace = AOW_core
+
+@AOW_version = 241002
+
+#on_game_start
+event = {
+	id = AOW_core.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = AOW_installed		#设置本MOD的全局标识
+		AOW_eft_add_planet_description_modifier = yes		#添加星球说明和光谱分类说明
+		event_target:global_event_country = {	#设置版本号
+			set_variable = { which = AOW_version value = @AOW_version }
+		}
+		AOW_eft_GLBL_default_balance_variable = { TYPE = initialize }
+		AOW_eft_GLBL_default_mega_cap = { TYPE = initialize }
+		set_global_flag = AOW_flag_GLBL_new_starcage_world	#屏蔽星笼世界的旧区划
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = AOW_core.15 days = 2 }		#冲突提醒
+			country_event = { id = AOW_core.100 days = 2 }		#巨构设置面板
+		}
+		random_system = { #修改原版的废弃戴森球星系
+			limit  ={ #锁定该星系
+				has_star_flag = ruined_dyson_system
+				any_system_megastructure = { is_megastructure_type = dyson_sphere_ruined }
+			}
+			star = { solar_system = { set_star_class = sc_g } }
+			random_system_megastructure = { #移除戴森球（因为原版没有以任何星球作为落脚点）
+				limit = { is_megastructure_type = dyson_sphere_ruined }
+				remove_megastructure = this
+			}
+			spawn_megastructure = { #以恒星为落脚点新建巨构
+				type = "dyson_sphere_ruined"
+				coords_from = star
+				planet = star
+			}
+		}
+	}
+}
+
+#on_single_player_save_game_load
+event = {
+	id = AOW_core.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = { #设置本MOD的全局标识
+			limit = { NOT = { has_global_flag = AOW_installed } }
+			set_global_flag = AOW_installed
+		}
+		event_target:global_event_country = { #如果没有设置版本号或者版本号落后，则触发通知事件
+			if = {
+				limit = {
+					OR = {
+						NOT = { is_variable_set = AOW_version }
+						NOT = { check_variable = { which = AOW_version value = @AOW_version } }
+					}
+				}
+				set_variable = { which = AOW_version value = @AOW_version }
+				every_playable_country = {
+					limit = { is_ai = no }
+					country_event = { id = AOW_core.99 }
+					#country_event = { id = AOW_core.98 days = 1 }
+				}
+				AOW_eft_change_dyson_swarm = yes
+				every_megastructure = {
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_psychic_device_0
+								is_megastructure_type = AOW_MEGA_psychic_device_1
+								is_megastructure_type = AOW_MEGA_psychic_device_2
+								is_megastructure_type = AOW_MEGA_psychic_device_3
+							}
+						}
+						set_megastructure_flag = psychic_device
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_pulsar_clock_0
+								is_megastructure_type = AOW_MEGA_pulsar_clock_1
+								is_megastructure_type = AOW_MEGA_pulsar_clock_2
+								is_megastructure_type = AOW_MEGA_pulsar_clock_3
+								is_megastructure_type = AOW_MEGA_pulsar_clock_4
+								is_megastructure_type = AOW_MEGA_pulsar_clock_restored
+								is_megastructure_type = AOW_MEGA_pulsar_clock_ruined
+							}
+						}
+						set_megastructure_flag = pulsar_clock
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_star_picker_0
+								is_megastructure_type = AOW_MEGA_star_picker_1
+								is_megastructure_type = AOW_MEGA_star_picker_2
+								is_megastructure_type = AOW_MEGA_star_picker_3
+								is_megastructure_type = AOW_MEGA_star_picker_4
+								is_megastructure_type = AOW_MEGA_star_picker_5
+							}
+						}
+						set_megastructure_flag = star_picker
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_void_vortex_0
+								is_megastructure_type = AOW_MEGA_void_vortex_1
+								is_megastructure_type = AOW_MEGA_void_vortex_2
+								is_megastructure_type = AOW_MEGA_void_vortex_3
+								is_megastructure_type = AOW_MEGA_void_vortex_4
+								is_megastructure_type = AOW_MEGA_void_vortex_5
+								is_megastructure_type = AOW_MEGA_void_vortex_6
+								is_megastructure_type = AOW_MEGA_void_vortex_restored
+								is_megastructure_type = AOW_MEGA_void_vortex_ruined
+							}
+						}
+						set_megastructure_flag = void_vortex
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_0
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_1
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_2
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_3
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_4
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_restored
+								is_megastructure_type = AOW_MEGA_zero_element_furnace_ruined
+							}
+						}
+						set_megastructure_flag = void_vortex
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_celestial_shield_0
+								is_megastructure_type = AOW_MEGA_celestial_shield_1
+								is_megastructure_type = AOW_MEGA_celestial_shield_2
+								is_megastructure_type = AOW_MEGA_celestial_shield_3
+								is_megastructure_type = AOW_MEGA_celestial_shield_4
+							}
+						}
+						set_megastructure_flag = celestial_shield
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_0
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_1
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_2
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_3
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_4
+								is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_5
+							}
+						}
+						set_megastructure_flag = heaven_navigation_bureau
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_0
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_1
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_2
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_3
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_4
+								is_megastructure_type = AOW_MEGA_material_recombination_instrument_5
+							}
+						}
+						set_megastructure_flag = material_recombination_instrument
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_0
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_1
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_2
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_3
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_4
+								is_megastructure_type = AOW_MEGA_miraculous_shipyard_5
+							}
+						}
+						set_megastructure_flag = miraculous_shipyard
+					}
+					if = {
+						limit = { AOW_trgr_MEGA_is_qsqm = yes }
+						set_megastructure_flag = quindecillion_stellar_quantum_matrix
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_starcage_world_0
+								is_megastructure_type = AOW_MEGA_starcage_world_1
+								is_megastructure_type = AOW_MEGA_starcage_world_2
+								is_megastructure_type = AOW_MEGA_starcage_world_3
+								is_megastructure_type = AOW_MEGA_starcage_world_4
+								is_megastructure_type = AOW_MEGA_starcage_world_5
+							}
+						}
+						set_megastructure_flag = starcage_world
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_starfall_spear_0
+								is_megastructure_type = AOW_MEGA_starfall_spear_1
+								is_megastructure_type = AOW_MEGA_starfall_spear_2
+								is_megastructure_type = AOW_MEGA_starfall_spear_3
+								is_megastructure_type = AOW_MEGA_starfall_spear_4
+								is_megastructure_type = AOW_MEGA_starfall_spear_standby
+								is_megastructure_type = AOW_MEGA_starfall_spear_launch
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_O
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_B
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_A
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_F
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_G
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_K
+								is_megastructure_type = AOW_MEGA_starfall_spear_fire_M
+							}
+						}
+						set_megastructure_flag = starfall_spear
+					}
+					if = {
+						limit = { AOW_trgr_MEGA_is_dyson_swarm = yes }
+						set_megastructure_flag = dyson_swarm
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = mega_shipyard_0
+								is_megastructure_type = mega_shipyard_1
+								is_megastructure_type = mega_shipyard_2
+								is_megastructure_type = mega_shipyard_3
+								is_megastructure_type = mega_shipyard_permanently_ruined
+								is_megastructure_type = mega_shipyard_restored
+								is_megastructure_type = mega_shipyard_ruined
+							}
+						}
+						set_megastructure_flag = mega_shipyard
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = quantum_catapult_0
+								is_megastructure_type = quantum_catapult_1
+								is_megastructure_type = quantum_catapult_2
+								is_megastructure_type = quantum_catapult_3
+								is_megastructure_type = quantum_catapult_improved_slingshot
+								is_megastructure_type = quantum_catapult_permanently_ruined
+								is_megastructure_type = quantum_catapult_restored
+								is_megastructure_type = quantum_catapult_restored_slingshot
+								is_megastructure_type = quantum_catapult_ruined
+								is_megastructure_type = quantum_catapult_ruined_slingshot
+							}
+						}
+						set_megastructure_flag = quantum_catapult
+					}
+					if = {
+						limit = { AOW_trgr_MEGA_is_dyson_sphere = yes }
+						set_megastructure_flag = dyson_sphere
+					}
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = matter_decompressor_0
+								is_megastructure_type = matter_decompressor_1
+								is_megastructure_type = matter_decompressor_2
+								is_megastructure_type = matter_decompressor_3
+								is_megastructure_type = matter_decompressor_4
+								is_megastructure_type = matter_decompressor_permanently_ruined
+								is_megastructure_type = matter_decompressor_restored
+								is_megastructure_type = matter_decompressor_ruined
+							}
+						}
+						set_megastructure_flag = matter_decompressor
+					}
+				}
+				set_global_flag = AOW_flag_GLBL_new_starcage_world	#屏蔽星笼世界的旧区划
+			}
+		}
+		AOW_eft_add_planet_description_modifier = yes		#添加星球说明和光谱分类说明
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = AOW_core.15 }		#冲突提醒
+		}
+	}
+}
+
+country_event = {
+	id = AOW_core.15
+	title = AOW_core.3.name
+	desc = AOW_core.3.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_red_alert
+	trigger = { has_global_flag = giga_has_host }
+	option = { name = AOW_core.3.a }
+}
+
+country_event = {
+	id = AOW_core.98
+	title = AOW_core.98.name
+	desc = AOW_core.98.desc
+	force_open = yes
+	is_triggered_only = yes
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_red_alert
+	trigger = {
+		any_owned_planet = {
+			is_pc_starcage_world = yes
+		}
+	}
+	option = { name = AOW_core.98.a }
+}
+country_event = {
+	id = AOW_core.99
+	title = AOW_core.99.title
+	desc = OK
+	force_open = yes
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "AOW_bulletin_board"
+	force_open = yes
+	picture = GFX_evt_AOW_MEGA_starfall_spear
+	show_sound = event_construction
+	after = {
+		country_event = { id = AOW_core.100 }
+	}
+	option = {
+		custom_gui = "AOW_bulletin_board_option"
+		name = OK
+	}
+}
+#主要UI
+country_event = {
+	id = AOW_core.100
+	title = AOW_core.100.title
+	desc = OK
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "AOW_main_ui"
+	force_open = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_active_event = { AOW_core.100 } }
+	}
+	immediate = {
+		#初始化设置
+		AOW_eft_GLBL_default_balance_variable = { TYPE = initialize }
+		AOW_eft_GLBL_default_mega_cap = { TYPE = initialize }
+		every_country = {#通知其他玩家
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = AOW_core.102 }
+		}
+		#储存当前的巨构上限
+		AOW_eft_record_current_mega_cap = yes
+	}
+	option = {
+		custom_gui = "AOW_main_ui_option"
+		name = AOW_core.100.a
+		custom_tooltip = AOW_core.100.a.tooltip
+	}
+	after = {
+		hidden_effect = {
+			#根据设定的平衡变量调整AI和玩家的巨构数值
+			AOW_eft_CNTR_add_ai_mega_cost = yes
+			AOW_eft_CNTR_add_ai_mega_upkp = yes
+			AOW_eft_CNTR_add_ai_mega_prdc = yes
+			AOW_eft_CNTR_add_ai_mega_build_speed = yes
+			AOW_eft_CNTR_add_ai_mega_build_cap = yes
+			AOW_eft_CNTR_add_player_mega_cost = yes
+			AOW_eft_CNTR_add_player_mega_upkp = yes
+			AOW_eft_CNTR_add_player_mega_prdc = yes
+			AOW_eft_CNTR_add_player_mega_build_speed = yes
+			AOW_eft_CNTR_add_player_mega_build_cap = yes
+			#重置禁止建造的flag
+			AOW_eft_reset_mega_cap_flag = yes
+			#强制禁止
+			if = {
+				limit = { has_global_flag = force_disable_aow_megastructure }
+				AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = hyperlane_controller }
+				AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = advanced_hyperlane_controller }
+				AOW_eft_GLBL_set_player_mega_cap = { V = 1 KEY = starfall_spear }
+				AOW_eft_GLBL_set_player_mega_cap = { V = 1 KEY = starcage_world }
+			}
+			if = {
+				limit = { has_global_flag = force_adjust_aow_megastructure_cap }
+				AOW_eft_GLBL_set_ai_mega_cap_0 = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = AOW_core.101
+	title = AOW_core.101.title
+	desc = OK
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "AOW_presets"
+	force_open = yes
+	immediate = {
+		set_country_flag = AOW_flag_CNTR_page_presets
+	}
+	after = {
+		remove_country_flag = AOW_flag_CNTR_page_presets
+	}
+	option = {
+		custom_gui = "AOW_presets_option"
+		name = OK
+	}
+}
+country_event = {#任意玩家启用控制面板时，通知其他玩家
+	id = AOW_core.102
+	title = AOW_core.102.title
+	desc = AOW_core.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_mystic_reveal
+	trigger = { is_ai = no }
+	option = { name = OK }
+}

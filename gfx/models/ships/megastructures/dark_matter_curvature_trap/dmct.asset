@@ -1,0 +1,74 @@
+entity = {
+	name = "dmct_01_entity"
+	pdxmesh = "black_hole_new_mesh"
+	
+	scale = 6
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		#event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+	}
+	locator = { name = "planet" }
+	locator = { name = "fw" scale = 1.5 }
+	#attach = { "planet" = "black_hole_rings_entity" }
+	#attach = { "planet" = "black_hole_grav_lens_entity" }
+	#attach = { "planet" = "black_hole_grav_animation_entity" }
+	attach = { "fw" = "dmct_1_entity" }
+	game_data = { size = 1.0 bloom_factor = 5 }
+}
+entity = {
+	name = "dmct_02_entity"
+	pdxmesh = "black_hole_new_mesh"
+	
+	scale = 6
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		#event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+	}
+	locator = { name = "planet" }
+	locator = { name = "fw" scale = 1.5 }
+	#attach = { "planet" = "black_hole_rings_entity" }
+	#attach = { "planet" = "black_hole_grav_lens_entity" }
+	#attach = { "planet" = "black_hole_grav_animation_entity" }
+	attach = { "fw" = "dmct_1_entity" }
+	attach = { "fw" = "dmct_2_entity" }
+	game_data = { size = 1.0 bloom_factor = 5 }
+}
+
+entity = {
+	name = "dmct_1_entity"
+	pdxmesh = "dmct_1_mesh"
+	default_state = "idle"
+	state = {
+		name = "idle"
+		animation = "idle"
+		looping = yes
+		animation_blend_time = 5
+		animation_speed = 0.3
+	}
+	scale = 8
+}
+
+entity = {
+	name = "dmct_2_entity"
+	pdxmesh = "dmct_2_mesh"
+	default_state = "idle"
+	state = {
+		name = "idle"
+		animation = "idle"
+		looping = yes
+		animation_blend_time = 5
+		animation_speed = 0.3
+	}
+	scale = 8
+}
+
+animation = {
+	name = "dmct_1_idle"
+	file = "dmct_1_idle.anim"
+}
+animation = {
+	name = "dmct_2_idle"
+	file = "dmct_2_idle.anim"
+}

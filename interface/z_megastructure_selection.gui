@@ -1,0 +1,183 @@
+guiTypes = {
+	containerWindowType = {
+		name = "megastructure_selection_window"
+		@window_width = 700
+		size = { width = @window_width height = 510 }	#-80
+		if_resolution = { min_height = 600 size = { width = @window_width height = 530 } }	@list_600_h = 450
+		if_resolution = { min_height = 720 size = { width = @window_width height = 636 } }	@list_720_h = 556
+		if_resolution = { min_height = 768 size = { width = @window_width height = 678 } }	@list_768_h = 598
+		if_resolution = { min_height = 800 size = { width = @window_width height = 706 } }	@list_800_h = 626
+		if_resolution = { min_height = 864 size = { width = @window_width height = 763 } }	@list_864_h = 683
+		if_resolution = { min_height = 900 size = { width = @window_width height = 795 } }	@list_900_h = 715
+		if_resolution = { min_height = 960 size = { width = @window_width height = 848 } }	@list_960_h = 768
+		if_resolution = { min_height = 1024 size = { width = @window_width height = 905 } }	@list_1024_h = 825
+		if_resolution = { min_height = 1050 size = { width = @window_width height = 928 } }	@list_1050_h = 848
+		if_resolution = { min_height = 1080 size = { width = @window_width height = 954 } }	@list_1080_h = 874
+		position = { x = 0 y = 0 }
+		orientation = center
+		origo = center
+		moveable = yes
+		background = {#整体背景
+			name = "megastructure_selection_window_background"
+			spriteType = "GFX_tile_large_bg_plain"
+		}
+		iconType = {#下划线
+			name = "header_line"
+			position = { x = 0 y = 42 }
+			spriteType = "GFX_line_center"
+			orientation = center_up
+			centerPosition = yes
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = {#标题（巨型结构）
+			name = "title"
+			font = "malgun_goth_24"
+			text = "MEGASTRUCTURE_SELECTION_PICK_TYPE"
+			position = { x = 0 y = 9 }
+			maxWidth = 700
+			maxHeight = 40
+			format = center
+			fixedSize = yes
+		}
+		buttonType = {#关闭键
+			name = "close"
+			quadTextureSprite = "GFX_close_button_galaxy"
+			position = { x = -45 y = 16 }
+			orientation = upper_right
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE_TITLE"
+			clicksound = "back_click"
+			actionShortcut = "cancel"
+		}
+		containerWindowType = {#黑底
+			name = "dark_area"
+			size = { width = -10 height = -10 }
+			position = { x = 10 y = 60 }
+			background = {
+				name = "leader_frame"
+				spriteType = "GFX_dark_area_cut_light"
+				alwaysTransparent = yes
+			}
+		}
+		smoothListboxType = {
+			@entries_width = 660
+			@entries_height = 85
+			name = "entries"
+			position = { x = 20 y = 60 }
+			size = { width = @entries_width height = 730 }
+			if_resolution = { min_height = 600 size = { width = @entries_width height = @list_600_h } }
+			if_resolution = { min_height = 720 size = { width = @entries_width height = @list_720_h } }
+			if_resolution = { min_height = 768 size = { width = @entries_width height = @list_768_h } }
+			if_resolution = { min_height = 800 size = { width = @entries_width height = @list_800_h } }
+			if_resolution = { min_height = 864 size = { width = @entries_width height = @list_864_h } }
+			if_resolution = { min_height = 900 size = { width = @entries_width height = @list_900_h } }
+			if_resolution = { min_height = 960 size = { width = @entries_width height = @list_960_h } }
+			if_resolution = { min_height = 1024 size = { width = @entries_width height = @list_1024_h } }
+			if_resolution = { min_height = 1050 size = { width = @entries_width height = @list_1050_h } }
+			if_resolution = { min_height = 1080 size = { width = @entries_width height = @list_1080_h } }
+			borderSize = { x = 0 y = 0 }
+			scrollbarType = "standardlistbox_slider"
+			autohide_scrollbar = yes
+			spacing = 4 #间隔像素点
+		}
+	}
+	containerWindowType = {
+		name = "megastructure_selection_window_entry"
+		size = { width = @entries_width height = @entries_height }
+		containerWindowType = {#巨构图片
+			name = "icon_frame_box"
+			size = { width = 52 height = 52 }
+			position = { x = 1 y = 32 }
+			iconType = {#图片
+				name = "icon"
+				spriteType = "GFX_technology_unknown"
+				position = { x = 0 y = 0 }
+				orientation = center
+				centerPosition = yes
+				alwaysTransparent = yes
+			}
+		}
+		background = {#边框，跟实际按钮一个图案
+			name = "megastructure_selection_window_entry_background"
+			spriteType = "GFX_button_megastructure_selection"
+			clicksound = "confirmation"
+		}
+		containerWindowType = {#巨构简介的渐变背景
+			name = "entry_bg_gradient"
+			size = { width = 100% height = 100% }
+			position = { x = 54 y = 32 }
+			background = {
+				name = "background1"
+				spriteType = "GFX_diplomacy_textbox_positive"
+			}
+			background = {
+				name = "background2"
+				spriteType = "GFX_dark_area_cut"
+			}
+		}
+		# containerWindowType = {#不知道啥玩意，也没看出来，注释算了
+		# 	name = "selected"
+		# 	size = { width = 100% height = 100% }
+		# 	background = {
+		# 		name = "selected_bg"
+		# 		spriteType = "GFX_glow_tile_orange_no_padding"
+		# 		alwaysTransparent = yes
+		# 	}
+		# }
+		containerWindowType = {#巨构名字
+			name = "name"
+			size = { width = 100% height = 30 }
+			position = { x = 1 y = 1 }
+			background = {#黑色背景
+				name = "background"
+				spriteType = "GFX_dark_area_cut_light"
+			}
+			instantTextBoxType = {#名字
+				name = "name"
+				font = "malgun_goth_24"
+				position = { x = 3 y = 3 }
+				maxWidth = 655
+				maxHeight = 27
+				fixedSize = yes
+				format = left
+				vertical_alignment = center
+				text_color_code = "H"
+			}
+		}
+		instantTextBoxType = {#巨构简介
+			name = "details"
+			font = "cg_16b"
+			position = { x = 59 y = 37 }
+			maxWidth = 595
+			maxHeight = 42
+			format = left
+			scrollbarType = "standardlistbox_slider"
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = {#花费
+			name = "cost"
+			font = "cg_16b"
+			position = { x = 1 y = 8 }
+			maxWidth = 628
+			maxHeight = 22
+			fixedSize = yes
+			format = right
+			vertical_alignment = center
+			alwaysTransparent = yes
+		}
+		buttonType = {#有效按钮，没有此按钮造不了巨构，跟边框一个图案
+			name = "button"
+			quadTextureSprite = "GFX_button_megastructure_selection"
+			position = { x = 0 y = 0 }
+			clicksound = "confirmation"
+			size = { width = @entries_width height = @entries_height }
+		}
+		iconType = {#升级效果展示
+			name = "upgrade_icon"
+			spriteType = "GFX_megastructure_upgrade_icon"
+			position = { x = -31 y = 1 }
+			orientation = upper_right
+			scale = 1.5
+		}
+	}
+}

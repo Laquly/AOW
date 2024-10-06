@@ -1,0 +1,248 @@
+entity = {
+	name = "miraculous_shipyard_msy_1_entity"
+	pdxmesh = "mega_shipyard_01_stage_1_mesh"
+	scale = 15
+	locator = { name = "core" }
+	meshsettings = {
+		name = "Mega_Shipyard021Shape"
+		index = 0
+		texture_diffuse = "necroid_01_mega_shipyard_diffuse.dds"
+		texture_normal = "necroid_01_mega_shipyard_normal.dds"
+		texture_specular = "necroid_01_mega_shipyard_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.7
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "station_main" particle = "mega_shipyard_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.0 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 6.05 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 10.3 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 14.5 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 0 node = "exhaust_1" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { trigger_once = yes sound = { soundeffect = "mega_shipyard_idle" } }
+	}
+	attach = { core = "mega_shipyard_01_hangarlights_1_entity" }
+	attach = { gimbal_machine_innerY = "mega_shipyard_01_core_effect_light_entity" }
+	attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_light_2_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_msy_2_entity"
+	pdxmesh = "mega_shipyard_01_stage_2_mesh"
+	scale = 15
+	locator = { name = "core" }
+	meshsettings = {
+		name = "Mega_Shipyard_ncl1_1Shape"
+		index = 0
+		texture_diffuse = "necroid_01_mega_shipyard_diffuse.dds"
+		texture_normal = "necroid_01_mega_shipyard_normal.dds"
+		texture_specular = "necroid_01_mega_shipyard_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.7
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "station_main" particle = "mega_shipyard_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.0 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 6.05 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 10.3 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 14.5 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 0 node = "exhaust_1" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_2" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_3" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { trigger_once = yes sound = { soundeffect = "mega_shipyard_idle" } }
+		event = { sound = { soundeffect = "mega_shipyard_metal_amb" } }
+	}
+	attach = { core = "mega_shipyard_01_hangarlights_2_entity" }
+	attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_entity" }
+	attach = { gimbal_machine_innerY = "mega_shipyard_01_core_effect_light_entity" }
+	attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_light_2_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_msy_3_entity"
+	pdxmesh = "mega_shipyard_01_stage_3_mesh"
+	scale = 15
+	locator = { name = "core" }
+	meshsettings = {
+		name = "Mega_Shipyard010Shape"
+		index = 0
+		texture_diffuse = "necroid_01_mega_shipyard_diffuse.dds"
+		texture_normal = "necroid_01_mega_shipyard_normal.dds"
+		texture_specular = "necroid_01_mega_shipyard_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.7
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "station_main" particle = "mega_shipyard_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 2.0 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 6.05 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 10.3 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 14.5 node = "station_main" particle = "mega_shipyard_core_lightning_effect" keep_particle = yes trigger_once = no sound = { soundeffect = mega_shipyard_electricity_amb } }
+		event = { time = 0 node = "exhaust_1" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_2" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_3" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_4" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_5" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_6" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "exhaust_7" particle = "mega_shipyard_core_lightning_exhaust_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 7.0 node = "core" entity = "mega_shipyard_01_light_front_1_1_entity" trigger_once = no life = 0.8	}
+		event = { time = 7.2 node = "core" entity = "mega_shipyard_01_light_front_1_2_entity" trigger_once = no life = 0.7	}
+		event = { time = 7.4 node = "core" entity = "mega_shipyard_01_light_front_1_3_entity" trigger_once = no life = 0.6	}
+		event = { time = 7.6 node = "core" entity = "mega_shipyard_01_light_front_1_4_entity" trigger_once = no life = 0.5	}
+		event = { time = 7.8 node = "core" entity = "mega_shipyard_01_light_front_1_5_entity" trigger_once = no life = 0.4	}
+		event = { time = 8.2 node = "core" entity = "mega_shipyard_01_light_front_2_1_entity" trigger_once = no life = 0.8	}
+		event = { time = 8.4 node = "core" entity = "mega_shipyard_01_light_front_2_2_entity" trigger_once = no life = 0.7	}
+		event = { time = 8.6 node = "core" entity = "mega_shipyard_01_light_front_2_3_entity" trigger_once = no life = 0.6	}
+		event = { time = 8.8 node = "core" entity = "mega_shipyard_01_light_front_2_4_entity" trigger_once = no life = 0.5	}
+		event = { time = 9.0 node = "core" entity = "mega_shipyard_01_light_front_2_5_entity" trigger_once = no life = 0.4	}
+		event = { time = 9.4 node = "core" entity = "mega_shipyard_01_light_front_3_1_entity" trigger_once = no 	life = 0.8	}
+		event = { time = 9.6 node = "core" entity = "mega_shipyard_01_light_front_3_2_entity" trigger_once = no 	life = 0.7	}
+		event = { time = 9.8 node = "core" entity = "mega_shipyard_01_light_front_3_3_entity" trigger_once = no 	life = 0.6	}
+		event = { time = 10.0 node = "core" entity = "mega_shipyard_01_light_front_3_4_entity" trigger_once = no 	life = 0.5	}
+		event = { time = 10.2 node = "core" entity = "mega_shipyard_01_light_front_3_5_entity" trigger_once = no 	life = 0.4	}
+		event = { time = 10.5 node = "lightning_charge_1" particle = "mega_shipyard_lightning_charge_2_effect" keep_particle = yes trigger_once = no }
+		event = { time = 10.60 node = "lightning_charge_s_1" particle = "mega_shipyard_lightning_charge_2_s_effect" keep_particle = yes trigger_once = no }
+		event = { time = 10.60 node = "lightning_charge_s_2" particle = "mega_shipyard_lightning_charge_2_s_effect" keep_particle = yes trigger_once = no }
+		event = { time = 11.10 node = "lightning_charge_s_3" particle = "mega_shipyard_lightning_charge_2_s_effect" keep_particle = yes trigger_once = no }
+		event = { time = 11.10 node = "lightning_charge_s_4" particle = "mega_shipyard_lightning_charge_2_s_effect" keep_particle = yes trigger_once = no }
+		event = { time = 10.55 node = "core" entity = "mega_shipyard_01_light_circle_1_entity" trigger_once = no life = 1}
+		event = { time = 10.65 node = "core" entity = "mega_shipyard_01_light_circle_2_entity" trigger_once = no life = 1}
+		event = { time = 11.15 node = "core" entity = "mega_shipyard_01_light_circle_3_entity" trigger_once = no life = 1}
+		event = { trigger_once = yes sound = { soundeffect = "mega_shipyard_idle" } }
+		event = { sound = { soundeffect = "mega_shipyard_metal_amb" } }	
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 2.1 node = "explosion_locator_01" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 2.6 node = "explosion_locator_02" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3.1 node = "explosion_locator_03" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3.4 node = "explosion_locator_04" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 4.2 node = "explosion_locator_05" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+		event = { time = 4.6 node = "explosion_locator_06" particle = "juggernaut_hull_explosion_effect" keep_particle = yes trigger_once = no }
+	}
+	attach = { core = "mega_shipyard_01_hangarlights_3_entity" }
+	attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_entity" }
+	attach = { gimbal_machine_innerY = "mega_shipyard_01_core_effect_light_entity" }
+	attach = { gimbal_machine_mid = "mega_shipyard_01_core_effect_light_2_entity" }
+}
+
+
+entity = {
+	name = "miraculous_shipyard_ring_fw_h_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "aow_ringworld_100_entity" }
+	scale = 0.5
+}
+entity = {
+	name = "miraculous_shipyard_ring_fw_v_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 90 0 } }
+	attach = { root = "miraculous_shipyard_ring_fw_h_entity" }
+}
+
+########################################################################################
+
+
+
+entity = {
+	name = "miraculous_shipyard_1_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 225 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation = { 270 0 0 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = "loc8" position = { 0 0 0 } rotation = { 315 0 0 } }
+	attach = { loc1 = "miraculous_shipyard_msy_1_entity" }
+	attach = { loc2 = "miraculous_shipyard_msy_1_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_2_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 225 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation = { 270 0 0 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = "loc8" position = { 0 0 0 } rotation = { 315 0 0 } }
+	attach = { loc3 = "miraculous_shipyard_msy_1_entity" }
+	attach = { loc4 = "miraculous_shipyard_msy_1_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "miraculous_shipyard_1_entity" }
+	attach = { root = "miraculous_shipyard_2_construction_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_3_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 225 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation = { 270 0 0 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = "loc8" position = { 0 0 0 } rotation = { 315 0 0 } }
+	attach = { loc5 = "miraculous_shipyard_msy_1_entity" }
+	attach = { loc6 = "miraculous_shipyard_msy_1_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "miraculous_shipyard_1_entity" }
+	attach = { root = "miraculous_shipyard_2_construction_entity" }
+	attach = { root = "miraculous_shipyard_3_construction_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_4_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 225 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation = { 270 0 0 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = "loc8" position = { 0 0 0 } rotation = { 315 0 0 } }
+	attach = { loc7 = "miraculous_shipyard_msy_1_entity" }
+	attach = { loc8 = "miraculous_shipyard_msy_1_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "miraculous_shipyard_1_entity" }
+	attach = { root = "miraculous_shipyard_2_construction_entity" }
+	attach = { root = "miraculous_shipyard_3_construction_entity" }
+	attach = { root = "miraculous_shipyard_4_construction_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_5_construction_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 180 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 225 0 0 } }
+	locator = { name = "loc5" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc6" position = { 0 0 0 } rotation = { 270 0 0 } }
+	locator = { name = "loc7" position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = "loc8" position = { 0 0 0 } rotation = { 315 0 0 } }
+	attach = { loc1 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc2 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc3 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc4 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc5 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc6 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc7 = "miraculous_shipyard_msy_2_entity" }
+	attach = { loc8 = "miraculous_shipyard_msy_2_entity" }
+}
+entity = {
+	name = "miraculous_shipyard_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "miraculous_shipyard_5_construction_entity" }
+}

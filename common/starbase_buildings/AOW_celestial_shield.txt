@@ -1,0 +1,101 @@
+AOW_celestial_shield = {
+    icon = "GFX_spaceport_miraculous_shipyard_uplink"
+    construction_days = 720
+    potential = {
+        exists = owner
+        owner = { has_technology = AOW_TECH_bunker_ring }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_starport_or_ring"
+            OR = {
+                has_starbase_size >= starbase_starport
+                is_orbital_ring = yes
+            }
+        }
+    }
+    station_modifier = {
+        ship_evasion_mult = 1
+        ship_weapon_range_mult = 0.50
+    }
+    triggered_station_modifier = {
+        potential = {
+            solar_system = {
+                OR = {
+                    has_megastructure = AOW_MEGA_celestial_shield_4
+                    has_megastructure = AOW_MEGA_celestial_shield_create_bunker_rings
+                }
+            }
+        }
+        ship_evasion_mult = 0.5
+        ship_weapon_damage = 0.25
+    }
+    defense_platform_modifier = {
+        ship_evasion_mult = 1
+        ship_weapon_range_mult = 0.50
+    }
+    triggered_defense_platform_modifier = {
+        potential = {
+            solar_system = {
+                OR = {
+                    has_megastructure = AOW_MEGA_celestial_shield_4
+                    has_megastructure = AOW_MEGA_celestial_shield_create_bunker_rings
+                }
+            }
+        }
+        ship_evasion_mult = 0.5
+        ship_weapon_damage = 0.25
+    }
+    triggered_system_modifier = {
+        potential = { space_owner = { has_tradition = tr_tt_wonders_3 } }
+        ship_friendly_territory_armor_mult = 0.25
+        ship_friendly_territory_shield_mult = 0.25
+        ship_friendly_territory_fire_rate_mult = 0.5
+    }
+    show_in_tech = "AOW_TECH_bunker_ring"
+    ai_weight = { weight = 1500 }
+    resources = {
+        category = starbase_buildings
+        cost = {
+            energy = 1000
+            alloys = 1000
+            sr_dark_matter = 100
+        }
+        upkeep = {
+            energy = 25
+            alloys = 25
+            sr_dark_matter = 10
+        }
+    }
+}
+
+AOW_heaven_navigation_bureau = {
+    icon = "GFX_spaceport_miraculous_shipyard_uplink"
+    construction_days = 720
+    potential = {
+        exists = owner
+        owner = { has_technology = AOW_TECH_heaven_navigation_bureau }
+    }
+    possible = {
+        solar_system = {
+            has_megastructure = AOW_MEGA_heaven_navigation_bureau_5
+        }
+    }
+    system_modifier = {
+        ship_ftl_jumpdrive_range_mult = 1
+        ship_jumpdrive_cooldown_mult = -0.5
+    }
+    show_in_tech = "AOW_TECH_heaven_navigation_bureau"
+    ai_weight = { weight = 1500 }
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 500
+            sr_dark_matter = 50
+        }
+        upkeep = {
+            energy = 25
+            sr_dark_matter = 5
+        }
+    }
+}

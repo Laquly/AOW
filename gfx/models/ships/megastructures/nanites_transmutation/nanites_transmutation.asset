@@ -1,0 +1,16 @@
+entity = {
+	name = "nanites_transmutation_1_entity"
+	cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "gatebuilder_01_space_station_section_entity" }
+	scale = 1
+}
+entity = {
+	name = "nanites_transmutation_2_entity"
+	cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 0 0 } rotation = { 45 0 0 } }
+	attach = { "loc101" = "gatebuilder_01_space_station_section_entity" }
+	attach = { "loc102" = "gatebuilder_01_space_station_section_entity" }
+	scale = 1
+}

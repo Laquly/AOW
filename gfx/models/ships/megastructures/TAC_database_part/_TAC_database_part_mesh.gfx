@@ -1,0 +1,6 @@
+objectTypes = {
+	pdxmesh = {
+		name = "TAC_database_part_mesh"
+		file = "gfx/models/ships/megastructures/TAC_database_part/TAC_database_part.mesh"
+	}
+}

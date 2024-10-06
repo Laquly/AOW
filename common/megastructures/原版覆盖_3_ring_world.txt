@@ -1,0 +1,553 @@
+ring_world_1 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_RING_WORLD"
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 5000
+			influence = 300
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = tech_matter_decompressor
+		category = megastructures
+		alloys = 5000
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "tech_ring_world" }
+	potential = {
+		AOW_trigger_mega_potential = { KEY = ring_world_1 }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_ring_world_1 } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#星系已经存在有环世界
+			fail_text = "AOW_mega_requires_SSTM_no_ring_world_1"
+			AOW_trgr_SSTM_has_ring_world_1 = no
+		}
+		if = {
+			limit = {
+				from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+			}
+			custom_tooltip = {#必须是单恒星星系
+				fail_text = "AOW_mega_requires_SSTM_single_star"
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+			custom_tooltip = {#不能有宜居星球
+				fail_text = "requires_no_habitable_planets"
+				AOW_trgr_SSTM_has_habitable_planets = no
+			}
+			custom_tooltip = {#不能有建造在非恒星上的巨构
+				fail_text = "AOW_mega_requires_SSTM_no_planetary_megastructure"
+				AOW_trgr_SSTM_non_star_has_megastructure = no
+			}
+			custom_tooltip = {#不能建造在肃正星系
+				fail_text = "AOW_mega_requires_SSTM_no_ai_system"
+				NOT = { has_star_flag = AI_hub }
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_planets_for_material"
+				solar_system = { any_system_planet = { NOT = { is_star = yes } } }
+			}
+			if = {
+				limit = { has_global_flag = has_real_space_mod }
+				custom_tooltip = {
+					fail_text = "AOW_mega_requires_PLNT_no_Collapsar"
+					NOT = { is_planet_class = pc_collapsar }
+				}
+			}
+			if = {#如果是黑洞，则需要归墟
+				limit = { is_planet_class = pc_black_hole }
+				custom_tooltip = {
+					fail_text = "requires_no_black_hole"
+					solar_system = {
+						any_system_megastructure = {
+							exists = planet
+							planet = { is_same_value = prevprevprev }
+							OR = {
+								is_megastructure_type = AOW_MEGA_void_vortex_1
+								is_megastructure_type = AOW_MEGA_void_vortex_2
+								is_megastructure_type = AOW_MEGA_void_vortex_3
+								is_megastructure_type = AOW_MEGA_void_vortex_4
+								is_megastructure_type = AOW_MEGA_void_vortex_5
+								is_megastructure_type = AOW_MEGA_void_vortex_6
+								is_megastructure_type = AOW_MEGA_void_vortex_restored
+								is_megastructure_type = AOW_MEGA_void_vortex_restored_x
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+				}
+				custom_tooltip = {#放置处不能有巨构
+					fail_text = "requires_no_existing_megastructure"
+					AOW_trgr_PLNT_existing_megastructure = no
+				}
+			}
+		}
+	}
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_ai_habitat_mega_cap = {
+			key = ring_world_1
+			planet = pc_ringworld_habitable
+			constructing = ring_world_1
+		}
+	}
+	on_build_complete = {
+		set_star_flag = ring_world_built
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+		AOW_eft_SSTM_set_planet_flag_has_megastructure = yes #如果有会移除行星的巨构，则该星系不能再在行星上建造巨构了
+	}
+}
+
+# Temporarily used for creating specific habitable or structural sections.
+ring_world_2_intermediate = {
+	entity = ""
+	construction_entity = "ringworld_seam_entity_01_full_entity"
+	portrait = "GFX_megastructure_construction_background"
+
+	build_time = 4800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+		}
+	}
+
+	upgrade_from = {
+		ring_world_1
+	}
+	prerequisites = { "tech_ring_world" }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		if = {
+			limit = {
+				from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
+			}
+			AOW_eft_SSTM_empty_system = yes
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { planet_size > 25 }
+				set_planet_size = 25
+			}
+		}
+		remove_megastructure = fromfrom
+		spawn_megastructure = {
+			name = "NAME_Ring_Section_A"
+			type = "ring_world_2"
+			orbit_angle = 0
+			orbit_distance = 45
+			owner = from
+			graphical_culture = fromfrom
+		}
+		spawn_megastructure = {
+			name = "NAME_Ring_Section_B"
+			type = "ring_world_2"
+			orbit_angle = 90
+			orbit_distance = 45
+			owner = from
+			graphical_culture = fromfrom
+		}
+		spawn_megastructure = {
+			name = "NAME_Ring_Section_C"
+			type = "ring_world_2"
+			orbit_angle = 180
+			orbit_distance = 45
+			owner = from
+			graphical_culture = fromfrom
+		}
+		spawn_megastructure = {
+			name = "NAME_Ring_Section_D"
+			type = "ring_world_2"
+			orbit_angle = 270
+			orbit_distance = 45
+			owner = from
+			graphical_culture = fromfrom
+		}
+	}
+}
+ring_world_2 = {
+	entity = "ringworld_3x_seams_entity"
+	portrait = "GFX_megastructure_construction_background"
+	resources = {
+		category = megastructures
+	}
+	upgrade_from = {
+		ring_world_2_intermediate
+	}
+	# used from script only
+	upgrade_desc = hide
+	potential = { always = no }
+}
+ring_world_3_intermediate = {
+	entity = ""
+	construction_entity = "ringworld_phase_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+		}
+	}
+
+	upgrade_from = {
+		ring_world_2
+	}
+
+	prerequisites = { "tech_ring_world" }
+	show_prereqs = yes
+	prereq_name = "RING_WORLD_SHOW_NAME"
+
+	on_build_complete = {
+		spawn_planet = {
+			class = "pc_ringworld_tech"
+			location = fromfrom
+			orbit_angle_offset = 30
+			init_effect = {
+				set_name = "NAME_Ring_Section"
+				set_planet_entity = {
+					entity = "ringworld_tech_entity_01_entity"
+					graphical_culture = fromfrom
+				}
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				set_planet_flag = megastructure
+			}
+		}
+		spawn_planet = {
+			class = "pc_ringworld_seam"
+			location = fromfrom
+			init_effect = {
+				set_name = "NAME_Ring_Section"
+				set_planet_entity = {
+					entity = "ringworld_seam_entity_01_entity"
+					graphical_culture = fromfrom
+				}
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				set_planet_flag = megastructure
+			}
+		}
+		spawn_planet = {
+			class = "pc_ringworld_habitable"
+			location = fromfrom
+			orbit_angle_offset = -30
+			init_effect = {
+				set_name = "NAME_Habitable_Section_A"
+				set_planet_entity = {
+					entity = "ringworld_habitable_entity_01_entity"
+					graphical_culture = fromfrom
+				}
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				clear_blockers = yes
+				save_event_target_as = ring_section
+				trigger_megastructure_icon = yes
+				set_planet_flag = megastructure
+			}
+		}
+		#fromfrom.planet = { set_planet_flag = has_megastructure }
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+		}
+		remove_megastructure = fromfrom
+		if = {
+			limit = { any_system_megastructure = { is_megastructure_type = ring_world_2 } }
+			from = { country_event = { id = AOW_evt_ring_world.102 } }
+		}
+		else_if = {
+			limit = { NOT = { any_system_megastructure = { is_megastructure_type = ring_world_2 } } }
+			from = { country_event = { id = AOW_evt_ring_world.103 } }
+		}
+		if = {
+			limit = {
+				NOT = { has_star_flag = ring_section_1 }
+			}
+			set_star_flag = ring_section_1
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_A" }
+			break = yes
+		}
+		if = {
+			limit = {
+				has_star_flag = ring_section_1
+				NOT = { has_star_flag = ring_section_2 }
+			}
+			set_star_flag = ring_section_2
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_B" }
+			break = yes
+		}
+		if = {
+			limit = {
+				has_star_flag = ring_section_2
+				NOT = { has_star_flag = ring_section_3 }
+			}
+			set_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
+			break = yes
+		}
+		if = {
+			limit = { has_star_flag = ring_section_3 }
+			remove_star_flag = ring_section_1
+			remove_star_flag = ring_section_2
+			remove_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			break = yes
+		}
+	}
+}
+
+# Ruined Ring World Segment
+ring_world_ruined = {
+	entity = "ringworld_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	potential = { always = no }
+}
+
+# Restored Ring World Segment
+ring_world_restored = {
+	entity = ""
+	construction_entity = "ringworld_phase_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+		}
+	}
+	upgrade_from = { ring_world_ruined }
+	possible = { from = { has_technology = tech_mega_engineering } }
+	ai_weight = {
+		weight = 300
+		modifier = {
+			weight = 0
+			from = { is_country_type = fallen_empire }
+		}
+	}
+	on_build_start = {
+		fromfrom = {
+			set_graphical_culture = root.from
+		}
+	}
+	on_build_complete = {
+		every_system_ambient_object = {
+			limit = {
+				OR = {
+					is_ambient_object_type = large_debris_object
+					is_ambient_object_type = medium_debris_01_object
+					is_ambient_object_type = medium_debris_02_object
+					is_ambient_object_type = small_debris_object
+				}
+			}
+			destroy_ambient_object = this
+		}
+		if = { #傻逼蠢驴，破碎环世界起源的环世界非得是歪的，害得老子必须适配一下
+			limit = { has_star_flag = empire_home_system }
+			spawn_planet = {
+				class = "pc_ringworld_tech"
+				location = fromfrom
+				orbit_angle_offset = -30
+				init_effect = {
+					set_name = "NAME_Ring_Section"
+					set_planet_entity = {
+						entity = "ringworld_tech_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					set_planet_flag = megastructure
+				}
+			}
+			spawn_planet = {
+				class = "pc_ringworld_seam"
+				location = fromfrom
+				init_effect = {
+					set_name = "NAME_Ring_Section"
+					set_planet_entity = {
+						entity = "ringworld_seam_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					set_planet_flag = megastructure
+				}
+			}
+			spawn_planet = {
+				class = "pc_ringworld_habitable"
+				location = fromfrom
+				orbit_angle_offset = 30
+				init_effect = {
+					set_name = "NAME_Habitable_Section_A"
+					set_planet_entity = {
+						entity = "ringworld_habitable_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					clear_blockers = yes
+					save_event_target_as = ring_section
+					trigger_megastructure_icon = yes
+					set_planet_flag = megastructure
+				}
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_star_flag = empire_home_system } }
+			spawn_planet = {
+				class = "pc_ringworld_tech"
+				location = fromfrom
+				orbit_angle_offset = 30
+				init_effect = {
+					set_name = "NAME_Ring_Section"
+					set_planet_entity = {
+						entity = "ringworld_tech_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					set_planet_flag = megastructure
+				}
+			}
+			spawn_planet = {
+				class = "pc_ringworld_seam"
+				location = fromfrom
+				init_effect = {
+					set_name = "NAME_Ring_Section"
+					set_planet_entity = {
+						entity = "ringworld_seam_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					set_planet_flag = megastructure
+				}
+			}
+			spawn_planet = {
+				class = "pc_ringworld_habitable"
+				location = fromfrom
+				orbit_angle_offset = -30
+				init_effect = {
+					set_name = "NAME_Habitable_Section_A"
+					set_planet_entity = {
+						entity = "ringworld_habitable_entity_01_entity"
+						graphical_culture = fromfrom
+					}
+					set_surveyed = {
+						surveyed = yes
+						surveyor = FROM
+					}
+					set_all_comms_surveyed = yes
+					clear_blockers = yes
+					save_event_target_as = ring_section
+					trigger_megastructure_icon = yes
+					set_planet_flag = megastructure
+				}
+			}
+		}
+		remove_megastructure = fromfrom
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = utopia.2017 }
+		}
+		if = {
+			limit = {
+				NOT = { has_star_flag = ring_section_1 }
+			}
+			set_star_flag = ring_section_1
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_A" }
+			break = yes
+		}
+		if = {
+			limit = {
+				has_star_flag = ring_section_1
+				NOT = { has_star_flag = ring_section_2 }
+			}
+			set_star_flag = ring_section_2
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_B" }
+			break = yes
+		}
+		if = {
+			limit = {
+				has_star_flag = ring_section_2
+				NOT = { has_star_flag = ring_section_3 }
+			}
+			set_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
+			break = yes
+		}
+		if = {
+			limit = { has_star_flag = ring_section_3 }
+			remove_star_flag = ring_section_1
+			remove_star_flag = ring_section_2
+			remove_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			break = yes
+		}
+	}
+}

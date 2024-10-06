@@ -1,0 +1,130 @@
+@AOW_st_power_5 = 3200
+@AOW_st_power_6 = 4200
+
+@AOW_st_cost_5 = 448
+@AOW_st_cost_6 = 592
+
+utility_component_template = {
+	key = "AOW_ST_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @AOW_st_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @AOW_st_cost_5
+		}
+		upkeep = {
+			energy = 4.56
+			alloys = 0.456
+		}
+	}
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { AOW_shipsize_star_transfer }
+	upgrades_to = "AOW_ST_DARK_MATTER_REACTOR"
+	ai_weight = { weight = 5 }
+}
+utility_component_template = {
+	key = "AOW_ST_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @AOW_st_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @AOW_st_cost_6
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 5.93
+			alloys = 0.593
+		}
+	}
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { AOW_shipsize_star_transfer }
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}
+
+@titan_power_4 = -400
+@titan_power_5 = -480
+
+@titan_cost4 = 192
+@titan_cost5 = 240
+
+utility_component_template = {
+	key = "AOW_ST_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @titan_power_4
+	resources = {
+		category = ship_components
+		cost = { alloys = @titan_cost4 }
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 3
+	}
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { AOW_shipsize_star_transfer }
+	upgrades_to = "AOW_ST_SHIP_THRUSTER_5"
+	ai_weight = { weight = 4 }
+}
+utility_component_template = {
+	key = "AOW_ST_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @titan_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titan_cost4
+			sr_dark_matter = 16
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 4
+	}
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { AOW_shipsize_star_transfer }
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}
+
+#天体轨道部署系统
+weapon_component_template = { # World Cracker
+	key = "AOW_PLANET_KILLER_celestial_orbit_deployment_system"
+	size = planet_killer
+	type = planet_killer
+	use_ship_kill_target = no
+	valid_for_country = { has_technology = AOW_TECH_star_transfer }
+	icon = GFX_ship_part_celestial_orbit_deployment_system
+	icon_frame = 1
+	power = -1000
+	windup = { min = 0 max = 0 }
+	damage = { min = 0 max = 0 }
+	total_fire_time = 0
+	size_restriction = { AOW_shipsize_star_transfer }
+	component_set = "AOW_PLANET_KILLER_celestial_orbit_deployment_system"
+	planet_destruction_gfx = "global_pacifier_gfx"
+	ai_weight = { factor = 9999 }
+}

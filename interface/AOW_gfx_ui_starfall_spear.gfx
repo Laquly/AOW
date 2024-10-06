@@ -1,0 +1,39 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_bg"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_title_bg"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_title_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_mode"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_mode.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_center"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_left_down"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_down.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_left_up"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_up.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_right_down"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_down.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_right_up"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_up.dds"
+	}
+
+	spriteType = {
+		name = "AOW_button_starfall_spear_tutorial_bg"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_tutorial_bg.dds"
+	}
+}

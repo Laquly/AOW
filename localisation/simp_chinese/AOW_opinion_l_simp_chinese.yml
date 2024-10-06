@@ -1,0 +1,37 @@
+﻿l_simp_chinese:
+
+ AOW_opinion_super_weapon_builder:0 "超级武器建造者"
+
+ AOW_opinion_isolated_my_system:0"孤立了我们的星系"
+
+ triggered_AOW_opinion_starfall_spear_unlimited:0"无限制使用$AOW_MEGA_starfall_spear$的疯子"
+ triggered_AOW_opinion_starfall_spear_hostility:0"仅战争期间使用$AOW_MEGA_starfall_spear$的强者"
+ triggered_AOW_opinion_starfall_spear_no_first_use:0"不首先使用$AOW_MEGA_starfall_spear$的和平保卫者"
+
+ AOW_opinion_swept_my_planet:0"灭杀了我们的殖民地"
+ AOW_opinion_swept_a_planet:0"灭杀了一个殖民地"
+ AOW_opinion_swept_a_primitive_planet:0"灭杀了一个土著星球"
+
+ AOW_opinion_shook_my_planet:0"震荡了我们的殖民地"
+ AOW_opinion_shook_a_planet:0"震荡了一个殖民地"
+ AOW_opinion_shook_a_primitive_planet:0"震荡了一个土著星球"
+ AOW_opinion_shook_my_system:0"震荡了我们的星系"
+ AOW_opinion_shook_a_system:0"震荡了一个星系"
+
+ AOW_opinion_destroyed_my_planet:0"摧毁了我们的殖民地"
+ AOW_opinion_destroyed_a_planet:0"摧毁了一个殖民地"
+ AOW_opinion_destroyed_a_primitive_planet:0"摧毁了一个土著星球"
+ AOW_opinion_destroyed_my_system:0"摧毁了我们的星系"
+ AOW_opinion_destroyed_a_system:0"摧毁了一个星系"
+
+ AOW_opinion_melted_my_planet:0"熔融了我们的殖民地"
+ AOW_opinion_melted_a_planet:0"熔融了一个殖民地"
+ AOW_opinion_melted_a_primitive_planet:0"熔融了一个土著星球"
+ AOW_opinion_melted_my_system:0"熔融了我们的星系"
+ AOW_opinion_melted_a_system:0"熔融了一个星系"
+
+ AOW_opinion_sacrificed_my_planet:0"献祭了我们的殖民地"
+ AOW_opinion_sacrificed_a_planet:0"献祭了一个殖民地"
+ AOW_opinion_sacrificed_a_primitive_planet:0"献祭了一个土著星球"
+ AOW_opinion_sacrificed_my_system:0"献祭了我们的星系"
+ AOW_opinion_sacrificed_a_system:0"献祭了一个星系"

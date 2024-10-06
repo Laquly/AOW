@@ -1,0 +1,50 @@
+spawn_habitat_cracker_effect = {
+    #this: pc_habitat
+    create_ambient_object = {#爆炸特效
+        location = this
+        type = habitat_cracker_object
+        duration = 5
+        use_3d_location = yes
+        base_angle_towards = star
+        entity_face_object = star
+        entity_offset = { min = 0 max = 0 }
+        entity_scale_to_size = yes
+        scale = 0.10
+    }#爆炸特效
+    save_event_target_as = target_habitat
+    solar_system = {
+        random_system_planet = {
+            limit = {
+                OR = {
+                    has_planet_flag = habitat@event_target:target_habitat
+                    has_planet_flag = habitat_build_site
+                }
+            }
+            remove_planet_flag = habitat@event_target:target_habitat
+            save_event_target_as = target_planet
+        }
+        spawn_megastructure = {
+            type = habitat_central_complex_ruined
+            owner = this.owner
+            coords_from = PREV
+            planet = event_target:target_planet
+        }
+        every_fleet_in_system = {
+            limit = {
+                is_ship_class = shipclass_habitat_station
+            }
+            orbit = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_planet_flag = habitat_build_site
+                        }
+                    }
+                    remove_planet_flag = has_megastructure
+                }
+            }
+            delete_fleet = this
+        }
+    }
+    remove_planet = yes
+}

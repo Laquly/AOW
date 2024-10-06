@@ -1,0 +1,67 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {
+	name = "wonder_construction_bureau_a_entity"
+	pdxmesh = "stations2_mesh"
+	cull_radius = 500.0
+	scale = 0.6
+}
+entity = {
+	name = "wonder_construction_bureau_b_entity"
+	locator = { name = "root" position = { 120 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "wonder_construction_bureau_a_entity" }
+}
+entity = {
+	name = "wonder_construction_bureau_1_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "wonder_construction_bureau_a_entity" }
+}
+entity = {
+	name = "wonder_construction_bureau_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = 0.5 }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 180 0 0 } scale = 0.5 }
+	attach = { root = "wonder_construction_bureau_a_entity" }
+	attach = { loc1 = "wonder_construction_bureau_b_entity" }
+	attach = { loc3 = "wonder_construction_bureau_b_entity" }
+}
+entity = {
+	name = "wonder_construction_bureau_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } scale = 0.5 }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 90 0 0 } scale = 0.5 }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 180 0 0 } scale = 0.5 }
+	locator = { name = "loc4" position = { 0 0 0 } rotation = { 270 0 0 } scale = 0.5 }
+	attach = { root = "wonder_construction_bureau_a_entity" }
+	attach = { loc1 = "wonder_construction_bureau_b_entity" }
+	attach = { loc2 = "wonder_construction_bureau_b_entity" }
+	attach = { loc3 = "wonder_construction_bureau_b_entity" }
+	attach = { loc4 = "wonder_construction_bureau_b_entity" }
+}
+entity = {
+	name = "wonder_construction_bureau_01_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = wonder_construction_bureau_1_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+}
+entity = {
+	name = "wonder_construction_bureau_02_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = wonder_construction_bureau_2_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+}
+entity = {
+	name = "wonder_construction_bureau_03_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = wonder_construction_bureau_3_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+}

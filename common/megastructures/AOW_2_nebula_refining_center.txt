@@ -1,0 +1,366 @@
+AOW_MEGA_nebula_refining_center_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_NRC_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET_INSIDE_NEBULA"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_0_COST_alloys
+			unity = @AOW_var_NRC_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	potential = { AOW_trigger_mega_potential = { KEY = nebula_refining_center } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_nebula_refining_center } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#必须建造在星云内
+			fail_text = "AOW_mega_requires_SSTM_inside_nebula"
+			OR = {
+				is_inside_nebula = yes
+				is_star_class = sc_p_purple
+				is_star_class = sc_p_green
+				is_star_class = sc_p_red
+			}
+		}
+		custom_tooltip = {#一个星系只能建造一个
+			fail_text = "AOW_mega_requires_SSTM_no_nebula_refining_center"
+			NOR = {
+				has_megastructure = AOW_MEGA_nebula_refining_center_0
+				has_megastructure = AOW_MEGA_nebula_refining_center_1
+				has_megastructure = AOW_MEGA_nebula_refining_center_2
+				has_megastructure = AOW_MEGA_nebula_refining_center_3
+				has_megastructure = AOW_MEGA_nebula_refining_center_4
+				has_megastructure = AOW_MEGA_nebula_refining_center_5
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {#不能是宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是卫星或小行星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = nebula_refining_center
+			constructing = AOW_MEGA_nebula_refining_center_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1040 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_nebula_refining_center_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_nebula_refining_center_1 = {
+	entity = "nebula_refining_center_1_entity"
+	construction_entity = "nebula_refining_center_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_NRC_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_1_COST_alloys
+			unity = @AOW_var_NRC_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_1_UPKP_energy
+		}
+		produces = {
+			minerals = @AOW_var_NRC_1_PRDC_minerals
+			volatile_motes = @AOW_var_NRC_1_PRDC_sr
+			exotic_gases = @AOW_var_NRC_1_PRDC_sr
+			rare_crystals = @AOW_var_NRC_1_PRDC_sr
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = @AOW_var_NRC_1_PRDC_zro
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = @AOW_var_NRC_1_PRDC_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	upgrade_from = { AOW_MEGA_nebula_refining_center_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1041 } }
+	}
+}
+AOW_MEGA_nebula_refining_center_2 = {
+	entity = "nebula_refining_center_2_entity"
+	construction_entity = "nebula_refining_center_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_NRC_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_2_COST_alloys
+			unity = @AOW_var_NRC_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_2_UPKP_energy
+		}
+		produces = {
+			minerals = @AOW_var_NRC_2_PRDC_minerals
+			volatile_motes = @AOW_var_NRC_2_PRDC_sr
+			exotic_gases = @AOW_var_NRC_2_PRDC_sr
+			rare_crystals = @AOW_var_NRC_2_PRDC_sr
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = @AOW_var_NRC_2_PRDC_zro
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = @AOW_var_NRC_2_PRDC_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	upgrade_from = { AOW_MEGA_nebula_refining_center_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1042 } }
+	}
+}
+AOW_MEGA_nebula_refining_center_3 = {
+	entity = "nebula_refining_center_3_entity"
+	construction_entity = "nebula_refining_center_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_NRC_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_3_COST_alloys
+			unity = @AOW_var_NRC_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_3_UPKP_energy
+		}
+		produces = {
+			minerals = @AOW_var_NRC_3_PRDC_minerals
+			volatile_motes = @AOW_var_NRC_3_PRDC_sr
+			exotic_gases = @AOW_var_NRC_3_PRDC_sr
+			rare_crystals = @AOW_var_NRC_3_PRDC_sr
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = @AOW_var_NRC_3_PRDC_zro
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = @AOW_var_NRC_3_PRDC_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	upgrade_from = { AOW_MEGA_nebula_refining_center_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1043 } }
+	}
+}
+AOW_MEGA_nebula_refining_center_4 = {
+	entity = "nebula_refining_center_4_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_NRC_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_4_COST_alloys
+			unity = @AOW_var_NRC_4_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_4_UPKP_energy
+		}
+		produces = {
+			minerals = @AOW_var_NRC_4_PRDC_minerals
+			volatile_motes = @AOW_var_NRC_4_PRDC_sr
+			exotic_gases = @AOW_var_NRC_4_PRDC_sr
+			rare_crystals = @AOW_var_NRC_4_PRDC_sr
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = @AOW_var_NRC_4_PRDC_zro
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = @AOW_var_NRC_4_PRDC_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	upgrade_from = { AOW_MEGA_nebula_refining_center_3 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1044 } }
+	}
+}
+AOW_MEGA_nebula_refining_center_5 = {
+	entity = "nebula_refining_center_5_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_nebula_refining_center_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_NRC_5_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_NRC_5_COST_alloys
+			unity = @AOW_var_NRC_5_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_NRC_5_UPKP_energy
+		}
+		produces = {
+			minerals = @AOW_var_NRC_5_PRDC_minerals
+			volatile_motes = @AOW_var_NRC_5_PRDC_sr
+			exotic_gases = @AOW_var_NRC_5_PRDC_sr
+			rare_crystals = @AOW_var_NRC_5_PRDC_sr
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = @AOW_var_NRC_5_PRDC_zro
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = @AOW_var_NRC_5_PRDC_darkmatter
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_nebula_refining_center
+		category = megastructures
+		alloys = @AOW_var_NRC_5_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_nebula_refining_center" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_nebula_refining_center_4 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1045 }
+			set_country_flag = has_built_or_repaired_megastructure
+		}
+	}
+}

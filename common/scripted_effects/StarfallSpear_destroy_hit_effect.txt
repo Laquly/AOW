@@ -1,0 +1,30 @@
+AOW_eft_SSTM_destroy_all_hit_effect = {
+	every_system_ambient_object = {
+		limit = {
+			OR = {
+				is_ambient_object_type = AOW_ao_starfall_spear_o_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_b_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_a_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_f_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_g_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_k_system_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_m_system_hit_effect
+
+				is_ambient_object_type = AOW_ao_starfall_spear_o_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_b_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_a_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_f_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_g_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_k_planet_hit_effect
+				is_ambient_object_type = AOW_ao_starfall_spear_m_planet_hit_effect
+			}
+		}
+		destroy_ambient_object = this
+	}
+}
+AOW_eft_SSTM_destroy_starfall_spear_hit_effect = {
+	every_system_ambient_object = {
+		limit = { has_ambient_object_flag = AOW_flag_AO_starfall_spear_@event_target:AOW_tgt_MEGA_starfall_spear }
+		destroy_ambient_object = this
+	}
+}

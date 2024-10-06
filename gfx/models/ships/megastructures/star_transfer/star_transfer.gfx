@@ -1,0 +1,15 @@
+objectTypes = {
+	pdxmesh = {
+		name = "st_auxiliary_mesh"
+		file = "gfx/models/ships/megastructures/star_transfer/st_auxiliary.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "main_bodyShape"
+			index = 0
+			texture_diffuse = "st_auxiliary_diffuse.dds"
+			texture_normal = "necroid_01_military_station_normal.dds"
+			texture_specular = "necroid_01_military_station_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

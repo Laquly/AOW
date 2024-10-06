@@ -1,0 +1,62 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {
+	name = "cemetery_of_martyrs_0_entity"
+	pdxmesh = "eventship_08_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	scale = 3
+}
+entity = {
+	name = "cemetery_of_martyrs_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	scale = 0.7
+}
+
+#################################################################
+
+entity = {
+	name = "cemetery_of_martyrs_01_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 -90 0 } }
+	attach = { loc1 = "cemetery_of_martyrs_0_entity" }
+}
+entity = {
+	name = "cemetery_of_martyrs_02_construction_entity"
+	locator = { name = "loc1" position = { 0 5 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc2" position = { 0 20 0 } rotation = { 0 0 90 } scale = 0.75 }
+	attach = { loc1 = "cemetery_of_martyrs_ring_entity" }
+	attach = { loc2 = "cemetery_of_martyrs_ring_entity" }
+}
+entity = {
+	name = "cemetery_of_martyrs_02_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "cemetery_of_martyrs_01_entity" }
+	attach = { loc1 = "cemetery_of_martyrs_02_construction_entity" }
+}
+entity = {
+	name = "cemetery_of_martyrs_03_construction_entity"
+	locator = { name = "loc1" position = { 80 5 80 } rotation = { 0 -90 0 } }
+	locator = { name = "loc2" position = { -80 5 -80 } rotation = { 0 -90 0 } }
+	locator = { name = "loc3" position = { -80 5 80 } rotation = { 0 -90 0 } }
+	locator = { name = "loc4" position = { 80 5 -80 } rotation = { 0 -90 0 } }
+	attach = { loc1 = "cemetery_of_martyrs_0_entity" }
+	attach = { loc2 = "cemetery_of_martyrs_0_entity" }
+	attach = { loc3 = "cemetery_of_martyrs_0_entity" }
+	attach = { loc4 = "cemetery_of_martyrs_0_entity" }
+	scale = 0.35
+}
+entity = {
+	name = "cemetery_of_martyrs_03_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "cemetery_of_martyrs_01_entity" }
+	attach = { loc1 = "cemetery_of_martyrs_02_construction_entity" }
+	attach = { loc1 = "cemetery_of_martyrs_03_construction_entity" }
+}

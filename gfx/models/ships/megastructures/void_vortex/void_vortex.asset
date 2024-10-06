@@ -1,0 +1,176 @@
+@void_vortex_scale = 1.8
+entity = {
+	name = "void_vortex_ring"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	scale = 0.4
+}
+entity = {
+	name = "void_vortex_ring_entity"
+	locator = { name = "locator1" position = { 0 0 0 } rotation ={ 90 90 0 } }
+	attach = { locator1 = "void_vortex_ring" }
+	scale = 1
+}
+entity = {
+	name = "void_vortex_destroyed_entity"
+	pdxmesh = "dyson_sphere_destroyed_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_destroyed" stop_on_state_change = yes } }
+	}
+	meshsettings = {
+		name = "bodyShape"
+		index = 0
+		texture_diffuse = "dyson_sphere_destroyed_01_diffuse.dds"
+		texture_normal = "dyson_sphere_destroyed_01_normal.dds"
+		texture_specular = "dyson_sphere_destroyed_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+
+
+
+entity = {
+	name = "void_vortex_frame_entity"
+	pdxmesh = "dyson_sphere_frame_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_treble_hum" } }
+	}
+	meshsettings = {
+		name = "frame1Shape"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+entity = {
+	name = "void_vortex_1_entity"
+	pdxmesh = "dyson_sphere_part_1_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder26|pCylinderShape2"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "void_vortex_2_entity"
+	pdxmesh = "dyson_sphere_part_2_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder11|pCylinderShape11"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "void_vortex_3_entity"
+	pdxmesh = "dyson_sphere_part_3_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder22|pCylinderShape22"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "void_vortex_4_entity"
+	pdxmesh = "dyson_sphere_part_4_mesh"
+	scale = @void_vortex_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		event = { time = 0 particle = "dyson_sphere_electricity_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum" } }
+	}
+	meshsettings = {
+		name = "pCylinder15|pCylinderShape1"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+
+
+
+entity = {
+	name = "void_vortex_01_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+}
+entity = {
+	name = "void_vortex_02_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+	attach = { "root" = "void_vortex_1_entity" }
+}
+entity = {
+	name = "void_vortex_03_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+	attach = { "root" = "void_vortex_1_entity" }
+	attach = { "root" = "void_vortex_2_entity" }
+}
+entity = {
+	name = "void_vortex_04_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+	attach = { "root" = "void_vortex_1_entity" }
+	attach = { "root" = "void_vortex_2_entity" }
+	attach = { "root" = "void_vortex_3_entity" }
+}
+entity = {
+	name = "void_vortex_05_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+	attach = { "root" = "void_vortex_1_entity" }
+	attach = { "root" = "void_vortex_2_entity" }
+	attach = { "root" = "void_vortex_3_entity" }
+	attach = { "root" = "void_vortex_4_entity" }
+}
+entity = {
+	name = "void_vortex_06_construction_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_ring_entity" }
+}
+entity = {
+	name = "void_vortex_06_entity"
+	locator = { name = "root" position = { 0 0 0 } }
+	attach = { "root" = "void_vortex_frame_entity" }
+	attach = { "root" = "void_vortex_1_entity" }
+	attach = { "root" = "void_vortex_2_entity" }
+	attach = { "root" = "void_vortex_3_entity" }
+	attach = { "root" = "void_vortex_4_entity" }
+	attach = { "root" = "void_vortex_06_construction_entity" }
+}

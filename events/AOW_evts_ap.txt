@@ -1,0 +1,56 @@
+#关于飞升的事件
+
+namespace = AOW_ap
+
+country_event = {
+	id = AOW_ap.0
+	title = AOW_ap.0.name
+	desc = AOW_ap.0.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_ringworld_build_start
+
+	option = {
+		name = "AOW_ap.0.a"
+		add_research_option = AOW_TECH_multidimensional_space_channel
+	}
+}
+country_event = {
+	id = AOW_ap.1
+	title = AOW_ap.1.name
+	desc = AOW_ap.1.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_multi_dimensional
+	show_sound = event_mega_structure_other_empire_build_complete
+	trigger = {
+		last_increased_tech = "AOW_TECH_multidimensional_space_channel"
+	}
+	option = {
+		name = AOW_ap.1.a
+		add_research_option = AOW_TECH_multi_dimensional_warehouse
+		#都可以跨越多维空间了，即便没发现野生星门，怎么还不能自己造出星门？
+		if = {
+			limit = { NOT = { has_technology = tech_gateway_construction } }
+			give_technology = { tech = tech_gateway_construction }
+		}
+		if = {
+			limit = { NOT = { has_technology = tech_gateway_activation } }
+			give_technology = { tech = tech_gateway_activation }
+		}
+	}
+}
+
+
+country_event = {
+	id = AOW_ap.10
+	title = AOW_ap.10.name
+	desc = AOW_ap.10.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_ringworld_build_start
+
+	option = {
+		name = "AOW_ap.10.a"
+		add_research_option = AOW_TECH_multidimensional_space_channel
+	}
+}

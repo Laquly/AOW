@@ -1,0 +1,69 @@
+﻿l_english:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_celestial_shield:0"$AOW_MEGA_celestial_shield$"
+ AOW_TECH_celestial_shield_desc:0"A powerful super defense system, in addition to meeting domestic defense needs, also uses the construction of Bunker Rings to resist long-range strikes from $AOW_MEGA_starfall_spear$."
+ AOW_TECH_bunker_ring:0"Bunker Ring"
+ AOW_TECH_bunker_ring_desc:0"Transforming the bunker star ring of $AOW_MEGA_celestial_shield$ into a defense platform suitable for construction in a starbase can provide us with richer and more powerful firepower."
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_celestial_shield_0:0"$AOW_MEGA_celestial_shield$ Site"
+ AOW_MEGA_celestial_shield_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$—Must be built in a single star system\n$t$—Must be built on a star\n\n$EFFECTS_HEADER$\n$t$—Provides a large number of defense platform buffs\n$t$—Provides 8 bunker rings and a device that automatically resists $AOW_MEGA_starfall_spear$ strikes"
+ AOW_MEGA_celestial_shield_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$A powerful super defense system, in addition to meeting domestic defense needs, also uses the construction of Bunker Rings to resist long-range strikes from $AOW_MEGA_starfall_spear$."
+ AOW_MEGA_celestial_shield_0_DESC:0"A final defense system born to protect us is about to be born here, and she will forever shelter our civilization in the most powerful posture."
+ AOW_MEGA_celestial_shield_1:0"$AOW_MEGA_celestial_shield$ Force-field Constraint Ring"
+ AOW_MEGA_celestial_shield_1_DESC:0"The force-field constraint ring can concentrate stellar energy and prevent celestial activities from damaging the $AOW_MEGA_celestial_shield$."
+ AOW_MEGA_celestial_shield_2:0"$AOW_MEGA_celestial_shield$ Central Command Ring"
+ AOW_MEGA_celestial_shield_2_DESC:0"The central command ring, relying on automated programs, accurately executes various defense and maintenance tasks."
+ AOW_MEGA_celestial_shield_3:0"$AOW_MEGA_celestial_shield$ Unconventional Dyson Sphere"
+ AOW_MEGA_celestial_shield_3_DESC:0"The unconventional Dyson sphere has reached a certain symbiotic relationship with the star, we help extend the life of the star and maintain its form, and we draw excess stellar energy."
+ AOW_MEGA_celestial_shield_4:0"$AOW_MEGA_celestial_shield$"
+ AOW_MEGA_celestial_shield_4_DESC:0"The coordination command of the Bunker Ring is a key megastructure for automated defense long-range strikes, possessing the ability of a powerful coordinated defense system."
+ AOW_MEGA_celestial_shield_create_bunker_rings:0"Create Bunker Rings"
+ AOW_MEGA_celestial_shield_create_bunker_rings_DESC:0"Supplement 8 Bunker Rings."
+ AOW_MEGA_celestial_shield_bunker_ring:0"Bunker Ring"
+ AOW_MEGA_celestial_shield_bunker_ring_DESC:0"The auxiliary coordination defense system can automatically consume itself to resist the $AOW_MEGA_starfall_spear$ attack suffered within the territory."
+
+ AOW_MEGA_celestial_shield_ruined:0"Ruined $AOW_MEGA_celestial_shield$"
+ AOW_MEGA_celestial_shield_ruined_MEGASTRUCTURE_DETAILS:0""
+ AOW_MEGA_celestial_shield_ruined_DESC:0""
+ AOW_MEGA_celestial_shield_restored:0"$AOW_MEGA_celestial_shield_4$"
+ AOW_MEGA_celestial_shield_restored_DESC:0"$AOW_MEGA_celestial_shield_4_DESC$"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_celestial_shield.100.desc:0"In order to resist potential dense threats, and to prevent our cause from being destroyed at once, we have specially built a central device for coordinating the national defense system, which can assist us in building a defense structure with strategic depth.\n\nNot only that, in order to counter long-range system strikes, we have specially prepared the Bunker Ring plan. They are considered to be the only defense against the $AOW_MEGA_starfall_spear$ at present. With it, we no longer have to worry about sudden interstellar strikes."
+ AOW_evt_celestial_shield.100.a:0"A very good defense megastructure."
+ AOW_evt_celestial_shield.101.desc:0"The force field constraint ring, which can concentrate stellar energy and prevent celestial activities from damaging the $AOW_MEGA_starfall_spear$, is the first necessary component to be built."
+ AOW_evt_celestial_shield.101.a:0"Good."
+ AOW_evt_celestial_shield.102.desc:0"The central command ring, various automated programs and robots will accurately execute the various commands we issue here. The future automated defense $AOW_MEGA_starfall_spear$ instructions will also be issued here."
+ AOW_evt_celestial_shield.102.a:0"Continuing construction."
+ AOW_evt_celestial_shield.103.desc:0"The unconventional Dyson sphere, although it looks similar to a Dyson sphere, they are not the same thing at all. This structure does not completely draw energy from stars or black holes, but to a certain extent extends their life and maintains their form. We can use these stabilized celestial bodies to boldly build our defenses."
+ AOW_evt_celestial_shield.103.a:0"Coming Soon."
+ AOW_evt_celestial_shield.104.name:0"Super Defense System Online"
+ AOW_evt_celestial_shield.104.desc:0"$AOW_MEGA_celestial_shield$ is fully online, Bunker Ring is ready, it’s time to overthrow the long-term oppression of our enemies!\n\nHowever, it should be noted that due to the need for a long time to absorb and release energy, we can only trigger automatic defense when $AOW_MEGA_starfall_spear$ has just been launched. Even if we replenish the number of Bunker Rings within the next 30 days, we still cannot block the attack. Therefore, we need to always pay attention to the enemy’s intentions and replenish all the Bunker Rings."
+ AOW_evt_celestial_shield.104.a:0"Strategic Depth!"
+ AOW_evt_celestial_shield.105.name:0"Bunker Ring has been replenished"
+ AOW_evt_celestial_shield.105.desc:0"The Bunker Ring has been fully replenished, the quantity has reached the standard, and is ready to resist invasion at any time."
+ AOW_evt_celestial_shield.105.a:0"Very good."
+
+ AOW_evt_celestial_shield.200.desc:0"We detected some movements in [fromfrom.GetName], [from.GetName] is building a megastructure on [fromfrom.star.GetName]. According to some of their rumors, this megastructure should be some kind of defensive megastructure.\n\nHaving said that, according to the monitoring instrument, traces of multi-dimensional space technology are displayed here. We don’t quite understand why a defensive megastructure would use multi-dimensional space technology?"
+ AOW_evt_celestial_shield.200.a:0"Ha! It may be convenient to escape."
+ AOW_evt_celestial_shield.201.name:0"[from.GetName] is fully armed"
+ AOW_evt_celestial_shield.201.desc:0"The megastructure they built before has been identified as a powerful defensive facility that can coordinate the construction speed and combat strength of the defense platforms in the territory. Not only that, the multi-dimensional space technology they used on it has now been confirmed to be used to resist the attack of $AOW_MEGA_starfall_spear$."
+ AOW_evt_celestial_shield.201.a:0"It is not aimed at us, but their defense line is indeed stronger."
+ AOW_evt_celestial_shield.201.b:0"Maybe it is against us, our $AOW_MEGA_starfall_spear$ action is blocked."
+
+ AOW_shipsize_bunker_ring:0"Bunker Ring"
+ AOW_shipsize_bunker_ring_plural:0"Bunker Rings"
+
+ AOW_CELESTIAL_SHIELD_STAR_REACTOR:0"Stellar Energy Core"
+ AOW_CELESTIAL_SHIELD_COMBAT_COMPUTER:0"Multi-dimensional Space Computer"
+
+ sm_AOW_celestial_shield:0"$AOW_MEGA_celestial_shield$ Defense Core"
+ sm_AOW_celestial_shield_desc:0"The principle is similar to the underlying mechanism of $AOW_MEGA_celestial_shield$, which can enhance the range of ships and assist ships in avoiding damage by opening multi-dimensional space channels.\n\nIf there is already a $AOW_MEGA_celestial_shield$ in the system, then the starbase and defense platform will receive further amplification."

@@ -1,0 +1,39 @@
+AOW_btn_view_ui_locator = { #显示星球名字条用的，方便玩家选中被巨构遮挡的星球
+	potential = {
+		this = {
+			is_scope_type = megastructure
+			exists = planet
+		}
+	} #脚下有星球才显示按钮
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = btn_effect_locating_planet
+		hidden_effect = {
+			planet = {
+				if = {
+					limit = { NOT = { has_planet_flag = AOW_flag_PLNT_has_special_project_@root.from } }
+					set_planet_flag = AOW_flag_PLNT_has_special_project_@root.from
+					save_event_target_as = AOW_target_planet
+					from = {
+						save_event_target_as = AOW_target_country
+					}
+					enable_special_project = {
+						name = AOW_sp_planet_locator
+						location = this
+						owner = root.from
+					}
+				}
+				else_if = {
+					limit = { has_planet_flag = AOW_flag_PLNT_has_special_project_@root.from }
+					remove_planet_flag = AOW_flag_PLNT_has_special_project_@root.from
+					root.from = {
+						abort_special_project = {
+							type = AOW_sp_planet_locator
+							location = prev
+						}
+					}
+				}
+			}
+		}
+	}
+}

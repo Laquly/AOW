@@ -1,0 +1,129 @@
+#坠星天矛
+AOW_policy_starfall_spear = {
+	potential = {
+		OR = {
+			has_country_flag = AOW_flag_CNTR_policy_starfall_spear_has_been_set
+			has_megastructure = AOW_MEGA_starfall_spear_standby
+			has_megastructure = AOW_MEGA_starfall_spear_launch
+			has_megastructure = AOW_MEGA_starfall_spear_fire_O
+			has_megastructure = AOW_MEGA_starfall_spear_fire_B
+			has_megastructure = AOW_MEGA_starfall_spear_fire_A
+			has_megastructure = AOW_MEGA_starfall_spear_fire_F
+			has_megastructure = AOW_MEGA_starfall_spear_fire_G
+			has_megastructure = AOW_MEGA_starfall_spear_fire_K
+			has_megastructure = AOW_MEGA_starfall_spear_fire_M
+		}
+	}
+	option = {#无限使用，可以不宣而战
+		name = "AOW_policy_SS_unlimited"
+		policy_flags = { AOW_policy_SS_unlimited }
+		valid = {
+			NOR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_policy_flag = no_wars
+			}
+			OR = {
+				is_gestalt = yes
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ascension_perk = ap_become_the_crisis
+				has_crisis_level = crisis_cosmogenesis_level_5
+				if = {
+					limit = { has_global_flag = has_wsg_mod }
+					has_ascension_perk = ap_wg_crisis
+				}
+			}
+		}
+		modifier = {
+			diplo_weight_mult = 0.25
+			pop_ethic_militarist_attraction_mult = 1
+			country_trust_cap_add = -100
+			country_trust_growth = -0.25
+			envoy_improve_relations_mult = -0.25
+			starfall_spear_cooldown_speed_mult = 0.5
+		}
+		ai_weight = {
+			weight = 1
+			modifier = {#设定这种政策是一种极度危险的政策，只有灭绝政体才敢采纳
+				factor = 1000
+				OR = {
+					is_homicidal = yes
+					has_ascension_perk = ap_become_the_crisis
+					has_crisis_level = crisis_cosmogenesis_level_5
+					if = {
+						limit = { has_global_flag = has_wsg_mod }
+						has_ascension_perk = ap_wg_crisis
+					}
+				}
+			}
+		}
+	}
+	option = {#保证相互毁灭，宣战后，只能对有坠星天矛的国家使用坠星天矛
+		name = "AOW_policy_SS_hostility"
+		policy_flags = { AOW_policy_SS_hostility }
+		modifier = {
+			diplo_weight_mult = 0.25
+			country_power_projection_influence_produces_add = 1
+		}
+		ai_weight = {
+			weight = 11
+			modifier = {#排外增加权重
+				factor = 1.5
+				is_xenophobe = yes
+			}
+			modifier = {#军国增加权重
+				factor = 1.5
+				is_militarist = yes
+			}
+			modifier = {#和平、防御战争减少权重
+				factor = 0.5
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_policy_flag = no_wars
+				}
+			}
+		}
+	}
+	option = {#不首先使用，必须先受到打击再才能发射
+		name = "AOW_policy_SS_no_first_use"
+		policy_flags = { AOW_policy_SS_no_first_use }
+		valid = {
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_policy_flag = no_wars
+			}
+		}
+		modifier = {
+			diplo_weight_mult = 0.25
+			pop_ethic_pacifist_attraction_mult = 1
+			country_trust_cap_add = 100
+			country_trust_growth = 0.25
+			envoy_improve_relations_mult = 0.25
+			starfall_spear_cooldown_speed_mult = 1
+		}
+		ai_weight = {
+			weight = 10
+			modifier = {#排外减少权重
+				factor = 0.1
+				is_xenophobe = yes
+			}
+			modifier = {#军国减少权重
+				factor = 0.1
+				is_militarist = yes
+			}
+			modifier = {#和平、防御战争增加权重
+				factor = 2
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_policy_flag = no_wars
+				}
+			}
+		}
+	}
+}

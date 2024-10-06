@@ -1,0 +1,47 @@
+spriteTypes = {
+	##############################################################################
+	# 遗迹 #########################################################################
+	##############################################################################
+	#共产主义的遗迹图标
+	spriteType = {
+		name = "GFX_archaeology_runes_communism"
+		texturefile = "gfx/interface/archaeology/runes/archaeology_runes_communism.dds"
+		alwaystransparent = yes
+	}
+	##############################################################################
+	# 战争 #########################################################################
+	##############################################################################
+	spriteType = {
+		name = "GFX_wg_starfall_spear"
+		texturefile = "gfx/interface/icons/diplomacy/wg_starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_end_threat_starfall_spear"
+		texturefile = "gfx/interface/icons/diplomacy/wg_starfall_spear.dds"
+	}
+	##############################################################################
+	# 其他 #########################################################################
+	##############################################################################
+	spriteType = {
+		name = "GFX_AOW_nothing"
+		textureFile = "gfx/interface/icons/situation_log/AOW_situation_log_nothing.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_edict_control_panel"
+		textureFile = "gfx/interface/icons/modifiers/AOW_megastructure.dds"
+	}
+	spriteType = {
+		name = "GFX_text_AOW_megastructures"
+		textureFile = "gfx/interface/icons/modifiers/AOW_megastructure.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_leader_trait_laquly"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/laquly.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_red_dawn"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/red_dawn.dds"
+	}
+}

@@ -1,0 +1,172 @@
+﻿l_english:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+
+ AOW_TECH_starfall_spear:0"$AOW_MEGA_starfall_spear$"
+ AOW_TECH_starfall_spear_desc:0"An ultimate military project that is enough to deter the universe has been proposed, relying on stars as activation energy to gather infinite dark energy capable of tearing apart space-time itself, turning it into the light of judgment that crashed into the stars. When this great miracle of engineering and military is completed, no one can stop our will. Now we will personally rule the fate of the stars."
+ AOW_TECH_starfall_spear_COOLING_1:0"$AOW_MEGA_starfall_spear$ Energy Gathering"
+ AOW_TECH_starfall_spear_COOLING_1_desc:0"Increasing the power of the stellar particle miner and improving the charging efficiency can reduce the cooldown time of $AOW_MEGA_starfall_spear$."
+ AOW_TECH_starfall_spear_COOLING_1_effect_title:0"Cooldown Time of $AOW_MEGA_starfall_spear$ §G-20%§!"
+ AOW_TECH_starfall_spear_COOLING_2:0"$AOW_MEGA_starfall_spear$ Automatic Loading"
+ AOW_TECH_starfall_spear_COOLING_2_desc:0"The automation of $AOW_MEGA_starfall_spear$ will allow the collected energy to reach the predetermined location as quickly as possible, and increase the temporary storage limit of energy, indirectly reducing the cooling time of $AOW_MEGA_starfall_spear$."
+ AOW_TECH_starfall_spear_COOLING_2_effect_title:0"Cooldown Time of $AOW_MEGA_starfall_spear$ §G-30%§!"
+ AOW_TECH_starfall_spear_COOLING_3:0"$AOW_MEGA_starfall_spear$ Curvature Adjustment"
+ AOW_TECH_starfall_spear_COOLING_3_desc:0"The control of the curvature of space-time makes our power almost rise by a dimension, and by properly adjusting the curvature of space-time around the stars, the charging speed of $AOW_MEGA_starfall_spear$ can be greatly accelerated, and the end of the enemy will come like lightning!"
+ AOW_TECH_starfall_spear_COOLING_3_effect_title:0"Cooldown Time of $AOW_MEGA_starfall_spear$ §G-40%§!"
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+
+ AOW_MEGA_starfall_spear_0:0"$AOW_MEGA_starfall_spear$ Site"
+ AOW_MEGA_starfall_spear_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$A giant structure that can drive stellar energy into long-range galactic strikes, enough to be called an interstellar age nuclear weapon, which will be built to §Rempty the system§! to make room for construction."
+ AOW_MEGA_starfall_spear_0_DESC:0"一项毁灭性武器项目建设的基址，这里凝聚了帝国全部的人力物力资源，依托这个临时的建筑平台，数不清的无人拆解舰将星系中的行星拆解并运输到这里加工，最终作为$AOW_MEGA_starfall_spear$的材料，锻造这灭世的武器。"
+ AOW_MEGA_starfall_spear_1:0"$AOW_MEGA_starfall_spear$ 缚星"
+ AOW_MEGA_starfall_spear_1_DESC:0"工程的第一步是在恒星建造一个用于提供启动能量的控星体结构，它将吸收恒星的全部形式的能量，转变成支持接下来的艰巨工程的能源。"
+ AOW_MEGA_starfall_spear_2:0"$AOW_MEGA_starfall_spear$ 后托"
+ AOW_MEGA_starfall_spear_2_DESC:0"建设在$AOW_MEGA_starfall_spear$后端的暗能吸收器在星笼提供的能量下人为制造暗能量势差吸收巨量的暗能量，用于充盈$AOW_MEGA_starfall_spear$所需的打击用暗能量。"
+ AOW_MEGA_starfall_spear_3:0"$AOW_MEGA_starfall_spear$ 约束"
+ AOW_MEGA_starfall_spear_3_DESC:0"暗能调谐器，这是它最大的结构，外表看起来如同剑锋。上下两个天文单位大小的约束调整系统负责将吸收器吸收的暗能量进行聚焦，调频，以确保按照我们想要的威力对目标进行打击。"
+ AOW_MEGA_starfall_spear_4:0"$AOW_MEGA_starfall_spear$"
+ AOW_MEGA_starfall_spear_4_DESC:0"$AOW_MEGA_starfall_spear_standby_DESC$"
+
+ AOW_MEGA_starfall_spear_standby:0"$AOW_MEGA_starfall_spear$"
+ AOW_MEGA_starfall_spear_standby_DESC:0"Powered by dark matter and stellar energy, $AOW_MEGA_starfall_spear$ can strike at any target through directional wormholes.\nAt this point, we truly control the fate of everything in the starry sky."
+ AOW_MEGA_starfall_spear_launch:0"$AOW_MEGA_starfall_spear$ §RLaunch§!"
+ AOW_MEGA_starfall_spear_launch_DESC:0"Start the launch procedure, open the directional wormhole, prepare to locate the target, and always be ready to strike!"
+ AOW_MEGA_starfall_spear_fire_O:0"$AOW_MEGA_starfall_spear$ §RLaunching§!"
+ AOW_MEGA_starfall_spear_fire_O_DESC:0"Targeted strikes are being launched on targets."
+ AOW_MEGA_starfall_spear_fire_B:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_B_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_A:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_A_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_F:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_F_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_G:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_G_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_K:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_K_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_M:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_M_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_mega_notification_title:0"§H[fromfromfrom.GetName]§! Construction Completed"
+
+ AOW_evt_starfall_spear.100.desc:0"一项伟大工程的开始总是默默无闻的，在[from.GetName]的临时建筑平台，数不清的珍贵工程师和军事专家正在秘密进行着这项超级工程的建设。自“$AOW_MEGA_starfall_spear$”项目得到验证以来，无数的工程师和军事专家都彻夜难寐，工程师们期待着这项宏伟工程的实现，军事专家们思考它将带来的军事战略的革命。帝国的所有心血，都凝聚在了这项奇观工程。\n\n整个工程星系已经被严格控制了任何可能的信息泄露，秘密参与建设的工程团队和军事专家将在这里与世隔绝，直到天矛亮出它的锋刃。"
+ AOW_evt_starfall_spear.100.a:0"沉默是必要的，为的是给我们的敌人带来终焉的审判。"
+ AOW_evt_starfall_spear.101.desc:0"$AOW_MEGA_starfall_spear$的“扳机”已经建造完毕，距离我们完成这柄圣枪的工序还剩下四分之三。尽管我们严格控制了可能的信息泄露，但银河之中仍旧传播了一些风声。人们议论着某个神秘的恒星级毁灭武器的传言，有人相信它将给银河带来末日，大多数人则对这不可能的工程嗤之以鼻。\n\n但是我们的意志是坚决的，铸造它已是我们必须做的事，它将为我们带来无上的力量！"
+ AOW_evt_starfall_spear.101.a:0"蛆虫般的聒噪，无需理会。"
+ AOW_evt_starfall_spear.102.desc:0"$AOW_MEGA_starfall_spear$展开了它的翅膀，仿佛带来启示录的天使之翼。\n\n这7根巨柱在$AOW_MEGA_starfall_spear$发射之时，会向后发射恒星能量以抵消巨大后座力，从而稳定整个结构；而在平时，它们则是传输和储存恒星能量和暗物质能量的多功能装置。\n\n如今，源源不断的恒星能量和暗物质能量正在集中于$AOW_MEGA_starfall_spear$的中，这种大规模吸收恒星能量和暗物质能量的行为引发了无法遮掩的时空曲率异常，最终让银河中某个帝国建造恒星级武器的传闻无法掩盖。我们必须对加强防御力量，以应对不怀好意之人的阻挠。"
+ AOW_evt_starfall_spear.102.a:0"韬光养晦，静待时机。"
+ AOW_evt_starfall_spear.103.desc:0"随着$AOW_MEGA_starfall_spear$的主体结构基本完成，参加秘密工程的工程师们已经兴奋不已。$AOW_MEGA_starfall_spear$已经展现出了他的威严，这个接近天文单位大小的恒星狙击枪或许是全银河所出现过的最为强大最为暴力的武器。仅仅是看到它宏伟的规模，就让其他文明意识到我们是多么不可战胜。\n\n距离完成$AOW_MEGA_starfall_spear$只剩下最后的几步，调整各种系统，进行威力测试。银河系其他的文明已经开始逐渐的意识到了一个事情，有一个文明，他们将彻底改变战争的规则。纷乱的传言四起，连虚境的先知们也在传颂着银河毁于黑暗的预言。距离完成的最后一步，我们已经不再需要遮遮掩掩，等到$AOW_MEGA_starfall_spear$彻底完成，整个银河的规则将由我们来决定！"
+ AOW_evt_starfall_spear.103.a:0"我们就要成为星辰的主宰了。"
+ AOW_evt_starfall_spear.104.desc:0"星辰陨落之时。\n\n传言已经无需存在了，$AOW_MEGA_starfall_spear$完成之后，我们向银河宣告了恒星级武器的存在。万众跪服于地，臣服于我们的无上权威。在恒星陨落的恐怖之中，谁能再维持冷静呢？\n\n银河的混乱时代结束了，$AOW_MEGA_starfall_spear$的存在宣告了由我们的意志决定的律法，代表了我们审判银河系所有生灵的权柄。\n\n自此以后，直至永恒，$AOW_MEGA_starfall_spear$都会成为悬在银河的达摩克里斯之剑，而我们便是执剑之人。"
+ AOW_evt_starfall_spear.104.a:0"掌握他人命运的感觉..."
+
+ AOW_evt_starfall_spear.200.desc:0"我们的情报部门收到了一份密报，[from.GetName]似乎正在[fromfrom.GetName]星系建造一种巨型结构，但我们目前还不清楚它具体是什么，但从他们对这件事的保密程度来看，应该是一种见不得光的东西。\n\n我们的军事部门警告，如果是某种杀伤性武器，那我们最好尽快出手阻止[from.GetName]。"
+ AOW_evt_starfall_spear.200.a:0"感觉不妙啊。"
+ AOW_evt_starfall_spear.201.desc:0"[from.GetName]在[fromfrom.GetName]星系建造的不明巨构已经达到包裹恒星的阶段了，可能是想吸收恒星的能量，我们目前并不确定他们是想要利用恒星发电，还是用于制造武器，如果是发电，那为什么不建造戴森球呢？"
+ AOW_evt_starfall_spear.201.a:0"我们必须有所行动了。"
+ AOW_evt_starfall_spear.202.desc:0"警告！在[fromfrom.GetName]星系探测到时空曲率异常，我们已经确定[from.GetName]在此处建造的东西肯定不是什么生产类巨构了，因为我们目前还不知道哪种只会生产的巨构会产生这种异常现象。"
+ AOW_evt_starfall_spear.202.a:0"这又是在干什么。"
+ AOW_evt_starfall_spear.203.desc:0"[fromfrom.GetName]星系的超巨型结构最终还是展现出了它的姿态，一个极其巨大的，接近天文单位大小的炮口，我们几乎可以肯定[from.GetName]是在建造一种极度危险的武器巨构。\n\n如果我们不想成为他们的实验目标，最好尽快出手。"
+ AOW_evt_starfall_spear.203.a:0"越来越危险了。"
+ AOW_evt_starfall_spear.204.desc:0"银河危机之时。\n\n[from.GetName]已经宣告了他们在[fromfrom.GetName]星系建造的超巨型结构，他们称之为“$AOW_MEGA_starfall_spear$”，是一种能够摧毁整个星系的极端危险的武器，谁也不能贸然对其宣战了，因为他们会时刻将炮口转向他们的敌人。\n\n这一刻，他们的$AOW_MEGA_starfall_spear$已经成为了悬在银河的达摩克里斯之剑，而他们便是执剑之人。"
+ AOW_evt_starfall_spear.204.a:0"不好了..."
+
+
+
+ AOW_evt_starfall_spear.500.name:0"$AOW_MEGA_starfall_spear$: Target Picking"
+ AOW_evt_starfall_spear.500.desc:0"$AOW_MEGA_starfall_spear$: Target Picking"
+ AOW_evt_starfall_spear.500.quit:0"Cancel"
+ AOW_evt_starfall_spear.500.quit.tooltip:0"Abandon the operation and return $AOW_MEGA_starfall_spear$ to standby..."
+ AOW_evt_starfall_spear.500.confirm:0"Confirm"
+ AOW_evt_starfall_spear.500.confirm.tooltip:0"Confirm the target, $AOW_MEGA_starfall_spear$ starts transmitting energy!"
+
+ AOW_evt_starfall_spear.501.name:0"$AOW_MEGA_starfall_spear$: Tutorial"
+ AOW_evt_starfall_spear.501.desc:0"$AOW_MEGA_starfall_spear$: Tutorial"
+ AOW_evt_starfall_spear.501.a:0"Exit the tutorial"
+ AOW_evt_starfall_spear.501.b:0"No longer enable the tutorial"
+
+ AOW_evt_starfall_spear.503.name:0"Cooldown Completed"
+ AOW_evt_starfall_spear.503.desc:0"$AOW_MEGA_starfall_spear$ in system §Y[event_target:AOW_tgt_MEGA_new_starfall_spear.solar_system.GetName]§! has cooled down and is ready for launch."
+ AOW_evt_starfall_spear.503.a:0"Then come on!"
+
+ AOW_evt_starfall_spear.504.name:0"亚空间波动"
+ AOW_evt_starfall_spear.504.a.desc:0"在[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]星系内检测到一股强大的亚空间波动，从中出来的大量高能粒子以接近光速的速度正在撞击[event_target:AOW_tgt_PLNT_starfall_spear_target.GetName]，它正在变得越来越不稳定。\n\n经逆向分析，确认源头是来自[from.GetName]境内的[fromfrom.GetName]星系，它正在对我们的领地发起打击！"
+ AOW_evt_starfall_spear.504.b.desc:0"在[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]星系内检测到一股强大的亚空间波动，位置在[event_target:AOW_tgt_PLNT_starfall_spear_target.GetName]的上空，大量高能粒子正在轰击这颗行星，它正在变得越来越不稳定。\n\n经逆向分析，确认源头是来自[from.GetName]境内的[fromfrom.GetName]星系，它正在对我们的领地发起打击！"
+ AOW_evt_starfall_spear.504.c.desc:0"在[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]星系内检测到一股强大的亚空间波动，从中出来的大量高能粒子正在逐渐在[event_target:AOW_tgt_SSTM_starfall_spear_target.star.GetName]周围生成一种屏障，经研究，这种屏障有削弱这种亚空间波动的效果，预估完全形成后，[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]将不再早点打击。\n\n经逆向分析，确认源头是来自[from.GetName]境内的[fromfrom.GetName]星系，他们正在对保护我们的领地！"
+ AOW_evt_starfall_spear.504.a:0"我们没有防御手段，这个星系保不住了..."
+ AOW_evt_starfall_spear.504.b:0"赶紧用我们的$AOW_MEGA_starfall_spear$给这个星系套个盾！"
+ AOW_evt_starfall_spear.504.c:0"希望这个星系的保护屏障暂时别消失。"
+ AOW_evt_starfall_spear.504.d:0"很好。"
+
+ AOW_evt_starfall_spear.611.name:0"$AOW_text_btn_system_target_mode_01$"
+ AOW_evt_starfall_spear.611.desc:0"[from.GetName]星系被隔绝，所有通往该星系的超空间航道均已被撕裂，除非我们有其他通往[from.GetName]星系的手段，否则短时间内无法与之来往了。"
+ AOW_evt_starfall_spear.621.name:0"$AOW_text_btn_system_target_mode_02$"
+ AOW_evt_starfall_spear.621.desc:0"[from.GetName]星系被灭杀，该星系的所有殖民地都被摧毁了，上面可能残留了很多殖民者的遗骸和废墟，估计一时半会难以恢复。"
+ AOW_evt_starfall_spear.631.name:0"$AOW_text_btn_system_target_mode_03$"
+ AOW_evt_starfall_spear.631.desc:0"[from.GetName]星系发生了一次剧烈的空间震荡，大部分工业设施遭到严重损毁。"
+ AOW_evt_starfall_spear.641.name:0"$AOW_text_btn_system_target_mode_04$"
+ AOW_evt_starfall_spear.641.desc:0"[from.GetName]星系发生了一次剧烈的超新星爆炸，恒星坍缩为黑洞，行星全部爆裂，这个星系被加速进入了它的末日。"
+ AOW_evt_starfall_spear.651.name:0"$AOW_text_btn_system_target_mode_05$"
+ AOW_evt_starfall_spear.651.desc:0"[from.GetName]星系发生了一次剧烈的超新星爆炸，这个亚空间波动带来的奇异物质将恒星同化为中子星，行星全部被熔融，这个星系被加速进入了它的末日。"
+ AOW_evt_starfall_spear.661.name:0"$AOW_text_btn_system_target_mode_06$"
+ AOW_evt_starfall_spear.661.desc:0"[from.GetName]星系发生了一次剧烈的亚空间波动，恒星损失了的大部分质量，并以前所未有的速度坍缩为黑洞，行星全部被一种神秘迷雾笼罩，据说被献祭给了虚境。"
+
+ #####################################################################################
+ ####################################### 自定义UI #######################################
+ #####################################################################################
+ AOW_starfall_spear_requires_has_communication_with_space_owner:0"$TRIGGER_FAIL$Unable to strike system of unknown country, we don't have enough intelligence."
+ AOW_starfall_spear_requires_not_isolated:0"$TRIGGER_FAIL$This system cannot be isolated."
+ AOW_starfall_spear_requires_no_owner_or_hostile:0"$TRIGGER_FAIL$This system must be an §Yunowned§! or §Yhostile§! system."
+ AOW_starfall_spear_requires_no_first_use:0"$TRIGGER_FAIL$This system must be an §Yunowned§! or §Rhostile system that have hit us§!."
+ AOW_starfall_spear_requires_has_colony:0"$TRIGGER_FAIL$There must be a population colony within this system."
+ AOW_starfall_spear_requires_no_error:0"$TRIGGER_FAIL$There is a potential crash threat here, forcibly striking this place may cause game §Rcrash§!..."
+ AOW_starfall_spear_requires_no_starfall_spear:0"$TRIGGER_FAIL$Can't strike system with $AOW_MEGA_starfall_spear$($AOW_MEGA_starfall_spear$ comes with a multi-dimensional space jamming device)."
+ AOW_starfall_spear_requires_only_one_target:0"$TRIGGER_FAIL$We have already selected a strike mode for a specific target."
+ AOW_starfall_spear_requires_cannot_be_being_hitted:0"$TRIGGER_FAIL$This system is being hit by other $AOW_MEGA_starfall_spear$, and the subspace fluctuates so much that it is impossible to launch now."
+ AOW_starfall_spear_requires_no_crisis_sphere:"$TRIGGER_FAIL$Can't strike system with $crisis_sphere_4($crisis_sphere_4$ comes with powerful subspatial fluctuates)."
+ AOW_starfall_spear_requires_no_primary_black_hole:0"$TRIGGER_FAIL$This system's primary star is a black hole and cannot activate this strike mode."
+ AOW_starfall_spear_requires_no_primary_neutron_star:0"$TRIGGER_FAIL$This system's primary star is a neutron_star and cannot activate this strike mode."
+ AOW_starfall_spear_requires_has_target:0"Need to select a target first."
+
+ AOW_btn_requires_planet:0"$TRIGGER_FAIL$Please select a §Yplanet§! or a §Ymegastructure built on a planet§! to turn on the planet-level strike mode."
+ AOW_btn_requires_system:0"$TRIGGER_FAIL$Please select a §Ystar§! or a §Ymegastructure built on a star§! to turn on the system-level strike mode."
+ AOW_text_btn_planet_target:0"Target: Planet"
+ AOW_text_btn_system_target:0"Target: System"
+
+ AOW_planet_target_mode_01_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_CRACKER_DESC$"
+ AOW_planet_target_mode_02_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_SHIELDER_DESC$"
+ AOW_planet_target_mode_03_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_NEUTRON_DESC$"
+ AOW_planet_target_mode_04_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_GODRAY_DESC$"
+ AOW_planet_target_mode_05_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_NANOBOTS_DESC$"
+ AOW_planet_target_mode_06_tooltip:0"§HDelay Time: §!15 days\n§HCool Down Time: §!360 days\n§HFinal Effect: §!$PLANET_KILLER_DELUGE_DESC$"
+
+ AOW_text_btn_system_target_mode_01:0"Abyss Strike"
+ AOW_system_target_mode_01_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!1080 days\n§HFinal Effect: §!Remove all hyperlanes for §Y[this.solar_system.GetName]§!.\n\n§HAdditional Information: §!All the energy of the stream of energetic particles is used to break the hyperlanes around the target system."
+ AOW_text_btn_system_target_mode_02:0"Extinction Strike"
+ AOW_system_target_mode_02_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!1800 days\n§HFinal Effect: §!Destroy all the pops and defensive forces of all colonies in §Y[this.solar_system.GetName]§!.\n\n§HAdditional Information: §!A directed, extremely lethal energetic particle can accurately find and clear all intellectual life in the system and leave significant remains on the colony, which §Rmay cause dissatisfaction in some countries that value the colony§!.\n\n§YNote: This strike mode is particularly suitable for hitting the population of the target system without affecting other facilities.§!"
+ AOW_text_btn_system_target_mode_03:0"Dimensional Ripe Strike"
+ AOW_system_target_mode_03_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!1800 days\n§HFinal Effect: §!All habitable planets of system §Y[this.solar_system.GetName]§! add 100 devastation, mining stations, research stations and other space stations are destroyed, and 3 subspace entities are spawned (unable to exceed the speed of light, unable to jump, with shield armor, can be destroyed), which can deal some damage to enemy ships.\n\n§HAdditional Information: §!After these high-energy particles reach their destination and have a certain scale, they will collide with each other and cause strong gravitational wave oscillations, enough to destroy most industrial facilities, and even subspace will be affected, and these hostile subspace creatures may appear in this system because of this.\n\n§YNote: This strike mode is especially suitable for attacking enemy ships in the target system without destroying its loot or disrupting related events or missions.§!"
+ AOW_text_btn_system_target_mode_04:0"Starfall Strike"
+ AOW_system_target_mode_04_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!3600 days\n§HFinal Effect: §!§Y[this.solar_system.GetName]§! will become a black hole system, all planets will become broken planets, ships and megastructures will be destroyed.\n\n§HAdditional Information: §!High-energy particles will hit the star, causing a supernova explosion.\n\n§RWarning: If system [this.solar_system.GetName] has hostile ships and you don't want to lose its loot or destroy events or missions associated with them, then use the "$AOW_text_btn_system_target_mode_03$" mode and any damage caused by using this strike mode is borne by the launcher.§!"
+ AOW_text_btn_system_target_mode_05:0"Strange Matter Strike"
+ AOW_system_target_mode_05_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!3600 days\n§HFinal Effect: §!§Y[this.solar_system.GetName]§! will become a neutron star system, all planets will became molten planets, ships and megastructures will be destroyed.\n\n§HAdditional Information: §!This kind of strange matter, which only exists in the core of the neutron star in theory, has extremely strong assimilation, and can transform any object touched into the same strange matter, and these assimilated strange matter will start the next step of assimilation......\n\n§RWarning: If system [this.solar_system.GetName] has hostile ships and you don't want to lose its loot or destroy events or missions associated with them, then use the "$AOW_text_btn_system_target_mode_03$" mode and any damage caused by using this strike mode is borne by the launcher.§!"
+ AOW_text_btn_system_target_mode_06:0"Sacrifice Ritual"
+ AOW_system_target_mode_06_tooltip:0"§HDelay Time: §!30 days\n§HCool Down Time: §!3600 days\n§HFinal Effect: §!§Y[this.solar_system.GetName]§! will become a black hole system, all planets will become shroud planets, ships and megastructures will be destroyed, and we will get unity.\n\n§HAdditional Information: §!Open a large rift in the center of the galaxy to the Shroud, and sacrifice the entire galaxy to the Shroud in exchange for the reward of the Shroud...\n\n§RWarning: If system [this.solar_system.GetName] has hostile ships and you don't want to lose its loot or destroy events or missions associated with them, then use the "$AOW_text_btn_system_target_mode_03$" mode and any damage caused by using this strike mode is borne by the launcher.§!"
+
+ AOW_text_starfall_spear_tutorial_1:0"§HTutorial: §!\n\n§HStep 1: §!\nSelect a planet or a megastructure built on a planet, to select them, just left-click on their name bar.\n\n§HStep 2: §!\nAfter selecting the planet, buttons for various strike modes will appear, just select one of them and click again to cancel this strike mode.\n\n§HStep 3: §!\nClick the $AOW_evt_starfall_spear.500.confirm$ button at the top left of this UI to launch."
+ AOW_text_starfall_spear_tutorial_2:0"§HSkills: §!\n\n§HQ: §!If a system doesn't have stars or megastructures built on stars, how should I choose it?\n§HA: §!Then don't choose, the author of the mod for this special system definitely doesn't want you to blow it up.\n\n§HQ: §!I want to change to another strike mode, but the button disappears, what should I do?\n§HA: §!Hover over the $AOW_evt_starfall_spear.500.confirm$ button, it will display what your currently selected target is, select the target again to display the strike mode button, and you can change the strike mode at this time.\n\n§HQ: §!What should I do if I want to cancel this launch?\n§HA: §!Click the $AOW_evt_starfall_spear.500.quit$ button at the top right of this UI to cancel this launch."
+
+ AOW_PLANET_DESTROYED_TITLE:0"The Planet Has Been Hit"
+ AOW_PLANET_DESTROYED_BY_CRACKER_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_CRACKER$ $AOW_MEGA_starfall_spear$."
+ AOW_PLANET_DESTROYED_BY_SHIELDER_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_SHIELDER$ $AOW_MEGA_starfall_spear$."
+ AOW_PLANET_DESTROYED_BY_NEUTRON_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_NEUTRON$ $AOW_MEGA_starfall_spear$."
+ AOW_PLANET_DESTROYED_BY_GODRAY_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_GODRAY$ $AOW_MEGA_starfall_spear$."
+ AOW_PLANET_DESTROYED_BY_NANOBOTS_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_NANOBOTS$ $AOW_MEGA_starfall_spear$."
+ AOW_PLANET_DESTROYED_BY_DELUGE_DESC:0"$PLANET|Y$ $MESSAGE_DESC_FOR_PLANET_KILLER_DELUGE$ $AOW_MEGA_starfall_spear$."

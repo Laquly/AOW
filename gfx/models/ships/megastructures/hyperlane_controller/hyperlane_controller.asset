@@ -1,0 +1,153 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {
+	name = "aow_ringworld_construction_entity"
+	cull_radius = 500.0
+	pdxmesh = "ringworld_construction_mesh"
+	meshsettings = {
+		name = "polySurface128Shape"
+		index = 0
+		texture_diffuse = "ringworld_construction_diffuse.dds"
+		texture_normal = "ringworld_construction_normal.dds"
+		texture_specular = "ringworld_construction_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	meshsettings = {
+		name = "polySurface161Shape"
+		index = 0
+		texture_diffuse = "ringworld_seam_arthropoid_01_diffuse.dds"
+		texture_normal = "ringworld_seam_normal.dds"
+		texture_specular = "ringworld_seam_arthropoid_01_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	default_state = "idle"
+	state = { name = "idle"
+	start_event = { trigger_once = yes sound = { soundeffect = "ringworld_hum_idle_02" stop_on_state_change = yes } }
+	}
+	state = { name = "construction"
+	start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_construction_entity" }
+	attach = { locator2 = "ringworld_construction_entity" }
+	attach = { locator3 = "ringworld_construction_entity" }
+}
+entity = {
+	name = "aow_ringworld_0_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_construction_entity" }
+	attach = { ringworld_south = "aow_ringworld_construction_entity" }
+	attach = { ringworld_west = "aow_ringworld_construction_entity" }
+	attach = { ringworld_east = "aow_ringworld_construction_entity" }
+}
+
+entity = {
+	name = "aow_ringworld_seam_entity"
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_seam_entity_01_entity" }
+	attach = { locator2 = "ringworld_seam_entity_01_entity" }
+	attach = { locator3 = "ringworld_seam_entity_01_entity" }
+}
+entity = {
+	name = "aow_ringworld_50_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_seam_entity" }
+	attach = { ringworld_south = "aow_ringworld_seam_entity" }
+	attach = { ringworld_west = "aow_ringworld_seam_entity" }
+	attach = { ringworld_east = "aow_ringworld_seam_entity" }
+}
+
+entity = {
+	name = "aow_ringworld_tech_entity"
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_tech_entity_01_entity" }
+	attach = { locator2 = "ringworld_tech_entity_01_entity" }
+	attach = { locator3 = "ringworld_tech_entity_01_entity" }
+}
+entity = {
+	name = "aow_ringworld_100_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_tech_entity" }
+	attach = { ringworld_south = "aow_ringworld_tech_entity" }
+	attach = { ringworld_west = "aow_ringworld_tech_entity" }
+	attach = { ringworld_east = "aow_ringworld_tech_entity" }
+}
+
+entity = {
+	name = "sm_tannhauser_entity"
+	pdxmesh = "tannhauser_gate_01_mesh"
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle" }
+	scale = 10
+}
+
+entity = {
+	name = "sm_planet_shield_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "planet_shield_effect_entity" }
+}
+
+
+
+entity = {
+	name = "hyperlane_controller_a_entity"
+	pdxmesh = "matter_decompressor_01_stage_1_mesh"
+	meshsettings = {
+		name = "g_body1Shape"
+		index = 0
+		texture_diffuse = "mammalian_01_matter_decompressor_diffuse.dds"
+		texture_normal = "mammalian_01_matter_decompressor_normal.dds"
+		texture_specular = "mammalian_01_matter_decompressor_normal.dds"
+		shader = "PdxMeshShip"
+	}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+}
+entity = {
+	name = "hyperlane_controller_b_entity"
+	default_state = "idle"
+	state = { name = "idle" 
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 1
+}
+entity = {
+	name = "hyperlane_controller_entity"
+	locator = { name = "loc0" position = { 0 0 0 } rotation = { 0 90 0 } scale = 0.8 }
+	locator = { name = "loc1" position = { 0 5 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 5 0 } rotation = { 0 45 0 } }
+	locator = { name = "loc3" position = { 0 5 0 } rotation = { 0 -45 0 } }
+	locator = { name = "loc4" position = { 0 5 0 } rotation = { 0 0 45 } }
+	locator = { name = "loc5" position = { 0 5 0 } rotation = { 0 0 -45 } }
+	attach = { loc0 = "hyperlane_controller_a_entity" }
+	attach = { loc1 = "hyperlane_controller_b_entity" }
+	attach = { loc2 = "hyperlane_controller_b_entity" }
+	attach = { loc3 = "hyperlane_controller_b_entity" }
+	attach = { loc4 = "hyperlane_controller_b_entity" }
+	attach = { loc5 = "hyperlane_controller_b_entity" }
+	scale = 2
+}

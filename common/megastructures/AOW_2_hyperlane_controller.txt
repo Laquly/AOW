@@ -1,0 +1,61 @@
+AOW_MEGA_hyperlane_controller = {
+	entity = "hyperlane_controller_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_hyperlane_controller_background"
+	place_entity_on_planet_plane = no
+	construction_blocks_and_blocked_by = none
+	build_outside_gravity_well = yes
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+	build_time = @AOW_var_HC_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_HC_COST_alloys
+			influence = @AOW_var_HC_COST_influence
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_hyperlane_controller
+		category = megastructures
+		alloys = @AOW_var_HC_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_hyperlane_controller" }
+	potential = {
+		is_ai = no
+		AOW_trigger_mega_potential = {  KEY = hyperlane_controller }
+	}
+	show_prereqs = yes
+	possible = {
+		custom_tooltip = {#该星系内不能有另外的星轨
+			fail_text = "AOW_mega_requires_SSTM_no_hyperlane_controller"
+			NOT = { has_megastructure = AOW_MEGA_hyperlane_controller }
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			always = no
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = building_hyperlane_connector } }
+				set_country_flag = building_hyperlane_connector
+				country_event = { id = AOW_mega_notification.1090 }
+			}
+			else_if = {
+				limit = { has_country_flag = building_hyperlane_connector }
+				remove_country_flag = building_hyperlane_connector
+				country_event = { id = AOW_mega_notification.1091 }
+			}
+		}
+	}
+}

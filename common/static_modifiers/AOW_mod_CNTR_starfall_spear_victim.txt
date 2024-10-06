@@ -1,0 +1,4 @@
+AOW_mod_CNTR_starfall_spear_victim = {
+	pop_ethic_militarist_attraction_mult = 1
+	pop_ethic_xenophobe_attraction_mult = 1
+}

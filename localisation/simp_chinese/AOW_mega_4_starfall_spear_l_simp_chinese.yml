@@ -1,0 +1,222 @@
+﻿l_simp_chinese:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+
+ AOW_TECH_starfall_spear:0"$AOW_MEGA_starfall_spear$"
+ AOW_TECH_starfall_spear_desc:0"一项足以成为震慑寰宇的究极军事项目已经被提出，它依托于恒星建造，依靠恒星作为启动能量将足以撕裂时空本身的无穷暗能量聚集，化为击坠星辰的审判之光。当这项工程学和军事上的伟大奇迹建造完成之时，无人再能够阻止我们的意志。如今，我们将亲自裁定群星的命运。"
+ AOW_TECH_starfall_spear_cooldown_1:0"$AOW_MEGA_starfall_spear$ 自我维护"
+ AOW_TECH_starfall_spear_cooldown_1_desc:0"$AOW_MEGA_starfall_spear$将在冷却期间启用自我维护协议，加快对自己的全面检修，减少冷却时间。"
+ AOW_TECH_starfall_spear_cooldown_2:0"$AOW_MEGA_starfall_spear$ 能量聚集"
+ AOW_TECH_starfall_spear_cooldown_2_desc:0"提高了恒星能量和暗物质能量的聚集效率，使得$AOW_MEGA_starfall_spear$可以稍微提前一些发射下一炮。"
+ AOW_TECH_starfall_spear_cooldown_3:0"$AOW_MEGA_starfall_spear$ 能量储存"
+ AOW_TECH_starfall_spear_cooldown_3_desc:0"提高了能量储存上限了，可以更频繁地发射$AOW_MEGA_starfall_spear$，这将进一步减少冷却时间。"
+ AOW_TECH_starfall_spear_cooldown_4:0"$AOW_MEGA_starfall_spear$ 能量密度"
+ AOW_TECH_starfall_spear_cooldown_4_desc:0"同样的储存单位现在可以容纳更多的能量，更多的储备能量意味着更少的冷却时间。"
+ AOW_TECH_starfall_spear_cooldown_5:0"$AOW_MEGA_starfall_spear$ 曲率调整"
+ AOW_TECH_starfall_spear_cooldown_5_desc:0"利用时空曲率技术实时为$AOW_MEGA_starfall_spear$调整其周围的时空曲率，进一步减少其冷却时间。"
+
+ mod_starfall_spear_cooldown_mult:0"$AOW_MEGA_starfall_spear$冷却时间"
+ mod_starfall_spear_cooldown_speed_mult:0"$AOW_MEGA_starfall_spear$冷却速度"
+ mod_starfall_spear_cooldown_speed_add:0"$AOW_MEGA_starfall_spear$基础冷却速度"
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+
+ AOW_MEGA_starfall_spear_0:0"$AOW_MEGA_starfall_spear$ 基址"
+ AOW_MEGA_starfall_spear_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在恒星上\n$t$—星系中不能有宜居星球\n$t$—必须是单恒星星系\n\n$EFFECTS_HEADER$\n$t$—提高外交权重和影响力\n$t$—可发动远程跨星系打击\n$t$—目标选择采用UI选取器，§Y流畅不卡§!"
+ AOW_MEGA_starfall_spear_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$一种可以驱动恒星能量进行远程星系打击的巨构，足以被称为星际时代的核武器，建造过程中会§R清空星系§!以腾出建造空间。"
+ AOW_MEGA_starfall_spear_0_DESC:0"一项毁灭性武器项目建设的基址，这里凝聚了帝国全部的人力物力资源，依托这个临时的建筑平台，数不清的无人拆解舰将星系中的行星拆解并运输到这里加工，最终作为$AOW_MEGA_starfall_spear$的材料，锻造这灭世的武器。"
+ AOW_MEGA_starfall_spear_1:0"$AOW_MEGA_starfall_spear$ 缚星"
+ AOW_MEGA_starfall_spear_1_DESC:0"工程的第一步是在恒星附近建造一个用于提供启动能量的控星体结构，它会不断吸收恒星能量，并将其转化为后续工程的稳定能源来源。"
+ AOW_MEGA_starfall_spear_2:0"$AOW_MEGA_starfall_spear$ 后托"
+ AOW_MEGA_starfall_spear_2_DESC:0"建设在$AOW_MEGA_starfall_spear$后端的暗能吸收器在星笼提供的能量下人为制造暗能量势差吸收巨量的暗能量，用于充盈$AOW_MEGA_starfall_spear$所需的打击用暗能量。"
+ AOW_MEGA_starfall_spear_3:0"$AOW_MEGA_starfall_spear$ 约束"
+ AOW_MEGA_starfall_spear_3_DESC:0"暗能调谐器，这是它最大的结构，外表看起来如同剑锋。上下两个天文单位大小的约束调整系统负责将吸收器吸收的暗能量进行聚焦，调频，以确保按照我们想要的威力对目标进行打击。"
+ AOW_MEGA_starfall_spear_4:0"$AOW_MEGA_starfall_spear$"
+ AOW_MEGA_starfall_spear_4_DESC:0"$AOW_MEGA_starfall_spear_standby_DESC$"
+
+ AOW_MEGA_starfall_spear_standby:0"$AOW_MEGA_starfall_spear$"
+ AOW_MEGA_starfall_spear_standby_DESC:0"依靠暗物质和恒星能量驱动，$AOW_MEGA_starfall_spear$可通过定向虫洞对任意目标发起打击。\n至此，我们真正掌握了星空中一切事物的命运。\n§L冷却期间，能量币维护费翻倍。§!"
+ AOW_MEGA_starfall_spear_launch:0"$AOW_MEGA_starfall_spear$ §R发射§!"
+ AOW_MEGA_starfall_spear_launch_DESC:0"启动发射程序，开启定向虫洞，准备定位目标，时刻准备打击！"
+ AOW_MEGA_starfall_spear_launching:0"$AOW_MEGA_starfall_spear$ §R发射中§!"
+ AOW_MEGA_starfall_spear_launching_DESC:0"正在对目标发起定向打击。"
+
+
+ AOW_MEGA_starfall_spear_fire_O:0"$AOW_MEGA_starfall_spear$ §R发射中§!"
+ AOW_MEGA_starfall_spear_fire_O_DESC:0"正在对目标发起定向打击。"
+ AOW_MEGA_starfall_spear_fire_B:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_B_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_A:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_A_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_F:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_F_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_G:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_G_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_K:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_K_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+ AOW_MEGA_starfall_spear_fire_M:0"$AOW_MEGA_starfall_spear_fire_O$"
+ AOW_MEGA_starfall_spear_fire_M_DESC:0"$AOW_MEGA_starfall_spear_fire_O_DESC$"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_mega_notification_title:0"§H[fromfromfrom.GetName]§!建设完成"
+
+ AOW_evt_starfall_spear.100.a.desc:0"一项伟大工程的开始总是默默无闻的，在[from.GetName]的临时建筑平台，无数工程师和军事专家正在秘密进行着这项超级工程的建设，我们都知道它的建成意味着什么，我们的所有心血，都凝聚在了这项极具震慑力的工程上。\n\n我们目前已经执行了严格的信息管控以防止机密泄露，所有的参与者将在这里与世隔绝，直到它的建成。"
+ AOW_evt_starfall_spear.100.b.desc:0"如果$AOW_MEGA_starfall_spear$能随时发射，那么它就能保障我们的安全，但如果它刚刚完成发射任务，处在冷却期间呢？唯一的办法就是再造一个$AOW_MEGA_starfall_spear$，确保它们可以轮番射击！\n\n因此，在[from.GetName]的临时建筑平台，再次聚集了无数工程师和建造者，我们将再一次完成这项极具震慑力的工程。\n\n我们目前已经执行了严格的信息管控以防止机密泄露，所有的参与者将在这里与世隔绝，直到它的建成。"
+ AOW_evt_starfall_spear.100.a:0"沉默是必要的。"
+
+ AOW_evt_starfall_spear.101.desc:0"建造$AOW_MEGA_starfall_spear$的第一步是在恒星附近建造一个用于提供巨量能量的控星体结构，在当前阶段它负责吸收少量的恒星能量，并将其转化为后续工程的稳定能源来源。\n\n而在$AOW_MEGA_starfall_spear$完工之后，它则会吸收并聚集大量的恒星能量，再将其源源不断地运输至整个系统，直至到达目的地..."
+ AOW_evt_starfall_spear.101.a:0"能量的来源！"
+
+ AOW_evt_starfall_spear.102.desc:0"$AOW_MEGA_starfall_spear$展开了它的翅膀，仿佛带来启示录的天使之翼。\n\n这7根巨柱在$AOW_MEGA_starfall_spear$发射之时，会向后发射恒星能量以抵消巨大后座力，从而稳定整个结构；而在平时，它们则是传输和储存恒星能量的多功能装置。"
+ AOW_evt_starfall_spear.102.a:0"韬光养晦，静待时机。"
+
+ AOW_evt_starfall_spear.103.desc:0"随着$AOW_MEGA_starfall_spear$的主体结构基本完成，参加秘密工程的建造者们兴奋不已，因为保卫他们的工程即将完成，这个接近天文单位大小的恒星狙击枪或许是全银河所出现过的最为强大的武器。\n\n距离最终完成，还剩下虫洞传输门需要建造。"
+ AOW_evt_starfall_spear.103.a:0"即将完成了..."
+
+ AOW_evt_starfall_spear.104.a.desc:0"在$AOW_MEGA_starfall_spear$完成之后，我们向全银河宣告了恒星级武器的存在，银河的混乱时代即将结束，因为它的存在本身就代表着我们的强大意志，代表着我们所期望的秩序。\n\n自此以后，直至永恒，$AOW_MEGA_starfall_spear$都会成为悬在银河的达摩克里斯之剑，而我们便是执剑之人。\n\n不过外交部提议我们最好事先明确它的使用政策，我们到底是为了摧毁敌人而建造，还是为了自保而建造..."
+ AOW_evt_starfall_spear.104.b.desc:0"我们再度完成了$AOW_MEGA_starfall_spear$的建造，我们的意志更加强大，我们可以为敌人带来超光速般的末日，也可以用于保卫我们的家园，极速消灭入侵的敌人。\n\n自此以后，直至永恒，$AOW_MEGA_starfall_spear$都会成为悬在银河的达摩克里斯之剑，而我们便是执剑之人。"
+ AOW_evt_starfall_spear.104.a:0"手上有剑，要用吗？"
+
+ AOW_evt_starfall_spear.200.desc:0"我们的情报部门收到了一份密报，[from.GetName]似乎正在[fromfrom.GetName]星系建造一种巨型结构，但我们目前还不清楚它具体是什么，但从他们对这件事的保密程度来看，应该是一种见不得光的东西。\n\n我们的军事部门警告，如果是某种杀伤性武器，那我们最好尽快出手阻止[from.GetName]。"
+ AOW_evt_starfall_spear.200.a:0"感觉不妙啊。"
+ AOW_evt_starfall_spear.201.desc:0"[from.GetName]在[fromfrom.GetName]星系建造的不明巨构已经达到包裹恒星的阶段了，可能是想吸收恒星的能量，我们目前并不确定他们是想要利用恒星发电，还是用于制造武器，如果是发电，那为什么不建造戴森球呢？"
+ AOW_evt_starfall_spear.201.a:0"我们必须有所行动了。"
+ AOW_evt_starfall_spear.202.desc:0"警告！在[fromfrom.GetName]星系探测到时空曲率异常，我们已经确定[from.GetName]在此处建造的东西肯定不是什么生产类巨构了，因为我们目前还不知道哪种只会生产的巨构会产生这种异常现象。"
+ AOW_evt_starfall_spear.202.a:0"这又是在干什么。"
+ AOW_evt_starfall_spear.203.desc:0"[fromfrom.GetName]星系的超巨型结构最终还是展现出了它的姿态，一个极其巨大的，接近天文单位大小的炮口，我们几乎可以肯定[from.GetName]是在建造一种极度危险的武器巨构。\n\n如果我们不想成为他们的实验目标，最好尽快出手。"
+ AOW_evt_starfall_spear.203.a:0"越来越危险了。"
+ AOW_evt_starfall_spear.204.desc:0"银河危机之时。\n\n[from.GetName]已经宣告了他们在[fromfrom.GetName]星系建造的超巨型结构，他们称之为“$AOW_MEGA_starfall_spear$”，是一种能够摧毁整个星系的极端危险的武器，谁也不能贸然对其宣战了，因为他们会时刻将炮口转向他们的敌人。\n\n这一刻，他们的$AOW_MEGA_starfall_spear$已经成为了悬在银河的达摩克里斯之剑，而他们便是执剑之人。"
+ AOW_evt_starfall_spear.204.a:0"不好了..."
+
+
+
+ AOW_evt_starfall_spear.500.name:0"$AOW_MEGA_starfall_spear$：目标选取"
+ AOW_evt_starfall_spear.500.desc:0"$AOW_MEGA_starfall_spear$：目标选取"
+ AOW_evt_starfall_spear.500.quit:0"取消任务"
+ AOW_evt_starfall_spear.500.quit.tooltip:0"放弃此次行动，$AOW_MEGA_starfall_spear$恢复待机状态..."
+ AOW_evt_starfall_spear.500.confirm:0"确认目标"
+ AOW_evt_starfall_spear.500.confirm.tooltip:0"确认打击目标，$AOW_MEGA_starfall_spear$开始传输能量！"
+
+ AOW_evt_starfall_spear.501.name:0"$AOW_MEGA_starfall_spear$：使用教程"
+ AOW_evt_starfall_spear.501.desc:0"$AOW_MEGA_starfall_spear$：使用教程"
+ AOW_evt_starfall_spear.501.a:0"退出教程"
+ AOW_evt_starfall_spear.501.b:0"不再启用教程"
+
+ AOW_evt_starfall_spear.503.name:0"冷却完成"
+ AOW_evt_starfall_spear.503.desc:0"位于§Y[fromfrom.GetName]§!星系的$AOW_MEGA_starfall_spear$已完成冷却，随时可以发射。"
+ AOW_evt_starfall_spear.503.a:0"那就来吧！"
+
+ AOW_evt_starfall_spear.511.name:0"亚空间波动"
+ AOW_evt_starfall_spear.511.desc:0"在[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]星系内检测到一股强大的亚空间波动，从中出来的大量高能粒子以接近光速的速度正在撞击[event_target:AOW_tgt_PLNT_starfall_spear_target.GetName]，它正在变得越来越不稳定。\n\n经逆向分析，确认源头是来自[event_target:AOW_tgt_CNTR_starfall_spear.GetName]境内的[event_target:AOW_tgt_SSTM_starfall_spear.GetName]星系，里面的$AOW_MEGA_starfall_spear$正在对我们的领地发起打击！"
+ AOW_evt_starfall_spear.511.a:0"我们没有防御手段，这个星系保不住了..."
+ AOW_evt_starfall_spear.511.b:0"无所谓，$AOW_MEGA_celestial_shield$会保护我们的。"
+ AOW_evt_starfall_spear.511.c:0"$AOW_MEGA_celestial_shield$没有足够的掩体星环来保护我们！"
+
+ AOW_evt_starfall_spear.512.name:0"亚空间波动"
+ AOW_evt_starfall_spear.512.desc:0"在[event_target:AOW_tgt_SSTM_starfall_spear_target.GetName]星系内检测到一股强大的亚空间波动，从中出来的大量高能粒子以接近光速的速度正在撞击[event_target:AOW_tgt_PLNT_starfall_spear_target.GetName]，它正在变得越来越不稳定。\n\n经逆向分析，确认源头是来自[event_target:AOW_tgt_CNTR_starfall_spear.GetName]境内的[event_target:AOW_tgt_SSTM_starfall_spear.GetName]星系，里面的$AOW_MEGA_starfall_spear$正在对我们的领地发起打击！"
+ AOW_evt_starfall_spear.512.a:0"我们没有防御手段，这个星系保不住了..."
+ AOW_evt_starfall_spear.512.b:0"无所谓，$AOW_MEGA_celestial_shield$会保护我们的。"
+ AOW_evt_starfall_spear.512.c:0"$AOW_MEGA_celestial_shield$没有足够的掩体星环来保护我们！"
+ AOW_evt_starfall_spear.512.d:0"虽然这只是个无主之地，但我们任然视其为挑衅行为！"
+
+ AOW_evt_starfall_spear.611.name:0"星系被隔绝"
+ AOW_evt_starfall_spear.611.desc:0"[from.GetName]星系被隔绝，所有通往该星系的超空间航道均已被撕裂，除非我们有其他通往[from.GetName]星系的手段，否则短时间内无法与之来往了。"
+ AOW_evt_starfall_spear.621.name:0"星系被灭杀"
+ AOW_evt_starfall_spear.621.desc:0"[from.GetName]星系被灭杀，该星系的所有殖民地都被摧毁了，上面预估残留了很多殖民者的遗骸和废墟，需要一定时间自我修复。"
+ AOW_evt_starfall_spear.631.name:0"星系被震荡"
+ AOW_evt_starfall_spear.631.desc:0"[from.GetName]星系发生了一次剧烈的空间震荡，大部分工业设施遭到严重损毁。"
+ AOW_evt_starfall_spear.641.name:0"星辰陨落"
+ AOW_evt_starfall_spear.641.desc:0"[from.GetName]星系发生了一次剧烈的超新星爆炸，恒星坍缩为黑洞，行星全部爆裂，这个星系被加速进入了它的末日。"
+ AOW_evt_starfall_spear.651.name:0"奇异物质"
+ AOW_evt_starfall_spear.651.desc:0"[from.GetName]星系发生了一次剧烈的超新星爆炸，这个亚空间波动带来的奇异物质将恒星同化为中子星，行星全部被熔融，这个星系被加速进入了它的末日。"
+ AOW_evt_starfall_spear.661.name:0"死亡献祭"
+ AOW_evt_starfall_spear.661.desc:0"[from.GetName]星系发生了一次剧烈的亚空间波动，恒星损失了的大部分质量，并以前所未有的速度坍缩为黑洞，行星全部被一种神秘迷雾笼罩，据说被献祭给了虚境。"
+
+ AOW_evt_starfall_spear.601.name:0"成功拦截星系级打击"
+ AOW_evt_starfall_spear.601.desc:0"就在[event_target:AOW_tgt_SSTM_starfall_spear_target]星系即将遭受灭顶之灾的前夕，我们的$AOW_MEGA_celestial_shield$及时派出了四个掩体星环，吸收并释放了那股强大但不稳定的能量，成功帮我们抵挡了来自遥远$AOW_MEGA_starfall_spear$的打击。\n\n但代价也不是没有的，我们的一个$AOW_MEGA_celestial_shield$为此失去了四个掩体星环，我们需要及时补充好所有的掩体星环，以防止敌人的再次打击！"
+ AOW_evt_starfall_spear.601.a:0"没人可以按个按钮就能消灭我们！"
+ AOW_evt_starfall_spear.602.name:0"星系打击被拦截"
+ AOW_evt_starfall_spear.602.desc:0"就在我们的$AOW_MEGA_starfall_spear$即将摧毁[event_target:AOW_tgt_SSTM_starfall_spear_target]星系时，我们发现，我们的打击光束中间出现了四个掩体星环组成的防御阵列，它们吸收并释放了我们的打击能量，从而使得我们的打击失效了！\n\n我们估计是它们的$AOW_MEGA_celestial_shield$起了作用，帮它们延缓了它们的失败倒计时，但我们也不并不是竹篮打水一场空，起码消耗了它们的四个掩体星环，估计它们需要资源和时间来重新补充。"
+ AOW_evt_starfall_spear.602.a:0"看来很难有人按个按钮就能消灭它们了？"
+
+ AOW_evt_starfall_spear.701.name:0"成功拦截行星级打击"
+ AOW_evt_starfall_spear.701.desc:0"就在[event_target:AOW_target_planet]上的群众陷入绝望之际，我们的$AOW_MEGA_celestial_shield$及时派出了一个掩体星环，吸收并释放了那股强大但不稳定的能量，成功帮我们抵挡了来自遥远$AOW_MEGA_starfall_spear$的打击。\n\n但代价也不是没有的，我们的一个$AOW_MEGA_celestial_shield$为此失去了一个掩体星环，我们需要及时补充好所有的掩体星环，以防止敌人的再次打击！"
+ AOW_evt_starfall_spear.701.a:0"没人可以按个按钮就能消灭我们！"
+ AOW_evt_starfall_spear.702.name:0"行星打击被拦截"
+ AOW_evt_starfall_spear.702.desc:0"就在我们的$AOW_MEGA_starfall_spear$即将消灭[event_target:AOW_target_planet]时，我们发现这颗星球上空出现了一个掩体星环，它吸收并释放了我们的打击能量，从而使得我们的打击失效了！\n\n我们估计是它们的$AOW_MEGA_celestial_shield$起了作用，帮它们延缓了它们的失败进度，但我们也不并不是竹篮打水一场空，起码消耗了它们的一个掩体星环，估计它们需要资源和时间来重新补充。"
+ AOW_evt_starfall_spear.702.a:0"看来很难有人按个按钮就能消灭它们了？"
+
+ #####################################################################################
+ ####################################### 自定义UI #######################################
+ #####################################################################################
+ AOW_starfall_spear_requires_has_communication_with_space_owner:0"$TRIGGER_FAIL$无法打击未知国家的星系，我们没有足够情报。"
+ AOW_starfall_spear_requires_not_isolated:0"$TRIGGER_FAIL$该星系不能是孤立星系（即必须有一个与它有超空间航道链接的星系）。"
+ AOW_starfall_spear_requires_no_our_or_allys:0"$TRIGGER_FAIL$该星系不能是§G己方星系§!或者§B盟友星系§!。"
+ AOW_starfall_spear_requires_no_owner_or_hostile:0"$TRIGGER_FAIL$该星系必须是§Y无主星系§!或者§R敌对星系§!。"
+ AOW_starfall_spear_requires_no_first_use:0"$TRIGGER_FAIL$该星系必须是§Y无主星系§!或者是§R打击过我们的敌对星系§!。"
+ AOW_starfall_spear_requires_has_colony:0"$TRIGGER_FAIL$该星系内必须有一个存在人口的殖民地。"
+ AOW_starfall_spear_requires_no_error:0"$TRIGGER_FAIL$此处存在潜在崩溃威胁，强行打击该处可能会导致游戏§R崩溃§!..."
+ AOW_starfall_spear_requires_no_starfall_spear:0"$TRIGGER_FAIL$无法打击有$AOW_MEGA_starfall_spear$的星系（$AOW_MEGA_starfall_spear$自带强大的亚空间扰动）。"
+ AOW_starfall_spear_requires_only_one_target:0"$TRIGGER_FAIL$我们已经为特定目标选择了一个打击模式。"
+ AOW_starfall_spear_requires_cannot_be_being_hitted:0"$TRIGGER_FAIL$此处正在被其他$AOW_MEGA_starfall_spear$打击，亚空间波动幅度很大，无法发起打击。"
+ AOW_starfall_spear_requires_no_crisis_sphere:"$TRIGGER_FAIL$无法打击有$crisis_sphere_4$的星系（$crisis_sphere_4$自带强大的亚空间扰动）。"
+ AOW_starfall_spear_requires_no_primary_black_hole:0"$TRIGGER_FAIL$该星系的主星是黑洞，无法启用该打击模式。"
+ AOW_starfall_spear_requires_no_primary_neutron_star:0"$TRIGGER_FAIL$该星系的主星是中子星，无法启用该打击模式。"
+ AOW_starfall_spear_requires_has_target:0"需要选择一个§Y目标§!和§R打击模式§!。"
+ AOW_starfall_spear_requires_has_hostile_fleets:0"$TRIGGER_FAIL$该星系内必须有§R敌对舰船§!。"
+
+ AOW_btn_requires_planet:0"$TRIGGER_FAIL$请用鼠标左键点击§Y行星§!或者§Y行星上的巨构§!"
+ AOW_btn_requires_system:0"$TRIGGER_FAIL$请用鼠标左键点击§Y恒星系内的星球、巨构或舰队§!\n§g选择星球和巨构可在现场观看特效\n在银河系视图选择舰队，可避免直视大量舰队造成的卡顿§!"
+ AOW_text_btn_planet_target:0"行星级目标"
+ AOW_text_btn_system_target:0"星系级目标"
+
+ AOW_planet_target_mode_01_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_CRACKER_DESC$"
+ AOW_planet_target_mode_02_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_SHIELDER_DESC$"
+ AOW_planet_target_mode_03_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_NEUTRON_DESC$"
+ AOW_planet_target_mode_04_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_GODRAY_DESC$"
+ AOW_planet_target_mode_05_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_NANOBOTS_DESC$"
+ AOW_planet_target_mode_06_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!$PLANET_KILLER_DELUGE_DESC$"
+ AOW_planet_target_mode_07_tooltip:0"\n§R>>> §Y行星：[this.planet.GetName]§! <<<§!\n§L来自星系：[this.solar_system.GetName]§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!180天\n§H最终效果：§!这是一种巨像级心智抹除武器，可以释放覆盖整颗行星的能量波，将大多数智慧生命变回未开智状态。工程师们预估在进行进一步调整之后（拥有§Y$ap_archaeoengineers$§!飞升天赋），它甚至还可以用来抹除机器单元的记忆体使其瘫痪。"
+
+ AOW_text_btn_system_target_mode_01:0"黑域封锁"
+ AOW_system_target_mode_01_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!1800天\n§H最终效果：§!移除目标星系的所有超空间航道链接。\n\n§H标签：§!游戏崩溃\n\n§R警告：多次移除超空间航道后，必定会导致游戏崩溃！§!\n§R警告：多次移除超空间航道后，必定会导致游戏崩溃！§!\n§R警告：多次移除超空间航道后，必定会导致游戏崩溃！§!\n\n§L所有高能粒子流的能量都被用于断裂目标星系周围的超空间航道链接。§!"
+ AOW_text_btn_system_target_mode_02:0"净世圣灭"
+ AOW_system_target_mode_02_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!1800天\n§H最终效果：§!灭杀目标星系内所有殖民地的所有人口和防御部队。\n\n§H标签：§!针对人口，事件杀，兼容性较低\n\n§L一种具有导向性、极具致命性的高能粒子可以准确找到并清除该星系内的所有知性生命体，但会在殖民地上留下持续5年的负面效果§!"
+ AOW_text_btn_system_target_mode_03:0"高能震荡"
+ AOW_system_target_mode_03_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!1800天\n§H最终效果：§!摧毁§Y[this.solar_system.GetName]§!星系内的所有开采站、研究站和观测站等空间站，所有敌对舰船会在180天内失去护盾、装甲和大部分船体值，并且大幅度减少速度、闪避、伤害和撤退几率。\n\n§H标签：§!针对舰船，兼容性高\n\n§Y注意：专门针对舰船的打击程序，不会摧毁它的战利品或者破坏相关事件或任务。§!\n\n§R警告：完成打击后请立刻派遣舰队追击，§!\n\n§L这些高能粒子到达目的地并具有一定规模后，会与恒星互相撞击进而引发强烈的引力波震荡，足以摧毁绝大部分的太空工业设施，这种高能粒子还会针对性地攻击敌对舰船，使它们在一定时间内持续受损。§!"
+ AOW_text_btn_system_target_mode_04:0"星辰陨落"
+ AOW_system_target_mode_04_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!3600天\n§H最终效果：§!§Y[this.solar_system.GetName]§!星系变为黑洞星系，所有行星变为破碎星球，舰船和巨构被强制摧毁。\n\n§H标签：§!事件杀、兼容性低\n\n§R警告：纯事件杀，会摧毁舰船的战利品和相关事件链，造成的任何损失和bug由发射者自行承担§!\n\n§L高能粒子会命中恒星，引发超新星爆炸。§!"
+ AOW_text_btn_system_target_mode_05:0"奇异物质"
+ AOW_system_target_mode_05_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!3600天\n§H最终效果：§!§Y[this.solar_system.GetName]§!星系变为中子星星系，所有行星变为熔融星球，舰船和巨构被强制摧毁。\n\n§H标签：§!事件杀、兼容性低\n\n§R警告：纯事件杀，会摧毁舰船的战利品和相关事件链，造成的任何损失和bug由发射者自行承担§!!\n\n§L这种理论上仅存在于中子星核心深处的奇异物质，具有极强的同化性，可以将任何触碰到的物体转化为同样的奇异物质，而这些被同化的奇异物质又会开始下一步的同化...§!"
+ AOW_text_btn_system_target_mode_06:0"死亡献祭"
+ AOW_system_target_mode_06_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!3600天\n§H最终效果：§!§Y[this.solar_system.GetName]§!星系变为黑洞星系，所有行星变为虚境星球，舰船和巨构被强制摧毁，我们将获得凝聚力。\n\n§H标签：§!事件杀、兼容性低\n\n§R警告：纯事件杀，会摧毁舰船的战利品和相关事件链，造成的任何损失和bug由发射者自行承担§!\n\n§L在星系中心打开一个通往虚境的大裂口，将整个星系献祭给虚境，以换取虚境的回报...§!"
+ AOW_text_btn_system_target_mode_07:0"枢纽风暴"
+ AOW_system_target_mode_07_tooltip:0"\n§R>>> §Y星系：[this.solar_system.GetName]§! <<<§!\n\n§H延迟时间：§!30天\n§H冷却时间：§!1800天\n§H最终效果：§!以§Y[this.solar_system.GetName]§!星系为中，激发出一个强破坏力、长时间的['concept_nexus_storm']\n\n§H标签：§!风暴\n\n§L通过激发引力波和恒星风暴，在智能粒子的精确调控下，一系列的蝴蝶效应最终会形成极具破坏力的枢纽风暴。§!"
+
+ AOW_text_starfall_spear_tutorial_1:0"§H教程：§!\n\n§H第一步：§!\n用鼠标左键点击目标星球，或者用鼠标左键点击目标星球上的巨构，想选择星系还可用鼠标左键点击星系内的舰队，都是点模型或名字条\n\n§H第二步：§!\n选中目标后，在出现的按钮中，选择一个喜欢的打击模式\n\n§H第三步：§!\n点$AOW_evt_starfall_spear.500.confirm$按钮，即可完成发射"
+ AOW_text_starfall_spear_tutorial_2:0"§H技巧：§!\n\n§H问：§!如果星系没有主恒星怎么选中？\n§H答：§!打击特效必须依赖主恒星生成，没有主恒星的星系无法选中\n\n§H问：§!我想换一个打击模式，但按钮消失了怎么办？\n§H答：§!取消任务，然后重新发射\n\n§H问：§!如何移动窗口UI？\n§H答：§!抓住窗口UI头上的三个啾啾即可移动该窗口UI\n\n§H问：§!想打击星系，但不想进入星系视角怎么办？\n§H答：§!选中该星系内的舰队即可"
+
+
+ AOW_SYSTEM_STRIKE_INTERCEPTED_TITLE:0"星系打击被拦截"
+ AOW_SYSTEM_STRIKE_INTERCEPTED_DESC:0"$SYSTEM|Y$被对方的$AOW_MEGA_celestial_shield$所拦截，打击失效。"
+ AOW_INTERCEPTED_SYSTEM_STRIKE_TITLE:0"已拦截星系打击"
+ AOW_INTERCEPTED_SYSTEM_STRIKE_DESC:0"$SYSTEM|Y$受到$AOW_MEGA_celestial_shield$的保护，已成功拦截敌方打击。"
+
+ AOW_PLANET_DESTROYED_TITLE:0"行星被击中"
+ AOW_PLANET_DESTROYED_BY_CRACKER_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被彻底摧毁。"
+ AOW_PLANET_DESTROYED_BY_SHIELDER_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被无法穿透的护盾屏蔽。"
+ AOW_PLANET_DESTROYED_BY_NEUTRON_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被彻底净化。"
+ AOW_PLANET_DESTROYED_BY_GODRAY_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被执行圣裁。"
+ AOW_PLANET_DESTROYED_BY_NANOBOTS_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被纳米机器人同化。"
+ AOW_PLANET_DESTROYED_BY_DELUGE_DESC:0"$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，已被彻底淹没。"
+ AOW_PLANET_DESTROYED_BY_DEVOLUTION_DESC:0 "$PLANET|Y$被$AOW_MEGA_starfall_spear$击中，当地的几乎所有人口都被其强行退化到了未开智状态。"
+ AOW_PLANET_STRIKE_INTERCEPTED_TITLE:0"行星打击被拦截"
+ AOW_PLANET_STRIKE_INTERCEPTED_DESC:0"$PLANET|Y$被对方的$AOW_MEGA_celestial_shield$所拦截，打击失效。"
+ AOW_INTERCEPTED_PLANET_STRIKE_TITLE:0"已拦截行星打击"
+ AOW_INTERCEPTED_PLANET_STRIKE_DESC:0"$PLANET|Y$受到$AOW_MEGA_celestial_shield$的保护，已成功拦截敌方打击。"

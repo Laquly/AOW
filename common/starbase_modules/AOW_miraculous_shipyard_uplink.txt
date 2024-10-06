@@ -1,0 +1,47 @@
+AOW_miraculous_shipyard_uplink = {
+	icon = "GFX_spaceport_miraculous_shipyard_uplink"
+	section = "ASSEMBLYYARD_STARBASE_SECTION"
+	construction_days = 0
+	ai_weight = { weight = 1500 }
+	potential = {
+		is_orbital_ring = no
+		NOT = { has_starbase_module = AOW_miraculous_shipyard_uplink }
+		exists = owner
+		owner = { has_technology = AOW_TECH_miraculous_shipyard }
+		solar_system = {
+			has_megastructure = AOW_MEGA_miraculous_shipyard_5
+		}
+	}
+	orbit_modifier = { ship_orbit_upkeep_mult = -0.5 }
+	ship_modifier = { ship_starting_experience_add = 1000 }
+	station_modifier = {
+		starbase_shipyard_build_cost_mult = -0.2
+		starbase_shipyard_capacity_add = 100
+	}
+	triggered_country_modifier = {
+		potential = { root = { has_tradition = tr_tt_wonders_3 } }
+		country_naval_cap_mult = 0.1
+		ships_upkeep_mult = -0.1
+	}
+	abort_trigger = {
+		count_starbase_modules = { type = AOW_miraculous_shipyard_uplink count > 1 }
+		NOT = {
+			solar_system = {
+				any_system_megastructure = {
+					is_megastructure_type = AOW_MEGA_miraculous_shipyard_5
+				}
+			}
+		}
+	}
+	destroy_trigger = {
+		count_starbase_modules = { type = AOW_miraculous_shipyard_uplink count > 1 }
+		NOT = {
+			solar_system = {
+				any_system_megastructure = {
+					is_megastructure_type = AOW_MEGA_miraculous_shipyard_5
+				}
+			}
+		}
+	}
+	resources = { category = starbase_buildings }
+}

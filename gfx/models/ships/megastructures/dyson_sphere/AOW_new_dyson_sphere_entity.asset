@@ -1,0 +1,217 @@
+@dyson_scale = 1.8
+
+
+
+entity = {
+	name = "AOW_new_penta_rays_short_entity"
+	pdxmesh = "penta_rays_short_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10 }
+	game_data = {
+		uv_animation_speed   = 0.1
+		uv_animation_direction  = { 0.0 1.0 }
+	}
+	meshsettings = {
+		name = "polySurface6|polySurfaceShape7"
+		index = 0
+		texture_diffuse = "dyson_rays.dds"
+		texture_normal = "nonormal.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshAlphaAdditiveAnimateUV"
+	}
+}
+entity = {
+	name = "AOW_new_penta_rays_entity"
+	pdxmesh = "penta_rays_mesh"
+	scale = @dyson_scale
+	game_data = {
+		uv_animation_speed   = 0.02
+		uv_animation_direction  = { 0.0 3.5 }
+	}
+	meshsettings = {
+		name = "polySurfaceShape7"
+		index = 0
+		texture_diffuse = "dyson_rays.dds"
+		texture_normal = "nonormal.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshAlphaAdditiveAnimateUV"
+	}
+}
+
+entity = {
+	name = "AOW_new_hexa_rays_entity"
+	pdxmesh = "hexa_rays_mesh"
+	scale = @dyson_scale
+	game_data = {
+		uv_animation_speed   = 0.1
+		uv_animation_direction  = { 1.0 1.0 }
+	}
+	meshsettings = {
+		name = "polySurface5Shape"
+		index = 0
+		texture_diffuse = "dyson_rays.dds"
+		texture_normal = "nonormal.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshAlphaAdditiveAnimateUV"
+	}
+}
+
+
+entity = {
+	name = "AOW_new_dyson_sphere_destroyed_entity"
+	pdxmesh = "dyson_sphere_destroyed_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_destroyed" stop_on_state_change = yes } }
+	}
+	meshsettings = {
+		name = "bodyShape"
+		index = 0
+		texture_diffuse = "dyson_sphere_destroyed_01_diffuse.dds"
+		texture_normal = "dyson_sphere_destroyed_01_normal.dds"
+		texture_specular = "dyson_sphere_destroyed_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+
+entity = {
+	name = "AOW_new_dyson_sphere_frame_entity"
+	pdxmesh = "dyson_sphere_frame_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_treble_hum" } }
+	}
+	meshsettings = {
+		name = "frame1Shape"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+entity = {
+	name = "AOW_new_dyson_sphere_part_1_entity"
+	pdxmesh = "dyson_sphere_part_1_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder26|pCylinderShape2"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "AOW_new_dyson_sphere_part_2_entity"
+	pdxmesh = "dyson_sphere_part_2_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder11|pCylinderShape11"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+entity = {
+	name = "AOW_new_dyson_sphere_part_3_entity"
+	pdxmesh = "dyson_sphere_part_3_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+	meshsettings = {
+		name = "pCylinder22|pCylinderShape22"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+
+entity = {
+	name = "AOW_new_dyson_sphere_part_4_entity"
+	pdxmesh = "dyson_sphere_part_4_mesh"
+	scale = @dyson_scale
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		event = { time = 0 particle = "dyson_sphere_electricity_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum" } }
+	}
+	meshsettings = {
+		name = "pCylinder15|pCylinderShape1"
+		index = 0
+		texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+		texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+		texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+}
+#####################################################################################
+entity = {
+	name = "AOW_new_dyson_sphere_phase_01_entity"
+	locator = { name = "root"	position = { 0 0 0 } }	
+	attach = { "root" = "AOW_new_dyson_sphere_frame_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "AOW_new_dyson_sphere_phase_02_entity"
+	locator = { name = "root"	position = { 0 0 0 } }	
+	attach = { "root" = "AOW_new_dyson_sphere_frame_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_1_entity" }
+	attach = { "root" = "AOW_new_penta_rays_short_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "AOW_new_dyson_sphere_phase_03_entity"
+	locator = { name = "root"	position = { 0 0 0 } }	
+	attach = { "root" = "AOW_new_dyson_sphere_frame_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_1_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_2_entity" }
+	attach = { "root" = "AOW_new_penta_rays_short_entity" }
+	attach = { "root" = "AOW_new_hexa_rays_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "AOW_new_dyson_sphere_phase_04_entity"
+	locator = { name = "root"	position = { 0 0 0 } }	
+	attach = { "root" = "AOW_new_dyson_sphere_frame_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_1_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_2_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_3_entity" }
+	attach = { "root" = "AOW_new_penta_rays_short_entity" }
+	attach = { "root" = "AOW_new_hexa_rays_entity" }
+	scale = 1.0
+}
+
+entity = {
+	name = "AOW_new_dyson_sphere_phase_05_entity"
+	locator = { name = "root"	position = { 0 0 0 } }	
+	attach = { "root" = "AOW_new_dyson_sphere_frame_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_1_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_2_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_3_entity" }
+	attach = { "root" = "AOW_new_dyson_sphere_part_4_entity" }
+	attach = { "root" = "AOW_new_penta_rays_entity" }
+	attach = { "root" = "AOW_new_hexa_rays_entity" }
+	scale = 1.0
+	game_data = { emissive_recolor_crunch = 6.0 }
+}

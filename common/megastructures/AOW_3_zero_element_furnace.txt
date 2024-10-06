@@ -1,0 +1,356 @@
+AOW_MEGA_zero_element_furnace_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_ZEF_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NEUTRON"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_0_COST_alloys
+			unity = @AOW_var_ZEF_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_zero_element_furnace" }
+	potential = { AOW_trigger_mega_potential = { KEY = zero_element_furnace } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_zero_element_furnace } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#必须是单恒星星系
+			fail_text = "AOW_mega_requires_SSTM_single_star"
+			OR = {
+				from = { has_technology = AOW_TECH_dimension_hiding }
+				AOW_trgr_SSTM_single_star_system = yes
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为由中子构成的恒星
+				fail_text = "AOW_mega_requires_PLNT_star_composed_of_neutron"
+				AOW_trgr_PLNT_composed_of_neutron = yes
+			}
+			custom_tooltip = {#不能有奇异物质事件
+				fail_text = "AOW_mega_requires_PLNT_no_strange_matter"
+				NOT = { has_planet_flag = AOW_flag_PLNT_has_strange_matter }
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = zero_element_furnace }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 350
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_militarist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = zero_element_furnace
+			constructing = AOW_MEGA_zero_element_furnace_0
+		}
+	}
+	on_build_complete = {
+		from = {
+			if = {
+				limit = { NOT = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_1 } }
+				set_country_flag = AOW_flag_CNTR_zero_element_furnace_1
+			}
+			else_if = {
+				limit = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_1 }
+				remove_country_flag = AOW_flag_CNTR_zero_element_furnace_1
+				set_country_flag = AOW_flag_CNTR_zero_element_furnace_2
+			}
+			country_event = { id = AOW_evt_zero_element_furnace.100 }
+		}
+		fromfrom = {
+			set_megastructure_flag = zero_element_furnace
+			set_megastructure_flag = AOW_flag_MEGA_zero_element_furnace_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_zero_element_furnace_1 = {
+	entity = "zero_element_furnace_1_entity"
+	construction_entity = "zero_element_furnace_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZEF_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_1_COST_alloys
+			unity = @AOW_var_ZEF_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_0_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_ZEF_1_UPKP_energy_MultiStar
+			alloys = @AOW_var_ZEF_1_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_zero_element_furnace" }
+	upgrade_from = { AOW_MEGA_zero_element_furnace_0 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_zero_element_furnace.101 } }
+	}
+}
+AOW_MEGA_zero_element_furnace_2 = {
+	entity = "zero_element_furnace_2_entity"
+	construction_entity = "zero_element_furnace_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZEF_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_2_COST_alloys
+			unity = @AOW_var_ZEF_2_COST_unity
+		}
+		produces = {
+			alloys = @AOW_var_ZEF_2_PRDC_alloys
+			engineering_research = @AOW_var_ZEF_2_PRDC_engineering
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_2_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_ZEF_2_UPKP_energy_MultiStar
+			alloys = @AOW_var_ZEF_2_UPKP_alloys_MultiStar
+		}
+	}
+	country_modifier = {
+		ship_hull_mult = @AOW_var_ZEF_2_ship_hull_mult
+		ship_armor_mult = @AOW_var_ZEF_2_ship_armor_mult
+		army_health = @AOW_var_ZEF_2_army_health
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_zero_element_furnace" }
+	upgrade_from = { AOW_MEGA_zero_element_furnace_1 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_zero_element_furnace.102 } }
+	}
+}
+AOW_MEGA_zero_element_furnace_3 = {
+	entity = "zero_element_furnace_3_entity"
+	construction_entity = "zero_element_furnace_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZEF_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_3_COST_alloys
+			unity = @AOW_var_ZEF_3_COST_unity
+		}
+		produces = {
+			alloys = @AOW_var_ZEF_3_PRDC_alloys
+			engineering_research = @AOW_var_ZEF_3_PRDC_engineering
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_3_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_ZEF_3_UPKP_energy_MultiStar
+			alloys = @AOW_var_ZEF_3_UPKP_alloys_MultiStar
+		}
+	}
+	country_modifier = {
+		ship_hull_mult = @AOW_var_ZEF_3_ship_hull_mult
+		ship_armor_mult = @AOW_var_ZEF_3_ship_armor_mult
+		army_health = @AOW_var_ZEF_3_army_health
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_zero_element_furnace" }
+	upgrade_from = { AOW_MEGA_zero_element_furnace_2 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_zero_element_furnace.103 } }
+	}
+}
+AOW_MEGA_zero_element_furnace_4 = {
+	entity = "zero_element_furnace_4_entity"
+	construction_entity = "zero_element_furnace_4_construction_entity"
+	portrait = "GFX_megastructure_zero_element_furnace_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZEF_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_4_COST_alloys
+			unity = @AOW_var_ZEF_4_COST_unity
+		}
+		produces = {
+			alloys = @AOW_var_ZEF_4_PRDC_alloys
+			engineering_research = @AOW_var_ZEF_4_PRDC_engineering
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_4_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_ZEF_4_UPKP_energy_MultiStar
+			alloys = @AOW_var_ZEF_4_UPKP_alloys_MultiStar
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	country_modifier = {
+		ship_hull_mult = @AOW_var_ZEF_4_ship_hull_mult
+		ship_armor_mult = @AOW_var_ZEF_4_ship_armor_mult
+		army_health = @AOW_var_ZEF_4_army_health
+	}
+	prerequisites = { "AOW_TECH_zero_element_furnace" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_zero_element_furnace_3 }
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_zero_element_furnace.104 }
+		}
+	}
+}
+
+
+
+AOW_MEGA_zero_element_furnace_ruined = {
+	entity = "zero_element_furnace_ruined_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	potential = { always = no }
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	on_build_complete = {
+		fromfrom = { set_megastructure_flag = zero_element_furnace }
+	}
+}
+AOW_MEGA_zero_element_furnace_restored = {
+	entity = "zero_element_furnace_4_entity"
+	construction_entity = "zero_element_furnace_4_entity"
+	portrait = "GFX_megastructure_zero_element_furnace_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_ZEF_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_ZEF_4_COST_alloys
+			unity = @AOW_var_ZEF_4_COST_unity
+		}
+		produces = {
+			alloys = @AOW_var_ZEF_4_PRDC_alloys
+			engineering_research = @AOW_var_ZEF_4_PRDC_engineering
+		}
+		upkeep = {
+			energy = @AOW_var_ZEF_4_UPKP_energy
+		}
+		upkeep = {
+			trigger = { solar_system = { AOW_trgr_SSTM_single_star_system = no } }
+			energy = @AOW_var_ZEF_4_UPKP_energy_MultiStar
+			alloys = @AOW_var_ZEF_4_UPKP_alloys_MultiStar
+		}
+	}
+	country_modifier = {
+		ship_hull_mult = @AOW_var_ZEF_4_ship_hull_mult
+		ship_armor_mult = @AOW_var_ZEF_4_ship_armor_mult
+		army_health = @AOW_var_ZEF_4_army_health
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_zero_element_furnace
+		category = megastructures
+		alloys = @AOW_var_ZEF_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	possible = { from = { has_technology = tech_mega_engineering } }
+	upgrade_from = { AOW_MEGA_zero_element_furnace_ruined }
+	on_build_complete = {
+		every_system_ambient_object = {
+			limit = {
+				OR = {
+					is_ambient_object_type = small_debris_object
+					is_ambient_object_type = medium_debris_01_object
+					is_ambient_object_type = large_debris_object
+				}
+			}
+			destroy_ambient_object = this
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_zero_element_furnace.201 }
+		}
+		fromfrom = { set_megastructure_flag = zero_element_furnace }
+	}
+}

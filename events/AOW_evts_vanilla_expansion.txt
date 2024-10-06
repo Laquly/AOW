@@ -1,0 +1,135 @@
+#这里是写逻辑上能触发的各种原版事件
+
+namespace = AOW_vanilla_expansion
+
+#小行星蜂巢	#Our mining operations clearly angered them
+country_event = {
+	id = AOW_vanilla_expansion.1
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = built_hiver_mine
+		OR = {
+			is_country_type = default
+			is_country_type = default_ev	#太虚流浪
+		}
+		any_planet_within_border = {
+			OR = {
+				has_planet_flag = hiver_asteroid_1
+				has_planet_flag = hiver_asteroid_2
+				has_planet_flag = hiver_asteroid_3
+				has_planet_flag = hiver_asteroid_4
+				has_planet_flag = hiver_asteroid_5
+			}
+			solar_system = {
+				any_system_megastructure = {
+					is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+					planet = { is_same_value = prevprevprev }
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+
+		modifier = {
+			factor = 0.25
+			any_planet_within_border = {
+				solar_system = {
+					any_system_megastructure = {
+						is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+						planet = { is_same_value = prevprevprev }
+					}
+				}
+				has_planet_flag = hiver_asteroid_1
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_planet_within_border = {
+				solar_system = {
+					any_system_megastructure = {
+						is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+						planet = { is_same_value = prevprevprev }
+					}
+				}
+				has_planet_flag = hiver_asteroid_2
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_planet_within_border = {
+				solar_system = {
+					any_system_megastructure = {
+						is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+						planet = { is_same_value = prevprevprev }
+					}
+				}
+				has_planet_flag = hiver_asteroid_3
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_planet_within_border = {
+				solar_system = {
+					any_system_megastructure = {
+						is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+						planet = { is_same_value = prevprevprev }
+					}
+				}
+				has_planet_flag = hiver_asteroid_4
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_planet_within_border = {
+				solar_system = {
+					any_system_megastructure = {
+						is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+						planet = { is_same_value = prevprevprev }
+					}
+				}
+				has_planet_flag = hiver_asteroid_5
+			}
+		}
+	}
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = guardians_hive_system }
+			save_event_target_as = hiver_system
+		}
+		country_event = { id = leviathans.3201 }
+		set_global_flag = hivers_appeared
+	}
+}
+
+#焚天神兵摧毁星系前
+system_event = {
+	id = AOW_vanilla_expansion.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_system_planet = {
+			limit = {
+				has_any_megastructure = no	#星球没有巨构
+				AOW_trgr_PLNT_megastructure_planet = no	#不是巨构星球
+				OR = {	#有这两个flag
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+			}
+			remove_planet_flag = megastructure
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = has_planet_remover_megastructure #移除临时巨构flag
+		}
+	}
+}
+system_event = {
+	id = AOW_vanilla_expansion.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AOW_eft_SSTM_destroy_ringworld_megastructure = yes
+		AOW_eft_SSTM_destroy_ringworld_planet = yes
+	}
+}

@@ -1,0 +1,280 @@
+AOW_MEGA_psychic_device_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_PD_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_COMMON_STAR_WITHOUT_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PD_0_COST_alloys
+			unity = @AOW_var_PD_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PD_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_psychic_device
+		category = megastructures
+		alloys = @AOW_var_PD_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_psychic_device" }
+	potential = {
+		has_country_flag = breached_shroud
+		AOW_trigger_mega_potential = { KEY = psychic_device }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_psychic_device } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#星系内不能有宜居星球
+			fail_text = "requires_no_habitable_planets"
+			AOW_trgr_SSTM_has_habitable_planets = no
+		}
+		custom_tooltip = {#星系内不能有宜居巨构
+			fail_text = "AOW_mega_requires_SSTM_no_habitable_megastructures"
+			AOW_trgr_SSTM_has_habitable_megastructures = no
+		}
+		custom_tooltip = {#必须是单恒星星系
+			fail_text = "AOW_mega_requires_SSTM_single_star"
+			AOW_trgr_SSTM_single_star_system = yes
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {#不能是黑洞、脉冲星、中子星、磁星、超新星
+				fail_text = "AOW_mega_requires_PLNT_no_BlackHole_NeutronStar_Pulsar_Magnetar_Collapsar"
+				NOR = {
+					is_planet_class = pc_black_hole
+					is_planet_class = pc_neutron_star
+					is_planet_class = pc_pulsar
+					is_planet_class = pc_magnetar #磁星
+					is_planet_class = pc_collapsar #超新星
+				}
+			}
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			AOW_trigger_mega_planet_has_megastructure = { key = psychic_device }
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 500
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = sr_zro value < @AOW_var_PD_3_UPKP_zro } } }
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = psychic_device
+			constructing = AOW_MEGA_psychic_device_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2030 } }
+		fromfrom = {
+			set_megastructure_flag = psychic_device
+			set_megastructure_flag = AOW_flag_MEGA_psychic_device_@owner
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_psychic_device_1 = {
+	entity = "psychic_device_1_entity"
+	construction_entity = "psychic_device_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PD_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PD_1_COST_alloys
+			sr_zro = @AOW_var_PD_1_COST_zro
+			unity = @AOW_var_PD_1_COST_unity
+		}
+		upkeep = {
+			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
+			energy = @AOW_var_PD_1_UPKP_energy
+		}
+	}
+	country_modifier = {
+		pop_government_ethic_attraction = @AOW_var_PD_1_pop_government_ethic_attraction
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_psychic_device
+		category = megastructures
+		alloys = @AOW_var_PD_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = @AOW_var_PD_1_COST_zro dm = 0
+	}
+	prerequisites = { "AOW_TECH_psychic_device" }
+	upgrade_from = { AOW_MEGA_psychic_device_0 }
+	ai_weight = { factor = 10 }
+	on_build_start = {
+		fromfrom.planet = {
+			AOW_eft_PLNT_dismantle_orbital_station = yes #移除轨道开采站
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2031 } }
+	}
+}
+AOW_MEGA_psychic_device_2 = {
+	entity = "psychic_device_2_entity"
+	construction_entity = "psychic_device_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PD_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PD_2_COST_alloys
+			sr_zro = @AOW_var_PD_2_COST_zro
+			unity = @AOW_var_PD_2_COST_unity
+		}
+		upkeep = {
+			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
+			energy = @AOW_var_PD_2_UPKP_energy
+		}
+	}
+	country_modifier = {
+		pop_government_ethic_attraction = @AOW_var_PD_2_pop_government_ethic_attraction
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_psychic_device
+		category = megastructures
+		alloys = @AOW_var_PD_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = @AOW_var_PD_2_COST_zro dm = 0
+	}
+	prerequisites = { "AOW_TECH_psychic_device" }
+	upgrade_from = { AOW_MEGA_psychic_device_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.2032 } }
+	}
+}
+AOW_MEGA_psychic_device_3 = {
+	entity = "psychic_device_3_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_psychic_device_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_PD_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PD_3_COST_energy
+			sr_zro = @AOW_var_PD_3_COST_zro
+			unity = @AOW_var_PD_3_COST_unity
+		}
+		produces = {
+			sr_dark_matter = @AOW_var_PD_3_PRDC_darkmatter
+		}
+		produces = {
+			trigger = { owner = { has_relic = r_zro_crystal } }
+			sr_dark_matter = @AOW_var_PD_3_PRDC_darkmatter
+		}
+		upkeep = {
+			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
+			energy = @AOW_var_PD_3_UPKP_energy
+			sr_zro = @AOW_var_PD_3_UPKP_zro
+		}
+	}
+	country_modifier = {
+		custom_tooltip = AOW_MEGA_psychic_device_effects
+		show_only_custom_tooltip = no
+		shroud_delve_cooldown = -0.1
+		planet_psionic_jobs_produces_mult = 0.2
+		pop_government_ethic_attraction = @AOW_var_PD_3_pop_government_ethic_attraction
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure_with_effects
+		time = 3
+		tech = AOW_TECH_psychic_device
+		category = megastructures
+		key = psychic_device
+		alloys = @AOW_var_PD_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = @AOW_var_PD_3_COST_zro dm = 0
+	}
+	prerequisites = { "AOW_TECH_psychic_device" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_psychic_device_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		create_ambient_object = {
+			type = "psi_storm_1"
+			location = fromfrom
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = AOW_flag_AO_psychic_device_@fromfrom.planet
+		}
+		every_system_planet = {
+			limit = { AOW_trgr_PLNT_is_habitable = no }
+			AOW_eft_PLNT_dismantle_orbital_station = yes
+			clear_deposits = yes
+		}
+		every_system_planet = {
+			limit = {
+				is_star = no
+				is_asteroid = no
+				AOW_trgr_PLNT_is_habitable = no
+				NOR = {
+					is_planet_class = pc_gas_giant
+					is_planet_class = pc_cold_gas_giant
+					is_planet_class = pc_hot_gas_giant
+					is_planet_class = pc_cloudless_gas_giant
+					is_planet_class = pc_dwarf_gas_giant
+				}
+			}
+			change_pc = pc_shrouded
+			add_deposit = d_zro_deposit_3
+		}
+		every_system_planet = {
+			limit = {
+				OR = {
+					is_asteroid = yes
+					is_planet_class = pc_gas_giant
+					is_planet_class = pc_cold_gas_giant
+					is_planet_class = pc_hot_gas_giant
+					is_planet_class = pc_cloudless_gas_giant
+					is_planet_class = pc_dwarf_gas_giant
+				}
+			}
+			add_deposit = d_zro_deposit_1
+		}
+		every_system_planet = {
+			limit = { has_modifier = AOW_mod_PLNT_planetary_mining_station }
+			remove_modifier = AOW_mod_PLNT_planetary_mining_station
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_mega_notification.2033 }
+		}
+	}
+}

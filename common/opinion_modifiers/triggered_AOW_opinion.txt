@@ -1,0 +1,26 @@
+#无限制使用坠星天矛 #对方有这种政策。我方对其评价-200
+triggered_AOW_opinion_starfall_spear_unlimited = {
+	trigger = {
+		from = { has_policy_flag = AOW_policy_SS_unlimited }
+	}
+	opinion = { base = -200 }
+}
+#战争期间使用坠星天矛 #对方有这种政策，且没有跟对方交战。我方对其评价+100
+triggered_AOW_opinion_starfall_spear_hostility = {
+	trigger = {
+		from = { has_policy_flag = AOW_policy_SS_hostility }
+		NOR = {
+			is_at_war_with = from
+			has_country_flag = AOW_flag_CNTR_was_hit_by_@from
+		}
+	}
+	opinion = { base = 100 }
+}
+#不首先使用坠星天矛 #对方有这种政策，且没有被对方打击。我方对其评价+150
+triggered_AOW_opinion_starfall_spear_no_first_use = {
+	trigger = {
+		from = { has_policy_flag = AOW_policy_SS_no_first_use }
+		NOT = { has_country_flag = AOW_flag_CNTR_was_hit_by_@from }
+	}
+	opinion = { base = 150 }
+}

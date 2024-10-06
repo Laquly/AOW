@@ -1,0 +1,213 @@
+AOW_MEGA_orbital_acquisition_system_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_OAS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_GAS_GIANT"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_OAS_0_COST_alloys
+			unity = @AOW_var_OAS_0_COST_unity
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_orbital_acquisition_system
+		category = megastructures
+		alloys = @AOW_var_OAS_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_orbital_acquisition_system" }
+	potential = { AOW_trigger_mega_potential = { KEY = orbital_acquisition_system } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_orbital_acquisition_system } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为气态行星
+				fail_text = "AOW_mega_requires_PLNT_gas_giant"
+				OR = {
+					is_planet_class = pc_gas_giant
+					is_planet_class = pc_cold_gas_giant
+					is_planet_class = pc_hot_gas_giant
+					is_planet_class = pc_cloudless_gas_giant
+					is_planet_class = pc_dwarf_gas_giant
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			#custom_tooltip = {#不能为肃正星球
+			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
+			#	NOT = { has_planet_flag = crisis_vital_planet }
+			#}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+			custom_tooltip = {
+				fail_text = "AOW_mega_requires_PLNT_no_orbital_acquisition_system"
+				NOT = { has_planet_flag = AOW_flag_PLNT_no_orbital_acquisition_system }
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = orbital_acquisition_system
+			constructing = AOW_MEGA_orbital_acquisition_system_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1020 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_orbital_acquisition_system_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_orbital_acquisition_system_1 = {#框架
+	entity = "orbital_acquisition_system_1_entity"
+	construction_entity = "orbital_acquisition_system_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_OAS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_OAS_1_COST_alloys
+			unity = @AOW_var_OAS_1_COST_unity
+		}
+		upkeep = { energy = @AOW_var_OAS_1_UPKP_energy }
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_orbital_acquisition_system
+		category = megastructures
+		alloys = @AOW_var_OAS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_orbital_acquisition_system" }
+	upgrade_from = { AOW_MEGA_orbital_acquisition_system_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1021 } }
+	}
+}
+AOW_MEGA_orbital_acquisition_system_2 = {#开始采集
+	entity = "orbital_acquisition_system_2_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_OAS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_OAS_2_COST_energy
+			unity = @AOW_var_OAS_2_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_OAS_2_PRDC_energy
+			exotic_gases = @AOW_var_OAS_2_PRDC_gases
+		}
+		produces = {
+			trigger = { has_megastructure_flag = AOW_flag_MEGA_increase_efforts }
+			exotic_gases = @AOW_var_OAS_2_PRDC_gases
+		}
+		produces = {
+			trigger = { has_megastructure_flag = AOW_flag_MEGA_no_gas }
+			exotic_gases = @AOW_var_OAS_2_PRDC_no_gases
+			society_research = 100
+			physics_research = 100
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_orbital_acquisition_system
+		category = megastructures
+		alloys = @AOW_var_OAS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_orbital_acquisition_system" }
+	upgrade_from = { AOW_MEGA_orbital_acquisition_system_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1022 } }
+	}
+}
+AOW_MEGA_orbital_acquisition_system_3 = {
+	entity = "orbital_acquisition_system_3_entity"
+	construction_entity = "orbital_acquisition_system_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_OAS_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_OAS_3_COST_energy
+			alloys = @AOW_var_OAS_3_COST_alloys
+			unity = @AOW_var_OAS_3_COST_unity
+		}
+		produces = {
+			energy = @AOW_var_OAS_3_PRDC_energy
+			exotic_gases = @AOW_var_OAS_3_PRDC_gases
+		}
+		produces = {
+			trigger = { has_megastructure_flag = AOW_flag_MEGA_increase_efforts }
+			exotic_gases = @AOW_var_OAS_3_PRDC_gases
+		}
+		produces = {
+			trigger = { has_megastructure_flag = AOW_flag_MEGA_no_gas }
+			exotic_gases = @AOW_var_OAS_3_PRDC_no_gases
+			society_research = 100
+			physics_research = 100
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_orbital_acquisition_system
+		category = megastructures
+		alloys = @AOW_var_OAS_3_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_orbital_acquisition_system" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_orbital_acquisition_system_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = AOW_mega_notification.1023 }
+		}
+	}
+}

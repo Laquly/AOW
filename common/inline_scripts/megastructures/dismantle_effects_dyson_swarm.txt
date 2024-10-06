@@ -1,0 +1,6 @@
+event_target:AOW_target_planet = {
+    remove_planet_flag = has_megastructure
+    remove_modifier = dyson_swarm_1_mod
+    remove_modifier = dyson_swarm_2_mod
+    remove_modifier = dyson_swarm_3_mod
+}

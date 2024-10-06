@@ -1,0 +1,504 @@
+namespace = red_dawn
+
+country_event = {
+	id = red_dawn.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = AOW_flag_GLBL_found_laquly }
+		mid_game_years_passed >= 0
+		is_ai = no
+	}
+	immediate = {
+		random_planet_within_border = {
+			limit = {
+				OR = {
+					is_planet_class = pc_barren
+					is_planet_class = pc_barren_cold
+					is_planet_class = pc_frozen
+				}
+				NOT = { exists = archaeological_site }
+				NOT = { has_planet_flag = suppress_archaeological_sites }
+			}
+			save_event_target_as = AOW_target_planet
+			root = { country_event = { id = red_dawn.2 days = 10 random = 10 } }
+		}
+	}
+}
+country_event = {
+	id = red_dawn.2
+	title = "red_dawn.2.name"
+	desc = "red_dawn.2.desc"
+	picture = GFX_evt_city_ruins
+	show_sound = event_power_down
+	location = event_target:AOW_target_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = { is_ai = no }
+	immediate = {
+		event_target:AOW_target_planet = {
+			create_archaeological_site = AOW_site_red_dawn
+		}
+		set_global_flag = AOW_flag_GLBL_found_laquly
+	}
+	option = { name = OK }
+}
+
+fleet_event = {
+	id = red_dawn.10
+	title = "red_dawn.10.name"
+	desc = "red_dawn.10.desc"
+	picture = GFX_evt_collapsing_roof
+	show_sound = event_ground_battle
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.10.a
+		custom_tooltip = red_dawn.10.a.tooltip
+		hidden_effect = {
+			from = { set_archaeology_flag = AOW_flag_red_dawn_1 }
+		}
+	}
+	option = {
+		name = red_dawn.10.b
+		custom_tooltip = red_dawn.10.b.tooltip
+		hidden_effect = {
+			from = { set_archaeology_flag = AOW_flag_red_dawn_2 }
+		}
+	}
+}
+fleet_event = {
+	id = red_dawn.20
+	hide_window = yes
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { from = { has_archaeology_flag = AOW_flag_red_dawn_1 } }
+			fleet_event = { id = red_dawn.21 }
+		}
+		if = {
+			limit = { from = { has_archaeology_flag = AOW_flag_red_dawn_2 } }
+			fleet_event = { id = red_dawn.22 }
+		}
+	}
+	after = {
+		from = { expire_site_event = red_dawn.20 }
+	}
+}
+fleet_event = {
+	id = red_dawn.21
+	title = "red_dawn.21.name"
+	desc = "red_dawn.21.desc"
+	picture = GFX_evt_rare_tech_cache
+	show_sound = event_trap_laser
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.21.a
+		custom_tooltip = red_dawn.21.a.tooltip
+		from = { add_stage_clues = -1 }
+		leader = { add_experience = 200 }
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_1
+				set_archaeology_flag = AOW_flag_red_dawn_11
+			}
+		}
+	}
+	option = {
+		name = red_dawn.21.b
+		custom_tooltip = red_dawn.21.b.tooltip
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_1
+				set_archaeology_flag = AOW_flag_red_dawn_12
+			}
+		}
+	}
+}
+fleet_event = {
+	id = red_dawn.22
+	title = "red_dawn.22.name"
+	desc = "red_dawn.22.desc"
+	picture = GFX_evt_robot_encounter
+	show_sound = event_machinery
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.22.a
+		custom_tooltip = red_dawn.22.a.tooltip
+		owner = {
+			add_resource = { alloys = 10 }
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 12
+				min = 1000
+			}
+		}
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_2
+				set_archaeology_flag = AOW_flag_red_dawn_21
+			}
+		}
+	}
+	option = {
+		name = red_dawn.22.b
+		custom_tooltip = red_dawn.22.b.tooltip
+		from = { add_stage_clues = -1 }
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_2
+				set_archaeology_flag = AOW_flag_red_dawn_22
+			}
+		}
+	}
+}
+fleet_event = {
+	id = red_dawn.30
+	title = "red_dawn.30.name"
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_11 } }
+		text = red_dawn.30.a.desc
+	}
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_12 } }
+		text = red_dawn.30.b.desc
+	}
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_21 } }
+		text = red_dawn.30.c.desc
+	}
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_22 } }
+		text = red_dawn.30.d.desc
+	}
+	picture = GFX_evt_decryption
+	show_sound = evn_ove_scholarium_cache_rare_tech
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.30.a
+		trigger = {
+			from = {
+				OR = {
+					has_archaeology_flag = AOW_flag_red_dawn_11
+					has_archaeology_flag = AOW_flag_red_dawn_12
+					has_archaeology_flag = AOW_flag_red_dawn_21
+				}
+			}
+		}
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_11
+				remove_archaeology_flag = AOW_flag_red_dawn_12
+				remove_archaeology_flag = AOW_flag_red_dawn_21
+				set_archaeology_flag = AOW_flag_red_dawn_001
+			}
+		}
+	}
+	option = {
+		name = red_dawn.30.b
+		trigger = {
+			from = {
+				has_archaeology_flag = AOW_flag_red_dawn_22
+			}
+		}
+		from = { add_stage_clues = 1 }
+		hidden_effect = {
+			from = {
+				remove_archaeology_flag = AOW_flag_red_dawn_22
+				set_archaeology_flag = AOW_flag_red_dawn_002
+			}
+		}
+	}
+}
+fleet_event = {
+	id = red_dawn.40
+	title = "red_dawn.40.name"
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_001 } }
+		text = red_dawn.40.a.desc
+	}
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_002 } }
+		text = red_dawn.40.b.desc
+	}
+	picture = GFX_evt_clones
+	show_sound = event_door_opening
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.40.a
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_001 } }
+	}
+	option = {
+		name = red_dawn.40.b
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_002 } }
+		from = { add_stage_clues = 1 }
+	}
+}
+fleet_event = {
+	id = red_dawn.50
+	title = "red_dawn.50.name"
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_001 } }
+		text = red_dawn.50.a.desc
+	}
+	desc = {
+		trigger = { from = { has_archaeology_flag = AOW_flag_red_dawn_002 } }
+		text = red_dawn.50.b.desc
+	}
+	picture = GFX_evt_circuitry_modification
+	show_sound = event_finding_loot
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+	option = {
+		name = red_dawn.50.a
+		trigger = { owner = { is_homicidal = no } }
+		hidden_effect = {
+			owner = {
+				set_country_flag = AOW_flag_CNTR_laquly_male
+				country_event = { id = red_dawn.100 }
+			}
+		}
+	}
+	option = {
+		name = red_dawn.50.b
+		trigger = { owner = { is_homicidal = no } }
+		hidden_effect = {
+			owner = {
+				set_country_flag = AOW_flag_CNTR_laquly_female
+				country_event = { id = red_dawn.100 }
+			}
+		}
+	}
+	option = {
+		name = red_dawn.50.c
+		trigger = { owner = { is_homicidal = no } }
+		hidden_effect = {
+			owner = {
+				set_country_flag = AOW_flag_CNTR_laquly_snail
+				country_event = { id = red_dawn.100 }
+			}
+		}
+	}
+	option = {
+		name = red_dawn.50.d
+		trigger = { owner = { is_homicidal = yes } }
+		owner = {
+			add_resource = { energy = 500 }
+			add_resource = { food = 500 }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 12
+				min = 5000
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = red_dawn.100
+	title = "red_dawn.100.name"
+	desc = "red_dawn.100.desc"
+	is_triggered_only = yes
+	picture = GFX_leader_recruitment_bg_renowned
+	show_sound = precursor_event_baol_organism_animation
+	event_window_type = leader_recruit
+	fire_only_once = yes
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_country_flag = AOW_flag_CNTR_laquly_male
+					has_country_flag = AOW_flag_CNTR_laquly_female
+					has_country_flag = AOW_flag_CNTR_laquly_snail
+				}
+			}
+			random_list = {
+				1 = { set_country_flag = AOW_flag_CNTR_laquly_male }
+				1 = { set_country_flag = AOW_flag_CNTR_laquly_female }
+				1 = { set_country_flag = AOW_flag_CNTR_laquly_snail }
+			}
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_laquly_male }
+			create_dummy_leader_laquly = { portrait = red_dawn_male gender = male }
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_laquly_female }
+			create_dummy_leader_laquly = { portrait = red_dawn_female gender = female }
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_laquly_snail }
+			create_dummy_leader_laquly = { portrait = red_dawn_snail gender = indeterminable }
+		}
+		if = {
+			limit = { any_owned_leader = { is_gestalt_node = yes } }
+			event_target:AOW_target_leader = {
+				remove_all_traits = yes
+				add_trait_no_notify = subclass_official_governor
+				add_trait_no_notify = leader_trait_laquly_gestalt
+				add_trait_no_notify = leader_trait_red_dawn
+				add_trait_no_notify = leader_trait_forge_focus_3 #冶金专精（专精）
+				add_trait_no_notify = leader_trait_pop_focused_3 #高效委派
+				add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
+				add_trait_no_notify = leader_trait_cyborg
+			}
+		}
+	}
+	picture_event_data = {
+		portrait = event_target:AOW_target_leader
+		room = ethic_spaceship_room
+	}
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			event_target:AOW_target_leader = {
+				kill_leader = { show_notification = no }
+			}
+		}
+	}
+	option = {
+		name = red_dawn.100.a
+		response_text = red_dawn.100.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = red_dawn.100.b
+		response_text = red_dawn.100.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = red_dawn.100.c
+		response_text = red_dawn.100.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		trigger = {
+			is_gestalt = no
+			OR = {
+				is_egalitarian = no
+				is_xenophobe = yes
+			}
+		}
+		name = red_dawn.100.common
+		response_text = red_dawn.100.common.response
+		is_dialog_only = yes
+	}
+	option = {
+		trigger = {
+			is_gestalt = no
+			is_egalitarian = yes
+			is_xenophobe = no
+		}
+		name = red_dawn.100.egalitarian
+		response_text = red_dawn.100.egalitarian.response
+		is_dialog_only = yes
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { is_gestalt_node = yes }
+		}
+		name = red_dawn.100.gestalt
+		response_text = red_dawn.100.gestalt.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = red_dawn.100.hire_custom_tooltip
+		if = {
+			limit = { any_owned_leader = { is_gestalt_node = yes } }
+			custom_tooltip = red_dawn.100.gestalt.hire_custom_tooltip
+			ruler = {
+				add_trait = leader_trait_laquly_node
+			}
+		}
+		hidden_effect = {
+			event_target:AOW_target_leader = {
+				kill_leader = { show_notification = no }
+			}
+			if = {
+				limit = { has_country_flag = AOW_flag_CNTR_laquly_male }
+				create_leader_laquly = { portrait = red_dawn_male gender = male }
+			}
+			if = {
+				limit = { has_country_flag = AOW_flag_CNTR_laquly_female }
+				create_leader_laquly = { portrait = red_dawn_female gender = female }
+			}
+			if = {
+				limit = { has_country_flag = AOW_flag_CNTR_laquly_snail }
+				create_leader_laquly = { portrait = red_dawn_snail gender = indeterminable }
+			}
+			if = {
+				limit = { any_owned_leader = { is_gestalt_node = yes } }
+				event_target:AOW_target_leader = {
+					remove_all_traits = yes
+					add_trait_no_notify = subclass_official_governor
+					add_trait_no_notify = leader_trait_laquly_gestalt
+					add_trait_no_notify = leader_trait_red_dawn
+					add_trait_no_notify = leader_trait_forge_focus_3 #冶金专精（专精）
+					add_trait_no_notify = leader_trait_pop_focused_3 #高效委派
+					add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
+					add_trait_no_notify = leader_trait_cyborg
+				}
+			}
+			create_message = {
+				type = MESSAGE_RECRUITED_LEADER
+				localization =  MESSAGE_RECRUITED_LEADER_DESC
+				days = @toast_message_days
+				target = event_target:AOW_target_leader
+				variable = {
+					type = name
+					localization = LEADER
+					scope = event_target:AOW_target_leader
+				}
+				variable = {
+					key = "border"
+					value = "GFX_border_veteran"
+				}
+			}
+		}
+	}
+}

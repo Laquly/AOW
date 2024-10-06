@@ -1,0 +1,263 @@
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_1"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "H1" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H2" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H3" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H4" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H4" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H5" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H6" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H7" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H8" template = "large_strike_craft" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_2"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "G1" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G2" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G3" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G4" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G5" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G6" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G7" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G8" template = "invisible_missile_turret" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_3"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "P1" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P2" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P3" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P4" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P5" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P6" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P7" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P8" template = "invisible_point_defence_turret" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}
+
+
+
+
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_4"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "H1" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H2" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H3" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H4" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "P1" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P2" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P3" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P4" template = "invisible_point_defence_turret" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_5"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "H1" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H2" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H3" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "H4" template = "large_strike_craft" locatorname = "root" }
+	component_slot = { name = "G1" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G2" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G3" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G4" template = "invisible_missile_turret" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}
+ship_section_template = {
+	key = "AOW_section_bunker_ring_core_6"
+	ship_size = AOW_shipsize_bunker_ring
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "celestial_shield_bunker_ring_ship_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	component_slot = { name = "X1" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X2" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X3" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "X4" template = "invisible_extra_large_fixed" locatorname = "root" }
+	component_slot = { name = "L1" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L2" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L3" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "L4" template = "invisible_large_turret" locatorname = "root" }
+	component_slot = { name = "M1" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M2" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M3" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "M4" template = "invisible_medium_turret" locatorname = "root" }
+	component_slot = { name = "S1" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S2" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S3" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "S4" template = "invisible_small_turret" locatorname = "root" }
+	component_slot = { name = "G1" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G2" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G3" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "G4" template = "invisible_missile_turret" locatorname = "root" }
+	component_slot = { name = "P1" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P2" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P3" template = "invisible_point_defence_turret" locatorname = "root" }
+	component_slot = { name = "P4" template = "invisible_point_defence_turret" locatorname = "root" }
+
+	large_utility_slots = 21
+	aux_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 2500
+		}
+	}
+}

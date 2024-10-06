@@ -1,0 +1,41 @@
+﻿l_simp_chinese:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_celestial_decompressor:0"$AOW_MEGA_celestial_decompressor$"
+ AOW_TECH_celestial_decompressor_desc:0"类似黑洞，中子星的极端强引力天体作为恒星演化末期的归宿似乎是不可逆转的。不过随着我们对时空结构和时空变化的研究，通过反向时空曲率的方式可以抵消引力场以使得这些恒星遗骸死而复苏。"
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_celestial_decompressor_0:0"$AOW_MEGA_celestial_decompressor$ 基址"
+ AOW_MEGA_celestial_decompressor_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$—必须建造在黑洞、中子星、脉冲星等致密天体上\n\n$EFFECTS_HEADER$\n$t$—将黑洞、中子星、脉冲星等致密天体逆向还原为普通G型恒星。"
+ AOW_MEGA_celestial_decompressor_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$这一巨型人造结构可以将时空结构“撑开”，释放被强大引力约束的物质，从而使中子星，黑洞等致密天体逆向还原为新的主序星。"
+ AOW_MEGA_celestial_decompressor_0_DESC:0"无数先进的工程团队和物理学家聚集在这个巨大的太空工程基址中，一场逆转恒星死亡命运的疯狂计划将要从这个平台开始。"
+ AOW_MEGA_celestial_decompressor_1:0"$AOW_MEGA_celestial_decompressor$ 框架"
+ AOW_MEGA_celestial_decompressor_1_DESC:0"这个巨构通过轴向的6个时空张量逆变场发生器，将时空结构“撑开”，抵消强引力天体的巨大引力约束，使得恒星“死灰复燃”。"
+ AOW_MEGA_celestial_decompressor_2:0"$AOW_MEGA_celestial_decompressor$ 改造"
+ AOW_MEGA_celestial_decompressor_2_DESC:0"这个$AOW_MEGA_celestial_decompressor$撑开了时空结构，其中心的天体正在被抵消引力令其他相互作用可以抵抗引力挤压。"
+ AOW_MEGA_celestial_decompressor_3:0"$AOW_MEGA_celestial_decompressor$ 还原为主序星"
+ AOW_MEGA_celestial_decompressor_3_DESC:0"将黑洞、中子星等致密天体逆向还原为一颗年轻的G型恒星。"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_celestial_decompressor.100.desc:0"曾经我们认为恒星是永恒的，他们不会被毁灭，也不会运动，在星空中永远保持着固定的位置。而当我们对宇宙的认识加深，我们才明白恒星并非永恒，它们以相当快的速度运动，也会有着属于自己的壮烈葬礼。如果不加以干预，待宇宙中的一切恒星都迎来死亡时，我们的宇宙将陷入无尽的黑暗之中。\n\n不过好在对时空结构和各种恒星有着足够认知的我们可以尝试一个几乎不可能的幻想，即逆转恒星的死亡终局，将恒星的尸体逆向还原为一颗年轻的主序星。\n\n我们，赐恒星寿命；恒星，赠宇宙光明。"
+ AOW_evt_celestial_decompressor.100.a:0"给未来以光明。"
+ AOW_evt_celestial_decompressor.101.desc:0"在巨大的资源支持下，名为$AOW_MEGA_celestial_decompressor$的巨型结构建造完成。\n\n这六个轴向约束发生器将通过装载一个小型黑洞来产生巨大的引力逆变场，反转时空曲率强行“撑开”时空，使得陷入强大引力场中的物质被释放出来，令天体产生反常膨胀，重新变为一颗恒星。"
+ AOW_evt_celestial_decompressor.101.a:0"准备好..."
+ AOW_evt_celestial_decompressor.102.desc:0"小型黑洞装载完毕，开始缓慢产生引力逆变场。\n\n虽然原本能够产生中子星甚至是黑洞的天体必须为超过白矮星质量极限的大质量恒星，但是由于原本天体的超新星爆发和逆向还原造成的物质爆散导致的浪费，通过$AOW_MEGA_celestial_decompressor$制造的恒星最多只能是黄矮星（普通G型恒星）。\n\n完成逆向还原之后，一场猛烈的超新星爆发将在此处发生，$AOW_MEGA_celestial_decompressor$会承担并隔绝这场超新星爆发的全部威力，这将摧毁这个巨大的人造结构。"
+ AOW_evt_celestial_decompressor.102.a:0"让我们开始“逆转未来”吧。"
+ AOW_evt_celestial_decompressor.103.desc:0"一场小规模超新星爆发在[from.GetName]星系中发生了，其所产生的光芒会在几十万年后照亮整个银河系以宣告我们所创造的奇迹。随着这场超新星爆发而显现的，则是一颗从强引力天体逆转而成的小质量恒星再度照亮了[from.GetName]的死寂空间。"
+ AOW_evt_celestial_decompressor.103.a:0"我们对于天体的掌控能力已经达到前所未有的高度。"
+ AOW_evt_celestial_decompressor.103.b:0"现在的我们甚至能复活恒星。"
+ AOW_evt_celestial_decompressor.103.c:0"逆转了死亡天体的我们也代表了我们逆转了名为死神的永恒威胁。"
+
+ AOW_evt_celestial_decompressor.300.desc:0"$AOW_others_mega_build_1$\n\n根据情报，我们得知[from.GetName]准备在[fromfrom.GetName]星系建造一个足以撼动致密天体的巨构，据说最终可能会导致这些致密天体重获新生。\n\n暂且不知道他们为何要改造这颗恒星，也许是为了建设其他的一些更具战略意义的巨型结构。"
+ AOW_evt_celestial_decompressor.300.a:0"保持监视。"
+ AOW_evt_celestial_decompressor.301.desc:0"无数的快子信息表明，[fromfrom.GetName]星系内发生了一次强引力天体反常膨胀现象，使得原本是一颗致密天体的地方重新变成了一颗年轻的G型恒星。这一不可能的天体活动必然是人为导致的，有理由怀疑[from.GetName]在通过某种巨大的人造结构复活了一颗恒星。"
+ AOW_evt_celestial_decompressor.301.a:0"文明对天体的极致掌控。"
+ AOW_evt_celestial_decompressor.301.b:0"毫无意义的做法，复活一颗恒星有什么意义吗。"

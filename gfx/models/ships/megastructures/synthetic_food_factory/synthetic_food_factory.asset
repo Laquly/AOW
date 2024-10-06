@@ -1,0 +1,17 @@
+entity = {
+	name = "synthetic_food_factory_full_entity"
+	pdxmesh = "synthetic_food_factory_full_mesh"
+	scale = 10
+}
+
+entity = {
+	name = "synthetic_food_factory_core_entity"
+	pdxmesh = "synthetic_food_factory_core_mesh"
+	scale = 10
+}
+
+entity = {
+	name = "synthetic_food_factory_half_entity"
+	pdxmesh = "synthetic_food_factory_half_mesh"
+	scale = 10
+}

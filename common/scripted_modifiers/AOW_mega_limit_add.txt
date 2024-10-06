@@ -1,0 +1,12 @@
+#星状开采站
+asteroid_mining_station_limit_add = {
+    icon = "mod_country_megastructure_build_cap_add"
+    good = yes
+    category = country
+}
+#居住站
+habitat_limit_add = {
+    icon = "mod_country_megastructure_build_cap_add"
+    good = yes
+    category = country
+}

@@ -1,0 +1,103 @@
+objectTypes = {
+	pdxmesh = {#五角护盾
+		name = "cs_pentagonal_shield_mesh"
+		file = "gfx/models/ships/megastructures/celestial_shield/pentagonal_shield.mesh"
+		scale = 1.0
+		#meshsettings = {
+		#	name = "outerShape"
+		#	index = 0
+		#	texture_diffuse = "pentagonal_shield_diffuse.dds" #"city_planet_aquatic_01_diffuse.dds"
+		#	texture_normal = "pentagonal_shield_normal.dds" #"city_planet_aquatic_01_normal.dds"
+		#	texture_specular = "pentagonal_shield_specular.dds" #"city_planet_aquatic_01_specular.dds"
+		#	shader = "PdxMeshShip"
+		#}
+		meshsettings = {
+			name = "outerShape"
+			index = 0
+			texture_diffuse = "pentagonal_shield_outer_diffuse.dds"
+			texture_normal = "pentagonal_shield_outer_normal.dds"
+			texture_specular = "pentagonal_shield_outer_specular.dds"
+			shader = "PdxMeshShip"
+		}
+		meshsettings = {
+			name = "innerShape"
+			index = 0
+			texture_diffuse = "pentagonal_shield_inner_diffuse.dds"
+			texture_normal = "pentagonal_shield_inner_normal.dds"
+			texture_specular = "pentagonal_shield_inner_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {#三角护盾
+		name = "cs_triangle_shield_mesh"
+		file = "gfx/models/ships/megastructures/celestial_shield/triangle_shield.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "shield1Shape"
+			index = 0
+			texture_diffuse = "triangle_shield_white.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+	pdxmesh = {#大环
+		name = "cs_big_ring_mesh"
+		file = "gfx/models/ships/megastructures/celestial_shield/big_ring.mesh"
+		scale = 1.0
+		#meshsettings = {
+		#	name = "solar_ring"
+		#	index = 0
+		#	texture_diffuse = "mammalian_spy_orb_01_diffuse.dds"
+		#	texture_normal = "mammalian_spy_orb_01_normal.dds"
+		#	texture_specular = "mammalian_spy_orb_01_specular.dds"
+		#	shader = "PdxMeshShip"
+		#}
+		meshsettings = {
+			name = "circle_shape"
+			index = 0
+			texture_diffuse = "dreadnought_01_diffuse.dds"
+			texture_normal = "dreadnought_01_normal.dds"
+			texture_specular = "dreadnought_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {#小环
+		name = "cs_small_ring_mesh"
+		file = "gfx/models/ships/megastructures/celestial_shield/small_ring.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "gate_ringShape"
+			index = 0
+			texture_diffuse = "abandoned_wormhole_station_01_diffuse.dds"
+			texture_normal = "abandoned_wormhole_station_01_normal.dds"
+			texture_specular = "abandoned_wormhole_station_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+
+	#掩体星环
+	pdxmesh = {#护盾
+		name = "bunker_ring_white_shield_mesh"
+		file = "gfx/models/ships/megastructures/celestial_shield/triangle_shield.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "shield1Shape"
+			index = 0
+			texture_diffuse = "triangle_shield_white.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+	pdxmesh = {#球体
+		name = "bunker_ring_white_sphere_mesh"
+		file = "gfx/models/ships/guardians/technosphere/technosphere.mesh"
+		scale = 1.0
+		animation = { id = "closed" type = "technosphere_closed_animation" }
+		meshsettings = {
+			name = "polySurface61Shape"
+			index = 0
+			texture_diffuse = "bunker_ring_white_sphere_diffuse.dds"
+			texture_normal = "technosphere_normal.dds"
+			texture_specular = "technosphere_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

@@ -1,0 +1,30 @@
+#为什么会有这么一个文件？
+#因为工程船的巨构建造列表是根据【优先级在上的巨构排序】而排序的。
+#不是你文件怎么排序，工程船那里就怎么排序的
+
+	gateway_0 = {}
+	mega_shipyard_0 = {}
+	spy_orb_0 = {}
+	interstellar_assembly_0 = {}
+	mega_art_installation_0 = {}
+	think_tank_0 = {}
+	strategic_coordination_center_0 = {}
+	quantum_catapult_0 = {}
+AOW_MEGA_hyperlane_controller = {}
+AOW_MEGA_advanced_hyperlane_controller = {}
+AOW_MEGA_planetary_mining_station_0 = {}
+AOW_MEGA_orbital_acquisition_system_0 = {}
+AOW_MEGA_synthetic_food_factory_0 = {}
+AOW_MEGA_naval_command_base_0 = {}
+AOW_MEGA_cemetery_of_martyrs_0 = {}
+AOW_MEGA_deep_space_prison_0 = {}
+AOW_MEGA_nanites_activator_0 = {}
+AOW_MEGA_nanites_transmutation_0 = {}
+AOW_MEGA_dark_matter_curvature_trap_0 = {}
+AOW_MEGA_zro_sublimator_0 = {}
+AOW_MEGA_nebula_refining_center_0 = {}
+AOW_MEGA_artifacts_transcription_palace_0 = {}
+AOW_MEGA_prosperous_trade_station_0 = {}
+AOW_MEGA_planetary_blaster_system_0 = {}
+AOW_MEGA_plane_siphon_0 = {}
+AOW_MEGA_wonder_construction_bureau_0 = {}

@@ -1,0 +1,7 @@
+AOW_control_panel = {
+	length = -1
+	icon = "GFX_AOW_edict_control_panel"
+	potential = { is_ai = no }
+	allow = { NOT = { has_active_event = { AOW_core.100 } } }
+	effect = { country_event = { id = AOW_core.100 } }
+}

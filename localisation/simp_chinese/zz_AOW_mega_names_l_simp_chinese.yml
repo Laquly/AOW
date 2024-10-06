@@ -1,0 +1,81 @@
+﻿l_simp_chinese:
+
+ ############### 巨构列表 ###############$$	43个新增巨构	43 new megastructures
+ #这里的巨构名字决定了所有相关文本的巨构名字，改此处其他地方跟着改变
+
+ AOW_MEGA_space_sensor_station:0"星空传感站"
+ AOW_MEGA_space_arena:0"星光竞技场"
+ AOW_MEGA_asteroid_mining_station:0"星状开采站"
+ AOW_MEGA_satellite_defense_base:0"卫星防御基地"
+
+ AOW_MEGA_advanced_hyperlane_controller:0"星网"
+ AOW_MEGA_artifacts_transcription_palace:0"银河珍宝馆"
+ AOW_MEGA_cemetery_of_martyrs:0"英灵殿"
+ AOW_MEGA_dark_matter_curvature_trap:0"以太势阱"
+ AOW_MEGA_deep_space_prison:0"深空监狱"
+ AOW_MEGA_hyperlane_controller:0"星轨"
+ AOW_MEGA_nanites_activator:0"纳米激活器"
+ AOW_MEGA_nanites_transmutation:0"纳米变形器"
+ AOW_MEGA_naval_command_base:0"海军指挥基地"
+ AOW_MEGA_nebula_refining_center:0"星云精炼厂"
+ AOW_MEGA_orbital_acquisition_system:0"轨道采集器"
+ AOW_MEGA_planetary_mining_station:0"行星开采器"
+ AOW_MEGA_prosperous_trade_station:0"繁荣贸易站"
+ AOW_MEGA_synthetic_food_factory:0"合成食物厂"
+ AOW_MEGA_zro_sublimator:0"泽珞升华器"
+ AOW_MEGA_planetary_blaster_system:0"行星波动炮"
+ AOW_MEGA_plane_siphon:0"位面虹吸器"
+ AOW_MEGA_wonder_construction_bureau:0"奇观建设局"
+
+ AOW_MEGA_ring_world_2:0"巨型环世界"
+ AOW_MEGA_void_vortex:0"归墟"
+ AOW_MEGA_star_picker:0"摘星者"
+ AOW_MEGA_psychic_device:0"灵能井"
+ AOW_MEGA_pulsar_clock:0"脉冲时记"
+ AOW_MEGA_zero_element_furnace:0"零素提取器"
+ AOW_MEGA_curvature_pressurization_field:0"曲率增压场"
+ AOW_MEGA_celestial_decompressor:0"天体逆构器"
+ AOW_MEGA_stellar_eater:0"视界吮星坛"
+ AOW_MEGA_star_guardian:0"星空守护者"
+
+ AOW_MEGA_multi_dimensional_warehouse:0"多维仓库"
+ AOW_MEGA_ring_world_3:0"宏伟环世界"
+ AOW_MEGA_ring_world_4:0"无垠环世界"
+ AOW_MEGA_star_transfer:0"御星天炉"					*
+ AOW_MEGA_heaven_navigation_bureau:0"天界领航塔"
+ AOW_MEGA_miraculous_shipyard:0"奇迹船坞"
+ AOW_MEGA_quindecillion_stellar_quantum_matrix:0"千载星辰"
+ AOW_MEGA_material_recombination_instrument:0"物质重组仪"	*
+ AOW_MEGA_starfall_spear:0"坠星天矛"					*
+ AOW_MEGA_celestial_shield:0"天枢圣盾"
+ AOW_MEGA_starcage_world:0"星笼世界"					*
+
+
+ ############### 特殊项目 ###############
+
+ AOW_sp_planet_locator:0"[this.GetName]的名字条"
+ AOW_sp_planet_locator_DESC:0"此项目仅用于显示§Y[this.GetName]§!的名字条，以便选中该星球。\n\n§Y常见应用场景：§!恒星X被戴森球完全遮挡，鼠标无法点到恒星X，只能点到戴森球巨构，而此项目则可以显示该恒星X的名字条，鼠标点击名字条即可选中该恒星。"
+
+ ############### 星基建筑 ###############
+
+ sm_AOW_nebula_refinery_center:0"星云提取中心"
+ sm_AOW_nebula_refinery_center_desc:0"整个星系的精炼工业因它而繁荣。"
+
+ sm_AOW_miraculous_shipyard_uplink:0"$AOW_MEGA_miraculous_shipyard$上行链路"
+ sm_AOW_miraculous_shipyard_uplink_desc:0"通过$AOW_MEGA_miraculous_shipyard$给予恒星基地等量的造船花费减益，并且在此停留的舰船也可以得到很好的休息与维护。"
+
+ ############### 其他 ###############
+
+ planetary_ship_megastructures_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$为了保证行星战舰的规模，如果目标星球过小，则需要投入更多的资源。"
+
+ breached_shroud:0"已突入虚境"
+ has_market_access:0"可进入泛星系贸易市场"
+ AOW_flag_CNTR_branch_office_established:0"已建立企业分部"
+ AOW_flag_CNTR_add_hyperlane_with_HC:0"用$AOW_MEGA_hyperlane_controller$建设过超空间航道"
+ AOW_flag_CNTR_remove_hyperlane_with_HC:0"用$AOW_MEGA_hyperlane_controller$移除过超空间航道"
+ AOW_flag_CNTR_can_research_planetary_ship:0"拥有行星战舰的考古资料"
+
+ AOW_bypass_advanced_hyperlane_controller_active:0"处于接收状态的$AOW_MEGA_advanced_hyperlane_controller$"
+ AOW_bypass_advanced_hyperlane_controller_active_desc:0"这个星系有一个处于接收状态的$AOW_MEGA_advanced_hyperlane_controller$"
+
+ AOW_num_planetary_body_tooltip:"§E各种天体类型数目：§!\n$t$—大型天体：§Y[root.AOW_var_system_num_non_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—小型天体：§Y[root.AOW_var_system_num_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—普通小行星：§Y[root.AOW_var_system_num_pc_asteroid]§!\n$t$—晶态小行星：§Y[root.AOW_var_system_num_pc_crystal_asteroid]§!\n$t$—冰晶小行星：§Y[root.AOW_var_system_num_pc_ice_asteroid]§!\n$t$§L—天体类型数目数据来自奇观拓展（邀功）§!"

@@ -1,0 +1,408 @@
+objectTypes = {
+	pdxparticle = {
+		name = "AOW_grow_spark_effect"
+		type = "AOW_grow_spark_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_grow_swirl_effect"
+		type = "AOW_grow_swirl_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_shrink_spark_effect"
+		type = "AOW_shrink_spark_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_shrink_swirl_effect"
+		type = "AOW_shrink_swirl_effect"
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "AOW_beam_effect"
+		type = "AOW_beam_effect"
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "AOW_pbs_core_effect"
+		type = "AOW_pbs_core_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_pbs_core_effect"
+		type = "AOW_pbs_core_effect"
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "AOW_cs_core_effect"
+		type = "AOW_cs_core_effect"
+		scale = 0.3
+	}
+	pdxparticle = {
+		name = "AOW_cs_beam_effect"
+		type = "AOW_cs_beam_effect"
+		scale = 1.1
+	}
+	pdxparticle = {
+		name = "AOW_cs_absorb_energy_effect"
+		type = "AOW_cs_absorb_energy_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_cross_light_effect"
+		type = "AOW_cross_light_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_continuous_cross_light_effect"
+		type = "AOW_continuous_cross_light_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_contractile_rays_effect"
+		type = "AOW_contractile_rays_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_halo_effect"
+		type = "AOW_halo_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_white_vortex_black_hole_effect"
+		type = "AOW_white_vortex_black_hole_effect"
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "AOW_black_vortex_effect"
+		type = "AOW_black_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_purple_vortex_effect"
+		type = "AOW_purple_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_blue_vortex_effect"
+		type = "AOW_blue_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_cyan_vortex_effect"
+		type = "AOW_cyan_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_white_vortex_effect"
+		type = "AOW_white_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_yellow_vortex_effect"
+		type = "AOW_yellow_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_orange_vortex_effect"
+		type = "AOW_orange_vortex_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_red_vortex_effect"
+		type = "AOW_red_vortex_effect"
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "AOW_o_black_hole_effect"
+		type = "AOW_o_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_outburst_effect"
+		type = "AOW_o_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_portal_effect"
+		type = "AOW_o_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_hit_effect"
+		type = "AOW_o_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_fire_effect"
+		type = "AOW_o_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_wormhole_effect"
+		type = "AOW_o_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_o_flash_effect"
+		type = "AOW_o_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_o_planet_break_effect"
+		type = "AOW_o_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {
+		name = "AOW_b_black_hole_effect"
+		type = "AOW_b_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_outburst_effect"
+		type = "AOW_b_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_portal_effect"
+		type = "AOW_b_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_hit_effect"
+		type = "AOW_b_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_fire_effect"
+		type = "AOW_b_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_wormhole_effect"
+		type = "AOW_b_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_b_flash_effect"
+		type = "AOW_b_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_b_planet_break_effect"
+		type = "AOW_b_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {#打击特效、开火特效：黑洞涡流
+		name = "AOW_a_black_hole_effect"
+		type = "AOW_a_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {#开火特效：后方喷流
+		name = "AOW_a_outburst_effect"
+		type = "AOW_a_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {#开火特效：恒星聚能、传送门效果
+		name = "AOW_a_portal_effect"
+		type = "AOW_a_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {#打击特效：命中效果
+		name = "AOW_a_hit_effect"
+		type = "AOW_a_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {#开火特效：主要发射光束
+		name = "AOW_a_fire_effect"
+		type = "AOW_a_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {#打击特效：虫洞
+		name = "AOW_a_wormhole_effect"
+		type = "AOW_a_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {#开火特效：传送门闪光
+		name = "AOW_a_flash_effect"
+		type = "AOW_a_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {#行星开火特效
+		name = "AOW_a_planet_break_effect"
+		type = "AOW_a_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {
+		name = "AOW_f_black_hole_effect"
+		type = "AOW_f_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_outburst_effect"
+		type = "AOW_f_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_portal_effect"
+		type = "AOW_f_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_hit_effect"
+		type = "AOW_f_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_fire_effect"
+		type = "AOW_f_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_wormhole_effect"
+		type = "AOW_f_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_f_flash_effect"
+		type = "AOW_f_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_f_planet_break_effect"
+		type = "AOW_f_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {
+		name = "AOW_g_black_hole_effect"
+		type = "AOW_g_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_outburst_effect"
+		type = "AOW_g_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_portal_effect"
+		type = "AOW_g_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_hit_effect"
+		type = "AOW_g_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_fire_effect"
+		type = "AOW_g_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_wormhole_effect"
+		type = "AOW_g_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_g_flash_effect"
+		type = "AOW_g_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_g_planet_break_effect"
+		type = "AOW_g_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {
+		name = "AOW_k_black_hole_effect"
+		type = "AOW_k_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_outburst_effect"
+		type = "AOW_k_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_portal_effect"
+		type = "AOW_k_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_hit_effect"
+		type = "AOW_k_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_fire_effect"
+		type = "AOW_k_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_wormhole_effect"
+		type = "AOW_k_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_k_flash_effect"
+		type = "AOW_k_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_k_planet_break_effect"
+		type = "AOW_k_planet_break_effect"
+		scale = 1.0
+	}
+	######################################################
+	pdxparticle = {
+		name = "AOW_m_black_hole_effect"
+		type = "AOW_m_black_hole_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_outburst_effect"
+		type = "AOW_m_outburst_effect"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_portal_effect"
+		type = "AOW_m_portal_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_hit_effect"
+		type = "AOW_m_hit_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_fire_effect"
+		type = "AOW_m_fire_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_wormhole_effect"
+		type = "AOW_m_wormhole_file"
+		scale = 1.0
+	}
+	pdxparticle = {
+		name = "AOW_m_flash_effect"
+		type = "AOW_m_flash_file"
+		scale = 3.5
+	}
+	pdxparticle = {
+		name = "AOW_m_planet_break_effect"
+		type = "AOW_m_planet_break_effect"
+		scale = 1.0
+	}
+}

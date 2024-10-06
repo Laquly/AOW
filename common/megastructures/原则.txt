@@ -1,0 +1,37 @@
+#一个星球一个巨构
+	#使用硬代码has_any_megastructure来检测星球上是否有巨构
+#居住站以及大小轨道站与其他所有巨构（包括星环）兼容
+	#使用以下代码，来检测星球上是否有居住站的大小轨道站
+	#any_fleet_in_orbit = {
+	#	OR = {
+	#		is_ship_size = major_orbital_resource
+	#		is_ship_size = minor_orbital_resource
+	#		is_ship_size = major_orbital_generic
+	#		is_ship_size = minor_orbital_generic
+	#		is_ship_size = major_orbital_knights
+	#	}
+	#}
+#巨构生成轨道站防御平台的，均可用any_fleet_in_orbit判定
+#星环和其他所有巨构（包括居住站以及大小轨道站）兼容
+	#使用以下代码，来检测星球上是否有星环
+	#exists = orbital_defence
+	#orbital_defence = {
+	#	exists = starbase
+	#	starbase = { has_starbase_size >= orbital_ring_tier_1 }
+	#}
+#巨构生成恒星基地的，均可用orbital_defence判定
+#建造在行星上的巨构和会清空星系内行星的巨构互不兼容
+	#只能通过穷举创意工坊的会清空星系内行星的巨构来实现兼容
+	#可使用以下代码，来判断星系内是否有行星上的巨构
+	#any_system_planet = {
+	#	is_star = no
+	#	has_any_megastructure = yes
+	#}
+#一般所有巨构（除开一些特殊巨构）都不能建造在环世界、人造星球、居住站等本身就是巨构的星球上
+	#使用硬代码is_ringworld、is_artificial检测是否为巨构星球
+#互相兼容是指无论哪个巨构先建造在此，另一个巨构都可以同样顺利建造在此
+#互不兼容是指无论哪个巨构先建造在此，另一个巨构都无法建造在此
+#尽量不要使用普通planet_flag来检测星球上是否有巨构，因为有太多太多的情况会导致巨构和flag不一致
+#建造在星球（用P代称）上的会生成新星球（用H代称）的巨构，并且可在一个星系中建造多个，则需在新生成的星球H上set_planet_flag = is_orbiting_planet_@P
+	#在巨构建造条件planet_possible中可用any_system_planet = { has_planet_flag = is_orbiting_planet_@root }来检测该星球上是否有这种星球H
+	#无论该星球H被什么摧毁，也依旧可以在星球P上再次建造该星球巨构或者其他巨构

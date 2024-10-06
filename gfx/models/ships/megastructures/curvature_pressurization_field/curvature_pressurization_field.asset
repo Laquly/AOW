@@ -1,0 +1,140 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+@CPF_scale = 0.07
+
+entity = {
+	name = "CPF_ring_1_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	scale = 5
+}
+entity = {
+	name = "CPF_ring_2_entity"
+	pdxmesh = "interstellar_assembly_01_stage_1_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.1  
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_hum" } }
+	}
+	meshsettings = {
+		name = "body_1Shape"
+		index = 0
+		texture_diffuse = "humanoid_01_interstellar_assembly_diffuse.dds"
+		texture_normal = "humanoid_01_interstellar_assembly_normal.dds"
+		texture_specular = "humanoid_01_interstellar_assembly_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = 10
+}
+entity = {
+	name = "CPF_3_entity"
+	pdxmesh = "matter_decompressor_01_stage_1_mesh"
+	meshsettings = {
+		name = "g_body1Shape"
+		index = 0
+		texture_diffuse = "mammalian_01_matter_decompressor_diffuse.dds"
+		texture_normal = "mammalian_01_matter_decompressor_normal.dds"
+		texture_specular = "mammalian_01_matter_decompressor_normal.dds"
+		shader = "PdxMeshShip"
+	}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		#start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.0 node = "effect_1" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes }
+		#event = { time = 0.0 node = "effect_1" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes }
+		#start_event = { node = "effect_1" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+		#start_event = { node = "effect_1" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 2
+}
+entity = {
+	name = "CPF_4_entity"
+	default_state = "idle"
+	state = { name = "idle"
+		#event = { time = 0.0 node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes }
+		#event = { time = 0.0 node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = no trigger_once = yes }
+		start_event = { node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "pulsar_star_outburst_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 15
+}
+entity = {
+	name = "CPF_5_entity"
+	default_state = "idle"
+	state = { name = "idle"
+		#start_event = { node = "root" particle = "AOW_lighting_effect" keep_particle = yes trigger_once = yes }
+		#start_event = { node = "root" particle = "AOW_lighting_effect" keep_particle = yes trigger_once = yes }
+		#start_event = { node = "root" particle = "AOW_lighting_effect" keep_particle = yes trigger_once = yes }
+		#start_event = { node = "root" particle = "AOW_lighting_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 28
+}
+
+entity = {#火花
+	name = "cpf_swirl_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 1 particle = "AOW_shrink_spark_effect" trigger_once = yes keep_particle = yes }
+	}
+	scale = 0.9
+}
+
+
+
+entity = {
+	name = "curvature_pressurization_field_01_entity"
+	locator = { name = "root" position = { 0 0  0 } rotation = { 0 0 90 } }
+	attach = { root = "CPF_ring_1_entity" }
+	scale = @CPF_scale
+}
+entity = {
+	name = "curvature_pressurization_field_02_construction_entity"
+	locator = { name = "loc1" position = { 0 -40 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 50 0 } rotation = { 0 180 0 } }
+	locator = { name = "loc3" position = { 0 -200 0 } rotation = { 0 90 0 } }
+	locator = { name = "loc4" position = { 0 200 0 } rotation = { 0 -90 0 } }
+	attach = { loc1 = "CPF_ring_2_entity" }
+	attach = { loc2 = "CPF_ring_2_entity" }
+	attach = { loc3 = "CPF_3_entity" }
+	attach = { loc4 = "CPF_3_entity" }
+	scale = @CPF_scale
+}
+entity = {
+	name = "curvature_pressurization_field_02_entity"
+	locator = { name = "root" position = { 0 0  0 } rotation = { 0 0 0 } }
+	attach = { root = "curvature_pressurization_field_01_entity" }
+	attach = { root = "curvature_pressurization_field_02_construction_entity" }
+}
+entity = {
+	name = "curvature_pressurization_field_03_construction_entity"
+	locator = { name = "loc1" position = { 0 -200 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 200 0 } rotation = { 0 180 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "CPF_4_entity" }
+	attach = { loc2 = "CPF_4_entity" }
+	attach = { loc3 = "cpf_swirl_entity" }
+	scale = @CPF_scale
+}
+entity = {
+	name = "curvature_pressurization_field_03_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "curvature_pressurization_field_01_entity" }
+	attach = { root = "curvature_pressurization_field_02_construction_entity" }
+	attach = { root = "curvature_pressurization_field_03_construction_entity" }
+}

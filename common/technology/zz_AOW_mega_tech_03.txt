@@ -1,0 +1,654 @@
+##############################################################################
+#物理学
+##############################################################################
+AOW_TECH_multidimensional_space_channel = {
+	cost = @tier6cost1
+	area = physics
+	tier = 6
+	category = { field_manipulation }
+	prerequisites = { "tech_mine_dark_matter" }
+	modifier = {
+		country_resource_max_add = 100000
+		country_sr_dark_matter_produces_mult = 0.05
+	}
+	weight = @tier6weight1
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 20
+	}
+}
+
+#工程智能核心（增益性）
+AOW_TECH_engineering_intelligence_core = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { computing }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	modifier = {
+		#megastructures_upkeep_mult = -0.25
+		megastructures_energy_upkeep_mult = -0.25
+		megastructures_alloys_upkeep_mult = -0.25
+		megastructures_sr_dark_matter_upkeep_mult = -0.25
+	}
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#维度褶皱（功能性）
+AOW_TECH_dimension_hiding = {
+	area = physics
+	cost = @tier6cost3
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier6weight3
+	is_rare = yes
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "AOW_TECH_dimension_hiding_effect_title"
+			desc = "AOW_TECH_dimension_hiding_effect_desc"
+		}
+	}
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_dyson_sphere
+				has_technology = tech_matter_decompressor
+				has_technology = AOW_TECH_star_picker
+				has_technology = AOW_TECH_zero_element_furnace
+				has_technology = AOW_TECH_void_vortex
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+AOW_TECH_hyperdimension_hiding = {
+	area = physics
+	cost = @tier7cost3
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_dimension_hiding" }
+	weight = @tier7weight3
+	is_rare = yes
+	modifier = {
+		megastructures_energy_upkeep_mult = 1
+		megastructures_alloys_upkeep_mult = 1
+		megastructure_build_speed_mult = 0.5
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "AOW_TECH_hyperdimension_hiding_effect_1_title"
+		}
+		custom = {
+			title = "AOW_TECH_hyperdimension_hiding_effect_2_title"
+			desc = "AOW_TECH_hyperdimension_hiding_effect_2_desc"
+		}
+	}
+	potential = {
+		has_global_flag = AOW_flag_GLBL_hyperdimension_hiding
+		is_ai = no
+	}
+	weight_modifier = {
+		factor = 0
+		modifier = {
+			add = @tier7weight3
+			has_global_flag = AOW_flag_GLBL_hyperdimension_hiding
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+#坠星天矛
+AOW_TECH_starfall_spear = {
+	cost = @tier7cost1
+	area = physics
+	tier = 6
+	category = { field_manipulation }
+	prerequisites = { "tech_dyson_sphere" "AOW_TECH_star_picker" "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier7weight1
+	is_rare = yes
+	is_dangerous = yes
+	potential = { is_ai = no }
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = starfall_spear } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_era_of_deterrence }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_colossus }
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+AOW_TECH_starfall_spear_cooldown_1 = {
+	cost = @tier7cost1
+	area = physics
+	tier = 7
+	category = { computing }
+	prerequisites = { AOW_TECH_starfall_spear }
+	weight = @tier7weight1
+	is_rare = yes
+	modifier = {
+		starfall_spear_cooldown_speed_mult = 0.2
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_cooldown_2 = {
+	cost = @tier7cost2
+	area = physics
+	tier = 7
+	category = { particles }
+	prerequisites = { AOW_TECH_starfall_spear_cooldown_1 }
+	weight = @tier7weight2
+	is_rare = yes
+	modifier = {
+		starfall_spear_cooldown_speed_mult = 0.2
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_cooldown_3 = {
+	cost = @tier7cost3
+	area = physics
+	tier = 7
+	category = { particles }
+	prerequisites = { AOW_TECH_starfall_spear_cooldown_2 }
+	weight = @tier7weight3
+	is_rare = yes
+	modifier = {
+		starfall_spear_cooldown_speed_mult = 0.2
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_cooldown_4 = {
+	cost = @tier8cost1
+	area = physics
+	tier = 7
+	category = { particles }
+	prerequisites = { AOW_TECH_starfall_spear_cooldown_3 }
+	weight = @tier7weight3
+	is_rare = yes
+	modifier = {
+		starfall_spear_cooldown_speed_mult = 0.2
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_cooldown_5 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_cooldown_4 }
+	weight = @tier7weight3
+	is_rare = yes
+	modifier = {
+		starfall_spear_cooldown_speed_mult = 0.2
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+#多维仓库
+AOW_TECH_multi_dimensional_warehouse = {
+	area = physics
+	cost = @tier6cost1
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multidimensional_space_channel" }
+	weight = @tier6weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = multi_dimensional_warehouse } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#御星天炉
+AOW_TECH_star_transfer = {
+	area = physics
+	cost = @tier6cost2
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_curvature_pressurization_field" "AOW_TECH_stellar_eater" "AOW_TECH_celestial_decompressor" }
+	potential = {
+		is_ai = no
+		NOT = { has_global_flag = AOW_flag_GLBL_no_star_transfer }
+	}
+	weight = @tier6weight2
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#千载星辰
+AOW_TECH_quindecillion_stellar_quantum_matrix = {
+	area = physics
+	cost = @tier7cost1
+	tier = 6
+	category = { computing }
+	ai_update_type = all
+	prerequisites = { "tech_dyson_sphere" "tech_science_nexus" "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier7weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = quindecillion_stellar_quantum_matrix } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#建设效率提升
+AOW_TECH_improved_construction_efficiency_4 = {
+	cost = @tier6cost3
+	area = physics
+	tier = 6
+	category = { particles }
+	is_rare = yes
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_3" "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_master_builders }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_improved_construction_efficiency_4 }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+##############################################################################
+#社会学
+##############################################################################
+#巨构建设协议（增益性）
+AOW_TECH_megastructure_construction_agreement = {
+	area = society
+	cost = @tier5cost3
+	tier = 5
+	category = { statecraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	modifier = {
+		megastructures_unity_cost_mult = -0.25
+		megastructures_influence_cost_mult = -0.25
+	}
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#天界领航塔
+AOW_TECH_heaven_navigation_bureau = {
+	area = society
+	cost = @tier6cost3
+	tier = 6
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "tech_jump_drive_1" }
+	weight = @tier6weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = heaven_navigation_bureau } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#奇迹船坞
+AOW_TECH_miraculous_shipyard = {
+	area = society
+	cost = @tier6cost3
+	tier = 6
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "tech_mega_shipyard" "AOW_TECH_star_picker" "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_naval_command_base" }
+	weight = @tier6weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = miraculous_shipyard } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#天枢圣盾
+AOW_TECH_celestial_shield = {
+	area = society
+	cost = @tier6cost3
+	tier = 6
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_planetary_blaster_system" "tech_dyson_sphere" "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier6weight3
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = celestial_shield } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_era_of_deterrence }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#掩体星环
+AOW_TECH_bunker_ring = {
+	area = society
+	cost = @tier6cost3
+	tier = 6
+	category = { military_theory }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_celestial_shield" }
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_celestial_shield_bunker_ring }
+		}
+	}
+	is_rare = yes
+	ai_weight = {
+		factor = 10
+	}
+}
+#星笼世界
+AOW_TECH_starcage_world = {
+	area = society
+	cost = @tier6cost3
+	tier = 6
+	category = { new_worlds }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "tech_ring_world" "AOW_TECH_void_vortex" "tech_dyson_sphere" "tech_matter_decompressor" "AOW_TECH_zero_element_furnace" "AOW_TECH_star_picker" }
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = starcage_world } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	is_rare = yes
+	ai_weight = {
+		factor = 10
+	}
+}
+
+##############################################################################
+#工程学
+##############################################################################
+#自主复制单元（增益性）
+AOW_TECH_automatic_copy_unit = {
+	area = engineering
+	cost = @tier5cost3
+	tier = 5
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_mega_engineering" }
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+		country_megastructure_build_cap_add = 1
+	}
+	weight = @tier6weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#物质重组仪
+AOW_TECH_material_recombination_instrument = {
+	area = engineering
+	cost = @tier7cost1
+	tier = 6
+	category = { industry }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	weight = @tier7weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = material_recombination_instrument } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#三环
+AOW_TECH_ring_world_3 = {
+	area = engineering
+	cost = @tier6cost2
+	tier = 6
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_ring_world_2" }
+	weight = @tier6weight2
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = ring_world_3 } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+#四环
+AOW_TECH_ring_world_4 = {
+	area = engineering
+	cost = @tier7cost1
+	tier = 6
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_ring_world_3" }
+	weight = @tier7weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = ring_world_4 } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
+
+#建设效率提升
+AOW_TECH_improved_construction_efficiency_5 = {
+	cost = @tier7cost3
+	area = engineering
+	tier = 6
+	category = { industry }
+	is_rare = yes
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_4" }
+	weight = @tier7weight3
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_master_builders }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = AOW_TECH_improved_construction_efficiency_5 }
+			}
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}

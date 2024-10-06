@@ -1,0 +1,84 @@
+objectTypes = {
+	pdxmesh = {
+		name = "RJD_base_mesh"
+		file = "gfx/models/ships/megastructures/storm_trigger_tower/RJD_base.mesh"
+		scale = 1.0
+
+		animation = { id = idle type = RJD_ring_idle }
+
+		meshsettings = {
+			name = "RJD_BASE"
+			index = 0
+			texture_diffuse = "Relativistic_jet_device_1_specular.dds"
+			texture_normal = "Relativistic_jet_device_1_normal.dds"
+			texture_specular = "Relativistic_jet_device_1_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "RJD_top_mesh"
+		file = "gfx/models/ships/megastructures/storm_trigger_tower/RJD_top.mesh"
+		scale = 1.0
+
+		animation = { id = op type = RJD_open }
+		animation = { id = ed type = RJD_close }
+		animation = { id = idle type = RJD_idle }
+		animation = { id = op_idle type = RJD_open_idle }
+
+		meshsettings = {
+			name = "RJD_top"
+			index = 0
+			texture_diffuse = "Relativistic_jet_device_2_specular.dds"
+			texture_normal = "Relativistic_jet_device_2_normal.dds"
+			texture_specular = "Relativistic_jet_device_2_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "RJD_bottom_mesh"
+		file = "gfx/models/ships/megastructures/storm_trigger_tower/RJD_bottom.mesh"
+		scale = 1.0
+
+		animation = { id = op type = RJD_open }
+		animation = { id = ed type = RJD_close }
+		animation = { id = idle type = RJD_idle }
+		animation = { id = op_idle type = RJD_open_idle }
+
+		meshsettings = {
+			name = "RJD_bottom"
+			index = 0
+			texture_diffuse = "Relativistic_jet_device_3_specular.dds"
+			texture_normal = "Relativistic_jet_device_3_normal.dds"
+			texture_specular = "Relativistic_jet_device_3_specular.dds"
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "tiehuaShape"
+			index = 0
+			texture_diffuse = "RJD_logo.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "RJD_effect_mesh"
+		file = "gfx/models/ships/megastructures/storm_trigger_tower/RJD_effect.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "RJD_effect_meshShape"
+			index = 0
+			texture_diffuse = "RJD_effect.dds"
+			shader = "PdxMeshAlphaAdditiveAnimateUVAlpha"
+		}
+	}
+}

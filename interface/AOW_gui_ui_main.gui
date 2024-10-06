@@ -1,0 +1,1844 @@
+guiTypes = {
+	containerWindowType = {
+		name = "AOW_main_ui_option"
+		position = { x = 0 y = 0 }
+		size = { width = 280 height = 40 }
+		moveable = no
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_AOW_button_enter"
+			position = { x = 0 y = 0 }
+			font = "malgun_goth_24"
+			text = "OPTION_TEXT"
+		}
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0 y = 0 }
+			size = { x = 65 y = 28 }
+		}
+	}
+	containerWindowType = {
+		name = "AOW_main_ui"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 1250 height = 640 }
+		#不同分辨率，不同高度
+		if_resolution = { min_height = 720 size = { width = 1250 height = 640 } }
+		if_resolution = { min_height = 768 size = { width = 1250 height = 678 } }
+		if_resolution = { min_height = 800 size = { width = 1250 height = 706 } }
+		if_resolution = { min_height = 864 size = { width = 1250 height = 763 } }
+		if_resolution = { min_height = 900 size = { width = 1250 height = 795 } }
+		if_resolution = { min_height = 960 size = { width = 1250 height = 848 } }
+		if_resolution = { min_height = 1024 size = { width = 1250 height = 905 } }
+		if_resolution = { min_height = 1050 size = { width = 1250 height = 928 } }
+		if_resolution = { min_height = 1080 size = { width = 1250 height = 954 } }
+		#if_resolution = { min_height = 1200 size = { width = 1250 height = 1060 } }
+		#if_resolution = { min_height = 1400 size = { width = 1250 height = 1237 } }
+		### 事件选项框 ###
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 230 y = -10 }
+			size = { width = 280 height = 40 }
+			orientation = lower_left
+			origo = lower_left
+			moveable = no
+			instantTextBoxType={#事件标题文字
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 400
+				alwaysTransparent = yes
+			}
+			instantTextBoxType={
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+			listboxType = {#选项栏
+				name = "option_list"
+				position = { x = 0 y = 0 }
+				#backGround=""
+				size = { width = 280 height = 40 }
+				spacing = 1
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				#Orientation = left_down
+			}
+		}
+		background = { #整体背景图
+			name = "background"
+			quadTextureSprite = "GFX_tile_large_bg_plain" #"GFX_tile_outliner_bg"
+		}
+		iconType = { #下划线
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_center"
+			position = { x = -256 y = 30 }
+			orientation = CENTER_UP
+			alwaysTransparent = yes
+		}
+		instantTextBoxType = { #标题
+			name = "aow_title"
+			font = "malgun_goth_24" #"cg_16b"
+			position = { x = 15 y = 10 }
+			maxWidth = 1220
+			maxHeight = 30
+			alwaysTransparent = yes
+			fixedSize = no
+			format = center
+			text = AOW_core.100.title
+		}
+		buttonType = { #攻略按钮
+			name = "AOW_button_introduction"
+			quadTextureSprite = "GFX_resolution_view_supporters_button"
+			position = { x = -84 y = 6 }
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "AOW_text_introduction"
+		}#攻略按钮
+		buttonType = { #关闭按钮
+			name = "close"
+			quadTextureSprite = "GFX_main_close_button"
+			position = { x= -44 y = 6 }
+			Orientation = UPPER_RIGHT
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}#关闭按钮
+		@mega_button_y1 = 0
+		@mega_button_y2 = 30
+		@mega_button_y3 = 60
+		@mega_button_y4 = 90
+		@mega_button_y5 = 120
+		containerWindowType = {#AI数值调整
+			name = "ai"
+			size = { width = 160 height = 180 }
+			position = { x = 10 y = 50 }
+			background = { name = "background" spriteType = "GFX_tiles_dark_area_cut_8" }
+			verticalScrollbar = "AOW_right_vertical_slider"
+			instantTextBoxType = {
+				name = "title"
+				position = { x = 5 y = 5 }
+				font = "malgun_goth_24"
+				maxWidth = 150 maxHeight = 25
+				fixedSize = no
+				format = center
+				text = AOW_text_mega_ai
+			}
+			containerWindowType = {#按钮容器
+				name = "buttons"
+				size = { width = 150 height = 150 }
+				position = { x = 0 y = 30 }
+				#AI巨构数值控制
+				effectButtonType = { name = "mega_cost" position = { x = 10 y = @mega_button_y1 } spriteType = "GFX_AOW_button_mega_cost" effect = AOW_btn_main_ui_reset_ai_mega_cost }
+				effectButtonType = { name = "mega_cost_left3" position = { x = 35 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_cost_3 }
+				effectButtonType = { name = "mega_cost_left2" position = { x = 45 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_cost_2 }
+				effectButtonType = { name = "mega_cost_left1" position = { x = 55 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_cost_1 }
+				effectButtonType = { name = "mega_cost_var" position = { x = 65 y = @mega_button_y1 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_ai_mega_cost buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_cost_right1" position = { x = 115 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_cost_1 }
+				effectButtonType = { name = "mega_cost_right2" position = { x = 125 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_cost_2 }
+				effectButtonType = { name = "mega_cost_right3" position = { x = 135 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_cost_3 }
+
+				effectButtonType = { name = "mega_upkp" position = { x = 10 y = @mega_button_y2 } spriteType = "GFX_AOW_button_mega_upkp" effect = AOW_btn_main_ui_reset_ai_mega_upkp }
+				effectButtonType = { name = "mega_upkp_left3" position = { x = 35 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_upkp_3 }
+				effectButtonType = { name = "mega_upkp_left2" position = { x = 45 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_upkp_2 }
+				effectButtonType = { name = "mega_upkp_left1" position = { x = 55 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_upkp_1 }
+				effectButtonType = { name = "mega_upkp_var" position = { x = 65 y = @mega_button_y2 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_ai_mega_upkp buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_upkp_right1" position = { x = 115 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_upkp_1 }
+				effectButtonType = { name = "mega_upkp_right2" position = { x = 125 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_upkp_2 }
+				effectButtonType = { name = "mega_upkp_right3" position = { x = 135 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_upkp_3 }
+
+				effectButtonType = { name = "mega_prdc" position = { x = 10 y = @mega_button_y3 } spriteType = "GFX_AOW_button_mega_prdc" effect = AOW_btn_main_ui_reset_ai_mega_prdc }
+				effectButtonType = { name = "mega_prdc_left3" position = { x = 35 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_prdc_3 }
+				effectButtonType = { name = "mega_prdc_left2" position = { x = 45 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_prdc_2 }
+				effectButtonType = { name = "mega_prdc_left1" position = { x = 55 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_prdc_1 }
+				effectButtonType = { name = "mega_prdc_var" position = { x = 65 y = @mega_button_y3 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_ai_mega_prdc buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_prdc_right1" position = { x = 115 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_prdc_1 }
+				effectButtonType = { name = "mega_prdc_right2" position = { x = 125 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_prdc_2 }
+				effectButtonType = { name = "mega_prdc_right3" position = { x = 135 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_prdc_3 }
+
+				effectButtonType = { name = "mega_bs" position = { x = 10 y = @mega_button_y4 } spriteType = "GFX_AOW_button_mega_build_speed" effect = AOW_btn_main_ui_reset_ai_mega_build_speed }
+				effectButtonType = { name = "mega_bs_left3" position = { x = 35 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_speed_3 }
+				effectButtonType = { name = "mega_bs_left2" position = { x = 45 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_speed_2 }
+				effectButtonType = { name = "mega_bs_left1" position = { x = 55 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_speed_1 }
+				effectButtonType = { name = "mega_bs_var" position = { x = 65 y = @mega_button_y4 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_ai_mega_build_speed buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_bs_right1" position = { x = 115 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_speed_1 }
+				effectButtonType = { name = "mega_bs_right2" position = { x = 125 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_speed_2 }
+				effectButtonType = { name = "mega_bs_right3" position = { x = 135 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_speed_3 }
+
+				effectButtonType = { name = "mega_bc" position = { x = 10 y = @mega_button_y5 } spriteType = "GFX_AOW_button_mega_build_cap" effect = AOW_btn_main_ui_reset_ai_mega_build_cap }
+				effectButtonType = { name = "mega_bc_left3" position = { x = 35 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_cap_3 }
+				effectButtonType = { name = "mega_bc_left2" position = { x = 45 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_cap_2 }
+				effectButtonType = { name = "mega_bc_left1" position = { x = 55 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_ai_mega_build_cap_1 }
+				effectButtonType = { name = "mega_bc_var" position = { x = 65 y = @mega_button_y5 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_ai_mega_build_cap buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_bc_right1" position = { x = 115 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_cap_1 }
+				effectButtonType = { name = "mega_bc_right2" position = { x = 125 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_cap_2 }
+				effectButtonType = { name = "mega_bc_right3" position = { x = 135 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_ai_mega_build_cap_3 }
+			}
+		}#AI数值调整
+		containerWindowType = {#玩家数值调整
+			name = "player"
+			size = { width = 160 height = 180 }
+			#position = { x = 180 y = 50 }
+			position = { x = 10 y = 240 }
+			background = { name = "background" spriteType = "GFX_tiles_dark_area_cut_8" }
+			verticalScrollbar = "AOW_right_vertical_slider"
+			instantTextBoxType = {
+				name = "title"
+				position = { x = 5 y = 5 }
+				font = "malgun_goth_24"
+				maxWidth = 150 maxHeight = 25
+				fixedSize = no
+				format = center
+				text = AOW_text_mega_player
+			}
+			containerWindowType = {#按钮容器
+				name = "buttons"
+				size = { width = 160 height = 150 }
+				position = { x = 0 y = 30 }
+				#玩家巨构数值控制
+				effectButtonType = { name = "mega_cost" position = { x = 10 y = @mega_button_y1 } spriteType = "GFX_AOW_button_mega_cost" effect = AOW_btn_main_ui_reset_player_mega_cost }
+				effectButtonType = { name = "mega_cost_left3" position = { x = 35 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_cost_3 }
+				effectButtonType = { name = "mega_cost_left2" position = { x = 45 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_cost_2 }
+				effectButtonType = { name = "mega_cost_left1" position = { x = 55 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_cost_1 }
+				effectButtonType = { name = "mega_cost_var" position = { x = 65 y = @mega_button_y1 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_player_mega_cost buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_cost_right1" position = { x = 115 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_cost_1 }
+				effectButtonType = { name = "mega_cost_right2" position = { x = 125 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_cost_2 }
+				effectButtonType = { name = "mega_cost_right3" position = { x = 135 y = @mega_button_y1 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_cost_3 }
+
+				effectButtonType = { name = "mega_upkp" position = { x = 10 y = @mega_button_y2 } spriteType = "GFX_AOW_button_mega_upkp" effect = AOW_btn_main_ui_reset_player_mega_upkp }
+				effectButtonType = { name = "mega_upkp_left3" position = { x = 35 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_upkp_3 }
+				effectButtonType = { name = "mega_upkp_left2" position = { x = 45 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_upkp_2 }
+				effectButtonType = { name = "mega_upkp_left1" position = { x = 55 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_upkp_1 }
+				effectButtonType = { name = "mega_upkp_var" position = { x = 65 y = @mega_button_y2 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_player_mega_upkp buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_upkp_right1" position = { x = 115 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_upkp_1 }
+				effectButtonType = { name = "mega_upkp_right2" position = { x = 125 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_upkp_2 }
+				effectButtonType = { name = "mega_upkp_right3" position = { x = 135 y = @mega_button_y2 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_upkp_3 }
+
+				effectButtonType = { name = "mega_prdc" position = { x = 10 y = @mega_button_y3 } spriteType = "GFX_AOW_button_mega_prdc" effect = AOW_btn_main_ui_reset_player_mega_prdc }
+				effectButtonType = { name = "mega_prdc_left3" position = { x = 35 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_prdc_3 }
+				effectButtonType = { name = "mega_prdc_left2" position = { x = 45 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_prdc_2 }
+				effectButtonType = { name = "mega_prdc_left1" position = { x = 55 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_prdc_1 }
+				effectButtonType = { name = "mega_prdc_var" position = { x = 65 y = @mega_button_y3 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_player_mega_prdc buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_prdc_right1" position = { x = 115 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_prdc_1 }
+				effectButtonType = { name = "mega_prdc_right2" position = { x = 125 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_prdc_2 }
+				effectButtonType = { name = "mega_prdc_right3" position = { x = 135 y = @mega_button_y3 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_prdc_3 }
+
+				effectButtonType = { name = "mega_bs" position = { x = 10 y = @mega_button_y4 } spriteType = "GFX_AOW_button_mega_build_speed" effect = AOW_btn_main_ui_reset_player_mega_build_speed }
+				effectButtonType = { name = "mega_bs_left3" position = { x = 35 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_speed_3 }
+				effectButtonType = { name = "mega_bs_left2" position = { x = 45 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_speed_2 }
+				effectButtonType = { name = "mega_bs_left1" position = { x = 55 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_speed_1 }
+				effectButtonType = { name = "mega_bs_var" position = { x = 65 y = @mega_button_y4 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_player_mega_build_speed buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_bs_right1" position = { x = 115 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_speed_1 }
+				effectButtonType = { name = "mega_bs_right2" position = { x = 125 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_speed_2 }
+				effectButtonType = { name = "mega_bs_right3" position = { x = 135 y = @mega_button_y4 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_speed_3 }
+
+				effectButtonType = { name = "mega_bc" position = { x = 10 y = @mega_button_y5 } spriteType = "GFX_AOW_button_mega_build_cap" effect = AOW_btn_main_ui_reset_player_mega_build_cap }
+				effectButtonType = { name = "mega_bc_left3" position = { x = 35 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_cap_3 }
+				effectButtonType = { name = "mega_bc_left2" position = { x = 45 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_cap_2 }
+				effectButtonType = { name = "mega_bc_left1" position = { x = 55 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_left" effect = AOW_btn_main_ui_decrease_player_mega_build_cap_1 }
+				effectButtonType = { name = "mega_bc_var" position = { x = 65 y = @mega_button_y5 } spriteType = "GFX_AOW_bg_balance_var" text = AOW_text_var_player_mega_build_cap buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				effectButtonType = { name = "mega_bc_right1" position = { x = 115 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_cap_1 }
+				effectButtonType = { name = "mega_bc_right2" position = { x = 125 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_cap_2 }
+				effectButtonType = { name = "mega_bc_right3" position = { x = 135 y = @mega_button_y5 } spriteType = "GFX_AOW_mega_num_right" effect = AOW_btn_main_ui_increase_player_mega_build_cap_3 }
+			}
+		}#玩家数值调整
+		containerWindowType = {
+			name = "others"
+			size = { width = 160 height = -10 }
+			position = { x = 10 y = 430 }
+			background = { name = "background" spriteType = "GFX_tiles_dark_area_cut_8" }
+			verticalScrollbar = "AOW_right_vertical_slider"
+			instantTextBoxType = {
+				name = "title"
+				position = { x = 5 y = 5 }
+				font = "malgun_goth_24"
+				maxWidth = 150 maxHeight = 25
+				fixedSize = no
+				format = center
+				text = AOW_text_mega_others
+			}
+			containerWindowType = {
+				name = xxx
+				size = { width = 100% height = -10 }
+				position = { x = 0 y = 30 }
+				effectButtonType = {#134 58
+					name = 1
+					position = { x = 13 y = 5 }
+					spriteType = GFX_button_animated_110_34
+					effect = AOW_btn_dismantle_at_war
+					text = AOW_text_can_dismantle_megastructure_at_war_title
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = 2
+					position = { x = 13 y = 63 }
+					spriteType = GFX_button_animated_110_34
+					effect = AOW_btn_hyperdimension_hiding
+					text = AOW_text_can_research_hyperdimension_hiding_title
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}
+		}#其他相关设置
+		buttonType = { #打赏按钮
+			name = "AOW_button_donation"
+			quadTextureSprite = "GFX_AOW_button_donation"
+			position = { x = 180 y = -50 }
+			orientation = LOWER_LEFT
+			pdx_tooltip = "AOW_text_donation"
+		}#打赏按钮
+		effectButtonType = { #查看公告
+			name = "AOW_btn_main_ui_open_bulletin_board"
+			position = { x = 520 y = -50 }
+			spriteType = "GFX_AOW_button_enter"
+			orientation = LOWER_LEFT
+			text = AOW_btn_main_ui_open_bulletin_board
+			buttonFont = "malgun_goth_24"
+			format = center
+			effect = AOW_btn_main_ui_open_bulletin_board
+		}#查看公告
+		containerWindowType = {#容纳每个具体巨构按钮的地方
+			name = "container"
+			size = { width = 1060 height = -60 }
+			position = { x = 180 y = 50 }
+			background = { name = "background" spriteType = "GFX_AOW_filled_dark_area_cut_8" }
+			verticalScrollbar = "AOW_right_vertical_slider"
+			effectButtonType = {
+				name = title
+				position = { x = 0 y = 0 }
+				size = { x = 1060 y = 45 }
+				spriteType = GFX_AOW_transparent_area_cut_8 #GFX_tiles_dark_area_cut_8
+				effect = AOW_btn_preview
+				text = AOW_text_mega_settings
+				buttonFont = "malgun_goth_24"
+				format = center
+				alwaysTransparent = yes
+			}
+			effectButtonType = { name = "Pi" position = { x = -35 y = 10 } spriteType = "GFX_AOW_button_player_inf" effect = AOW_btn_set_player_mega_cap_infinite orientation = upper_right }
+			effectButtonType = { name = "P5" position = { x = -65 y = 10 } spriteType = "GFX_AOW_button_player_5" effect = AOW_btn_set_player_mega_cap_5 orientation = upper_right }
+			effectButtonType = { name = "P4" position = { x = -95 y = 10 } spriteType = "GFX_AOW_button_player_4" effect = AOW_btn_set_player_mega_cap_4 orientation = upper_right }
+			effectButtonType = { name = "P3" position = { x = -125 y = 10 } spriteType = "GFX_AOW_button_player_3" effect = AOW_btn_set_player_mega_cap_3 orientation = upper_right }
+			effectButtonType = { name = "P2" position = { x = -155 y = 10 } spriteType = "GFX_AOW_button_player_2" effect = AOW_btn_set_player_mega_cap_2 orientation = upper_right }
+			effectButtonType = { name = "P1" position = { x = -185 y = 10 } spriteType = "GFX_AOW_button_player_1" effect = AOW_btn_set_player_mega_cap_1 orientation = upper_right }
+			effectButtonType = { name = "P0" position = { x = -215 y = 10 } spriteType = "GFX_AOW_button_player_0" effect = AOW_btn_set_player_mega_cap_0 orientation = upper_right }
+			effectButtonType = { name = "Ai" position = { x = 10 y = 10 } spriteType = "GFX_AOW_button_ai_inf" effect = AOW_btn_set_ai_mega_cap_infinite }
+			effectButtonType = { name = "A5" position = { x = 40 y = 10 } spriteType = "GFX_AOW_button_ai_5" effect = AOW_btn_set_ai_mega_cap_5 }
+			effectButtonType = { name = "A4" position = { x = 70 y = 10 } spriteType = "GFX_AOW_button_ai_4" effect = AOW_btn_set_ai_mega_cap_4 }
+			effectButtonType = { name = "A3" position = { x = 100 y = 10 } spriteType = "GFX_AOW_button_ai_3" effect = AOW_btn_set_ai_mega_cap_3 }
+			effectButtonType = { name = "A2" position = { x = 130 y = 10 } spriteType = "GFX_AOW_button_ai_2" effect = AOW_btn_set_ai_mega_cap_2 }
+			effectButtonType = { name = "A1" position = { x = 160 y = 10 } spriteType = "GFX_AOW_button_ai_1" effect = AOW_btn_set_ai_mega_cap_1 }
+			effectButtonType = { name = "A0" position = { x = 190 y = 10 } spriteType = "GFX_AOW_button_ai_0" effect = AOW_btn_set_ai_mega_cap_0 }
+
+			@hp_w = 104
+			@hp_h = 52
+
+			@hp_x1 = 10
+			@hp_x2 = 124.5
+			@hp_x3 = 239
+			@hp_x4 = 353.5
+			@hp_x5 = 468
+			@hp_x6 = 582.5
+			@hp_x7 = 697
+			@hp_x8 = 811.5
+			@hp_x9 = 926
+
+			@hp_y1 = 45
+			@hp_y2 = 107
+			@hp_y3 = 169
+			@hp_y4 = 231
+			@hp_y5 = 293
+			@hp_y6 = 355
+			@hp_y7 = 417
+			@hp_y8 = 479
+			@hp_y9 = 541
+			@hp_y10 = 603
+
+			@c_w = 1040
+
+			@c_x = 10
+			@c1_y = 85
+			@c1_h = 107 #45+(52+10)*1
+			#+10
+			@c2_y = 202 #@c1_y + @c1_h +10
+			@c2_h = 231 #45+(52+10)*3
+			#+10
+			@c3_y = 443 #@c2_y + @c2_h +10
+			@c3_h = 169 #45+(52+10)*2
+			#+10 ∞
+			@c4_y = 622 #@c3_y + @c3_h +10
+			@c4_h = 169 #45+(52+10)*2
+			effectButtonType = {
+				name = export_data
+				position = { x = 6 y = 41 }
+				spriteType = GFX_button_copy_to_clipboard
+				effect = AOW_btn_export_data
+			}
+			effectButtonType = {
+				name = AOW_btn_main_ui_open_presets
+				position = { x = 50 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_main_ui_open_presets
+				effect = AOW_btn_main_ui_open_presets
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_default_1
+				position = { x = 200 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_default_1
+				effect = AOW_btn_preinstall_default_1
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_default_2
+				position = { x = 350 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_default_2
+				effect = AOW_btn_preinstall_default_2
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_vanilla
+				position = { x = 500 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_vanilla
+				effect = AOW_btn_preinstall_vanilla
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_close_to_vanilla
+				position = { x = 650 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_close_to_vanilla
+				effect = AOW_btn_preinstall_close_to_vanilla
+			}
+			containerWindowType = {
+				name = "container_1"
+				size = { width = @c_w height = @c1_h }
+				position = { x = @c_x y = @c1_y }
+				effectButtonType = {
+					name = background
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = @c1_h }
+					spriteType = GFX_AOW_green_area_cut_8
+					effect = AOW_btn_preview
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = title
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = 45 }
+					spriteType = GFX_AOW_transparent_area_cut_8
+					effect = AOW_btn_preview
+					text = AOW_text_mega_1
+					buttonFont = "malgun_goth_24"
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = { name = "Pi" position = { x = -35 y = 10 } spriteType = "GFX_AOW_button_sub_player_inf" effect = AOW_btn_set_player_mega1_cap_infinite orientation = upper_right }
+				effectButtonType = { name = "P5" position = { x = -65 y = 10 } spriteType = "GFX_AOW_button_sub_player_5" effect = AOW_btn_set_player_mega1_cap_5 orientation = upper_right }
+				effectButtonType = { name = "P4" position = { x = -95 y = 10 } spriteType = "GFX_AOW_button_sub_player_4" effect = AOW_btn_set_player_mega1_cap_4 orientation = upper_right }
+				effectButtonType = { name = "P3" position = { x = -125 y = 10 } spriteType = "GFX_AOW_button_sub_player_3" effect = AOW_btn_set_player_mega1_cap_3 orientation = upper_right }
+				effectButtonType = { name = "P2" position = { x = -155 y = 10 } spriteType = "GFX_AOW_button_sub_player_2" effect = AOW_btn_set_player_mega1_cap_2 orientation = upper_right }
+				effectButtonType = { name = "P1" position = { x = -185 y = 10 } spriteType = "GFX_AOW_button_sub_player_1" effect = AOW_btn_set_player_mega1_cap_1 orientation = upper_right }
+				effectButtonType = { name = "P0" position = { x = -215 y = 10 } spriteType = "GFX_AOW_button_sub_player_0" effect = AOW_btn_set_player_mega1_cap_0 orientation = upper_right }
+				effectButtonType = { name = "Ai" position = { x = 10 y = 10 } spriteType = "GFX_AOW_button_sub_ai_inf" effect = AOW_btn_set_ai_mega1_cap_infinite }
+				effectButtonType = { name = "A5" position = { x = 40 y = 10 } spriteType = "GFX_AOW_button_sub_ai_5" effect = AOW_btn_set_ai_mega1_cap_5 }
+				effectButtonType = { name = "A4" position = { x = 70 y = 10 } spriteType = "GFX_AOW_button_sub_ai_4" effect = AOW_btn_set_ai_mega1_cap_4 }
+				effectButtonType = { name = "A3" position = { x = 100 y = 10 } spriteType = "GFX_AOW_button_sub_ai_3" effect = AOW_btn_set_ai_mega1_cap_3 }
+				effectButtonType = { name = "A2" position = { x = 130 y = 10 } spriteType = "GFX_AOW_button_sub_ai_2" effect = AOW_btn_set_ai_mega1_cap_2 }
+				effectButtonType = { name = "A1" position = { x = 160 y = 10 } spriteType = "GFX_AOW_button_sub_ai_1" effect = AOW_btn_set_ai_mega1_cap_1 }
+				effectButtonType = { name = "A0" position = { x = 190 y = 10 } spriteType = "GFX_AOW_button_sub_ai_0" effect = AOW_btn_set_ai_mega1_cap_0 }
+				@core_x = 0 @core_y = 0
+				@AP1_x = 52 @AP2_x = 90 @A_y = 0 @P_y = 26
+				containerWindowType = {#星状开采站
+					name = "1_01"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_asteroid_mining_station_1_build_icon" effect = AOW_btn_asteroid_mining_station_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_asteroid_mining_station_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_asteroid_mining_station_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_asteroid_mining_station_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_asteroid_mining_station_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_asteroid_mining_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_asteroid_mining_station_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_asteroid_mining_station_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_asteroid_mining_station_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_asteroid_mining_station_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_asteroid_mining_station_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_asteroid_mining_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_asteroid_mining_station_player_increase_cap }
+				}
+				containerWindowType = {#星光竞技场
+					name = "1_02"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_space_arena_1_build_icon" effect = AOW_btn_space_arena_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_space_arena_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_space_arena_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_space_arena_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_space_arena_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_space_arena buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_space_arena_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_space_arena_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_space_arena_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_space_arena_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_space_arena_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_space_arena buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_space_arena_player_increase_cap }
+				}
+				containerWindowType = {#星空传感站
+					name = "1_03"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_space_sensor_station_1_build_icon" effect = AOW_btn_space_sensor_station_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_space_sensor_station_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_space_sensor_station_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_space_sensor_station_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_space_sensor_station_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_space_sensor_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_space_sensor_station_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_space_sensor_station_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_space_sensor_station_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_space_sensor_station_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_space_sensor_station_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_space_sensor_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_space_sensor_station_player_increase_cap }
+				}
+				containerWindowType = {#居住站
+					name = "1_04"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_habitat_central_complex_build_icon" effect = AOW_btn_habitat_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_habitat_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_habitat_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_habitat_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_habitat_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_habitat buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_habitat_ai_increase_cap }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_habitat_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_habitat_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_habitat buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#超空间中继器
+					name = "1_05"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_hyper_relay_build_icon" effect = AOW_btn_hyper_relay_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_hyper_relay_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_hyper_relay_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_hyper_relay buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_hyper_relay_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_hyper_relay_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_hyper_relay buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#星环
+					name = "1_06"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_orbital_ring_build_icon" effect = AOW_btn_orbital_ring_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_ring_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_ring_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_orbital_ring buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_ring_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_ring_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_orbital_ring buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#卫星防御基地
+					name = "1_07"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_satellite_defense_base_1_build_icon" effect = AOW_btn_satellite_defense_base_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_satellite_defense_base_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_satellite_defense_base_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_satellite_defense_base buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_satellite_defense_base_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_satellite_defense_base_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_satellite_defense_base buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#戴森云
+					name = "1_08"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_dyson_swarm_1_build_icon" effect = AOW_btn_dyson_swarm_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dyson_swarm_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dyson_swarm_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dyson_swarm_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_dyson_swarm_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_dyson_swarm buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_dyson_swarm_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dyson_swarm_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dyson_swarm_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dyson_swarm_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_dyson_swarm_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_dyson_swarm buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_dyson_swarm_player_increase_cap }
+				}
+				containerWindowType = {#电弧熔炉
+					name = "1_09"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x9 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_orbital_arc_furnace_1_build_icon" effect = AOW_btn_orbital_arc_furnace_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_orbital_arc_furnace_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_arc_furnace_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_arc_furnace_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_orbital_arc_furnace_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_orbital_arc_furnace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_orbital_arc_furnace_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_orbital_arc_furnace_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_arc_furnace_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_arc_furnace_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_orbital_arc_furnace_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_orbital_arc_furnace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_orbital_arc_furnace_player_increase_cap }
+				}
+			}#小型巨构
+			containerWindowType = {
+				name = "container_2"
+				size = { width = @c_w height = @c2_h }
+				position = { x = @c_x y = @c2_y }
+				effectButtonType = {
+					name = background
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = @c2_h }
+					spriteType = GFX_AOW_yellow_area_cut_8
+					effect = AOW_btn_preview
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = title
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = 45 }
+					spriteType = GFX_AOW_transparent_area_cut_8
+					effect = AOW_btn_preview
+					text = AOW_text_mega_2
+					buttonFont = "malgun_goth_24"
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = { name = "Pi" position = { x = -35 y = 10 } spriteType = "GFX_AOW_button_sub_player_inf" effect = AOW_btn_set_player_mega2_cap_infinite orientation = upper_right }
+				effectButtonType = { name = "P5" position = { x = -65 y = 10 } spriteType = "GFX_AOW_button_sub_player_5" effect = AOW_btn_set_player_mega2_cap_5 orientation = upper_right }
+				effectButtonType = { name = "P4" position = { x = -95 y = 10 } spriteType = "GFX_AOW_button_sub_player_4" effect = AOW_btn_set_player_mega2_cap_4 orientation = upper_right }
+				effectButtonType = { name = "P3" position = { x = -125 y = 10 } spriteType = "GFX_AOW_button_sub_player_3" effect = AOW_btn_set_player_mega2_cap_3 orientation = upper_right }
+				effectButtonType = { name = "P2" position = { x = -155 y = 10 } spriteType = "GFX_AOW_button_sub_player_2" effect = AOW_btn_set_player_mega2_cap_2 orientation = upper_right }
+				effectButtonType = { name = "P1" position = { x = -185 y = 10 } spriteType = "GFX_AOW_button_sub_player_1" effect = AOW_btn_set_player_mega2_cap_1 orientation = upper_right }
+				effectButtonType = { name = "P0" position = { x = -215 y = 10 } spriteType = "GFX_AOW_button_sub_player_0" effect = AOW_btn_set_player_mega2_cap_0 orientation = upper_right }
+				effectButtonType = { name = "Ai" position = { x = 10 y = 10 } spriteType = "GFX_AOW_button_sub_ai_inf" effect = AOW_btn_set_ai_mega2_cap_infinite }
+				effectButtonType = { name = "A5" position = { x = 40 y = 10 } spriteType = "GFX_AOW_button_sub_ai_5" effect = AOW_btn_set_ai_mega2_cap_5 }
+				effectButtonType = { name = "A4" position = { x = 70 y = 10 } spriteType = "GFX_AOW_button_sub_ai_4" effect = AOW_btn_set_ai_mega2_cap_4 }
+				effectButtonType = { name = "A3" position = { x = 100 y = 10 } spriteType = "GFX_AOW_button_sub_ai_3" effect = AOW_btn_set_ai_mega2_cap_3 }
+				effectButtonType = { name = "A2" position = { x = 130 y = 10 } spriteType = "GFX_AOW_button_sub_ai_2" effect = AOW_btn_set_ai_mega2_cap_2 }
+				effectButtonType = { name = "A1" position = { x = 160 y = 10 } spriteType = "GFX_AOW_button_sub_ai_1" effect = AOW_btn_set_ai_mega2_cap_1 }
+				effectButtonType = { name = "A0" position = { x = 190 y = 10 } spriteType = "GFX_AOW_button_sub_ai_0" effect = AOW_btn_set_ai_mega2_cap_0 }
+				containerWindowType = {#星门
+					name = "2_01"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_gateway_0_build_icon" effect = AOW_btn_gateway_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_gateway_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_gateway_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_gateway buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_gateway_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_gateway_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_gateway buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#星际集会
+					name = "2_02"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_interstellar_assembly_0_build_icon" effect = AOW_btn_interstellar_assembly_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_interstellar_assembly_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_interstellar_assembly_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_interstellar_assembly_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_interstellar_assembly_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_interstellar_assembly buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_interstellar_assembly_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_interstellar_assembly_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_interstellar_assembly_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_interstellar_assembly_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_interstellar_assembly_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_interstellar_assembly buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_interstellar_assembly_player_increase_cap }
+				}
+				containerWindowType = {#巨构艺术
+					name = "2_03"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_mega_art_installation_0_build_icon" effect = AOW_btn_mega_art_installation_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_mega_art_installation_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_mega_art_installation_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_mega_art_installation_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_mega_art_installation_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_mega_art_installation buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_mega_art_installation_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_mega_art_installation_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_mega_art_installation_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_mega_art_installation_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_mega_art_installation_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_mega_art_installation buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_mega_art_installation_player_increase_cap }
+				}
+				containerWindowType = {#巨型船坞
+					name = "2_04"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_mega_shipyard_0_build_icon" effect = AOW_btn_mega_shipyard_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_mega_shipyard_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_mega_shipyard_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_mega_shipyard_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_mega_shipyard_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_mega_shipyard buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_mega_shipyard_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_mega_shipyard_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_mega_shipyard_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_mega_shipyard_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_mega_shipyard_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_mega_shipyard buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_mega_shipyard_player_increase_cap }
+				}
+				containerWindowType = {#量子弹弓
+					name = "2_05"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_quantum_catapult_0_build_icon" effect = AOW_btn_quantum_catapult_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_quantum_catapult_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_quantum_catapult_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_quantum_catapult_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_quantum_catapult_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_quantum_catapult buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_quantum_catapult_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_quantum_catapult_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_quantum_catapult_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_quantum_catapult_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_quantum_catapult_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_quantum_catapult buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_quantum_catapult_player_increase_cap }
+				}
+				containerWindowType = {#哨兵阵列
+					name = "2_06"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_spy_orb_0_build_icon" effect = AOW_btn_spy_orb_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_spy_orb_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_spy_orb_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_spy_orb_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_spy_orb_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_spy_orb buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_spy_orb_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_spy_orb_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_spy_orb_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_spy_orb_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_spy_orb_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_spy_orb buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_spy_orb_player_increase_cap }
+				}
+				containerWindowType = {#战略指挥中心
+					name = "2_07"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_strategic_coordination_center_0_build_icon" effect = AOW_btn_strategic_coordination_center_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_strategic_coordination_center_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_strategic_coordination_center_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_strategic_coordination_center_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_strategic_coordination_center_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_strategic_coordination_center buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_strategic_coordination_center_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_strategic_coordination_center_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_strategic_coordination_center_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_strategic_coordination_center_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_strategic_coordination_center_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_strategic_coordination_center buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_strategic_coordination_center_player_increase_cap }
+				}
+				containerWindowType = {#科研枢纽
+					name = "2_08"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_think_tank_0_build_icon" effect = AOW_btn_think_tank_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_think_tank_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_think_tank_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_think_tank_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_think_tank_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_think_tank buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_think_tank_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_think_tank_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_think_tank_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_think_tank_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_think_tank_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_think_tank buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_think_tank_player_increase_cap }
+				}
+				containerWindowType = {#星轨
+					name = "2_09"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x9 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_hyperlane_controller_build_icon" effect = AOW_btn_hyperlane_controller_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_hyperlane_controller_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_hyperlane_controller buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_hyperlane_controller_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_hyperlane_controller_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_hyperlane_controller buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#星网
+					name = "2_10"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_advanced_hyperlane_controller_build_icon" effect = AOW_btn_advanced_hyperlane_controller_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_advanced_hyperlane_controller_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_advanced_hyperlane_controller buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_advanced_hyperlane_controller_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_advanced_hyperlane_controller_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_advanced_hyperlane_controller buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#银河珍宝馆
+					name = "2_11"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_artifacts_transcription_palace_0_build_icon" effect = AOW_btn_artifacts_transcription_palace_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_artifacts_transcription_palace_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_artifacts_transcription_palace_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_artifacts_transcription_palace_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_artifacts_transcription_palace_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_artifacts_transcription_palace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_artifacts_transcription_palace_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_artifacts_transcription_palace_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_artifacts_transcription_palace_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_artifacts_transcription_palace_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_artifacts_transcription_palace_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_artifacts_transcription_palace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_artifacts_transcription_palace_player_increase_cap }
+				}
+				containerWindowType = {#英灵殿
+					name = "2_12"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_cemetery_of_martyrs_0_build_icon" effect = AOW_btn_cemetery_of_martyrs_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_cemetery_of_martyrs_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_cemetery_of_martyrs_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_cemetery_of_martyrs_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_cemetery_of_martyrs_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_cemetery_of_martyrs buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_cemetery_of_martyrs_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_cemetery_of_martyrs_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_cemetery_of_martyrs_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_cemetery_of_martyrs_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_cemetery_of_martyrs_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_cemetery_of_martyrs buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_cemetery_of_martyrs_player_increase_cap }
+				}
+				containerWindowType = {#以太势阱
+					name = "2_13"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_dark_matter_curvature_trap_0_build_icon" effect = AOW_btn_dark_matter_curvature_trap_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dark_matter_curvature_trap_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dark_matter_curvature_trap_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dark_matter_curvature_trap_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_dark_matter_curvature_trap_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_dark_matter_curvature_trap buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_dark_matter_curvature_trap_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dark_matter_curvature_trap_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dark_matter_curvature_trap_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dark_matter_curvature_trap_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_dark_matter_curvature_trap_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_dark_matter_curvature_trap buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_dark_matter_curvature_trap_player_increase_cap }
+				}
+				containerWindowType = {#深空监狱
+					name = "2_14"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_deep_space_prison_0_build_icon" effect = AOW_btn_deep_space_prison_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_deep_space_prison_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_deep_space_prison_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_deep_space_prison_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_deep_space_prison_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_deep_space_prison buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_deep_space_prison_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_deep_space_prison_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_deep_space_prison_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_deep_space_prison_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_deep_space_prison_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_deep_space_prison buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_deep_space_prison_player_increase_cap }
+				}
+				containerWindowType = {#纳米激活器
+					name = "2_15"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_nanites_activator_0_build_icon" effect = AOW_btn_nanites_activator_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nanites_activator_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nanites_activator_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nanites_activator_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_nanites_activator_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_nanites_activator buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_nanites_activator_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nanites_activator_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nanites_activator_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nanites_activator_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_nanites_activator_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_nanites_activator buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_nanites_activator_player_increase_cap }
+				}
+				containerWindowType = {#纳米变形器
+					name = "2_16"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_nanites_transmutation_0_build_icon" effect = AOW_btn_nanites_transmutation_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nanites_transmutation_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nanites_transmutation_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nanites_transmutation_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_nanites_transmutation_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_nanites_transmutation buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_nanites_transmutation_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nanites_transmutation_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nanites_transmutation_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nanites_transmutation_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_nanites_transmutation_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_nanites_transmutation buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_nanites_transmutation_player_increase_cap }
+				}
+				containerWindowType = {#海军指挥基地
+					name = "2_17"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_naval_command_base_0_build_icon" effect = AOW_btn_naval_command_base_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_naval_command_base_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_naval_command_base_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_naval_command_base_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_naval_command_base_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_naval_command_base buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_naval_command_base_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_naval_command_base_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_naval_command_base_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_naval_command_base_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_naval_command_base_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_naval_command_base buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_naval_command_base_player_increase_cap }
+				}
+				containerWindowType = {#星云精炼厂
+					name = "2_18"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x9 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_nebula_refining_center_0_build_icon" effect = AOW_btn_nebula_refining_center_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nebula_refining_center_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nebula_refining_center_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nebula_refining_center_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_nebula_refining_center_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_nebula_refining_center buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_nebula_refining_center_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_nebula_refining_center_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_nebula_refining_center_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_nebula_refining_center_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_nebula_refining_center_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_nebula_refining_center buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_nebula_refining_center_player_increase_cap }
+				}
+				containerWindowType = {#轨道采集器
+					name = "2_19"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_orbital_acquisition_system_0_build_icon" effect = AOW_btn_orbital_acquisition_system_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_orbital_acquisition_system_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_acquisition_system_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_acquisition_system_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_orbital_acquisition_system_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_orbital_acquisition_system buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_orbital_acquisition_system_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_orbital_acquisition_system_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_orbital_acquisition_system_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_orbital_acquisition_system_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_orbital_acquisition_system_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_orbital_acquisition_system buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_orbital_acquisition_system_player_increase_cap }
+				}
+				containerWindowType = {#行星波动炮
+					name = "2_20"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_planetary_blaster_system_0_build_icon" effect = AOW_btn_planetary_blaster_system_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_planetary_blaster_system_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_blaster_system_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_blaster_system_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_planetary_blaster_system_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_planetary_blaster_system buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_planetary_blaster_system_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_planetary_blaster_system_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_blaster_system_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_blaster_system_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_planetary_blaster_system_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_planetary_blaster_system buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_planetary_blaster_system_player_increase_cap }
+				}
+				containerWindowType = {#行星开采站
+					name = "2_21"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_planetary_mining_station_0_build_icon" effect = AOW_btn_planetary_mining_station_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_planetary_mining_station_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_mining_station_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_mining_station_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_planetary_mining_station_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_planetary_mining_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_planetary_mining_station_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_planetary_mining_station_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_mining_station_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_mining_station_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_planetary_mining_station_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_planetary_mining_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_planetary_mining_station_player_increase_cap }
+				}
+				containerWindowType = {#繁荣贸易站
+					name = "2_22"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_prosperous_trade_station_0_build_icon" effect = AOW_btn_prosperous_trade_station_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_prosperous_trade_station_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_prosperous_trade_station_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_prosperous_trade_station_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_prosperous_trade_station_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_prosperous_trade_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_prosperous_trade_station_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_prosperous_trade_station_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_prosperous_trade_station_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_prosperous_trade_station_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_prosperous_trade_station_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_prosperous_trade_station buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_prosperous_trade_station_player_increase_cap }
+				}
+				containerWindowType = {#合成食物厂
+					name = "2_23"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_synthetic_food_factory_0_build_icon" effect = AOW_btn_synthetic_food_factory_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_synthetic_food_factory_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_synthetic_food_factory_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_synthetic_food_factory_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_synthetic_food_factory_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_synthetic_food_factory buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_synthetic_food_factory_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_synthetic_food_factory_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_synthetic_food_factory_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_synthetic_food_factory_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_synthetic_food_factory_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_synthetic_food_factory buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_synthetic_food_factory_player_increase_cap }
+				}
+				containerWindowType = {#泽洛升华器
+					name = "2_24"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_zro_sublimator_0_build_icon" effect = AOW_btn_zro_sublimator_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_zro_sublimator_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_zro_sublimator_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_zro_sublimator_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_zro_sublimator_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_zro_sublimator buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_zro_sublimator_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_zro_sublimator_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_zro_sublimator_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_zro_sublimator_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_zro_sublimator_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_zro_sublimator buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_zro_sublimator_player_increase_cap }
+				}
+				containerWindowType = {#位面虹吸器
+					name = "2_25"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_plane_siphon_0_build_icon" effect = AOW_btn_plane_siphon_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_plane_siphon_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_plane_siphon_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_plane_siphon_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_plane_siphon_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_plane_siphon buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_plane_siphon_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_plane_siphon_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_plane_siphon_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_plane_siphon_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_plane_siphon_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_plane_siphon buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_plane_siphon_player_increase_cap }
+				}
+				containerWindowType = {#奇观建设局
+					name = "2_26"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y3 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_wonder_construction_bureau_0_build_icon" effect = AOW_btn_wonder_construction_bureau_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_wonder_construction_bureau_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_wonder_construction_bureau_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_wonder_construction_bureau_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_wonder_construction_bureau_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_wonder_construction_bureau buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_wonder_construction_bureau_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_wonder_construction_bureau_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_wonder_construction_bureau_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_wonder_construction_bureau_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_wonder_construction_bureau_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_wonder_construction_bureau buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_wonder_construction_bureau_player_increase_cap }
+				}
+			}#普通巨构
+			containerWindowType = {
+				name = "container_3"
+				size = { width = @c_w height = @c3_h }
+				position = { x = @c_x y = @c3_y }
+				effectButtonType = {
+					name = background
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = @c3_h }
+					spriteType = GFX_AOW_blue_area_cut_8
+					effect = AOW_btn_preview
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = title
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = 45 }
+					spriteType = GFX_AOW_transparent_area_cut_8
+					effect = AOW_btn_preview
+					text = AOW_text_mega_3
+					buttonFont = "malgun_goth_24"
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = { name = "Pi" position = { x = -35 y = 10 } spriteType = "GFX_AOW_button_sub_player_inf" effect = AOW_btn_set_player_mega3_cap_infinite orientation = upper_right }
+				effectButtonType = { name = "P5" position = { x = -65 y = 10 } spriteType = "GFX_AOW_button_sub_player_5" effect = AOW_btn_set_player_mega3_cap_5 orientation = upper_right }
+				effectButtonType = { name = "P4" position = { x = -95 y = 10 } spriteType = "GFX_AOW_button_sub_player_4" effect = AOW_btn_set_player_mega3_cap_4 orientation = upper_right }
+				effectButtonType = { name = "P3" position = { x = -125 y = 10 } spriteType = "GFX_AOW_button_sub_player_3" effect = AOW_btn_set_player_mega3_cap_3 orientation = upper_right }
+				effectButtonType = { name = "P2" position = { x = -155 y = 10 } spriteType = "GFX_AOW_button_sub_player_2" effect = AOW_btn_set_player_mega3_cap_2 orientation = upper_right }
+				effectButtonType = { name = "P1" position = { x = -185 y = 10 } spriteType = "GFX_AOW_button_sub_player_1" effect = AOW_btn_set_player_mega3_cap_1 orientation = upper_right }
+				effectButtonType = { name = "P0" position = { x = -215 y = 10 } spriteType = "GFX_AOW_button_sub_player_0" effect = AOW_btn_set_player_mega3_cap_0 orientation = upper_right }
+				effectButtonType = { name = "Ai" position = { x = 10 y = 10 } spriteType = "GFX_AOW_button_sub_ai_inf" effect = AOW_btn_set_ai_mega3_cap_infinite }
+				effectButtonType = { name = "A5" position = { x = 40 y = 10 } spriteType = "GFX_AOW_button_sub_ai_5" effect = AOW_btn_set_ai_mega3_cap_5 }
+				effectButtonType = { name = "A4" position = { x = 70 y = 10 } spriteType = "GFX_AOW_button_sub_ai_4" effect = AOW_btn_set_ai_mega3_cap_4 }
+				effectButtonType = { name = "A3" position = { x = 100 y = 10 } spriteType = "GFX_AOW_button_sub_ai_3" effect = AOW_btn_set_ai_mega3_cap_3 }
+				effectButtonType = { name = "A2" position = { x = 130 y = 10 } spriteType = "GFX_AOW_button_sub_ai_2" effect = AOW_btn_set_ai_mega3_cap_2 }
+				effectButtonType = { name = "A1" position = { x = 160 y = 10 } spriteType = "GFX_AOW_button_sub_ai_1" effect = AOW_btn_set_ai_mega3_cap_1 }
+				effectButtonType = { name = "A0" position = { x = 190 y = 10 } spriteType = "GFX_AOW_button_sub_ai_0" effect = AOW_btn_set_ai_mega3_cap_0 }
+				containerWindowType = {#戴森球
+					name = "3_01"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_dyson_sphere_0_build_icon" effect = AOW_btn_dyson_sphere_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dyson_sphere_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dyson_sphere_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dyson_sphere_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_dyson_sphere_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_dyson_sphere buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_dyson_sphere_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_dyson_sphere_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_dyson_sphere_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_dyson_sphere_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_dyson_sphere_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_dyson_sphere buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_dyson_sphere_player_increase_cap }
+				}
+				containerWindowType = {#物质解压器
+					name = "3_02"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_matter_decompressor_0_build_icon" effect = AOW_btn_matter_decompressor_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_matter_decompressor_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_matter_decompressor_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_matter_decompressor_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_matter_decompressor_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_matter_decompressor buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_matter_decompressor_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_matter_decompressor_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_matter_decompressor_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_matter_decompressor_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_matter_decompressor_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_matter_decompressor buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_matter_decompressor_player_increase_cap }
+				}
+				containerWindowType = {#环世界
+					name = "3_03"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_ring_world_1_build_icon" effect = AOW_btn_ring_world_1_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_ring_world_1_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_1_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_1_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_ring_world_1_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_ring_world_1 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_ring_world_1_ai_increase_cap }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_1_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_1_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_ring_world_1 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#二重环世界
+					name = "3_04"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_ring_world_2_0_build_icon" effect = AOW_btn_ring_world_2_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_2_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_2_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_ring_world_2 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_2_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_2_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_ring_world_2 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#零素提取器
+					name = "3_05"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_zero_element_furnace_0_build_icon" effect = AOW_btn_zero_element_furnace_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_zero_element_furnace_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_zero_element_furnace_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_zero_element_furnace_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_zero_element_furnace_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_zero_element_furnace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_zero_element_furnace_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_zero_element_furnace_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_zero_element_furnace_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_zero_element_furnace_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_zero_element_furnace_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_zero_element_furnace buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_zero_element_furnace_player_increase_cap }
+				}
+				containerWindowType = {#行星战舰
+					name = "3_06"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_planetary_ship_megastructures_build_icon" effect = AOW_btn_planetary_ship_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_ship_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_ship_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_planetary_ship buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_planetary_ship_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_planetary_ship_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_planetary_ship buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#灵能井
+					name = "3_07"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_psychic_device_0_build_icon" effect = AOW_btn_psychic_device_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_psychic_device_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_psychic_device_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_psychic_device_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_psychic_device_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_psychic_device buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_psychic_device_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_psychic_device_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_psychic_device_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_psychic_device_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_psychic_device_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_psychic_device buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_psychic_device_player_increase_cap }
+				}
+				containerWindowType = {#脉冲时记
+					name = "3_08"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_pulsar_clock_0_build_icon" effect = AOW_btn_pulsar_clock_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_pulsar_clock_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_pulsar_clock_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_pulsar_clock_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_pulsar_clock_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_pulsar_clock buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_pulsar_clock_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_pulsar_clock_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_pulsar_clock_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_pulsar_clock_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_pulsar_clock_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_pulsar_clock buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_pulsar_clock_player_increase_cap }
+				}
+				containerWindowType = {#摘星者
+					name = "3_09"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x9 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_star_picker_0_build_icon" effect = AOW_btn_star_picker_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_star_picker_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_picker_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_star_picker_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_star_picker_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_star_picker buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_star_picker_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_star_picker_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_picker_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_star_picker_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_star_picker_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_star_picker buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_star_picker_player_increase_cap }
+				}
+				containerWindowType = {#归墟
+					name = "3_10"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_void_vortex_0_build_icon" effect = AOW_btn_void_vortex_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_void_vortex_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_void_vortex_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_void_vortex_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_void_vortex_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_void_vortex buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_void_vortex_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_void_vortex_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_void_vortex_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_void_vortex_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_void_vortex_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_void_vortex buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_void_vortex_player_increase_cap }
+				}
+				containerWindowType = {#曲率增压场
+					name = "3_11"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_curvature_pressurization_field_0_build_icon" effect = AOW_btn_curvature_pressurization_field_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_curvature_pressurization_field_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_curvature_pressurization_field buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_curvature_pressurization_field_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_curvature_pressurization_field_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_curvature_pressurization_field buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#天体解压器
+					name = "3_12"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_celestial_decompressor_0_build_icon" effect = AOW_btn_celestial_decompressor_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_celestial_decompressor_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_celestial_decompressor buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_celestial_decompressor_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_celestial_decompressor_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_celestial_decompressor buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#恒星吞噬者
+					name = "3_13"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_stellar_eater_0_build_icon" effect = AOW_btn_stellar_eater_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_stellar_eater_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_stellar_eater buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_stellar_eater_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_stellar_eater_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_stellar_eater buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#星空守护者
+					name = "3_14"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_void_vortex_0_build_icon" effect = AOW_btn_star_guardian_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_star_guardian_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_guardian_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_star_guardian_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_star_guardian_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_star_guardian buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_star_guardian_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_star_guardian_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_guardian_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_star_guardian_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_star_guardian_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_star_guardian buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_star_guardian_player_increase_cap }
+				}
+			}#星河奇迹
+			containerWindowType = {
+				name = "container_4"
+				size = { width = @c_w height = @c4_h }
+				position = { x = @c_x y = @c4_y }
+				effectButtonType = {
+					name = background
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = @c4_h }
+					spriteType = GFX_AOW_red_area_cut_8
+					effect = AOW_btn_preview
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = title
+					position = { x = 0 y = 0 }
+					size = { x = @c_w y = 45 }
+					spriteType = GFX_AOW_transparent_area_cut_8
+					effect = AOW_btn_preview
+					text = AOW_text_mega_4
+					buttonFont = "malgun_goth_24"
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = { name = "Pi" position = { x = -35 y = 10 } spriteType = "GFX_AOW_button_sub_player_inf" effect = AOW_btn_set_player_mega4_cap_infinite orientation = upper_right }
+				effectButtonType = { name = "P5" position = { x = -65 y = 10 } spriteType = "GFX_AOW_button_sub_player_5" effect = AOW_btn_set_player_mega4_cap_5 orientation = upper_right }
+				effectButtonType = { name = "P4" position = { x = -95 y = 10 } spriteType = "GFX_AOW_button_sub_player_4" effect = AOW_btn_set_player_mega4_cap_4 orientation = upper_right }
+				effectButtonType = { name = "P3" position = { x = -125 y = 10 } spriteType = "GFX_AOW_button_sub_player_3" effect = AOW_btn_set_player_mega4_cap_3 orientation = upper_right }
+				effectButtonType = { name = "P2" position = { x = -155 y = 10 } spriteType = "GFX_AOW_button_sub_player_2" effect = AOW_btn_set_player_mega4_cap_2 orientation = upper_right }
+				effectButtonType = { name = "P1" position = { x = -185 y = 10 } spriteType = "GFX_AOW_button_sub_player_1" effect = AOW_btn_set_player_mega4_cap_1 orientation = upper_right }
+				effectButtonType = { name = "P0" position = { x = -215 y = 10 } spriteType = "GFX_AOW_button_sub_player_0" effect = AOW_btn_set_player_mega4_cap_0 orientation = upper_right }
+				effectButtonType = { name = "Ai" position = { x = 10 y = 10 } spriteType = "GFX_AOW_button_sub_ai_inf" effect = AOW_btn_set_ai_mega4_cap_infinite }
+				effectButtonType = { name = "A5" position = { x = 40 y = 10 } spriteType = "GFX_AOW_button_sub_ai_5" effect = AOW_btn_set_ai_mega4_cap_5 }
+				effectButtonType = { name = "A4" position = { x = 70 y = 10 } spriteType = "GFX_AOW_button_sub_ai_4" effect = AOW_btn_set_ai_mega4_cap_4 }
+				effectButtonType = { name = "A3" position = { x = 100 y = 10 } spriteType = "GFX_AOW_button_sub_ai_3" effect = AOW_btn_set_ai_mega4_cap_3 }
+				effectButtonType = { name = "A2" position = { x = 130 y = 10 } spriteType = "GFX_AOW_button_sub_ai_2" effect = AOW_btn_set_ai_mega4_cap_2 }
+				effectButtonType = { name = "A1" position = { x = 160 y = 10 } spriteType = "GFX_AOW_button_sub_ai_1" effect = AOW_btn_set_ai_mega4_cap_1 }
+				effectButtonType = { name = "A0" position = { x = 190 y = 10 } spriteType = "GFX_AOW_button_sub_ai_0" effect = AOW_btn_set_ai_mega4_cap_0 }
+				containerWindowType = {#多维仓库
+					name = "4_01"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_multi_dimensional_warehouse_0_build_icon" effect = AOW_btn_multi_dimensional_warehouse_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_multi_dimensional_warehouse_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_multi_dimensional_warehouse_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_multi_dimensional_warehouse_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_multi_dimensional_warehouse_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_multi_dimensional_warehouse buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_multi_dimensional_warehouse_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_multi_dimensional_warehouse_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_multi_dimensional_warehouse_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_multi_dimensional_warehouse_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_multi_dimensional_warehouse_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_multi_dimensional_warehouse buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_multi_dimensional_warehouse_player_increase_cap }
+				}
+				containerWindowType = {#天界领航塔
+					name = "4_02"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_heaven_navigation_bureau_0_build_icon" effect = AOW_btn_heaven_navigation_bureau_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_heaven_navigation_bureau_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_heaven_navigation_bureau_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_heaven_navigation_bureau_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_heaven_navigation_bureau_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_heaven_navigation_bureau buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_heaven_navigation_bureau_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_heaven_navigation_bureau_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_heaven_navigation_bureau_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_heaven_navigation_bureau_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_heaven_navigation_bureau_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_heaven_navigation_bureau buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_heaven_navigation_bureau_player_increase_cap }
+				}
+				containerWindowType = {#物质重组仪
+					name = "4_03"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x3 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_material_recombination_instrument_0_build_icon" effect = AOW_btn_material_recombination_instrument_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_material_recombination_instrument_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_material_recombination_instrument_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_material_recombination_instrument_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_material_recombination_instrument_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_material_recombination_instrument buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_material_recombination_instrument_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_material_recombination_instrument_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_material_recombination_instrument_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_material_recombination_instrument_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_material_recombination_instrument_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_material_recombination_instrument buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_material_recombination_instrument_player_increase_cap }
+				}
+				containerWindowType = {#奇迹船坞
+					name = "4_04"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x4 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_miraculous_shipyard_0_build_icon" effect = AOW_btn_miraculous_shipyard_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_miraculous_shipyard_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_miraculous_shipyard_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_miraculous_shipyard_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_miraculous_shipyard_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_miraculous_shipyard buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_miraculous_shipyard_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_miraculous_shipyard_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_miraculous_shipyard_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_miraculous_shipyard_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_miraculous_shipyard_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_miraculous_shipyard buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_miraculous_shipyard_player_increase_cap }
+				}
+				containerWindowType = {#千载星辰
+					name = "4_05"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x5 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_0_build_icon" effect = AOW_btn_quindecillion_stellar_quantum_matrix_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_quindecillion_stellar_quantum_matrix_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_quindecillion_stellar_quantum_matrix_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_quindecillion_stellar_quantum_matrix_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_quindecillion_stellar_quantum_matrix_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_quindecillion_stellar_quantum_matrix buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_quindecillion_stellar_quantum_matrix_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_quindecillion_stellar_quantum_matrix_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_quindecillion_stellar_quantum_matrix_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_quindecillion_stellar_quantum_matrix_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_quindecillion_stellar_quantum_matrix_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_quindecillion_stellar_quantum_matrix buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_quindecillion_stellar_quantum_matrix_player_increase_cap }
+				}
+				containerWindowType = {#三重环世界
+					name = "4_06"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x6 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_ring_world_3_0_build_icon" effect = AOW_btn_ring_world_3_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_3_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_3_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_ring_world_3 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_3_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_3_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_ring_world_3 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#四重环世界
+					name = "4_07"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x7 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_ring_world_4_0_build_icon" effect = AOW_btn_ring_world_4_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_4_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_4_ai_infinite }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_ring_world_4 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_ring_world_4_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_ring_world_4_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_ring_world_4 buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#御星天炉
+					name = "4_08"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x8 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_star_transfer_0_build_icon" effect = AOW_btn_star_transfer_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_transfer_ai_disable }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_star_transfer buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_star_transfer_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_star_transfer_player_infinite }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_star_transfer buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+				}
+				containerWindowType = {#坠星天矛
+					name = "4_09"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x9 y = @hp_y1 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_starfall_spear_0_build_icon" effect = AOW_btn_starfall_spear_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_starfall_spear_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_starfall_spear_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_starfall_spear_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_starfall_spear_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_starfall_spear buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_starfall_spear_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_starfall_spear_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_starfall_spear_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_starfall_spear_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_starfall_spear_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_starfall_spear buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_starfall_spear_player_increase_cap }
+				}
+				containerWindowType = {#天枢圣盾
+					name = "4_10"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x1 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_celestial_shield_0_build_icon" effect = AOW_btn_celestial_shield_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_celestial_shield_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_celestial_shield_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_celestial_shield_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_celestial_shield_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_celestial_shield buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_celestial_shield_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_celestial_shield_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_celestial_shield_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_celestial_shield_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_celestial_shield_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_celestial_shield buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_celestial_shield_player_increase_cap }
+				}
+				containerWindowType = {#星笼世界
+					name = "4_11"
+					size = { width = @hp_w height = @hp_h }
+					position = { x = @hp_x2 y = @hp_y2 }
+					effectButtonType = { name = "icon"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_MEGA_starcage_world_0_build_icon" effect = AOW_btn_starcage_world_prerequisites }
+					effectButtonType = { name = "frame"	position = { x = @core_x y = @core_y } spriteType = "GFX_AOW_bg_mega_unit" effect = AOW_btn_preview alwaysTransparent = yes }
+					effectButtonType = { name = "A_yes"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_starcage_world_ai_enable }
+					effectButtonType = { name = "A_no"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_starcage_world_ai_disable }
+					effectButtonType = { name = "A_inf"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_starcage_world_ai_infinite }
+					effectButtonType = { name = "A_+++"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_button_ai_left" effect = AOW_btn_starcage_world_ai_decrease_cap }
+					effectButtonType = { name = "A_var"	position = { x = @AP1_x y = @A_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_ai_mega_cap_starcage_world buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "A_---"	position = { x = @AP2_x y = @A_y } spriteType = "GFX_AOW_button_ai_right" effect = AOW_btn_starcage_world_ai_increase_cap }
+					effectButtonType = { name = "P_yes"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_enable" effect = AOW_btn_starcage_world_player_enable }
+					effectButtonType = { name = "P_no"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_disable" effect = AOW_btn_starcage_world_player_disable }
+					effectButtonType = { name = "P_inf"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_infinite" effect = AOW_btn_starcage_world_player_infinite }
+					effectButtonType = { name = "P_+++"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_button_player_left" effect = AOW_btn_starcage_world_player_decrease_cap }
+					effectButtonType = { name = "P_var"	position = { x = @AP1_x y = @P_y } spriteType = "GFX_AOW_bg_mega_var" effect = AOW_btn_preview text = AOW_var_player_mega_cap_starcage_world buttonFont = "cg_16b" format = center alwaysTransparent = yes }
+					effectButtonType = { name = "P_---"	position = { x = @AP2_x y = @P_y } spriteType = "GFX_AOW_button_player_right" effect = AOW_btn_starcage_world_player_increase_cap }
+				}
+			}#天外神迹
+		}#巨构设置
+################################################################################
+################################################################################
+################################################################################以下全部隐藏
+################################################################################
+################################################################################
+		instantTextBoxType = { #外交信息
+			name = "alien_message"
+			font = "malgun_goth_24" #"cg_16b"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 1220
+			maxHeight = 30
+			format = left
+			alwaysTransparent = yes
+			scrollbartype = "standardtext_slider"
+		}
+		buttonType = {#聚焦按钮
+			name = "focus_button"
+			position = { x = 9999 y = 9999 }
+			orientation = "UPPER_RIGHT"
+			spriteType = "GFX_fleetview_focus"
+			buttonFont = "cg_16b"
+			shortcut = "q"
+		}
+		instantTextBoxType = {#信号传输接入
+			name = "heading"
+			font = "malgun_goth_24"
+			text = "DIPLOMACY"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 543
+			maxHeight = 22
+			fixedSize = yes
+			alwaysTransparent = yes
+		}
+		buttonType = {#按钮特效
+			name = "confirm_button"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x= 9999 y = 9999 }
+			Orientation = "UPPER_RIGHT"
+			font = "cg_16b"
+			text = "MESSAGE_OK"
+			clicksound = "confirmation"
+		}
+		###肖像 ###
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			iconType = {
+				name = "event_picture"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = -6 y = -5 }
+			}
+			iconType = {
+				name = "portrait"
+				position = { x = 250 y = 0 }
+				spriteType = "GFX_portrait_character"
+			}	
+		}
+		containerWindowType = {
+			name = "portrait"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+				alwaysTransparent = yes
+			}	
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+				position = { x = -4 y = -5}
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame_trader"
+				position = { x = -6 y = -5 }
+				alwaysTransparent = yes
+			}
+		}
+		### 帝国信息 ###
+		iconType = {
+			name = "empire_info_bg"
+			spriteType = "GFX_diplomacy_dark_fade_bg"
+			position = { x = 9999 y = 9999 }
+			alwaysTransparent = yes
+		}
+		instantTextBoxType={
+			name = "empire_name"
+			font = "malgun_goth_24"
+			text = "Kammarian Galactic Concordat"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 450
+			maxHeight = 16
+			format = LEFT
+			text_color_code = "E"
+			fixedsize = yes
+		}
+		instantTextBoxType={
+			name = "empire_government_type"
+			font = "cg_16b"
+			text = "Autocracy"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+			text_color_code = "Y"
+		}
+		instantTextBoxType={
+			name = "empire_personality_type"
+			font = "cg_16b"
+			text = "Despicable Neutrals"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+		}
+		OverlappingElementsBoxType = {
+			name = "empire_ethics_icons"
+			position = { x = 9999 y = 9999 }
+			size = { x = 240 y = 30 }
+			spacing = 2.0
+			format = left
+		}
+		buttonType = {
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_128_trader"
+			position = { x = 9999 y = 9999 }
+			orientation = UPPER_LEFT
+		}
+		#领袖细节
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = 9999 y = 9999 }
+			containerWindowType = {
+				name = "empire_traits_box"
+				position = { x = 0 y = -5 }
+				size = { width = 210 height = 75 }
+				background = {
+					name = "ethics_bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+			}
+			instantTextBoxType = {
+				name = "empire_traits_label"
+				position = { x = 214 y = 37 }
+				font = "cg_16b"
+				maxWidth = 230
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				#text_color_code = "E"
+				text = "RULER_TRAITS"
+				alwaysTransparent = yes
+			}
+			overlappingElementsBoxType = {
+				name = "leader_traits"
+				position = { x = 215 y = 55 }
+				size = { x = 125 y = 330 }
+			}
+			instantTextBoxType = {
+				name = "leader_name"
+				position = { x = 10 y = 0 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				text = "Leader Name"
+				text_color_code = "E"
+			}
+			instantTextBoxType = {
+				name = "leader_species"
+				position = { x = 10 y = 18 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				text = "Leader Species"
+				format = left
+			}
+		}
+		#外交评价
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = 9999 y = 9999 }
+			size = { width = 94 height = 30 }
+			# Use this for tooltip area, picture comes from somewhere else
+			background = {
+				name = "opinion_bg"
+				spriteType = "GFX_tiled_window_transparent"
+			}
+			iconType = {
+				name = "their_opinion_icon"
+				spriteType = "GFX_diplomacy_opinion"
+				position = { x = 7 y = 4 }
+				alwaysTransparent = yes
+			}
+			instantTextBoxType = {
+				name = "their_opinion"
+				font = "cg_16b"
+				maxWidth = 40
+				position = { x = 40 y = 7 }
+				format = left
+				text = "100"
+				alwaysTransparent = yes
+			}
+		}
+	}
+}

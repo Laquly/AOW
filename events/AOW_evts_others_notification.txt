@@ -1,0 +1,296 @@
+#这里是写建成巨构后通知他国的事件
+
+namespace = AOW_mega_others_notification
+
+#this/root = 本国
+#from = 目标国家
+#fromfrom = 目标星系
+#fromfromfrom = 目标国家
+#fromfromfromfrom = 目标巨构
+
+#摘星者
+country_event = {
+	id = AOW_mega_others_notification.2020
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_star_picker_1 }
+		}
+		text = AOW_mega_others_notification.2020.a.desc
+	}
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_star_picker_2 }
+		}
+		text = AOW_mega_others_notification.2020.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_star_picker_1 }
+		}
+		name = AOW_mega_others_notification.2020.a
+	}
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_star_picker_2 }
+		}
+		name = AOW_mega_others_notification.2020.b
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.2021
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.2021.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_star_picker
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		name = AOW_mega_others_notification.2021.a
+	}
+}
+#灵能井
+country_event = {
+	id = AOW_mega_others_notification.2031
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = { NOT = { owner_species = { has_trait = trait_psionic } } }
+		text = AOW_mega_others_notification.2031.a.desc
+	}
+	desc = {
+		trigger = { owner_species = { has_trait = trait_psionic } }
+		text = AOW_mega_others_notification.2031.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = { NOT = { owner_species = { has_trait = trait_psionic } } }
+		name = AOW_mega_others_notification.2031.a
+	}
+	option = {
+		trigger = { owner_species = { has_trait = trait_psionic } }
+		name = AOW_mega_others_notification.2031.b
+	}
+}
+#曲率增压场
+country_event = {
+	id = AOW_mega_others_notification.2050
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.2050.desc
+	is_triggered_only = yes
+	picture = GFX_evt_clocks
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		name = AOW_mega_others_notification.2050.a
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.2051
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = { fromfrom = { is_star_class = sc_black_hole } }
+		text = AOW_mega_others_notification.2051.a.desc
+	}
+	desc = {
+		trigger = { fromfrom = { is_star_class = sc_neutron_star } }
+		text = AOW_mega_others_notification.2051.b.desc
+	}
+	desc = {
+		trigger = { fromfrom = { is_star_class = sc_pulsar } }
+		text = AOW_mega_others_notification.2051.c.desc
+	}
+	is_triggered_only = yes
+	picture = {
+		trigger = { fromfrom = { is_star_class = sc_black_hole } }
+		picture = GFX_evt_black_hole
+	}
+	picture = {
+		trigger = { fromfrom = { is_star_class = sc_neutron_star } }
+		picture = GFX_evt_star_neutron
+	}
+	picture = {
+		trigger = { fromfrom = { is_star_class = sc_pulsar } }
+		picture = GFX_evt_star_pulsar
+	}
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = { fromfrom = { is_star_class = sc_black_hole } }
+		name = AOW_mega_others_notification.2051.a
+	}
+	option = {
+		trigger = { fromfrom = { is_star_class = sc_neutron_star } }
+		name = AOW_mega_others_notification.2051.b
+	}
+	option = {
+		trigger = { fromfrom = { is_star_class = sc_pulsar } }
+		name = AOW_mega_others_notification.2051.c
+	}
+}
+
+#天界领航塔
+country_event = {
+	id = AOW_mega_others_notification.3030
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_1 }
+		}
+		text = AOW_mega_others_notification.3030.a.desc
+	}
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_2 }
+		}
+		text = AOW_mega_others_notification.3030.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_1 }
+		}
+		name = AOW_mega_others_notification.3030.a
+	}
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_2 }
+		}
+		name = AOW_mega_others_notification.3030.b
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.3031
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.3031.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_mega_others_notification.3031.a }
+}
+
+
+#物质重构盘
+country_event = {
+	id = AOW_mega_others_notification.3040
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_1 }
+		}
+		text = AOW_mega_others_notification.3040.a.desc
+	}
+	desc = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_2 }
+		}
+		text = AOW_mega_others_notification.3040.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_1 }
+		}
+		name = AOW_mega_others_notification.3040.a
+	}
+	option = {
+		trigger = {
+			from = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_2 }
+		}
+		name = AOW_mega_others_notification.3040.b
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.3041
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.3041.desc
+	is_triggered_only = yes
+	picture = GFX_evt_vortex
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_mega_others_notification.3041.a }
+}
+
+#奇迹船坞
+country_event = {
+	id = AOW_mega_others_notification.3050
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_miraculous_shipyard_1 } }
+		text = AOW_mega_others_notification.3050.a.desc
+	}
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_miraculous_shipyard_2 } }
+		text = AOW_mega_others_notification.3050.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_miraculous_shipyard_1 } }
+		name = AOW_mega_others_notification.3050.a
+	}
+	option = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_miraculous_shipyard_2 } }
+		name = AOW_mega_others_notification.3050.b
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.3051
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.3051.desc
+	is_triggered_only = yes
+	picture = GFX_evt_megashipyard
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_mega_others_notification.3051.a }
+}
+#千载星辰
+country_event = {
+	id = AOW_mega_others_notification.3060
+	title = AOW_mega_others_notification_title
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_qsqm_1 } }
+		text = AOW_mega_others_notification.3060.a.desc
+	}
+	desc = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_qsqm_2 } }
+		text = AOW_mega_others_notification.3060.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_qsqm_1 } }
+		name = AOW_mega_others_notification.3060.a
+	}
+	option = {
+		trigger = { from = { has_country_flag = AOW_flag_CNTR_qsqm_2 } }
+		name = AOW_mega_others_notification.3060.b
+	}
+}
+country_event = {
+	id = AOW_mega_others_notification.3061
+	title = AOW_mega_others_notification_title
+	desc = AOW_mega_others_notification.3061.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_qsqm
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfrom
+	option = { name = AOW_mega_others_notification.3061.a }
+}

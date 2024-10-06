@@ -1,0 +1,115 @@
+AOW_eft_PLNT_create_planet_hit_effect = {
+	if = {#来自O型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_o_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_o_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自B型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_b_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_b_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自A型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				OR = {
+					AOW_trgr_PLNT_a_spectrum = yes
+					is_planet_class = pc_neutron_star
+					is_planet_class = pc_pulsar
+					is_planet_class = pc_magnetar#磁星
+				}
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_a_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自F型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_f_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_f_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自G型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_g_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_g_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自K型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_k_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_k_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	else_if = {#来自M型恒星的打击特效
+		limit = {
+			event_target:AOW_tgt_PLNT_starfall_spear = {
+				AOW_trgr_PLNT_m_spectrum = yes
+			}
+		}
+		create_ambient_object = {
+			type = "AOW_ao_starfall_spear_m_planet_hit_effect"
+			location = this
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			entity_scale_to_size = yes
+		}
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = AOW_flag_AO_starfall_spear_@event_target:AOW_tgt_MEGA_starfall_spear
+	}
+}

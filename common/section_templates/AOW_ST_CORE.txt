@@ -1,0 +1,16 @@
+ship_section_template = {
+	key = "AOW_section_star_transfer_core_1"
+	ship_size = AOW_shipsize_star_transfer
+	fits_on_slot = core
+	should_draw_components = yes
+	entity = "AOW_shipsize_star_transfer_entity"
+	icon = "GFX_ship_part_core_bow"
+	component_slot = {
+		name = "W1"
+		template = "invisible_planet_killer_fixed"
+		locatorname = "root"
+	}
+	resources = {
+		category = ship_sections
+	}
+}

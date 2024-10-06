@@ -1,0 +1,233 @@
+AOW_eft_SSTM_destroy_ringworld_megastructure = {
+	every_system_megastructure = {
+		if = {
+			limit = {
+				OR = {
+					is_megastructure_type = ring_world_restored
+					is_megastructure_type = ring_world_ruined
+				}
+			}
+			solar_system = {
+				spawn_planet = {
+					class = "pc_ringworld_tech_damaged"
+					location = prev
+					orbit_angle_offset = 30
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+				}
+				spawn_planet = {
+					class = "pc_ringworld_habitable_damaged"
+					location = prev
+					orbit_angle_offset = -30
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+	every_system_megastructure = {
+		if = {
+			limit = { is_megastructure_type = ring_world_2 }
+			solar_system = {
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = 30
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = -30
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+	every_system_megastructure = {
+		if = {
+			limit = { is_megastructure_type = AOW_MEGA_ring_world_2_1 }
+			solar_system = {
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = 30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld2_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld2_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = -30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld2_seam_damaged_entity" }
+					}
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+	every_system_megastructure = {
+		if = {
+			limit = { is_megastructure_type = AOW_MEGA_ring_world_3_1 }
+			solar_system = {
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = 30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld3_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld3_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = -30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld3_seam_damaged_entity" }
+					}
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+	every_system_megastructure = {
+		if = {
+			limit = { is_megastructure_type = AOW_MEGA_ring_world_4_1 }
+			solar_system = {
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = 30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld4_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld4_seam_damaged_entity" }
+					}
+				}
+				spawn_planet = {
+					class = "pc_ringworld_seam_damaged"
+					location = prev
+					orbit_angle_offset = -30
+					init_effect = {
+						set_planet_entity = { entity = "AOW_ringworld4_seam_damaged_entity" }
+					}
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+}
+
+AOW_eft_SSTM_destroy_ringworld_planet = {
+	every_system_planet = {
+		limit = {
+			OR = {
+				has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+		if = {
+			limit = { is_colony = yes }
+			if = {
+				limit = { exists = orbital_defence }
+				destroy_fleet = orbital_defence
+			}
+			remove_all_buildings = yes
+			destroy_colony = yes
+		}
+		if = {
+			limit = { planet_size = 10 }
+			change_pc = pc_ringworld_habitable_damaged
+		}
+		else_if = {
+			limit = { planet_size = 20 }
+			change_pc = pc_ringworld_habitable_damaged
+			set_planet_entity = { entity = "AOW_ringworld2_habitable_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 30 }
+			change_pc = pc_ringworld_habitable_damaged
+			set_planet_entity = { entity = "AOW_ringworld3_habitable_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 40 }
+			change_pc = pc_ringworld_habitable_damaged
+			set_planet_entity = { entity = "AOW_ringworld4_habitable_damaged_entity" }
+		}
+	}
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_ringworld_tech
+			NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
+		}
+		if = {
+			limit = { planet_size = 10 }
+			change_pc = pc_ringworld_tech_damaged
+		}
+		else_if = {
+			limit = { planet_size = 20 }
+			change_pc = pc_ringworld_tech_damaged
+			set_planet_entity = { entity = "AOW_ringworld2_tech_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 30 }
+			change_pc = pc_ringworld_tech_damaged
+			set_planet_entity = { entity = "AOW_ringworld3_tech_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 40 }
+			change_pc = pc_ringworld_tech_damaged
+			set_planet_entity = { entity = "AOW_ringworld4_tech_damaged_entity" }
+		}
+	}
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_ringworld_seam
+			NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
+		}
+		if = {
+			limit = { planet_size = 10 }
+			change_pc = pc_ringworld_seam_damaged
+		}
+		else_if = {
+			limit = { planet_size = 20 }
+			change_pc = pc_ringworld_seam_damaged
+			set_planet_entity = { entity = "AOW_ringworld2_seam_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 30 }
+			change_pc = pc_ringworld_seam_damaged
+			set_planet_entity = { entity = "AOW_ringworld3_seam_damaged_entity" }
+		}
+		else_if = {
+			limit = { planet_size = 40 }
+			change_pc = pc_ringworld_seam_damaged
+			set_planet_entity = { entity = "AOW_ringworld4_seam_damaged_entity" }
+		}
+	}
+}

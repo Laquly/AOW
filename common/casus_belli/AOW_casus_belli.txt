@@ -1,0 +1,52 @@
+cb_starfall_spear = {
+	show_in_diplomacy = no
+	show_notification = no
+	potential = {
+		has_technology = "AOW_TECH_starfall_spear"
+		OR = {
+			has_policy_flag = AOW_policy_SS_unlimited
+			has_policy_flag = AOW_policy_SS_hostility
+			has_policy_flag = AOW_policy_SS_no_first_use
+		}
+		has_policy_flag = unrestricted_wars
+		NOT = { is_in_federation_with = from }
+	}
+	is_valid = {
+		has_total_war_cb = no
+		NOT = { is_overlord_to = FROM }
+		OR = {
+			is_subject = no
+			overlord = { NOT = { is_same_value = from } }
+		}
+	}
+}
+
+cb_stop_starfall_spear = {#自己没有坠星天矛，而对方有
+	show_in_diplomacy = no
+	show_notification = no
+	potential = {
+		NOT = { is_in_federation_with = from }
+		NOT = {
+			OR = {
+				has_policy_flag = AOW_policy_SS_unlimited
+				has_policy_flag = AOW_policy_SS_hostility
+				has_policy_flag = AOW_policy_SS_no_first_use
+			}
+		}
+		from = {
+			OR = {
+				has_policy_flag = AOW_policy_SS_unlimited
+				has_policy_flag = AOW_policy_SS_hostility
+				has_policy_flag = AOW_policy_SS_no_first_use
+			}
+		}
+	}
+	is_valid = {
+		has_total_war_cb = no
+		NOT = { is_overlord_to = FROM }
+		OR = {
+			is_subject = no
+			overlord = { NOT = { is_same_value = from } }
+		}
+	}
+}

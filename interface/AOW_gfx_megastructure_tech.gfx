@@ -1,0 +1,227 @@
+spriteTypes = {
+	##################################### 小型巨构 #####################################
+
+	#星光竞技场
+	spriteType = {
+		name = "GFX_AOW_MEGA_space_arena_1_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_space_arena.dds"
+	}
+	#星空传感站
+	spriteType = {
+		name = "GFX_AOW_MEGA_space_sensor_station_1_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_space_sensor_station.dds"
+	}
+	#星状开采站
+	spriteType = {
+		name = "GFX_AOW_MEGA_asteroid_mining_station_1_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_asteroid_mining_station.dds"
+	}
+	#卫星防御基地
+	spriteType = {
+		name = "GFX_AOW_MEGA_satellite_defense_base_1_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_satellite_defense_base.dds"
+	}
+
+	##################################### 普通巨构 #####################################
+
+	#奇观建设局
+	spriteType = {
+		name = "GFX_AOW_MEGA_wonder_construction_bureau_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_wonder_construction_bureau.dds"
+	}
+	#暗物质曲率陷阱
+	spriteType = {
+		name = "GFX_AOW_MEGA_dark_matter_curvature_trap_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_dark_matter_curvature_trap.dds"
+	}
+	#银河珍宝馆
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_artifacts_transcription_palace.dds"
+	}
+	#海军指挥基地
+	spriteType = {
+		name = "GFX_AOW_MEGA_naval_command_base_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_naval_command_base.dds"
+	}
+	#英灵殿
+	spriteType = {
+		name = "GFX_AOW_MEGA_cemetery_of_martyrs_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_cemetery_of_martyrs.dds"
+	}
+	#深空监狱
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_deep_space_prison.dds"
+	}
+	#纳米激活器
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_activator_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_nanites_activator.dds"
+	}
+	#纳米转化器
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_transmutation_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_nanites_transmutation.dds"
+	}
+	#行星开采器
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_mining_station_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_planetary_mining_station.dds"
+	}
+	#繁荣贸易站
+	spriteType = {
+		name = "GFX_AOW_MEGA_prosperous_trade_station_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_prosperous_trade_station.dds"
+	}
+	#合成食物厂
+	spriteType = {
+		name = "GFX_AOW_MEGA_synthetic_food_factory_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_synthetic_food_factory.dds"
+	}
+	#泽珞升华器
+	spriteType = {
+		name = "GFX_AOW_MEGA_zro_sublimator_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_zro_sublimator.dds"
+	}
+	#星云精炼厂
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_nebula_refining_center.dds"
+	}
+	#轨道采集器
+	spriteType = {
+		name = "GFX_AOW_MEGA_orbital_acquisition_system_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_orbital_acquisition_system.dds"
+	}
+	#星轨
+	spriteType = {
+		name = "GFX_AOW_MEGA_hyperlane_controller_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_hyperlane_controller.dds"
+	}
+	#星网
+	spriteType = {
+		name = "GFX_AOW_MEGA_advanced_hyperlane_controller_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_advanced_hyperlane_controller.dds"
+	}
+	#行星波动炮
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_planetary_blaster_system.dds"
+	}
+	#位面虹吸器
+	spriteType = {
+		name = "GFX_AOW_MEGA_plane_siphon_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_plane_siphon.dds"
+	}
+
+	##################################### 星河奇迹 #####################################
+	#行星战舰
+	spriteType = {
+		name = "GFX_planetary_ship_megastructures_build_icon"
+		texturefile = "gfx/interface/icons/technologies/tech_planetary_ship.dds"
+	}
+	#二环
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_ring_world_2.dds"
+	}
+	#摘星者
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_star_picker.dds"
+	}
+	#灵能井
+	spriteType = {
+		name = "GFX_AOW_MEGA_psychic_device_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_psychic_device.dds"
+	}
+	#脉冲时记
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_pulsar_clock.dds"
+	}
+	#归墟
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_void_vortex.dds"
+	}
+	#零素熔炉
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_zero_element_furnace.dds"
+	}
+	#曲率增压场
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_curvature_pressurization_field.dds"
+	}
+	#天体解压器
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_decompressor_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_celestial_decompressor.dds"
+	}
+	#恒星吞噬者
+	spriteType = {
+		name = "GFX_AOW_MEGA_stellar_eater_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_stellar_eater.dds"
+	}
+
+	##################################### 天外神迹 #####################################
+
+	#多维仓库
+	spriteType = {
+		name = "GFX_AOW_MEGA_multi_dimensional_warehouse_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_multi_dimensional_warehouse.dds"
+	}
+	#三环
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_ring_world_3.dds"
+	}
+	#四环
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_ring_world_4.dds"
+	}
+	#御星天炉
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_star_transfer.dds"
+	}
+	#天界领航塔
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_heaven_navigation_bureau.dds"
+	}
+	#奇迹船坞
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_miraculous_shipyard.dds"
+	}
+	#千载星辰
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_quindecillion_stellar_quantum_matrix.dds"
+	}
+	#物质重组仪
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_material_recombination_instrument.dds"
+	}
+	#坠星天矛
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_starfall_spear.dds"
+	}
+	#天枢圣盾
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_celestial_shield.dds"
+	}
+	#星笼世界
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_starcage_world.dds"
+	}
+}

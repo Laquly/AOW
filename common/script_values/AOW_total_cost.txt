@@ -1,0 +1,13 @@
+AOW_var_mega_alloys_cost_add = {
+    base = 0
+    add = owner.modifier:megastructures_alloys_cost_add
+}
+
+AOW_var_mega_alloys_cost_mult = {
+    base = 0
+    add = owner.modifier:megastructures_cost_mult
+    add = owner.modifier:megastructures_alloys_cost_mult
+    add = owner.modifier:country_cost_mult
+    add = owner.modifier:country_alloys_cost_mult
+    min = 0.1
+}

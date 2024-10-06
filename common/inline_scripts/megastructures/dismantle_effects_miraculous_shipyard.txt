@@ -1,0 +1,6 @@
+starbase = {
+    if = {
+        limit = { has_starbase_module = AOW_miraculous_shipyard_uplink }
+        remove_starbase_module = { module = AOW_miraculous_shipyard_uplink }
+    }
+}

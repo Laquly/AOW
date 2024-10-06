@@ -1,0 +1,93 @@
+﻿l_simp_chinese:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_zero_element_furnace:0"$AOW_MEGA_zero_element_furnace$"
+ AOW_TECH_zero_element_furnace_desc:0"中子星内部几乎充斥着完美的中子态素，我们可以通过建造一种巨型提取装置来采集中子星内部的中子态素。"
+
+ AOW_TECH_stabilization_of_strange_matter:0"稳定化奇异物质"
+ AOW_TECH_stabilization_of_strange_matter_desc:0"奇异物质的同化性质能够将其他任何被其接触的物质同化为相同的奇异物质，而我们正好找到了该过程的可控化技术，以及能将奇异物质稳定为普通物质的稳态化技术。这个过程无疑大幅提升了我们的冶金效率。"
+
+ AOW_TECH_weaponization_of_strange_matter:0"武器化奇异物质"
+ AOW_TECH_weaponization_of_strange_matter_desc:0"只需要一点点的奇异物质，它就能将任何被其触碰到的物质同化为相同的奇异物质，而我们正好把它装进了我们的子弹中。"
+ AOW_TECH_weaponization_of_strange_matter_effect_title:0"§H解锁打击模式：§!$AOW_text_btn_system_target_mode_05$"
+ AOW_TECH_weaponization_of_strange_matter_effect_desc:0"这种物质极其危险，我们最好在拥有一种能够跨星系打击的武器后，再把它装到这个武器的子弹里去。"
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_zero_element_furnace_0:0"$AOW_MEGA_zero_element_furnace$ 基址"
+ AOW_MEGA_zero_element_furnace_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在由中子构成的恒星上\n\n$EFFECTS_HEADER$\n$t$—产出合金、工程学\n$t$—提高舰船的船体值、装甲值、武器伤害\n$t$—提高陆军的生命值、伤害"
+ AOW_MEGA_zero_element_furnace_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$一个针对中子星内部物质的巨型提取装置，预估可以产出更优质的军用装备。"
+ AOW_MEGA_zero_element_furnace_0_DESC:0"一个针对中子星内部物质的巨型提取装置，预估可以产出更优质的军用装备。"
+ AOW_MEGA_zero_element_furnace_1:0"$AOW_MEGA_zero_element_furnace$ 环绕"
+ AOW_MEGA_zero_element_furnace_1_DESC:0"构建了围绕在一起的三个巨环，这些巨环的六个连接处将加装提取装置。"
+ AOW_MEGA_zero_element_furnace_2:0"$AOW_MEGA_zero_element_furnace$ 萃取"
+ AOW_MEGA_zero_element_furnace_2_DESC:0"提取装置施工完毕，现在这个熔炉可以初步产出中子态素合金了。"
+ AOW_MEGA_zero_element_furnace_3:0"$AOW_MEGA_zero_element_furnace$ 加深"
+ AOW_MEGA_zero_element_furnace_3_DESC:0"针对提取装置就行了大幅度的加强，这些装置的提取光束可以采集到恒星更深层的物质。"
+ AOW_MEGA_zero_element_furnace_4:0"$AOW_MEGA_zero_element_furnace$"
+ AOW_MEGA_zero_element_furnace_4_DESC:0"一个强大到足以提取中子星内部物质的巨型装置，它会将开采而来的物质加工为更稳定的中子态素合金，一种极其强大的军工材料，对武器和装甲领域的进步都有着巨大的推进作用。"
+
+ AOW_MEGA_zero_element_furnace_ruined:0"废弃的$AOW_MEGA_zero_element_furnace$"
+ AOW_MEGA_zero_element_furnace_ruined_MEGASTRUCTURE_DETAILS:0""
+ AOW_MEGA_zero_element_furnace_ruined_DESC:0"一个古代文明的废弃恒星级军工厂，目前已经破损到无法正常产出军工用品。"
+ AOW_MEGA_zero_element_furnace_restored:0"$AOW_MEGA_zero_element_furnace$"
+ AOW_MEGA_zero_element_furnace_restored_DESC:0"$AOW_MEGA_zero_element_furnace_4_DESC$"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################
+ AOW_evt_zero_element_furnace.100.desc:0"远古时期的我们曾经就想过，有没有一种完全是由中子所构成的天体呢？而如今我们不但早就发现了这种特殊天体，还有了可以将其俘获的超能力。\n\n这种天体内部充斥着大量中子，是最为理想的合金原料，如果可以将其提取出来，那由这种合金制作的装备武器将无比强大，届时，中子星在我们眼中就相当于一个军工厂的地基了。"
+ AOW_evt_zero_element_furnace.100.a:0"开始建设！"
+ AOW_evt_zero_element_furnace.101.desc:0"建造了一个框架，用于稳定该天体，并削弱其磁场对设备所带来的负面影响。"
+ AOW_evt_zero_element_furnace.101.a:0"不错。"
+ AOW_evt_zero_element_furnace.102.desc:0"架构了6个巨型提取器，专门用于开采这种极端天体的内部物质。"
+ AOW_evt_zero_element_furnace.102.a:0"很好！"
+ AOW_evt_zero_element_furnace.103.desc:0"加深加强了这6个巨型提取器，现在我们的$AOW_MEGA_zero_element_furnace$可以提炼更多更强的合金了。"
+ AOW_evt_zero_element_furnace.103.a:0"很好！"
+ AOW_evt_zero_element_furnace.104.desc:0"$AOW_MEGA_zero_element_furnace$完工。我们加装了聚能环设施，可以吸收开采光线中散失的能量，现在大量的合金正在源源不断的运往全国各地。"
+ AOW_evt_zero_element_furnace.104.a:0"非常好！"
+
+ AOW_evt_zero_element_furnace.200.name:0"破碎的$AOW_MEGA_zero_element_furnace$"
+ AOW_evt_zero_element_furnace.200.desc:0"我们的船员在[from.GetName]星系发现了这个围绕中子星的巨大结构，以它目前的状态来说，它可能是在几万年前被损毁的，估计再过几千年就会被[from.star.GetName]彻底吞噬了。\n\n报告还指出，该巨型结构的作用是开采中子星，将其中的特殊物质转化为极其优质的军用级合金，这在几万年前应该是某个古代文明的战略要地。"
+ AOW_evt_zero_element_furnace.200.a:0"看来我们已经超越了这个文明。"
+ AOW_evt_zero_element_furnace.200.b:0"强大文明的强大遗产！"
+ AOW_evt_zero_element_furnace.201.desc:0"$AOW_MEGA_zero_element_furnace$已经成为了我们的恒星级军工厂，我们很好地继承了那个古代文明的遗产。"
+ AOW_evt_zero_element_furnace.201.a:0"我们的了。"
+
+ AOW_evt_zero_element_furnace.300.a.desc:0"$AOW_others_mega_build_1$\n\n[from.GetName]在[fromfrom.GetName]星系建造的大型设施暴露了他们在此的行动。\n\n据可靠消息，[from.GetName]打算在此建造一个可以采集这种中子恒星的巨构，以此来获取中子态物质。这种军工级别的物质除了可以用于军事开销，还可以可以大幅强化各种武器装备的强度。\n\n虽说还在初级阶段，但这种巨构所带来的收益开始让我们的特工感到担忧，特工建议我们也得做好万全准备。"
+ AOW_evt_zero_element_furnace.300.b.desc:0"$AOW_others_mega_build_2$\n\n又一次，[from.GetName]在[fromfrom.GetName]建造的大型设施暴露了他们在此的行动。\n\n看起来，他们对自己的军事强度还不是很满意，还要继续投入资源以发展军工。"
+ AOW_evt_zero_element_furnace.300.a:0"不得了。"
+ AOW_evt_zero_element_furnace.300.b:0"还来？"
+ AOW_evt_zero_element_furnace.301.desc:0"$AOW_others_mega_build_3$\n\n[from.GetName]在[fromfrom.GetName]星系建造的$AOW_MEGA_zero_element_furnace$已经完工了！他们的军事实力更强了，后勤资源也得到了一定的保障，[from.GetName]现在看起来野心勃勃。"
+ AOW_evt_zero_element_furnace.301.a:0"得做好相应准备了..."
+
+ AOW_evt_zero_element_furnace.400.name:0"奇异物质"
+ AOW_evt_zero_element_furnace.400.desc:0"很久之前，我们的科学家就提出过一种奇异物质的概念，这种物质理论上只存在于中子星这种极端天体的内部，具有极强的同化性质，能够将任何被它所触碰到的物体同化为与之相同的奇异物质。\n\n在建造$AOW_MEGA_zero_element_furnace$之前，我们一直都认为这只是一种猜想，不过现在看来，它似乎真的存在，因为我们的$AOW_MEGA_zero_element_furnace$遇到了一种难以处理的麻烦，而且情况与理论上遇到奇异物质的情况一模一样，如果我们不加以处理，这种情况最坏的结果可能会吞噬掉我们的$AOW_MEGA_zero_element_furnace$，直到它坠入到[fromfromfromfrom.planet.GetName]内。"
+ AOW_evt_zero_element_furnace.400.a:0"减少开采功率，准备把它隔离出来。"
+ AOW_evt_zero_element_furnace.400.a.tooltip:0"派遣科研船去执行任务。"
+ AOW_evt_zero_element_furnace.400.b:0"开采作业不能停！"
+ AOW_evt_zero_element_furnace.400.b.tooltip:0"§R如果注定会被摧毁，那为何不在被摧毁前加大开采功率呢？§!"
+
+ AOW_evt_zero_element_furnace.410.name:0"奇异物质隔离成功"
+ AOW_evt_zero_element_furnace.410.desc:0"在科研人员的小心操作下，我们终于提取并隔离了奇异物质，它一度险些让[this.GetName]也被同化。\n\n现在问题来了，既然这种物质有如此恐怖但神奇的性质，我们是应该化为己用，还是把它扔向敌人？"
+ AOW_evt_zero_element_furnace.410.a:0"稳定化奇异物质。"
+ AOW_evt_zero_element_furnace.410.a.tooltip:0"如果能让奇异物质稳定下来，说不定我们能更高效地转化各种物质，冶金工业很需要它！"
+ AOW_evt_zero_element_furnace.410.b:0"武器化奇异物质。"
+ AOW_evt_zero_element_furnace.410.b.tooltip:0"奇异物质的恐怖性质，能让某些我们不想见到的东西彻底消失，把它扔向敌人是最好的选择！"
+ AOW_evt_zero_element_furnace.410.c:0"我全都要！"
+ AOW_evt_zero_element_furnace.410.c.tooltip:0"调动更多人员，两种选择一并研发。"
+
+ AOW_evt_zero_element_furnace.411.name:0"奇异物质提取失败"
+ AOW_evt_zero_element_furnace.411.desc:0"我们没能及时采取措施，$AOW_MEGA_zero_element_furnace$最终还是被奇异物质同化，并被彻底摧毁了。\n\n另外，这里残留的奇异物质在[event_target:AOW_tgt_PLNT_has_strange_matter.GetName]的强大引力下并没有逃离到星际空间，所以这里注定不能再建造$AOW_MEGA_zero_element_furnace$了，因为它的开采行为会再次激活奇异物质的。"
+ AOW_evt_zero_element_furnace.411.a:0"哎，应该再快点的。"
+ AOW_evt_zero_element_furnace.411.a.tooltip:0"$AOW_MEGA_zero_element_furnace$被摧毁，[event_target:AOW_tgt_PLNT_has_strange_matter.GetName]上再也不能建造$AOW_MEGA_zero_element_furnace$了。"
+
+ AOW_evt_zero_element_furnace.420.name:0 "奇异物质摧毁巨构"
+ AOW_evt_zero_element_furnace.420.desc:0"由于我们并没有对奇异物质采取行动，$AOW_MEGA_zero_element_furnace$最终还是被奇异物质同化，并被彻底摧毁了，不过好在被摧毁前，我们提高了功率，收获了大量的合金。\n\n另外，这里残留的奇异物质在[event_target:AOW_tgt_PLNT_has_strange_matter.GetName]的强大引力下并没有逃离到星际空间，所以这里注定不能再建造$AOW_MEGA_zero_element_furnace$了，因为它的开采行为会再次激活奇异物质的。"
+ AOW_evt_zero_element_furnace.420.a:0"起码回收了大量合金。"
+ AOW_evt_zero_element_furnace.420.a.tooltip:0"$AOW_MEGA_zero_element_furnace$被摧毁，[event_target:AOW_tgt_PLNT_has_strange_matter.GetName]上再也不能建造$AOW_MEGA_zero_element_furnace$了，但我们回收了合金。"
+
+ AOW_sp_strange_matter:0"稳定奇异物质"
+ AOW_sp_strange_matter_DESC:0"这种极其恐怖的物质如果不加以处理，可能会吞噬掉整个$AOW_MEGA_zero_element_furnace$，这会使我们的合金产出严重受损，但如果我们能提取并隔离它，或许可以把它用在其他用途上..."

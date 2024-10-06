@@ -1,0 +1,15 @@
+AOW_eft_MEGA_set_cooldown_days = {
+	set_variable = { which = mult value = value:AOW_var_starfall_spear_cooldown }
+	set_variable = { which = days value = $days$ }
+	multiply_variable = { which = days value = mult }
+	save_event_target_as = AOW_tgt_MEGA_new_starfall_spear
+	solar_system = {
+		set_timed_star_flag = { flag = AOW_flag_SSTM_starfall_spear_is_cooling days = prev.days }
+		set_saved_date = {
+			key = AOW_timer_cooling_time
+			days_from_present = prev.days
+			expires = prev.days
+		}
+		system_event = { id = AOW_evt_starfall_spear.502 }
+	}
+}

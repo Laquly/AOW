@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_AOW_message_system_hit_by_1"
+		texturefile = "gfx/interface/icons/message/AOW_message_system_hit_by_1.dds"
+	}
+}

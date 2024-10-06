@@ -1,0 +1,87 @@
+AOW_MEGA_satellite_defense_base_1 = {
+	entity = "satellite_defense_base_ship_entity"
+	construction_entity = "satellite_defense_base_ship_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	show_galactic_map_icon = no
+	show_in_outliner = no
+	construction_blocks_and_blocked_by = none
+	#scales_with_planet = yes
+	build_time = @AOW_var_SDB_1_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MINOR_PLANETARY_BODY"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SDB_1_COST_alloys
+			unity = @AOW_var_SDB_1_COST_unity
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_satellite_defense_base
+		category = megastructures
+		alloys = @AOW_var_AMS_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_satellite_defense_base" }
+	potential = { AOW_trigger_mega_potential = { KEY = satellite_defense_base } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须建造在小行星或卫星上
+				fail_text = "AOW_mega_requires_PLNT_minor_planets"
+				OR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {#一个卫星只能建造一个
+				fail_text = "AOW_mega_requires_PLNT_no_satellite_defense_base"
+				NOT = {
+					any_fleet_in_orbit = {
+						is_ship_size = AOW_shipsize_satellite_defense_base
+					}
+				}
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 50
+		#位置限制
+		modifier = { factor = 1.5	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		modifier = { factor = 1.5	any_system_planet = { exists = owner owner = { is_same_value = from } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_satellite_defense_base.100 } }
+		create_fleet = {
+			name = "AOW_shipsize_satellite_defense_base"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = from
+				create_ship = {
+					name = "AOW_shipsize_satellite_defense_base"
+					random_existing_design = AOW_shipsize_satellite_defense_base
+				}
+				set_location = {
+					target = fromfrom.planet
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}

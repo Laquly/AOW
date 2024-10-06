@@ -1,0 +1,88 @@
+AOW_nebula_refinery_center = {
+	icon = "GFX_spaceport_nebula_refinery_center"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { has_technology = AOW_TECH_nebula_refining_center }
+		solar_system = {
+			any_system_megastructure = {
+				OR = {
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_0
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_1
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_2
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_3
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_4
+					is_megastructure_type = AOW_MEGA_nebula_refining_center_5
+				}
+			}
+		}
+	}
+	possible = {
+		exists = owner
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_system_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_nebula"
+			star = { is_inside_nebula = yes }
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = { alloys = 150 }
+		upkeep = { energy = 15 }
+	}
+
+	system_modifier = {
+		planet_jobs_volatile_motes_produces_mult = 0.25
+		planet_jobs_exotic_gases_produces_mult = 0.25
+		planet_jobs_rare_crystals_produces_mult = 0.25
+	}
+	show_in_tech = "AOW_TECH_nebula_refining_center"
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	abort_trigger = {
+		NOT = {
+			solar_system = {
+				any_system_megastructure = {
+					OR = {
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_0
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_1
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_2
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_3
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_4
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_5
+					}
+				}
+			}
+		}
+	}
+	destroy_trigger = {
+		NOT = {
+			solar_system = {
+				any_system_megastructure = {
+					OR = {
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_0
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_1
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_2
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_3
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_4
+						is_megastructure_type = AOW_MEGA_nebula_refining_center_5
+					}
+				}
+			}
+		}
+	}
+	ai_weight = { weight = 100 }
+}

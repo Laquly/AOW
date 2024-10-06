@@ -1,0 +1,19 @@
+AOW_stabilization_of_strange_matter = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = 30
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1
+		planet_metallurgists_minerals_upkeep_add = 1
+	}
+	prerequisites = { AOW_TECH_stabilization_of_strange_matter }
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}

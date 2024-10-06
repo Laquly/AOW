@@ -1,0 +1,61 @@
+#有千载星辰不同级别的国家
+AOW_trgr_CNTR_has_qsqm_2 = {
+	OR = {
+		has_megastructure = AOW_MEGA_quindecillion_stellar_quantum_matrix_2
+		has_megastructure = AOW_MEGA_qsqm_2_hyper
+		has_megastructure = AOW_MEGA_qsqm_2_super
+		has_megastructure = AOW_MEGA_qsqm_2_O
+		has_megastructure = AOW_MEGA_qsqm_2_B
+		has_megastructure = AOW_MEGA_qsqm_2_giant
+		has_megastructure = AOW_MEGA_qsqm_2_A
+		has_megastructure = AOW_MEGA_qsqm_2_F
+		has_megastructure = AOW_MEGA_qsqm_2_G
+		has_megastructure = AOW_MEGA_qsqm_2_K
+		has_megastructure = AOW_MEGA_qsqm_2_M
+	}
+}
+AOW_trgr_CNTR_has_qsqm_3 = {
+	OR = {
+		has_megastructure = AOW_MEGA_quindecillion_stellar_quantum_matrix_3
+		has_megastructure = AOW_MEGA_qsqm_3_hyper
+		has_megastructure = AOW_MEGA_qsqm_3_super
+		has_megastructure = AOW_MEGA_qsqm_3_O
+		has_megastructure = AOW_MEGA_qsqm_3_B
+		has_megastructure = AOW_MEGA_qsqm_3_giant
+		has_megastructure = AOW_MEGA_qsqm_3_A
+		has_megastructure = AOW_MEGA_qsqm_3_F
+		has_megastructure = AOW_MEGA_qsqm_3_G
+		has_megastructure = AOW_MEGA_qsqm_3_K
+		has_megastructure = AOW_MEGA_qsqm_3_M
+	}
+}
+AOW_trgr_CNTR_has_qsqm_4 = {
+	OR = {
+		has_megastructure = AOW_MEGA_quindecillion_stellar_quantum_matrix_4
+		has_megastructure = AOW_MEGA_qsqm_4_hyper
+		has_megastructure = AOW_MEGA_qsqm_4_super
+		has_megastructure = AOW_MEGA_qsqm_4_O
+		has_megastructure = AOW_MEGA_qsqm_4_B
+		has_megastructure = AOW_MEGA_qsqm_4_giant
+		has_megastructure = AOW_MEGA_qsqm_4_A
+		has_megastructure = AOW_MEGA_qsqm_4_F
+		has_megastructure = AOW_MEGA_qsqm_4_G
+		has_megastructure = AOW_MEGA_qsqm_4_K
+		has_megastructure = AOW_MEGA_qsqm_4_M
+	}
+}
+AOW_trgr_CNTR_has_qsqm_5 = {
+	OR = {
+		has_megastructure = AOW_MEGA_quindecillion_stellar_quantum_matrix_5
+		has_megastructure = AOW_MEGA_qsqm_5_hyper
+		has_megastructure = AOW_MEGA_qsqm_5_super
+		has_megastructure = AOW_MEGA_qsqm_5_O
+		has_megastructure = AOW_MEGA_qsqm_5_B
+		has_megastructure = AOW_MEGA_qsqm_5_giant
+		has_megastructure = AOW_MEGA_qsqm_5_A
+		has_megastructure = AOW_MEGA_qsqm_5_F
+		has_megastructure = AOW_MEGA_qsqm_5_G
+		has_megastructure = AOW_MEGA_qsqm_5_K
+		has_megastructure = AOW_MEGA_qsqm_5_M
+	}
+}

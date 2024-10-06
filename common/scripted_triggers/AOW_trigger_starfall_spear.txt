@@ -1,0 +1,21 @@
+AOW_trigger_starfall_spear_resource_cost = {
+    if = {
+        limit = {
+            this = {
+                NOT = { has_planet_flag = AOW_flag_$PorS$_starfall_spear_$number$_@root.from }
+            }
+            from = {
+                resource_stockpile_compare = {
+                    resource = $resource$
+                    value < $value$
+                }
+            }
+        }
+        from = {
+            resource_stockpile_compare = {
+                resource = $resource$
+                value >= $value$
+            }
+        }
+    }
+}

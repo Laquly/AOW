@@ -1,0 +1,12 @@
+AOW_sc_pulsar_clock = {
+	class 		= pulsar
+	icon            	= AOW_sc_pc
+	icon_scale		= 0.75
+	planet		= { key = pc_pulsar }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+	is_environmental_hazard = yes
+	modifier = {
+		ship_shield_reduction = 1.0
+	}
+}

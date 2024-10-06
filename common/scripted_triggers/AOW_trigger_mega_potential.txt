@@ -1,0 +1,21 @@
+#巨构显示的条件
+AOW_trigger_mega_potential = {
+	if = { #如果是玩家，则对应巨构没有被禁用
+		limit = { is_ai = no }
+		OR = {
+			NOT = { has_global_flag = AOW_flag_GLBL_no_player_$KEY$ }
+			event_target:global_event_country = {
+				check_variable = { which = AOW_var_player_mega_cap_$KEY$ value != 0 }
+			}
+		}
+	}
+	else_if = { #如果是AI，则对应巨构没有被禁用
+		limit = { is_ai = yes }
+		OR = {
+			NOT = { has_global_flag = AOW_flag_GLBL_no_ai_$KEY$ }
+			event_target:global_event_country = {
+				check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value != 0 }
+			}
+		}
+	}
+}

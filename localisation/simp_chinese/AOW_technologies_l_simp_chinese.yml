@@ -1,0 +1,135 @@
+﻿l_simp_chinese:
+
+ AOW_TECH_faster_hyper_relay:0"极速超空间中继器"
+ AOW_TECH_faster_hyper_relay_desc:0"基于星门的原理，我们制造了一种可以使得超空间中继器瞬间传输舰队的技术。"
+
+ AOW_TECH_dismantle_megastructure:0"巨构结构拆解"
+ AOW_TECH_dismantle_megastructure_desc:0"如果巨构不能给予我们好处了，或者巨构的位置影响了其他巨构的建设，那么我们就有必要拆除它！"
+ AOW_TECH_dismantle_megastructure_effect_title:0"§H解锁功能：§!巨构结构拆解"
+ AOW_TECH_dismantle_megastructure_effect_desc:0"可以拆解一些没有移除过星球的巨构。"
+
+ AOW_TECH_improved_construction_efficiency_1:0"巨构建设效率提升：能量供应"
+ AOW_TECH_improved_construction_efficiency_1_desc:0"为升级中的巨构供应额外能量可使得建设效率得到一定的提升。"
+ AOW_TECH_improved_construction_efficiency_2:0"巨构建设效率提升：合金供应"
+ AOW_TECH_improved_construction_efficiency_2_desc:0"为升级中的巨构提供更多合适的合金，可较大幅度减少选材取材阶段的耗时。"
+ AOW_TECH_improved_construction_efficiency_3:0"巨构建设效率提升：齐心协力"
+ AOW_TECH_improved_construction_efficiency_3_desc:0"让更多更有经验的人员以及经过长期实践检验的智能管理设备参与巨构的建设项目，并做好宣传工作，可较大幅度地提升建设效率。"
+ AOW_TECH_improved_construction_efficiency_4:0"巨构建设效率提升：曲率掌控"
+ AOW_TECH_improved_construction_efficiency_4_desc:0"暗物质与时空曲率的关联若能正确地运用在建设中的巨构，理论上可以极大幅度地提高建设效率。"
+ AOW_TECH_improved_construction_efficiency_5:0"巨构建设效率提升：全面提升"
+ AOW_TECH_improved_construction_efficiency_5_desc:0"如果能量供应、合金供应、齐心协力和曲率掌控全部启用，我们会发现各个系统在互相配合方面还存在着较大的短板，而该方案就可以全方位整合并优化整个建设过程中的各个系统，其中的所有遗漏之处和可改进之处均会被一一修复。"
+
+ AOW_TECH_space_sensor_station:0"$AOW_MEGA_space_sensor_station$"
+ AOW_TECH_space_sensor_station_desc:0"一个小型的传感列阵，可以探测到一定范围内的星系，除此之外还能通过对应政策为舰船提供些许增益。"
+
+ AOW_TECH_space_arena:0"$AOW_MEGA_space_arena$"
+ AOW_TECH_space_arena_desc:0"一个处于失重环境下的竞技场，我们可以在此处举办活动、筛选更优者。"
+
+ AOW_TECH_asteroid_mining_station:0"$AOW_MEGA_asteroid_mining_station$"
+ AOW_TECH_asteroid_mining_station_desc:0"小行星周围的矿藏非常丰富，在其周围建立一套拥有完整采矿系统的装置可以更加方便地采集并运输这些矿物。"
+ AOW_TECH_asteroid_mining_station_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_asteroid_mining_station$"
+ AOW_TECH_asteroid_mining_station_effect_desc:0"§H$AOW_MEGA_asteroid_mining_station$§!\n\n只能建造在小行星上，根据小行星类型产出不同种类的资源；\n\n§H普通小行星：§!£minerals£50, £volatile_motes£2\n§H冰晶小行星：§!£energy£25, £minerals£25, £rare_crystals£2\n§H晶态小行星：§!£minerals£50, £rare_crystals£2"
+
+ #巨构工程
+ AOW_TECH_spatiotemporal_curvature_manipulation:0"时空曲率操纵§L（前置科技：£physics_research£$tech_mine_dark_matter$）§!"
+ AOW_TECH_spatiotemporal_curvature_manipulation_desc:0"对于暗物质的最新研究理论已经指出，少量的暗物质就拥有足以大幅扭曲时空曲率的潜力。一旦掌握了这一力量，那带来的收益将是颠覆性的。"
+
+ AOW_TECH_dark_matter_curvature_trap:0"$AOW_MEGA_dark_matter_curvature_trap$"
+ AOW_TECH_dark_matter_curvature_trap_desc:0"利用暗物质创造时空畸变点，我们可以创造出更多的暗物质，为我们更先进的科技提供资源支持。暗物质将会是未来科技革命的血液。"
+
+ AOW_TECH_planetary_mining_station:0"$AOW_MEGA_planetary_mining_station$"
+ AOW_TECH_planetary_mining_station_desc:0"有些星球其本身就是一个无与伦比的大型矿物，因此，建造一个足以采集全球矿物的轨道开采站是非常有必要的。"
+ AOW_TECH_planetary_mining_station_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_planetary_mining_station$"
+ AOW_TECH_planetary_mining_station_effect_desc:0"§H$AOW_MEGA_planetary_mining_station$§!\n\n可以建造在大部分的固态星球上，并开采整个星球的资源。具体建造地点和产出数据，可以查看星球上的$AOW_MEGA_planetary_mining_station$说明。"
+
+ AOW_TECH_orbital_acquisition_system:0"$AOW_MEGA_orbital_acquisition_system$"
+ AOW_TECH_orbital_acquisition_system_desc:0"气态巨行星拥有丰富的气体资源和清洁能源，在其轨道上建造一个围绕行星运转的采集系统可以方面我们使用电磁网和远程无人机等装置来捕获这些资源。"
+
+ AOW_TECH_synthetic_food_factory:0"$AOW_MEGA_synthetic_food_factory$"
+ AOW_TECH_synthetic_food_factory_desc:0"介于营养复制科技的启发，我们完全可以模拟有机物的合成过程，通过一系列化学反应以完全替代生物合成，如今我们可以将巨构技术和营养合成技术融合，打造一个巨型而高效的行星级食物合成工厂。"
+
+ AOW_TECH_prosperous_trade_station:0"$AOW_MEGA_prosperous_trade_station$"
+ AOW_TECH_prosperous_trade_station_desc:0"一个规模庞大、环境舒适、功能齐全的商业环境有助于促进生意的谈成和财富的招揽。"
+
+ AOW_TECH_artifacts_transcription_palace:0"$AOW_MEGA_artifacts_transcription_palace$"
+ AOW_TECH_artifacts_transcription_palace_desc:0"这个宇宙遍布着先驱者们的脚步，它们留下来的遗物无比珍贵，可以说是独一无二......但如果当我们拥有了完美的复刻技术呢？"
+
+ AOW_TECH_deep_space_prison:0"$AOW_MEGA_deep_space_prison$"
+ AOW_TECH_deep_space_prison_desc:0"在深空中打造一个庞大而威严的监狱，可以有效震慑潜在的犯罪活动。"
+
+ AOW_TECH_nanites_activator:0"$AOW_MEGA_nanites_activator$"
+ AOW_TECH_nanites_activator_desc:0"研究证实，新发现的纳米机器人具有可重新激活的潜力，或许我们可以利用这点，将某些星球上潜在的失活纳米机器人重新激活为我们所用。"
+
+ AOW_TECH_nanites_transmutation:0"$AOW_MEGA_nanites_transmutation$"
+ AOW_TECH_nanites_transmutation_desc:0"如果想让这些稀有资源拥有更大规模更高效率的生产，则需要用到极为先进的纳米机器人作为原料、以及一个庞大而精密的工厂。"
+
+ AOW_TECH_zro_sublimator:0"$AOW_MEGA_zro_sublimator$"
+ AOW_TECH_zro_sublimator_desc:0"介于泽珞气溶胶的物理性质，若对富含泽珞的星球进行全球性的升华处理，则可以在其外太空进行直接拦截收集，大大提高了采集效率。"
+
+ AOW_TECH_hyperlane_controller:0"$AOW_MEGA_hyperlane_controller$"
+ AOW_TECH_hyperlane_controller_desc:0"我们已经在超空间航道里面穿过无数次了，无数次的记录也弄清了超空间航道的构建方式，也许我们应该试着自己搭建或者移除一个超空间航道。"
+
+ AOW_TECH_advanced_hyperlane_controller:0"$AOW_MEGA_advanced_hyperlane_controller$"
+ AOW_TECH_advanced_hyperlane_controller_desc:0"一种改进了程序算法的高级$AOW_MEGA_hyperlane_controller$，可以同时修建多个超空间航道，但为了保密性和完整性，只能在境内使用。"
+
+ AOW_TECH_cemetery_of_martyrs:0"$AOW_MEGA_cemetery_of_martyrs$"
+ AOW_TECH_cemetery_of_martyrs_desc:0"一个烈士陵园，用来纪念所有在各个时代中牺牲的烈士们。"
+
+ AOW_TECH_naval_command_base:0"$AOW_MEGA_naval_command_base$"
+ AOW_TECH_naval_command_base_desc:0"专职指挥管理海军的基地，可以提供大量的海军容量、指挥上限以及力量投射。"
+
+ AOW_TECH_planetary_blaster_system:0"$AOW_MEGA_planetary_blaster_system$"
+ AOW_TECH_planetary_blaster_system_desc:0"以星球的本身作为基址，将星球的质量彻底释放，我们可以打造成一种庞大的静态防御工程——$AOW_MEGA_planetary_blaster_system$。"
+ AOW_TECH_solid_planetary_energy_release:0"固态行星能量释放"
+ AOW_TECH_solid_planetary_energy_release_effect_title:0"§H解锁功能：§!固态行星能量释放"
+ AOW_TECH_solid_planetary_energy_release_effect_desc:0"§H固态行星能量释放§!\n\n$AOW_MEGA_planetary_blaster_system$现在可以建造在一些固态行星上了，不过依旧无法修建在破碎的行星上，因为那里不稳定。"
+ AOW_TECH_solid_planetary_energy_release_desc:0"如果一个星系没有气态巨行星，那么$AOW_MEGA_planetary_blaster_system$就无法在这样的星系发挥作用，不过，我们依旧发现了一种可以让固态行星的全部能量稳定释放的方法。"
+
+ #星河奇迹
+ AOW_TECH_curvature_pressurization_field:0"$AOW_MEGA_curvature_pressurization_field$"
+ AOW_TECH_curvature_pressurization_field_desc:0"利用暗物质改变恒星周围的时空曲率，强大的时空曲率压强会导致恒星快速坍缩，从而促使恒星完成需要数十亿年才能完成的坍缩过程。"
+
+ AOW_TECH_star_picker:0"$AOW_MEGA_star_picker$"
+ AOW_TECH_star_picker_desc:0"恒星的内部物质通常含有大量的常见物质和一些少量的重元素物质，我们预估开采恒星物质会获得很多的工业原料甚至是更高级的军用级材料。"
+
+ AOW_TECH_nebula_refining_center:0"$AOW_MEGA_nebula_refining_center$"
+ AOW_TECH_nebula_refining_center_desc:0"星云内的物质含量和物质种类都十分丰富，因此，对于星云这一巨大财富的规模化精炼势在必行。"
+
+ AOW_TECH_psychic_device:0"$AOW_MEGA_psychic_device$"
+ AOW_TECH_psychic_device_desc:0"通过记录解析突入虚境时的状态，我们发现可以确实可以使用某种手段以增强我们与虚境的链接，并还有可能移除虚境所带来的某些负面影响。"
+
+ #天外奇迹
+ AOW_TECH_engineering_intelligence_core:0"工程智能核心"
+ AOW_TECH_engineering_intelligence_core_desc:0"工程智能核心"
+
+ AOW_TECH_megastructure_construction_agreement:0"巨构建设协议"
+ AOW_TECH_megastructure_construction_agreement_desc:0"巨构建设协议"
+
+ AOW_TECH_automatic_copy_unit:0"自主复制单元"
+ AOW_TECH_automatic_copy_unit_desc:0"自主复制单元"
+
+ AOW_TECH_multidimensional_space_channel:0"多维空间通道"
+ AOW_TECH_multidimensional_space_channel_desc:0"通过扭曲时空曲率，打通通往各个多维空间的稳定通道，需要大量的暗物质维护。"
+
+ AOW_TECH_dimension_hiding:0"维度褶皱"
+ AOW_TECH_dimension_hiding_desc:0"多维空间是一个很好的容纳各种巨构设施的地方。因此在现实维度中，可以通过使维度空间产生褶皱，将两个巨构设施建设地很近，甚至重叠。"
+ AOW_TECH_dimension_hiding_effect_title:0"§H解锁功能：§!维度褶皱"
+ AOW_TECH_dimension_hiding_effect_desc:0"§H维度褶皱§!\n\n我们现在可以将§Y戴森球§!、§Y$AOW_MEGA_star_picker$§!、§Y$AOW_MEGA_zero_element_furnace$§!建造在大多数的多恒星星系中，即使建造完后的巨构看起来像是§Y重叠§!了。\n\n注意：这些恒星级巨构建造在多恒星星系时，会因为受到多个引力源的强大引力拉扯，§R需要额外的£alloys£合金作为维护费§!；\n因需要维持在维度褶皱中的形态，§R需要额外的£energy£能量币作为维护费§!。"
+
+ AOW_TECH_hyperdimension_hiding:0"超维褶皱"
+ AOW_TECH_hyperdimension_hiding_desc:0"进一步强化我们对于维度空间的控制能力，我们可以允许那些庞大的巨构互相共存。"
+ AOW_TECH_hyperdimension_hiding_effect_1_title:0"后期流畅度: §G+10%§!"
+ AOW_TECH_hyperdimension_hiding_effect_2_title:0"§H解锁功能：§!超维褶皱"
+ AOW_TECH_hyperdimension_hiding_effect_2_desc:0"§H超维褶皱§!\n\n允许建造在恒星上的巨构互相重叠建造\n部分会清空星系的巨构不再移除行星"
+
+ AOW_TECH_multi_dimensional_warehouse:0"$AOW_MEGA_multi_dimensional_warehouse$"
+ AOW_TECH_multi_dimensional_warehouse_desc:0"多维空间的应用大大拓宽了我们能伸展手脚的空间，首先能做到的便是把我们的物资储存在多维空间，但这仍需要一个本维度空间的框架来放在物资丢失。"
+
+ AOW_TECH_heaven_navigation_bureau:0"$AOW_MEGA_heaven_navigation_bureau$"
+ AOW_TECH_heaven_navigation_bureau_desc:0"多维空间的开拓，使得我们对舰船曾经驶过的航行空间有了很大程度的理解，因此有必要成立一个专门为领航而生的部门以帮助后来的新舰船更好地适应宇宙空间。"
+
+ AOW_TECH_quindecillion_stellar_quantum_matrix:0"$AOW_MEGA_quindecillion_stellar_quantum_matrix$"
+ AOW_TECH_quindecillion_stellar_quantum_matrix_desc:0"以戴森球作为工具，俘获整个恒星作为能源供应，以科研枢纽作为前提，制造恒星计算机作为运算装置，以此大幅提升我国的科研成就。越高级的$AOW_MEGA_quindecillion_stellar_quantum_matrix$体型就越是庞大，最终将覆盖整个星系。"
+
+ AOW_TECH_miraculous_shipyard:0"$AOW_MEGA_miraculous_shipyard$"
+ AOW_TECH_miraculous_shipyard_desc:0"巨型船坞已经开始逐渐跟不上我们的发展脚步了，我们需要一个更大的、大到足以横跨整个恒星系的、可以将其称之为奇迹的船坞。"

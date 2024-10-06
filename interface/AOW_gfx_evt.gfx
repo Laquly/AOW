@@ -1,0 +1,163 @@
+spriteTypes = {
+	#多维空间
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_multi_dimensional"
+		texturefile = "gfx/event_pictures/AOW_MEGA_multi_dimensional.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#星云：创世之柱
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_pillars_of_creation"
+		texturefile = "gfx/event_pictures/AOW_MEGA_pillars_of_creation.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#奇观建设局
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_wonder_construction_bureau"
+		texturefile = "gfx/event_pictures/AOW_MEGA_wonder_construction_bureau.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#英灵殿
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_cemetery_of_martyrs"
+		texturefile = "gfx/event_pictures/AOW_MEGA_cemetery_of_martyrs.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#摘星者
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_star_picker"
+		texturefile = "gfx/event_pictures/AOW_MEGA_star_picker.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#合成食物
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_synthetic_food_factory"
+		texturefile = "gfx/event_pictures/AOW_MEGA_synthetic_food_factory.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#零素熔炉
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_zero_element_furnace"
+		texturefile = "gfx/event_pictures/AOW_MEGA_zero_element_furnace.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#曲率增压场
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_curvature_pressurization_field"
+		texturefile = "gfx/event_pictures/AOW_MEGA_curvature_pressurization_field.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#天体解压器
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_celestial_decompressor"
+		texturefile = "gfx/event_pictures/AOW_MEGA_celestial_decompressor.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#恒星吞噬者
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_stellar_eater"
+		texturefile = "gfx/event_pictures/AOW_MEGA_stellar_eater.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#行星波动炮
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_planetary_blaster_system"
+		texturefile = "gfx/event_pictures/AOW_MEGA_planetary_blaster_system.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#御星天炉
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_star_transfer"
+		texturefile = "gfx/event_pictures/AOW_MEGA_star_transfer.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#物质重组仪
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_material_recombination_instrument"
+		texturefile = "gfx/event_pictures/AOW_MEGA_material_recombination_instrument.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#千载星辰
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_qsqm"
+		texturefile = "gfx/event_pictures/AOW_MEGA_quindecillion_stellar_quantum_matrix.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#星笼世界
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starcage_world"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starcage_world.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#天枢圣盾
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_celestial_shield"
+		texturefile = "gfx/event_pictures/AOW_MEGA_celestial_shield.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	#坠星天矛
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_O"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_O.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_B"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_B.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_A"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_A.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_F"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_F.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_G"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_G.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_K"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_K.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_starfall_spear_M"
+		texturefile = "gfx/event_pictures/AOW_MEGA_starfall_spear_M.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

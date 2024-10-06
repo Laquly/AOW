@@ -1,0 +1,65 @@
+#这里是写关于各种巨构的额外相关事件
+
+namespace = AOW_prosperous_trade_station
+
+#繁荣贸易站
+planet_event = {
+	id = AOW_prosperous_trade_station.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		from = { set_country_flag = AOW_flag_CNTR_branch_office_established }
+	}
+}
+
+#this/root = 本国
+#from = 通知国
+country_event = {
+	id = AOW_prosperous_trade_station.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = AOW_flag_CNTR_block_ads_@from }
+	}
+	immediate = {
+		random_list = {
+			1 = { country_event = { id = AOW_prosperous_trade_station.3 } }
+			9 = { country_event = { id = AOW_prosperous_trade_station.4 } }
+		}
+	}
+}
+#this/root = 本国
+#from = 本国
+#fromfrom = 通知国
+country_event = {
+	id = AOW_prosperous_trade_station.3
+	title = AOW_mega_story.1102.name
+	desc = AOW_mega_story.1102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_story.1100.a
+	}
+	option = {
+		name = AOW_mega_story.1100.b
+		set_country_flag = AOW_flag_CNTR_block_ads_@fromfrom
+	}
+}
+country_event = {
+	id = AOW_prosperous_trade_station.4
+	title = AOW_mega_story.1103.name
+	desc = AOW_mega_story.1103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_busy_spaceport
+	show_sound = event_mega_structure_other_empire_build_start
+	location = fromfromfrom
+	option = {
+		name = AOW_mega_story.1100.a
+	}
+	option = {
+		name = AOW_mega_story.1100.b
+		set_country_flag = AOW_flag_CNTR_block_ads_@fromfrom
+	}
+}

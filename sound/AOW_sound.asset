@@ -1,0 +1,85 @@
+category = {
+	name = "Effects"
+	soundeffects = {
+		AOW_sound_hit_effect_08
+		AOW_sound_hit_effect_1
+		AOW_sound_hit_effect_2
+		AOW_sound_hit_effect_3
+		AOW_sound_hit_effect_5
+		AOW_sound_hit_effect_6
+		AOW_sound_hit_effect_7
+	}
+}
+
+sound = {#净
+	name = "AOW_sound_hit_effect_0"
+	file = "apocalypse/god_ray_windup_layer_01.wav"
+	#volume = 0.4
+	always_load = no
+}
+sound = {#隔绝
+	name = "AOW_sound_hit_effect_1"
+	file = "apocalypse/planet_killer_fire_01.wav"
+	#volume = 0.45
+	always_load = no
+}
+sound = {#灭杀
+	name = "AOW_sound_hit_effect_2"
+	file = "guardians/dimensional_horror_laser_attack_01.wav"
+	#volume = 0.45
+	always_load = no
+}
+sound = {#震荡
+	name = "AOW_sound_hit_effect_3"
+	file = "apocalypse/perdition_beam_fire_02.wav"
+	#volume = 0.8
+	always_load = no
+}
+#星辰陨落
+sound = {#奇异物质
+	name = "AOW_sound_hit_effect_5"
+	file = "apocalypse/neutron_fire_layer_03.wav"
+	#volume = 0.45
+	always_load = no
+}
+sound = {#死亡献祭
+	name = "AOW_sound_hit_effect_6"
+	file = "apocalypse/god_ray_hit_layer_01.wav"
+	#volume = 0.45
+	always_load = no
+}
+sound = {#遮天蔽日
+	name = "AOW_sound_hit_effect_7"
+	file = "apocalypse/shieled_fire_layer_01.wav"
+	#volume = 0.45
+	always_load = no
+}
+
+soundeffect = {
+	name = AOW_sound_hit_effect_08
+	sounds = { sound = AOW_sound_hit_effect_0 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_1
+	sounds = { sound = AOW_sound_hit_effect_1 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_2
+	sounds = { sound = AOW_sound_hit_effect_2 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_3
+	sounds = { sound = AOW_sound_hit_effect_3 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_5
+	sounds = { sound = AOW_sound_hit_effect_5 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_6
+	sounds = { sound = AOW_sound_hit_effect_6 }
+}
+soundeffect = {
+	name = AOW_sound_hit_effect_7
+	sounds = { sound = AOW_sound_hit_effect_7 }
+}

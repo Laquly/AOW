@@ -1,0 +1,1101 @@
+spriteTypes = {
+	#环世界
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_1_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_2_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_1_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_2_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_1_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_2_intermediate_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_2_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_3_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_ring_world_4_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/ring_world_ruined.dds"
+	}
+	#纳米激活器
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_activator_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_activator.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_activator_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_activator.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_activator_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_activator.dds"
+	}
+	#以太势阱
+	spriteType = {
+		name = "GFX_AOW_MEGA_dark_matter_curvature_trap_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dark_matter_curvature_trap.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dark_matter_curvature_trap_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dark_matter_curvature_trap.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dark_matter_curvature_trap_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dark_matter_curvature_trap.dds"
+	}
+	#纳米转换器
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_transmutation_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_transmutation.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_transmutation_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_transmutation.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nanites_transmutation_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nanites_transmutation.dds"
+	}
+	#泽珞升华器
+	spriteType = {
+		name = "GFX_AOW_MEGA_zro_sublimator_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zro_sublimator.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zro_sublimator_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zro_sublimator.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zro_sublimator_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zro_sublimator.dds"
+	}
+	#海军指挥基地
+	spriteType = {
+		name = "GFX_AOW_MEGA_naval_command_base_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/naval_command_base.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_naval_command_base_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/naval_command_base.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_naval_command_base_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/naval_command_base.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_naval_command_base_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/naval_command_base.dds"
+	}
+	#合成食物工厂
+	spriteType = {
+		name = "GFX_AOW_MEGA_synthetic_food_factory_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/synthetic_food_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_synthetic_food_factory_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/synthetic_food_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_synthetic_food_factory_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/synthetic_food_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_synthetic_food_factory_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/synthetic_food_factory.dds"
+	}
+	#深空监狱
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	#行星聚变炮
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_planetary_blaster_system_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/planetary_blaster_system.dds"
+	}
+	#银河珍宝馆
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_artifacts_transcription_palace_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/artifacts_transcription_palace.dds"
+	}
+	#归墟
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_6_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_void_vortex_restored_x_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/void_vortex.dds"
+	}
+	#摘星者
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_picker_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_picker.dds"
+	}
+	#曲率增压场
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_3_black_hole_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_3_neutron_star_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_curvature_pressurization_field_3_pulsar_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/curvature_pressurization_field.dds"
+	}
+	#零素提取器
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_zero_element_furnace_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace_ruined.dds"
+	}
+	#星云精炼厂
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_nebula_refining_center_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"
+	}
+	#脉冲时记
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_pulsar_clock_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/pulsar_clock.dds"
+	}
+	#戴森球
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_0_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_1_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_2_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_3_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_4_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_dyson_sphere_5_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	#坠星天矛
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_standby_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_launch_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starfall_spear_fire_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starfall_spear.dds"
+	}
+	#物种重组仪
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_material_recombination_instrument_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/material_recombination_instrument.dds"
+	}
+	#天界领航塔
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_heaven_navigation_bureau_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/heaven_navigation_bureau.dds"
+	}
+	#御星天炉
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_5_change_mass_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_transfer_5_ship_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/star_transfer.dds"
+	}
+	#奇迹船坞
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_miraculous_shipyard_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/miraculous_shipyard.dds"
+	}
+	#天枢圣盾
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_celestial_shield_create_bunker_rings_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/celestial_shield.dds"
+	}
+	#千载星辰
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_quindecillion_stellar_quantum_matrix_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_hyper_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_super_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_O_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_B_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_giant_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_A_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_F_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_G_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_K_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_0_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_1_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_2_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_3_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_4_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_qsqm_5_M_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/qsqm.dds"
+	}
+}

@@ -1,0 +1,256 @@
+AOW_MEGA_prosperous_trade_station_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PTS_0_COST_alloys
+			unity = @AOW_var_PTS_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_0_UPKP_energy
+		}
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	potential = {
+		has_country_flag = AOW_flag_CNTR_branch_office_established
+		AOW_trigger_mega_potential = { KEY = prosperous_trade_station }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_prosperous_trade_station } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {#不能是宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是卫星或小行星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 500
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = prosperous_trade_station
+			constructing = AOW_MEGA_prosperous_trade_station_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1100 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_prosperous_trade_station_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_prosperous_trade_station_1 = {
+	entity = "prosperous_trade_station_1_entity"
+	construction_entity = "prosperous_trade_station_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PTS_1_COST_alloys
+			unity = @AOW_var_PTS_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_1_UPKP_energy
+		}
+	}
+	country_modifier = {
+		envoys_add = @AOW_var_PTS_1_envoys_add
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	upgrade_from = { AOW_MEGA_prosperous_trade_station_0 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1101 } }
+	}
+}
+AOW_MEGA_prosperous_trade_station_2 = {
+	entity = "prosperous_trade_station_2_entity"
+	construction_entity = "prosperous_trade_station_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PTS_2_COST_alloys
+			rare_crystals = @AOW_var_PTS_2_COST_crystals
+			unity = @AOW_var_PTS_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_2_UPKP_energy
+			rare_crystals = @AOW_var_PTS_2_UPKP_crystals
+		}
+	}
+	country_modifier = {
+		envoys_add = @AOW_var_PTS_2_envoys_add
+		trade_value_mult = @AOW_var_PTS_2_trade_value_mult
+		branch_office_value_mult = @AOW_var_PTS_2_branch_office_value_mult
+	}
+	station_modifier = {
+		trade_value_add = @AOW_var_PTS_2_trade_value_add
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	upgrade_from = { AOW_MEGA_prosperous_trade_station_1 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1102 } }
+	}
+}
+AOW_MEGA_prosperous_trade_station_3 = {
+	entity = "prosperous_trade_station_3_entity"
+	construction_entity = "prosperous_trade_station_3_construction_entity"
+	portrait = "GFX_megastructure_prosperous_trade_station_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_PTS_3_COST_alloys
+			rare_crystals = @AOW_var_PTS_3_COST_crystals
+			unity = @AOW_var_PTS_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_3_UPKP_energy
+			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
+		}
+		produces = {
+			unity = @AOW_var_PTS_3_PRDC_unity
+		}
+	}
+	country_modifier = {
+		envoys_add = @AOW_var_PTS_3_envoys_add
+		trade_value_mult = @AOW_var_PTS_3_trade_value_mult
+		branch_office_value_mult = @AOW_var_PTS_3_branch_office_value_mult
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	upgrade_from = { AOW_MEGA_prosperous_trade_station_2 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1103 } }
+	}
+}
+AOW_MEGA_prosperous_trade_station_4 = {
+	entity = "prosperous_trade_station_3_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_prosperous_trade_station_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_4_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PTS_4_COST_energy
+			influence = @AOW_var_PTS_4_COST_influence
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_4_UPKP_energy
+			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
+		}
+		produces = {
+			unity = @AOW_var_PTS_4_PRDC_unity
+		}
+	}
+	country_modifier = {
+		envoys_add = @AOW_var_PTS_4_envoys_add
+		trade_value_mult = @AOW_var_PTS_4_trade_value_mult
+		branch_office_value_mult = @AOW_var_PTS_4_branch_office_value_mult
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	upgrade_from = { AOW_MEGA_prosperous_trade_station_3 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1104 } }
+	}
+}
+AOW_MEGA_prosperous_trade_station_5 = {
+	entity = "prosperous_trade_station_3_entity"
+	construction_entity = ""
+	portrait = "GFX_megastructure_prosperous_trade_station_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	entity_offset = { x = -25 y = 25 }
+	build_time = @AOW_var_PTS_5_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_PTS_5_COST_energy
+			influence = @AOW_var_PTS_5_COST_influence
+		}
+		upkeep = {
+			energy = @AOW_var_PTS_5_UPKP_energy
+			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
+		}
+		produces = {
+			unity = @AOW_var_PTS_5_PRDC_unity
+		}
+	}
+	country_modifier = {
+		envoys_add = @AOW_var_PTS_5_envoys_add
+		trade_value_mult = @AOW_var_PTS_5_trade_value_mult
+		branch_office_value_mult = @AOW_var_PTS_5_branch_office_value_mult
+	}
+	prerequisites = { "AOW_TECH_prosperous_trade_station" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_prosperous_trade_station_4 }
+	ai_weight = { factor = 10 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_mega_notification.1105 }
+			set_country_flag = has_built_or_repaired_megastructure
+		}
+	}
+}

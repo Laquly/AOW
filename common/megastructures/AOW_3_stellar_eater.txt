@@ -1,0 +1,195 @@
+AOW_MEGA_stellar_eater_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_CPF_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_STELLAR_EATER"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_CPF_0_COST_alloys
+			unity = @AOW_var_CPF_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_CPF_0_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_stellar_eater
+		category = megastructures
+		alloys = @AOW_var_CPF_0_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_stellar_eater" }
+	potential = {
+		is_ai = no
+		AOW_trigger_mega_potential = {  KEY = stellar_eater }
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {#星系内不能有宜居星球
+			fail_text = "requires_no_habitable_planets"
+			AOW_trgr_SSTM_has_habitable_planets = no
+		}
+		custom_tooltip = {#星系内不能有宜居巨构
+			fail_text = "AOW_mega_requires_SSTM_no_habitable_megastructures"
+			AOW_trgr_SSTM_has_habitable_megastructures = no
+		}
+		custom_tooltip = {#必须是多恒星星系
+			fail_text = "AOW_mega_requires_SSTM_multiple_stars"
+			AOW_trgr_SSTM_single_star_system = no
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+			custom_tooltip = {#必须是恒星
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {#必须是非主要恒星
+				fail_text = "AOW_mega_requires_PLNT_non_primary_star"
+				is_primary_star = no
+			}
+			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星
+				fail_text = "AOW_mega_requires_PLNT_obafgkm_star"
+				AOW_trgr_PLNT_obafgkm_star = yes
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = { factor = 0 }
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_stellar_eater.100 } }
+		fromfrom = {
+			set_megastructure_flag = stellar_eater
+			set_megastructure_flag = no_stacking
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_stellar_eater_1 = {
+	entity = "stellar_eater_1_entity"
+	construction_entity = "stellar_eater_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_CPF_1_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_CPF_1_COST_alloys
+			unity = @AOW_var_CPF_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_CPF_1_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_stellar_eater
+		category = megastructures
+		alloys = @AOW_var_CPF_1_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_stellar_eater_0 }
+	prerequisites = { "AOW_TECH_stellar_eater" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_stellar_eater.101 } }
+		fromfrom = {
+			set_megastructure_flag = stellar_eater
+			set_megastructure_flag = no_stacking
+		}
+	}
+}
+AOW_MEGA_stellar_eater_2 = {
+	entity = "stellar_eater_2_entity"
+	construction_entity = "stellar_eater_2_construction_entity"
+	portrait = "GFX_megastructure_stellar_eater_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_CPF_2_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_CPF_2_COST_alloys
+			unity = @AOW_var_CPF_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_CPF_2_UPKP_energy
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_stellar_eater
+		category = megastructures
+		alloys = @AOW_var_CPF_2_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	upgrade_from = { AOW_MEGA_stellar_eater_1 }
+	prerequisites = { "AOW_TECH_stellar_eater" }
+	on_build_complete = {
+		from = { country_event = { id = AOW_evt_stellar_eater.102 } }
+		fromfrom = {
+			set_megastructure_flag = stellar_eater
+			set_megastructure_flag = no_stacking
+		}
+	}
+}
+AOW_MEGA_stellar_eater_3 = {
+	entity = "stellar_eater_3_entity"
+	construction_entity = "stellar_eater_3_construction_entity"
+	portrait = "GFX_megastructure_stellar_eater_background"
+	place_entity_on_planet_plane = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_CPF_3_TIME
+	scales_with_planet = yes
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @AOW_var_CPF_3_COST_energy_BlackHole
+			sr_dark_matter = @AOW_var_CPF_3_COST_darkmatter_BlackHole
+			unity = @AOW_var_CPF_3_COST_unity
+		}
+	}
+	upgrade_from = { AOW_MEGA_stellar_eater_2 }
+	prerequisites = { "AOW_TECH_stellar_eater" }
+	show_prereqs = yes
+	on_build_complete = {
+		fromfrom.planet = {
+			change_pc = pc_molten
+			clear_deposits = yes
+			add_deposit = d_energy_10
+			add_deposit = d_minerals_10
+			add_deposit = d_alloys_10
+			set_planet_flag = used_to_be_a_star
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_stellar_eater.103 }
+		}
+		remove_megastructure = fromfrom
+	}
+}

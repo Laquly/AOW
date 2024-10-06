@@ -1,0 +1,197 @@
+@qsqm_scale = 0.035
+
+entity = {#戴森云
+	name = "qsqm_dyson_cloud_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_dyson_cloud_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = no next_state = idle }
+	scale = 4
+}
+entity = {
+	name = "qsqm_dyson_cloud_ration_entity"
+	pdxmesh = "qsqm_dyson_cloud_mesh"
+}
+entity = {#半球形
+	name = "qsqm_shield_entity"
+	pdxmesh = "qsqm_shield_mesh"
+}
+entity = {#损毁的半球形
+	name = "qsqm_shield_ruined_entity"
+	pdxmesh = "qsqm_shield_ruined_mesh"
+}
+##############################################################################
+entity = {
+	name = "qsqm_1_entity"
+	locator = { name = "root1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "root2" position = { 0 0 0 } rotation = { 0 90 0 } }
+	locator = { name = "root3" position = { 0 0 0 } rotation = { 0 90 45 } }
+	locator = { name = "root4" position = { 0 0 0 } rotation = { 0 90 90 } }
+	locator = { name = "root5" position = { 0 0 0 } rotation = { 0 90 135 } }
+	attach = { root1 = qsqm_dyson_cloud_entity }
+	attach = { root2 = qsqm_dyson_cloud_entity }
+	attach = { root3 = qsqm_dyson_cloud_entity }
+	attach = { root4 = qsqm_dyson_cloud_entity }
+	attach = { root5 = qsqm_dyson_cloud_entity }
+	scale = @qsqm_scale
+}
+##############################################################################
+entity = {
+	name = "qsqm_2_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_2_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1.25 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_2_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 45 180 } }
+	attach = { loc1 = qsqm_shield_entity }
+	scale = 5
+}
+##############################################################################
+entity = {
+	name = "qsqm_3_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_3_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_3_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { -45 0 0 } }
+	attach = { loc1 = qsqm_shield_entity }
+	scale = 7
+}
+##############################################################################
+entity = {
+	name = "qsqm_4_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_4_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.75 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_4_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 90 0 0 } }
+	attach = { loc1 = qsqm_2_ration_entity }
+	scale = 2
+}
+##############################################################################
+entity = {
+	name = "qsqm_5_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_5_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.5 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_5_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 90 0 0 } }
+	attach = { loc1 = qsqm_3_ration_entity }
+	scale = 2
+}
+##############################################################################
+entity = {
+	name = "qsqm_2_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = qsqm_1_entity }
+	attach = { root = qsqm_2_construction_entity }
+}
+entity = {
+	name = "qsqm_3_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = qsqm_1_entity }
+	attach = { root = qsqm_2_construction_entity }
+	attach = { root = qsqm_3_construction_entity }
+}
+entity = {
+	name = "qsqm_4_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = qsqm_1_entity }
+	attach = { root = qsqm_2_construction_entity }
+	attach = { root = qsqm_3_construction_entity }
+	attach = { root = qsqm_4_construction_entity }
+}
+entity = {
+	name = "qsqm_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = qsqm_1_entity }
+	attach = { root = qsqm_2_construction_entity }
+	attach = { root = qsqm_3_construction_entity }
+	attach = { root = qsqm_4_construction_entity }
+	attach = { root = qsqm_5_construction_entity }
+}
+
+#####################################################################################
+#损毁的千载星辰
+
+entity = {
+	name = "qsqm_ruined_2_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_ruined_2_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.4 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_ruined_2_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 45 180 } }
+	attach = { loc1 = qsqm_shield_ruined_entity }
+	scale = 5
+}
+entity = {
+	name = "qsqm_ruined_3_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_ruined_3_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.3 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_ruined_3_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { -45 0 0 } }
+	attach = { loc1 = qsqm_shield_ruined_entity }
+	scale = 7
+}
+entity = {
+	name = "qsqm_ruined_4_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_ruined_4_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.2 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_ruined_4_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 90 0 0 } }
+	attach = { loc1 = qsqm_ruined_2_ration_entity }
+	scale = 2
+}
+entity = {
+	name = "qsqm_ruined_5_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = qsqm_ruined_5_ration_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 0.1 looping = no next_state = idle }
+	scale = @qsqm_scale
+}
+entity = {
+	name = "qsqm_ruined_5_ration_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 90 0 0 } }
+	attach = { loc1 = qsqm_ruined_3_ration_entity }
+	scale = 2
+}
+entity = {
+	name = "qsqm_ruined_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = qsqm_1_entity }
+	attach = { root = qsqm_ruined_2_construction_entity }
+	attach = { root = qsqm_ruined_3_construction_entity }
+	attach = { root = qsqm_ruined_4_construction_entity }
+	attach = { root = qsqm_ruined_5_construction_entity }
+}

@@ -1,0 +1,19 @@
+AOW_eft_SSTM_set_planet_flag_has_megastructure = {
+	every_system_planet = {
+		limit = {
+			is_star = no
+			NOT = { has_planet_flag = has_megastructure }
+		}
+		set_planet_flag = has_megastructure
+		set_planet_flag = has_planet_remover_megastructure #如果拆除基址，根据此flag，移除非原有flag
+	}
+}
+AOW_eft_SSTM_remove_planet_flag_has_megastructure = {
+	every_system_planet = {
+		limit = {
+			has_planet_flag = has_planet_remover_megastructure
+		}
+		remove_planet_flag = has_megastructure
+		remove_planet_flag = has_planet_remover_megastructure #如果拆除基址，根据此flag，移除非原有flag
+	}
+}

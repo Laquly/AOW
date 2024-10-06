@@ -1,0 +1,19 @@
+#脉冲时记
+AOW_policy_PC_country_modifiers = {
+	potential = {
+		OR = {
+			has_megastructure = AOW_MEGA_pulsar_clock_4
+			has_megastructure = AOW_MEGA_pulsar_clock_restored
+		}
+	}
+	option = {
+		name = "AOW_policy_PC_active"
+		policy_flags = { AOW_policy_PC_active }
+		modifier = {
+			empire_size_penalty_mult = -0.1
+			planet_decision_enact_speed_mult = 1
+			leader_lifespan_add = 96
+		}
+		ai_weight = { weight = 1 }
+	}
+}

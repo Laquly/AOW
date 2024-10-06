@@ -1,0 +1,510 @@
+AOW_trgr_star_transfer_hyperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 18000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 22000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 24000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 26000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 28000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 30000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 35000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 40000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 45000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 50000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 55000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 60000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 65000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 70000 }
+	}
+}
+AOW_trgr_star_transfer_osuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 4000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 6000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 8000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 12000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 17000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 22000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 27000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 32000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 37000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 42000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 47000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 52000 }
+	}
+}
+AOW_trgr_star_transfer_bsuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 4000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 6000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 8000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 30000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 35000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 40000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 45000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 50000 }
+	}
+}
+AOW_trgr_star_transfer_asuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 4000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 6000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 8000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 13000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 18000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 23000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 28000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 33000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 38000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 43000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 48000 }
+	}
+}
+AOW_trgr_star_transfer_fsuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 4000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 6000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 11000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 16000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 21000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 26000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 31000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 36000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 41000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 46000 }
+	}
+}
+AOW_trgr_star_transfer_gsuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 4000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 9000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 14000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 19000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 24000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 29000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 34000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 39000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 44000 }
+	}
+}
+AOW_trgr_star_transfer_ksuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_super_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 2000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 7000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 12000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 17000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 22000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 27000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 32000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 37000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 42000 }
+	}
+}
+AOW_trgr_star_transfer_msuperstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_o_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 30000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 35000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 40000 }
+	}
+}
+AOW_trgr_star_transfer_ostar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_b_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 30000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 35000 }
+	}
+}
+AOW_trgr_star_transfer_bstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_giant_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 30000 }
+	}
+}
+AOW_trgr_star_transfer_giantstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_a_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+}
+AOW_trgr_star_transfer_astar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_f_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 20000 }
+	}
+}
+AOW_trgr_star_transfer_fstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_g_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+	}
+}
+AOW_trgr_star_transfer_gstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_k_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+	else_if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 10000 }
+	}
+}
+AOW_trgr_star_transfer_kstar_check_energy_stockpile = {
+	if = {
+		limit = { fromfromfrom.planet = { AOW_trgr_PLNT_m_star = yes } }
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+}

@@ -1,0 +1,53 @@
+dismantle_potential = { always = yes }
+dismantle_possible = { can_dismantle_megastructure = { TECH = $tech$ } }
+dismantle_time = $time$
+dismantle_cost = {
+	category = $category$
+	cost = { energy = $alloys$ }
+}
+on_dismantle_start = {
+	fromfrom = { set_halted = -1 }
+	AOW_effect_on_dismantle_start_save_planet_target = { key = $key$ }
+}
+on_dismantle_cancel = {
+	fromfrom = { set_halted = 0 }
+	AOW_effect_on_dismantle_cancel_clear_planet_target = { key = $key$ }
+}
+on_dismantle_complete = {
+	from = {
+		add_resource = {
+			alloys = $alloys$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			minerals = $minerals$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			volatile_motes = $vm$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			exotic_gases = $eg$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			rare_crystals = $rc$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			sr_living_metal = $lm$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			sr_zro = $zo$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+		add_resource = {
+			sr_dark_matter = $dm$
+			mult = value:AOW_var_megastructure_dismantle_refund
+		}
+	}
+	AOW_effect_on_dismantle_complete_get_target_planet = { key = $key$ }
+	inline_script = megastructures/dismantle_effects_$key$
+}

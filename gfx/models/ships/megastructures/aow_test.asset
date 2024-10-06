@@ -1,0 +1,207 @@
+#rotation = { x y z }
+
+#x横平面左右旋转
+#y竖平面前+后-旋转
+#z竖平面左右旋转
+
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+
+entity = {#九角圆环
+	name = "Portal_entity"
+	pdxmesh = "Portal_mesh"
+	cull_radius = 500.0
+
+	#meshsettings = {
+	#	name = "Portal_2_0Shape"
+	#	index = 0
+	#	texture_diffuse = "ship_mask.dds"
+	#	shader = "PdxMeshExtraDimensionalShip"
+	#}
+}
+entity = {#三角圆环
+	name = "stations_entity"
+	pdxmesh = "stations_mesh"
+}
+entity = {#熔炉
+	name = "stations2_entity"
+	pdxmesh = "stations2_mesh"
+}
+entity = {#符文圆环
+	name = "stations3_entity"
+	pdxmesh = "stations3_mesh"
+}
+
+
+entity = {
+	name = "aow_ringworld_construction_entity"
+	cull_radius = 500.0
+	pdxmesh = "ringworld_construction_mesh"
+	meshsettings = {
+		name = "polySurface128Shape"
+		index = 0
+		texture_diffuse = "ringworld_construction_diffuse.dds"
+		texture_normal = "ringworld_construction_normal.dds"
+		texture_specular = "ringworld_construction_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	meshsettings = {
+		name = "polySurface161Shape"
+		index = 0
+		texture_diffuse = "ringworld_seam_arthropoid_01_diffuse.dds"
+		texture_normal = "ringworld_seam_normal.dds"
+		texture_specular = "ringworld_seam_arthropoid_01_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	default_state = "idle"
+	state = { name = "idle"
+	start_event = { trigger_once = yes sound = { soundeffect = "ringworld_hum_idle_02" stop_on_state_change = yes } }
+	}
+	state = { name = "construction"
+	start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_construction_entity" }
+	attach = { locator2 = "ringworld_construction_entity" }
+	attach = { locator3 = "ringworld_construction_entity" }
+}
+entity = {
+	name = "aow_ringworld_0_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_construction_entity" }
+	attach = { ringworld_south = "aow_ringworld_construction_entity" }
+	attach = { ringworld_west = "aow_ringworld_construction_entity" }
+	attach = { ringworld_east = "aow_ringworld_construction_entity" }
+}
+
+entity = {
+	name = "aow_ringworld_seam_entity"
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_seam_entity_01_entity" }
+	attach = { locator2 = "ringworld_seam_entity_01_entity" }
+	attach = { locator3 = "ringworld_seam_entity_01_entity" }
+}
+entity = {
+	name = "aow_ringworld_50_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_seam_entity" }
+	attach = { ringworld_south = "aow_ringworld_seam_entity" }
+	attach = { ringworld_west = "aow_ringworld_seam_entity" }
+	attach = { ringworld_east = "aow_ringworld_seam_entity" }
+}
+
+entity = {
+	name = "aow_ringworld_tech_entity"
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "ringworld_tech_entity_01_entity" }
+	attach = { locator2 = "ringworld_tech_entity_01_entity" }
+	attach = { locator3 = "ringworld_tech_entity_01_entity" }
+}
+entity = {
+	name = "aow_ringworld_100_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "aow_ringworld_tech_entity" }
+	attach = { ringworld_south = "aow_ringworld_tech_entity" }
+	attach = { ringworld_west = "aow_ringworld_tech_entity" }
+	attach = { ringworld_east = "aow_ringworld_tech_entity" }
+}
+
+entity = {
+	name = "sm_tannhauser_entity"
+	pdxmesh = "tannhauser_gate_01_mesh"
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle" }
+	scale = 10
+}
+
+entity = {
+	name = "sm_planet_shield_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "planet_shield_effect_entity" }
+}
+
+
+
+entity = {
+	name = "sm_test_1_entity"
+	pdxmesh = "star_eater_01_mesh"
+	scale = 1.15
+	meshsettings = {
+		name = "star_eater_01_core|g_body|g_bodyShape"
+		index = 0
+		texture_diffuse = "star_eater_destroyed_01_diffuse.dds"
+		texture_normal = "star_eater_destroyed_01_normal.dds"
+		texture_specular = "star_eater_destroyed_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	locator = { name = "root" }
+	default_state = "idle"
+	#Opened state, going after "kill_planet".
+	state = { name = "idle" animation = "open" 
+		event = { time = 0	id = "beam_start" }
+		event = { time = 0.0 node = "core" particle = "necroid_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "nemesis_01_ship_light_effect" keep_particle = yes trigger_once = yes }
+		#event = { time = 0 node = "engine_large_01" particle = "nemesis_01_star_eater_exhaust_idle_effect" keep_particle = yes trigger_once = yes}#蓝火光环
+		#event = { time = 0 node = "engine_large_01" particle = "nemesis_01_star_eater_exhaust" keep_particle = yes trigger_once = yes}#极光圆环
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_idle_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_idle_pulsating" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_open_energy" stop_on_state_change = yes } }
+	}
+}
+entity = {#拾荒者的小机器人
+	name = "sm_test_2_entity"
+	pdxmesh = "leviathan_01_scavenger_bot_helper_bot_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+}
+entity = {
+	name = "sm_test_3_entity"
+	locator = { name = "base"  position = { 0 25 0 }}
+	scale = 1.1
+	default_state = "idle"
+	
+	state = { name = "idle" state_time = 15 looping = yes
+		#event = {#上圆形星空，下吸引特效
+		#	time = 0
+		#	node = "base"
+		#	particle = "interstellar_assembly_2_effect"
+		#	keep_particle = yes
+		#	trigger_once = yes
+		#	life = 15
+		#}
+	}
+	#attach = { base = "holo_galaxy_entity" }	#四颗星球
+	#attach = { base = "holo_light_entity" }	#球形渔网状模型
+	#attach = { base = "holo_earth_entity" }	#球状星空模型
+	#attach = { base = "holo_globe_edge_entity" }	#旋转的两个星环
+}
+entity = {#漏斗状
+	name = "sm_test_4_entity"
+	pdxmesh = "interstellar_assembly_effect_2_mesh"
+	
+	game_data = {
+		bloom_factor		= 2
+		uv_animation_speed	= 0.1
+		uv_animation_direction	= { 0.10 1.0 }
+	}
+}

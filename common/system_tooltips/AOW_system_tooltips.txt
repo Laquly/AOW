@@ -1,0 +1,8 @@
+#root = system
+#from = player
+AOW_num_planetary_body_tooltip = {
+	custom_tooltip = {
+		success_text = AOW_num_planetary_body_tooltip
+		exists = from
+	}
+}

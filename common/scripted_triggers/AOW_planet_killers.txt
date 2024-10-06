@@ -1,0 +1,39 @@
+can_destroy_planet_with_AOW_PLANET_KILLER_celestial_orbit_deployment_system = {
+    custom_tooltip = {
+        fail_text = "requires_inside_border"
+        is_inside_border = from.owner
+    }
+    custom_tooltip = {
+        fail_text = "requires_no_anomaly"
+        has_anomaly = no
+    }
+    custom_tooltip = {
+        fail_text = "requires_no_existing_megastructure"
+        has_any_megastructure = no
+    }
+    #custom_tooltip = {
+    #    fail_text = "requires_no_habitable_planets"
+    #    solar_system = {
+    #        AOW_trgr_SSTM_has_habitable_planets = no
+    #        AOW_trgr_SSTM_has_habitable_megastructures = no
+    #    }
+    #}
+    OR = {
+        custom_tooltip = {
+            text = "AOW_requires_PLNT_BlackHole"
+            is_planet_class = pc_black_hole
+        }
+        custom_tooltip = {
+            text = "AOW_requires_PLNT_star_composed_of_neutron"
+            AOW_trgr_PLNT_composed_of_neutron = yes
+        }
+        custom_tooltip = {
+            text = "AOW_requires_PLNT_obafgkm_star"
+            AOW_trgr_PLNT_obafgkm_star = yes
+        }
+        custom_tooltip = {
+            text = "AOW_requires_PLNT_brown_dwarf"
+            AOW_trgr_PLNT_brown_dwarf = yes
+        }
+    }
+}

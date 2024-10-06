@@ -1,0 +1,253 @@
+AOW_plane_analysis = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			astral_threads = 5
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			astral_threads = 5
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		planet_researchers_physics_research_produces_add = 1
+		planet_researchers_society_research_produces_add = 1
+		planet_researchers_engineering_research_produces_add = 1
+		planet_researchers_astral_threads_upkeep_add = 1
+	}
+	potential = {
+		NOT = { has_deficit = astral_threads }
+	}
+	prerequisites = { "AOW_TECH_plane_siphon" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 20
+			has_monthly_income = {
+				resource = astral_threads
+				value >= 75
+			}
+		}
+	}
+}
+
+AOW_dark_matter_trap = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			sr_dark_matter = 5
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			sr_dark_matter = 5
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		megastructures_sr_dark_matter_produces_mult = 0.25
+		megastructures_sr_dark_matter_cost_mult = -0.25
+		megastructures_sr_dark_matter_upkeep_mult = -0.25
+	}
+	potential = {
+		NOT = { has_deficit = sr_dark_matter }
+	}
+	prerequisites = { "AOW_TECH_spatiotemporal_curvature_manipulation" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 20
+			has_monthly_income = {
+				resource = sr_dark_matter
+				value >= 20
+			}
+		}
+	}
+}
+
+AOW_improved_construction_efficiency_1 = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 25
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			unity = 25
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 0.5
+		megastructure_build_speed_mult = 0.25
+		upgrading_megastructures_energy_upkeep_add = 25
+	}
+	potential = {
+		NOT = { has_deficit = energy }
+		NOT = { has_deficit = unity }
+	}
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_1" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			count_owned_megastructure = {
+				count >= 1
+				limit = { is_upgrading = yes }
+			}
+		}
+	}
+}
+AOW_improved_construction_efficiency_2 = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 50
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			unity = 25
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 0.5
+		megastructure_build_speed_mult = 0.5
+		upgrading_megastructures_alloys_upkeep_add = 25
+	}
+	potential = {
+		NOT = { has_deficit = alloys }
+		NOT = { has_deficit = unity }
+	}
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_2" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			count_owned_megastructure = {
+				count >= 1
+				limit = { is_upgrading = yes }
+			}
+		}
+	}
+}
+AOW_improved_construction_efficiency_3 = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 75
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			unity = 25
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 1
+		megastructure_build_speed_mult = 1
+		upgrading_megastructures_unity_upkeep_add = 50
+	}
+	potential = {
+		NOT = { has_deficit = unity }
+	}
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_3" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			count_owned_megastructure = {
+				count >= 1
+				limit = { is_upgrading = yes }
+			}
+		}
+	}
+}
+AOW_improved_construction_efficiency_4 = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 100
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			unity = 25
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 1
+		megastructure_build_speed_mult = 2
+		upgrading_megastructures_sr_dark_matter_upkeep_add = 25
+	}
+	potential = {
+		NOT = { has_deficit = sr_dark_matter }
+		NOT = { has_deficit = unity }
+	}
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_4" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			count_owned_megastructure = {
+				count >= 1
+				limit = { is_upgrading = yes }
+			}
+		}
+	}
+}
+AOW_improved_construction_efficiency_5 = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 200
+			multiplier = value:AOW_var_edict_size
+		}
+		upkeep = {
+			unity = 25
+			multiplier = value:AOW_var_edict_size
+		}
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 2
+		megastructure_build_speed_add = 1
+		upgrading_megastructures_upkeep_mult = 1
+	}
+	potential = {
+		NOT = { has_deficit = energy }
+		NOT = { has_deficit = alloys }
+		NOT = { has_deficit = sr_dark_matter }
+		NOT = { has_deficit = unity }
+	}
+	allow = {
+		has_edict = AOW_improved_construction_efficiency_1
+		has_edict = AOW_improved_construction_efficiency_2
+		has_edict = AOW_improved_construction_efficiency_3
+		has_edict = AOW_improved_construction_efficiency_4
+	}
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_5" }
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			count_owned_megastructure = {
+				count >= 1
+				limit = { is_upgrading = yes }
+			}
+		}
+	}
+}

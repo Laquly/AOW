@@ -1,0 +1,33 @@
+#这玩意只是为了让激活状态的星网在大地图上更显眼而已，除此之外没有实际作用。
+AOW_bypass_AHC = {
+	name = AOW_bypass_advanced_hyperlane_controller_active		# the localization key used in triggers and effects for the type
+	is_pathfind = no			# whether this type can be automatically used by the pathfinding (otherwise you'll have to right click the object containing it)
+	requires_exploration = no		# whether this bypass type needs to be 'seen' before it can be used
+	uses_action = no			# whether this type needs an action or can be used automagically
+	always_active = yes			# whether bypasses of these types are automatically active on creation, or if they need to be researched/upgraded to be activated
+	windup_time = 0.0			# days preparing before travel, translated into ticks on load.
+	winddown_time = 0.0		# days preparing after travel, translated into ticks on load.
+	ftl_multiplier = 0			# 0 is supposed to mean instant, WARNING: not implemented correctly.
+	extends_sensors = no		# whether you can "see through" the bypass and extends your sensor range to the other side
+	icon_frame = 24
+	remember_instances = no		# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	galactic_map_tooltip_header = AOW_bypass_advanced_hyperlane_controller_active
+	galactic_map_tooltip_desc = AOW_bypass_advanced_hyperlane_controller_active_desc
+	connection_type = to_any_system
+	ftl_ship_effect	= "gateway_ftl_ship_effect_entity"		# what effect to spawn on the ship when they jump through the bypass
+	ftl_bypass_effect	= "gateway_ftl_bypass_effect_entity"	# what effect to spawn on the bypass when a ship jumps through
+	#bypass_effect	= ""
+	animation_time = 1		# number of days to wait for the jump animation to be played
+	#prerequisites = {
+	#	AOW_TECH_advanced_hyperlane_controller
+	#}
+	potential = {
+		always = yes
+	}
+	country_can_use = {					# trigger to evaluate if a country can use bypasses of this type. this: country, from: (optional) system owner; default: { always = yes }
+		custom_tooltip = {
+			fail_text = AOW_bypass_requires_always_no
+			always = no
+		}
+	}
+}

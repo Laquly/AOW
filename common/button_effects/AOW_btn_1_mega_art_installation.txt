@@ -1,0 +1,105 @@
+#前置条件
+AOW_btn_mega_art_installation_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_mega_art_installation_desc
+		if = {
+			limit = { has_technology = tech_mega_art }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_megacorp = yes
+			has_technology = tech_mega_engineering
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_mega_art
+		}
+	}
+	effect = { custom_tooltip = AOW_text_mega_art_installation_desc }
+}
+#AI
+AOW_btn_mega_art_installation_ai_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = mega_art_installation
+		PorA = ai
+		VALUE = 1
+	}
+}
+AOW_btn_mega_art_installation_ai_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = mega_art_installation
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_mega_art_installation_ai_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = mega_art_installation
+		PorA = ai
+		VALUE = 0
+	}
+}
+AOW_btn_mega_art_installation_ai_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = mega_art_installation
+		PorA = ai
+		LIMIT = -1
+	}
+}
+AOW_btn_mega_art_installation_ai_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = mega_art_installation
+		PorA = ai
+		LIMIT = 10
+	}
+}
+#玩家
+AOW_btn_mega_art_installation_player_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = mega_art_installation
+		PorA = player
+		VALUE = 1
+	}
+}
+AOW_btn_mega_art_installation_player_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = mega_art_installation
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_mega_art_installation_player_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = mega_art_installation
+		PorA = player
+		VALUE = 0
+	}
+}
+AOW_btn_mega_art_installation_player_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = mega_art_installation
+		PorA = player
+		LIMIT = -1
+	}
+}
+AOW_btn_mega_art_installation_player_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = mega_art_installation
+		PorA = player
+		LIMIT = 10
+	}
+}

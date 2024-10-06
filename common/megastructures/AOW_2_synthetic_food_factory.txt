@@ -1,0 +1,196 @@
+AOW_MEGA_synthetic_food_factory_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = @AOW_var_SFF_0_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SFF_0_COST_alloys
+			unity = @AOW_var_SFF_0_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SFF_0_UPKP_energy
+		}
+	}
+	prerequisites = { "AOW_TECH_synthetic_food_factory" }
+	potential = { AOW_trigger_mega_potential = { KEY = synthetic_food_factory } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_synthetic_food_factory } }
+		}
+		custom_tooltip = {#必须在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#不能是宜居星球
+				fail_text = "AOW_mega_PLNT_requires_not_habitable"
+				AOW_trgr_PLNT_is_habitable = no
+			}
+			custom_tooltip = {#不能是卫星或小行星
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {#不能是恒星
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 100
+		#资源限制
+		modifier = { factor = 0	from = { has_monthly_income = { resource = food value >= 1000 } } }
+		#位置限制
+		modifier = { factor = 0	fromfrom.planet = { AOW_trgr_PLNT_ordinary_planet = no } }
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+		modifier = { factor = 0	from = { country_uses_food = no } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = synthetic_food_factory
+			constructing = AOW_MEGA_synthetic_food_factory_0
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1030 } }
+		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_synthetic_food_factory_@owner }
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+	}
+}
+AOW_MEGA_synthetic_food_factory_1 = {
+	entity = "synthetic_food_factory_core_entity"
+	construction_entity = "synthetic_food_factory_core_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_SFF_1_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SFF_1_COST_alloys
+			unity = @AOW_var_SFF_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SFF_1_UPKP_energy
+		}
+		produces = {
+			society_research = @AOW_var_SFF_1_PRDC_society
+		}
+	}
+	prerequisites = { "AOW_TECH_synthetic_food_factory" }
+	upgrade_from = { AOW_MEGA_synthetic_food_factory_0 }
+	ai_weight = {
+		factor = 10
+		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value < @AOW_var_SFF_1_UPKP_energy } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1031 } }
+	}
+}
+AOW_MEGA_synthetic_food_factory_2 = {
+	entity = "synthetic_food_factory_half_entity"
+	construction_entity = "synthetic_food_factory_half_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_SFF_2_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SFF_2_COST_alloys
+			exotic_gases = @AOW_var_SFF_2_COST_gases
+			unity = @AOW_var_SFF_2_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SFF_2_UPKP_energy
+			exotic_gases = @AOW_var_SFF_2_UPKP_gases
+		}
+		produces = {
+			food = @AOW_var_SFF_2_PRDC_food
+			society_research = @AOW_var_SFF_2_PRDC_society
+		}
+		produces = {
+			trigger = { owner = { country_uses_food = yes } }
+			unity = @AOW_var_SFF_2_PRDC_unity
+		}
+	}
+	prerequisites = { "AOW_TECH_synthetic_food_factory" }
+	upgrade_from = { AOW_MEGA_synthetic_food_factory_1 }
+	ai_weight = {
+		factor = 10
+		modifier = { factor = 0	from = { has_monthly_income = { resource = exotic_gases value < @AOW_var_SFF_2_UPKP_gases } } }
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.1032 } }
+	}
+}
+AOW_MEGA_synthetic_food_factory_3 = {
+	entity = "synthetic_food_factory_full_entity"
+	construction_entity = "synthetic_food_factory_full_entity"
+	portrait = "GFX_megastructure_synthetic_food_factory_background"
+	show_in_outliner = no
+	place_entity_on_planet_plane = no
+	use_planet_resource = yes
+	build_time = @AOW_var_SFF_3_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_SFF_3_COST_alloys
+			exotic_gases = @AOW_var_SFF_3_COST_gases
+			unity = @AOW_var_SFF_3_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_SFF_3_UPKP_energy
+			exotic_gases = @AOW_var_SFF_3_UPKP_gases
+		}
+		produces = {
+			food = @AOW_var_SFF_3_PRDC_food
+			society_research = @AOW_var_SFF_3_PRDC_society
+		}
+		produces = {
+			trigger = { owner = { country_uses_food = yes } }
+			unity = @AOW_var_SFF_3_PRDC_unity
+		}
+	}
+	prerequisites = { "AOW_TECH_synthetic_food_factory" }
+	show_prereqs = yes
+	upgrade_from = { AOW_MEGA_synthetic_food_factory_2 }
+	ai_weight = {
+		factor = 10
+		modifier = { factor = 0	from = { has_monthly_income = { resource = exotic_gases value < @AOW_var_SFF_3_UPKP_gases } } }
+	}
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = AOW_mega_notification.1033 }
+		}
+	}
+}

@@ -1,0 +1,174 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_button_megastructure_selection"
+		textureFile = "gfx/interface/tiles/button_megastructure_selection.dds"
+		borderSize = { x=12 y=12 }
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+	}
+
+	spriteType = {#巨构升级按钮
+		name = "GFX_AOW_megastructure_upgrade_entry"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 180.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {#巨构删除按钮
+		name = "GFX_AOW_button_delete"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_delete.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3			
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = { 1 2 3 }
+		}
+	}
+
+	#产出切换按钮
+
+	spriteType = {
+		name = "GFX_AOW_button_consumer_goods"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_consumer_goods.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3			
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_AOW_button_minerals"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_minerals.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3			
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_AOW_button_alloys"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_alloys.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3			
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_AOW_button_sr"
+		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_sr.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3			
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = { 1 2 3 }
+		}
+	}
+
+
+	spriteType = {
+		name = "GFX_AOW_button_mri_alloys"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/alloys.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_cg"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/cg.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_eg"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/eg.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_rc"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/rc.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_vm"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/vm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_dm"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/dm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_lm"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/lm.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_zro"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/zro.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_nanites"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/nanites.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_variable_bg"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/mri_variable_bg.dds"
+		alwaysTransparent = yes
+	}
+	spriteType = {
+		name = "GFX_AOW_button_mri_points_bg"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_material_recombination_instrument/mri_points_bg.dds"
+	}
+}

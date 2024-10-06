@@ -1,0 +1,185 @@
+entity = {#静止的正在运行的帝国巨像
+	name = "psychic_device_a_entity"
+	pdxmesh = "nemesis_01_colossus_mesh"
+	scale = 15
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "open" looping = yes next_state = "idle" animation_blend_time = 5
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_hum" } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_distortion" } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_015" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_016" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_019" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_020" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "nemesis_01_colossus_L_front_1_g_body_g_bodyShape"#"skinCluster1"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+}
+entity = {#正在运行的帝国巨像
+	name = "psychic_device_a1_entity"
+	pdxmesh = "nemesis_01_colossus_mesh"
+	scale = 15
+	default_state = "idle"
+	state = { name = "idle" animation = "open" looping = yes next_state = "idle" animation_blend_time = 5 animation_speed = 2.5
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_hum" } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_distortion" } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_015" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_016" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_019" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_020" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "nemesis_01_colossus_L_front_1_g_body_g_bodyShape"#"skinCluster1"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+}
+
+entity = {
+	name = "PD_ring_seam_unit_entity"
+	pdxmesh = "ringworld_seam_01_mesh"
+	meshsettings = {
+		name = "pCube24Shape"
+		index = 0
+		texture_diffuse = "ringworld_seam_diffuse.dds"
+		texture_normal = "ringworld_seam_diffuse.dds"
+		texture_specular = "ringworld_seam_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	meshsettings = {
+		name = "pCube24Shape"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+	meshsettings = {
+		name = "polySurface128Shape"
+		index = 0
+		texture_diffuse = "ringworld_construction_diffuse.dds"
+		texture_normal = "ringworld_construction_normal.dds"
+		texture_specular = "ringworld_construction_specular.dds"
+		shader = "PdxMeshTerra"
+	}
+	meshsettings = {
+		name = "polySurface128Shape"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+	state = { name = "construction" }
+	game_data = { size = 50 }
+}
+entity = {
+	name = "PD_ring_seam_entity"
+	locator = { name = "locator1" position = { -225 0 -60.289 } rotation ={ -30 0 0 } }
+	locator = { name = "locator2" position = { 225 0 -60.289 } rotation ={ 30 0 0 } }
+	locator = { name = "locator3" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { locator1 = "PD_ring_seam_unit_entity" }
+	attach = { locator2 = "PD_ring_seam_unit_entity" }
+	attach = { locator3 = "PD_ring_seam_unit_entity" }
+}
+entity = {
+	name = "PD_ring_entity"
+	locator = { name = "ringworld_north" position = { 450 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "ringworld_south" position = { -450 0 0 } rotation = { -90 0 0 } }
+	locator = { name = "ringworld_west" position = { 0 0 450 } rotation = { 0 0 0 } }
+	locator = { name = "ringworld_east" position = { 0 0 -450 } rotation = { 180 0 0 } }
+	state = { name = "construction" }
+	attach = { ringworld_north = "PD_ring_seam_entity" }
+	attach = { ringworld_south = "PD_ring_seam_entity" }
+	attach = { ringworld_west = "PD_ring_seam_entity" }
+	attach = { ringworld_east = "PD_ring_seam_entity" }
+}
+entity = {
+	name = "psychic_device_b_entity"
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 90 } }
+	attach = { "loc101" = "PD_ring_entity" }
+	scale = 0.9
+}
+entity = {
+	name = "psychic_device_b1_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	playback_rate = 0
+	scale = 12
+	meshsettings = {
+		name = "rings_meshShape"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+}
+entity = {
+	name = "psychic_device_c_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 10 }
+	scale = 12
+	meshsettings = {
+		name = "rings_meshShape"
+		index = 0
+		texture_diffuse = "ship_mask.dds"
+		shader = "PdxMeshExtraDimensionalShip"
+	}
+}
+
+
+################################################################
+#以下是缝好的模型
+
+entity = {
+	name = "psychic_device_1_entity"
+	cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "psychic_device_a_entity" }
+	#attach = { "loc101" = "Portal_entity" }
+	playback_rate = 0
+	scale = 0.6
+}
+entity = {
+	name = "psychic_device_2_construction_entity"
+	cull_radius = 500
+	locator = { name = "loc102" position = { 0 -160 0 } rotation = { 90 90 0 } }
+	locator = { name = "loc103" position = { 0 50 0 } rotation = { 90 90 0 } }
+	attach = { "loc102" = "psychic_device_b_entity" }
+	attach = { "loc103" = "psychic_device_b1_entity" }
+	scale = 0.6
+}
+entity = {
+	name = "psychic_device_2_entity"
+	cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 -160 0 } rotation = { 90 90 0 } }
+	locator = { name = "loc103" position = { 0 50 0 } rotation = { 90 90 0 } }
+	attach = { "loc101" = "psychic_device_a_entity" }
+	attach = { "loc102" = "psychic_device_b_entity" }
+	attach = { "loc103" = "psychic_device_b1_entity" }
+	scale = 0.6
+}
+entity = {
+	name = "psychic_device_3_entity"
+	cull_radius = 500
+	locator = { name = "storm" position = { 0 10 0 } rotation = { 0 0 0 } scale = 15 }
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 -160 0 } rotation = { 90 90 0 } }
+	locator = { name = "loc103" position = { 0 50 0 } rotation = { 90 90 0 } }
+	attach = { "storm" = "shroudwalker_storm_01_entity" }
+	attach = { "loc101" = "psychic_device_a1_entity" }
+	attach = { "loc102" = "psychic_device_b_entity" }
+	attach = { "loc103" = "psychic_device_c_entity" }
+	scale = 0.6
+}

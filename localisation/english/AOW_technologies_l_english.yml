@@ -1,0 +1,157 @@
+﻿l_english:
+
+ AOW_TECH_faster_hyper_relay:0"Faster Hyper Relay"
+ AOW_TECH_faster_hyper_relay_desc:0"Based on the principle of gateway, we have developed a technology that can make hyperspace repeaters transmit fleets instantaneously."
+
+ AOW_TECH_dismantle_megastructure:0"Dismantle Megastructure"
+ AOW_TECH_dismantle_megastructure_desc:0"If a megastructure can't give us any benefits, or its location affects the construction of other megastructures, then we need to dismantle it!"
+ AOW_TECH_dismantle_megastructure_effect_title:0"§HUnlocks Feature: §!Dismantle Megastructure"
+ AOW_TECH_dismantle_megastructure_effect_desc:0"We can now dismantle some megastructures that have not removed the planet."
+
+ AOW_TECH_improved_construction_efficiency_1:0"Improved Mega Construction Efficiency: Energy Supply"
+ AOW_TECH_improved_construction_efficiency_1_desc:0"Supplying additional energy to the upgrading megastructure can improve the construction efficiency to a certain extent."
+ AOW_TECH_improved_construction_efficiency_2:0"Improved Mega Construction Efficiency: Alloy Supply"
+ AOW_TECH_improved_construction_efficiency_2_desc:0"Providing more suitable alloys for the upgrading megastructure can greatly reduce the time consumption in the material selection stage."
+ AOW_TECH_improved_construction_efficiency_3:0"Improved Mega Construction Efficiency: Pull Together"
+ AOW_TECH_improved_construction_efficiency_3_desc:0"Encouraging more experienced personnel and intelligent management equipment that have been tested through long-term practice to participate in the construction project of the megastructure and doing a good job of publicity can greatly improve the construction efficiency."
+ AOW_TECH_improved_construction_efficiency_4:0"Improved Mega Construction Efficiency: Curvature Control"
+ AOW_TECH_improved_construction_efficiency_4_desc:0"If the correlation between dark matter and space-time curvature can be correctly applied to the construction of the megastructure, it can theoretically greatly improve the construction efficiency."
+ AOW_TECH_improved_construction_efficiency_5:0"Improved Mega Construction Efficiency: Comprehensive Improvement"
+ AOW_TECH_improved_construction_efficiency_5_desc:0"If Energy Supply, Alloy Supply, Pull Together, and Curvature Control are all enabled, we will find that there are still significant shortcomings in the mutual cooperation of various systems, and this plan can comprehensively integrate and optimize all systems in the entire construction process, and all omissions and improvements will be repaired one by one."
+
+ AOW_TECH_space_sensor_station:0"$AOW_MEGA_space_sensor_station$"
+ AOW_TECH_space_sensor_station_desc:0"A small sensor array can detect systems within a certain range, and in addition, it can provide some gain for ships through corresponding policy."
+
+ AOW_TECH_space_arena:0"$AOW_MEGA_space_arena$"
+ AOW_TECH_space_arena_desc:0"An arena in weightlessness environment, where we can hold activities or select the better ones."
+
+ AOW_TECH_asteroid_mining_station:0"$AOW_MEGA_asteroid_mining_station$"
+ AOW_TECH_asteroid_mining_station_desc:0"The mineral resources around the asteroid are very rich. It is more convenient to collect and transport these minerals by establishing a set of devices with a complete mining system around the asteroid."
+ AOW_TECH_asteroid_mining_station_effect_title:0"§HUnlock Megastructure: §!$AOW_MEGA_asteroid_mining_station$"
+ AOW_TECH_asteroid_mining_station_effect_desc:0"It can only be built on an §Yasteroid§!, and different resources can be produced according to the type of asteroid.\n\n§H$pc_asteroid$: §!£minerals£50, £volatile_motes£2\n§H$pc_ice_asteroid$: §!£energy£25, £minerals£25, £rare_crystals£2\n§H$pc_rare_crystal_asteroid$: §!£minerals£50, £rare_crystals£2"
+
+ #巨构工程
+ AOW_TECH_spatiotemporal_curvature_manipulation:0"Spatiotemporal Curvature Manipulation §L(prerequisite: £physics_research£$tech_mine_dark_matter$)§!"
+ AOW_TECH_spatiotemporal_curvature_manipulation_desc:0"The latest research theory of dark matter has pointed out that a small amount of dark matter has the potential to significantly distort the curvature of space-time. Once this power is mastered, the benefits will be subversive."
+
+ AOW_TECH_dark_matter_curvature_trap:0"$AOW_MEGA_dark_matter_curvature_trap$"
+ AOW_TECH_dark_matter_curvature_trap_desc:0"By using dark matter to create space-time distortion points, we can create more dark matter and provide resource support for our more advanced technology. Dark matter will be the blood of future technological revolution."
+
+ AOW_TECH_planetary_mining_station:0"$AOW_MEGA_planetary_mining_station$"
+ AOW_TECH_planetary_mining_station_desc:0"Some planets themselves are incomparable large minerals, so it is very necessary to build an orbital mining station that can collect global minerals."
+ AOW_TECH_planetary_mining_station_effect_title:0"§HUnlock Megastructure: §!$AOW_MEGA_planetary_mining_station$"
+ AOW_TECH_planetary_mining_station_effect_desc:0"§H$AOW_MEGA_planetary_mining_station$§!\n\nIt can be built on most of the solid planet and mine the resources of the entire planet. For specific construction location and output data, you can check the description of $AOW_MEGA_planetary_mining_station$ on the planet."
+
+ AOW_TECH_orbital_acquisition_system:0"$AOW_MEGA_orbital_acquisition_system$"
+ AOW_TECH_orbital_acquisition_system_desc:0"The gas giant planet is rich in gas resources and clean energy. Building a collection system in its orbit allows us to capture these resources using electromagnetic networks and long-range drones."
+
+ AOW_TECH_synthetic_food_factory:0"$AOW_MEGA_synthetic_food_factory$"
+ AOW_TECH_synthetic_food_factory_desc:0"Inspired by nutrient replication technology, we can fully simulate the synthesis process of organic matter, completely replace biosynthesis through a series of chemical reactions, and now we can combine engineering and nutritional synthesis technology to create a giant and efficient $AOW_MEGA_synthetic_food_factory$."
+
+ AOW_TECH_prosperous_trade_station:0"$AOW_MEGA_prosperous_trade_station$"
+ AOW_TECH_prosperous_trade_station_desc:0"A commercial environment with large scale, comfortable environment and complete functions helps to promote business negotiation and wealth solicitation."
+
+ AOW_TECH_artifacts_transcription_palace:0"$AOW_MEGA_artifacts_transcription_palace$"
+ AOW_TECH_artifacts_transcription_palace_desc:0"This universe is full of the steps of ancient civilizations, and the relics they left are extremely precious, which can be said to be unique......But what if we have the perfect copying technology?"
+
+ AOW_TECH_deep_space_prison:0"$AOW_MEGA_deep_space_prison$"
+ AOW_TECH_deep_space_prison_desc:0"Building a huge and dignified prison in the deep space can effectively deter potential criminal activities."
+
+ AOW_TECH_nanites_activator:0"$AOW_MEGA_nanites_activator$"
+ AOW_TECH_nanites_activator_desc:0"Research has confirmed that newly discovered nanites have the potential to be reactivated, and perhaps we can use this to reactivate potentially nanites on certain planets for our own use."
+
+ AOW_TECH_nanites_transmutation:0"$AOW_MEGA_nanites_transmutation$"
+ AOW_TECH_nanites_transmutation_desc:0"If we want these rare resources to have more large-scale and efficient production, we need to use extremely advanced nanites as raw materials and a large and sophisticated factory."
+
+ AOW_TECH_zro_sublimator:0"$AOW_MEGA_zro_sublimator$"
+ AOW_TECH_zro_sublimator_desc:0"Due to the physical characteristics of zro aerosol, if the planets rich in zro are subjected to global sublimation processing, they can be directly intercepted and collected in outer space, which greatly improves the collection efficiency."
+
+ AOW_TECH_hyperlane_controller:0"$AOW_MEGA_hyperlane_controller$"
+ AOW_TECH_hyperlane_controller_desc:0"We have passed through the hyperlane countless times, and countless records have also clarified the construction method of the hyperlane. Maybe we should try to build or remove a hyperlane ourselves."
+
+ AOW_TECH_advanced_hyperlane_controller:0"$AOW_MEGA_advanced_hyperlane_controller$"
+ AOW_TECH_advanced_hyperlane_controller_desc:0"A high-level $AOW_MEGA_hyperlane_controller$ with improved program algorithms can simultaneously construct multiple hyperspace lanes. However, due to confidentiality and integrity concerns, it can only be used domestically."
+
+ AOW_TECH_cemetery_of_martyrs:0"$AOW_MEGA_cemetery_of_martyrs$"
+ AOW_TECH_cemetery_of_martyrs_desc:0"This is a martyr cemetery to commemorate all martyrs who have died in various times."
+
+ AOW_TECH_naval_command_base:0"$AOW_MEGA_naval_command_base$"
+ AOW_TECH_naval_command_base_desc:0"Full-time command and management of naval bases can provide a large number of naval capacity, command limit and force projection."
+
+ AOW_TECH_planetary_blaster_system:0"$AOW_MEGA_planetary_blaster_system$"
+ AOW_TECH_planetary_blaster_system_desc:0"Taking the planet itself as the base site and completely releasing the mass of the planet, we can build a huge static defense project—$AOW_MEGA_planetary_blaster_system$."
+ AOW_TECH_solid_planetary_energy_release:0"Solid Planetary Energy Release"
+ AOW_TECH_solid_planetary_energy_release_effect_title:0"§HUnlocks Feature: §!Solid Planetary Energy Release"
+ AOW_TECH_solid_planetary_energy_release_effect_desc:0"§HSolid Planetary Energy Release§!\n\n$AOW_MEGA_planetary_blaster_system$can now be built on some solid planets, but it still can't be built on broken planets because of their instability."
+ AOW_TECH_solid_planetary_energy_release_desc:0"If a system does not have gas giants, then $AOW_MEGA_planetary_blaster_system$ cannot function in such a system, but we still found a way to steadily release the full energy of solid planets."
+
+ #星河奇迹
+ AOW_TECH_ring_world_expansion:0"Ring World Expansion"
+ AOW_TECH_ring_world_expansion_desc:0"Our current space efficiency in the ring world is only one-third, and the remaining sections have to be exposed to space due to facility problems, perhaps we can re-engineer and use these sections to further expand our ring worlds."
+
+ AOW_TECH_curvature_pressurization_field:0"$AOW_MEGA_curvature_pressurization_field$"
+ AOW_TECH_curvature_pressurization_field_desc:0"Using dark matter to change the curvature of space-time around the star, the strong pressure of the curvature of space-time causes the star to collapse rapidly, prompting the star to complete the collapse process that takes billions of years to complete."
+
+ AOW_TECH_star_picker:0"$AOW_MEGA_star_picker$"
+ AOW_TECH_star_picker_desc:0"The internal material of stars usually contains a large amount of common material and some small amounts of heavy element material, and we estimate that mining stellar material will obtain a lot of industrial raw materials and even more advanced military-grade materials."
+
+ AOW_TECH_nebula_refining_center:0"$AOW_MEGA_nebula_refining_center$"
+ AOW_TECH_nebula_refining_center_desc:0"The content and type of material in the nebula are very rich, so it is imperative to refine the nebula on a large scale."
+
+ AOW_TECH_void_vortex:0"$AOW_MEGA_void_vortex$"
+ AOW_TECH_void_vortex_desc:0"Phenomena such as Hawking radiation often occur near the event horizon of black holes, which can absorb energy, and the accretion disk around the black hole is also a mineral deposit rich in dark matter. If we can build a spherical megastructure that completely surrounds the black hole, we can efficiently use all the resources around the black hole."
+
+ AOW_TECH_psychic_device:0"$AOW_MEGA_psychic_device$"
+ AOW_TECH_psychic_device_desc:0"By recording and parsing the state of the Shroud, we found that there is indeed a means to enhance our connection to the Shroud, and it is possible to remove some of the negative effects from the Shroud."
+
+ AOW_TECH_zero_element_furnace:0"$AOW_MEGA_zero_element_furnace$"
+ AOW_TECH_zero_element_furnace_desc:0"The interior of the neutron star is almost filled with perfect neutronium elements. We can collect the neutronium inside the neutron star by building a giant extraction device."
+
+ AOW_TECH_pulsar_clock:0"$AOW_MEGA_pulsar_clock$"
+ AOW_TECH_pulsar_clock_desc:0"Pulsars have very precise pulse intervals that can be used to accurately measure the passage of time, and we can build a unique giant clock around it to unify the national time standard."
+
+ #天外奇迹
+ AOW_TECH_engineering_intelligence_core:0"Engineering Intelligence Core"
+ AOW_TECH_engineering_intelligence_core_desc:0"Engineering Intelligence Core"
+
+ AOW_TECH_megastructure_construction_agreement:0"Megastructure Construction Agreement"
+ AOW_TECH_megastructure_construction_agreement_desc:0"Megastructure Construction Agreement"
+
+ AOW_TECH_automatic_copy_unit:0"Automatic Copy Unit"
+ AOW_TECH_automatic_copy_unit_desc:0"Automatic Copy Unit"
+
+ AOW_TECH_multidimensional_space_channel:0"Multidimensional Space Channel"
+ AOW_TECH_multidimensional_space_channel_desc:0"By distorting the curvature of space-time and opening up stable channels to various multidimensional spaces, a large amount of dark matter maintenance is required."
+
+ AOW_TECH_dimension_hiding:0"Dimensional Fold"
+ AOW_TECH_dimension_hiding_desc:0"The multi-dimensional space is a great place to accommodate all kinds of megastructures. Therefore, in the real dimension, it is possible to make the dimensional space fold, and the two megastructures can be built close to each other, or even overlap."
+ AOW_TECH_dimension_hiding_effect_title:0"§HUnlocks Feature: §!Dimensional Fold"
+ AOW_TECH_dimension_hiding_effect_desc:0"§HDimensional Fold§!\n\nWe can now build §YDyson Sphere§!, §Y$AOW_MEGA_star_picker$§!, and §Y$AOW_MEGA_zero_element_furnace$§! in most multi-star systems, even if they look like they §Yoverlap§! after built.\n\nNote: When these megastructures are built in multi-star system, they will be pulled by the strong gravitational pull of multiple gravitational sources, §Rrequires additional £alloys£alloys as maintenance fees§!;\nDue to the need to maintain the form in the dimensional folds, §Rrequires additional £energy£ energy as maintenance fee§!."
+
+ AOW_TECH_multi_dimensional_warehouse:0"$AOW_MEGA_multi_dimensional_warehouse$"
+ AOW_TECH_multi_dimensional_warehouse_desc:0"The application of multi-dimensional space greatly expands the space we can stretch, the first thing we can do is to store our materials in multidimensional space, but this still requires a framework of this dimensional space to put in the loss of materials."
+
+ AOW_TECH_star_transfer:0"$AOW_MEGA_star_transfer$"
+ AOW_TECH_star_transfer_desc:0"By manipulating the structure and particle composition of the star's interior, as well as the redistribution of the star's mass and energy, $AOW_MEGA_star_transfer$ can easily change the star."
+
+ AOW_TECH_heaven_navigation_bureau:0"$AOW_MEGA_heaven_navigation_bureau$"
+ AOW_TECH_heaven_navigation_bureau_desc:0"The development of multidimensional space has given us a great understanding of the navigation space that ships once sailed, so it is necessary to set up a department specially designed for navigation to help later new ships better adapt to space."
+
+ AOW_TECH_quindecillion_stellar_quantum_matrix:0"$AOW_MEGA_quindecillion_stellar_quantum_matrix$"
+ AOW_TECH_quindecillion_stellar_quantum_matrix_desc:0"Using the Dyson Sphere as a tool, capturing the entire star as an energy supply, taking the Science Nexus as the premise, manufacturing a stellar computer as a computing device, so as to greatly enhance our scientific research power. The more advanced the $AOW_MEGA_quindecillion_stellar_quantum_matrix$, the larger it will be, eventually covering the entire system."
+
+ AOW_TECH_material_recombination_instrument:0"$AOW_MEGA_material_recombination_instrument$"
+ AOW_TECH_material_recombination_instrument_desc:0"$AOW_MEGA_material_recombination_instrument$ is a huge structure of the celestial sphere. It uses the strange energy of dark matter to drive the particle reorganization inside the matter, which can achieve extremely efficient industrial processes."
+
+ AOW_TECH_miraculous_shipyard:0"$AOW_MEGA_miraculous_shipyard$"
+ AOW_TECH_miraculous_shipyard_desc:0"Mega Shipyard is starting to lose track of our development, so we need a shipyard that is bigger enough to span the entire star system and can be called a miracle."
+
+ AOW_TECH_ring_world_2:0"$AOW_MEGA_ring_world_2$"
+ AOW_TECH_ring_world_2_desc:0""
+
+ AOW_TECH_ring_world_3:0"$AOW_MEGA_ring_world_3$"
+ AOW_TECH_ring_world_3_desc:0""
+
+ AOW_TECH_ring_world_4:0"$AOW_MEGA_ring_world_4$"
+ AOW_TECH_ring_world_4_desc:0""
+

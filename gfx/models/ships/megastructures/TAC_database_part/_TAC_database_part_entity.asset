@@ -1,0 +1,9 @@
+entity = {
+	name = "TAC_database_part_entity"
+	pdxmesh = "TAC_database_part_mesh"
+	game_data = { 
+		emissive_recolor_crunch = 5
+		bloom_factor = 1
+	}
+	scale = 10
+}

@@ -1,0 +1,64 @@
+objectTypes = {
+	pdxmesh = {#借用舰R的模型
+		name = "starfall_spear_main_mesh"
+		file = "gfx/models/ships/megastructures/starfall_spear/starfall_spear_main_mesh.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "pCube2Shape"
+			index = 0
+			texture_diffuse = "starfall_spear_main_mesh_d.dds"
+			texture_normal = "starfall_spear_main_mesh_n.dds"
+			texture_specular = "starfall_spear_main_mesh_s.dds"
+			shader = "PdxMeshShip"
+		}
+		meshsettings = {
+			name = "pasted__pCube2Shape"
+			index = 0
+			texture_diffuse = "starfall_spear_main_mesh_d.dds"
+			texture_normal = "starfall_spear_main_mesh_n.dds"
+			texture_specular = "starfall_spear_main_mesh_s.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {#借用古代帝国的模型
+		name = "starfall_spear_obelisk_mesh"
+		file = "gfx/models/ships/megastructures/starfall_spear/starfall_spear_obelisk.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "obelisk_baseShape"
+			index = 0
+			texture_diffuse = "starfall_spear_obelisk_0_diffuse.dds"
+			texture_normal = "starfall_spear_obelisk_0_normal.dds"
+			texture_specular = "starfall_spear_obelisk_0_specular.dds"
+			shader = "PdxMeshShip"
+		}
+		meshsettings = {
+			name = "obelisk_hullShape"
+			index = 0
+			texture_diffuse = "starfall_spear_obelisk_1_diffuse.dds"
+			texture_normal = "starfall_spear_obelisk_1_normal.dds"
+			texture_specular = "starfall_spear_obelisk_1_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {#借用古代帝国的模型
+		name = "starfall_spear_circular_ring_mesh"
+		file = "gfx/models/ships/megastructures/starfall_spear/starfall_spear_obelisk_base.mesh"
+		scale = 1.0
+		animation = { id = "idle" type = "starfall_spear_circular_ring_animation" }
+		meshsettings = {
+			name = "ring_hull_Shape1"
+			index = 0
+			texture_diffuse = "starfall_spear_circular_ring_diffuse.dds"
+			texture_normal = "starfall_spear_circular_ring_normal.dds"
+			texture_specular = "starfall_spear_circular_ring_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	pdxmesh = {
+		name = "fake_portal_mesh"
+		file = "gfx/models/ships/extra_dimensional_01/portal.mesh"
+		animation = { id = "idle" type = "portal_idle_animation" }
+		scale = 0.01
+	}
+}

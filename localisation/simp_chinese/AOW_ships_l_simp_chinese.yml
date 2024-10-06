@@ -1,0 +1,45 @@
+﻿l_simp_chinese:
+
+ #舰船
+ AOW_shipsize_planetary_blaster_system:0"$AOW_MEGA_planetary_blaster_system$"
+ AOW_shipsize_planetary_blaster_system_plural:0"$AOW_MEGA_planetary_blaster_system$"
+
+ AOW_PBS_SECTION_1:0"常规行星核心"
+ AOW_PBS_SECTION_2:0"航母行星核心"
+ AOW_PBS_SECTION_3:0"指挥行星核心"
+ AOW_PBS_SECTION_4:0"导弹行星核心"
+
+ AOW_section_bunker_ring_core_1:0"航母核心"
+ AOW_section_bunker_ring_core_2:0"导弹核心"
+ AOW_section_bunker_ring_core_3:0"防御核心"
+ AOW_section_bunker_ring_core_4:0"航母防御核心"
+ AOW_section_bunker_ring_core_5:0"航母导弹核心"
+ AOW_section_bunker_ring_core_6:0"导弹防御核心"
+
+ #行星聚变炮
+ AOW_PBS_PLANETARY_CORE_REACTOR:0"行星质能转化核心"
+ AOW_PBS_PLANETARY_CORE_REACTOR_DESC:0"能将整个行星的质量全部转化为能量，为武器系统供能。"
+ AOW_PBS_STARBASE_COMBAT_COMPUTER:0"$STARBASE_COMBAT_COMPUTER_1$"
+ AOW_PBS_WAVE_BEAM:0"行星波动炮"
+ AOW_PBS_WAVE_BEAM_DESC:0""
+ AOW_PBS_RIPPER_LIGHT_BEAM:0"行星撕裂光束"
+ AOW_PBS_RIPPER_LIGHT_BEAM_DESC:0""
+ AOW_PBS_AURA_FTL_INHIBITOR:0"行星级超光速抑制器"
+
+ AOW_SHIP_AURA_F1:0"纳米修复"
+ NAME_AOW_SHIP_AURA_F1:0"$aura_category_defensive$ - 纳米修复"
+ AOW_SHIP_AURA_F2:0"超载火控"
+ NAME_AOW_SHIP_AURA_F2:0"$aura_category_defensive$ - 超载火控"
+ AOW_SHIP_AURA_F3:0"目标网络"
+ NAME_AOW_SHIP_AURA_F3:0"$aura_category_defensive$ - 目标网络"
+ AOW_SHIP_AURA_F4:0"空间导航"
+ NAME_AOW_SHIP_AURA_F4:0"$aura_category_defensive$ - 空间导航"
+ AOW_SHIP_AURA_H1:0"纳米蜂群"
+ NAME_AOW_SHIP_AURA_H1:0"$aura_category_offensive$ - 纳米蜂群"
+ AOW_SHIP_AURA_H2:0"推进干扰"
+ NAME_AOW_SHIP_AURA_H2:0"$aura_category_offensive$ - 推进干扰"
+ AOW_SHIP_AURA_H3:0"索敌致盲"
+ NAME_AOW_SHIP_AURA_H3:0"$aura_category_offensive$ - 索敌致盲"
+ AOW_SHIP_AURA_H4:0"火控失效"
+ NAME_AOW_SHIP_AURA_H4:0"$aura_category_offensive$ - 火控失效"
+

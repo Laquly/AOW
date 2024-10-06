@@ -1,0 +1,62 @@
+AOW_btn_main_ui_open_presets = {
+	potential = { always = yes }
+	allow = {
+		custom_tooltip = AOW_btn_main_ui_open_presets_desc
+		hidden_trigger = { from = { NOT = { has_active_event = { AOW_core.101 } } } }
+	}
+	effect = {
+		custom_tooltip = AOW_btn_main_ui_open_presets_desc
+		hidden_effect = { from = { country_event = { id = AOW_core.101 } } }
+	}
+}
+AOW_btn_main_ui_open_bulletin_board = {
+	potential = { always = yes }
+	allow = {
+		hidden_trigger = { from = { NOT = { has_active_event = { AOW_core.99 } } } }
+	}
+	effect = {
+		hidden_effect = { from = { country_event = { id = AOW_core.99 } } }
+	}
+}
+################################### 页面默认按钮 ###################################
+AOW_btn_preview = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = { always = yes }
+}
+AOW_btn_preinstall = {
+	potential = { from = { has_country_flag = AOW_flag_CNTR_page_presets } }
+	allow = { always = yes }
+}
+################################### 页面默认按钮 ###################################
+AOW_btn_dismantle_at_war = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		if = {
+			limit = { NOT = { has_global_flag = can_dismantle_megastructure_at_war} }
+			set_global_flag = can_dismantle_megastructure_at_war
+			custom_tooltip = AOW_text_can_dismantle_megastructure_at_war
+		}
+		else_if = {
+			limit = { has_global_flag = can_dismantle_megastructure_at_war}
+			remove_global_flag = can_dismantle_megastructure_at_war
+			custom_tooltip = AOW_text_cannot_dismantle_megastructure_at_war
+		}
+	}
+}
+AOW_btn_hyperdimension_hiding = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		if = {
+			limit = { NOT = { has_global_flag = AOW_flag_GLBL_hyperdimension_hiding} }
+			set_global_flag = AOW_flag_GLBL_hyperdimension_hiding
+			custom_tooltip = AOW_text_can_research_hyperdimension_hiding
+		}
+		else_if = {
+			limit = { has_global_flag = AOW_flag_GLBL_hyperdimension_hiding}
+			remove_global_flag = AOW_flag_GLBL_hyperdimension_hiding
+			custom_tooltip = AOW_text_cannot_research_hyperdimension_hiding
+		}
+	}
+}

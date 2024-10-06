@@ -1,0 +1,114 @@
+﻿l_simp_chinese:
+ ######################################################################
+ # Economic Categories Modifiers
+ ######################################################################
+ mod_pop_category_workers_unity_produces_add:0"$pop_category_workers$£unity£凝聚力产出"
+ mod_pop_category_specialists_unity_produces_add:0"$pop_category_specialists$£unity£凝聚力产出"
+ mod_pop_category_rulers_unity_produces_add:0"$pop_category_rulers$£unity£凝聚力产出"
+ mod_pop_category_drones_unity_produces_add:0"$pop_category_drones$£unity£凝聚力产出"
+ mod_planet_researchers_astral_threads_upkeep_add:0"£job_researcher£[GetResearcherPlural]的£astral_threads£$astral_threads$维护费"
+ mod_planet_jobs_minerals_upkeep_mult:0"£job£ 岗位£minerals£ 矿物维护费"
+ mod_planet_structures_alloys_upkeep_mult:0"区划与建筑合金维护费"
+
+ mod_country_sr_dark_matter_produces_mult:0"每月£sr_dark_matter£$sr_dark_matter$"
+
+ mod_megastructures_produces_mult:0"巨型结构产出"
+ mod_megastructures_energy_produces_mult:0"巨型结构£energy£能量币产出"
+ mod_megastructures_unity_produces_mult:0"巨型结构£unity£凝聚力产出"
+ mod_megastructures_sr_dark_matter_produces_mult:0"巨型结构£sr_dark_matter£暗物质产出"
+
+ mod_megastructures_upkeep_mult:0"巨型结构维护费"
+ mod_megastructures_energy_upkeep_mult:0"巨型结构£energy£能量币维护费"
+ mod_megastructures_alloys_upkeep_mult:0"巨型结构£alloys£合金维护费"
+ mod_megastructures_unity_upkeep_mult:0"巨型结构£unity£凝聚力维护费"
+ mod_megastructures_sr_dark_matter_upkeep_mult:0"巨型结构£sr_dark_matter£暗物质维护费"
+
+ mod_megastructures_cost_mult:0"巨型结构花费"
+ mod_megastructures_influence_cost_mult:0"巨型结构£influence£影响力花费"
+ mod_megastructures_unity_cost_mult:0"巨型结构£unity£凝聚力花费"
+ mod_megastructures_sr_dark_matter_cost_mult:0"巨型结构£sr_dark_matter£暗物质花费"
+
+ upgrading_megastructures:0"升级中的巨构"
+
+ mod_upgrading_megastructures_energy_upkeep_add:0 "升级中的巨构£energy£能量币维护费"
+ mod_upgrading_megastructures_alloys_upkeep_add:0 "升级中的巨构£alloys£合金维护费"
+ mod_upgrading_megastructures_unity_upkeep_add:0 "升级中的巨构£unity£凝聚力维护费"
+ mod_upgrading_megastructures_sr_dark_matter_upkeep_add:0 "升级中的巨构£sr_dark_matter£暗物质维护费"
+ mod_upgrading_megastructures_upkeep_mult:0 "升级中的巨构维护费"
+
+ ######################################################################
+ # Static Modifiers
+ ######################################################################
+ AOW_mod_multi_dimensional_experiment_finished:0"多维空间工程实验完成"
+ AOW_mod_multi_dimensional_experiment_finished_desc:0"多维空间+巨型工程，多么完美的实验数据。"
+
+ AOW_mod_CNTR_mega_cost:0"巨构花费调整"
+ AOW_mod_CNTR_mega_upkp:0"巨构维护费调整"
+ AOW_mod_CNTR_mega_prdc:0"巨构产出调整"
+ AOW_mod_CNTR_mega_build_speed:0"巨构建造速度调整"
+ AOW_mod_CNTR_mega_build_cap:0"巨构同时建造上限调整"
+
+ AOW_mod_CNTR_starfall_spear_victim:0 "$AOW_MEGA_starfall_spear$民众危机"
+ AOW_mod_CNTR_starfall_spear_victim_desc:0 "$AOW_MEGA_starfall_spear$的攻击，对全国民众的心灵造成了极大程度的创伤，这引发了全民意识形态的转变。"
+
+ AOW_mod_MEGA_increase_power:0"加大功率"
+ AOW_mod_MEGA_reduce_power:0"减少功率"
+
+ AOW_mod_MEGA_build_speed_adjustment:0"巨构建造速度调整"
+
+ AOW_mod_SP_continuous_damage:0"持续性伤害"
+
+ ######################################################################
+ # Scripted Modifiers
+ ######################################################################
+ mod_aow_bunker_ring_add:0 "掩体星环"
+
+ mod_shipclass_research_station_build_speed_mult:"研究站建造速度"
+
+ ######################################################################
+ # Planetary Modifiers
+ ######################################################################
+ AOW_mod_PLNT_hell_of_death:0"死亡地狱"
+ AOW_mod_PLNT_hell_of_death_desc:0"这里到处都是残檐断壁和无数的尸体，还残留着一个强大的干扰磁场，任何来到这里的人都会感到崩溃。"
+
+ AOW_mod_PLNT_stellar_variation:0"恒星环境变化"
+ AOW_mod_PLNT_stellar_variation_desc:0"这颗宜居星球所在星系的恒星近期发生了剧烈的变化，导致生态环境严重受损，需要时间修复。"
+
+ AOW_mod_PLNT_planetary_mining_station:0"$AOW_MEGA_planetary_mining_station$数值说明"
+ AOW_mod_PLNT_planetary_mining_station_desc:0"[this.GetPlanetaryMiningStationDesc]"
+ AOW_mod_PLNT_planetary_mining_station_tooptip:0"小提示：在各种不同行星上建造$AOW_MEGA_planetary_mining_station$会产出不同类型的资源，可以多点开几颗不同行星以查看具体产出数值；另外将$AOW_MEGA_planetary_mining_station$建造在有£sr_living_metal£活体金属的行星上，会额外产出£sr_living_metal£活体金属。"
+ AOW_text_planetary_mining_station_desc:0 "当前行星不支持建造$AOW_MEGA_planetary_mining_station$。"
+ AOW_text_planetary_mining_station_0_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£minerals£400\n§G最终产出：§!£minerals£800 §L或§! £minerals£600 £consumer_goods£200§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_1_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£energy£175 £minerals£175 £volatile_motes£10\n§G最终产出：§!£energy£350 £minerals£350 £volatile_motes£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_2_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£minerals£350 £exotic_gases£10\n§G最终产出：§!£minerals£700 £exotic_gases£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_3_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£minerals£350 £rare_crystals£10\n§G最终产出：§!£minerals£700 £rare_crystals£20§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_4_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£minerals£350 £alloys£25\n§G最终产出：§!£minerals£700 £alloys£50§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_5_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£energy£200 £minerals£200\n§G最终产出：§!£energy£400 £minerals£400§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+ AOW_text_planetary_mining_station_6_desc:0 "§W在此行星上建造$AOW_MEGA_planetary_mining_station$时：§!\n\n§W§Y中间产出：§!£energy£175 £minerals£175 £alloys£10\n§G最终产出：§!£energy£350 £minerals£350 £alloys£50§!\n\n$AOW_mod_PLNT_planetary_mining_station_tooptip$"
+
+ AOW_mod_PLNT_stellar_spectrum:0"恒星与巨构数值说明"
+ AOW_mod_PLNT_stellar_spectrum_desc:0"[this.GetStellarSpectrumDesc]"
+ AOW_mod_PLNT_stellar_spectrum_tooptip:0"特超巨星>O型超巨星>B型超巨星>A型超巨星>F型超巨星>G型超巨星>K型超巨星>M型超巨星>O型恒星>B型恒星>巨星>A型恒星>F型恒星>G型恒星>K型恒星>M型恒星\n\n特超巨星、超巨星、巨星、O型恒星都需要Real Space模组的支持"
+ AOW_text_stellar_spectrum_desc:0 "当前恒星不支持建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$。"
+ AOW_text_stellar_spectrum_hyper_desc:0 "§H当前恒星：§!§W特超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!4.0倍\n§Y巨构花费：§!3.0倍\n§R维护花费：§!3.0倍\n§E建造时间：§!3.0倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_o_super_desc:0 "§H当前恒星：§!§WO型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!3.1倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_b_super_desc:0 "§H当前恒星：§!§WB型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!3.0倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_a_super_desc:0 "§H当前恒星：§!§WA型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.9倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_f_super_desc:0 "§H当前恒星：§!§WF型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.8倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_g_super_desc:0 "§H当前恒星：§!§WG型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.7倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_k_super_desc:0 "§H当前恒星：§!§WK型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.6倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n\n§E建造时间：§!2.5倍§!\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_m_super_desc:0 "§H当前恒星：§!§WM型超巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.5倍\n§Y巨构花费：§!2.5倍\n§R维护花费：§!2.5倍\n§E建造时间：§!2.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_o_desc:0 "§H当前恒星：§!§W光谱类型为O的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.25倍\n§Y巨构花费：§!2.25倍\n§R维护花费：§!2.25倍\n§E建造时间：§!2.25倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_b_desc:0 "§H当前恒星：§!§W光谱类型为B的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!2.0倍\n§Y巨构花费：§!2.0倍\n§R维护花费：§!2.0倍\n§E建造时间：§!2.0倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_giant_desc:0 "§H当前恒星：§!§W巨星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!1.75倍\n§Y巨构花费：§!1.75倍\n§R维护花费：§!1.75倍\n§E建造时间：§!1.75倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_a_desc:0 "§H当前恒星：§!§W光谱类型为A的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!1.5倍\n§Y巨构花费：§!1.5倍\n§R维护花费：§!1.5倍\n§E建造时间：§!1.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_f_desc:0 "§H当前恒星：§!§W光谱类型为F的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!1.25倍\n§Y巨构花费：§!1.25倍\n§R维护花费：§!1.25倍\n§E建造时间：§!1.25倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_g_desc:0 "§H当前恒星：§!§W光谱类型为G的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!1.0倍\n§Y巨构花费：§!1.0倍\n§R维护花费：§!1.0倍\n§E建造时间：§!1.0倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_k_desc:0 "§H当前恒星：§!§W光谱类型为K的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!0.75倍\n§Y巨构花费：§!0.75倍\n§R维护花费：§!0.75倍\n§E建造时间：§!0.75倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+ AOW_text_stellar_spectrum_m_desc:0 "§H当前恒星：§!§W光谱类型为M的普通恒星§!\n\n§W在此恒星上建造戴森球或$AOW_MEGA_quindecillion_stellar_quantum_matrix$时：\n\n§G巨构产出：§!0.5倍\n§Y巨构花费：§!0.5倍\n§R维护花费：§!0.5倍\n§E建造时间：§!0.5倍§!\n\n$AOW_mod_PLNT_stellar_spectrum_tooptip$"
+
+ ######################################################################
+ # Vanilla Modifiers
+ ######################################################################
+ mod_relay_bypass_empire_windup_mult:0"$hyper_relay_plural$蓄力速度"
+

@@ -1,0 +1,93 @@
+﻿l_simp_chinese:
+
+ ######################################################################################
+ ######################################### 科技 #########################################
+ ######################################################################################
+ AOW_TECH_material_recombination_instrument:0"$AOW_MEGA_material_recombination_instrument$"
+ AOW_TECH_material_recombination_instrument_desc:0"$AOW_MEGA_material_recombination_instrument$是一个巨大的浑天仪结构，利用暗物质的奇特能量驱动物质内部的粒子重组，可以实现极为高效的工业流程。"
+
+ ######################################################################################
+ ######################################### 巨构 #########################################
+ ######################################################################################
+ AOW_MEGA_material_recombination_instrument_0:0"$AOW_MEGA_material_recombination_instrument$ 基址"
+ AOW_MEGA_material_recombination_instrument_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在黑洞上\n$t$—星系中不能有宜居星球\n$t$—必须是单恒星星系\n\n$EFFECTS_HEADER$\n$t$—可手动选择并微调资源的产出\n$t$—可产出合金、消费品、易爆颗粒、异星天然气、稀有水晶\n$t$—可产出暗物质、泽珞、活体金属、纳米机器人（拥有工整传统MOD）"
+ AOW_MEGA_material_recombination_instrument_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_4$利用暗物质的奇特能量，$AOW_MEGA_material_recombination_instrument$能够轻松将各种物质内部的粒子重新打乱并聚合在一起，可以实现极为高效的工业流程，建造过程中会§R清空星系§!以腾出建造空间。"
+ AOW_MEGA_material_recombination_instrument_0_DESC:0"一个围绕黑洞的$AOW_MEGA_material_recombination_instrument$基址，将来可以利用该黑洞周围的暗物质能量场驱动物质重组。"
+ AOW_MEGA_material_recombination_instrument_1:0"$AOW_MEGA_material_recombination_instrument$ 一环"
+ AOW_MEGA_material_recombination_instrument_1_DESC:0"一个小型的环形工业设施，里面大多都是能够吸引暗物质的暗磁铁，可以将星际空间中的暗物质更多地集中于此。"
+ AOW_MEGA_material_recombination_instrument_2:0"$AOW_MEGA_material_recombination_instrument$ 二环"
+ AOW_MEGA_material_recombination_instrument_2_DESC:0"两个附带暗磁铁的环形工业设施正在围绕黑洞旋转，形成了更浓郁的暗物质聚集地，可以进行更大规模的物质重组行动。"
+ AOW_MEGA_material_recombination_instrument_3:0"$AOW_MEGA_material_recombination_instrument$ 三环"
+ AOW_MEGA_material_recombination_instrument_3_DESC:0"为了补充物质重组所需的原材料，第三个环形工业设施开始解压黑洞内部的物质，以支持更大规模的物质重组行动。"
+ AOW_MEGA_material_recombination_instrument_4:0"$AOW_MEGA_material_recombination_instrument$ 四环"
+ AOW_MEGA_material_recombination_instrument_4_DESC:0"更大的环意味着更大规模的工业，极致的工业流程将为我们带来极致的生产效率。"
+ AOW_MEGA_material_recombination_instrument_5:0"$AOW_MEGA_material_recombination_instrument$"
+ AOW_MEGA_material_recombination_instrument_5_DESC:0"完整的$AOW_MEGA_material_recombination_instrument$，利用黑洞和暗磁铁吸引更多的暗物质以驱动规模庞大的物质重组行动。"
+
+ AOW_text_mri_open_console:0"§H打开控制台§!\n\n§E可微调该产出哪些资源，以及应该产出多少§!"
+ AOW_text_mri_close_console:0"§H关闭控制台§!"
+
+ requires_tidy_tradition_active:0"$TRIGGER_FAIL$需要订阅模组§Y工整传统（Tidy Tradition）§!\n§L摊牌了，我§Y零者§!需要获取更多的订阅量§!"
+
+ AOW_text_var_mri_points:0"剩余产能倍数：[this.AOW_var_mri_remaining_points]倍"
+ AOW_text_mri_reset:0"全部设置为§Y0倍§!"
+
+ AOW_text_mri_copy:0"单次复制粘贴"
+ AOW_text_mri_copy_desc:0"复制当前模式，粘贴到§Y随机一个§!$AOW_MEGA_material_recombination_instrument$\n\n注意：巨构越多，等待时间越长是正常现象"
+
+ AOW_text_mri_copy_all:0"全部复制粘贴"
+ AOW_text_mri_copy_all_desc:0"复制当前模式，粘贴到§Y全部的§!$AOW_MEGA_material_recombination_instrument$\n\n注意：巨构越多，等待时间越长是正常现象"
+
+ AOW_text_mri_add_10:0"该资源产能倍数：§G+10倍§!"
+ AOW_text_mri_add_1:0"该资源产能倍数：§G+1倍§!"
+ AOW_text_mri_sub_10:0"该资源产能倍数：§R-10倍§!"
+ AOW_text_mri_sub_1:0"该资源产能倍数：§R-1倍§!"
+
+ AOW_text_var_mri_points_alloys:0"[this.AOW_var_mri_points_alloys]倍"
+ AOW_text_mri_alloys:0"§H合金产能倍数§!\n\n每§Y1倍§!产出£alloys£§Y合金§!\n§G5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_alloys:0"§H合金产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_alloys:0"§H合金产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_cg:0"[this.AOW_var_mri_points_cg]倍"
+ AOW_text_mri_cg:0"§H消费品产能倍数§!\n\n每§Y1倍§!产出£consumer_goods£§Y消费品§!\n§G5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_cg:0"§H消费品产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_cg:0"§H消费品产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_vm:0"[this.AOW_var_mri_points_vm]倍"
+ AOW_text_mri_vm:0"§H易爆颗粒产能倍数§!\n\n每§Y1倍§!产出£volatile_motes£§Y易爆颗粒§!\n§G1→2.5→4.5→7→10§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_vm:0"§H易爆颗粒产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_vm:0"§H易爆颗粒产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_eg:0"[this.AOW_var_mri_points_eg]倍"
+ AOW_text_mri_eg:0"§H异星天然气产能倍数§!\n\n每§Y1倍§!产出£exotic_gases£§Y异星天然气§!\n§G1→2.5→4.5→7→10§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_eg:0"§H异星天然气产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_eg:0"§H异星天然气产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_rc:0"[this.AOW_var_mri_points_rc]倍"
+ AOW_text_mri_rc:0"§H稀有水晶产能倍数§!\n\n每§Y1倍§!产出£rare_crystals£§Y稀有水晶§!\n§G1→2.5→4.5→7→10§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_rc:0"§H稀有水晶产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_rc:0"§H稀有水晶产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_lm:0"[this.AOW_var_mri_points_lm]倍"
+ AOW_text_mri_lm:0"§H活体金属产能倍数§!\n\n每§Y1倍§!产出£sr_living_metal£§Y活体金属§!\n§G0.5→1.25→2.25→3.5→5§!\n\n每§Y1倍§!消耗£energy£§Y能量币§!\n§R5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_lm:0"§H活体金属产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_lm:0"§H活体金属产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_zro:0"[this.AOW_var_mri_points_zro]倍"
+ AOW_text_mri_zro:0"§H泽珞产能倍数§!\n\n每§Y1倍§!产出£sr_zro£§Y泽珞§!\n§G0.5→1.25→2.25→3.5→5§!\n\n每§Y1倍§!消耗£energy£§Y能量币§!\n§R5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_zro:0"§H泽珞产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_zro:0"§H泽珞产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_dm:0"[this.AOW_var_mri_points_dm]倍"
+ AOW_text_mri_dm:0"§H暗物质产能倍数§!\n\n每§Y1倍§!产出£sr_dark_matter£§Y暗物质§!\n§G0.5→1.25→2.25→3.5→5§!\n\n每§Y1倍§!消耗£energy£§Y能量币§!\n§R5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_dm:0"§H暗物质产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_dm:0"§H暗物质产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ AOW_text_var_mri_points_nanites:0"[this.AOW_var_mri_points_nanites]倍"
+ AOW_text_mri_nanites:0"§H纳米机器人产能倍数§!\n\n每§Y1倍§!产出£nanites£§Y纳米机器人§!\n§G0.25→0.625→1.125→1.75→2.5§!\n\n每§Y1倍§!消耗£energy£§Y能量币§!\n§R5→12.5→22.5→35→50§!\n\n每§Y1倍§!消耗£minerals£§Y矿物§!\n§R5→12.5→22.5→35→50§!"
+ AOW_text_mri_min_nanites:0"§H纳米机器人产能倍数§!设置为§Y0倍§!"
+ AOW_text_mri_max_nanites:0"§H纳米机器人产能倍数§!设置为§Y100倍§!，其他资源产能倍数设置为§Y0倍§!"
+
+ ######################################################################################
+ ######################################### 事件 #########################################
+ ######################################################################################

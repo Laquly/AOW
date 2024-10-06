@@ -1,0 +1,146 @@
+ambient_object = {#O型恒星 打击特效
+	name = AOW_ao_starfall_spear_o_hit_effect
+	entity = starfall_spear_o_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#O型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_o_system_hit_effect
+	entity = starfall_spear_o_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#O型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_o_planet_hit_effect
+	entity = starfall_spear_o_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#B型恒星 打击特效
+	name = AOW_ao_starfall_spear_b_hit_effect
+	entity = starfall_spear_b_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#B型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_b_system_hit_effect
+	entity = starfall_spear_b_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#B型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_b_planet_hit_effect
+	entity = starfall_spear_b_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#A型恒星 打击特效
+	name = AOW_ao_starfall_spear_a_hit_effect
+	entity = starfall_spear_a_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#A型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_a_system_hit_effect
+	entity = starfall_spear_a_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#A型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_a_planet_hit_effect
+	entity = starfall_spear_a_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#F型恒星 打击特效
+	name = AOW_ao_starfall_spear_f_hit_effect
+	entity = starfall_spear_f_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#F型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_f_system_hit_effect
+	entity = starfall_spear_f_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#F型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_f_planet_hit_effect
+	entity = starfall_spear_f_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#G型恒星 打击特效
+	name = AOW_ao_starfall_spear_g_hit_effect
+	entity = starfall_spear_g_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#G型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_g_system_hit_effect
+	entity = starfall_spear_g_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#G型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_g_planet_hit_effect
+	entity = starfall_spear_g_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#K型恒星 打击特效
+	name = AOW_ao_starfall_spear_k_hit_effect
+	entity = starfall_spear_k_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#K型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_k_system_hit_effect
+	entity = starfall_spear_k_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#K型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_k_planet_hit_effect
+	entity = starfall_spear_k_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+ambient_object = {#M型恒星 打击特效
+	name = AOW_ao_starfall_spear_m_hit_effect
+	entity = starfall_spear_m_fire_construction_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#M型恒星 星系打击特效
+	name = AOW_ao_starfall_spear_m_system_hit_effect
+	entity = starfall_spear_m_wormhole_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {#M型恒星 行星打击特效
+	name = AOW_ao_starfall_spear_m_planet_hit_effect
+	entity = starfall_spear_m_planet_wormhole_entity
+	selectable = no
+	show_name = no
+}
+
+
+ambient_object = {
+	name = AOW_ao_celestial_shield_bunker_ring_system_effect
+	entity = celestial_shield_bunker_ring_system_effect_entity
+	selectable = no
+	show_name = no
+}
+ambient_object = {
+	name = AOW_ao_celestial_shield_bunker_ring_planet_effect
+	entity = celestial_shield_bunker_ring_planet_effect_entity
+	selectable = no
+	show_name = no
+}

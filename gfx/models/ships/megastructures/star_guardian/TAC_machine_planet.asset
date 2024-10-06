@@ -1,0 +1,53 @@
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+
+entity = {
+	name = "sg_machine_planet_entity"
+	pdxmesh = "TAC_machine_planet_mesh"
+	game_data = { 
+		emissive_recolor_crunch = 5
+		bloom_factor = 1
+	}
+	scale = 10
+}
+entity = {
+	name = "sg_energy_maintainer_entity"
+	pdxmesh = "plane_siphon_energy_maintainer_mesh"
+	game_data = {
+		emissive_recolor_crunch = 5
+		bloom_factor = 1
+	}
+	scale = 9
+}
+entity = {
+	name = "sg_energy_maintainer_a_entity"
+	locator = { name = loc1 position = { 165 0 0 } rotation = { 180 90 0 } }
+	attach = { loc1 = sg_energy_maintainer_entity }
+}
+entity = {
+	name = "star_guardian_1_entity"
+	locator = { name = loc1 position = { 0 0 0 } rotation = { 0 0 0 } }
+
+	#locator = { name = loc2 position = { 0 0 0 } rotation = { 0 0 30 } scale = 1.1 }
+	#locator = { name = loc3 position = { 0 0 0 } rotation = { 0 0 0 } scale = 1.1 }
+	#locator = { name = loc4 position = { 0 0 0 } rotation = { 0 0 -30 } scale = 1.1 }
+
+	locator = { name = loc11 position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = loc12 position = { 0 0 0 } rotation = { 0 0 30 } }
+	locator = { name = loc13 position = { 0 0 0 } rotation = { 0 0 -30 } }
+	locator = { name = loc21 position = { 0 0 0 } rotation = { 0 0 180 } }
+	locator = { name = loc22 position = { 0 0 0 } rotation = { 0 0 150 } }
+	locator = { name = loc23 position = { 0 0 0 } rotation = { 0 0 210 } }
+
+	attach = { loc1 = sg_machine_planet_entity }
+	#attach = { loc2 = TAC_ring_entity }
+	#attach = { loc3 = TAC_ring_entity }
+	#attach = { loc4 = TAC_ring_entity }
+
+	attach = { loc11 = sg_energy_maintainer_a_entity }
+	attach = { loc12 = sg_energy_maintainer_a_entity }
+	attach = { loc13 = sg_energy_maintainer_a_entity }
+	attach = { loc21 = sg_energy_maintainer_a_entity }
+	attach = { loc22 = sg_energy_maintainer_a_entity }
+	attach = { loc23 = sg_energy_maintainer_a_entity }
+}

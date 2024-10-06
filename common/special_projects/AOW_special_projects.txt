@@ -1,0 +1,41 @@
+#星球定位
+special_project = {
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	key = AOW_sp_planet_locator
+	event_scope = planet_event
+	picture = GFX_evt_megastructure_construction
+	cost = 0
+	days_to_research = 0
+	timelimit = -1
+	on_success = {
+		event_target:AOW_target_planet = {
+			remove_planet_flag = AOW_flag_PLNT_has_special_project_@event_target:AOW_target_country
+		}
+	}
+	on_fail = {
+		event_target:AOW_target_planet = {
+			remove_planet_flag = AOW_flag_PLNT_has_special_project_@event_target:AOW_target_country
+		}
+	}
+}
+
+#奇异物质
+special_project = {
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	key = AOW_sp_strange_matter
+	event_scope = ship_event
+	picture = GFX_evt_AOW_MEGA_zero_element_furnace
+	cost = 50000
+	tech_department = physics_technology
+	timelimit = 1800
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	on_success = {
+		ship_event = { id = AOW_evt_zero_element_furnace.410 }
+	}
+	on_fail = {
+		country_event = { id = AOW_evt_zero_element_furnace.411 }
+	}
+}

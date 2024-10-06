@@ -1,0 +1,837 @@
+entity = {
+	name = "sr_zro_sublimator_c_entity"
+	locator = { name = "base"  position = { 0 0 0 }}
+	scale = 2
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
+	}
+}
+@sr_zro_sublimator_scale = 1.5
+@sr_zro_sublimator_light_up = 35
+@sr_zro_sublimator_light_down = -35
+#####################################################
+#####											#####
+#####					Fungoid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "fungoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "fungoid_01_gateway_diffuse.dds"
+		texture_normal = "fungoid_01_gateway_normal.dds"
+		texture_specular = "fungoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "fungoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "fungoid_01_gateway_diffuse.dds"
+		texture_normal = "fungoid_01_gateway_normal.dds"
+		texture_specular = "fungoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "fungoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "fungoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "fungoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "fungoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Avian					#####
+#####											#####
+#####################################################
+entity = {
+	name = "avian_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "avian_01_gateway_diffuse.dds"
+		texture_normal = "avian_01_gateway_normal.dds"
+		texture_specular = "avian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "avian_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "avian_01_gateway_diffuse.dds"
+		texture_normal = "avian_01_gateway_normal.dds"
+		texture_specular = "avian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "avian_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "avian_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "avian_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "avian_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Mammalian				#####
+#####											#####
+#####################################################
+entity = {
+	name = "mammalian_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "mammalian_01_gateway_diffuse.dds"
+		texture_normal = "mammalian_01_gateway_normal.dds"
+		texture_specular = "mammalian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "mammalian_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "mammalian_01_gateway_diffuse.dds"
+		texture_normal = "mammalian_01_gateway_normal.dds"
+		texture_specular = "mammalian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "mammalian_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "mammalian_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "mammalian_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "mammalian_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Plantoid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "plantoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "plantoid_01_gateway_diffuse.dds"
+		texture_normal = "plantoid_01_gateway_normal.dds"
+		texture_specular = "plantoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "plantoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "plantoid_01_gateway_diffuse.dds"
+		texture_normal = "plantoid_01_gateway_normal.dds"
+		texture_specular = "plantoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "plantoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "plantoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "plantoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "plantoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Arthropoid				#####
+#####											#####
+#####################################################
+entity = {
+	name = "arthropoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "arthropoid_01_gateway_diffuse.dds"
+		texture_normal = "arthropoid_01_gateway_normal.dds"
+		texture_specular = "arthropoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "arthropoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "arthropoid_01_gateway_diffuse.dds"
+		texture_normal = "arthropoid_01_gateway_normal.dds"
+		texture_specular = "arthropoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "arthropoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "arthropoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "arthropoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "arthropoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Molluscoid				#####
+#####											#####
+#####################################################
+entity = {
+	name = "molluscoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "molluscoid_01_gateway_diffuse.dds"
+		texture_normal = "molluscoid_01_gateway_normal.dds"
+		texture_specular = "molluscoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "molluscoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "molluscoid_01_gateway_diffuse.dds"
+		texture_normal = "molluscoid_01_gateway_normal.dds"
+		texture_specular = "molluscoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "molluscoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "molluscoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "molluscoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "molluscoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Reptilian					#####
+#####											#####
+#####################################################
+entity = {
+	name = "reptilian_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "reptilian_01_gateway_diffuse.dds"
+		texture_normal = "reptilian_01_gateway_normal.dds"
+		texture_specular = "reptilian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "reptilian_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "reptilian_01_gateway_diffuse.dds"
+		texture_normal = "reptilian_01_gateway_normal.dds"
+		texture_specular = "reptilian_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "reptilian_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "reptilian_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "reptilian_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "reptilian_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Lithoid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "lithoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "lithoid_01_gateway_diffuse.dds"
+		texture_normal = "lithoid_01_gateway_normal.dds"
+		texture_specular = "lithoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "lithoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "lithoid_01_gateway_diffuse.dds"
+		texture_normal = "lithoid_01_gateway_normal.dds"
+		texture_specular = "lithoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "lithoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "lithoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "lithoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "lithoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Necroid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "necroid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "necroid_01_gateway_diffuse.dds"
+		texture_normal = "necroid_01_gateway_normal.dds"
+		texture_specular = "necroid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "necroid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "necroid_01_gateway_diffuse.dds"
+		texture_normal = "necroid_01_gateway_normal.dds"
+		texture_specular = "necroid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "necroid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "necroid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "necroid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "necroid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Nemesis					#####
+#####											#####
+#####################################################
+entity = {
+	name = "nemesis_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "nemesis_01_gateway_diffuse.dds"
+		texture_normal = "nemesis_01_gateway_normal.dds"
+		texture_specular = "nemesis_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "nemesis_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "nemesis_01_gateway_diffuse.dds"
+		texture_normal = "nemesis_01_gateway_normal.dds"
+		texture_specular = "nemesis_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "nemesis_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "nemesis_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "nemesis_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "nemesis_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+#####################################################
+#####											#####
+#####					Fungoid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "fungoid_sr_zro_sublimator_a_entity"
+	pdxmesh = "gateway_mesh"
+	playback_rate = 0
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "fungoid_01_gateway_diffuse.dds"
+		texture_normal = "fungoid_01_gateway_normal.dds"
+		texture_specular = "fungoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "fungoid_sr_zro_sublimator_b_entity"
+	pdxmesh = "gateway_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
+		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" stop_on_state_change = yes } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	meshsettings = {
+		name = "gateway_bottomShapeShape"
+		index = 0
+		texture_diffuse = "fungoid_01_gateway_diffuse.dds"
+		texture_normal = "fungoid_01_gateway_normal.dds"
+		texture_specular = "fungoid_01_gateway_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	game_data = { emissive_recolor_crunch = 2.0 }
+	scale = 1
+}
+entity = {
+	name = "fungoid_01_sr_zro_sublimator_1_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "loc101" = "fungoid_sr_zro_sublimator_a_entity" }
+	scale = @sr_zro_sublimator_scale
+}
+entity = {
+	name = "fungoid_01_sr_zro_sublimator_2_entity"
+	#cull_radius = 500
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc102" position = { 0 @sr_zro_sublimator_light_down 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc103" position = { 0 @sr_zro_sublimator_light_up 0 } rotation = { 0 0 180 } }
+	attach = { "loc101" = "fungoid_sr_zro_sublimator_b_entity" }
+	attach = { "loc102" = "sr_zro_sublimator_c_entity" }
+	attach = { "loc103" = "sr_zro_sublimator_c_entity" }
+	scale = @sr_zro_sublimator_scale
+}

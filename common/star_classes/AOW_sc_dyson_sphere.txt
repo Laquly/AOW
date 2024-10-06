@@ -1,0 +1,350 @@
+AOW_sc_dyson_sphere_o = {
+	class 		= o_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.9
+	planet		= { key = pc_o_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_o_super = {
+	class 		= o_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.1
+	planet		= { key = pc_o_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_o_hyper = {
+	class 		= o_hyper_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.7
+	planet		= { key = pc_o_hyper_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_b= {
+	class 		= b_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_b_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_b_super= {
+	class 		= b_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_b_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_a= {
+	class 		= a_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.75
+	planet		= { key = pc_a_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_a_super= {
+	class 		= a_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_a_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_f= {
+	class 		= f_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.7
+	planet		= { key = pc_f_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_f_super= {
+	class 		= f_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_f_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_g= {
+	class 		= g_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.7
+	planet		= { key = pc_g_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_g_giant= {
+	class 		= g_giant_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_g_giant_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_g_super= {
+	class 		= g_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_g_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_k= {
+	class 		= k_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.7
+	planet		= { key = pc_k_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_k_giant= {
+	class 		= k_giant_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_k_giant_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_k_super= {
+	class 		= k_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_k_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+AOW_sc_dyson_sphere_m= {
+	class 		= m_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.7
+	planet		= { key = pc_m_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_m_giant= {
+	class 		= m_giant_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_m_giant_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_m_super= {
+	class 		= m_super_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.0
+	planet		= { key = pc_m_super_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_m_hyper= {
+	class 		= m_hyper_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 1.5
+	planet		= { key = pc_m_hyper_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+
+AOW_sc_dyson_sphere_d= {
+	class 		= d_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.6
+	planet		= { key = pc_d_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_c_giant= {
+	class 		= c_giant_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_c_giant_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_s_giant= {
+	class 		= s_giant_star
+	icon            	= AOW_sc_ds
+	icon_scale		= 0.8
+	planet		= { key = pc_s_giant_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_w_azure= {
+	class 		= w_azure_star
+	icon            	= AOW_sc_ds_w
+	icon_scale		= 1.65
+	planet		= { key = pc_w_azure_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_w_red= {
+	class 		= w_red_star
+	icon            	= AOW_sc_ds_w
+	icon_scale		= 1.65
+	planet		= { key = pc_w_red_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_w_green= {
+	class 		= w_green_star
+	icon            	= AOW_sc_ds_w
+	icon_scale		= 1.65
+	planet		= { key = pc_w_green_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_w_purple= {
+	class 		= w_purple_star
+	icon            	= AOW_sc_ds_w
+	icon_scale		= 1.65
+	planet		= { key = pc_w_purple_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_protostar= {
+	class 		= protostar
+	icon            	= AOW_sc_ds_protostar
+	icon_scale		= 2.5
+	planet		= { key = pc_protostar }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_lbv_blue= {
+	class 		= lbv_blue_star
+	icon            	= AOW_sc_ds_lbv
+	icon_scale		= 3.0
+	planet		= { key = pc_lbv_blue_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_lbv_green= {
+	class 		= lbv_green_star
+	icon            	= AOW_sc_ds_lbv
+	icon_scale		= 3.0
+	planet		= { key = pc_lbv_green_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_lbv_red= {
+	class 		= lbv_red_star
+	icon            	= AOW_sc_ds_lbv
+	icon_scale		= 3.0
+	planet		= { key = pc_lbv_red_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_tt_red= {
+	class 		= tt_red_star
+	icon            	= AOW_sc_ds_tt
+	icon_scale		= 1
+	planet		= { key = pc_tt_red_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_tt_orange= {
+	class 		= tt_orange_star
+	icon            	= AOW_sc_ds_tt
+	icon_scale		= 1
+	planet		= { key = pc_tt_orange_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_tt_white= {
+	class 		= tt_white_star
+	icon            	= AOW_sc_ds_tt
+	icon_scale		= 1
+	planet		= { key = pc_tt_white_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_ae= {
+	class 		= ae_star
+	icon            	= AOW_sc_ds_ae
+	icon_scale		= 1
+	planet		= { key = pc_ae_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_p_purple= {
+	class 		= p_purple_star
+	icon            	= AOW_sc_ds_p
+	icon_scale		= 3.2
+	planet		= { key = pc_d_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_p_green= {
+	class 		= p_green_star
+	icon            	= AOW_sc_ds_p
+	icon_scale		= 3.2
+	planet		= { key = pc_d_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+AOW_sc_dyson_sphere_p_red= {
+	class 		= p_red_star
+	icon            	= AOW_sc_ds_p
+	icon_scale		= 3.2
+	planet		= { key = pc_d_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+AOW_sc_dyson_sphere_fu= {
+	class 		= fu_star
+	icon            	= AOW_sc_ds_ae
+	icon_scale		= 1.1
+	planet		= { key = pc_fu_star }
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+}
+
+
+
+
+
+AOW_sc_binary_ds_n = {
+	class		= b_star
+	icon            	= AOW_sc_binary_ds_n
+	icon_scale		= 2
+	planet = {#戴森球
+		key = pc_b_star
+		class = b_star
+	}
+	planet = {
+		key = pc_neutron_star
+		class = neutron_star
+	}
+	spawn_odds	= 0
+	num_planets	= { min = 0 max = 0 }
+	is_environmental_hazard = yes
+	modifier = {
+		ship_speed_reduction = 0.5
+	}
+}

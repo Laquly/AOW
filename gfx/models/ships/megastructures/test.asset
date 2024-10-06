@@ -1,0 +1,34 @@
+#position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
+#rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
+entity = {
+	name = "aow_planet_entity"
+	pdxmesh = "planet_non_clouded_mesh"#"planet_clouded_mesh"#
+	meshsettings = {
+		name = "planet_geosphereShape"
+		texture_diffuse = "aow_1.dds"
+		texture_normal = "aow_2.dds"
+		texture_specular = "aow_3.dds"
+		shader = "PdxMeshTerra"
+	}
+	##pole texture override
+	#meshsettings = {
+	#name = "polesShape"
+	#texture_diffuse = "poles_barren_1_diffuse.dds"
+	#texture_normal = "poles_barren_1_normal.dds"
+	#texture_specular = "poles_barren_1_specular.dds"
+	#}
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0 }
+	playback_rate = 1
+}
+
+entity = {
+	name = "AOW_test_01_entity"
+	locator = { name = planet position = { 0 0 0 } rotation = { 102.7 0 0 } scale = 10 }
+	locator = { name = loc1 position = { 0 0 -31 } rotation = { 0 0 0 } scale = 4 }
+	locator = { name = loc2 position = { 0 0 -30 } rotation = { 0 0 45 } scale = 4 }
+
+	attach = { planet = aow_planet_entity }
+	attach = { loc1 = plantoid_01_ion_cannon_section_entity }
+	attach = { loc2 = plantoid_01_ion_cannon_section_entity }
+}

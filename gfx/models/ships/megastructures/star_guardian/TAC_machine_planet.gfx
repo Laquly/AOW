@@ -1,0 +1,6 @@
+objectTypes = {
+	pdxmesh = {
+		name = "TAC_machine_planet_mesh"
+		file = "gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.mesh"
+	}
+}

@@ -1,0 +1,143 @@
+AOW_MEGA_asteroid_mining_station_1 = {
+	entity = "asteroid_mining_station_1_entity"
+	construction_entity = "asteroid_mining_station_1_entity"
+	portrait = "GFX_megastructure_asteroid_mining_station_background"
+	place_entity_on_planet_plane = yes
+	show_galactic_map_icon = no
+	show_in_outliner = no
+	construction_blocks_and_blocked_by = none
+	scales_with_planet = yes
+	use_planet_resource = yes
+	build_time = @AOW_var_AMS_1_TIME
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_ASTEROID"
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_AMS_1_COST_alloys
+			unity = @AOW_var_AMS_1_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_AMS_1_UPKP_energy
+		}
+
+		produces = {#小行星 矿物
+			trigger = { planet = { is_planet_class = pc_asteroid } }
+			minerals = @AOW_var_AMS_1_PRDC_minerals_Asteroid
+		}
+		produces = {#小行星 易爆颗粒
+			trigger = {
+				planet = { is_planet_class = pc_asteroid }
+				owner = { has_technology = tech_mine_volatile_motes }
+			}
+			volatile_motes = @AOW_var_AMS_1_PRDC_motes_Asteroid
+		}
+
+		produces = {#晶态小行星 矿物
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_crystal_asteroid
+						is_planet_class = pc_rare_crystal_asteroid
+					}
+				}
+			}
+			minerals = @AOW_var_AMS_1_PRDC_minerals_CrystalAsteroid
+		}
+		produces = {#晶态小行星 稀有水晶
+			trigger = {
+				planet = {
+					OR = {
+						is_planet_class = pc_crystal_asteroid
+						is_planet_class = pc_rare_crystal_asteroid
+					}
+				}
+				owner = { has_technology = tech_mine_rare_crystals }
+			}
+			rare_crystals = @AOW_var_AMS_1_PRDC_crystal_CrystalAsteroid
+		}
+
+		produces = {#冰晶小行星 能量币和矿物
+			trigger = { planet = { is_planet_class = pc_ice_asteroid } }
+			energy = @AOW_var_AMS_1_PRDC_energy_IceAsteroid
+			minerals = @AOW_var_AMS_1_PRDC_minerals_IceAsteroid
+		}
+		produces = {
+			trigger = {#冰晶小行星 稀有水晶
+				planet = { is_planet_class = pc_ice_asteroid }
+				owner = { has_technology = tech_mine_rare_crystals }
+			}
+			rare_crystals = @AOW_var_AMS_1_PRDC_crystal_IceAsteroid
+		}
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_asteroid_mining_station
+		category = megastructures
+		alloys = @AOW_var_AMS_1_COST_alloys
+		minerals = @AOW_var_AMS_1_COST_minerals
+		vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_asteroid_mining_station" }
+	potential = { AOW_trigger_mega_potential = { KEY = asteroid_mining_station } }
+	possible = {
+		exists = starbase
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_asteroid_mining_station } }
+		}
+		custom_tooltip = {#必须要在国境内
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {#不能有异常
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {#必须为小行星
+				fail_text = "AOW_mega_requires_PLNT_asteroid"
+				OR = {
+					is_planet_class = pc_asteroid
+					is_planet_class = pc_crystal_asteroid
+					is_planet_class = pc_rare_crystal_asteroid
+					is_planet_class = pc_ice_asteroid
+				}
+			}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		weight = 50
+		#位置限制
+		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+		#自身限制
+		modifier = { factor = 1.5	from = { is_pacifist = yes } }
+	}
+	on_build_start = {
+		AOW_effect_check_mega_cap = {
+			key = asteroid_mining_station
+			constructing = AOW_MEGA_asteroid_mining_station_1
+		}
+	}
+	on_build_complete = {
+		from = { country_event = { id = AOW_mega_notification.20 } }
+		fromfrom = {
+			set_megastructure_flag = AOW_flag_MEGA_asteroid_mining_station_@owner
+			AOW_eft_MEGA_set_variable_cost = { v = @AOW_var_AMS_1_COST_alloys }
+		}
+		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
+		if = {#适配原版的小行星蜂巢事件
+			limit = { fromfrom.planet = { is_planet_class = pc_crystal_asteroid } }
+			from = { set_country_flag = built_hiver_mine }
+		}
+	}
+}

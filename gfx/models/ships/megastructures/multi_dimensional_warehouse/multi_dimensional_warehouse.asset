@@ -1,0 +1,153 @@
+entity = {#巨像
+	name = "multi_dimensional_warehouse_a_entity"
+	pdxmesh = "fallen_empire_01_colossus_mesh"
+	
+	default_state = "idle"
+	# Opened state, going after "working".
+	state = { name = "idle" animation = "open" 
+		event = { time = 0	id = "beam_start" }
+	
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+			
+		event = { time = 0 node = "large_shield_mid_effect_1" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "large_shield_mid_effect_2" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "large_shield_mid_effect_3" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 10
+	#attach = { energy_source = "fallen_empire_01_colossus_energy_entity" }
+}
+entity = {#光线
+	name = "multi_dimensional_warehouse_b_entity"
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { node = "effect_1" particle = "matde_core_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_1" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_2" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "inner_beam_3" particle = "matde_core_small_beam_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+	}
+	scale = 0.6
+}
+entity = {#黑洞
+	name = "multi_dimensional_warehouse_c_entity"
+	pdxmesh = "black_hole_new_mesh"
+	scale = 1
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+	}
+	locator = { name = "planet" }
+	#attach = { "planet" = "black_hole_rings_entity" }
+	attach = { "planet" = "black_hole_grav_lens_entity" }
+	attach = { "planet" = "black_hole_grav_animation_entity" }
+	game_data = {
+		size = 1.0
+		bloom_factor = 5
+	}
+}
+entity = {#环
+	name = "multi_dimensional_warehouse_ring_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 90 } }
+	state = { name = "construction" }
+	attach = { loc1 = "aow_ringworld_50_entity" }
+	scale = 0.6
+}
+
+entity = {
+	name = "multi_dimensional_warehouse_1_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 720 0 } rotation = { 90 90 0 } }
+	locator = { name = "loc3" position = { 0 -720 0 } rotation = { 90 90 0 } }
+	state = { name = "construction" }
+	attach = { loc1 = "multi_dimensional_warehouse_a_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_ring_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_ring_entity" }
+	scale = 0.1
+}
+entity = {
+	name = "multi_dimensional_warehouse_2_construction_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 72 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 -72 0 } rotation = { 0 180 0 } }
+	locator = { name = "loc4" position = { 0 72 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc5" position = { 0 -72 0 } rotation = { 0 0 0 } }
+	attach = { loc2 = "multi_dimensional_warehouse_b_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_b_entity" }
+	attach = { loc4 = "multi_dimensional_warehouse_c_entity" }
+	attach = { loc5 = "multi_dimensional_warehouse_c_entity" }
+}
+entity = {
+	name = "multi_dimensional_warehouse_2_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 72 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 -72 0 } rotation = { 0 180 0 } }
+	locator = { name = "loc4" position = { 0 72 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc5" position = { 0 -72 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "multi_dimensional_warehouse_1_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_b_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_b_entity" }
+	attach = { loc4 = "multi_dimensional_warehouse_c_entity" }
+	attach = { loc5 = "multi_dimensional_warehouse_c_entity" }
+}
+entity = {
+	name = "multi_dimensional_warehouse_3_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 50 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { -50 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_2_entity" }
+}
+entity = {
+	name = "multi_dimensional_warehouse_4_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 57.74 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 50 0 -28.88 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { -50 0 -28.88 } rotation = { 0 0 0 } }
+	attach = { loc1 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_2_entity" }
+}
+entity = {
+	name = "multi_dimensional_warehouse_5_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 50 0 50 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 50 0 -50 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { -50 0 50 } rotation = { 0 0 0 } }
+	locator = { name = "loc4" position = { -50 0 -50 } rotation = { 0 0 0 } }
+	attach = { loc1 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc4 = "multi_dimensional_warehouse_2_entity" }
+}
+entity = {
+	name = "multi_dimensional_warehouse_6_entity"
+	cull_radius = 500.0
+	locator = { name = "loc1" position = { 0 0 85.06 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 80.9 0 26.28 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { -80.9 0 26.28 } rotation = { 0 0 0 } }
+	locator = { name = "loc4" position = { 50 0 -68.82 } rotation = { 0 0 0 } }
+	locator = { name = "loc5" position = { -50 0 -68.82 } rotation = { 0 0 0 } }
+	attach = { loc1 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc2 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc3 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc4 = "multi_dimensional_warehouse_2_entity" }
+	attach = { loc5 = "multi_dimensional_warehouse_2_entity" }
+}

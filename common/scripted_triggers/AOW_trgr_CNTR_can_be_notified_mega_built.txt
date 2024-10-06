@@ -1,0 +1,16 @@
+#可以被通知巨构建成的国家
+AOW_trgr_CNTR_can_be_notified_mega_built = {
+	has_communications = root
+	OR = {
+		has_intel_level = {
+			who = root
+			category = economy
+			level >= 1
+		}
+		has_intel_level = {
+			who = root
+			category = technology
+			level >= 1
+		}
+	}
+}

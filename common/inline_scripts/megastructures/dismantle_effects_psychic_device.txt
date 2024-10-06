@@ -1,0 +1,37 @@
+every_system_planet = {
+    limit = {
+        is_star = no
+        is_asteroid = no
+        AOW_trgr_PLNT_is_habitable = no
+        NOR = {
+            is_planet_class = pc_gas_giant
+            is_planet_class = pc_cold_gas_giant
+            is_planet_class = pc_hot_gas_giant
+            is_planet_class = pc_cloudless_gas_giant
+            is_planet_class = pc_dwarf_gas_giant
+        }
+    }
+    remove_deposit = d_zro_deposit_3
+}
+every_system_planet = {
+    limit = {
+        OR = {
+            is_asteroid = yes
+            is_planet_class = pc_gas_giant
+            is_planet_class = pc_cold_gas_giant
+            is_planet_class = pc_hot_gas_giant
+            is_planet_class = pc_cloudless_gas_giant
+            is_planet_class = pc_dwarf_gas_giant
+        }
+    }
+    remove_deposit = d_zro_deposit_1
+}
+random_system_ambient_object = {
+    limit = {
+        OR = {
+            has_ambient_object_flag = AOW_flag_AO_psychic_device_@event_target:AOW_target_planet
+            is_ambient_object_type = psi_storm_1
+        }
+    }
+    destroy_ambient_object = this
+}

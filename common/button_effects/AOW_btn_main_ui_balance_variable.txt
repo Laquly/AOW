@@ -1,0 +1,1011 @@
+#AI巨构花费
+AOW_btn_main_ui_increase_ai_mega_cost_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_cost_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_cost_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_increase_ai_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_ai_mega_cost = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_reset_ai_mega_cost
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_reset_ai_mega_cost
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_cost_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_cost_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_cost_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_cost value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_cost } }
+			custom_tooltip = btn_effect_decrease_ai_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_cost value = -1 } } }
+		}
+	}
+}
+
+
+#AI巨构维护费
+AOW_btn_main_ui_increase_ai_mega_upkp_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_upkp_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_upkp_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_increase_ai_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_ai_mega_upkp = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_reset_ai_mega_upkp
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_reset_ai_mega_upkp
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_upkp_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_upkp_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_upkp_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_upkp value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_ai_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_upkp value = -1 } } }
+		}
+	}
+}
+
+
+#AI巨构产出
+AOW_btn_main_ui_increase_ai_mega_prdc_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_prdc_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_prdc_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_increase_ai_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_ai_mega_prdc = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_reset_ai_mega_prdc
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_reset_ai_mega_prdc
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_prdc_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_prdc_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_prdc_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_prdc value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_ai_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_prdc value = -1 } } }
+		}
+	}
+}
+
+#################################################################################################
+#玩家巨构花费
+AOW_btn_main_ui_increase_player_mega_cost_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_cost_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_cost_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_increase_player_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_player_mega_cost = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_reset_player_mega_cost
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_reset_player_mega_cost
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_cost_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_cost_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_cost_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_cost } } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_cost value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_cost } }
+			custom_tooltip = btn_effect_decrease_player_mega_cost_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_cost value = -1 } } }
+		}
+	}
+}
+
+
+#玩家巨构维护费
+AOW_btn_main_ui_increase_player_mega_upkp_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_upkp_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_upkp_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_increase_player_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_player_mega_upkp = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_reset_player_mega_upkp
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_reset_player_mega_upkp
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_upkp_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_upkp_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_upkp_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_upkp } } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_upkp value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_upkp } }
+			custom_tooltip = btn_effect_decrease_player_mega_upkp_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_upkp value = -1 } } }
+		}
+	}
+}
+
+
+#玩家巨构产出
+AOW_btn_main_ui_increase_player_mega_prdc_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_prdc_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_prdc_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_increase_player_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_player_mega_prdc = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_reset_player_mega_prdc
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_reset_player_mega_prdc
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_prdc_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_prdc_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_prdc_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_prdc } } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_prdc value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_prdc } }
+			custom_tooltip = btn_effect_decrease_player_mega_prdc_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_prdc value = -1 } } }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+#AI巨构造速
+AOW_btn_main_ui_increase_ai_mega_build_speed_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_build_speed_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_build_speed_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_ai_mega_build_speed = {#重置
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_reset_ai_mega_build_speed
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_reset_ai_mega_build_speed
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_speed_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_speed_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_speed_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_speed value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_speed value = -1 } } }
+		}
+	}
+}
+
+#AI巨构队列
+AOW_btn_main_ui_increase_ai_mega_build_cap_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = 10 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = 10 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_build_cap_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = 5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = 5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_ai_mega_build_cap_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_ai_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_ai_mega_build_cap = {#重置
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_reset_ai_mega_build_cap
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_reset_ai_mega_build_cap
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_cap_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = -1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_cap_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = -5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = -5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_ai_mega_build_cap_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_ai_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_ai_mega_build_cap value = -10 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_ai_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_ai_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_ai_mega_build_cap value = -10 } } }
+		}
+	}
+}
+
+#玩家巨构造速
+AOW_btn_main_ui_increase_player_mega_build_speed_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_build_speed_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = 0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = 0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_build_speed_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = 0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_increase_player_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = 0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_player_mega_build_speed = {#重置
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_reset_player_mega_build_speed
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_reset_player_mega_build_speed
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_speed_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = -0.1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = -0.1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_speed_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = -0.5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = -0.5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_speed_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_speed } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_speed value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_speed } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_speed_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_speed value = -1 } } }
+		}
+	}
+}
+
+#玩家巨构队列
+AOW_btn_main_ui_increase_player_mega_build_cap_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = 10 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = 10 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_build_cap_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = 5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = 5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_increase_player_mega_build_cap_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = 1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_increase_player_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = 1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_reset_player_mega_build_cap = {#重置
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_reset_player_mega_build_cap
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = 0 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_reset_player_mega_build_cap
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = 0 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_cap_1 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = -1 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_1
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = -1 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_cap_2 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = -5 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_2
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = -5 } } }
+		}
+	}
+}
+AOW_btn_main_ui_decrease_player_mega_build_cap_3 = {
+	effect = {
+		if = {
+			limit = { event_target:global_event_country = { NOT = { is_variable_set = AOW_var_player_mega_build_cap } } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { set_variable = { which = AOW_var_player_mega_build_cap value = -10 } } }
+		}
+		else_if = {
+			limit = { event_target:global_event_country = { is_variable_set = AOW_var_player_mega_build_cap } }
+			custom_tooltip = btn_effect_decrease_player_mega_build_cap_3
+			hidden_effect = { event_target:global_event_country = { change_variable = { which = AOW_var_player_mega_build_cap value = -10 } } }
+		}
+	}
+}

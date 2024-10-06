@@ -1,0 +1,3430 @@
+@district_buildtime = 1080
+@district_cost_alloys = 1000
+@district_cost_sr = 100
+@district_upkeep_energy = 10
+@district_upkeep_alloys = 10
+@district_upkeep_sr = 5
+#4500
+AOW_district_sw_common_star = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_common_star
+            has_planet_flag = AOW_flag_PLNT_sw_common
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_common_star
+            has_planet_flag = AOW_flag_PLNT_sw_common
+        }
+    }
+    on_built = {
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+            exotic_gases = @district_upkeep_sr
+            rare_crystals = @district_upkeep_sr
+        }
+    }
+    planet_modifier = { planet_housing_add = 45 }
+    #保底
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_clerk_add = 1
+        mult = AOW_var_sw_points
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 1
+        mult = AOW_var_sw_points
+    }#格式塔
+    #能量币 AOW_var_sw_points_technician
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_technician_add = 1
+        mult = AOW_var_sw_points_technician
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_technician_drone_add = 1
+        mult = AOW_var_sw_points_technician
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_generator_add = 1
+        mult = AOW_var_sw_points_technician
+    }#唯心堕落
+    #矿物 AOW_var_sw_points_miner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_miner_add = 1
+        mult = AOW_var_sw_points_miner
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_mining_drone_add = 1
+        mult = AOW_var_sw_points_miner
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_mine_add = 1
+        mult = AOW_var_sw_points_miner
+    }#唯心堕落
+    #食物 AOW_var_sw_points_farmer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_farmer_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_agri_drone_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_farm_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#唯心堕落
+    #贸易 AOW_var_sw_points_trader
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+            }
+        }
+        job_trader_add = 1
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+                has_active_tradition = tr_mercantile_commercial_enterprise
+            }
+        }
+        job_trader_add = 0.5
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落+
+    #研究 AOW_var_sw_points_researcher
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_researcher_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_brain_drone_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_calculator_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_researcher_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_calculator_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#机械+
+    #行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+            }
+        }
+        job_bureaucrat_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        job_manager_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+            }
+        }
+        job_steward_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_coordinator_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_synapse_drone_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_bureaucrat_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_manager_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_steward_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_tradition = tr_virtuality_4
+            }
+        }
+        job_coordinator_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械+
+    #唯心行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }
+        job_priest_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }# Megacorp YES, Death Cult NO.
+        job_preacher_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                has_origin = origin_cybernetic_creed
+            }
+        }
+        job_haruspex_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心义体信条
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 1
+        job_mortal_initiate_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_preacher_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡+
+    #消费 AOW_var_sw_points_artisan
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        job_artisan_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        job_artificer_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔 巧匠
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                country_uses_consumer_goods = yes
+            }
+        }
+        job_artisan_drone_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#格式塔
+    #合金 AOW_var_sw_points_foundry
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        job_foundry_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_technician_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔 催化
+    triggered_planet_modifier = {#蜂巢
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_alloy_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#蜂巢
+    triggered_planet_modifier = {#机械
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_fabricator_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#机械
+    triggered_planet_modifier = {#催化格式塔
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#格式塔 催化
+    #颗粒 AOW_var_sw_points_chemist
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_chemist_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_chemist_drone_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#格式塔
+    #气体 AOW_var_sw_points_refiner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_gas_refiner_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_gas_refiner_drone_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#格式塔
+    #水晶 AOW_var_sw_points_translucer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_translucer_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_translucer_drone_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#格式塔
+    #士兵 AOW_var_sw_points_soldier
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_soldier_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_warrior_drone_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#格式塔
+    #舒适 AOW_var_sw_points_amenities
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOR = {
+                    has_civic = civic_dystopian_society
+                    has_valid_civic = civic_warrior_culture
+                }
+            }
+        }
+        job_entertainer_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 非尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOT = { has_civic = civic_dystopian_society }
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        job_duelist_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 2
+        mult = AOW_var_sw_points_amenities
+    }#格式塔
+    #警察 AOW_var_sw_points_enforcer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_enforcer_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_patrol_drone_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#格式塔
+    #手办 AOW_var_sw_points_bio_trophy
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_servitor }
+        }
+        planet_housing_add = -1
+        job_bio_trophy_add = 1
+        mult = AOW_var_sw_points_bio_trophy
+    }#机仆
+}
+AOW_district_sw_neutron_star = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_neutron_star
+            has_planet_flag = AOW_flag_PLNT_sw_neutron
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_neutron_star
+            has_planet_flag = AOW_flag_PLNT_sw_neutron
+        }
+    }
+    on_built = {
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+            exotic_gases = @district_upkeep_sr
+            rare_crystals = @district_upkeep_sr
+        }
+    }
+    planet_modifier = { planet_housing_add = 45 }
+    #保底
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_clerk_add = 1
+        mult = AOW_var_sw_points
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 1
+        mult = AOW_var_sw_points
+    }#格式塔
+    #能量币 AOW_var_sw_points_technician
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_technician_add = 1
+        mult = AOW_var_sw_points_technician
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_technician_drone_add = 1
+        mult = AOW_var_sw_points_technician
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_generator_add = 1
+        mult = AOW_var_sw_points_technician
+    }#唯心堕落
+    #矿物 AOW_var_sw_points_miner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_miner_add = 1
+        mult = AOW_var_sw_points_miner
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_mining_drone_add = 1
+        mult = AOW_var_sw_points_miner
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_mine_add = 1
+        mult = AOW_var_sw_points_miner
+    }#唯心堕落
+    #食物 AOW_var_sw_points_farmer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_farmer_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_agri_drone_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_farm_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#唯心堕落
+    #贸易 AOW_var_sw_points_trader
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+            }
+        }
+        job_trader_add = 1
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+                has_active_tradition = tr_mercantile_commercial_enterprise
+            }
+        }
+        job_trader_add = 0.5
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落+
+    #研究 AOW_var_sw_points_researcher
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_researcher_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_brain_drone_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_calculator_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_researcher_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_calculator_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#机械+
+    #行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+            }
+        }
+        job_bureaucrat_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        job_manager_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+            }
+        }
+        job_steward_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_coordinator_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_synapse_drone_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_bureaucrat_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_manager_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_steward_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_tradition = tr_virtuality_4
+            }
+        }
+        job_coordinator_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械+
+    #唯心行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }
+        job_priest_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }# Megacorp YES, Death Cult NO.
+        job_preacher_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                has_origin = origin_cybernetic_creed
+            }
+        }
+        job_haruspex_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心义体信条
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 1
+        job_mortal_initiate_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_preacher_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡+
+    #消费 AOW_var_sw_points_artisan
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        job_artisan_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        job_artificer_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔 巧匠
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                country_uses_consumer_goods = yes
+            }
+        }
+        job_artisan_drone_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#格式塔
+    #合金 AOW_var_sw_points_foundry
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        job_foundry_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_technician_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔 催化
+    triggered_planet_modifier = {#蜂巢
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_alloy_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#蜂巢
+    triggered_planet_modifier = {#机械
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_fabricator_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#机械
+    triggered_planet_modifier = {#催化格式塔
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#格式塔 催化
+    #颗粒 AOW_var_sw_points_chemist
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_chemist_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_chemist_drone_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#格式塔
+    #气体 AOW_var_sw_points_refiner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_gas_refiner_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_gas_refiner_drone_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#格式塔
+    #水晶 AOW_var_sw_points_translucer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_translucer_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_translucer_drone_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#格式塔
+    #士兵 AOW_var_sw_points_soldier
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_soldier_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_warrior_drone_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#格式塔
+    #舒适 AOW_var_sw_points_amenities
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOR = {
+                    has_civic = civic_dystopian_society
+                    has_valid_civic = civic_warrior_culture
+                }
+            }
+        }
+        job_entertainer_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 非尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOT = { has_civic = civic_dystopian_society }
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        job_duelist_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 2
+        mult = AOW_var_sw_points_amenities
+    }#格式塔
+    #警察 AOW_var_sw_points_enforcer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_enforcer_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_patrol_drone_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#格式塔
+    #手办 AOW_var_sw_points_bio_trophy
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_servitor }
+        }
+        planet_housing_add = -1
+        job_bio_trophy_add = 1
+        mult = AOW_var_sw_points_bio_trophy
+    }#机仆
+}
+AOW_district_sw_black_hole = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_black_hole
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_black_hole
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    on_built = {
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
+        AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+            exotic_gases = @district_upkeep_sr
+            rare_crystals = @district_upkeep_sr
+        }
+    }
+    planet_modifier = { planet_housing_add = 45 }
+    #保底
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_clerk_add = 1
+        mult = AOW_var_sw_points
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 1
+        mult = AOW_var_sw_points
+    }#格式塔
+    #能量币 AOW_var_sw_points_technician
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_technician_add = 1
+        mult = AOW_var_sw_points_technician
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_technician_drone_add = 1
+        mult = AOW_var_sw_points_technician
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_generator_add = 1
+        mult = AOW_var_sw_points_technician
+    }#唯心堕落
+    #矿物 AOW_var_sw_points_miner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_miner_add = 1
+        mult = AOW_var_sw_points_miner
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_mining_drone_add = 1
+        mult = AOW_var_sw_points_miner
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_mine_add = 1
+        mult = AOW_var_sw_points_miner
+    }#唯心堕落
+    #食物 AOW_var_sw_points_farmer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        job_farmer_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#非格式塔非唯心堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_agri_drone_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        job_fe_acolyte_farm_add = 1
+        mult = AOW_var_sw_points_farmer
+    }#唯心堕落
+    #贸易 AOW_var_sw_points_trader
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+            }
+        }
+        job_trader_add = 1
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire = no
+                has_active_tradition = tr_mercantile_commercial_enterprise
+            }
+        }
+        job_trader_add = 0.5
+        mult = AOW_var_sw_points_trader
+    }#非格式塔 非堕落+
+    #研究 AOW_var_sw_points_researcher
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_researcher_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_brain_drone_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_calculator_add = 1
+        mult = AOW_var_sw_points_researcher
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_researcher_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#非格式塔+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_calculator_add = 0.5
+        mult = AOW_var_sw_points_researcher
+    }#机械+
+    #行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+            }
+        }
+        job_bureaucrat_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        job_manager_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+            }
+        }
+        job_steward_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        job_coordinator_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_synapse_drone_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#蜂巢
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_bureaucrat_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非格式塔 非巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_manager_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#非劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_steward_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#劳工巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_tradition = tr_virtuality_4
+            }
+        }
+        job_coordinator_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#机械+
+    #唯心行政 AOW_var_sw_points_bureaucrat
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }
+        job_priest_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+            }
+        }# Megacorp YES, Death Cult NO.
+        job_preacher_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                has_origin = origin_cybernetic_creed
+            }
+        }
+        job_haruspex_add = 1
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心义体信条
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 1
+        job_mortal_initiate_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                NOT = { has_origin = origin_cybernetic_creed }
+                has_active_tradition = tr_virtuality_4
+            }
+        }
+        job_preacher_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心巨企+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+                has_active_tradition = tr_virtuality_4
+            }
+        }# Death Cult YES.
+        job_death_priest_add = 0.5
+        mult = AOW_var_sw_points_bureaucrat
+    }#唯心死亡+
+    #消费 AOW_var_sw_points_artisan
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        job_artisan_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        job_artificer_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#非格式塔 巧匠
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                country_uses_consumer_goods = yes
+            }
+        }
+        job_artisan_drone_add = 1
+        mult = AOW_var_sw_points_artisan
+    }#格式塔
+    #合金 AOW_var_sw_points_foundry
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        job_foundry_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_technician_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#非格式塔 催化
+    triggered_planet_modifier = {#蜂巢
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_alloy_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#蜂巢
+    triggered_planet_modifier = {#机械
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_fabricator_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#机械
+    triggered_planet_modifier = {#催化格式塔
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_drone_add = 1
+        mult = AOW_var_sw_points_foundry
+    }#格式塔 催化
+    #颗粒 AOW_var_sw_points_chemist
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_chemist_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_chemist_drone_add = 1
+        mult = AOW_var_sw_points_chemist
+    }#格式塔
+    #气体 AOW_var_sw_points_refiner
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_gas_refiner_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_gas_refiner_drone_add = 1
+        mult = AOW_var_sw_points_refiner
+    }#格式塔
+    #水晶 AOW_var_sw_points_translucer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_translucer_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_translucer_drone_add = 1
+        mult = AOW_var_sw_points_translucer
+    }#格式塔
+    #士兵 AOW_var_sw_points_soldier
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_soldier_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_warrior_drone_add = 1
+        mult = AOW_var_sw_points_soldier
+    }#格式塔
+    #舒适 AOW_var_sw_points_amenities
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOR = {
+                    has_civic = civic_dystopian_society
+                    has_valid_civic = civic_warrior_culture
+                }
+            }
+        }
+        job_entertainer_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 非尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOT = { has_civic = civic_dystopian_society }
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        job_duelist_add = 1
+        mult = AOW_var_sw_points_amenities
+    }#非格式塔非压迫 尚武
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_maintenance_drone_add = 2
+        mult = AOW_var_sw_points_amenities
+    }#格式塔
+    #警察 AOW_var_sw_points_enforcer
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        job_enforcer_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#非格式塔
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_patrol_drone_add = 1
+        mult = AOW_var_sw_points_enforcer
+    }#格式塔
+    #手办 AOW_var_sw_points_bio_trophy
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_servitor }
+        }
+        planet_housing_add = -1
+        job_bio_trophy_add = 1
+        mult = AOW_var_sw_points_bio_trophy
+    }#机仆
+}
+
+
+AOW_district_sw_basic_industry = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes country_uses_food = yes }
+            NOT = { has_planet_flag = AOW_flag_PLNT_sw_neutron }
+        }
+        job_technician_drone_add = 10
+        job_mining_drone_add = 10
+        job_agri_drone_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+            OR = {
+                owner = { country_uses_food = no }
+                has_planet_flag = AOW_flag_PLNT_sw_neutron
+            }
+        }
+        job_technician_drone_add = 15
+        job_mining_drone_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                country_uses_food = yes
+            }
+            NOT = { has_planet_flag = AOW_flag_PLNT_sw_neutron }
+        }
+        modifier = {
+            job_technician_add = 10
+            job_miner_add = 10
+            job_farmer_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+            OR = {
+                owner = { country_uses_food = no }
+                has_planet_flag = AOW_flag_PLNT_sw_neutron
+            }
+        }
+        modifier = {
+            job_technician_add = 15
+            job_miner_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_fallen_empire_spiritualist = yes }
+        }
+        modifier = {
+            job_fe_acolyte_generator_add = 10
+            job_fe_acolyte_mine_add = 10
+            job_fe_acolyte_farm_add = 10
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_technician_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_mining_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes country_uses_food = yes }
+            NOT = { has_planet_flag = AOW_flag_PLNT_sw_neutron }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_miner_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                country_uses_food = yes
+            }
+            NOT = { has_planet_flag = AOW_flag_PLNT_sw_neutron }
+        }
+        text = job_farmer_effect_desc
+    }
+}
+AOW_district_sw_science = {
+    icon = district_research
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            exotic_gases = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            exotic_gases = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        modifier = {
+            job_researcher_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        modifier = {
+            job_brain_drone_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        modifier = {
+            job_calculator_add = 30
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_researcher_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        text = job_calculator_effect_desc
+    }
+}
+AOW_district_sw_administrative = {
+    icon = district_arcology_administrative
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_common
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_common
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            rare_crystals = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_bureaucrat_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_manager_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+            }
+        }
+        modifier = {
+            job_steward_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = no
+            }
+        }
+        modifier = {
+            job_priest_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_priest_add = 15
+            job_manager_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = no
+                is_worker_coop_empire = yes
+            }
+        }
+        modifier = {
+            job_priest_add = 15
+            job_steward_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                is_death_cult_empire = yes
+            }
+        }
+        modifier = {
+            job_death_priest_add = 15
+            job_mortal_initiate_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = yes
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_death_priest_add = 10
+            job_mortal_initiate_add = 10
+            job_manager_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                is_death_cult_empire = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        modifier = {
+            job_death_priest_add = 10
+            job_mortal_initiate_add = 10
+            job_steward_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        modifier = {
+            job_coordinator_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        modifier = {
+            job_synapse_drone_add = 30
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_gestalt = no
+                is_megacorp = no
+                is_worker_coop_empire = no
+            }
+        }
+        text = job_bureaucrat_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+            }
+        }
+        text = job_manager_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_worker_coop_empire = yes
+            }
+        }
+        text = job_steward_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = no
+            }
+        }
+        text = job_priest_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_death_cult_empire = yes
+            }
+        }
+        text = jobs_death_priest_and_mortal_initiate_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        text = job_manager_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        text = job_steward_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_machine_empire = yes }
+        }
+        text = job_coordinator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        text = job_synapse_drone_effect_desc
+    }
+}
+AOW_district_sw_industry = {
+    icon = district_industrial
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            has_planet_flag = AOW_flag_PLNT_sw_common
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            has_planet_flag = AOW_flag_PLNT_sw_common
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_alloy_drone_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_fabricator_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_drone_add = 30
+        }
+    }
+    # Designation Job Changes
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_foundry
+                has_designation = col_capital_foundry
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = -15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_foundry
+                has_designation = col_capital_foundry
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = -15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_foundry
+                has_designation = col_capital_foundry
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_foundry
+                has_designation = col_capital_foundry
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_factory
+                has_designation = col_capital_factory
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_factory
+                has_designation = col_capital_factory
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_factory
+                has_designation = col_capital_factory
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = -15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            or = {
+                has_designation = col_factory
+                has_designation = col_capital_factory
+            }
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = -15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            OR = {
+                has_designation = col_factory
+                has_designation = col_mac_factory
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = 15
+            job_fabricator_add = -15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            OR = {
+                has_designation = col_factory
+                has_designation = col_mac_factory
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = 15
+            job_catalytic_drone_add = -15
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_civic = civic_crafters
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            OR = {
+                has_designation = col_factory
+                has_designation = col_mac_factory
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        text = job_foundry_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_alloy_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        modifier = {
+            job_maintenance_drone_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+}
+AOW_district_sw_arms_industry = {
+    icon = district_arcology_arms_industry
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_neutron
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_neutron
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_edict = industrial_maintenance
+                }
+            }
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_fabricator_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_alloy_drone_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_drone_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = 30
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        text = job_foundry_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_alloy_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_drone_effect_desc
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        modifier = {
+            job_maintenance_drone_add = 5
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+}
+AOW_district_sw_fortress = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_neutron
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_neutron
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        modifier = {
+            job_soldier_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_warrior_drone_add = 30
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_warrior_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_soldier_effect_desc
+    }
+}
+AOW_district_sw_refinery = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_black
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        has_planet_flag = AOW_flag_PLNT_sw_black
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+            exotic_gases = @district_upkeep_sr
+            rare_crystals = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        modifier = {
+            job_chemist_add = 10
+            job_gas_refiner_add = 10
+            job_translucer_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_chemist_drone_add = 10
+            job_gas_refiner_drone_add = 10
+            job_translucer_drone_add = 10
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_chemist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_chemist_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_gas_refiner_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_gas_refiner_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_translucer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_translucer_drone_effect_desc
+    }
+}
+AOW_district_sw_leisure = {
+    icon = district_arcology_leisure
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        from = {
+            is_gestalt = no
+            NOT = { has_civic = civic_dystopian_society }
+        }
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        exists = owner
+        owner = {
+            is_gestalt = no
+            NOT = { has_civic = civic_dystopian_society }
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            exotic_gases = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            exotic_gases = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    conversion_ratio = 1
+    convert_to = {
+        AOW_district_sw_organic_housing
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOT = { has_valid_civic = civic_warrior_culture }
+            }
+        }
+        modifier = {
+            job_entertainer_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        modifier = {
+            job_duelist_add = 30
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_valid_civic = civic_warrior_culture }
+        }
+        text = job_duelist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+        }
+        text = job_entertainer_effect_desc
+    }
+}
+AOW_district_sw_organic_housing = {
+    icon = district_arcology_organic_housing
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        from = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+        owner = {
+            exists = owner
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            exotic_gases = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            exotic_gases = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 30
+    }
+    conversion_ratio = 1
+    convert_to = {
+        AOW_district_sw_leisure
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_servitor }
+        }
+        text = job_bio_trophy_effect_desc
+    }
+}
+AOW_district_sw_order = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        NOT = { has_global_flag = AOW_flag_GLBL_new_starcage_world }
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+            volatile_motes = @district_upkeep_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        modifier = {
+            job_enforcer_add = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_patrol_drone_add = 30
+        }
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        text = job_enforcer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        text = job_patrol_drone_effect_desc
+    }
+}

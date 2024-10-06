@@ -1,0 +1,5 @@
+AOW_eft_MEGA_set_to_initial_state = {
+	upgrade_megastructure_to = AOW_MEGA_starfall_spear_standby
+	finish_upgrade = yes
+	save_event_target_as = AOW_tgt_MEGA_new_starfall_spear
+}

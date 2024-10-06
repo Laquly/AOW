@@ -1,0 +1,108 @@
+#前置条件
+AOW_btn_deep_space_prison_prerequisites = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = {
+		custom_tooltip = AOW_text_deep_space_prison_desc
+		if = {
+			limit = { has_technology = AOW_TECH_deep_space_prison }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			OR = {
+				has_technology = tech_artificial_moral_codes
+				has_technology = tech_unity_of_purpose
+			}
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_deep_space_prison
+		}
+	}
+	effect = { custom_tooltip = AOW_text_deep_space_prison_desc }
+}
+#AI
+AOW_btn_deep_space_prison_ai_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = deep_space_prison
+		PorA = ai
+		VALUE = 1
+	}
+}
+AOW_btn_deep_space_prison_ai_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = deep_space_prison
+		PorA = ai
+		VALUE = -1
+	}
+}
+AOW_btn_deep_space_prison_ai_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = deep_space_prison
+		PorA = ai
+		VALUE = 0
+	}
+}
+AOW_btn_deep_space_prison_ai_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = deep_space_prison
+		PorA = ai
+		LIMIT = -1
+	}
+}
+AOW_btn_deep_space_prison_ai_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = deep_space_prison
+		PorA = ai
+		LIMIT = 10
+	}
+}
+#玩家
+AOW_btn_deep_space_prison_player_disable = {#已禁用，设为启用
+	inline_script = {
+		script = AOW_player_ai_disable
+		KEY = deep_space_prison
+		PorA = player
+		VALUE = 1
+	}
+}
+AOW_btn_deep_space_prison_player_enable = {#已启用，设为无限（初始状态）
+	inline_script = {
+		script = AOW_player_ai_enable
+		KEY = deep_space_prison
+		PorA = player
+		VALUE = -1
+	}
+}
+AOW_btn_deep_space_prison_player_infinite = {#已无限，设为禁用
+	inline_script = {
+		script = AOW_player_ai_infinite
+		KEY = deep_space_prison
+		PorA = player
+		VALUE = 0
+	}
+}
+AOW_btn_deep_space_prison_player_decrease_cap = {#减少上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_decrease_mega_cap
+		KEY = deep_space_prison
+		PorA = player
+		LIMIT = -1
+	}
+}
+AOW_btn_deep_space_prison_player_increase_cap = {#增加上限
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	inline_script = {
+		script = AOW_increase_mega_cap
+		KEY = deep_space_prison
+		PorA = player
+		LIMIT = 10
+	}
+}

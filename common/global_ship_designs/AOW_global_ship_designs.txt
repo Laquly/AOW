@@ -1,0 +1,17 @@
+#御星天炉
+ship_design = {
+    name = "NAME_AOW_shipsize_star_transfer"
+    ship_size = AOW_shipsize_star_transfer
+    section = {
+        template = "AOW_section_star_transfer_core_1"
+        slot = "core"
+        component = {
+            slot = "W1"
+            template = "AOW_PLANET_KILLER_celestial_orbit_deployment_system"
+        }
+    }
+    required_component="AOW_ST_ZERO_POINT_REACTOR"
+    required_component="JUMP_DRIVE_1"
+    required_component="AOW_ST_SHIP_THRUSTER_4"
+    required_component="SENSOR_4"
+}
