@@ -50,7 +50,10 @@ dyson_swarm_1 = {
 		planet_possible = {
 			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星
 				fail_text = "AOW_mega_requires_PLNT_obafgkm_star"
-				AOW_trgr_PLNT_obafgkm_star = yes
+				OR = {
+					AOW_trgr_PLNT_obafgkm_star = yes
+					is_planet_class = pc_rift_star
+				}
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
