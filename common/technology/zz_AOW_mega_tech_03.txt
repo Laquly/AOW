@@ -121,6 +121,10 @@ AOW_TECH_hyperdimension_hiding = {
 			add = @tier7weight3
 			has_global_flag = AOW_flag_GLBL_hyperdimension_hiding
 		}
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
 	}
 	ai_weight = {
 		factor = 0
