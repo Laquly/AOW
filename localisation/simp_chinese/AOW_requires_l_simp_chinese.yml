@@ -73,6 +73,7 @@
  AOW_mega_requires_PLNT_star_transfer_supported:0"$TRIGGER_FAIL$暂不支持所选恒星，等作者了解了更多天文知识再说吧。"
  AOW_mega_requires_PLNT_no_mega_shipyard:0"$TRIGGER_FAIL$此星球已存在巨型船坞。"
  AOW_mega_requires_PLNT_obafgkm_star_d_star:0"$TRIGGER_FAIL$需要建造在光谱分类为§YO§!、§YB§!、§YA§!、§YF§!、§YG§!、§YK§!、§YM§!的恒星或白矮星上。§L白矮星需要Real Space模组支持§!"
+ AOW_mega_requires_PLNT_obafgkm_star_rift_star:"$TRIGGER_FAIL$需要建造在光谱分类为§YO§!、§YB§!、§YA§!、§YF§!、§YG§!、§YK§!、§YM§!的恒星或§Y$pc_rift_star$（恒星）§!上。"
  AOW_mega_requires_PLNT_no_orbital_acquisition_system:0"$TRIGGER_FAIL$在此建造$AOW_MEGA_orbital_acquisition_system$会惹恼达斯纳克。"
  AOW_mega_requires_PLNT_no_planetary_blaster_system:0"$TRIGGER_FAIL$这种星球不适合建造$AOW_MEGA_planetary_blaster_system$。"
  AOW_mega_requires_PLNT_no_dyson_sphere:0"$TRIGGER_FAIL$不能建造在有戴森球的恒星上，除非有模拟阳光科技。"

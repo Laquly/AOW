@@ -48,8 +48,8 @@ dyson_swarm_1 = {
 	}
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = {#必须光谱分类为OBAFGKM的恒星
-				fail_text = "AOW_mega_requires_PLNT_obafgkm_star"
+			custom_tooltip = {
+				fail_text = "AOW_mega_requires_PLNT_obafgkm_star_rift_star"
 				OR = {
 					AOW_trgr_PLNT_obafgkm_star = yes
 					is_planet_class = pc_rift_star
