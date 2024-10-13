@@ -517,10 +517,13 @@
  AOW_MEGA_heaven_navigation_bureau_2_DESC:0"进一步稳固了我们在多维空间的结构布局，可以对舰船进行更多的干涉。"
  AOW_MEGA_heaven_navigation_bureau_3:0"$AOW_MEGA_heaven_navigation_bureau$ 扩建"
  AOW_MEGA_heaven_navigation_bureau_3_DESC:0"扩建了多维空间的控制结构，可以干涉更多舰船。"
- AOW_MEGA_heaven_navigation_bureau_4:0"$AOW_MEGA_heaven_navigation_bureau$ 再度扩建"
- AOW_MEGA_heaven_navigation_bureau_4_DESC:0"未完工的$AOW_MEGA_heaven_navigation_bureau$，需要再进一步的扩建。"
+ AOW_MEGA_heaven_navigation_bureau_4:0"$AOW_MEGA_heaven_navigation_bureau$ 干涉"
+ AOW_MEGA_heaven_navigation_bureau_4_DESC:0"即将完工的$AOW_MEGA_heaven_navigation_bureau$，多维空间干涉能力进一步增大。"
  AOW_MEGA_heaven_navigation_bureau_5:0"$AOW_MEGA_heaven_navigation_bureau$"
  AOW_MEGA_heaven_navigation_bureau_5_DESC:0"依靠这个$AOW_MEGA_heaven_navigation_bureau$，领航员们可以轻易进出多维空间，并且可以一次性对更多的舰船进行干涉。"
+
+ sm_AOW_heaven_navigation_bureau:"星系领航核心"
+ sm_AOW_heaven_navigation_bureau_desc:"作为$AOW_MEGA_heaven_navigation_bureau$所在星系的领航引导核心，它可以轻易又高效地辅助星系内的舰队实现跃迁，"
 
 
  AOW_MEGA_miraculous_shipyard_0:0"$AOW_MEGA_miraculous_shipyard$ 基址"
