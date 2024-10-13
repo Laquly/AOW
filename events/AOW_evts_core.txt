@@ -2,7 +2,7 @@
 
 namespace = AOW_core
 
-@AOW_version = 241002
+@AOW_version = 241013
 
 #on_game_start
 event = {
