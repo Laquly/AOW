@@ -119,8 +119,8 @@
  AOW_TECH_hyperdimension_hiding:0"超维褶皱"
  AOW_TECH_hyperdimension_hiding_desc:0"进一步强化我们对于维度空间的控制能力，我们可以允许那些庞大的巨构互相共存。"
  AOW_TECH_hyperdimension_hiding_effect_1_title:0"后期流畅度: §G+10%§!"
- AOW_TECH_hyperdimension_hiding_effect_2_title:0"§H解锁功能：§!超维褶皱"
- AOW_TECH_hyperdimension_hiding_effect_2_desc:0"§H超维褶皱§!\n\n允许大部分恒星巨构建造在同一恒星上\n允许大部分恒星巨构建造在多恒星星系\n部分会清空星系的巨构不再移除行星"
+ AOW_TECH_hyperdimension_hiding_effect_2_title:0"§H解锁特性：§!超维褶皱"
+ AOW_TECH_hyperdimension_hiding_effect_2_desc:0"§H超维褶皱§!\n允许大部分恒星巨构建造在同一恒星上；\n允许大部分恒星巨构建造在多恒星星系；\n部分会清空星系的巨构不再移除行星。"
 
  AOW_TECH_multi_dimensional_warehouse:0"$AOW_MEGA_multi_dimensional_warehouse$"
  AOW_TECH_multi_dimensional_warehouse_desc:0"多维空间的应用大大拓宽了我们能伸展手脚的空间，首先能做到的便是把我们的物资储存在多维空间，但这仍需要一个本维度空间的框架来放在物资丢失。"
