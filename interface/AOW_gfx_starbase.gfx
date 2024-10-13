@@ -9,4 +9,14 @@ spriteTypes = {
 		name = "GFX_spaceport_miraculous_shipyard_uplink"
 		texturefile = "gfx/interface/icons/modules/spaceport_miraculous_shipyard_uplink.dds"
 	}
+	#天枢圣盾
+	spriteType = {
+		name = "GFX_spaceport_celestial_shield"
+		texturefile = "gfx/interface/icons/modules/spaceport_celestial_shield.dds"
+	}
+	#天界领航塔
+	spriteType = {
+		name = "GFX_spaceport_heaven_navigation_bureau"
+		texturefile = "gfx/interface/icons/modules/spaceport_heaven_navigation_bureau.dds"
+	}
 }
