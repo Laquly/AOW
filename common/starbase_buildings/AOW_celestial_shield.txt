@@ -1,5 +1,5 @@
 AOW_celestial_shield = {
-    icon = "GFX_spaceport_miraculous_shipyard_uplink"
+    icon = "GFX_spaceport_celestial_shield"
     construction_days = 720
     potential = {
         exists = owner
@@ -70,7 +70,7 @@ AOW_celestial_shield = {
 }
 
 AOW_heaven_navigation_bureau = {
-    icon = "GFX_spaceport_miraculous_shipyard_uplink"
+    icon = "GFX_spaceport_heaven_navigation_bureau"
     construction_days = 720
     potential = {
         exists = owner
@@ -78,11 +78,58 @@ AOW_heaven_navigation_bureau = {
     }
     possible = {
         solar_system = {
-            has_megastructure = AOW_MEGA_heaven_navigation_bureau_5
+            OR = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_1
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_2
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_3
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_4
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_5
+            }
         }
     }
-    system_modifier = {
-        ship_ftl_jumpdrive_range_mult = 1
+    triggered_system_modifier = {
+        potential = {
+            solar_system = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_1
+            }
+        }
+        ship_ftl_jumpdrive_range_mult = 0.2
+        ship_jumpdrive_cooldown_mult = -0.1
+    }
+    triggered_system_modifier = {
+        potential = {
+            solar_system = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_2
+            }
+        }
+        ship_ftl_jumpdrive_range_mult = 0.4
+        ship_jumpdrive_cooldown_mult = -0.2
+    }
+    triggered_system_modifier = {
+        potential = {
+            solar_system = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_3
+            }
+        }
+        ship_ftl_jumpdrive_range_mult = 0.6
+        ship_jumpdrive_cooldown_mult = -0.3
+    }
+    triggered_system_modifier = {
+        potential = {
+            solar_system = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_4
+            }
+        }
+        ship_ftl_jumpdrive_range_mult = 0.8
+        ship_jumpdrive_cooldown_mult = -0.4
+    }
+    triggered_system_modifier = {
+        potential = {
+            solar_system = {
+                has_megastructure = AOW_MEGA_heaven_navigation_bureau_5
+            }
+        }
+        ship_ftl_jumpdrive_range_mult = 1.5
         ship_jumpdrive_cooldown_mult = -0.5
     }
     show_in_tech = "AOW_TECH_heaven_navigation_bureau"
