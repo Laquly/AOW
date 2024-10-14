@@ -181,10 +181,19 @@ AOW_btn_preinstall_close_to_vanilla = {
 		}
 	}
 }
-
-
-
-
+#自定义
+AOW_btn_preinstall_custom = {
+	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_btn_preinstall_custom_desc
+		hidden_effect = {
+			event_target:global_event_country = {
+				inline_script = AOW_btn_preinstall_custom/game
+			}
+		}
+	}
+}
 
 #零者
 AOW_btn_preinstall_laquly = {
