@@ -5,7 +5,7 @@
  AOW_text_bulletin_board:"奇观拓展：公告栏"
  AOW_text_bulletin_board_desc:"写于§Y2024年10月13日§!\n始于2021年9月，开发时长约§Y三年§!\nQ群§Y632833071§!（只会在MOD更新时艾特全体成员）"
  AOW_text_bulletin_board_1:"§H对玩家说§!"
- AOW_text_bulletin_board_1_desc:0"-bug修复\n\n-测试版科技“超维褶皱”（默认禁用，AI无法研究），允许大部分恒星巨构建造在同一恒星上、允许大部分恒星巨构建造在多恒星星系、部分会清空星系的巨构不再移除行星\n\n-§Y天界领航塔§!对应的恒星基地建筑调整，会随星系内巨构等级的提高而提高增益效果\n\n-更新，新增了玩家预设（只用发txt文件就行了，注意检查有没有§YAOW EXPORT DATA START§!和§YAOW EXPORT DATA END§!字样，否则无效）"
+ AOW_text_bulletin_board_1_desc:0"-测试版科技“超维褶皱”（默认禁用，AI无法研究），允许大部分恒星巨构建造在同一恒星上、允许大部分恒星巨构建造在多恒星星系、部分会清空星系的巨构不再移除行星\n\n-同种巨构不再能多次建造在同一个恒星上了\n\n-§Y天界领航塔§!对应的恒星基地建筑调整，会随星系内巨构等级的提高而提高增益效果\n\n-更新，新增了玩家预设（只用发txt文件就行了，注意检查有没有§YAOW EXPORT DATA START§!和§YAOW EXPORT DATA END§!字样，否则无效）"
  AOW_text_bulletin_board_2:"§H对Modder说§!"
  AOW_text_bulletin_board_2_desc:"-has_global_flag=force_adjust_aow_megastructure_cap可强制调整AI巨构上限为0\n\n-has_global_flag=force_disable_aow_megastructure可强制禁用星轨、星网，并调整玩家的星笼世界和坠星天矛上限为1\n\n-在dismantle_possible里加上is_upgrading = no，可在巨构升级时禁止拆除功能\n\n-修改了原版封装can_dismantle_megastructure，加上了is_upgrading = no，可在巨构升级时禁止拆除功能\n\n-修改了基本上所有原版巨构，与其他同样修改了原版巨构的MOD会产生冲突，最后具体用哪个MOD的修改我也不清楚\n\n-给巨构生成的人工星球set_planet_flag = is_orbiting_planet_\@fromfrom.planet之后，可通过检测星系中是否有该flag的星球，即可判断工程船所选星球是否有巨构人工星球\n\n-修改了原版的封装has_ringworld_output_boost\n\n-修改了事件toxoids.1\n\n-对星系set_star_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星系\n\n-对星球set_planet_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星球"
 
@@ -56,7 +56,7 @@
  AOW_btn_main_ui_open_presets:0"§H打开预设配置菜单§!"
  AOW_btn_main_ui_open_presets_desc:0"因为翻页无法实时看清巨构数值变化，故将预设配置转移至新的窗口，方便玩家观察各个配置的不同设置。\n\n§L而且还不用考虑翻页带来的按钮显示问题，预设配置也能正常拥有滚动条了，因为同一个UI下的同一处位置只能生效一个滚动条，在此特别感谢创意工坊玩家的建议§!"
 
- AOW_btn_export_data_effect:0 "§H导出你的设置为文件§!\n\n§E文件路径：§!\nC:/Users/（用户名）/Documents/Paradox Interactive/Stellaris/logs/game.log\nParadox Interactive前的文件路径可能略有不同，其后的文件路径必须相同\n\n§E发送文件：§!\ngame.log即为目标文件，直接将该文件通过邮箱发送到邮箱laquly艾特qq.com，并为该配置起个6个字以内的名字，零者可以为您§G免费§!制作专属预设按钮\n\n§R特别注意：§!\n多次导出只会根据最后一次导出的配置制作\n新开一局会致使该文件被清空\n\n对之前在我这说过配置的玩家说声抱歉，因为之前的代码比较乱，没来得及为你们做专属配置，因此这次专门标准化了代码格式，制作起来会更省力"
+ AOW_btn_export_data_effect:0 "§H导出你的设置为文件§!\n\n§E文件路径：§!\nC:/Users/（用户名）/Documents/Paradox Interactive/Stellaris/logs/game.log\nParadox Interactive前的文件路径可能略有不同，其后的文件路径必须相同\n\n§E发送文件：§!\ngame.log即为目标文件，直接将该文件通过邮箱发送到邮箱laquly艾特qq.com，并为该配置起个6个字以内的名字，零者可以为您§G免费§!制作专属预设按钮\n\n§R特别注意：§!\n多次导出只会根据最后一次导出的配置制作\n新开一局会致使该文件被清空"
 
  AOW_requires_do_not_export_data_on_the_same_day:0"别在游戏内的同一天点击，我不好处理"
 
@@ -71,6 +71,9 @@
  AOW_btn_preinstall_vanilla_desc:0"§H说明：§!禁用奇观拓展的巨构，只启用原版巨构，而上限与原版一致。"
  AOW_btn_preinstall_close_to_vanilla:0"贴近原版"
  AOW_btn_preinstall_close_to_vanilla_desc:0"§H说明：§!作者个人觉得最贴近原版的设置。大多数巨构都被限制建造一个。"
+ AOW_btn_preinstall_custom:0"本地自定义"
+ AOW_btn_preinstall_custom_desc:0"§H本地自定义，应该不会随更新而改变§!\n\n§E1.找到文件§!\n路径C:/Users/（用户名）/Documents/Paradox Interactive/Stellaris/logs/game.log\nParadox Interactive前的文件路径可能略有不同，其后的文件路径必须相同\n\n§E2.打开文件§!\n用txt文本文档打开game.log\n\n§E3.编辑文件§!\n按照文件内的中文指示删除上下无关行、删除每行NULL及其左边的所有字符，这一步可以将内容复制到word文档中批量替换后，再复制回来\n确保最后留下的就只有如下形式（开始导出和结束导出的提示句各只有一个）：\n§Y#----------奇观拓展AOW开始导出----------删除以上全部的行\n#删除每一行中NULL以及之前的东西即可"\n#VP是玩家数值，VA是AI数值"\n#“VP = -1”表示玩家无限建造，“VP = 5”表示玩家最多建造5个巨构"\n#“VA = -1”表示AI无限建造，“VA = 0”表示AI禁止建造此巨构"\n#“KEY = XXXXX”表示巨构代码，表示对应数值应该给到哪个巨构"\n......具体内容......\n......具体内容......\n......具体内容......\n#----------奇观拓展AOW结束导出----------删除以下全部的行§!\n\n§E4.修改文件类型§!\n保存后退出编辑，将game.log重命名为game.txt（没有显示文件名后缀的，记得提前搜索如何打开文件扩展名显示）\n\n§E5.移动文件§!\n将game.txt移动到Steam/steamapps/workshop/content/281990/2660548454/common/inline_scripts/AOW_btn_preinstall_custom\n具体在哪取决于你把steam安装在哪个盘\n\n§E6.重启游戏§!\n重启游戏，再点此按钮，如果数值产生变化，说明全部操作成功\n\n§E7.更新数值§!\n如果您需要更新数值，找到在第5步路径中的game.txt中按照中文提示修改即可\n\n§R8.搞不懂？没成功？懒得搞？§!\nv我50凝聚力，我来助你！"
+
 
  AOW_btn_preinstall_default_desc:0"$AOW_text_customized_by_player$\n\n$AOW_text_laqulys_tip$"
  AOW_btn_preinstall_null_desc:0"$AOW_text_customized_by_player$\n\n§R警告：\n未收到任何文件，请重新发送，并确保发送过来的文件内有以下字样：\n§YAOW EXPORT DATA START§!\n§YAOW EXPORT DATA END§!§!"
@@ -80,8 +83,6 @@
 
  AOW_btn_preinstall_laquly:0"零者"
  AOW_btn_preinstall_laquly_desc:0"$AOW_text_customized_by_player$\n\n作者的自定义配置"
- AOW_btn_preinstall_custom:0"自定义"
- AOW_btn_preinstall_custom_desc:0"§H自定义§!\n这里将作为玩家自己手动定制预设配置的按钮，以后会出教程。"
  AOW_btn_preinstall_ShanLiangDeXiaoHuLi:0"善良的小狐狸"
  AOW_btn_preinstall_ShanLiangDeXiaoHuLi_desc:0"$AOW_text_customized_by_player$\n\n狡猾的小狐狸，来自§Y时与空§!mod作者\n\n$AOW_text_laqulys_tip$"
  AOW_btn_preinstall_ZhuanDaMoZheng:0"专打魔怔"
