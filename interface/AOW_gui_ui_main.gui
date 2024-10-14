@@ -389,8 +389,17 @@ guiTypes = {
 				effect = AOW_btn_main_ui_open_presets
 			}
 			effectButtonType = {
-				name = AOW_btn_preinstall_default_1
+				name = AOW_btn_preinstall_custom
 				position = { x = 200 y = 45 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_custom
+				effect = AOW_btn_preinstall_custom
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_default_1
+				position = { x = 350 y = 45 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
@@ -399,7 +408,7 @@ guiTypes = {
 			}
 			effectButtonType = {
 				name = AOW_btn_preinstall_default_2
-				position = { x = 350 y = 45 }
+				position = { x = 500 y = 45 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
@@ -408,7 +417,7 @@ guiTypes = {
 			}
 			effectButtonType = {
 				name = AOW_btn_preinstall_vanilla
-				position = { x = 500 y = 45 }
+				position = { x = 650 y = 45 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
@@ -417,7 +426,7 @@ guiTypes = {
 			}
 			effectButtonType = {
 				name = AOW_btn_preinstall_close_to_vanilla
-				position = { x = 650 y = 45 }
+				position = { x = 800 y = 45 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
