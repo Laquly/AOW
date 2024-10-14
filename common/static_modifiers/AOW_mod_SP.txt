@@ -5,8 +5,8 @@ AOW_mod_SP_continuous_damage = {
 	ship_hull_regen_add_static = -99999
 	ship_speed_reduction = 0.75
 	ship_weapon_damage = -0.99
-	ship_evasion_mult = -1
-	ship_emergency_ftl_min_days_mult = 1
+	ship_evasion_mult = -10
+	ship_emergency_ftl_min_days_mult = 10
 	ship_disengage_opportunities_add = -2
-	ship_disengage_chance_mult = -0.5
+	ship_disengage_chance_mult = -10
 }
