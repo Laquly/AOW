@@ -1070,6 +1070,15 @@ guiTypes = {
 				text = AOW_btn_preinstall_iiwm
 				effect = AOW_btn_preinstall_iiwm
 			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_SanZhiGeZi
+				position = { x = @p_x2 y = @p_y27 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_SanZhiGeZi
+				effect = AOW_btn_preinstall_SanZhiGeZi
+			}
 		}#按钮容器
 ################################################################################
 ################################################################################
