@@ -2,34 +2,35 @@ AOW_btn_view_ui_locator = { #显示星球名字条用的，方便玩家选中被
 	potential = {
 		this = {
 			is_scope_type = megastructure
-			exists = planet
 		}
-	} #脚下有星球才显示按钮
+		solar_system = {
+			any_system_planet = {
+				exists = this
+			}
+		}
+	} #星系有星球才显示按钮
 	allow = { always = yes }
 	effect = {
-		custom_tooltip = btn_effect_locating_planet
+		custom_tooltip = btn_effect_show_all_system_planet_nameplate
 		hidden_effect = {
-			planet = {
+			solar_system = {
 				if = {
-					limit = { NOT = { has_planet_flag = AOW_flag_PLNT_has_special_project_@root.from } }
-					set_planet_flag = AOW_flag_PLNT_has_special_project_@root.from
-					save_event_target_as = AOW_target_planet
-					from = {
-						save_event_target_as = AOW_target_country
+					limit = {
+						NOT = {
+							any_system_planet = {
+								NOT = { has_modifier = AOW_mod_PLNT_show_nameplate }
+							}
+						}
 					}
-					enable_special_project = {
-						name = AOW_sp_planet_locator
-						location = this
-						owner = root.from
+					every_system_planet = {
+						remove_modifier = AOW_mod_PLNT_show_nameplate
 					}
 				}
-				else_if = {
-					limit = { has_planet_flag = AOW_flag_PLNT_has_special_project_@root.from }
-					remove_planet_flag = AOW_flag_PLNT_has_special_project_@root.from
-					root.from = {
-						abort_special_project = {
-							type = AOW_sp_planet_locator
-							location = prev
+				else = {
+					every_system_planet = {
+						add_modifier = {
+							modifier = AOW_mod_PLNT_show_nameplate
+							days = -1
 						}
 					}
 				}

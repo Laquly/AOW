@@ -9,4 +9,6 @@
  btn_effect_dismantle_megastructure:0"准备拆除巨构"
  btn_effect_PMS_switch_to_m:0"§H当前产出模式：§!£minerals£矿物\n\n§H点击：§!切换为£consumer_goods£消费品产出模式"
  btn_effect_PMS_switch_to_cg:0"§H当前产出模式：§!£consumer_goods£消费品\n\n§H点击：§!切换为£minerals£矿物产出模式"
- btn_effect_locating_planet:0"显示下方行星名字条"
+ btn_effect_show_all_system_planet_nameplate:0"§H显示星球名字条§!\n\n强制显示当前星系中所有星球的名字条，以方便选中星球建造巨构"
+ AOW_mod_PLNT_show_nameplate:"强制显示星球名字条"
+ AOW_mod_PLNT_show_nameplate_desc:"强制显示星球的名字条，方便玩家选中星球建造巨构，想要消除此修正，需在本星系内任意巨构中点击星球按钮。"

@@ -53,9 +53,6 @@
  AOW_locator_sp_mega:0"§Y[this.GetName]§!§L([this.solar_system.GetName])§!"
  AOW_locator_sp_mega_DESC:0"§Y[this.GetName]§! megastructure in §Y[this.solar_system.GetName]§! system."
 
- AOW_sp_planet_locator:0"The name bar of [this.GetName]"
- AOW_sp_planet_locator_DESC:0"This project is only used to display the name bar of §Y[this.GetName]§! so that the planet can be selected.\n\n§YCommon application scenarios: §!Star X is completely obscured by the Dyson sphere, the mouse can not click to star X, but this project can display the name bar of the star X, and the mouse can click the name bar to select the star."
-
  ############### 星基建筑 ###############
 
  sm_AOW_nebula_refinery_center:0"Nebula Refinery Center"

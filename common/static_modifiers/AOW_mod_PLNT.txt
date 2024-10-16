@@ -1,3 +1,9 @@
+#nameplate
+AOW_mod_PLNT_show_nameplate = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_default.dds"
+	icon_frame = 1
+	important = yes
+}
 #行星开采器产出说明
 AOW_mod_PLNT_planetary_mining_station = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_planetary_mining_station.dds"
