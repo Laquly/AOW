@@ -3,9 +3,9 @@
  #公告
  AOW_btn_main_ui_open_bulletin_board:0"§Y打开公告栏§!"
  AOW_text_bulletin_board:"奇观拓展：公告栏"
- AOW_text_bulletin_board_desc:"写于§Y2024年10月13日§!\n始于2021年9月，开发时长约§Y三年§!\nQ群§Y632833071§!（只会在MOD更新时艾特全体成员）"
+ AOW_text_bulletin_board_desc:"写于§Y2024年10月30日§!\n始于2021年9月，开发时长约§Y三年§!\nQ群§Y632833071§!（只会在MOD更新时艾特全体成员）"
  AOW_text_bulletin_board_1:"§H对玩家说§!"
- AOW_text_bulletin_board_1_desc:0"-测试版科技“超维褶皱”（默认禁用，AI无法研究），允许大部分恒星巨构建造在同一恒星上、允许大部分恒星巨构建造在多恒星星系、部分会清空星系的巨构不再移除行星\n\n-同种巨构不再能多次建造在同一个恒星上了\n\n-§Y天界领航塔§!对应的恒星基地建筑调整，会随星系内巨构等级的提高而提高增益效果\n\n-更新，新增了玩家预设（只用发txt文件就行了，注意检查有没有§YAOW EXPORT DATA START§!和§YAOW EXPORT DATA END§!字样，否则无效）"
+ AOW_text_bulletin_board_1_desc:0"-适配3.14版本\n\n-巨构UI右上角的显示星球名字条的功能改为显示当前星系内所有星球的名字条，防止巨构模型过大遮挡到其他星球而导致无法选中\n\n-AI（包括堕落帝国）再也无法研究“超维褶皱”科技导致AI也能叠加建造巨构了\n\n-更新，新增了玩家预设（只用发txt文件就行了，注意检查有没有§YAOW EXPORT DATA START§!和§YAOW EXPORT DATA END§!字样，否则无效）"
  AOW_text_bulletin_board_2:"§H对Modder说§!"
  AOW_text_bulletin_board_2_desc:"-has_global_flag=force_adjust_aow_megastructure_cap可强制调整AI巨构上限为0\n\n-has_global_flag=force_disable_aow_megastructure可强制禁用星轨、星网，并调整玩家的星笼世界和坠星天矛上限为1\n\n-在dismantle_possible里加上is_upgrading = no，可在巨构升级时禁止拆除功能\n\n-修改了原版封装can_dismantle_megastructure，加上了is_upgrading = no，可在巨构升级时禁止拆除功能\n\n-修改了基本上所有原版巨构，与其他同样修改了原版巨构的MOD会产生冲突，最后具体用哪个MOD的修改我也不清楚\n\n-给巨构生成的人工星球set_planet_flag = is_orbiting_planet_\@fromfrom.planet之后，可通过检测星系中是否有该flag的星球，即可判断工程船所选星球是否有巨构人工星球\n\n-修改了原版的封装has_ringworld_output_boost\n\n-修改了事件toxoids.1\n\n-对星系set_star_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星系\n\n-对星球set_planet_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星球"
 
