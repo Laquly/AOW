@@ -95,7 +95,7 @@ AOW_TECH_hyperdimension_hiding = {
 	category = { field_manipulation }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_dimension_hiding" }
-	weight = @tier7weight3
+	weight = 0
 	is_rare = yes
 	modifier = {
 		megastructures_energy_upkeep_mult = 1
@@ -116,14 +116,12 @@ AOW_TECH_hyperdimension_hiding = {
 		is_ai = no
 	}
 	weight_modifier = {
+		weight = 0
 		factor = 0
 		modifier = {
 			add = @tier7weight3
 			has_global_flag = AOW_flag_GLBL_hyperdimension_hiding
-		}
-		modifier = {
-			factor = 0
-			is_ai = yes
+			is_ai = no
 		}
 	}
 	ai_weight = {
