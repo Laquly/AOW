@@ -1168,6 +1168,23 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 			}
+			containerWindowType = {#前往收藏
+				name = "grand_archive_details"
+				position = { x = 0 y = 347 }
+				size = { width = 100% height = 40% }
+				buttonType = {
+					name = "goto_collection"
+					size = { x = 316 y = 69 }
+					position = { x = -132 y = 30 }
+					orientation = center
+					spriteType = "GFX_standard_button_240_34_button"
+					buttonFont = "cg_16b"
+					text = "GOTO_COLLECTION"
+					font = "cg_16b"
+					clicksound = planet_view_menu_click_01
+					oversound = mouse_over
+				}
+			}
 			containerWindowType = {#拆除进度
 				name = "dismantle_window"
 				position = { x = 0 y = 545 }
