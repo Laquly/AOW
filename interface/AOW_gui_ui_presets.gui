@@ -1079,6 +1079,24 @@ guiTypes = {
 				text = AOW_btn_preinstall_SanZhiGeZi
 				effect = AOW_btn_preinstall_SanZhiGeZi
 			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_ChunDeWeiGai
+				position = { x = @p_x3 y = @p_y27 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_ChunDeWeiGai
+				effect = AOW_btn_preinstall_ChunDeWeiGai
+			}
+			effectButtonType = {
+				name = AOW_btn_preinstall_RenJianFengXueKe
+				position = { x = @p_x4 y = @p_y27 }
+				spriteType = GFX_AOW_button_preinstall
+				buttonFont = cg_16b
+				format = center
+				text = AOW_btn_preinstall_RenJianFengXueKe
+				effect = AOW_btn_preinstall_RenJianFengXueKe
+			}
 		}#按钮容器
 ################################################################################
 ################################################################################
