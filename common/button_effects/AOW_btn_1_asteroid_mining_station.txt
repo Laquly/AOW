@@ -1,0 +1,29 @@
+#前置条件
+AOW_btn_asteroid_mining_station_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {#已启用，设为无限（初始状态）
+		custom_tooltip = AOW_text_asteroid_mining_station_desc
+		if = {
+			limit = { has_technology = AOW_TECH_asteroid_mining_station }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_space_mining_1
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_asteroid_mining_station
+		}
+	}
+	effect = { custom_tooltip = AOW_text_asteroid_mining_station_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = asteroid_mining_station
+	outliner = standard
+}

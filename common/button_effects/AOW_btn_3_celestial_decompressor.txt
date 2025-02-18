@@ -1,0 +1,36 @@
+#天体解压器
+AOW_btn_celestial_decompressor_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_celestial_decompressor_desc
+		if = {
+			limit = { has_technology = AOW_TECH_celestial_decompressor }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			custom_tooltip = {
+				fail_text = "requires_ap_galactic_wonders"
+				has_galactic_wonders = yes
+			}
+			has_technology = tech_mega_engineering
+			has_technology = AOW_TECH_spatiotemporal_curvature_manipulation
+			has_technology = tech_matter_decompressor
+			has_technology = AOW_TECH_zero_element_furnace
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_celestial_decompressor
+		}
+	}
+	effect = { custom_tooltip = AOW_text_celestial_decompressor_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_disable_player_infinite_mega_cap
+	KEY = celestial_decompressor
+	outliner = special
+}

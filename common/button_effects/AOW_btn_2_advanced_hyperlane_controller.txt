@@ -1,0 +1,31 @@
+#前置条件
+AOW_btn_advanced_hyperlane_controller_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_advanced_hyperlane_controller_desc
+		if = {
+			limit = { has_technology = AOW_TECH_advanced_hyperlane_controller }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = AOW_TECH_hyperlane_controller
+			has_country_flag = AOW_flag_CNTR_add_hyperlane_with_HC
+			has_country_flag = AOW_flag_CNTR_remove_hyperlane_with_HC
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_advanced_hyperlane_controller
+		}
+	}
+	effect = { custom_tooltip = AOW_text_advanced_hyperlane_controller_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_disable_player_infinite_mega_cap
+	KEY = advanced_hyperlane_controller
+	outliner = special
+}

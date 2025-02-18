@@ -1,0 +1,30 @@
+#前置条件
+AOW_btn_zro_sublimator_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_zro_sublimator_desc
+		if = {
+			limit = { has_technology = AOW_TECH_zro_sublimator }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			has_technology = tech_mine_zro
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_zro_sublimator
+		}
+	}
+	effect = { custom_tooltip = AOW_text_zro_sublimator_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = zro_sublimator
+	outliner = standard
+}

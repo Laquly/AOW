@@ -1,0 +1,31 @@
+#前置条件
+AOW_btn_ring_world_3_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_ring_world_3_desc
+		if = {
+			limit = { has_technology = AOW_TECH_ring_world_3 }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			host_has_dlc = "Utopia"
+			has_ascension_perk = ap_cosmic_wonders
+			has_technology = AOW_TECH_ring_world_2
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_ring_world_3
+		}
+	}
+	effect = { custom_tooltip = AOW_text_ring_world_3_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_infinite_player_infinite_mega_cap
+	KEY = ring_world_3
+	outliner = special
+}

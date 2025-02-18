@@ -1,6 +1,0 @@
-
-	if = {
-		limit = { check_variable = { which = AOW_var_$PorA$_mega_cap_$KEY$ value = 0 } }
-		set_global_flag = AOW_flag_GLBL_no_$PorA$_$KEY$
-	}
-	else = { remove_global_flag = AOW_flag_GLBL_no_$PorA$_$KEY$ }

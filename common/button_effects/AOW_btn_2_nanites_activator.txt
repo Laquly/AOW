@@ -1,0 +1,34 @@
+#前置条件
+AOW_btn_nanites_activator_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_nanites_activator_desc
+		if = {
+			limit = { has_technology = AOW_TECH_nanites_activator }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_distar = yes
+			has_technology = tech_mega_engineering
+			has_technology = tech_nanite_transmutation
+			has_technology = tech_volatile_motes
+			has_technology = tech_rare_crystals
+			has_technology = tech_exotic_gases
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_nanites_activator
+		}
+	}
+	effect = { custom_tooltip = AOW_text_nanites_activator_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = nanites_activator
+	outliner = standard
+}
