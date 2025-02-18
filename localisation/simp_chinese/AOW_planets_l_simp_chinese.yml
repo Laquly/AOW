@@ -1,0 +1,44 @@
+﻿l_simp_chinese:
+
+ #星笼世界
+ pc_starcage_world_common_star:0"恒星·$AOW_MEGA_starcage_world$"
+ pc_starcage_world_common_star_desc:0"围绕大质量天体修建的多层状结构，表面积和宜居空间远远超过恒星表面。"
+ pc_starcage_world_common_star_adj:0"恒星星笼"
+ mod_pc_starcage_world_common_star_habitability:0"$pc_starcage_world_common_star$宜居性"
+ trait_pc_starcage_world_common_star_preference:0"$pc_starcage_world_common_star$偏好"
+ trait_pc_starcage_world_common_star_preference_desc:0"$trait_pc_arctic_preference_desc$"
+
+ pc_starcage_world_neutron_star:0"中子·$AOW_MEGA_starcage_world$"
+ pc_starcage_world_neutron_star_desc:0"围绕大质量天体修建的多层状结构，表面积和宜居空间远远超过恒星表面。"
+ pc_starcage_world_neutron_star_adj:0"中子星笼"
+ mod_pc_starcage_world_neutron_star_habitability:0"$pc_starcage_world_neutron_star$宜居性"
+ trait_pc_starcage_world_neutron_star_preference:0"$pc_starcage_world_neutron_star$偏好"
+ trait_pc_starcage_world_neutron_star_preference_desc:0"$trait_pc_arctic_preference_desc$"
+
+ pc_starcage_world_black_hole:0"黑洞·$AOW_MEGA_starcage_world$"
+ pc_starcage_world_black_hole_desc:0"围绕大质量天体修建的多层状结构，表面积和宜居空间远远超过恒星表面。"
+ pc_starcage_world_black_hole_adj:0"黑洞星笼"
+ mod_pc_starcage_world_black_hole_habitability:0"$pc_starcage_world_black_hole$宜居性"
+ trait_pc_starcage_world_black_hole_preference:0"$pc_starcage_world_black_hole$偏好"
+ trait_pc_starcage_world_black_hole_preference_desc:0"$trait_pc_arctic_preference_desc$"
+
+ col_starcage_world_production:"$AOW_MEGA_starcage_world$：生产模式"
+ col_starcage_world_production_desc:"$AOW_MEGA_starcage_world$将集中于生产。"
+ col_starcage_world_maintenance:"$AOW_MEGA_starcage_world$：节能模式"
+ col_starcage_world_maintenance_desc:"$AOW_MEGA_starcage_world$将集中于节能。"
+ col_starcage_world_construction:"$AOW_MEGA_starcage_world$：建设模式"
+ col_starcage_world_construction_desc:"$AOW_MEGA_starcage_world$将集中于建设。"
+ col_starcage_world_unity:"$AOW_MEGA_starcage_world$：凝聚模式"
+ col_starcage_world_unity_desc:"$AOW_MEGA_starcage_world$将集中于凝聚。"
+
+ AOW_district_sw_common_star:0"全能恒星工业区划"
+ AOW_district_sw_common_star_plural:0"$AOW_district_sw_common_star$"
+ AOW_district_sw_common_star_desc:0"$AOW_MEGA_starcage_world$的集成生产板块，通过恒星能量驱动的模块化生产单元可以根据需求进行各种资源的生产。\n\n在§H星球决议§!§Y$AOW_decision_starcage_world$§!中手动调整岗位种类和数量。"
+
+ AOW_district_sw_neutron_star:0"全能中子工业区划"
+ AOW_district_sw_neutron_star_plural:0"$AOW_district_sw_neutron_star$"
+ AOW_district_sw_neutron_star_desc:0"$AOW_MEGA_starcage_world$的集成生产板块，通过中子星能量驱动的模块化生产单元可以根据需求进行各种资源的生产。\n\n在§H星球决议§!§Y$AOW_decision_starcage_world$§!中手动调整岗位种类和数量。"
+
+ AOW_district_sw_black_hole:0"全能黑洞工业区划"
+ AOW_district_sw_black_hole_plural:0"$AOW_district_sw_black_hole$"
+ AOW_district_sw_black_hole_desc:0"$AOW_MEGA_starcage_world$的集成生产板块，通过黑洞能量驱动的模块化生产单元可以根据需求进行各种资源的生产。\n\n在§H星球决议§!§Y$AOW_decision_starcage_world$§!中手动调整岗位种类和数量。"
