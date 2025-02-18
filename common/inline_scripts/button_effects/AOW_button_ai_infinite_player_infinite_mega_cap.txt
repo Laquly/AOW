@@ -1,0 +1,74 @@
+inline_script = {
+	script = button_effects/AOW_button_outliner_$outliner$
+	KEY = $KEY$
+}
+#AI
+AOW_btn_$KEY$_ai_quick_switch = {#切换：禁用、无限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	effect = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 }
+				}
+			}
+			custom_tooltip = AOW_text_ai_mega_is_disabled
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = -1 }
+					remove_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value < 0 }
+				}
+			}
+			custom_tooltip = AOW_text_ai_mega_is_infinite
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 }
+					set_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+	}
+}
+#玩家
+AOW_btn_$KEY$_player_quick_switch = {#切换：禁用、无限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 4 } } }
+	effect = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value = 0 }
+				}
+			}
+			custom_tooltip = AOW_text_player_mega_is_disabled
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_player_mega_cap_$KEY$ value = -1 }
+					remove_global_flag = AOW_flag_GLBL_no_player_$KEY$
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value < 0 }
+				}
+			}
+			custom_tooltip = AOW_text_player_mega_is_infinite
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_player_mega_cap_$KEY$ value = 0 }
+					set_global_flag = AOW_flag_GLBL_no_player_$KEY$
+				}
+			}
+		}
+	}
+}

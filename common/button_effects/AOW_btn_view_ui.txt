@@ -1,0 +1,180 @@
+AOW_btn_view_ui_locator = { #显示星球名字条用的，方便玩家选中被巨构遮挡的星球
+	potential = {
+		this = {
+			is_scope_type = megastructure
+		}
+		solar_system = {
+			any_system_planet = {
+				exists = this
+			}
+		}
+	} #星系有星球才显示按钮
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = btn_effect_show_all_system_planet_nameplate
+		hidden_effect = {
+			solar_system = {
+				if = {
+					limit = {
+						NOT = {
+							any_system_planet = {
+								NOT = { has_modifier = AOW_mod_PLNT_show_nameplate }
+							}
+						}
+					}
+					every_system_planet = {
+						remove_modifier = AOW_mod_PLNT_show_nameplate
+					}
+				}
+				else = {
+					every_system_planet = {
+						add_modifier = {
+							modifier = AOW_mod_PLNT_show_nameplate
+							days = -1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#控制总览处是否显示的系列按钮
+AOW_btn_view_ui_outliner_default = {
+	potential = {
+		is_scope_type = megastructure
+		exists = owner
+		NOR = {
+			has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+			has_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+		}
+		OR = {
+			is_megastructure_type = orbital_arc_furnace_4
+			is_megastructure_type = orbital_arc_furnace_restored
+			is_megastructure_type = dyson_swarm_3
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_hyper
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_super
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_o
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_b
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_giant
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_a
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_f
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_g
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_k
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_m
+			is_megastructure_type = AOW_MEGA_asteroid_mining_station_1
+			is_megastructure_type = AOW_MEGA_space_arena_1
+			is_megastructure_type = AOW_MEGA_space_sensor_station_1
+			is_megastructure_type = interstellar_assembly_4
+			is_megastructure_type = interstellar_assembly_restored
+			is_megastructure_type = mega_art_installation_4
+			is_megastructure_type = mega_art_installation_restored_2
+			is_megastructure_type = mega_shipyard_3
+			is_megastructure_type = mega_shipyard_restored
+			is_megastructure_type = spy_orb_restored
+			is_megastructure_type = spy_orb_4
+			is_megastructure_type = strategic_coordination_center_3
+			is_megastructure_type = strategic_coordination_center_restored
+			is_megastructure_type = think_tank_3
+			is_megastructure_type = think_tank_4
+			is_megastructure_type = think_tank_restored
+			is_megastructure_type = quantum_catapult_3
+			is_megastructure_type = quantum_catapult_restored
+			is_megastructure_type = quantum_catapult_improved_slingshot
+			is_megastructure_type = AOW_MEGA_artifacts_transcription_palace_5
+			is_megastructure_type = AOW_MEGA_cemetery_of_martyrs_3
+			is_megastructure_type = AOW_MEGA_dark_matter_curvature_trap_2
+			is_megastructure_type = AOW_MEGA_deep_space_prison_4
+			is_megastructure_type = AOW_MEGA_nanites_transmutation_2
+			is_megastructure_type = AOW_MEGA_nanites_activator_2
+			is_megastructure_type = AOW_MEGA_naval_command_base_3
+			is_megastructure_type = AOW_MEGA_nebula_refining_center_5
+			is_megastructure_type = AOW_MEGA_orbital_acquisition_system_3
+			is_megastructure_type = AOW_MEGA_plane_siphon_2
+			is_megastructure_type = AOW_MEGA_planetary_mining_station_3
+			is_megastructure_type = AOW_MEGA_prosperous_trade_station_5
+			is_megastructure_type = AOW_MEGA_synthetic_food_factory_3
+			is_megastructure_type = AOW_MEGA_wonder_construction_bureau_3
+			is_megastructure_type = AOW_MEGA_zro_sublimator_2
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_hyper
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_super
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_O
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_B
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_giant
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_A
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_F
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_G
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_K
+			is_megastructure_type = AOW_MEGA_dyson_sphere_5_M
+			is_megastructure_type = dyson_sphere_5
+			is_megastructure_type = dyson_sphere_restored
+			is_megastructure_type = matter_decompressor_4
+			is_megastructure_type = matter_decompressor_restored
+			is_megastructure_type = AOW_MEGA_psychic_device_3
+			is_megastructure_type = AOW_MEGA_pulsar_clock_4
+			is_megastructure_type = AOW_MEGA_pulsar_clock_restored
+			is_megastructure_type = AOW_MEGA_star_picker_5
+			is_megastructure_type = AOW_MEGA_void_vortex_6
+			is_megastructure_type = AOW_MEGA_void_vortex_restored
+			is_megastructure_type = AOW_MEGA_zero_element_furnace_4
+			is_megastructure_type = AOW_MEGA_zero_element_furnace_restored
+			is_megastructure_type = AOW_MEGA_star_guardian_3
+			is_megastructure_type = AOW_MEGA_multi_dimensional_warehouse_6
+			is_megastructure_type = AOW_MEGA_heaven_navigation_bureau_5
+			is_megastructure_type = AOW_MEGA_miraculous_shipyard_5
+			is_megastructure_type = AOW_MEGA_qsqm_5_hyper
+			is_megastructure_type = AOW_MEGA_qsqm_5_super
+			is_megastructure_type = AOW_MEGA_qsqm_5_O
+			is_megastructure_type = AOW_MEGA_qsqm_5_B
+			is_megastructure_type = AOW_MEGA_qsqm_5_giant
+			is_megastructure_type = AOW_MEGA_qsqm_5_A
+			is_megastructure_type = AOW_MEGA_qsqm_5_F
+			is_megastructure_type = AOW_MEGA_qsqm_5_G
+			is_megastructure_type = AOW_MEGA_qsqm_5_K
+			is_megastructure_type = AOW_MEGA_qsqm_5_M
+			is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_5
+			is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_restored
+			is_megastructure_type = AOW_MEGA_starcage_world_5
+		}
+	}
+	allow = {
+		exists = owner
+		owner = { is_same_value = from }
+	}
+	effect = {
+		custom_tooltip = AOW_text_outliner_default
+		remove_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+		set_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+	}
+}
+AOW_btn_view_ui_outliner_show = {
+	potential = {
+		exists = owner
+		has_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+	}
+	allow = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+	}
+	effect = {
+		custom_tooltip = AOW_text_outliner_show
+		remove_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+		set_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+	}
+}
+AOW_btn_view_ui_outliner_hide = {
+	potential = {
+		exists = owner
+		has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+	}
+	allow = {
+		is_scope_type = megastructure
+		exists = owner
+		owner = { is_same_value = from }
+	}
+	effect = {
+		custom_tooltip = AOW_text_outliner_hide
+		remove_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+		remove_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+	}
+}

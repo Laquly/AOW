@@ -1,0 +1,42 @@
+#在总览隐藏
+AOW_btn_$KEY$_outliner_hide = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+			has_country_flag = AOW_flag_CNTR_$KEY$_outliner_hide
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		if = {
+			limit = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+			custom_tooltip = AOW_text_effective_only_for_players
+		}
+		custom_tooltip = AOW_text_outliner_hide_desc
+		hidden_effect = {
+			from = { remove_country_flag = AOW_flag_CNTR_$KEY$_outliner_hide }
+		}
+	}
+}
+#在总览显示
+AOW_btn_$KEY$_outliner_show = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+			NOT = { has_country_flag = AOW_flag_CNTR_$KEY$_outliner_hide }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		if = {
+			limit = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+			custom_tooltip = AOW_text_effective_only_for_players
+		}
+		custom_tooltip = AOW_text_outliner_show_desc
+		hidden_effect = {
+			from = { set_country_flag = AOW_flag_CNTR_$KEY$_outliner_hide }
+		}
+	}
+}

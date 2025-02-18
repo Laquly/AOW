@@ -1,0 +1,10 @@
+starfall_spear_system_target_add = {
+	percentage = no
+	good = yes
+	category = country
+}
+starfall_spear_planet_target_add = {
+	percentage = no
+	good = yes
+	category = country
+}

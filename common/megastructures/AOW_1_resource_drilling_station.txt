@@ -1,0 +1,208 @@
+AOW_MEGA_resource_drilling_station_0 = {
+    entity = "resource_drilling_station_0_entity"
+    construction_entity = "resource_drilling_station_0_entity"
+    portrait = "GFX_megastructure_resource_drilling_station_background"
+    place_entity_on_planet_plane = no
+    show_galactic_map_icon = no
+    show_in_outliner = yes
+    use_planet_resource = yes
+    construction_blocks_and_blocked_by = none
+    build_time = @AOW_var_RDS_0_TIME
+    custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MINOR_PLANETARY_BODY"
+    resources = {
+        category = megastructures
+        cost = {
+            alloys = @AOW_var_RDS_0_COST_alloys
+            unity = @AOW_var_RDS_0_COST_unity
+        }
+        upkeep = {
+            energy = @AOW_var_RDS_0_UPKP_energy
+        }
+    }
+    inline_script = {
+        script = megastructures/dismantle_megastructure
+        time = 360
+        tech = AOW_TECH_space_arena
+        category = megastructures
+        alloys = @AOW_var_RDS_0_COST_alloys
+        minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+    }
+    prerequisites = { "AOW_TECH_resource_drilling_station" }
+    potential = { AOW_trigger_mega_potential = { KEY = resource_drilling_station } }
+    possible = {
+        exists = starbase
+        custom_tooltip = {#on_build_start
+            fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+            from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_space_arena } }
+        }
+        custom_tooltip = {#必须要在国境内
+            fail_text = "requires_inside_border"
+            is_inside_border = from
+        }
+    }
+    placement_rules = {
+        planet_possible = {
+            custom_tooltip = {#不能有异常
+                fail_text = "requires_no_anomaly"
+                NOT = { has_anomaly = yes }
+            }
+            custom_tooltip = {#必须为已调查的非宜居星球
+                fail_text = "AOW_mega_PLNT_requires_not_habitable"
+                AOW_trgr_PLNT_is_habitable = no
+            }
+            custom_tooltip = {
+                fail_text = "AOW_mega_requires_PLNT_ordinary_planets_or_gas_giant"
+                OR = {
+                    AOW_trgr_PLNT_ordinary_planet = yes
+                    is_planet_class = pc_iron#铁星球
+                    is_planet_class = pc_chthonian#气陨星核
+                    is_planet_class = pc_hydrocarbon#烃
+                    is_planet_class = pc_volcanic#火山
+                    is_planet_class = pc_molten
+                    is_planet_class = pc_ethane_ocean#乙烷海洋星球
+                    is_planet_class = pc_toxic
+                    is_planet_class = pc_hothouse#温室星球
+                    is_planet_class = pc_frozen
+                    is_planet_class = pc_diamond#金刚石星球
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_cold_gas_giant
+                    is_planet_class = pc_hot_gas_giant
+                    is_planet_class = pc_cloudless_gas_giant
+                    is_planet_class = pc_dwarf_gas_giant
+                }
+            }
+            custom_tooltip = {#放置处不能有研究地块
+                fail_text = "AOW_mega_requires_PLNT_no_deposit_for_research_station"
+                NOT = {
+                    has_deposit_for = shipclass_research_station
+                }
+            }
+            custom_tooltip = {#已经有本巨构了
+                fail_text = "AOW_mega_requires_PLNT_no_resource_drilling_station"
+                NOR = {
+                    has_modifier = AOW_mod_PLNT_resource_drilling_station
+                    solar_system = {
+                        any_system_megastructure = {
+                            planet = { is_same_value = root }
+                            OR = {
+                                is_megastructure_type = AOW_MEGA_resource_drilling_station_0
+                                is_megastructure_type = AOW_MEGA_resource_drilling_station_1
+                            }
+                        }
+                    }
+                }
+            }
+            # custom_tooltip = {#放置处不能有巨构
+            #     fail_text = "requires_no_existing_megastructure"
+            #     AOW_trgr_PLNT_existing_megastructure = no
+            # }
+        }
+    }
+    # root = system
+    # from = country
+    ai_weight = {
+        weight = 75
+        modifier = { factor = 0	years_passed >= 50 }
+        #位置限制
+        modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+        modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
+        #自身限制
+        modifier = { factor = 1.5	from = { is_pacifist = yes } }
+        modifier = { factor = 1.5	from = { is_spiritualist = yes } }
+    }
+    on_build_complete = {
+        from = { country_event = { id = AOW_evt_resource_drilling_station.100 } }
+        fromfrom.planet = {
+            AOW_eft_PLNT_dismantle_orbital_station = yes
+        }
+    }
+}
+AOW_MEGA_resource_drilling_station_1 = {
+    entity = ""
+    construction_entity = "resource_drilling_station_1_construction_entity"
+    portrait = "GFX_megastructure_resource_drilling_station_background"
+    place_entity_on_planet_plane = no
+    show_galactic_map_icon = no
+    show_in_outliner = no
+    use_planet_resource = yes
+    construction_blocks_and_blocked_by = none
+    build_time = @AOW_var_RDS_1_TIME
+    resources = {
+        category = megastructures
+        cost = {
+            energy = @AOW_var_RDS_1_COST_energy
+        }
+    }
+    prerequisites = { "AOW_TECH_resource_drilling_station" }
+    upgrade_from = { AOW_MEGA_resource_drilling_station_0 }
+    on_build_complete = {
+        fromfrom.planet = { save_event_target_as = AOW_target_planet }
+        from = { country_event = { id = AOW_evt_resource_drilling_station.101 } }
+        fromfrom.planet = {
+            AOW_eft_PLNT_dismantle_orbital_station = yes
+            if = {
+                limit = {
+                    OR = {
+                        AOW_trgr_PLNT_ordinary_planet = yes
+                        is_planet_class = pc_iron#铁星球
+                        is_planet_class = pc_chthonian#气陨星核
+                        is_planet_class = pc_hydrocarbon#烃
+                        is_planet_class = pc_volcanic#火山
+                    }
+                }
+                add_deposit = d_minerals_2
+                add_deposit = d_alloys_1
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_molten
+                        is_planet_class = pc_ethane_ocean#乙烷海洋星球
+                    }
+                }
+                add_deposit = d_minerals_1
+                add_deposit = d_volatile_motes_1
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_toxic
+                        is_planet_class = pc_hothouse#温室星球
+                    }
+                }
+                add_deposit = d_minerals_1
+                add_deposit = d_exotic_gases_1
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_frozen
+                        is_planet_class = pc_diamond#金刚石星球
+                    }
+                }
+                add_deposit = d_minerals_1
+                add_deposit = d_rare_crystals_1
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_gas_giant
+                        is_planet_class = pc_cold_gas_giant
+                        is_planet_class = pc_hot_gas_giant
+                        is_planet_class = pc_cloudless_gas_giant
+                        is_planet_class = pc_dwarf_gas_giant
+                    }
+                }
+                add_deposit = d_energy_2
+                add_deposit = d_exotic_gases_1
+            }
+            random_list = {
+                1 = { add_deposit = d_living_metal_deposit }
+                20 = { add_deposit = d_energy_1 }
+                79 = {}
+            }
+            add_modifier = { modifier = AOW_mod_PLNT_resource_drilling_station days = -1 }
+        }
+        remove_megastructure = fromfrom
+    }
+}

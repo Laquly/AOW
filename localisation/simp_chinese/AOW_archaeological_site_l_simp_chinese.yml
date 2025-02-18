@@ -1,10 +1,5 @@
 ﻿l_simp_chinese:
 
- AOW_TECH_giant_warship_traction_field:0 "巨舰牵引力场"
- AOW_TECH_giant_warship_traction_field_desc:0 "为了研发出全新一代的巨型战舰，我们需要一种功率极强、覆盖范围极大的牵引力场，它可以持续为巨型战舰的提供充足的动力。"
- AOW_TECH_giant_warship_traction_field_effect:0 "§H解锁科技路线：§!巨型战舰"
- AOW_TECH_giant_warship_traction_field_effect_desc:0 "这一科技的研发将使得我们有能力研发并建造巨型战舰。"
-
  site_planetary_ship:0 "全金属星球"
  site_planetary_ship_desc:0 "对这颗星球的初步勘探结果表明，几乎整颗星球都是由某种特制金属构成，到处都是武器和炮台，这个地方更像是一个巨大的军火库。"
 

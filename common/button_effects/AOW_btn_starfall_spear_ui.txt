@@ -1,0 +1,399 @@
+AOW_btn_clear_all_targets = {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_cancel_target = { target = 01 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 02 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 03 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 04 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 05 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 06 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 07 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 08 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 09 scope = from }
+		AOW_eft_starfall_spear_cancel_target = { target = 10 scope = from }
+	}
+}
+
+#############################################################################
+#星系
+#############################################################################
+AOW_btn_system_target_mode_01 = {#黑域封锁
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = AOW_TECH_hyperlane_controller } } }
+			from = { has_technology = AOW_TECH_hyperlane_controller }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_not_isolated"
+			this.solar_system = { any_neighbor_system = { exists = this } }
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 01 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 01 }
+	}
+}
+
+AOW_btn_system_target_mode_02 = {#净世圣灭
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_has_colony"
+			this.solar_system = {
+				any_system_planet = {
+					is_colony = yes
+					num_pops >= 1
+				}
+			}
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 02 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 02 }
+	}
+}
+
+
+AOW_btn_system_target_mode_03 = { #次元裂痕
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_has_hostile_fleets"
+			this.solar_system = {
+				any_fleet_in_system = {
+					owner = {
+						is_hostile = from
+					}
+				}
+			}
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 03 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 03 }
+	}
+}
+
+
+AOW_btn_system_target_mode_04 = { #星辰陨落
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 04 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 04 }
+	}
+}
+
+
+AOW_btn_system_target_mode_05 = { #奇异物质
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = AOW_TECH_weaponization_of_strange_matter } } }
+			from = { has_technology = AOW_TECH_weaponization_of_strange_matter }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_neutron_star"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_neutron_star
+						is_planet_class = pc_pulsar
+						is_planet_class = pc_magnetar #磁星
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 05 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 05 }
+	}
+}
+
+
+AOW_btn_system_target_mode_06 = { #死亡献祭
+	potential = {
+		AOW_trgr_SSTM_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_megastructure = AOW_MEGA_psychic_device_3 } } }
+			from = { has_megastructure = AOW_MEGA_psychic_device_3 }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_primary_black_hole"
+			this.solar_system = {
+				any_system_planet = {
+					is_primary_star = yes
+					NOR = {
+						is_planet_class = pc_black_hole
+						is_planet_class = pc_microquasar_1
+						is_planet_class = pc_microquasar_2
+					}
+				}
+			}
+		}
+		AOW_trgr_SSTM_starfall_spear_button = { mode = 06 }
+	}
+	effect = {
+		AOW_eft_SSTM_starfall_spear_button = { mode = 06 }
+	}
+}
+
+#############################################################################
+#行星
+#############################################################################
+AOW_btn_planet_target_mode_01 = {#地爆天星
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_pk_cracker } } }
+			from = { has_technology = tech_pk_cracker }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_CRACKER = no }
+			can_destroy_planet_with_PLANET_KILLER_CRACKER = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 01 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 01 }
+	}
+}
+
+AOW_btn_planet_target_mode_02 = {#安乐天使
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_pk_shielder } } }
+			from = { has_technology = tech_pk_shielder }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_SHIELDER = no }
+			can_destroy_planet_with_PLANET_KILLER_SHIELDER = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 02 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 02 }
+	}
+}
+
+AOW_btn_planet_target_mode_03 = {#中子灭杀
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_pk_neutron } } }
+			from = { has_technology = tech_pk_neutron }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_NEUTRON = no }
+			can_destroy_planet_with_PLANET_KILLER_NEUTRON = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 03 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 03 }
+	}
+}
+
+AOW_btn_planet_target_mode_04 = {#天神裁决
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_pk_godray } } }
+			from = { has_technology = tech_pk_godray }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_GODRAY = no }
+			can_destroy_planet_with_PLANET_KILLER_GODRAY = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 04 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 04 }
+	}
+}
+
+AOW_btn_planet_target_mode_05 = {#纳米灾疫
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_pk_nanobots } } }
+			from = { has_technology = tech_pk_nanobots }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_NANOBOTS = no }
+			can_destroy_planet_with_PLANET_KILLER_NANOBOTS = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 05 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 05 }
+	}
+}
+
+AOW_btn_planet_target_mode_06 = {#天洪浩荡
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_ascension_perk = ap_hydrocentric } } }
+			from = { has_ascension_perk = ap_hydrocentric }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_DELUGE = no }
+			can_destroy_planet_with_PLANET_KILLER_DELUGE = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 06 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 06 }
+	}
+}
+
+AOW_btn_planet_target_mode_07 = {#降智光束
+	potential = {
+		AOW_trgr_PLNT_starfall_spear_viable_target = yes
+	}
+	allow = {
+		if = {
+			limit = { from = { NOT = { has_technology = tech_archaeo_pk_devolving_beam } } }
+			from = { has_technology = tech_archaeo_pk_devolving_beam }
+		}
+		if = {
+			limit = { can_destroy_planet_with_PLANET_KILLER_DEVOLUTION = no }
+			can_destroy_planet_with_PLANET_KILLER_DEVOLUTION = yes
+		}
+		AOW_trgr_PLNT_starfall_spear_button = { mode = 07 }
+	}
+	effect = {
+		AOW_eft_PLNT_starfall_spear_button = { mode = 07 }
+	}
+}
+
+#############################################################################
+#目标
+#############################################################################
+AOW_btn_starfall_spear_target_01 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_01_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 01 }
+	}
+}
+AOW_btn_starfall_spear_target_02 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_02_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 02 }
+	}
+}
+AOW_btn_starfall_spear_target_03 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_03_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 03 }
+	}
+}
+AOW_btn_starfall_spear_target_04 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_04_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 04 }
+	}
+}
+AOW_btn_starfall_spear_target_05 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_05_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 05 }
+	}
+}
+AOW_btn_starfall_spear_target_06 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_06_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 06 }
+	}
+}
+AOW_btn_starfall_spear_target_07 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_07_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 07 }
+	}
+}
+AOW_btn_starfall_spear_target_08 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_08_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 08 }
+	}
+}
+AOW_btn_starfall_spear_target_09 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_09_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 09 }
+	}
+}
+AOW_btn_starfall_spear_target_10 = {
+	potential = { exists = event_target:AOW_starfall_spear_target_10_@from }
+	allow = { always = yes }
+	effect = {
+		AOW_eft_starfall_spear_target_button = { target = 10 }
+	}
+}

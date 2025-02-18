@@ -1,0 +1,142 @@
+inline_script = {
+	script = button_effects/AOW_button_outliner_$outliner$
+	KEY = $KEY$
+}
+#AI
+AOW_btn_$KEY$_ai_quick_switch = {#切换：禁用、启用、无限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	effect = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 }
+				}
+			}
+			custom_tooltip = AOW_text_ai_mega_is_disabled
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 1 }
+					remove_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value > 0 }
+				}
+			}
+			custom_tooltip = AOW_text_ai_mega_is_enabled
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = -1 }
+					remove_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value < 0 }
+				}
+			}
+			custom_tooltip = AOW_text_ai_mega_is_infinite
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 }
+					set_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+	}
+}
+AOW_btn_$KEY$_ai_decrease_cap = {#减少上限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	effect = {
+		custom_tooltip = AOW_text_ai_decrease_mega_cap
+		hidden_effect = {
+			event_target:global_event_country = {
+				if = { #最低减少到-1
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value > -1 } }
+					change_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = -1 }
+				}
+				else_if = { #已经是-1无限时，再次减少则变为非无限的最大值@AOW_var_max_mega_cap
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value <= -1 } }
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = @AOW_var_max_mega_cap }
+				}
+				if = {
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 } }
+					set_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+				else_if = {
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value != 0 } }
+					remove_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+	}
+}
+AOW_btn_$KEY$_ai_increase_cap = {#增加上限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	effect = {
+		custom_tooltip = AOW_text_ai_increase_mega_cap
+		hidden_effect = {
+			event_target:global_event_country = {
+				if = { #最高增加到@AOW_var_max_mega_cap
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value < @AOW_var_max_mega_cap } }
+					change_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 1 }
+				}
+				else_if = { #如果已经达到最高的@AOW_var_max_mega_cap，则增加至无限
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value >= @AOW_var_max_mega_cap } }
+					set_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = -1 }
+				}
+				if = {
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value = 0 } }
+					set_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+				else_if = {
+					limit = { check_variable = { which = AOW_var_ai_mega_cap_$KEY$ value != 0 } }
+					remove_global_flag = AOW_flag_GLBL_no_ai_$KEY$
+				}
+			}
+		}
+	}
+}
+#玩家
+AOW_btn_$KEY$_player_quick_switch = {#切换：禁用、无限
+	allow = { always = yes }
+	potential = { from = { check_variable = { which = AOW_var_page value = 4 } } }
+	effect = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value = 0 }
+				}
+			}
+			custom_tooltip = AOW_text_player_mega_is_disabled
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_player_mega_cap_$KEY$ value = -1 }
+					remove_global_flag = AOW_flag_GLBL_no_player_$KEY$
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value < 0 }
+				}
+			}
+			custom_tooltip = AOW_text_player_mega_is_infinite
+			hidden_effect = {
+				event_target:global_event_country = {
+					set_variable = { which = AOW_var_player_mega_cap_$KEY$ value = 0 }
+					set_global_flag = AOW_flag_GLBL_no_player_$KEY$
+				}
+			}
+		}
+	}
+}

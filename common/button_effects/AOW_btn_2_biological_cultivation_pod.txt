@@ -1,0 +1,30 @@
+#前置条件
+AOW_btn_biological_cultivation_pod_prerequisites = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value >= 3 }
+			check_variable = { which = AOW_var_page value <= 4 }
+		}
+	}
+	allow = {
+		custom_tooltip = AOW_text_biological_cultivation_pod_desc
+		if = {
+			limit = { has_technology = AOW_TECH_biological_cultivation_pod }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			has_technology = tech_alien_cloning
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_biological_cultivation_pod
+		}
+	}
+	effect = { custom_tooltip = AOW_text_biological_cultivation_pod_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = biological_cultivation_pod
+	outliner = standard
+}
