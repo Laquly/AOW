@@ -157,10 +157,17 @@ country_event = {
 				has_ethic = ethic_xenophobe
 				has_ethic = ethic_fanatic_xenophobe
 				has_ascension_perk = ap_become_the_crisis
-				has_crisis_level = crisis_cosmogenesis_level_5
+				AND = {
+					has_ascension_perk = ap_cosmogenesis
+					has_crisis_level = crisis_cosmogenesis_level_5
+				}
 				if = {
 					limit = { has_global_flag = has_wsg_mod }
 					has_ascension_perk = ap_wg_crisis
+				}
+				else_if = {
+					limit = { NOT = { has_global_flag = has_wsg_mod } }
+					hidden_trigger = { always = no }
 				}
 			}
 		}
@@ -338,286 +345,130 @@ country_event = {#选择打击方式
 	diplomatic = yes
 	custom_gui = "AOW_starfall_spear_ui"
 	picture_event_data = { room = AOW_starfall_spear_room }
-	immediate = {#标记发射者、发射巨构、发射巨构下的星球、发射巨构所在的星系
+	immediate = {
+		#清空目标
+		AOW_eft_starfall_spear_cancel_all_targets = { scope = root }
+		#标记发射者、发射巨构、发射巨构下的星球、发射巨构所在的星系
 		save_event_target_as = AOW_tgt_CNTR_starfall_spear
 		event_target:AOW_tgt_MEGA_starfall_spear = {
 			planet = { save_event_target_as = AOW_tgt_PLNT_starfall_spear }
-			solar_system = { save_event_target_as = AOW_tgt_SSTM_starfall_spear }
+			solar_system = {
+				save_event_target_as = AOW_tgt_SSTM_starfall_spear
+				save_global_event_target_as = AOW_tgt_SSTM_starfall_spear_@root
+			}
 		}
-	}
-	after = {
-		remove_country_flag = AOW_flag_CNTR_has_starfall_spear_target
 	}
 	option = {#退出
 		name = AOW_evt_starfall_spear.500.quit
 		custom_tooltip = AOW_evt_starfall_spear.500.quit.tooltip
 		custom_gui = AOW_starfall_spear_ui_option_quit
 		hidden_effect = {
-			event_target:AOW_tgt_MEGA_starfall_spear = { #恢复待机状态
+			event_target:AOW_tgt_MEGA_starfall_spear = {#坠星天矛恢复待机状态
 				AOW_eft_MEGA_set_to_initial_state = yes
 			}
 			country_event = { id = AOW_evt_starfall_spear.503 }#通知：冷却完成
-			random_system = {#移除目标flag
-				limit = { has_star_flag = AOW_flag_SSTM_starfall_spear_target_@root }	
-				remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root
-				switch = {
-					trigger = has_star_flag
-					AOW_flag_SSTM_starfall_spear_01_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_01_@root
-						root = {
-							add_resource = {
-								energy = 10000
-								sr_dark_matter = 1000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_02_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_02_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 1000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_03_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_03_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 1000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_04_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_04_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 2000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_05_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_05_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 2000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_06_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_06_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 2000
-							}
-						}
-					}
-					AOW_flag_SSTM_starfall_spear_07_@root = {
-						remove_star_flag = AOW_flag_SSTM_starfall_spear_07_@root
-						root = {
-							add_resource = {
-								energy = 50000
-								sr_dark_matter = 500
-							}
-						}
-					}
-				}
-				random_system_planet = {
-					limit = { has_planet_flag = AOW_flag_PLNT_starfall_spear_planet_@root }
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_planet_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_01_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_02_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_03_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_04_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_05_@root
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_06_@root
-					switch = {
-						trigger = has_planet_flag
-						AOW_flag_SSTM_starfall_spear_01_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_01_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-						AOW_flag_SSTM_starfall_spear_02_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_02_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-						AOW_flag_SSTM_starfall_spear_03_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_03_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-						AOW_flag_SSTM_starfall_spear_04_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_04_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-						AOW_flag_SSTM_starfall_spear_05_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_05_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-						AOW_flag_SSTM_starfall_spear_06_@root = {
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_06_@root
-							root = {
-								add_resource = {
-									energy = 5000
-								}
-							}
-						}
-					}
-				}
-			}
+			#清空目标
+			AOW_eft_starfall_spear_cancel_all_targets = { scope = root }
 		}
 	}
 	option = {#确认
 		name = AOW_evt_starfall_spear.500.confirm
-		custom_tooltip = AOW_evt_starfall_spear.500.confirm.tooltip
 		custom_gui = AOW_starfall_spear_ui_option_confirm
 		allow = {
-			custom_tooltip = {
-				fail_text = "AOW_starfall_spear_requires_has_target"
-				has_country_flag = AOW_flag_CNTR_has_starfall_spear_target
-			}
-			hidden_trigger = {
+			hidden_trigger = {#发射坠星天矛一定要有坠星天矛
 				exists = event_target:AOW_tgt_MEGA_starfall_spear
 			}
-		}
-		random_system = {#目标星系执行打击程序
-			limit = { has_star_flag = AOW_flag_SSTM_starfall_spear_target_@root }#目标星系标识
-			hidden_effect = {
-				remove_star_flag = AOW_flag_SSTM_starfall_spear_target_@root #已找到被标记的星系，移除该flag
-				save_event_target_as = AOW_tgt_SSTM_starfall_spear_target #标记目标星系
-			}
-			if = {#星系级打击程序
+			@planet_energy = 0.08
+			@planet_dark_matter = 100
+			@system_energy = 0.2
+			@system_dark_matter = 1000
+			@planet_energy_cost = -0.08
+			@planet_dark_matter_cost = -100
+			@system_energy_cost = -0.2
+			@system_dark_matter_cost = -1000
+			if = {
 				limit = {
 					OR = {
-						has_star_flag = AOW_flag_SSTM_starfall_spear_01_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_02_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_03_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_04_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_05_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_06_@root
-						has_star_flag = AOW_flag_SSTM_starfall_spear_07_@root
-					}
-				}#星系被打击的标识
-				hidden_effect = {
-					star = { save_event_target_as = AOW_tgt_PLNT_starfall_spear_target }#标记被打击的星球
-					AOW_eft_SSTM_create_hit_effect = yes #创建星系打击特效
-					set_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear #正在被打击
-					if = {#星系有拥有者，通知星系拥有者
-						limit = {
-							exists = space_owner
-							space_owner = { NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear } }
-						}
-						if = {
-							limit = {
-								space_owner = {
-									has_megastructure = AOW_MEGA_celestial_shield_4
-									count_owned_megastructure = {
-										limit = { is_megastructure_type = AOW_MEGA_celestial_shield_bunker_ring }
-										count >= 4
-									}
-								}
-							}
-							space_owner = {
-								while = {
-									count = 4
-									random_owned_megastructure = {
-										limit = { is_megastructure_type = AOW_MEGA_celestial_shield_bunker_ring }
-										remove_megastructure = this
-									}
-								}
-							}
-							set_star_flag = AOW_flag_SSTM_has_bunker_ring
-							star = {
-								create_ambient_object = {
-									type = "AOW_ao_celestial_shield_bunker_ring_system_effect"
-									location = star
-									use_3d_location = yes
-									base_angle_towards = star
-									entity_face_object = star
-									entity_offset = { min = 0 max = 0 }
-								}
-							}
-						}
-						space_owner = { country_event = { id = AOW_evt_starfall_spear.511 } }
+						exists = event_target:AOW_starfall_spear_target_01_@root
+						exists = event_target:AOW_starfall_spear_target_02_@root
+						exists = event_target:AOW_starfall_spear_target_03_@root
+						exists = event_target:AOW_starfall_spear_target_04_@root
+						exists = event_target:AOW_starfall_spear_target_05_@root
+						exists = event_target:AOW_starfall_spear_target_06_@root
+						exists = event_target:AOW_starfall_spear_target_07_@root
+						exists = event_target:AOW_starfall_spear_target_08_@root
+						exists = event_target:AOW_starfall_spear_target_09_@root
+						exists = event_target:AOW_starfall_spear_target_10_@root
 					}
 				}
-				system_event = { id = AOW_evt_starfall_spear.600 days = 30 } #星系摧毁事件
-			}
-			random_system_planet = {#行星级打击程序
-				limit = { has_planet_flag = AOW_flag_PLNT_starfall_spear_planet_@root }#行星被打击的标识
-				hidden_effect = {
-					save_event_target_as = AOW_tgt_PLNT_starfall_spear_target #标记被打击的星球
-					remove_planet_flag = AOW_flag_PLNT_starfall_spear_planet_@root #已找到被标记的星球，移除该flag
-					AOW_eft_PLNT_create_planet_hit_effect = yes #创建行星打击特效
-					set_planet_flag = AOW_flag_PLNT_is_being_hit_by_starfall_spear #正在被打击
-					if = {#行星有拥有者
-						limit = {
-							exists = owner
-							owner = { NOT = { is_same_value = event_target:AOW_tgt_CNTR_starfall_spear } }
-						}
-						if = {
-							limit = {
-								owner = {
-									has_megastructure = AOW_MEGA_celestial_shield_4
-									has_megastructure = AOW_MEGA_celestial_shield_bunker_ring
-								}
-							}
-							owner = {#消耗一个掩体星环
-								random_owned_megastructure = {
-									limit = { is_megastructure_type = AOW_MEGA_celestial_shield_bunker_ring }
-									remove_megastructure = this
-								}
-							}
-							set_planet_flag = AOW_flag_PLNT_has_bunker_ring #设置已有掩体星环的标识
-							create_ambient_object = { #创建抵挡特效
-								type = "AOW_ao_celestial_shield_bunker_ring_planet_effect"
-								location = this
-								use_3d_location = yes
-								base_angle_towards = star
-								entity_face_object = star
-								entity_scale_to_size = yes
-								entity_offset = { min = 0 max = 0 }
-								effect = {
-									set_ambient_object_flag = AOW_flag_AO_bunker_ring_@event_target:AOW_tgt_PLNT_starfall_spear_target
-								}
-							}
-						}
-						owner = { country_event = { id = AOW_evt_starfall_spear.512 } }
+				if = {
+					limit = { AOW_trgr_has_starfall_spear_target_type = { type = planet scope = root } }
+					resource_stockpile_compare = {
+						resource = energy
+						value >= @planet_energy
+						mult = from.value:AOW_var_total_system_distance_square
 					}
-					else_if = {#行星无拥有者，但星系有拥有者
-						limit = {
-							NOT = { exists = owner }
-							exists = space_owner
-							space_owner = { NOT = { is_same_value = root } }
-						}
-						space_owner = { country_event = { id = AOW_evt_starfall_spear.512 } }
+					resource_stockpile_compare = {
+						resource = sr_dark_matter
+						value >= @planet_dark_matter
+						mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
 					}
 				}
-				planet_event = { id = AOW_evt_starfall_spear.700 days = 30 } #行星摧毁事件
+				if = {
+					limit = { AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = root } }
+					resource_stockpile_compare = {
+						resource = energy
+						value >= @system_energy
+						mult = from.value:AOW_var_total_system_distance_square
+					}
+					resource_stockpile_compare = {
+						resource = sr_dark_matter
+						value >= @system_dark_matter
+						mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
+					}
+				}
 			}
+			else = {
+				custom_tooltip = {
+					fail_text = "AOW_starfall_spear_requires_has_target"
+					always = no
+				}
+			}
+		}
+		custom_tooltip = AOW_evt_starfall_spear.500.confirm.tooltip
+		if = {
+			limit = { AOW_trgr_has_starfall_spear_target_type = { type = planet scope = root } }
+			add_resource = {
+				energy = @planet_energy_cost
+				mult = from.value:AOW_var_total_system_distance_square
+			}
+			add_resource = {
+				sr_dark_matter = @planet_dark_matter_cost
+				mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
+			}
+		}
+		if = {
+			limit = { AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = root } }
+			add_resource = {
+				energy = @system_energy_cost
+				mult = from.value:AOW_var_total_system_distance_square
+			}
+			add_resource = {
+				sr_dark_matter = @system_dark_matter_cost
+				mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
+			}
+		}
+		hidden_effect = {
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 01 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 02 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 03 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 04 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 05 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 06 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 07 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 08 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 09 }
+			AOW_eft_start_launching_at_starfall_spear_target = { target = 10 }
 		}
 	}
 }
@@ -809,33 +660,42 @@ system_event = {
 			event_target:AOW_tgt_MEGA_starfall_spear = { AOW_eft_MEGA_set_to_initial_state = yes }#坠星天矛替换为待机状态的巨构
 			switch = {
 				trigger = has_star_flag
-				AOW_flag_SSTM_starfall_spear_01_@from = {
+				AOW_flag_starfall_spear_mode_01_@from = {
 					system_event = { id = AOW_evt_starfall_spear.610 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_01_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
 				}
-				AOW_flag_SSTM_starfall_spear_02_@from = {
+				AOW_flag_starfall_spear_mode_02_@from = {
 					system_event = { id = AOW_evt_starfall_spear.620 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_02_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
 				}
-				AOW_flag_SSTM_starfall_spear_03_@from = {
+				AOW_flag_starfall_spear_mode_03_@from = {
 					system_event = { id = AOW_evt_starfall_spear.630 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_03_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
 				}
-				AOW_flag_SSTM_starfall_spear_04_@from = {
+				AOW_flag_starfall_spear_mode_04_@from = {
 					system_event = { id = AOW_evt_starfall_spear.640 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_04_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
 				}
-				AOW_flag_SSTM_starfall_spear_05_@from = {
+				AOW_flag_starfall_spear_mode_05_@from = {
 					system_event = { id = AOW_evt_starfall_spear.650 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_05_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
 				}
-				AOW_flag_SSTM_starfall_spear_06_@from = {
+				AOW_flag_starfall_spear_mode_06_@from = {
 					system_event = { id = AOW_evt_starfall_spear.660 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_06_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
 				}
-				AOW_flag_SSTM_starfall_spear_07_@from = {
+				AOW_flag_starfall_spear_mode_07_@from = {
 					system_event = { id = AOW_evt_starfall_spear.670 }
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_07_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_07_@from
+				}
+				AOW_flag_starfall_spear_mode_08_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_08_@from
+				}
+				AOW_flag_starfall_spear_mode_09_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_09_@from
+				}
+				AOW_flag_starfall_spear_mode_10_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_10_@from
 				}
 			}
 		}
@@ -905,27 +765,40 @@ system_event = {
 			}
 			switch = {
 				trigger = has_star_flag
-				AOW_flag_SSTM_starfall_spear_01_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_01_@from
+				AOW_flag_starfall_spear_mode_01_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
 				}
-				AOW_flag_SSTM_starfall_spear_02_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_02_@from
+				AOW_flag_starfall_spear_mode_02_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
 				}
-				AOW_flag_SSTM_starfall_spear_03_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_03_@from
+				AOW_flag_starfall_spear_mode_03_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
 				}
-				AOW_flag_SSTM_starfall_spear_04_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_04_@from
+				AOW_flag_starfall_spear_mode_04_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
 				}
-				AOW_flag_SSTM_starfall_spear_05_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_05_@from
+				AOW_flag_starfall_spear_mode_05_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
 				}
-				AOW_flag_SSTM_starfall_spear_06_@from = {
-					remove_star_flag = AOW_flag_SSTM_starfall_spear_06_@from
+				AOW_flag_starfall_spear_mode_06_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
+				}
+				AOW_flag_starfall_spear_mode_07_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_07_@from
+				}
+				AOW_flag_starfall_spear_mode_08_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_08_@from
+				}
+				AOW_flag_starfall_spear_mode_09_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_09_@from
+				}
+				AOW_flag_starfall_spear_mode_10_@from = {
+					remove_star_flag = AOW_flag_starfall_spear_mode_10_@from
 				}
 			}
 		}
 		remove_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear #移除正在被打击的标识
+		#AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }#清空目标
 	}
 }
 country_event = {
@@ -1394,7 +1267,7 @@ planet_event = {
 				root = {#最终效果
 					switch = {
 						trigger = has_planet_flag
-						AOW_flag_PLNT_starfall_spear_01_@from = {
+						AOW_flag_starfall_spear_mode_01_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_cracker
 							}
@@ -1427,9 +1300,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_CRACKER
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_01_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_01_@from
 						}
-						AOW_flag_PLNT_starfall_spear_02_@from = {
+						AOW_flag_starfall_spear_mode_02_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_pacifier
 							}
@@ -1462,9 +1335,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_SHIELDER
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_02_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_02_@from
 						}
-						AOW_flag_PLNT_starfall_spear_03_@from = {
+						AOW_flag_starfall_spear_mode_03_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_neutron
 							}
@@ -1497,9 +1370,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_NEUTRON
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_03_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_03_@from
 						}
-						AOW_flag_PLNT_starfall_spear_04_@from = {
+						AOW_flag_starfall_spear_mode_04_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_godray
 							}
@@ -1532,9 +1405,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_GODRAY
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_04_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_04_@from
 						}
-						AOW_flag_PLNT_starfall_spear_05_@from = {
+						AOW_flag_starfall_spear_mode_05_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_nanobots
 							}
@@ -1567,9 +1440,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_NANOBOTS
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_05_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_05_@from
 						}
-						AOW_flag_PLNT_starfall_spear_06_@from = {
+						AOW_flag_starfall_spear_mode_06_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_deluge
 							}
@@ -1602,9 +1475,9 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_DELUGE
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_06_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_06_@from
 						}
-						AOW_flag_PLNT_starfall_spear_07_@from = {
+						AOW_flag_starfall_spear_mode_07_@from = {
 							event_target:AOW_tgt_CNTR_starfall_spear = {
 								set_country_flag = fired_devolving_beam
 							}
@@ -1637,7 +1510,7 @@ planet_event = {
 								on_action = on_destroy_planet_with_PLANET_KILLER_DEVOLUTION
 								scopes = { from = event_target:AOW_tgt_SP_dummy_colossus }
 							}
-							remove_planet_flag = AOW_flag_PLNT_starfall_spear_07_@from
+							remove_planet_flag = AOW_flag_starfall_spear_mode_07_@from
 						}
 					}
 				}
@@ -1692,6 +1565,7 @@ planet_event = {
 			}
 		}
 		remove_planet_flag = AOW_flag_PLNT_is_being_hit_by_starfall_spear #移除正在被打击的标识
+		#AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }#清空目标
 	}
 }
 country_event = {

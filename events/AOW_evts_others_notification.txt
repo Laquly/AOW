@@ -180,7 +180,7 @@ country_event = {
 }
 
 
-#物质重构盘
+#物质重构仪
 country_event = {
 	id = AOW_mega_others_notification.3040
 	title = AOW_mega_others_notification_title
