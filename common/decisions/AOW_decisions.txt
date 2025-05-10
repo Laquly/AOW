@@ -120,7 +120,7 @@ AOW_decision_ring_world_capacity_growth_facilities = {
 							is_sapient = yes
 							is_being_purged = no
 						}
-						kill_pop = yes
+						kill_pop_group = { pop_group = this	amount = 100% }
 					}
 				}
 				change_variable = {
@@ -145,7 +145,7 @@ AOW_decision_ring_world_capacity_growth_facilities = {
 						is_sapient = yes
 						is_being_purged = no
 					}
-					kill_pop = yes
+					kill_pop_group = { pop_group = this	amount = 100% }
 				}
 				change_variable = { which = AOW_var_PLNT_virtual_pops value = 1 }
 			}
