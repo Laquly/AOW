@@ -319,6 +319,9 @@ orbital_arc_furnace_4 = {
 	show_in_outliner = no
 	use_planet_resource = yes
 	scales_with_planet = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = orbital_arc_furnace }
+	}
 	build_time = 1080 # 3 years
 	resources = {
 		category = megastructures
@@ -395,7 +398,7 @@ orbital_arc_furnace_destroyed = {
 	rotate_to_center = no
 	scale_offset = yes
 	place_entity_on_planet_plane = yes
-	show_in_outliner = no
+	show_in_outliner = yes
 	scales_with_planet = yes
 	potential = { always = no }
 	inline_script = {
@@ -422,6 +425,9 @@ orbital_arc_furnace_restored = {
 	show_in_outliner = no
 	use_planet_resource = yes
 	scales_with_planet = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = orbital_arc_furnace }
+	}
 	build_time = 720 # 2 years
 	resources = {
 		category = megastructures

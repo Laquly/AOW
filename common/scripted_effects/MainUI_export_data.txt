@@ -6,8 +6,25 @@ AOW_eft_GLBL_export_data = {
 	log = "NULL #“VP = -1”表示玩家无限建造，“VP = 5”表示玩家最多建造5个巨构"
 	log = "NULL #“VA = -1”表示AI无限建造，“VA = 0”表示AI禁止建造此巨构"
 	log = "NULL #“KEY = XXXXX”表示巨构代码，表示对应数值应该给到哪个巨构"
+	if = {
+		limit = { has_global_flag = can_dismantle_megastructure_at_war }
+		log = "NULL set_global_flag = can_dismantle_megastructure_at_war#允许战争中拆除巨构"
+	}
+	else_if = {
+		limit = { NOT = { has_global_flag = can_dismantle_megastructure_at_war } }
+		log = "NULL set_global_flag = can_dismantle_megastructure_at_war#禁止战争中拆除巨构"
+	}
+	if = {
+		limit = { has_global_flag = AOW_flag_GLBL_hyperdimension_hiding }
+		log = "NULL set_global_flag = AOW_flag_GLBL_hyperdimension_hiding#允许研究超维褶皱"
+	}
+	else_if = {
+		limit = { NOT = { has_global_flag = AOW_flag_GLBL_hyperdimension_hiding } }
+		log = "NULL set_global_flag = AOW_flag_GLBL_hyperdimension_hiding#禁止研究超维褶皱"
+	}
+	log = "NULL #平衡数值"
+	log = "NULL event_target:global_event_country = {"
 	event_target:global_event_country = {
-		log = "NULL #平衡数值"
 		log = "NULL set_variable = { which = AOW_var_ai_mega_cost value = \\[this.AOW_var_ai_mega_cost] }#AI巨构花费"
 		log = "NULL set_variable = { which = AOW_var_ai_mega_upkp value = \\[this.AOW_var_ai_mega_upkp] }#AI巨构维护费"
 		log = "NULL set_variable = { which = AOW_var_ai_mega_prdc value = \\[this.AOW_var_ai_mega_prdc] }#AI巨构产出"
@@ -47,7 +64,7 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_nanites_activator] VA = \\[this.AOW_var_ai_mega_cap_nanites_activator] KEY = nanites_activator }#纳米激活器"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_nanites_transmutation] VA = \\[this.AOW_var_ai_mega_cap_nanites_transmutation] KEY = nanites_transmutation }#纳米变形器"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_naval_command_base] VA = \\[this.AOW_var_ai_mega_cap_naval_command_base] KEY = naval_command_base }#海军指挥基地"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_nebula_refining_center] VA = \\[this.AOW_var_ai_mega_cap_nebula_refining_center] KEY = nebula_refining_center }#星云精炼厂"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_nebula_refining_center] VA = \\[this.AOW_var_ai_mega_cap_nebula_refining_center] KEY = nebula_refining_center }#星云精炼中心"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_orbital_acquisition_system] VA = \\[this.AOW_var_ai_mega_cap_orbital_acquisition_system] KEY = orbital_acquisition_system }#轨道采集器"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_planetary_blaster_system] VA = \\[this.AOW_var_ai_mega_cap_planetary_blaster_system] KEY = planetary_blaster_system }#行星波动炮"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_planetary_mining_station] VA = \\[this.AOW_var_ai_mega_cap_planetary_mining_station] KEY = planetary_mining_station }#行星开采器"
@@ -84,6 +101,332 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_celestial_shield] VA = \\[this.AOW_var_ai_mega_cap_celestial_shield] KEY = celestial_shield }#天枢圣盾"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_starcage_world] VA = \\[this.AOW_var_ai_mega_cap_starcage_world] KEY = starcage_world }#星笼世界"
 	}
+	log = "NULL }"
+	log = "NULL #控制巨构是否在右侧隐藏"
+	log = "NULL from = {"
+	from = {
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_dyson_swarm_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_dyson_swarm_outliner_hide#戴森云"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_dyson_swarm_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_dyson_swarm_outliner_hide#戴森云"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_orbital_arc_furnace_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_orbital_arc_furnace_outliner_hide#电弧熔炉"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_orbital_arc_furnace_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_orbital_arc_furnace_outliner_hide#电弧熔炉"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_space_sensor_station_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_space_sensor_station_outliner_hide#星空传感站"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_space_sensor_station_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_space_sensor_station_outliner_hide#星空传感站"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_space_arena_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_space_arena_outliner_hide#星光竞技场"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_space_arena_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_space_arena_outliner_hide#星光竞技场"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_asteroid_mining_station_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_asteroid_mining_station_outliner_hide#星状开采站"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_asteroid_mining_station_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_asteroid_mining_station_outliner_hide#星状开采站"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_interstellar_assembly_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_interstellar_assembly_outliner_hide#星际集会"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_interstellar_assembly_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_interstellar_assembly_outliner_hide#星际集会"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_mega_art_installation_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_mega_art_installation_outliner_hide#巨构艺术设施"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_mega_art_installation_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_mega_art_installation_outliner_hide#巨构艺术设施"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_mega_shipyard_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_mega_shipyard_outliner_hide#巨型船坞"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_mega_shipyard_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_mega_shipyard_outliner_hide#巨型船坞"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_quantum_catapult_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_quantum_catapult_outliner_hide#量子弹弓"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_quantum_catapult_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_quantum_catapult_outliner_hide#量子弹弓"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_spy_orb_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_spy_orb_outliner_hide#哨兵阵列"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_spy_orb_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_spy_orb_outliner_hide#哨兵阵列"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_strategic_coordination_center_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_strategic_coordination_center_outliner_hide#战略指挥中心"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_strategic_coordination_center_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_strategic_coordination_center_outliner_hide#战略指挥中心"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_think_tank_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_think_tank_outliner_hide#科学枢纽"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_think_tank_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_think_tank_outliner_hide#科学枢纽"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_artifacts_transcription_palace_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_artifacts_transcription_palace_outliner_hide#银河珍宝馆"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_artifacts_transcription_palace_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_artifacts_transcription_palace_outliner_hide#银河珍宝馆"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_cemetery_of_martyrs_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_cemetery_of_martyrs_outliner_hide#英灵殿"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_cemetery_of_martyrs_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_cemetery_of_martyrs_outliner_hide#英灵殿"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_dark_matter_curvature_trap_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_dark_matter_curvature_trap_outliner_hide#以太势阱"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_dark_matter_curvature_trap_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_dark_matter_curvature_trap_outliner_hide#以太势阱"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_deep_space_prison_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_deep_space_prison_outliner_hide#深空监狱"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_deep_space_prison_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_deep_space_prison_outliner_hide#深空监狱"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_nanites_activator_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_nanites_activator_outliner_hide#纳米激活器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_nanites_activator_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_nanites_activator_outliner_hide#纳米激活器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_nanites_transmutation_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_nanites_transmutation_outliner_hide#纳米变形器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_nanites_transmutation_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_nanites_transmutation_outliner_hide#纳米变形器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_naval_command_base_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_naval_command_base_outliner_hide#海军指挥基地"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_naval_command_base_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_naval_command_base_outliner_hide#海军指挥基地"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_nebula_refining_center_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_nebula_refining_center_outliner_hide#星云精炼中心"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_nebula_refining_center_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_nebula_refining_center_outliner_hide#星云精炼中心"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_orbital_acquisition_system_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_orbital_acquisition_system_outliner_hide#轨道采集器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_orbital_acquisition_system_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_orbital_acquisition_system_outliner_hide#轨道采集器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_planetary_mining_station_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_planetary_mining_station_outliner_hide#行星开采器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_planetary_mining_station_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_planetary_mining_station_outliner_hide#行星开采器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_prosperous_trade_station_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_prosperous_trade_station_outliner_hide#繁荣贸易站"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_prosperous_trade_station_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_prosperous_trade_station_outliner_hide#繁荣贸易站"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_synthetic_food_factory_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_synthetic_food_factory_outliner_hide#合成食物厂"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_synthetic_food_factory_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_synthetic_food_factory_outliner_hide#合成食物厂"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_zro_sublimator_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_zro_sublimator_outliner_hide#泽珞升华器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_zro_sublimator_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_zro_sublimator_outliner_hide#泽珞升华器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_plane_siphon_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_plane_siphon_outliner_hide#位面虹吸器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_plane_siphon_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_plane_siphon_outliner_hide#位面虹吸器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_wonder_construction_bureau_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_wonder_construction_bureau_outliner_hide#奇观建设局"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_wonder_construction_bureau_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_wonder_construction_bureau_outliner_hide#奇观建设局"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_dyson_sphere_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_dyson_sphere_outliner_hide#戴森球"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_dyson_sphere_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_dyson_sphere_outliner_hide#戴森球"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_matter_decompressor_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_matter_decompressor_outliner_hide#物质解压器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_matter_decompressor_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_matter_decompressor_outliner_hide#物质解压器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_void_vortex_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_void_vortex_outliner_hide#归墟"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_void_vortex_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_void_vortex_outliner_hide#归墟"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_star_picker_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_star_picker_outliner_hide#摘星者"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_star_picker_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_star_picker_outliner_hide#摘星者"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_psychic_device_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_psychic_device_outliner_hide#灵能井"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_psychic_device_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_psychic_device_outliner_hide#灵能井"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_pulsar_clock_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_pulsar_clock_outliner_hide#脉冲时计"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_pulsar_clock_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_pulsar_clock_outliner_hide#脉冲时计"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_zero_element_furnace_outliner_hide#零素提取器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_zero_element_furnace_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_zero_element_furnace_outliner_hide#零素提取器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_star_guardian_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_star_guardian_outliner_hide#星空守护者"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_star_guardian_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_star_guardian_outliner_hide#星空守护者"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_storm_trigger_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_storm_trigger_outliner_hide#风暴触发器"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_storm_trigger_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_storm_trigger_outliner_hide#风暴触发器"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_multi_dimensional_warehouse_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_multi_dimensional_warehouse_outliner_hide#多维仓库"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_multi_dimensional_warehouse_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_multi_dimensional_warehouse_outliner_hide#多维仓库"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_outliner_hide#天界领航塔"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_outliner_hide#天界领航塔"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_quindecillion_stellar_quantum_matrix_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_quindecillion_stellar_quantum_matrix_outliner_hide#千载星辰"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_quindecillion_stellar_quantum_matrix_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_quindecillion_stellar_quantum_matrix_outliner_hide#千载星辰"
+		}
+		if = {
+			limit = { has_country_flag = AOW_flag_CNTR_starcage_world_outliner_hide }
+			log = "NULL set_country_flag = AOW_flag_CNTR_starcage_world_outliner_hide#星笼世界"
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = AOW_flag_CNTR_starcage_world_outliner_hide } }
+			log = "NULL remove_country_flag = AOW_flag_CNTR_starcage_world_outliner_hide#星笼世界"
+		}
+	}
+	log = "NULL }#"
 	log = "NULL #----------奇观拓展AOW结束导出----------删除以下全部的行"
 	optimize_memory
 }

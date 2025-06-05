@@ -82,7 +82,7 @@ AOW_MEGA_naval_command_base_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1130 } }
+		from = { country_event = { id = AOW_evt_naval_command_base.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_naval_command_base_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -91,7 +91,6 @@ AOW_MEGA_naval_command_base_1 = {
 	entity = "naval_command_base_1_entity"
 	construction_entity = "naval_command_base_1_entity"
 	portrait = "GFX_megastructure_construction_background"
-	#construction_blocks_and_blocked_by = multi_stage_type
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	build_time = @AOW_var_NCB_1_TIME
@@ -117,7 +116,7 @@ AOW_MEGA_naval_command_base_1 = {
 		country_naval_cap_add = @AOW_var_NCB_1_naval_cap_add
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1131 } }
+		from = { country_event = { id = AOW_evt_naval_command_base.101 } }
 	}
 }
 AOW_MEGA_naval_command_base_2 = {
@@ -149,15 +148,17 @@ AOW_MEGA_naval_command_base_2 = {
 		country_naval_cap_add = @AOW_var_NCB_2_naval_cap_add
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1132 } }
+		from = { country_event = { id = AOW_evt_naval_command_base.102 } }
 	}
 }
 AOW_MEGA_naval_command_base_3 = {
 	entity = "naval_command_base_3_entity"
 	construction_entity = "naval_command_base_3_entity"
 	portrait = "GFX_megastructure_construction_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = naval_command_base }
+	}
 	use_planet_resource = yes
 	build_time = @AOW_var_NCB_3_TIME
 	resources = {
@@ -184,7 +185,7 @@ AOW_MEGA_naval_command_base_3 = {
 	}
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1133 }
+			country_event = { id = AOW_evt_naval_command_base.103 }
 			set_country_flag = has_built_or_repaired_megastructure
 		}
 	}

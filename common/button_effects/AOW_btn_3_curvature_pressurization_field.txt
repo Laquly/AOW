@@ -1,0 +1,31 @@
+#曲率增压场
+AOW_btn_curvature_pressurization_field_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_curvature_pressurization_field_desc
+		if = {
+			limit = { has_technology = AOW_TECH_curvature_pressurization_field }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			custom_tooltip = {
+				fail_text = "requires_ap_galactic_wonders"
+				has_galactic_wonders = yes
+			}
+			has_technology = tech_mega_engineering
+			has_technology = AOW_TECH_spatiotemporal_curvature_manipulation
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_curvature_pressurization_field
+		}
+	}
+	effect = { custom_tooltip = AOW_text_curvature_pressurization_field_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_disable_player_infinite_mega_cap
+	KEY = curvature_pressurization_field
+	outliner = special
+}

@@ -71,7 +71,7 @@ AOW_MEGA_qsqm_1_K = {
 	ai_weight = { factor = 10 }
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
-		from = { country_event = { id = AOW_mega_notification.3061 } }
+		from = { country_event = { id = AOW_evt_qsqm.101 } }
 	}
 }
 AOW_MEGA_qsqm_2_K = {
@@ -122,7 +122,7 @@ AOW_MEGA_qsqm_2_K = {
 	upgrade_desc = hide
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3062 } }
+		from = { country_event = { id = AOW_evt_qsqm.102 } }
 	}
 }
 AOW_MEGA_qsqm_3_K = {
@@ -173,7 +173,7 @@ AOW_MEGA_qsqm_3_K = {
 	upgrade_desc = hide
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3063 } }
+		from = { country_event = { id = AOW_evt_qsqm.103 } }
 	}
 }
 AOW_MEGA_qsqm_4_K = {
@@ -224,7 +224,7 @@ AOW_MEGA_qsqm_4_K = {
 	upgrade_desc = hide
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3064 } }
+		from = { country_event = { id = AOW_evt_qsqm.104 } }
 	}
 }
 AOW_MEGA_qsqm_5_K = {
@@ -234,6 +234,9 @@ AOW_MEGA_qsqm_5_K = {
 	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quindecillion_stellar_quantum_matrix }
+	}
 	build_time = @AOW_var_QSQMk_5_TIME
 	scales_with_planet = yes
 	resources = {
@@ -280,7 +283,7 @@ AOW_MEGA_qsqm_5_K = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3065 }
+			country_event = { id = AOW_evt_qsqm.105 }
 		}
 	}
 }

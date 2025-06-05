@@ -80,7 +80,7 @@ AOW_MEGA_synthetic_food_factory_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1030 } }
+		from = { country_event = { id = AOW_evt_synthetic_food_factory.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_synthetic_food_factory_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -112,7 +112,7 @@ AOW_MEGA_synthetic_food_factory_1 = {
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value < @AOW_var_SFF_1_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1031 } }
+		from = { country_event = { id = AOW_evt_synthetic_food_factory.101 } }
 	}
 }
 AOW_MEGA_synthetic_food_factory_2 = {
@@ -149,15 +149,17 @@ AOW_MEGA_synthetic_food_factory_2 = {
 		modifier = { factor = 0	from = { has_monthly_income = { resource = exotic_gases value < @AOW_var_SFF_2_UPKP_gases } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1032 } }
+		from = { country_event = { id = AOW_evt_synthetic_food_factory.102 } }
 	}
 }
 AOW_MEGA_synthetic_food_factory_3 = {
 	entity = "synthetic_food_factory_full_entity"
 	construction_entity = "synthetic_food_factory_full_entity"
 	portrait = "GFX_megastructure_synthetic_food_factory_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = synthetic_food_factory }
+	}
 	use_planet_resource = yes
 	build_time = @AOW_var_SFF_3_TIME
 	resources = {
@@ -190,7 +192,7 @@ AOW_MEGA_synthetic_food_factory_3 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = AOW_mega_notification.1033 }
+			country_event = { id = AOW_evt_synthetic_food_factory.103 }
 		}
 	}
 }

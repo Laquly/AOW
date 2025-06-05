@@ -85,38 +85,6 @@ country_event = {#化为舰船
 	}
 }
 
-##################################################################################
-#通知他国2
-##################################################################################
-country_event = {
-	id = AOW_evt_star_transfer.3020
-	title = AOW_mega_others_notification_title
-	desc = AOW_evt_star_transfer.3020.desc
-	is_triggered_only = yes
-	picture = GFX_evt_AOW_MEGA_star_transfer
-	show_sound = event_mega_structure_other_empire_build_start
-	location = fromfrom
-	option = { name = AOW_evt_star_transfer.3020.a }
-}
-country_event = {
-	id = AOW_evt_star_transfer.3021
-	title = AOW_evt_star_transfer.3021.title
-	desc = AOW_evt_star_transfer.3021.desc
-	is_triggered_only = yes
-	picture = GFX_evt_AOW_MEGA_star_transfer
-	show_sound = event_mega_structure_other_empire_build_start
-	location = fromfrom
-	option = { name = AOW_evt_star_transfer.3021.a }
-}
-
-##################################################################################
-#专属故事3~4
-##################################################################################
-
-
-##################################################################################
-#基础功能5
-##################################################################################
 planet_event = {
 	id = AOW_evt_star_transfer.500
 	hide_window = yes
@@ -125,7 +93,6 @@ planet_event = {
 		from.owner = {
 			country_event = { id = AOW_evt_star_transfer.501 }
 		}
-		delete_fleet = from
 		solar_system = {
 			spawn_megastructure = {
 				type = "AOW_MEGA_star_transfer_5"
@@ -133,6 +100,7 @@ planet_event = {
 				planet = root
 			}
 		}
+		delete_fleet = from
 	}
 }
 country_event = {#重新部署

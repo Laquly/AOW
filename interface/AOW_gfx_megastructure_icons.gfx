@@ -340,7 +340,7 @@ spriteTypes = {
 		name = "GFX_AOW_MEGA_zero_element_furnace_ruined_outliner_icon"
 		textureFile = "gfx/interface/icons/megastructures/zero_element_furnace_ruined.dds"
 	}
-	#星云精炼厂
+	#星云精炼中心
 	spriteType = {
 		name = "GFX_AOW_MEGA_nebula_refining_center_0_outliner_icon"
 		textureFile = "gfx/interface/icons/megastructures/nebula_refining_center.dds"

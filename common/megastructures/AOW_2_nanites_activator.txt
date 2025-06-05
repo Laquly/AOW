@@ -84,7 +84,7 @@ AOW_MEGA_nanites_activator_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1070 } }
+		from = { country_event = { id = AOW_evt_nanites_activator.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_nanites_activator_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -118,16 +118,18 @@ AOW_MEGA_nanites_activator_1 = {
 	upgrade_from = { AOW_MEGA_nanites_activator_0 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1071 } }
+		from = { country_event = { id = AOW_evt_nanites_activator.101 } }
 	}
 }
 AOW_MEGA_nanites_activator_2 = {
 	entity = "nanites_activator_2_entity"
 	construction_entity = "nanites_activator_2_entity"
 	portrait = "GFX_megastructure_construction_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = nanites_activator }
+	}
 	build_time = @AOW_var_NA_2_TIME
 	resources = {
 		category = megastructures
@@ -165,7 +167,7 @@ AOW_MEGA_nanites_activator_2 = {
 	ai_weight = { factor = 10 }
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1072 }
+			country_event = { id = AOW_evt_nanites_activator.102 }
 			set_country_flag = has_built_or_repaired_megastructure
 		}
 	}

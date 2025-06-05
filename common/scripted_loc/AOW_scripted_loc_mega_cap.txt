@@ -1,0 +1,942 @@
+################################################################
+######小型巨构
+################################################################
+#星空传感站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = space_sensor_station
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = space_sensor_station
+    }
+}
+#星空传感站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = space_arena
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = space_arena
+    }
+}
+#星状开采站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = asteroid_mining_station
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = asteroid_mining_station
+    }
+}
+#资源钻取站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = resource_drilling_station
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = resource_drilling_station
+    }
+}
+#卫星防御基地
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = satellite_defense_base
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = satellite_defense_base
+    }
+}
+#戴森云
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = dyson_swarm
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = dyson_swarm
+    }
+}
+#电弧熔炉
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = orbital_arc_furnace
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = orbital_arc_furnace
+    }
+}
+#超空间中继器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = hyper_relay
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = hyper_relay
+    }
+}
+#星环
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = orbital_ring
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = orbital_ring
+    }
+}
+#居住站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = habitat
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = habitat
+    }
+}
+################################################################
+######普通巨构
+################################################################
+#星门
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = gateway
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = gateway
+    }
+}
+#星际集会
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = interstellar_assembly
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = interstellar_assembly
+    }
+}
+#巨构艺术
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = mega_art_installation
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = mega_art_installation
+    }
+}
+#巨型船坞
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = mega_shipyard
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = mega_shipyard
+    }
+}
+#哨兵阵列
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = spy_orb
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = spy_orb
+    }
+}
+#战略指挥中心
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = strategic_coordination_center
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = strategic_coordination_center
+    }
+}
+#科学枢纽
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = think_tank
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = think_tank
+    }
+}
+#量子弹弓
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = quantum_catapult
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = quantum_catapult
+    }
+}
+#银河珍宝馆
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = artifacts_transcription_palace
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = artifacts_transcription_palace
+    }
+}
+#英灵殿
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = cemetery_of_martyrs
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = cemetery_of_martyrs
+    }
+}
+#深空监狱
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = deep_space_prison
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = deep_space_prison
+    }
+}
+#星轨
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = hyperlane_controller
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = hyperlane_controller
+    }
+}
+#星网
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = advanced_hyperlane_controller
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = advanced_hyperlane_controller
+    }
+}
+#纳米激活器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = nanites_activator
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = nanites_activator
+    }
+}
+#纳米变形器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = nanites_transmutation
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = nanites_transmutation
+    }
+}
+#海军指挥基地
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = naval_command_base
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = naval_command_base
+    }
+}
+#星云精炼中心
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = nebula_refining_center
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = nebula_refining_center
+    }
+}
+#轨道采集器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = orbital_acquisition_system
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = orbital_acquisition_system
+    }
+}
+#行星开采器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = planetary_mining_station
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = planetary_mining_station
+    }
+}
+#繁荣贸易站
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = prosperous_trade_station
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = prosperous_trade_station
+    }
+}
+#合成食物厂
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = synthetic_food_factory
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = synthetic_food_factory
+    }
+}
+#生物培育舱
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = biological_cultivation_pod
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = biological_cultivation_pod
+    }
+}
+#泽珞升华器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = zro_sublimator
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = zro_sublimator
+    }
+}
+#行星波动炮
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = planetary_blaster_system
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = planetary_blaster_system
+    }
+}
+#以太势阱
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = dark_matter_curvature_trap
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = dark_matter_curvature_trap
+    }
+}
+#位面虹吸器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = plane_siphon
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = plane_siphon
+    }
+}
+#奇观建设局
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = wonder_construction_bureau
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = wonder_construction_bureau
+    }
+}
+################################################################
+######星河奇迹
+################################################################
+#戴森球
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = dyson_sphere
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = dyson_sphere
+    }
+}
+#物质解压器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = matter_decompressor
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = matter_decompressor
+    }
+}
+#环世界
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = ring_world_1
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = ring_world_1
+    }
+}
+#灵能井
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = psychic_device
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = psychic_device
+    }
+}
+#脉冲时计
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = pulsar_clock
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = pulsar_clock
+    }
+}
+#二环
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = ring_world_2
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = ring_world_2
+    }
+}
+#摘星者
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = star_picker
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = star_picker
+    }
+}
+#归墟
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = void_vortex
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = void_vortex
+    }
+}
+#零素提取器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = zero_element_furnace
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = zero_element_furnace
+    }
+}
+#行星战舰
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = planetary_ship
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = planetary_ship
+    }
+}
+#曲率增压场
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = curvature_pressurization_field
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = curvature_pressurization_field
+    }
+}
+#天体逆构器
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = celestial_decompressor
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = celestial_decompressor
+    }
+}
+#视界吮星坛
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = stellar_eater
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = stellar_eater
+    }
+}
+#星空守护者
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = star_guardian
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = star_guardian
+    }
+}
+################################################################
+######天外神迹
+################################################################
+#多维仓库
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = multi_dimensional_warehouse
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = multi_dimensional_warehouse
+    }
+}
+#天界领航塔
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = heaven_navigation_bureau
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = heaven_navigation_bureau
+    }
+}
+#奇迹船坞
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = miraculous_shipyard
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = miraculous_shipyard
+    }
+}
+#物质重组仪
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = material_recombination_instrument
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = material_recombination_instrument
+    }
+}
+#千载星辰
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = quindecillion_stellar_quantum_matrix
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = quindecillion_stellar_quantum_matrix
+    }
+}
+#三环
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = ring_world_3
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = ring_world_3
+    }
+}
+#四环
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = ring_world_4
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = ring_world_4
+    }
+}
+#御星天炉
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = star_transfer
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = star_transfer
+    }
+}
+#坠星天矛
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = starfall_spear
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = starfall_spear
+    }
+}
+#天枢圣盾
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = celestial_shield
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = celestial_shield
+    }
+}
+#星笼世界
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = ai
+        Key = starcage_world
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap
+        PorA = player
+        Key = starcage_world
+    }
+}

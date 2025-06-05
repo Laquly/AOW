@@ -3,6 +3,7 @@
 #不是你文件怎么排序，工程船那里就怎么排序的
 
 AOW_MEGA_asteroid_mining_station_1 = {}
+AOW_MEGA_resource_drilling_station_0 = {}
 AOW_MEGA_space_arena_1 = {}
 AOW_MEGA_space_sensor_station_1 = {}
 AOW_MEGA_satellite_defense_base_1 = {}

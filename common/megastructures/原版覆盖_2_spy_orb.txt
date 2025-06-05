@@ -209,6 +209,9 @@ spy_orb_4 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = @entity_x y = @entity_y }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = spy_orb }
+	}
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -280,6 +283,9 @@ spy_orb_restored = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = @entity_x y = @entity_y }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = spy_orb }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures

@@ -195,6 +195,9 @@ matter_decompressor_4 = {
 	scale_offset = yes
 	use_planet_resource = yes
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = matter_decompressor }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -277,6 +280,9 @@ matter_decompressor_restored = {
 	scale_offset = yes
 	use_planet_resource = yes
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = matter_decompressor }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures

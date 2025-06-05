@@ -93,10 +93,7 @@ AOW_MEGA_dyson_swarm_3_k = {
 	scale_offset = yes
 	place_entity_on_planet_plane = yes
 	outliner_trigger = {
-		exists = owner
-		owner = { has_technology = tech_dyson_sphere }
-		AOW_trgr_SSTM_has_non_artificial_non_primitive_colony = no
-		AOW_trgr_SSTM_can_aggressively_interfere_with_pre_ftl = yes
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_swarm }
 	}
 	construction_blocks_and_blocked_by = none
 	use_planet_resource = yes
@@ -357,10 +354,7 @@ AOW_MEGA_dyson_sphere_5_K = {
 	construction_entity = "AOW_new_dyson_sphere_part_4_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	outliner_trigger = {
-		exists = owner
-		owner = {
-			has_country_flag = can_build_disco_sphere
-		}
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_sphere }
 	}
 	scales_with_planet = yes
 	use_planet_resource = yes

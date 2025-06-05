@@ -39,6 +39,14 @@
 @AOW_var_SDB_1_COST_alloys = 1000
 @AOW_var_SDB_1_COST_unity = 500
 
+#资源钻取站
+@AOW_var_RDS_0_TIME = 360
+@AOW_var_RDS_0_COST_alloys = 500
+@AOW_var_RDS_0_COST_unity = 500
+@AOW_var_RDS_0_UPKP_energy = 10
+@AOW_var_RDS_1_TIME = 360
+@AOW_var_RDS_1_COST_energy = 1000
+
 ######################## 普通巨构 ########################
 #奇观建设局
 @AOW_var_WCB_0_TIME = 1800
@@ -49,23 +57,23 @@
 @AOW_var_WCB_1_COST_alloys = 15000
 @AOW_var_WCB_1_COST_unity = 2500
 @AOW_var_WCB_1_PRDC_living_metal = 5
-@AOW_var_WCB_1_UPKP_alloys = 40
-@AOW_var_WCB_1_UPKP_energy = 40
-@AOW_var_WCB_1_UPKP_minerals = 80
+@AOW_var_WCB_1_UPKP_alloys = 50
+@AOW_var_WCB_1_UPKP_energy = 50
+@AOW_var_WCB_1_UPKP_minerals = 75
 @AOW_var_WCB_2_TIME = 3600
 @AOW_var_WCB_2_COST_alloys = 15000
 @AOW_var_WCB_2_COST_unity = 2500
 @AOW_var_WCB_2_PRDC_living_metal = 10
-@AOW_var_WCB_2_UPKP_alloys = 80
-@AOW_var_WCB_2_UPKP_energy = 80
-@AOW_var_WCB_2_UPKP_minerals = 160
+@AOW_var_WCB_2_UPKP_alloys = 100
+@AOW_var_WCB_2_UPKP_energy = 100
+@AOW_var_WCB_2_UPKP_minerals = 150
 @AOW_var_WCB_3_TIME = 3600
 @AOW_var_WCB_3_COST_alloys = 15000
 @AOW_var_WCB_3_COST_unity = 2500
 @AOW_var_WCB_3_PRDC_living_metal = 15
-@AOW_var_WCB_3_UPKP_alloys = 120
-@AOW_var_WCB_3_UPKP_energy = 120
-@AOW_var_WCB_3_UPKP_minerals = 240
+@AOW_var_WCB_3_UPKP_alloys = 150
+@AOW_var_WCB_3_UPKP_energy = 150
+@AOW_var_WCB_3_UPKP_minerals = 300
 
 #行星波动炮
 @AOW_var_PBS_0_TIME = 1800
@@ -119,7 +127,7 @@
 @AOW_var_NCB_3_naval_cap_add = 300
 @AOW_var_NCB_3_command_limit_add = 30
 
-#文物誊录宫
+#银河珍宝馆
 @AOW_var_ATP_0_TIME = 1800
 @AOW_var_ATP_0_COST_alloys = 5000
 @AOW_var_ATP_0_COST_unity = 2500
@@ -300,7 +308,7 @@
 @AOW_var_SFF_3_PRDC_society = 400
 @AOW_var_SFF_3_PRDC_unity = 100
 
-#暗物质曲率陷阱
+#以太势阱
 @AOW_var_DMCT_0_TIME = 1800
 @AOW_var_DMCT_0_COST_alloys = 5000
 @AOW_var_DMCT_0_COST_unity = 2500
@@ -440,7 +448,7 @@
 @AOW_var_PTS_2_UPKP_crystals = 10
 @AOW_var_PTS_2_envoys_add = 1
 @AOW_var_PTS_2_trade_value_add = 100
-@AOW_var_PTS_2_trade_value_mult = 0.05
+@AOW_var_PTS_2_planet_jobs_trade_produces_mult = 0.05
 @AOW_var_PTS_2_branch_office_value_mult = 0.05
 @AOW_var_PTS_3_TIME = 1800
 @AOW_var_PTS_3_COST_alloys = 10000
@@ -450,7 +458,7 @@
 @AOW_var_PTS_3_UPKP_crystals = 20
 @AOW_var_PTS_3_PRDC_unity = 100
 @AOW_var_PTS_3_envoys_add = 1
-@AOW_var_PTS_3_trade_value_mult = 0.1
+@AOW_var_PTS_3_planet_jobs_trade_produces_mult = 0.1
 @AOW_var_PTS_3_branch_office_value_mult = 0.1
 @AOW_var_PTS_4_TIME = 1800
 @AOW_var_PTS_4_COST_energy = 5000
@@ -458,7 +466,7 @@
 @AOW_var_PTS_4_UPKP_energy = 100
 @AOW_var_PTS_4_PRDC_unity = 200
 @AOW_var_PTS_4_envoys_add = 1
-@AOW_var_PTS_4_trade_value_mult = 0.2
+@AOW_var_PTS_4_planet_jobs_trade_produces_mult = 0.2
 @AOW_var_PTS_4_branch_office_value_mult = 0.2
 @AOW_var_PTS_5_TIME = 1800
 @AOW_var_PTS_5_COST_energy = 5000
@@ -466,7 +474,7 @@
 @AOW_var_PTS_5_UPKP_energy = 100
 @AOW_var_PTS_5_PRDC_unity = 300
 @AOW_var_PTS_5_envoys_add = 1
-@AOW_var_PTS_5_trade_value_mult = 0.3
+@AOW_var_PTS_5_planet_jobs_trade_produces_mult = 0.3
 @AOW_var_PTS_5_branch_office_value_mult = 0.3
 
 #英灵殿
@@ -700,27 +708,24 @@
 @AOW_var_PD_0_COST_unity = 5000
 @AOW_var_PD_0_UPKP_energy = 5
 @AOW_var_PD_1_TIME = 3600
-@AOW_var_PD_1_COST_alloys = 7500
+@AOW_var_PD_1_COST_alloys = 15000
 @AOW_var_PD_1_COST_zro = 250
 @AOW_var_PD_1_COST_unity = 7000
 @AOW_var_PD_1_UPKP_energy = 25
 @AOW_var_PD_1_pop_government_ethic_attraction = 0.25
 @AOW_var_PD_2_TIME = 3600
-@AOW_var_PD_2_COST_alloys = 7500
+@AOW_var_PD_2_COST_alloys = 15000
 @AOW_var_PD_2_COST_zro = 250
 @AOW_var_PD_2_COST_unity = 7000
 @AOW_var_PD_2_UPKP_energy = 50
 @AOW_var_PD_2_pop_government_ethic_attraction = 0.5
 @AOW_var_PD_3_TIME = 3600
-@AOW_var_PD_3_COST_energy = 7500
-@AOW_var_PD_3_COST_zro = 500
+@AOW_var_PD_3_COST_energy = 10000
+@AOW_var_PD_3_COST_zro = 2000
 @AOW_var_PD_3_COST_unity = 7000
-@AOW_var_PD_3_PRDC_darkmatter = 25
+@AOW_var_PD_3_PRDC_zro = 25
 @AOW_var_PD_3_UPKP_energy = 100
-@AOW_var_PD_3_UPKP_zro = 50
-@AOW_var_PD_3_jobs_research_prdc_mult = 0.2
-@AOW_var_PD_3_jobs_energy_prdc_mult = 0.2
-@AOW_var_PD_3_pop_government_ethic_attraction = 1
+@AOW_var_PD_3_UPKP_alloys = 50
 
 #脉冲时记
 @AOW_var_PC_0_TIME = 1800
@@ -824,21 +829,18 @@
 #星空守护者
 @AOW_var_SG_0_TIME = 1800
 @AOW_var_SG_0_COST_alloys = 5000
-@AOW_var_SG_0_COST_unity = 5000
+@AOW_var_SG_0_COST_influence = 100
 @AOW_var_SG_0_UPKP_energy = 10
 @AOW_var_SG_1_TIME = 3600
 @AOW_var_SG_1_COST_alloys = 15000
-@AOW_var_SG_1_COST_unity = 7000
 @AOW_var_SG_1_UPKP_energy = 33
 @AOW_var_SG_1_UPKP_alloys = 33
-@AOW_var_SG_2_TIME = 2700
-@AOW_var_SG_2_COST_alloys = 7500
-@AOW_var_SG_2_COST_unity = 7000
+@AOW_var_SG_2_TIME = 3600
+@AOW_var_SG_2_COST_alloys = 10000
 @AOW_var_SG_2_UPKP_energy = 67
 @AOW_var_SG_2_UPKP_alloys = 67
-@AOW_var_SG_3_TIME = 2700
-@AOW_var_SG_3_COST_alloys = 7500
-@AOW_var_SG_3_COST_unity = 7000
+@AOW_var_SG_3_TIME = 3600
+@AOW_var_SG_3_COST_alloys = 10000
 @AOW_var_SG_3_UPKP_energy = 100
 @AOW_var_SG_3_UPKP_alloys = 100
 

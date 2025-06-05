@@ -1,0 +1,33 @@
+#前置条件
+AOW_btn_starcage_world_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_starcage_world_desc
+		if = {
+			limit = { has_technology = AOW_TECH_starcage_world }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_ascension_perk = ap_cosmic_wonders
+			has_technology = AOW_TECH_multi_dimensional_warehouse
+			has_technology = tech_ring_world
+			has_technology = tech_dyson_sphere
+			has_technology = tech_matter_decompressor
+			has_technology = AOW_TECH_void_vortex
+			has_technology = AOW_TECH_zero_element_furnace
+			has_technology = AOW_TECH_star_picker
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_starcage_world
+		}
+	}
+	effect = { custom_tooltip = AOW_text_starcage_world_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = starcage_world
+	outliner = standard
+}

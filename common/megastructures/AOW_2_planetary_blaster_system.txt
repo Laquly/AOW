@@ -134,7 +134,7 @@ AOW_MEGA_planetary_blaster_system_0 = {
 	}
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1160 }
+			country_event = { id = AOW_evt_planetary_blaster_system.100 }
 		}
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_planetary_blaster_system_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
@@ -170,7 +170,7 @@ AOW_MEGA_planetary_blaster_system_1 = {
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_0 }
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1161 }
+			country_event = { id = AOW_evt_planetary_blaster_system.101 }
 		}
 	}
 }
@@ -204,7 +204,7 @@ AOW_MEGA_planetary_blaster_system_2 = {
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_1 }
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1162 }
+			country_event = { id = AOW_evt_planetary_blaster_system.102 }
 		}
 	}
 }
@@ -238,14 +238,13 @@ AOW_MEGA_planetary_blaster_system_3 = {
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_2 }
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1163 }
+			country_event = { id = AOW_evt_planetary_blaster_system.103 }
 		}
 	}
 }
 AOW_MEGA_planetary_blaster_system_4 = {
 	entity = AOW_shipsize_frame_entity#"planetary_blaster_system_4_entity"
 	portrait = "GFX_megastructure_planetary_blaster_system_background"
-	hide_name = yes
 	place_entity_on_planet_plane = yes
 	scales_with_planet = yes
 	use_planet_resource = yes
@@ -300,7 +299,7 @@ AOW_MEGA_planetary_blaster_system_4 = {
 			}
 		}
 		from = {
-			country_event = { id = AOW_mega_notification.1164 }
+			country_event = { id = AOW_evt_planetary_blaster_system.104 }
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
 		}
@@ -389,7 +388,7 @@ AOW_MEGA_planetary_blaster_system_restored = {
 			save_event_target_as = AOW_tgt_PLNT_planetary_blaster_system
 		}
 		from = {
-			country_event = { id = AOW_mega_notification.1165 }
+			country_event = { id = AOW_evt_planetary_blaster_system.105 }
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
 		}

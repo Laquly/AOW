@@ -84,7 +84,7 @@ AOW_MEGA_cemetery_of_martyrs_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1110 } }
+		from = { country_event = { id = AOW_evt_cemetery_of_martyrs.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_cemetery_of_martyrs_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -122,7 +122,7 @@ AOW_MEGA_cemetery_of_martyrs_1 = {
 	upgrade_from = { AOW_MEGA_cemetery_of_martyrs_0 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1111 } }
+		from = { country_event = { id = AOW_evt_cemetery_of_martyrs.101 } }
 	}
 }
 AOW_MEGA_cemetery_of_martyrs_2 = {
@@ -158,16 +158,18 @@ AOW_MEGA_cemetery_of_martyrs_2 = {
 	upgrade_from = { AOW_MEGA_cemetery_of_martyrs_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1112 } }
+		from = { country_event = { id = AOW_evt_cemetery_of_martyrs.102 } }
 	}
 }
 AOW_MEGA_cemetery_of_martyrs_3 = {
 	entity = "cemetery_of_martyrs_03_entity"
 	construction_entity = "cemetery_of_martyrs_03_construction_entity"
 	portrait = "GFX_megastructure_cemetery_of_martyrs_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = cemetery_of_martyrs }
+	}
 	build_time = @AOW_var_COM_3_TIME
 	resources = {
 		category = megastructures
@@ -198,7 +200,7 @@ AOW_MEGA_cemetery_of_martyrs_3 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = AOW_mega_notification.1113 }
+			country_event = { id = AOW_evt_cemetery_of_martyrs.103 }
 		}
 	}
 }

@@ -4,7 +4,7 @@ AOW_MEGA_advanced_hyperlane_controller = {
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
 	construction_blocks_and_blocked_by = none
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = @AOW_var_AHC_TIME
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
 	resources = {
@@ -16,7 +16,7 @@ AOW_MEGA_advanced_hyperlane_controller = {
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -60,7 +60,7 @@ AOW_MEGA_advanced_hyperlane_controller = {
 			coords_from = fromfrom
 		}
 		remove_megastructure = fromfrom
-		from = { country_event = { id = AOW_mega_notification.1150 } }
+		from = { country_event = { id = AOW_evt_advanced_hyperlane_controller.100 } }
 	}
 }
 AOW_MEGA_advanced_hyperlane_controller_standby = {#默认状态
@@ -68,12 +68,12 @@ AOW_MEGA_advanced_hyperlane_controller_standby = {#默认状态
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = 0
 	resources = { category = megastructures }
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -94,14 +94,14 @@ AOW_MEGA_advanced_hyperlane_controller_active = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = 0
 	resources = {
 		category = megastructures
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -124,14 +124,14 @@ AOW_MEGA_advanced_hyperlane_controller_active_to_standby = {#接收状态 转变
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = 0
 	resources = {
 		category = megastructures
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -159,7 +159,7 @@ AOW_MEGA_advanced_hyperlane_controller_add = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = 0
 	resources = {
 		category = megastructures
@@ -169,7 +169,7 @@ AOW_MEGA_advanced_hyperlane_controller_add = {
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -210,7 +210,7 @@ AOW_MEGA_advanced_hyperlane_controller_add = {
 			coords_from = fromfrom
 		}
 		remove_megastructure = fromfrom
-		from = { country_event = { id = AOW_mega_notification.1151 } }
+		from = { country_event = { id = AOW_evt_advanced_hyperlane_controller.101 } }
 	}
 }
 AOW_MEGA_advanced_hyperlane_controller_remove = {
@@ -218,7 +218,7 @@ AOW_MEGA_advanced_hyperlane_controller_remove = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_hyperlane_controller_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	build_time = 0
 	resources = {
 		category = megastructures
@@ -228,7 +228,7 @@ AOW_MEGA_advanced_hyperlane_controller_remove = {
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
-		time = 360
+		time = 0
 		tech = AOW_TECH_advanced_hyperlane_controller
 		category = megastructures
 		alloys = @AOW_var_AHC_COST_alloys
@@ -265,7 +265,7 @@ AOW_MEGA_advanced_hyperlane_controller_remove = {
 			remove_hyperlane = { from = prev to = this }
 			set_spawn_system_batch = end
 		}
-		from = { country_event = { id = AOW_mega_notification.1152 } }
+		from = { country_event = { id = AOW_evt_advanced_hyperlane_controller.102 } }
 		spawn_megastructure = {#发送完指令后，生成待机状态星轨
 			type = "AOW_MEGA_advanced_hyperlane_controller_standby"
 			owner = from

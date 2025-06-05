@@ -1,0 +1,243 @@
+@district_buildtime = 1080
+@district_cost_alloys = 1000
+@district_cost_sr = 500
+@district_upkeep_energy = 10
+@district_upkeep_alloys = 10
+@district_upkeep_sr = 5
+
+@planet_housing_add = 5000
+AOW_district_sw_common_star = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    zone_slots = {
+        slot_city_government
+        slot_starcage_world_core
+        slot_starcage_world_core
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_common_star
+            has_planet_flag = AOW_flag_PLNT_sw_common
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_common_star
+            has_planet_flag = AOW_flag_PLNT_sw_common
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    convert_to = {
+        AOW_district_sw_black_hole
+        AOW_district_sw_neutron_star
+    }
+    planet_modifier = {
+        planet_housing_add = @planet_housing_add
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_add = 500
+        job_enforcer_add = 500
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_no_happiness_add = 500
+        job_patrol_drone_add = 500
+    }
+}
+AOW_district_sw_neutron_star = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    zone_slots = {
+        slot_city_government
+        slot_starcage_world_core
+        slot_starcage_world_core
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_neutron_star
+            has_planet_flag = AOW_flag_PLNT_sw_neutron
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_neutron_star
+            has_planet_flag = AOW_flag_PLNT_sw_neutron
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = @planet_housing_add
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_add = 500
+        job_enforcer_add = 500
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_no_happiness_add = 500
+        job_patrol_drone_add = 500
+    }
+}
+AOW_district_sw_black_hole = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    zone_slots = {
+        slot_city_government
+        slot_starcage_world_core
+        slot_starcage_world_core
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_black_hole
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+        OR = {
+            is_planet_class = pc_starcage_world_black_hole
+            has_planet_flag = AOW_flag_PLNT_sw_black
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = @planet_housing_add
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_add = 500
+        job_enforcer_add = 500
+    }
+    triggered_planet_modifier = {
+        potential = { is_gestalt = no }
+        planet_amenities_no_happiness_add = 500
+        job_patrol_drone_add = 500
+    }
+}
+AOW_district_starcage_world_1 = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    #default_starting_district = yes
+    zone_slots = {
+        slot_starcage_world_production
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = { planet_housing_add = @planet_housing_add }
+}
+AOW_district_starcage_world_2 = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    #default_starting_district = yes
+    zone_slots = {
+        slot_starcage_world_production
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = { planet_housing_add = @planet_housing_add }
+}
+AOW_district_starcage_world_3 = {
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    #default_starting_district = yes
+    zone_slots = {
+        slot_starcage_world_production
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    potential = {
+        uses_district_set = AOW_district_starcage_world
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = @district_cost_alloys
+            volatile_motes = @district_cost_sr
+            exotic_gases = @district_cost_sr
+            rare_crystals = @district_cost_sr
+        }
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
+        }
+    }
+    planet_modifier = { planet_housing_add = @planet_housing_add }
+}

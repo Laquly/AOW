@@ -1,0 +1,10 @@
+#无法切换
+AOW_btn_$KEY$_outliner_special = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_outliner_special_desc
+	}
+}

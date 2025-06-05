@@ -3,7 +3,6 @@ AOW_MEGA_zro_sublimator_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	#construction_blocks_and_blocked_by = none
 	build_time = @AOW_var_ZS_0_TIME
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SHROUDED_PLANET"
 	resources = {
@@ -68,7 +67,7 @@ AOW_MEGA_zro_sublimator_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1050 } }
+		from = { country_event = { id = AOW_evt_zro_sublimator.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_zro_sublimator_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -95,15 +94,17 @@ AOW_MEGA_zro_sublimator_1 = {
 	upgrade_from = { AOW_MEGA_zro_sublimator_0 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1051 } }
+		from = { country_event = { id = AOW_evt_zro_sublimator.101 } }
 	}
 }
 AOW_MEGA_zro_sublimator_2 = {
 	entity = "sr_zro_sublimator_2_entity"
 	construction_entity = "sr_zro_sublimator_2_entity"
 	portrait = "GFX_megastructure_construction_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = zro_sublimator }
+	}
 	use_planet_resource = yes
 	build_time = @AOW_var_ZS_2_TIME
 	resources = {
@@ -130,6 +131,6 @@ AOW_MEGA_zro_sublimator_2 = {
 	upgrade_from = { AOW_MEGA_zro_sublimator_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1052 } }
+		from = { country_event = { id = AOW_evt_zro_sublimator.102 } }
 	}
 }

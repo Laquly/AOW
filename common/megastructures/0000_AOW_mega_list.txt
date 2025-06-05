@@ -1,6 +1,18 @@
 #为什么会有这么一个文件？
 #因为工程船的巨构建造列表是根据【优先级在上的巨构排序】而排序的。
 #不是你文件怎么排序，工程船那里就怎么排序的
-
+AOW_MEGA_test = {
+	entity = "AOW_test_01_entity"
+	construction_entity = "AOW_test_01_entity"
+	portrait = "GFX_megastructure_asteroid_mining_station_background"
+	place_entity_on_planet_plane = no
+	show_galactic_map_icon = no
+	show_in_outliner = no
+	construction_blocks_and_blocked_by = none
+	scales_with_planet = no
+	use_planet_resource = yes
+	build_time = 0
+	potential = { always = no }
+}
 	cosmogenesis_needle = {}
 	cosmogenesis_world_0 = {}

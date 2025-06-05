@@ -3,6 +3,10 @@ spriteTypes = {
 		name = "GFX_planet_type_starcage_world"
 		textureFile = "gfx/interface/icons/pc_starcage_world.dds"
 	}
+	spriteType = {
+		name = "GFX_planet_type_star_guardian"
+		textureFile = "gfx/interface/icons/pc_star_guardian.dds"
+	}
 
 	spriteType = {
 		name = "col_starcage_world_production"

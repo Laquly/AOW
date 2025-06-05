@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e51fdb5e-2fa4-452c-ac5f-0cdd2b78c5fc" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/common/districts/AOW_district_starcage_world.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_alloy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_energy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_enforcer.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_entertainer.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_food.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_goods.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_minerals.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_research.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_soldier.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_trader.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/jobs/AOW_zone_job_unity.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_0_behemoth_egg.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_deep_space_citadel.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/zone_slots/AOW_zone_slots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/zones/AOW_zone_star_guardian.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/zones/AOW_zone_starcage_world.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/AOW_gfx_district.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.config/stellaris/common/megastructures.cwt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_dyson_swarm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_dyson_swarm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_habitat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_habitat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_hyper_relay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_hyper_relay.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_orbital_arc_furnace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_orbital_arc_furnace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_orbital_ring.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_0_orbital_ring.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_asteroid_mining_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_asteroid_mining_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_resource_drilling_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_resource_drilling_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_satellite_defense_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_satellite_defense_base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_space_arena.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_space_arena.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_space_sensor_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_1_space_sensor_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_gateway.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_gateway.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_interstellar_assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_interstellar_assembly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_mega_art_installation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_mega_art_installation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_mega_shipyard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_mega_shipyard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_quantum_catapult.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_quantum_catapult.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_spy_orb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_spy_orb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_strategic_coordination_center.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_strategic_coordination_center.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_think_tank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_0_think_tank.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_advanced_hyperlane_controller.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_advanced_hyperlane_controller.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_artifacts_transcription_palace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_artifacts_transcription_palace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_biological_cultivation_pod.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_biological_cultivation_pod.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_cemetery_of_martyrs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_cemetery_of_martyrs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_dark_matter_curvature_trap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_dark_matter_curvature_trap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_deep_space_prison.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_deep_space_prison.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_hyperlane_controller.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_hyperlane_controller.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nanites_activator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nanites_activator.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nanites_transmutation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nanites_transmutation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_naval_command_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_naval_command_base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nebula_refining_center.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_nebula_refining_center.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_orbital_acquisition_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_orbital_acquisition_system.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_plane_siphon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_plane_siphon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_planetary_blaster_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_planetary_blaster_system.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_planetary_mining_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_planetary_mining_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_prosperous_trade_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_prosperous_trade_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_synthetic_food_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_synthetic_food_factory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_wonder_construction_bureau.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_wonder_construction_bureau.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_zro_sublimator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_2_zro_sublimator.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_dyson_sphere.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_dyson_sphere.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_matter_decompressor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_matter_decompressor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_ring_world_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_0_ring_world_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_celestial_decompressor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_celestial_decompressor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_curvature_pressurization_field.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_curvature_pressurization_field.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_planetary_ship.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_planetary_ship.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_psychic_device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_psychic_device.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_pulsar_clock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_pulsar_clock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_ring_world_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_ring_world_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_star_guardian.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_star_guardian.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_star_picker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_star_picker.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_stellar_eater.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_stellar_eater.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_void_vortex.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_void_vortex.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_zero_element_furnace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_3_zero_element_furnace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_celestial_shield.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_celestial_shield.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_heaven_navigation_bureau.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_heaven_navigation_bureau.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_material_recombination_instrument.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_material_recombination_instrument.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_miraculous_shipyard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_miraculous_shipyard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_multi_dimensional_warehouse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_multi_dimensional_warehouse.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_quindecillion_stellar_quantum_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_quindecillion_stellar_quantum_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_ring_world_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_ring_world_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_ring_world_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_ring_world_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_star_transfer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_star_transfer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_starcage_world.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_starcage_world.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_starfall_spear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_4_starfall_spear.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_balance_variable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_balance_variable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_page.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_page.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_presets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_main_ui_presets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_starfall_spear_ui.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_starfall_spear_ui.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_starfall_spear_ui_planet.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_starfall_spear_ui_system.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_view_ui_PBS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_view_ui_PBS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/button_effects/AOW_btn_view_ui_SW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/button_effects/AOW_btn_view_ui_SW.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/bypass/AOW_bypass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/bypass/AOW_bypass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/colony_types/00000_AOW_colony_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/colony_types/00000_AOW_colony_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/component_templates/satellite_defense_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/component_templates/satellite_defense_base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/component_templates/shelter_error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/decisions/AOW_decisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/AOW_decisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/deposits/AOW_deposits.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/AOW_deposits.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/districts/AOW_districts.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/districts/AOW_districts_star_guardian.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/AOW_district_star_guardian.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/economic_categories/AOW_economic_categories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/economic_categories/AOW_economic_categories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_disable_player_infinite_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_disable_player_infinite_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_infinite_player_infinite_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_infinite_player_infinite_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_standard_player_infinite_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_standard_player_infinite_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_standard_player_standard_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_ai_standard_player_standard_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_outliner_special.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_outliner_special.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_outliner_standard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/button_effects/AOW_button_outliner_standard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_complete_sw_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_complete_sw_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_decrease_sw_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_decrease_sw_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_increase_sw_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_increase_sw_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_max_sw_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_max_sw_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_reset_sw_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/starcage_world/AOW_reset_sw_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/red_dawn_event_options.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/scripted_loc/AOW_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/scripted_loc/AOW_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/0000_AOW_mega_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/0000_AOW_mega_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/0001_AOW_mega_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/0001_AOW_mega_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/0003_AOW_mega_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/0003_AOW_mega_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_1_asteroid_mining_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_1_asteroid_mining_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_1_space_arena.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_1_space_arena.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_1_space_sensor_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_1_space_sensor_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_advanced_hyperlane_controller.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_advanced_hyperlane_controller.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_artifacts_transcription_palace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_artifacts_transcription_palace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_cemetery_of_martyrs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_cemetery_of_martyrs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_dark_matter_curvature_trap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_dark_matter_curvature_trap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_deep_space_prison.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_deep_space_prison.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_hyperlane_controller.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_hyperlane_controller.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_nanites_activator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_nanites_activator.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_nanites_transmutation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_nanites_transmutation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_naval_command_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_naval_command_base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_nebula_refining_center.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_nebula_refining_center.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_orbital_acquisition_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_orbital_acquisition_system.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_plane_siphon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_plane_siphon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_planetary_blaster_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_planetary_blaster_system.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_planetary_mining_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_planetary_mining_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_prosperous_trade_station.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_prosperous_trade_station.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_synthetic_food_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_synthetic_food_factory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_wonder_construction_bureau.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_wonder_construction_bureau.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_2_zro_sublimator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_2_zro_sublimator.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_curvature_pressurization_field.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_curvature_pressurization_field.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_0hyper.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_0hyper.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_1super.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_1super.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_2O.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_2O.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_3B.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_3B.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_4giant.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_4giant.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_5A.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_5A.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_6F.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_6F.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_7G.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_7G.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_8K.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_8K.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_9M.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_dyson_sphere_9M.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_psychic_device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_psychic_device.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_pulsar_clock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_pulsar_clock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_star_guardian.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_star_guardian.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_star_picker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_star_picker.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_void_vortex.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_void_vortex.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_3_zero_element_furnace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_3_zero_element_furnace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_heaven_navigation_bureau.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_heaven_navigation_bureau.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_material_recombination_instrument.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_material_recombination_instrument.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_miraculous_shipyard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_miraculous_shipyard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_multi_dimensional_warehouse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_multi_dimensional_warehouse.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_0hyper.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_0hyper.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_1super.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_1super.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_2O.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_2O.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_3B.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_3B.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_4giant.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_4giant.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_5A.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_5A.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_6F.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_6F.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_7G.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_7G.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_8K.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_8K.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_9M.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_qsqm_9M.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_quindecillion_stellar_quantum_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_quindecillion_stellar_quantum_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_star_transfer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_star_transfer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/AOW_4_starcage_world.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/AOW_4_starcage_world.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_0_cosmogenesis_world.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_0_cosmogenesis_world.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_dyson_swarm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_dyson_swarm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_hyper_relay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_hyper_relay.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_orbital_arc_furnace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_orbital_arc_furnace.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_orbital_ring.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_1_orbital_ring.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_gateway.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_gateway.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_interstellar_assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_interstellar_assembly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_mega_art_installation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_mega_art_installation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_mega_shipyard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_mega_shipyard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_quantum_catapult.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_quantum_catapult.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_spy_orb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_spy_orb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_strategic_coordination_center.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_strategic_coordination_center.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_think_tank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_2_think_tank.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_3_dyson_sphere.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_3_dyson_sphere.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/megastructures/原版覆盖_3_matter_decompressor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/megastructures/原版覆盖_3_matter_decompressor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/on_actions/AOW_on_actions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/on_actions/AOW_on_actions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/planet_classes/AOW_planet_classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/planet_classes/AOW_planet_classes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/policies/000_AOW_policies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/policies/000_AOW_policies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/AOW_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/AOW_script_values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zzzz_AOW_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zzzz_AOW_script_values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_GLBL_set_ai_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_GLBL_set_ai_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_GLBL_set_player_mega_cap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_GLBL_set_player_mega_cap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_SSTM_dyson_sphere_change_planets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_SSTM_dyson_sphere_change_planets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_starfall_spear_button.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/AOW_eft_starfall_spear_button.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/MainUI_export_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/MainUI_export_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/MainUI_initialize_variable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/MainUI_initialize_variable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/StarfallSpear_destroy_star_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/StarfallSpear_destroy_star_system.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/StarfallSpear_set_to_initial_state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/StarfallSpear_set_to_initial_state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/create_leader_laquly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/create_leader_laquly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_loc/AOW_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/AOW_scripted_loc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_MEGA_is_dyson_sphere.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_MEGA_is_dyson_swarm.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_MEGA_is_qsqm.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_PLNT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_PLNT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/AOW_trgr_PLNT_spectrum.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/zz_AOW_trgr_Vanilla.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/zz_AOW_trgr_Vanilla.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_variables/AOW_var_mega.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/AOW_var_mega.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/ship_sizes/AOW_shipsize_bunker_ring.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/ship_sizes/AOW_shipsize_bunker_ring.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/ship_sizes/AOW_shipsize_satellite_defense_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/ship_sizes/AOW_shipsize_satellite_defense_base.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/static_modifiers/AOW_mod_PLNT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/AOW_mod_PLNT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/static_modifiers/AOW_mod_SP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/AOW_mod_SP.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_00.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_00.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/technology/zz_AOW_mega_tech_03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descriptor.mod" beforeDir="false" afterPath="$PROJECT_DIR$/descriptor.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/AOW_evt_starfall_spear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/AOW_evt_starfall_spear.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/AOW_evts_core.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/AOW_evts_core.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_bulletin_board/left.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_bulletin_board/right.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_bulletin_board/upper.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_bg_balance_var.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_bg_mega_unit.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_bg_mega_unit.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_bg_mega_var.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_0.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_1.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_2.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_3.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_4.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_5.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_inf.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_left.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_right.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_disable.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enable.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter_mask.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter_mask.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter_texture.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter_texture.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_infinite.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_0.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_1.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_2.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_3.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_4.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_5.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_inf.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_left.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_right.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_preinstall - 副本.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_preinstall.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_preinstall.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_0.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_1.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_2.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_3.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_4.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_5.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_inf.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_0.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_1.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_2.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_3.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_4.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_5.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_inf.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_mega_num_left.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/AOW_mega_num_right.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_main/new_AOW_bg_mega_unit.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_down.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_down.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_up.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_left_up.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_mode.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_mode.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_down.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_down.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_up.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_up.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_mask.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_mask.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_texture.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/AOW_ui_icons/buttons/megastructure_upgrade_entry_texture.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/AOW_district_sw_fortress.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/AOW_district_sw_order.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_black_hole_big.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_black_hole_big.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_common_star_big.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_common_star_big.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_fortress.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_fortress_big.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_neutron_star_big.dds" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_neutron_star_big.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_order.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/interface/icons/districts/grid_box/AOW_district_sw_order_big.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/models/planets/原版优化_vanilla_ring_world.asset" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/models/planets/原版优化_vanilla_ring_world.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/models/ships/megastructures/test.asset" beforeDir="false" afterPath="$PROJECT_DIR$/gfx/models/ships/megastructures/test.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_buttons.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_buttons.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_evt.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_evt.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_background.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_background.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_icons.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_icons.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_tech.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_megastructure_tech.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_ui_main.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_ui_main.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_ui_starcage_world.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_ui_starcage_world.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_ui_starfall_spear.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_ui_starfall_spear.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gfx_ui_vanilla.gfx" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gfx_ui_vanilla.gfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gui_slider.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gui_slider.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gui_ui_presets.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gui_ui_presets.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gui_ui_starfall_spear.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gui_ui_starfall_spear.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/原版覆盖_megastructure_view.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/原版覆盖_megastructure_view.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/AOW_ascension_perks_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/AOW_ascension_perks_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/AOW_events_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/AOW_events_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/AOW_main_ui_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/AOW_main_ui_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/AOW_megastructures_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/AOW_megastructures_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/zz_AOW_others_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/zz_AOW_others_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_buttons_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_buttons_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_decisions_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_decisions_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_deposits_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_deposits_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_edicts_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_edicts_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_presets_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_presets_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_megastructures_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_megastructures_l_simp_chinese.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_planets_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_planets_l_simp_chinese.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2tCJbvNbiBP5ZIZhwsMukvOY1uP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Documents/Paradox Interactive/Stellaris/mod/AOW/localisation/simp_chinese&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\Paradox Interactive\Stellaris\mod\AOW\localisation\simp_chinese" />
+      <recent name="C:\Users\Administrator\Documents\Paradox Interactive\Stellaris\mod\AOW\common\megastructures" />
+      <recent name="C:\Users\Administrator\Documents\Paradox Interactive\Stellaris\mod\AOW\interface" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e51fdb5e-2fa4-452c-ac5f-0cdd2b78c5fc" name="更改" comment="" />
+      <created>1739850199000</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739850199000</updated>
+    </task>
+    <servers />
+  </component>
+</project>

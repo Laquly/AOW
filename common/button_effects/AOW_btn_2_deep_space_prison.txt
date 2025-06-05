@@ -1,0 +1,30 @@
+#前置条件
+AOW_btn_deep_space_prison_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_deep_space_prison_desc
+		if = {
+			limit = { has_technology = AOW_TECH_deep_space_prison }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_mega_engineering
+			OR = {
+				has_technology = tech_artificial_moral_codes
+				has_technology = tech_unity_of_purpose
+			}
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_deep_space_prison
+		}
+	}
+	effect = { custom_tooltip = AOW_text_deep_space_prison_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = deep_space_prison
+	outliner = standard
+}

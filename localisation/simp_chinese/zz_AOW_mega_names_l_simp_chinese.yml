@@ -1,23 +1,38 @@
 ﻿l_simp_chinese:
 
- ############### 巨构列表 ###############$$	43个新增巨构	43 new megastructures
+ ############### 巨构列表 ###############$$
  #这里的巨构名字决定了所有相关文本的巨构名字，改此处其他地方跟着改变
-
+ #10
+ #dyson_swarm 戴森云
+ #habitat 居住站
+ #hyper_relay 超空间中继器
+ #orbital_arc_furnace 电弧熔炉
+ #orbital_ring 星环
  AOW_MEGA_space_sensor_station:0"星空传感站"
  AOW_MEGA_space_arena:0"星光竞技场"
  AOW_MEGA_asteroid_mining_station:0"星状开采站"
  AOW_MEGA_satellite_defense_base:0"卫星防御基地"
-
+ AOW_MEGA_resource_drilling_station:0"资源钻取站"#
+ #27
+ #gateway 星门
+ #interstellar_assembly 星际集会
+ #mega_art_installation 巨构艺术设施
+ #mega_shipyard 巨型船坞
+ #quantum_catapult 量子弹弓
+ #spy_orb 哨兵阵列
+ #strategic_coordination_center 战略指挥中心
+ #think_tank 科学枢纽
  AOW_MEGA_advanced_hyperlane_controller:0"星网"
+ AOW_MEGA_hyperlane_controller:0"星轨"
  AOW_MEGA_artifacts_transcription_palace:0"银河珍宝馆"
+ AOW_MEGA_biological_cultivation_pod:0"生物培育舱"
  AOW_MEGA_cemetery_of_martyrs:0"英灵殿"
  AOW_MEGA_dark_matter_curvature_trap:0"以太势阱"
  AOW_MEGA_deep_space_prison:0"深空监狱"
- AOW_MEGA_hyperlane_controller:0"星轨"
  AOW_MEGA_nanites_activator:0"纳米激活器"
  AOW_MEGA_nanites_transmutation:0"纳米变形器"
  AOW_MEGA_naval_command_base:0"海军指挥基地"
- AOW_MEGA_nebula_refining_center:0"星云精炼厂"
+ AOW_MEGA_nebula_refining_center:0"星云精炼中心"
  AOW_MEGA_orbital_acquisition_system:0"轨道采集器"
  AOW_MEGA_planetary_mining_station:0"行星开采器"
  AOW_MEGA_prosperous_trade_station:0"繁荣贸易站"
@@ -26,7 +41,10 @@
  AOW_MEGA_planetary_blaster_system:0"行星波动炮"
  AOW_MEGA_plane_siphon:0"位面虹吸器"
  AOW_MEGA_wonder_construction_bureau:0"奇观建设局"
-
+ #14
+ #dyson_sphere 戴森球
+ #matter_decompressor 物质解压器
+ #ring_world_1 环世界
  AOW_MEGA_ring_world_2:0"巨型环世界"
  AOW_MEGA_void_vortex:0"归墟"
  AOW_MEGA_star_picker:0"摘星者"
@@ -37,21 +55,20 @@
  AOW_MEGA_celestial_decompressor:0"天体逆构器"
  AOW_MEGA_stellar_eater:0"视界吮星坛"
  AOW_MEGA_star_guardian:0"星空守护者"
-
+ AOW_MEGA_storm_trigger:0"风暴触发器"#3
+ #planetary_ship行星战舰
+ #11
  AOW_MEGA_multi_dimensional_warehouse:0"多维仓库"
  AOW_MEGA_ring_world_3:0"宏伟环世界"
  AOW_MEGA_ring_world_4:0"无垠环世界"
- AOW_MEGA_star_transfer:0"御星天炉"					*
+ AOW_MEGA_star_transfer:0"御星天炉"
  AOW_MEGA_heaven_navigation_bureau:0"天界领航塔"
  AOW_MEGA_miraculous_shipyard:0"奇迹船坞"
  AOW_MEGA_quindecillion_stellar_quantum_matrix:0"千载星辰"
- AOW_MEGA_material_recombination_instrument:0"物质重组仪"	*
- AOW_MEGA_starfall_spear:0"坠星天矛"					*
+ AOW_MEGA_material_recombination_instrument:0"物质重组仪"
+ AOW_MEGA_starfall_spear:0"坠星天矛"
  AOW_MEGA_celestial_shield:0"天枢圣盾"
- AOW_MEGA_starcage_world:0"星笼世界"					*
-
-
- ############### 特殊项目 ###############
+ AOW_MEGA_starcage_world:0"星笼世界"
 
  ############### 星基建筑 ###############
 
@@ -60,6 +77,9 @@
 
  sm_AOW_miraculous_shipyard_uplink:0"$AOW_MEGA_miraculous_shipyard$上行链路"
  sm_AOW_miraculous_shipyard_uplink_desc:0"通过$AOW_MEGA_miraculous_shipyard$给予恒星基地等量的造船花费减益，并且在此停留的舰船也可以得到很好的休息与维护。"
+
+ sm_AOW_celestial_shield:0"$AOW_MEGA_celestial_shield$防御核心"
+ sm_AOW_celestial_shield_desc:0"原理类似$AOW_MEGA_celestial_shield$的底层机制，可通过开启多维空间通道提升舰船射程、辅助舰船规避伤害。\n\n如果星系内已有$AOW_MEGA_celestial_shield$，则恒星基地和防御平台会获得进一步增幅。"
 
  ############### 其他 ###############
 

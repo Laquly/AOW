@@ -181,6 +181,9 @@ strategic_coordination_center_3 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = strategic_coordination_center }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -261,6 +264,9 @@ strategic_coordination_center_restored = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = strategic_coordination_center }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures

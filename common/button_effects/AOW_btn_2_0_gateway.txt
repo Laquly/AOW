@@ -1,0 +1,46 @@
+#前置条件
+AOW_btn_gateway_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_gateway_desc
+		if = {
+			limit = { has_technology = AOW_TECH_deep_space_prison }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_technology = tech_hyper_drive_3
+			has_technology = tech_mega_engineering
+			OR = {
+				has_technology = AOW_TECH_multidimensional_space_channel
+				custom_tooltip = {
+					text = AOW_requires_has_seen_gateway_or_lgate
+					OR = {
+						has_seen_any_bypass = gateway
+						has_seen_any_bypass = lgate
+					}
+				}
+				custom_tooltip = {
+					text = AOW_requires_any_relation_has_tech_gateway
+					any_relation = {
+						is_country_type = default
+						has_communications = ROOT
+						has_technology = tech_gateway_activation
+					}
+				}
+			}
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_gateway_construction
+			has_technology = tech_gateway_activation
+		}
+	}
+	effect = { custom_tooltip = AOW_text_gateway_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_infinite_player_infinite_mega_cap
+	KEY = gateway
+	outliner = special
+}

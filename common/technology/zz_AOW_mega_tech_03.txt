@@ -2,7 +2,7 @@
 #物理学
 ##############################################################################
 AOW_TECH_multidimensional_space_channel = {
-	cost = @tier6cost1
+	cost = @tier5cost3
 	area = physics
 	tier = 6
 	category = { field_manipulation }
@@ -11,7 +11,7 @@ AOW_TECH_multidimensional_space_channel = {
 		country_resource_max_add = 100000
 		country_sr_dark_matter_produces_mult = 0.05
 	}
-	weight = @tier6weight1
+	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -22,7 +22,30 @@ AOW_TECH_multidimensional_space_channel = {
 		factor = 20
 	}
 }
-
+#多维仓库
+AOW_TECH_multi_dimensional_warehouse = {
+	area = physics
+	cost = @tier6cost1
+	tier = 6
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "AOW_TECH_multidimensional_space_channel" }
+	weight = @tier6weight1
+	is_rare = yes
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { AOW_trigger_mega_potential = { KEY = multi_dimensional_warehouse } }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_cosmic_wonders }
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}
+}
 #工程智能核心（增益性）
 AOW_TECH_engineering_intelligence_core = {
 	area = physics
@@ -262,29 +285,105 @@ AOW_TECH_starfall_spear_cooldown_5 = {
 	}
 	ai_weight = { factor = 10 }
 }
-#多维仓库
-AOW_TECH_multi_dimensional_warehouse = {
+AOW_TECH_starfall_spear_target_capacity_1 = {
+	cost = @tier7cost1
 	area = physics
-	cost = @tier6cost1
-	tier = 6
+	tier = 7
 	category = { field_manipulation }
-	ai_update_type = all
-	prerequisites = { "AOW_TECH_multidimensional_space_channel" }
-	weight = @tier6weight1
+	prerequisites = { AOW_TECH_starfall_spear }
+	weight = @tier7weight1
 	is_rare = yes
+	modifier = {
+		starfall_spear_planet_target_add = 1
+	}
 	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = { AOW_trigger_mega_potential = { KEY = multi_dimensional_warehouse } }
-		}
-		modifier = {
-			factor = 0
-			NOT = { has_ascension_perk = ap_cosmic_wonders }
-		}
-	}
-	ai_weight = {
 		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
 	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_target_capacity_2 = {
+	cost = @tier7cost2
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_target_capacity_1 }
+	weight = @tier7weight2
+	is_rare = yes
+	modifier = {
+		starfall_spear_planet_target_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_target_capacity_3 = {
+	cost = @tier7cost3
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_target_capacity_2 }
+	weight = @tier7weight3
+	is_rare = yes
+	modifier = {
+		starfall_spear_planet_target_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_target_capacity_4 = {
+	cost = @tier8cost1
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_target_capacity_3 }
+	weight = @tier8weight1
+	is_rare = yes
+	modifier = {
+		starfall_spear_system_target_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_target_capacity_5 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_target_capacity_4 }
+	weight = @tier8weight2
+	is_rare = yes
+	modifier = {
+		starfall_spear_system_target_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
 }
 
 #御星天炉
@@ -294,7 +393,7 @@ AOW_TECH_star_transfer = {
 	tier = 6
 	category = { field_manipulation }
 	ai_update_type = all
-	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_curvature_pressurization_field" "AOW_TECH_stellar_eater" "AOW_TECH_celestial_decompressor" }
+	#prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_curvature_pressurization_field" "AOW_TECH_stellar_eater" "AOW_TECH_celestial_decompressor" }
 	potential = {
 		is_ai = no
 		NOT = { has_global_flag = AOW_flag_GLBL_no_star_transfer }
@@ -344,7 +443,7 @@ AOW_TECH_improved_construction_efficiency_4 = {
 	tier = 6
 	category = { particles }
 	is_rare = yes
-	prerequisites = { "AOW_TECH_improved_construction_efficiency_3" "AOW_TECH_multi_dimensional_warehouse" }
+	prerequisites = { "AOW_TECH_improved_construction_efficiency_3" }
 	weight = @tier6weight3
 	weight_modifier = {
 		modifier = {

@@ -69,7 +69,7 @@ AOW_MEGA_curvature_pressurization_field_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2050 } }
+		from = { country_event = { id = AOW_evt_curvature_pressurization_field.100 } }
 		fromfrom = {
 			set_megastructure_flag = curvature_pressurization_field
 			set_megastructure_flag = no_stacking
@@ -106,7 +106,7 @@ AOW_MEGA_curvature_pressurization_field_1 = {
 	upgrade_from = { AOW_MEGA_curvature_pressurization_field_0 }
 	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2051 } }
+		from = { country_event = { id = AOW_evt_curvature_pressurization_field.101 } }
 		fromfrom = {
 			set_megastructure_flag = curvature_pressurization_field
 			set_megastructure_flag = no_stacking
@@ -142,7 +142,7 @@ AOW_MEGA_curvature_pressurization_field_2 = {
 	upgrade_from = { AOW_MEGA_curvature_pressurization_field_1 }
 	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2052 } }
+		from = { country_event = { id = AOW_evt_curvature_pressurization_field.102 } }
 		fromfrom = {
 			set_megastructure_flag = curvature_pressurization_field
 			set_megastructure_flag = no_stacking
@@ -184,7 +184,7 @@ AOW_MEGA_curvature_pressurization_field_3_black_hole = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2053 }
+			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
 		}
 		remove_megastructure = fromfrom
 		every_system_planet = {
@@ -241,7 +241,7 @@ AOW_MEGA_curvature_pressurization_field_3_neutron_star = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2053 }
+			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
 		}
 		remove_megastructure = fromfrom
 	}
@@ -281,7 +281,7 @@ AOW_MEGA_curvature_pressurization_field_3_pulsar = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2053 }
+			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
 		}
 		remove_megastructure = fromfrom
 	}
@@ -322,7 +322,7 @@ AOW_MEGA_curvature_pressurization_field_3_magnetar = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2053 }
+			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
 		}
 		remove_megastructure = fromfrom
 	}

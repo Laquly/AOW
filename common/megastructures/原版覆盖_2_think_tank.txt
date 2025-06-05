@@ -179,6 +179,9 @@ think_tank_3 = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = think_tank }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -221,6 +224,9 @@ think_tank_4 = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = think_tank }
+	}
 	build_time = 20
 	resources = {
 		category = megastructures
@@ -295,6 +301,9 @@ think_tank_restored = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = think_tank }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures

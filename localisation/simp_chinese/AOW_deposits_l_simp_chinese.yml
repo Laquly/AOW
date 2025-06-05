@@ -8,3 +8,6 @@
 
  AOW_d_ringworld_automation_facilities:0"环世界自动化产能设施"
  AOW_d_ringworld_automation_facilities_desc:0"自动化产能地块是一种无需任何人口的全自动装置，可实现自主产能、自主修复，并会根据环世界拥有的区划类型以及该区划的占比而产出不同的资源。\n\n§R拥有以下区划才能开始自动生产：§!\n§H拥有§Y发电区划§!时：§!\n    §E生产：§!£energy£§G120§W*(发电区划占比)§!\n§H拥有§Y商业区划§!时：§!\n    §E生产：§!£energy£§G120§W*(商业区划占比)§!\n§H拥有§Y农业区划§!时：§!\n    §E生产：§!£food£§G120§W*(农业区划占比)§!\n§H拥有§Y工业区划§L（铸造星球类型）§!§!时：§!\n    §E生产：§!£alloys£§G60§W*(工业区划占比)§!\n§H拥有§Y工业区划§L（工厂星球类型）§!§!时：§!\n    §E生产：§!£consumer_goods£§G120§W*(工业区划占比)§!\n§H拥有§Y工业区划§!时：§!\n    §E生产：§!£alloys£§G30§W*(工业区划占比)§! £consumer_goods£§G60§W*(工业区划占比)§!\n§H拥有§Y研究区划§!时：§!\n    §E生产：§!£physics_research£ £society_research£ £engineering_research£§G80§W*(研究区划占比)§!\n§H地块维护费：§!\n    £energy£§R20§! £minerals£§R20§! £alloys£§R10§!"
+
+ AOW_d_starcage_world:0"$AOW_MEGA_starcage_world$"
+ AOW_d_starcage_world_desc:0"不同等级的$AOW_MEGA_starcage_world$会有不同的增益效果。"

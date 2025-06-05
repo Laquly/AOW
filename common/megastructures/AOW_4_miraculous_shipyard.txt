@@ -105,7 +105,7 @@ AOW_MEGA_miraculous_shipyard_0 = {
 				remove_country_flag = AOW_flag_CNTR_miraculous_shipyard_1
 				set_country_flag = AOW_flag_CNTR_miraculous_shipyard_2
 			}
-			country_event = { id = AOW_mega_notification.3050 }
+			country_event = { id = AOW_evt_miraculous_shipyard.100 }
 		}
 		fromfrom = {
 			set_megastructure_flag = miraculous_shipyard
@@ -156,7 +156,7 @@ AOW_MEGA_miraculous_shipyard_1 = {
 	}
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
-		from = { country_event = { id = AOW_mega_notification.3051 } }
+		from = { country_event = { id = AOW_evt_miraculous_shipyard.101 } }
 	}
 }
 AOW_MEGA_miraculous_shipyard_2 = {
@@ -194,7 +194,7 @@ AOW_MEGA_miraculous_shipyard_2 = {
 	upgrade_from = { AOW_MEGA_miraculous_shipyard_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3052 } }
+		from = { country_event = { id = AOW_evt_miraculous_shipyard.102 } }
 		fromfrom = {
 			set_megastructure_flag = can_build_titan
 			set_megastructure_flag = can_build_colossus
@@ -237,7 +237,7 @@ AOW_MEGA_miraculous_shipyard_3 = {
 	upgrade_from = { AOW_MEGA_miraculous_shipyard_2 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3053 } }
+		from = { country_event = { id = AOW_evt_miraculous_shipyard.103 } }
 		fromfrom = {
 			set_megastructure_flag = can_build_titan
 			set_megastructure_flag = can_build_colossus
@@ -280,7 +280,7 @@ AOW_MEGA_miraculous_shipyard_4 = {
 	upgrade_from = { AOW_MEGA_miraculous_shipyard_3 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3054 } }
+		from = { country_event = { id = AOW_evt_miraculous_shipyard.104 } }
 		fromfrom = {
 			set_megastructure_flag = can_build_titan
 			set_megastructure_flag = can_build_colossus
@@ -294,6 +294,9 @@ AOW_MEGA_miraculous_shipyard_5 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = miraculous_shipyard }
+	}
 	build_time = @AOW_var_MS_5_TIME
 	resources = {
 		category = megastructures
@@ -348,7 +351,7 @@ AOW_MEGA_miraculous_shipyard_5 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3055 }
+			country_event = { id = AOW_evt_miraculous_shipyard.105 }
 		}
 		fromfrom = {
 			set_megastructure_flag = can_build_titan

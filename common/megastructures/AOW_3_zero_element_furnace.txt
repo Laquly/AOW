@@ -230,6 +230,9 @@ AOW_MEGA_zero_element_furnace_4 = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	build_time = @AOW_var_ZEF_4_TIME
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = zero_element_furnace }
+	}
 	resources = {
 		category = megastructures
 		cost = {
@@ -301,6 +304,9 @@ AOW_MEGA_zero_element_furnace_restored = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	build_time = @AOW_var_ZEF_4_TIME
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = zero_element_furnace }
+	}
 	resources = {
 		category = megastructures
 		cost = {

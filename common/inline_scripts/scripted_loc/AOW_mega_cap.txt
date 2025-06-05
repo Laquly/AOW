@@ -1,0 +1,34 @@
+name = get_$PorA$_$Key$
+text = {
+    trigger = {
+        event_target:global_event_country = {
+            check_variable = {
+                which = AOW_var_$PorA$_mega_cap_$Key$
+                value < 0
+            }
+        }
+    }
+    localization_key = AOW_text_inf
+}
+text = {
+    trigger = {
+        event_target:global_event_country = {
+            check_variable = {
+                which = AOW_var_$PorA$_mega_cap_$Key$
+                value = 0
+            }
+        }
+    }
+    localization_key = AOW_text_dis
+}
+text = {
+    trigger = {
+        event_target:global_event_country = {
+            check_variable = {
+                which = AOW_var_$PorA$_mega_cap_$Key$
+                value > 0
+            }
+        }
+    }
+    localization_key = "[event_target:global_event_country.AOW_var_$PorA$_mega_cap_$Key$]"
+}

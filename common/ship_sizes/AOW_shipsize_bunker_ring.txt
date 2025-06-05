@@ -23,8 +23,9 @@ AOW_shipsize_bunker_ring = {
 	is_space_station = yes
 	base_buildtime = 720
 	auto_upgrade = no
+	available_to_everyone = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	prerequisites = { "AOW_TECH_bunker_ring" }
+	#prerequisites = { "AOW_TECH_bunker_ring" }
 	class = shipclass_military_station
 	ship_class_icon_frame = 28
 	icon = ship_size_military_station
@@ -33,8 +34,18 @@ AOW_shipsize_bunker_ring = {
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
 	required_component_set = "ship_aura_components"
+	potential_country = {
+		has_technology = AOW_TECH_bunker_ring
+	}
 	potential_construction = {
 		is_scope_type = starbase
+	}
+	possible_construction = {
+		OR = {
+			has_starbase_size >= starbase_citadel
+			has_starbase_size >= orbital_ring_tier_3
+			has_starbase_size >= starbase_deep_space_citadel_1
+		}
 	}
 	resources = {
 		category = ships

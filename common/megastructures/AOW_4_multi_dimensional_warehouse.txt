@@ -3,7 +3,7 @@ AOW_MEGA_multi_dimensional_warehouse_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
 	build_time = @AOW_var_MDW_0_TIME
 	resources = {
@@ -72,7 +72,7 @@ AOW_MEGA_multi_dimensional_warehouse_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3010 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_multi_dimensional_warehouse_@owner }
 	}
 }
@@ -113,7 +113,7 @@ AOW_MEGA_multi_dimensional_warehouse_1 = {
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_1_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3011 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.101 } }
 	}
 }
 AOW_MEGA_multi_dimensional_warehouse_2 = {#1
@@ -155,7 +155,7 @@ AOW_MEGA_multi_dimensional_warehouse_2 = {#1
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_2_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3012 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.102 } }
 	}
 }
 AOW_MEGA_multi_dimensional_warehouse_3 = {#2
@@ -200,7 +200,7 @@ AOW_MEGA_multi_dimensional_warehouse_3 = {#2
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_3_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3013 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.103 } }
 	}
 }
 AOW_MEGA_multi_dimensional_warehouse_4 = {#3
@@ -245,7 +245,7 @@ AOW_MEGA_multi_dimensional_warehouse_4 = {#3
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_4_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3013 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.103 } }
 	}
 }
 AOW_MEGA_multi_dimensional_warehouse_5 = {#4
@@ -290,7 +290,7 @@ AOW_MEGA_multi_dimensional_warehouse_5 = {#4
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_5_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3013 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.103 } }
 	}
 }
 AOW_MEGA_multi_dimensional_warehouse_6 = {#5
@@ -300,6 +300,9 @@ AOW_MEGA_multi_dimensional_warehouse_6 = {#5
 	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	build_time = @AOW_var_MDW_3_TIME
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = multi_dimensional_warehouse }
+	}
 	resources = {
 		category = megastructures
 		cost = {
@@ -336,6 +339,6 @@ AOW_MEGA_multi_dimensional_warehouse_6 = {#5
 		modifier = { factor = 0	from = { has_monthly_income = { resource = energy value >= @AOW_var_MDW_6_UPKP_energy } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3014 } }
+		from = { country_event = { id = AOW_evt_multi_dimensional_warehouse.104 } }
 	}
 }

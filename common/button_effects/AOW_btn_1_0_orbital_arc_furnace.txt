@@ -1,0 +1,26 @@
+#前置条件
+AOW_btn_orbital_arc_furnace_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {#已启用，设为无限（初始状态）
+		custom_tooltip = AOW_text_orbital_arc_furnace_desc
+		if = {
+			limit = { has_technology = tech_orbital_arc_furnace }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			has_machine_age_dlc = yes
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_orbital_arc_furnace
+		}
+	}
+	effect = { custom_tooltip = AOW_text_orbital_arc_furnace_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = orbital_arc_furnace
+	outliner = standard
+}

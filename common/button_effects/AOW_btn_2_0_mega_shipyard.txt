@@ -1,0 +1,27 @@
+#前置条件
+AOW_btn_mega_shipyard_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_mega_shipyard_desc
+		if = {
+			limit = { has_technology = tech_mega_shipyard }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			host_has_dlc = "Federations"
+			has_technology = tech_mega_engineering
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = tech_mega_shipyard
+		}
+	}
+	effect = { custom_tooltip = AOW_text_mega_shipyard_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = mega_shipyard
+	outliner = standard
+}

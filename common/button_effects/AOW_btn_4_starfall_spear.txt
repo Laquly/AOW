@@ -1,0 +1,32 @@
+#前置条件
+AOW_btn_starfall_spear_prerequisites = {
+	potential = {
+		from = { check_variable = { which = AOW_var_page value = 3 } }
+	}
+	allow = {
+		custom_tooltip = AOW_text_starfall_spear_desc
+		if = {
+			limit = { has_technology = AOW_TECH_starfall_spear }
+			always = yes
+		}
+		else = {
+			custom_tooltip = AOW_text_prerequisite_requirements
+			host_has_dlc = "Apocalypse"
+			has_ascension_perk = ap_cosmic_wonders
+			has_ascension_perk = ap_era_of_deterrence
+			has_ascension_perk = ap_colossus
+			has_technology = AOW_TECH_multi_dimensional_warehouse
+			has_technology = tech_dyson_sphere
+			has_technology = AOW_TECH_star_picker
+			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_starfall_spear
+		}
+	}
+	effect = { custom_tooltip = AOW_text_starfall_spear_desc }
+}
+#主要功能按钮
+inline_script = {
+	script = button_effects/AOW_button_ai_standard_player_standard_mega_cap
+	KEY = starfall_spear
+	outliner = special
+}

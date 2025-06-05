@@ -1,0 +1,47 @@
+slot_starcage_world_core = {
+	include = {
+		zone_starcage_world_core_base
+		zone_starcage_world_core_energy
+		zone_starcage_world_core_minerals
+		zone_starcage_world_core_food
+		zone_starcage_world_core_factory
+		zone_starcage_world_core_foundry
+		zone_starcage_world_core_industrial
+		zone_starcage_world_core_refinery
+		zone_starcage_world_core_research
+		zone_starcage_world_core_trade
+		zone_starcage_world_core_unity
+	}
+	exclude = {
+		zone_default
+		zone_minerals
+		zone_food
+		zone_energy
+	}
+	unlock = { # planet scope
+		uses_district_set = AOW_district_starcage_world
+	}
+}
+slot_starcage_world_production = {
+	include = {
+		zone_starcage_world_energy
+		zone_starcage_world_food
+		zone_starcage_world_minerals
+		zone_starcage_world_factory
+		zone_starcage_world_foundry
+		zone_starcage_world_industrial
+		zone_starcage_world_research
+		zone_starcage_world_trade
+		zone_starcage_world_unity
+		zone_starcage_world_fortress
+	}
+	exclude = {
+		zone_default
+		zone_minerals
+		zone_food
+		zone_energy
+	}
+	unlock = { # planet scope
+		uses_district_set = AOW_district_starcage_world
+	}
+}

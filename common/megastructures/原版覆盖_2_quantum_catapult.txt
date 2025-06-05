@@ -196,6 +196,9 @@ quantum_catapult_3 = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -273,6 +276,9 @@ quantum_catapult_restored = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -457,6 +463,9 @@ quantum_catapult_improved_slingshot = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures

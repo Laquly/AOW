@@ -57,6 +57,7 @@
  AOW_mod_MEGA_build_speed_adjustment:0"巨构建造速度调整"
 
  AOW_mod_SP_continuous_damage:0"持续性伤害"
+ AOW_mod_SP_navigation_damage:0"航行破坏"
 
  ######################################################################
  # Scripted Modifiers

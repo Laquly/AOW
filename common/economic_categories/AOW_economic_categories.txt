@@ -39,6 +39,10 @@ megastructures = {
 
 
 pop_category_drones = {
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
 	generate_add_modifiers = {
 		upkeep
 		produces
@@ -72,7 +76,7 @@ planet_refiners = {
 		produces
 		upkeep
 	}
-	modifier_category = pop
+	modifier_category = pop_job
 }
 
 planet_translucers = {
@@ -85,7 +89,7 @@ planet_translucers = {
 		produces
 		upkeep
 	}
-	modifier_category = pop
+	modifier_category = pop_job
 }
 
 planet_chemists = {
@@ -98,5 +102,5 @@ planet_chemists = {
 		produces
 		upkeep
 	}
-	modifier_category = pop
+	modifier_category = pop_job
 }

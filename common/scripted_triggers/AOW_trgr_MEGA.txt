@@ -1,0 +1,281 @@
+#是否显示在右侧总览中
+AOW_trgr_MEGA_finished_mega_outliner_trigger = {
+	exists = owner
+	if = {#显示
+		limit = {
+			OR = {
+				can_be_upgraded = yes
+				has_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+			}
+		}
+		always = yes
+	}
+	else_if = {#隐藏
+		limit = { has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner }
+		always = no
+	}
+	else = {#默认，跟随控制面板
+		owner = {
+			NOT = { has_country_flag = AOW_flag_CNTR_$key$_outliner_hide }
+		}
+	}
+}
+
+#戴森云
+AOW_trgr_MEGA_is_dyson_swarm = {
+	OR = {
+		AOW_trgr_MEGA_is_dyson_swarm_1 = yes
+		AOW_trgr_MEGA_is_dyson_swarm_2 = yes
+		AOW_trgr_MEGA_is_dyson_swarm_3 = yes
+	}
+}
+AOW_trgr_MEGA_is_dyson_swarm_1 = {
+	OR = {
+		is_megastructure_type = dyson_swarm_1
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_hyper
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_super
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_o
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_b
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_giant
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_a
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_f
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_g
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_k
+		is_megastructure_type = AOW_MEGA_dyson_swarm_1_m
+	}
+}
+AOW_trgr_MEGA_is_dyson_swarm_2 = {
+	OR = {
+		is_megastructure_type = dyson_swarm_2
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_hyper
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_super
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_o
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_b
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_giant
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_a
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_f
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_g
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_k
+		is_megastructure_type = AOW_MEGA_dyson_swarm_2_m
+	}
+}
+AOW_trgr_MEGA_is_dyson_swarm_3 = {
+	OR = {
+		is_megastructure_type = dyson_swarm_3
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_hyper
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_super
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_o
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_b
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_giant
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_a
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_f
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_g
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_k
+		is_megastructure_type = AOW_MEGA_dyson_swarm_3_m
+	}
+}
+
+#戴森球
+AOW_trgr_MEGA_is_dyson_sphere = {
+	OR = {
+		AOW_trgr_MEGA_is_dyson_sphere_0 = yes
+		AOW_trgr_MEGA_is_dyson_sphere_1 = yes
+		AOW_trgr_MEGA_is_dyson_sphere_2 = yes
+		AOW_trgr_MEGA_is_dyson_sphere_3 = yes
+		AOW_trgr_MEGA_is_dyson_sphere_4 = yes
+		AOW_trgr_MEGA_is_dyson_sphere_5 = yes
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_0 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_0
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_0_M
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_1 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_1
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_1_M
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_2 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_2
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_2_M
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_3 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_3
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_3_M
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_4 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_4
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_4_M
+	}
+}
+AOW_trgr_MEGA_is_dyson_sphere_5 = {
+	OR = {
+		is_megastructure_type = dyson_sphere_5
+		is_megastructure_type = dyson_sphere_restored
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_hyper
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_super
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_O
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_B
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_giant
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_A
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_F
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_G
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_K
+		is_megastructure_type = AOW_MEGA_dyson_sphere_5_M
+	}
+}
+
+#千载星辰
+AOW_trgr_MEGA_is_qsqm = {
+	OR = {
+		AOW_trgr_MEGA_is_qsqm_0 = yes
+		AOW_trgr_MEGA_is_qsqm_1 = yes
+		AOW_trgr_MEGA_is_qsqm_2 = yes
+		AOW_trgr_MEGA_is_qsqm_3 = yes
+		AOW_trgr_MEGA_is_qsqm_4 = yes
+		AOW_trgr_MEGA_is_qsqm_5 = yes
+	}
+}
+AOW_trgr_MEGA_is_qsqm_0 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_0
+		is_megastructure_type = AOW_MEGA_qsqm_0_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_0_super
+		is_megastructure_type = AOW_MEGA_qsqm_0_O
+		is_megastructure_type = AOW_MEGA_qsqm_0_B
+		is_megastructure_type = AOW_MEGA_qsqm_0_giant
+		is_megastructure_type = AOW_MEGA_qsqm_0_A
+		is_megastructure_type = AOW_MEGA_qsqm_0_F
+		is_megastructure_type = AOW_MEGA_qsqm_0_G
+		is_megastructure_type = AOW_MEGA_qsqm_0_K
+		is_megastructure_type = AOW_MEGA_qsqm_0_M
+	}
+}
+AOW_trgr_MEGA_is_qsqm_1 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_1
+		is_megastructure_type = AOW_MEGA_qsqm_1_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_1_super
+		is_megastructure_type = AOW_MEGA_qsqm_1_O
+		is_megastructure_type = AOW_MEGA_qsqm_1_B
+		is_megastructure_type = AOW_MEGA_qsqm_1_giant
+		is_megastructure_type = AOW_MEGA_qsqm_1_A
+		is_megastructure_type = AOW_MEGA_qsqm_1_F
+		is_megastructure_type = AOW_MEGA_qsqm_1_G
+		is_megastructure_type = AOW_MEGA_qsqm_1_K
+		is_megastructure_type = AOW_MEGA_qsqm_1_M
+	}
+}
+AOW_trgr_MEGA_is_qsqm_2 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_2
+		is_megastructure_type = AOW_MEGA_qsqm_2_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_2_super
+		is_megastructure_type = AOW_MEGA_qsqm_2_O
+		is_megastructure_type = AOW_MEGA_qsqm_2_B
+		is_megastructure_type = AOW_MEGA_qsqm_2_giant
+		is_megastructure_type = AOW_MEGA_qsqm_2_A
+		is_megastructure_type = AOW_MEGA_qsqm_2_F
+		is_megastructure_type = AOW_MEGA_qsqm_2_G
+		is_megastructure_type = AOW_MEGA_qsqm_2_K
+		is_megastructure_type = AOW_MEGA_qsqm_2_M
+	}
+}
+AOW_trgr_MEGA_is_qsqm_3 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_3
+		is_megastructure_type = AOW_MEGA_qsqm_3_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_3_super
+		is_megastructure_type = AOW_MEGA_qsqm_3_O
+		is_megastructure_type = AOW_MEGA_qsqm_3_B
+		is_megastructure_type = AOW_MEGA_qsqm_3_giant
+		is_megastructure_type = AOW_MEGA_qsqm_3_A
+		is_megastructure_type = AOW_MEGA_qsqm_3_F
+		is_megastructure_type = AOW_MEGA_qsqm_3_G
+		is_megastructure_type = AOW_MEGA_qsqm_3_K
+		is_megastructure_type = AOW_MEGA_qsqm_3_M
+	}
+}
+AOW_trgr_MEGA_is_qsqm_4 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_4
+		is_megastructure_type = AOW_MEGA_qsqm_4_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_4_super
+		is_megastructure_type = AOW_MEGA_qsqm_4_O
+		is_megastructure_type = AOW_MEGA_qsqm_4_B
+		is_megastructure_type = AOW_MEGA_qsqm_4_giant
+		is_megastructure_type = AOW_MEGA_qsqm_4_A
+		is_megastructure_type = AOW_MEGA_qsqm_4_F
+		is_megastructure_type = AOW_MEGA_qsqm_4_G
+		is_megastructure_type = AOW_MEGA_qsqm_4_K
+		is_megastructure_type = AOW_MEGA_qsqm_4_M
+	}
+}
+AOW_trgr_MEGA_is_qsqm_5 = {
+	OR = {
+		is_megastructure_type = AOW_MEGA_quindecillion_stellar_quantum_matrix_5
+		is_megastructure_type = AOW_MEGA_qsqm_5_hyper
+		is_megastructure_type = AOW_MEGA_qsqm_5_super
+		is_megastructure_type = AOW_MEGA_qsqm_5_O
+		is_megastructure_type = AOW_MEGA_qsqm_5_B
+		is_megastructure_type = AOW_MEGA_qsqm_5_giant
+		is_megastructure_type = AOW_MEGA_qsqm_5_A
+		is_megastructure_type = AOW_MEGA_qsqm_5_F
+		is_megastructure_type = AOW_MEGA_qsqm_5_G
+		is_megastructure_type = AOW_MEGA_qsqm_5_K
+		is_megastructure_type = AOW_MEGA_qsqm_5_M
+	}
+}

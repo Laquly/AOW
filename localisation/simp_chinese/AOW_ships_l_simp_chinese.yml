@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
 
- #舰船
+ #行星聚变炮
  AOW_shipsize_planetary_blaster_system:0"$AOW_MEGA_planetary_blaster_system$"
  AOW_shipsize_planetary_blaster_system_plural:0"$AOW_MEGA_planetary_blaster_system$"
 
@@ -16,7 +16,6 @@
  AOW_section_bunker_ring_core_5:0"航母导弹核心"
  AOW_section_bunker_ring_core_6:0"导弹防御核心"
 
- #行星聚变炮
  AOW_PBS_PLANETARY_CORE_REACTOR:0"行星质能转化核心"
  AOW_PBS_PLANETARY_CORE_REACTOR_DESC:0"能将整个行星的质量全部转化为能量，为武器系统供能。"
  AOW_PBS_STARBASE_COMBAT_COMPUTER:0"$STARBASE_COMBAT_COMPUTER_1$"
@@ -43,3 +42,50 @@
  AOW_SHIP_AURA_H4:0"火控失效"
  NAME_AOW_SHIP_AURA_H4:0"$aura_category_offensive$ - 火控失效"
 
+ #卫星防御基地
+ AOW_shipsize_satellite_defense_base:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_shipsize_satellite_defense_base_plural:0"$AOW_MEGA_satellite_defense_base$"
+ AOW_section_satellite_defense_base_core_1_1:0"初始-导弹核心"
+ AOW_section_satellite_defense_base_core_1_2:0"初始-航母核心"
+ AOW_section_satellite_defense_base_core_1_3:0"初始-进攻核心"
+ AOW_section_satellite_defense_base_core_2_1:0"高级-导弹核心"
+ AOW_section_satellite_defense_base_core_2_2:0"高级-航母核心"
+ AOW_section_satellite_defense_base_core_2_3:0"高级-进攻核心"
+ AOW_section_satellite_defense_base_core_3_1:0"泰坦-导弹核心"
+ AOW_section_satellite_defense_base_core_3_2:0"泰坦-航母核心"
+ AOW_section_satellite_defense_base_core_3_3:0"泰坦-进攻核心"
+ AOW_SDB_FISSION_REACTOR: "$FISSION_REACTOR$"
+ AOW_SDB_FUSION_REACTOR: "$FUSION_REACTOR$"
+ AOW_SDB_COLD_FUSION_REACTOR: "$COLD_FUSION_REACTOR$"
+ AOW_SDB_ANTIMATTER_REACTOR: "$ANTIMATTER_REACTOR$"
+ AOW_SDB_ZERO_POINT_REACTOR: "$ZERO_POINT_REACTOR$"
+ AOW_SDB_DARK_MATTER_REACTOR: "$DARK_MATTER_REACTOR$"
+ AOW_SDB_PERDITION_BEAM_TITAN: "$PERDITION_BEAM$"
+
+ #御星天炉
+ AOW_section_star_transfer_core_1:0"$AOW_MEGA_star_transfer$"
+ AOW_PLANET_KILLER_celestial_orbit_deployment_system:0"天体轨道部署系统"
+ AOW_PLANET_KILLER_celestial_orbit_deployment_system_DESC:0"将$AOW_MEGA_star_transfer$部署于目标天体上，以巨构形态操控和改造天体。\n§R这是$AOW_MEGA_star_transfer$的专属核心机制，请勿卸载或替换为其他无关部件，也请勿将此部件插入其他种类舰船，由以上行为造成的bug由玩家自行承担！§!\n"
+ AOW_PLANET_KILLER_celestial_orbit_deployment_system_ACTION:0"部署并改造"
+ FLEETORDER_DESTROY_PLANET_WITH_AOW_PLANET_KILLER_celestial_orbit_deployment_system:0"正在部署并改造天体$PLANET|Y$"
+ NAME_AOW_shipsize_star_transfer:0"终极天体改造仪"
+
+ NAME_star_transfer_ship:0"御星号"
+ AOW_shipsize_star_transfer:0"$AOW_MEGA_star_transfer$"
+ AOW_shipsize_star_transfer_plural:0"$AOW_MEGA_star_transfer$"
+ AOW_ST_CORE:0"$AOW_MEGA_star_transfer$核心"
+ AOW_ST_ZERO_POINT_REACTOR:0"$ZERO_POINT_REACTOR$"
+ AOW_ST_ZERO_POINT_REACTOR_DESC:0"$ZERO_POINT_REACTOR_DESC$"
+ AOW_ST_DARK_MATTER_REACTOR:0"$DARK_MATTER_REACTOR$"
+ AOW_ST_DARK_MATTER_REACTOR_DESC:0"$DARK_MATTER_REACTOR_DESC$"
+ AOW_ST_SHIP_THRUSTER_4:0 "$SHIP_THRUSTER_4$"
+ AOW_ST_SHIP_THRUSTER_4_DESC:0 "$SHIP_THRUSTER_4_DESC$"
+ AOW_ST_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
+ AOW_ST_SHIP_THRUSTER_5_DESC:0 "$SHIP_THRUSTER_5_DESC$"
+
+ #天枢圣盾
+ AOW_shipsize_bunker_ring:0"掩体星环"
+ AOW_shipsize_bunker_ring_plural:0"掩体星环"
+
+ AOW_CELESTIAL_SHIELD_STAR_REACTOR:0"恒星能量核心"
+ AOW_CELESTIAL_SHIELD_COMBAT_COMPUTER:0"多维空间计算机"

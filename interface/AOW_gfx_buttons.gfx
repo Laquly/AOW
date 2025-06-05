@@ -1,4 +1,62 @@
 spriteTypes = {
+	spriteType = {
+		name = "GFX_AOW_mega_outliner_default"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/mega_outliner_default.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_AOW_mega_outliner_show"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/mega_outliner_show.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_AOW_mega_outliner_hide"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/mega_outliner_hide.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
+			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+
 	corneredTileSpriteType = {
 		name = "GFX_button_megastructure_selection"
 		textureFile = "gfx/interface/tiles/button_megastructure_selection.dds"
@@ -23,25 +81,6 @@ spriteTypes = {
 			animationtype = "scrolling"      #scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
-			animationframes = { 1 2 3 }
-		}
-	}
-	spriteType = {#巨构删除按钮
-		name = "GFX_AOW_button_delete"
-		texturefile = "gfx/interface/AOW_ui_icons/buttons/button_delete.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
-		noOfFrames = 3			
-		animation = {
-			animationmaskfile = "gfx/interface/AOW_ui_icons/buttons/button_mask.dds"
-			animationtexturefile = "gfx/interface/AOW_ui_icons/buttons/button_texture.dds"
-			animationrotation = 180.0
-			animationlooping = yes
-			animationtime = 12.0
-			animationdelay = 0.0
-			animationblendmode = "overlay"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
 			animationframes = { 1 2 3 }
 		}
 	}

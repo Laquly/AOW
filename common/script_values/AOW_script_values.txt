@@ -175,7 +175,7 @@ AOW_var_count_deposits = {#地块数量
 AOW_var_count_unemployed = {#失业、非未开智、非净化中的人口数量
 	base = 0
 	complex_trigger_modifier = {
-		trigger = count_owned_pop
+		trigger = count_owned_pop_amount
 		parameters = {
 			limit = {
 				is_unemployed = yes
@@ -319,51 +319,6 @@ AOW_var_system_num_orbital_arc_furnace_planet = {
 	modifier = {
 		NOT = { has_planet_class = pc_molten }
 		factor = 0
-	}
-	min = 0
-}
-#居住站发电区划
-AOW_var_system_num_habitat_energy = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = count_system_planet
-		trigger_scope = solar_system
-		parameters = {
-			limit = {
-				has_orbital_energy_deposit = yes
-			}
-		}
-		mode = add
-	}
-	min = 0
-}
-#居住站采矿区划
-AOW_var_system_num_habitat_mining = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = count_system_planet
-		trigger_scope = solar_system
-		parameters = {
-			limit = {
-				has_orbital_mining_deposit = yes
-			}
-		}
-		mode = add
-	}
-	min = 0
-}
-#居住站研究区划
-AOW_var_system_num_habitat_research = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = count_system_planet
-		trigger_scope = solar_system
-		parameters = {
-			limit = {
-				has_deposit_for = shipclass_research_station
-			}
-		}
-		mode = add
 	}
 	min = 0
 }

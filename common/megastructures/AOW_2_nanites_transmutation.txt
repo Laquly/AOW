@@ -93,7 +93,7 @@ AOW_MEGA_nanites_transmutation_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1060 } }
+		from = { country_event = { id = AOW_evt_nanites_transmutation.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_nanites_transmutation_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -144,15 +144,17 @@ AOW_MEGA_nanites_transmutation_1 = {
 		modifier = { factor = 0	from = { has_monthly_income = { resource = nanites value <= 10 } } }
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1061 } }
+		from = { country_event = { id = AOW_evt_nanites_transmutation.101 } }
 	}
 }
 AOW_MEGA_nanites_transmutation_2 = {
 	entity = "nanites_transmutation_2_entity"
 	construction_entity = "nanites_transmutation_2_entity"
 	portrait = "GFX_megastructure_construction_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = nanites_transmutation }
+	}
 	use_planet_resource = yes
 	build_time = @AOW_var_NT_2_TIME
 	resources = {
@@ -196,7 +198,7 @@ AOW_MEGA_nanites_transmutation_2 = {
 	}
 	on_build_complete = {
 		from = {
-			country_event = { id = AOW_mega_notification.1062 }
+			country_event = { id = AOW_evt_nanites_transmutation.102 }
 			set_country_flag = has_built_or_repaired_megastructure
 		}
 	}

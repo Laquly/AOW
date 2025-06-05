@@ -365,10 +365,7 @@ dyson_sphere_5 = {
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	#show_in_outliner = no
 	outliner_trigger = {
-		exists = owner
-		owner = {
-			has_country_flag = can_build_disco_sphere
-		}
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_sphere }
 	}
 	build_time = 3600
 	use_planet_resource = yes
@@ -438,10 +435,7 @@ dyson_sphere_restored = {
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	#show_in_outliner = no
 	outliner_trigger = {
-		exists = owner
-		owner = {
-			has_country_flag = can_build_disco_sphere
-		}
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_sphere }
 	}
 	build_time = 7200
 	scales_with_planet = yes

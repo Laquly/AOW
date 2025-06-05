@@ -3,7 +3,6 @@ AOW_MEGA_planetary_mining_station_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	#construction_blocks_and_blocked_by = none
 	build_time = @AOW_var_PMS_0_TIME
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PLANETARY_MINING_STATION"
 	resources = {
@@ -48,71 +47,30 @@ AOW_MEGA_planetary_mining_station_0 = {
 				fail_text = "AOW_mega_PLNT_requires_not_habitable"
 				AOW_trgr_PLNT_is_habitable = no
 			}
-			custom_tooltip = {#不能是小行星、卫星
-				fail_text = "requires_not_minor_planetary_body"
-				NOR = {
-					is_asteroid = yes
-					is_moon = yes
+			NOT = { is_moon = yes }
+			# custom_tooltip = {#不能是小行星、卫星
+			# 	fail_text = "requires_not_minor_planetary_body"
+			# 	NOR = {
+			# 		is_asteroid = yes
+			# 		is_moon = yes
+			# 	}
+			# }
+			custom_tooltip = {
+				fail_text = "AOW_mega_requires_PLNT_ordinary_planets"
+				OR = {
+					AOW_trgr_PLNT_ordinary_planet = yes
+					is_planet_class = pc_iron#铁星球
+					is_planet_class = pc_chthonian#气陨星核
+					is_planet_class = pc_hydrocarbon#烃
+					is_planet_class = pc_volcanic#火山
+					is_planet_class = pc_molten
+					is_planet_class = pc_ethane_ocean#乙烷海洋星球
+					is_planet_class = pc_toxic
+					is_planet_class = pc_hothouse#温室星球
+					is_planet_class = pc_frozen
+					is_planet_class = pc_diamond#金刚石星球
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						AOW_trgr_PLNT_ordinary_planet = yes
-						is_planet_class = pc_iron#铁星球
-						is_planet_class = pc_chthonian#气陨星核
-						is_planet_class = pc_hydrocarbon#烃
-						is_planet_class = pc_volcanic#火山
-					}
-				}
-				always = yes
-			}
-			else_if = {
-				limit = {
-					OR = {
-						is_planet_class = pc_molten
-						is_planet_class = pc_ethane_ocean#乙烷海洋星球
-					}
-				}
-				custom_tooltip = {#易爆颗粒
-					fail_text = "AOW_mega_requires_PLNT_tech_mine_volatile_motes"
-					from = { has_technology = tech_mine_volatile_motes }
-				}
-			}
-			else_if = {
-				limit = {
-					OR = {
-						is_planet_class = pc_toxic
-						is_planet_class = pc_hothouse#温室星球
-					}
-				}
-				custom_tooltip = {#异星天然气
-					fail_text = "AOW_mega_requires_PLNT_tech_mine_exotic_gases"
-					from = { has_technology = tech_mine_exotic_gases }
-				}
-			}
-			else_if = {
-				limit = {
-					OR = {
-						is_planet_class = pc_frozen
-						is_planet_class = pc_diamond#金刚石星球
-					}
-				}
-				custom_tooltip = {#稀有水晶
-					fail_text = "AOW_mega_requires_PLNT_tech_mine_rare_crystals"
-					from = { has_technology = tech_mine_rare_crystals }
-				}
-			}
-			else = {
-				custom_tooltip = {
-					fail_text = "AOW_mega_requires_PLNT_ordinary_planets"
-					always = no
-				}
-			}
-			#custom_tooltip = {#不能为肃正星球
-			#	fail_text = "AOW_mega_requires_PLNT_no_machine_world"
-			#	NOT = { has_planet_flag = crisis_vital_planet }
-			#}
 			custom_tooltip = {
 				fail_text = "requires_not_astral_scar"
 				is_astral_scar = no
@@ -140,7 +98,7 @@ AOW_MEGA_planetary_mining_station_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1010 } }
+		from = { country_event = { id = AOW_evt_planetary_mining_station.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_planetary_mining_station_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -178,7 +136,7 @@ AOW_MEGA_planetary_mining_station_1 = {
 				remove_modifier = terraforming_candidate
 			}
 		}
-		from = { country_event = { id = AOW_mega_notification.1011 } }
+		from = { country_event = { id = AOW_evt_planetary_mining_station.101 } }
 	}
 }
 AOW_MEGA_planetary_mining_station_2 = {
@@ -286,7 +244,7 @@ AOW_MEGA_planetary_mining_station_2 = {
 				remove_modifier = terraforming_candidate
 			}
 		}
-		from = { country_event = { id = AOW_mega_notification.1012 } }
+		from = { country_event = { id = AOW_evt_planetary_mining_station.102 } }
 	}
 }
 AOW_MEGA_planetary_mining_station_3 = {
@@ -294,8 +252,10 @@ AOW_MEGA_planetary_mining_station_3 = {
 	construction_entity = "planetary_mining_station_3_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = planetary_mining_station }
+	}
 	use_planet_resource = yes
-	show_in_outliner = no
 	build_time = @AOW_var_PMS_3_TIME
 	resources = {
 		category = megastructures
@@ -431,7 +391,7 @@ AOW_MEGA_planetary_mining_station_3 = {
 		}
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = AOW_mega_notification.1013 }
+			country_event = { id = AOW_evt_planetary_mining_station.103 }
 		}
 	}
 }

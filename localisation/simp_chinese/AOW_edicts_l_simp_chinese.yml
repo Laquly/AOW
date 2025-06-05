@@ -19,3 +19,6 @@
  edict_AOW_improved_construction_efficiency_4_desc:0"$AOW_TECH_improved_construction_efficiency_4_desc$"
  edict_AOW_improved_construction_efficiency_5:0 "$AOW_TECH_improved_construction_efficiency_5$"
  edict_AOW_improved_construction_efficiency_5_desc:0 "$AOW_TECH_improved_construction_efficiency_5_desc$\n\n§Y时间花费计算公式：§!\n最终花费时间=基础花费时间/((1+加基础的修正)*(1+加百分比的修正))"
+
+ edict_AOW_plane_analysis:0"位面解析"
+ edict_AOW_plane_analysis_desc:0"为研究人员提供星界丝缕，让其解析其中所蕴含的维度、位面、时空等极其罕见且宝贵的知识。"

@@ -3,7 +3,7 @@ col_starcage_world_production = {
     icon = col_starcage_world_production
     potential = {
         exists = owner
-        is_pc_starcage_world = yes
+        AOW_trgr_PLNT_is_starcage_world = yes
     }
     triggered_planet_modifier = {
         potential = { is_capital = yes }
@@ -11,14 +11,14 @@ col_starcage_world_production = {
     }
     triggered_planet_modifier = {
         potential = { owner = { is_gestalt = no } }
-        trade_value_mult = 0.25
+        planet_jobs_trade_produces_mult = 0.25
     }
     planet_modifier = {
         planet_jobs_produces_mult = 0.25
         planet_buildings_produces_mult = 0.25
-        pop_growth_speed = 0.1
+        logistic_growth_mult = 0.1
         planet_pop_assembly_mult = 0.1
-        planet_pop_assembly_organic_mult = 0.1
+        bonus_pop_growth = 0.1
     }
     weight_modifier = {
         base = 9500
@@ -28,7 +28,7 @@ col_starcage_world_maintenance = {
     icon = col_starcage_world_maintenance
     potential = {
         exists = owner
-        is_pc_starcage_world = yes
+        AOW_trgr_PLNT_is_starcage_world = yes
     }
     triggered_planet_modifier = {
         potential = { is_capital = yes }
@@ -36,16 +36,16 @@ col_starcage_world_maintenance = {
     }
     triggered_planet_modifier = {
         potential = { owner = { is_gestalt = no } }
-        trade_value_mult = 0.125
+        planet_jobs_trade_produces_mult = 0.125
     }
     planet_modifier = {
         planet_jobs_produces_mult = 0.125
         planet_jobs_upkeep_mult = -0.2
         planet_buildings_produces_mult = 0.125
         planet_structures_upkeep_mult = -0.2
-        pop_growth_speed = 0.1
+        logistic_growth_mult = 0.1
         planet_pop_assembly_mult = 0.1
-        planet_pop_assembly_organic_mult = 0.1
+        bonus_pop_growth_mult = 0.1
     }
     weight_modifier = {
         base = 9000
@@ -55,7 +55,7 @@ col_starcage_world_construction = {
     icon = col_starcage_world_construction
     potential = {
         exists = owner
-        is_pc_starcage_world = yes
+        AOW_trgr_PLNT_is_starcage_world = yes
     }
     triggered_planet_modifier = {
         potential = { is_capital = yes }
@@ -66,9 +66,9 @@ col_starcage_world_construction = {
         planet_buildings_produces_mult = 0.3
         planet_structures_upkeep_mult = -0.25
         planet_building_build_speed_mult = 0.5
-        pop_growth_speed = 0.1
+        logistic_growth_mult = 0.1
         planet_pop_assembly_mult = 0.1
-        planet_pop_assembly_organic_mult = 0.1
+        bonus_pop_growth_mult = 0.1
     }
     weight_modifier = {
         base = 9000
@@ -90,7 +90,7 @@ col_starcage_world_unity = {
     icon = GFX_col_starcage_world_unity
     potential = {
         exists = owner
-        is_pc_starcage_world = yes
+        AOW_trgr_PLNT_is_starcage_world = yes
     }
     triggered_planet_modifier = {
         potential = { is_capital = yes }
@@ -105,9 +105,9 @@ col_starcage_world_unity = {
         planet_jobs_unity_produces_mult = 0.5
         planet_jobs_unity_upkeep_mult = -0.25
         planet_decision_enact_speed_mult = 0.5
-        pop_growth_speed = 0.1
+        logistic_growth_mult = 0.1
         planet_pop_assembly_mult = 0.1
-        planet_pop_assembly_organic_mult = 0.1
+        bonus_pop_growth_mult = 0.1
     }
     weight_modifier = {
         base = 9000

@@ -1,11 +1,11 @@
 create_leader_laquly = {
 	if = {
 		limit = { NOT = { exists = event_target:AOW_target_species_red_dawn } }
-		create_species = {
+		create_species = {#创建领袖所属的基础物种
 			name = "NAME_red_dawn"
 			class = MOL
 			portrait = red_dawn_snail
-			traits = {
+			traits = {#物种特质
 				trait = trait_pc_nuked_preference
 				trait = trait_cybernetic
 				trait = trait_excessive_endurance
@@ -16,7 +16,7 @@ create_leader_laquly = {
 				trait = trait_cyborg_streamlined_protocols
 				trait = trait_cyborg_bulky
 			}
-			effect = {
+			effect = {#标记为AOW_target_species_red_dawn
 				if = {
 					limit = { exists = event_target:AOW_target_species_red_dawn }
 					clear_global_event_target = AOW_target_species_red_dawn
@@ -27,16 +27,16 @@ create_leader_laquly = {
 	}
 	create_leader = {
 		class = official
-		species = event_target:AOW_target_species_red_dawn
+		species = event_target:AOW_target_species_red_dawn#以标记为AOW_target_species_red_dawn的物种作为领袖所属物种
 		name = NAME_laquly
 		event_leader = yes
 		skill = 10
 		set_age = 23
 		skip_background_generation = yes
-		custom_catch_phrase = laquly_catch_phrase
-		custom_description = laquly_backstory
-		background_ethic = ethic_egalitarian
-		gender = $gender$
+		custom_catch_phrase = laquly_catch_phrase#领袖招募时的台词
+		custom_description = laquly_backstory#领袖背景故事
+		background_ethic = ethic_egalitarian#领袖思潮
+		gender = $gender$#领袖性别，male男、female女、indeterminable无性别
 		traits = {
 			trait = subclass_official_economy_councilor #国务顾问
 			trait = leader_trait_laquly
@@ -46,7 +46,7 @@ create_leader_laquly = {
 			trait = leader_trait_bureaucrat_2 #上下同心
 			trait = leader_trait_cyborg
 		}
-		effect = {
+		effect = {#设置领袖专属标记、设置领袖肖像
 			set_leader_flag = legendary_leader
 			set_leader_flag = immune_to_negative_traits
 			set_leader_flag = leader_laquly
@@ -55,7 +55,8 @@ create_leader_laquly = {
 	}
 	last_created_leader = {
 		set_leader_flag = has_gained_level_trait
-		remove_all_traits = yes
+		remove_all_traits = yes#清除自动获得的特质
+		#添加固定的特质
 		add_trait_no_notify = subclass_official_economy_councilor
 		add_trait_no_notify = leader_trait_laquly
 		add_trait_no_notify = leader_trait_red_dawn
@@ -68,7 +69,7 @@ create_leader_laquly = {
 }
 
 create_dummy_leader_laquly = {
-	create_country = {
+	create_country = {#根据原版创建的假国家，专门用于【还未获得领袖时的领袖事件】中展示该领袖
 		name = "NAME_leader_country"
 		type = faction
 		auto_delete = yes

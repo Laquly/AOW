@@ -24,6 +24,7 @@ AOW_eft_GLBL_set_player_mega1_cap_0 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = 0 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -115,6 +116,7 @@ AOW_eft_GLBL_set_player_mega1_cap_1 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 1 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 1 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -206,6 +208,7 @@ AOW_eft_GLBL_set_player_mega1_cap_2 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 2 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 2 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -297,6 +300,7 @@ AOW_eft_GLBL_set_player_mega1_cap_3 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 3 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 3 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -388,6 +392,7 @@ AOW_eft_GLBL_set_player_mega1_cap_4 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 4 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 4 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -479,6 +484,7 @@ AOW_eft_GLBL_set_player_mega1_cap_5 = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 5 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = 5 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }
@@ -570,6 +576,7 @@ AOW_eft_GLBL_set_player_mega1_cap_infinite = {
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = satellite_defense_base }
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = dyson_swarm }
 			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = orbital_arc_furnace }
+			AOW_eft_GLBL_set_player_mega_cap = { V = -1 KEY = resource_drilling_station }
 		}
 	}
 }

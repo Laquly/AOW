@@ -1,35 +1,116 @@
-AOW_btn_main_ui_open_presets = {
+################################### 默认按钮 ###################################
+AOW_btn_default = {
 	potential = { always = yes }
-	allow = {
-		custom_tooltip = AOW_btn_main_ui_open_presets_desc
-		hidden_trigger = { from = { NOT = { has_active_event = { AOW_core.101 } } } }
-	}
-	effect = {
-		custom_tooltip = AOW_btn_main_ui_open_presets_desc
-		hidden_effect = { from = { country_event = { id = AOW_core.101 } } }
-	}
-}
-AOW_btn_main_ui_open_bulletin_board = {
-	potential = { always = yes }
-	allow = {
-		hidden_trigger = { from = { NOT = { has_active_event = { AOW_core.99 } } } }
-	}
-	effect = {
-		hidden_effect = { from = { country_event = { id = AOW_core.99 } } }
-	}
-}
-################################### 页面默认按钮 ###################################
-AOW_btn_preview = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
 	allow = { always = yes }
 }
-AOW_btn_preinstall = {
-	potential = { from = { has_country_flag = AOW_flag_CNTR_page_presets } }
+################################### 翻页按钮 ###################################
+#公告
+AOW_btn_main_ui_announcement_active = {#已激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 1 }
+		}
+	}
 	allow = { always = yes }
 }
-################################### 页面默认按钮 ###################################
+AOW_btn_main_ui_announcement_inactive = {#未激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value != 1 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		hidden_effect = { from = { set_variable = { which = AOW_var_page value = 1 } } }
+	}
+}
+#预设
+AOW_btn_main_ui_presets_active = {#已激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 2 }
+		}
+	}
+	allow = { always = yes }
+}
+AOW_btn_main_ui_presets_inactive = {#未激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value != 2 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		hidden_effect = { from = { set_variable = { which = AOW_var_page value = 2 } } }
+	}
+}
+#数值控制
+AOW_btn_main_ui_values_active = {#已激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 3 }
+		}
+	}
+	allow = { always = yes }
+}
+AOW_btn_main_ui_values_inactive = {#未激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value != 3 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		hidden_effect = { from = { set_variable = { which = AOW_var_page value = 3 } } }
+	}
+}
+#其他控制
+AOW_btn_others_active = {#已激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 4 }
+		}
+	}
+	allow = { always = yes }
+}
+AOW_btn_others_inactive = {#未激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value != 4 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		hidden_effect = { from = { set_variable = { which = AOW_var_page value = 4 } } }
+	}
+}
+#打赏
+AOW_btn_donation_active = {#已激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 5 }
+		}
+	}
+	allow = { always = yes }
+}
+AOW_btn_donation_inactive = {#未激活
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value != 5 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		hidden_effect = { from = { set_variable = { which = AOW_var_page value = 5 } } }
+	}
+}
+################################### 其他设置按钮 ###################################
 AOW_btn_dismantle_at_war = {
-	potential = { always = yes }
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 4 }
+		}
+	}
 	allow = { always = yes }
 	effect = {
 		if = {
@@ -45,7 +126,11 @@ AOW_btn_dismantle_at_war = {
 	}
 }
 AOW_btn_hyperdimension_hiding = {
-	potential = { always = yes }
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 4 }
+		}
+	}
 	allow = { always = yes }
 	effect = {
 		if = {

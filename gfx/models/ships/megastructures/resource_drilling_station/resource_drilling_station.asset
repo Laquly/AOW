@@ -1,0 +1,44 @@
+entity = {
+	name = "resource_drilling_station_ring_entity"
+	pdxmesh = "interstellar_assembly_01_stage_1_mesh"
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" animation_speed = 0.5
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_hum" } }
+	}
+	meshsettings = {
+		name = "body_1Shape"
+		index = 0
+		texture_diffuse = "humanoid_01_interstellar_assembly_diffuse.dds"
+		texture_normal = "humanoid_01_interstellar_assembly_normal.dds"
+		texture_specular = "humanoid_01_interstellar_assembly_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = 0.3
+}
+entity = {#特效
+	name = "resource_drilling_station_effect_entity"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 1 node = "core" particle = "AOW_f_fire_effect"  keep_particle = yes trigger_once = yes }
+	}
+	scale = 0.6
+}
+entity = {
+	name = "resource_drilling_station_0_entity"
+
+	locator = { name = loc1 position = { 0 0 0 } rotation = { 45 0 0 } }
+	locator = { name = loc2 position = { 0 0 0 } rotation = { 135 0 0 } }
+	locator = { name = loc3 position = { 0 -15 0 } rotation = { 0 0 0 } }
+	locator = { name = loc4 position = { 0 -22 0 } rotation = { 0 0 0 } scale = 0.75 }
+	attach = { loc1 = synthetics_01_mining_station_section_entity }
+	attach = { loc2 = synthetics_01_mining_station_section_entity }
+	attach = { loc3 = resource_drilling_station_ring_entity }
+	attach = { loc4 = resource_drilling_station_ring_entity }
+	scale = 2
+}
+entity = {
+	name = "resource_drilling_station_1_construction_entity"
+	locator = { name = loc5 position = { 0 -15 0 } rotation = { 0 0 -180 } }
+	attach = { loc5 = resource_drilling_station_effect_entity }
+	scale = 3
+}

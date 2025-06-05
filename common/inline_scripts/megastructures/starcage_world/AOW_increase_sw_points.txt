@@ -5,7 +5,7 @@ allow = {
     custom_tooltip = {
         fail_text = AOW_requires_our_starcage_world
         is_scope_type = planet
-        is_pc_starcage_world = yes
+        AOW_trgr_PLNT_is_starcage_world = yes
         exists = owner
         owner = { is_same_value = from }
     }

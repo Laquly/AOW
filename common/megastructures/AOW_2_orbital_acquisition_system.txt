@@ -84,7 +84,7 @@ AOW_MEGA_orbital_acquisition_system_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1020 } }
+		from = { country_event = { id = AOW_evt_orbital_acquisition_system.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_orbital_acquisition_system_@owner }
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}
@@ -116,7 +116,7 @@ AOW_MEGA_orbital_acquisition_system_1 = {#框架
 	upgrade_from = { AOW_MEGA_orbital_acquisition_system_0 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1021 } }
+		from = { country_event = { id = AOW_evt_orbital_acquisition_system.101 } }
 	}
 }
 AOW_MEGA_orbital_acquisition_system_2 = {#开始采集
@@ -159,15 +159,17 @@ AOW_MEGA_orbital_acquisition_system_2 = {#开始采集
 	upgrade_from = { AOW_MEGA_orbital_acquisition_system_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1022 } }
+		from = { country_event = { id = AOW_evt_orbital_acquisition_system.102 } }
 	}
 }
 AOW_MEGA_orbital_acquisition_system_3 = {
 	entity = "orbital_acquisition_system_3_entity"
 	construction_entity = "orbital_acquisition_system_3_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = orbital_acquisition_system }
+	}
 	use_planet_resource = yes
 	build_time = @AOW_var_OAS_3_TIME
 	resources = {
@@ -207,7 +209,7 @@ AOW_MEGA_orbital_acquisition_system_3 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = AOW_mega_notification.1023 }
+			country_event = { id = AOW_evt_orbital_acquisition_system.103 }
 		}
 	}
 }

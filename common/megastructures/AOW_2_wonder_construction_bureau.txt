@@ -116,7 +116,7 @@ AOW_MEGA_wonder_construction_bureau_1 = {
 		starbase_building_build_speed_mult = 0.33
 		starbase_module_build_speed_mult = 0.33
 		planet_building_build_speed_mult = 0.33
-		megastructure_build_speed_mult = 0.167
+		megastructure_build_speed_mult = 0.16
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -160,7 +160,7 @@ AOW_MEGA_wonder_construction_bureau_2 = {
 		starbase_building_build_speed_mult = 0.67
 		starbase_module_build_speed_mult = 0.67
 		planet_building_build_speed_mult = 0.67
-		megastructure_build_speed_mult = 0.333
+		megastructure_build_speed_mult = 0.33
 		country_megastructure_build_cap_add = 1
 	}
 	inline_script = {
@@ -181,7 +181,9 @@ AOW_MEGA_wonder_construction_bureau_3 = {
 	entity = "wonder_construction_bureau_03_entity"
 	portrait = "GFX_megastructure_wonder_construction_bureau_background"
 	place_entity_on_planet_plane = no
-	show_in_outliner = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = wonder_construction_bureau }
+	}
 	build_time = @AOW_var_WCB_3_TIME
 	resources = {
 		category = megastructures
@@ -208,9 +210,6 @@ AOW_MEGA_wonder_construction_bureau_3 = {
 		planet_building_build_speed_mult = 1
 		megastructure_build_speed_mult = 0.5
 		country_megastructure_build_cap_add = 1
-		empire_size_districts_mult = 0.1
-		empire_size_colonies_mult = 0.1
-		empire_size_systems_mult = 0.1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure

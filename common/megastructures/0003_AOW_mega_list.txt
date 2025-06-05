@@ -9,6 +9,7 @@ AOW_MEGA_pulsar_clock_0 = {}
 AOW_MEGA_zero_element_furnace_0 = {}
 AOW_MEGA_star_picker_0 = {}
 AOW_MEGA_psychic_device_0 = {}
+AOW_MEGA_star_guardian_0 = {}
 AOW_MEGA_curvature_pressurization_field_0 = {}
 AOW_MEGA_celestial_decompressor_0 = {}
 AOW_MEGA_stellar_eater_0 = {}

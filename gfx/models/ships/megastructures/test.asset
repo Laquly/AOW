@@ -1,34 +1,38 @@
 #position = { sin(角度)*距离（正:在初始视角左边）	0	cos(角度)*距离（正:离初始视角近） }
 #rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
 entity = {
-	name = "aow_planet_entity"
-	pdxmesh = "planet_non_clouded_mesh"#"planet_clouded_mesh"#
-	meshsettings = {
-		name = "planet_geosphereShape"
-		texture_diffuse = "aow_1.dds"
-		texture_normal = "aow_2.dds"
-		texture_specular = "aow_3.dds"
-		shader = "PdxMeshTerra"
+	name = "AOW_test_00_entity"
+	pdxmesh = "cybernetics_01_habitat_level_3_frame_mesh"
+	locator = { name = part1 }
+	locator = { name = explosion_effect position = { 0 3 0 } }
+	scale = 1
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" state_time = 5 }
+	#state = { name = "construction" state_time = 5 }
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 2.0
 	}
-	##pole texture override
-	#meshsettings = {
-	#name = "polesShape"
-	#texture_diffuse = "poles_barren_1_diffuse.dds"
-	#texture_normal = "poles_barren_1_normal.dds"
-	#texture_specular = "poles_barren_1_specular.dds"
-	#}
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" animation_speed = 0 }
-	playback_rate = 1
+	# attach = {
+	# 	name = "station"
+	# 	part1 = "cybernetics_01_habitat_phase_03_section_entity"
+	# }#三角三叶片城市
+	# attach = {
+	# 	"part1" = "cybernetics_01_starbase_outpost_section_entity"
+	# }#中心柱体带俩电路环
+	attach = {
+		"part2" = "cybernetics_01_habitat_phase_02_section_entity"
+	}#一叶片城市
+	# attach = {"part3" 	= "cybernetics_01_habitat_phase_02_section_entity" }
+	# attach = {"part4" 	= "cybernetics_01_habitat_phase_02_section_entity" }
+	# attach = {
+	# 	"part5" = "cybernetics_01_habitat_phase_03_section_entity"
+	# }#三角三叶片城市
 }
-
 entity = {
 	name = "AOW_test_01_entity"
-	locator = { name = planet position = { 0 0 0 } rotation = { 102.7 0 0 } scale = 10 }
-	locator = { name = loc1 position = { 0 0 -31 } rotation = { 0 0 0 } scale = 4 }
-	locator = { name = loc2 position = { 0 0 -30 } rotation = { 0 0 45 } scale = 4 }
-
-	attach = { planet = aow_planet_entity }
-	attach = { loc1 = plantoid_01_ion_cannon_section_entity }
-	attach = { loc2 = plantoid_01_ion_cannon_section_entity }
+	cull_radius = 5000
+	locator = { name = root position = { 0 20 0 } }
+	attach = { root = cybernetics_01_mining_station_hologram_entity }
+	scale = 10
 }
