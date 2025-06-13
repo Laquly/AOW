@@ -19,7 +19,6 @@ guiTypes = {
 			position = { x = -2 y = 0 }
 		}
 	}
-
 	extendedScrollbarType = {
 		name = "AOW_right_vertical_container_slider"
 		position = { x = 12 y = 0 }
@@ -40,7 +39,6 @@ guiTypes = {
 			position = { x = -2 y = 0 }
 		}
 	}
-
 	extendedScrollbarType = {
 		name = "AOW_left_vertical_slider"
 		position = { x = -336 y = 0 }

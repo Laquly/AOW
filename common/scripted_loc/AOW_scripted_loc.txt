@@ -15,27 +15,16 @@ defined_text = {
 	name = AOW_var_system_num_orbital_arc_furnace_planet
 	value = value:AOW_var_system_num_orbital_arc_furnace_planet
 }
-defined_text = {
-	name = AOW_var_system_num_habitat_energy
-	value = value:AOW_var_system_num_habitat_energy
-}
-defined_text = {
-	name = AOW_var_system_num_habitat_mining
-	value = value:AOW_var_system_num_habitat_mining
-}
-defined_text = {
-	name = AOW_var_system_num_habitat_research
-	value = value:AOW_var_system_num_habitat_research
-}
-defined_text = {
+
+defined_text = {#小行星数目
 	name = AOW_var_system_num_pc_asteroid
 	value = value:AOW_var_system_num_pc_asteroid
 }
-defined_text = {
+defined_text = {#晶态小行星数目
 	name = AOW_var_system_num_pc_crystal_asteroid
 	value = value:AOW_var_system_num_pc_crystal_asteroid
 }
-defined_text = {
+defined_text = {#冰态小行星数目
 	name = AOW_var_system_num_pc_ice_asteroid
 	value = value:AOW_var_system_num_pc_ice_asteroid
 }
@@ -182,4 +171,91 @@ defined_text = {#恒星光谱的描述
 		localization_key = AOW_text_stellar_spectrum_m_desc
 	}
 	default = AOW_text_stellar_spectrum_desc
+}
+#坠星天矛目标对应的模式
+defined_text = {
+	name = GetStarfallSpearTargetMode01
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 01
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode02
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 02
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode03
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 03
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode04
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 04
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode05
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 05
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode06
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 06
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode07
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 07
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode08
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 08
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode09
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 09
+	}
+}
+defined_text = {
+	name = GetStarfallSpearTargetMode10
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_target_mode
+		target = 10
+	}
+}
+
+#坠星天矛当前目标数量
+defined_text = {
+	name = GetStarfallSpearNumOfTargets
+	value = value:AOW_var_starfall_spear_num_of_targets|scope|from|
+}
+#坠星天矛星系目标容量
+defined_text = {
+	name = GetStarfallSpearSystemTargetCapacity
+	value = value:AOW_var_starfall_spear_system_target_capacity_desc
+}
+#坠星天矛行星目标容量
+defined_text = {
+	name = GetStarfallSpearPlanetTargetCapacity
+	value = value:AOW_var_starfall_spear_planet_target_capacity_desc
 }

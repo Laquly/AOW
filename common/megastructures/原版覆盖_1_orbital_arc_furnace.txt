@@ -15,8 +15,27 @@ orbital_arc_furnace_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 500
 			unity = 500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 500
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 20
@@ -116,10 +135,8 @@ orbital_arc_furnace_1 = {
 	}
 	on_build_complete = {
 		remove_star_flag = arc_furnace_construction
-		fromfrom = {
-			set_megastructure_flag = AOW_flag_MEGA_orbital_arc_furnace_@owner
-		}
 		fromfrom.planet = {
+			set_planet_flag = has_megastructure
 			set_planet_flag = has_arc_furnace
 			if = {
 				limit = { has_orbital_station = yes }
@@ -129,33 +146,12 @@ orbital_arc_furnace_1 = {
 			}
 			set_planet_entity = { entity = invisible_turret_entity }
 		}
-		every_system_planet = {
-			limit = {
-				NOT = { has_deposit_for = shipclass_research_station }
-				is_star = no
-				is_astral_scar = no
-				colonizable_planet = no
-			}
-			save_event_target_as = target_planet
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			remove_modifier = orbital_arc_furnace_1_mod
-			remove_modifier = orbital_arc_furnace_2_mod
-			remove_modifier = orbital_arc_furnace_3_mod
-			remove_modifier = orbital_arc_furnace_4_mod
-			add_modifier = {
-				modifier = orbital_arc_furnace_1_mod
-				days = -1
-			}
-		}
 		from = {
-			#country_event = { id = cybernetics.1000 }
+			country_event = {
+				id = cybernetics.1000
+			}
 			country_event = {
 				id = machine_age.3405 #2nd Arc Furnace built
-			}
-			change_variable = {
-				which = arc_furnace_counter
-				value = 1
 			}
 		}
 	}
@@ -177,9 +173,29 @@ orbital_arc_furnace_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1000
 			unity = 1000
 		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
 		upkeep = {
 			energy = 40
 		}
@@ -209,26 +225,7 @@ orbital_arc_furnace_2 = {
 	}
 	on_build_complete = {
 		remove_star_flag = arc_furnace_construction
-		#from = { country_event = { id = cybernetics.1005 } }
-		every_system_planet = {
-			limit = {
-				NOT = { has_deposit_for = shipclass_research_station }
-				is_star = no
-				is_astral_scar = no
-				colonizable_planet = no
-			}
-			save_event_target_as = target_planet
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			remove_modifier = orbital_arc_furnace_1_mod
-			remove_modifier = orbital_arc_furnace_2_mod
-			remove_modifier = orbital_arc_furnace_3_mod
-			remove_modifier = orbital_arc_furnace_4_mod
-			add_modifier = {
-				modifier = orbital_arc_furnace_2_mod
-				days = -1
-			}
-		}
+		from = { country_event = { id = cybernetics.1005 } }
 	}
 }
 
@@ -249,8 +246,27 @@ orbital_arc_furnace_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1500
 			unity = 2000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1500
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 80
@@ -281,28 +297,7 @@ orbital_arc_furnace_3 = {
 	}
 	on_build_complete = {
 		remove_star_flag = arc_furnace_construction
-		#from = { country_event = { id = cybernetics.1010 } }
-		every_system_planet = {
-			limit = {
-				NOT = { has_deposit_for = shipclass_research_station }
-				is_star = no
-				is_astral_scar = no
-				colonizable_planet = no
-			}
-			save_event_target_as = target_planet
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			add_deposit = d_alloys_1
-			arc_furnace_update_orbital_effect = yes
-			remove_modifier = orbital_arc_furnace_1_mod
-			remove_modifier = orbital_arc_furnace_2_mod
-			remove_modifier = orbital_arc_furnace_3_mod
-			remove_modifier = orbital_arc_furnace_4_mod
-			add_modifier = {
-				modifier = orbital_arc_furnace_3_mod
-				days = -1
-			}
-		}
+		from = { country_event = { id = cybernetics.1010 } }
 	}
 }
 
@@ -319,12 +314,34 @@ orbital_arc_furnace_4 = {
 	show_in_outliner = no
 	use_planet_resource = yes
 	scales_with_planet = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = orbital_arc_furnace }
+	}
 	build_time = 1080 # 3 years
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 2000
 			unity = 4000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 2000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 2000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 2000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 100
@@ -355,25 +372,9 @@ orbital_arc_furnace_4 = {
 	}
 	on_build_complete = {
 		remove_star_flag = arc_furnace_construction
-		#from = { country_event = { id = cybernetics.1015 } }
-		every_system_planet = {
-			limit = {
-				NOT = { has_deposit_for = shipclass_research_station }
-				is_star = no
-				is_astral_scar = no
-				colonizable_planet = no
-			}
-			save_event_target_as = target_planet
-			add_deposit = d_alloys_1
-			arc_furnace_update_orbital_effect = yes
-			remove_modifier = orbital_arc_furnace_1_mod
-			remove_modifier = orbital_arc_furnace_2_mod
-			remove_modifier = orbital_arc_furnace_3_mod
-			remove_modifier = orbital_arc_furnace_4_mod
-			add_modifier = {
-				modifier = orbital_arc_furnace_4_mod
-				days = -1
-			}
+		from = {
+			country_event = { id = cybernetics.1015 }
+			country_event = { id = focus.535 }
 		}
 		if = {
 			limit = {
@@ -395,7 +396,7 @@ orbital_arc_furnace_destroyed = {
 	rotate_to_center = no
 	scale_offset = yes
 	place_entity_on_planet_plane = yes
-	show_in_outliner = no
+	show_in_outliner = yes
 	scales_with_planet = yes
 	potential = { always = no }
 	inline_script = {
@@ -422,6 +423,9 @@ orbital_arc_furnace_restored = {
 	show_in_outliner = no
 	use_planet_resource = yes
 	scales_with_planet = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = orbital_arc_furnace }
+	}
 	build_time = 720 # 2 years
 	resources = {
 		category = megastructures
@@ -458,34 +462,7 @@ orbital_arc_furnace_restored = {
 	}
 	on_build_complete = {
 		remove_star_flag = arc_furnace_construction
-		#from = { country_event = { id = cybernetics.1016 } }
-		every_system_planet = {
-			limit = {
-				NOT = { has_deposit_for = shipclass_research_station }
-				is_star = no
-				is_astral_scar = no
-				colonizable_planet = no
-			}
-			save_event_target_as = target_planet
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			add_deposit = d_minerals_1
-			arc_furnace_update_orbital_effect = yes
-			add_deposit = d_alloys_1
-			arc_furnace_update_orbital_effect = yes
-			add_deposit = d_alloys_1
-			arc_furnace_update_orbital_effect = yes
-			remove_modifier = orbital_arc_furnace_1_mod
-			remove_modifier = orbital_arc_furnace_2_mod
-			remove_modifier = orbital_arc_furnace_3_mod
-			remove_modifier = orbital_arc_furnace_4_mod
-			add_modifier = {
-				modifier = orbital_arc_furnace_4_mod
-				days = -1
-			}
-		}
+		from = { country_event = { id = cybernetics.1016 } }
 		fromfrom.planet = {
 			set_planet_entity = { entity = invisible_turret_entity }
 		}

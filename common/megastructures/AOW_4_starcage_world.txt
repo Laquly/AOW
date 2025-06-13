@@ -172,11 +172,11 @@ AOW_MEGA_starcage_world_2 = {
 		from = { country_event = { id = AOW_evt_starcage_world.102 } }
 		AOW_eft_SSTM_empty_system = yes
 		spawn_planet = {
-			class = "pc_starcage_world"
+			class = "pc_starcage_world_common_star"
 			location = fromfrom
 			orbit_angle_offset = 0
 			orbit_distance_offset = 0
-			size = 14
+			size = 7
 			has_ring = no
 			init_effect = {
 				set_planet_entity = { entity = "pc_starcage_world_01_entity" }
@@ -204,6 +204,7 @@ AOW_MEGA_starcage_world_2 = {
 					}
 					change_pc = pc_starcage_world_common_star
 					set_name = "pc_starcage_world_common_star"
+					add_district = AOW_district_sw_common_star
 				}
 				if = {
 					limit = {
@@ -213,6 +214,7 @@ AOW_MEGA_starcage_world_2 = {
 					}
 					change_pc = pc_starcage_world_neutron_star
 					set_name = "pc_starcage_world_neutron_star"
+					add_district = AOW_district_sw_neutron_star
 				}
 				if = {
 					limit = {
@@ -222,53 +224,15 @@ AOW_MEGA_starcage_world_2 = {
 					}
 					change_pc = pc_starcage_world_black_hole
 					set_name = "pc_starcage_world_black_hole"
+					add_district = AOW_district_sw_black_hole
 				}
 				add_deposit = AOW_d_starcage_world
 				set_owner = fromfrom.owner
 				set_controller = fromfrom.owner
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = value:AOW_var_sw_all_points
-							value != 45
-						}
-					}
-					clear_variable = AOW_var_sw_points
-					clear_variable = AOW_var_sw_points_technician
-					clear_variable = AOW_var_sw_points_miner
-					clear_variable = AOW_var_sw_points_farmer
-					clear_variable = AOW_var_sw_points_trader
-					clear_variable = AOW_var_sw_points_researcher
-					clear_variable = AOW_var_sw_points_bureaucrat
-					clear_variable = AOW_var_sw_points_artisan
-					clear_variable = AOW_var_sw_points_foundry
-					clear_variable = AOW_var_sw_points_chemist
-					clear_variable = AOW_var_sw_points_refiner
-					clear_variable = AOW_var_sw_points_translucer
-					clear_variable = AOW_var_sw_points_soldier
-					clear_variable = AOW_var_sw_points_amenities
-					clear_variable = AOW_var_sw_points_enforcer
-					clear_variable = AOW_var_sw_points_bio_trophy
-				}
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
-				AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+				validate_planet_buildings_and_districts = yes
 			}
 		}
 	}
@@ -297,56 +261,17 @@ AOW_MEGA_starcage_world_3 = {
 		from = { country_event = { id = AOW_evt_starcage_world.103 } }
 		random_system_planet = {
 			limit = { has_planet_flag = AOW_flag_PLNT_starcage_world_@fromfrom }
-			set_planet_size = 43
+			set_planet_size = 21
 			set_variable = { which = AOW_var_PLNT_starcage_world_level value = 2 }
 			if = {
 				limit = { has_owner = no }
 				set_owner = fromfrom.owner
 				set_controller = fromfrom.owner
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
-			if = {
-				limit = {
-					check_variable_arithmetic = {
-						which = value:AOW_var_sw_all_points
-						value != 45
-					}
-				}
-				clear_variable = AOW_var_sw_points
-				clear_variable = AOW_var_sw_points_technician
-				clear_variable = AOW_var_sw_points_miner
-				clear_variable = AOW_var_sw_points_farmer
-				clear_variable = AOW_var_sw_points_trader
-				clear_variable = AOW_var_sw_points_researcher
-				clear_variable = AOW_var_sw_points_bureaucrat
-				clear_variable = AOW_var_sw_points_artisan
-				clear_variable = AOW_var_sw_points_foundry
-				clear_variable = AOW_var_sw_points_chemist
-				clear_variable = AOW_var_sw_points_refiner
-				clear_variable = AOW_var_sw_points_translucer
-				clear_variable = AOW_var_sw_points_soldier
-				clear_variable = AOW_var_sw_points_amenities
-				clear_variable = AOW_var_sw_points_enforcer
-				clear_variable = AOW_var_sw_points_bio_trophy
-			}
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+			validate_planet_buildings_and_districts = yes
 		}
 	}
 }
@@ -374,56 +299,17 @@ AOW_MEGA_starcage_world_4 = {
 		from = { country_event = { id = AOW_evt_starcage_world.104 } }
 		random_system_planet = {
 			limit = { has_planet_flag = AOW_flag_PLNT_starcage_world_@fromfrom }
-			set_planet_size = 100
+			set_planet_size = 50
 			set_variable = { which = AOW_var_PLNT_starcage_world_level value = 3 }
 			if = {
 				limit = { has_owner = no }
 				set_owner = fromfrom.owner
 				set_controller = fromfrom.owner
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
-			if = {
-				limit = {
-					check_variable_arithmetic = {
-						which = value:AOW_var_sw_all_points
-						value != 45
-					}
-				}
-				clear_variable = AOW_var_sw_points
-				clear_variable = AOW_var_sw_points_technician
-				clear_variable = AOW_var_sw_points_miner
-				clear_variable = AOW_var_sw_points_farmer
-				clear_variable = AOW_var_sw_points_trader
-				clear_variable = AOW_var_sw_points_researcher
-				clear_variable = AOW_var_sw_points_bureaucrat
-				clear_variable = AOW_var_sw_points_artisan
-				clear_variable = AOW_var_sw_points_foundry
-				clear_variable = AOW_var_sw_points_chemist
-				clear_variable = AOW_var_sw_points_refiner
-				clear_variable = AOW_var_sw_points_translucer
-				clear_variable = AOW_var_sw_points_soldier
-				clear_variable = AOW_var_sw_points_amenities
-				clear_variable = AOW_var_sw_points_enforcer
-				clear_variable = AOW_var_sw_points_bio_trophy
-			}
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+			validate_planet_buildings_and_districts = yes
 		}
 	}
 }
@@ -432,6 +318,9 @@ AOW_MEGA_starcage_world_5 = {
 	#construction_entity = "starcage_world_03_construction_entity"
 	portrait = "GFX_megastructure_starcage_world_background"
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = starcage_world }
+	}
 	build_time = @AOW_var_SW_5_TIME
 	resources = {
 		category = megastructures
@@ -457,50 +346,11 @@ AOW_MEGA_starcage_world_5 = {
 				limit = { has_owner = no }
 				set_owner = fromfrom.owner
 				set_controller = fromfrom.owner
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
-			if = {
-				limit = {
-					check_variable_arithmetic = {
-						which = value:AOW_var_sw_all_points
-						value != 45
-					}
-				}
-				clear_variable = AOW_var_sw_points
-				clear_variable = AOW_var_sw_points_technician
-				clear_variable = AOW_var_sw_points_miner
-				clear_variable = AOW_var_sw_points_farmer
-				clear_variable = AOW_var_sw_points_trader
-				clear_variable = AOW_var_sw_points_researcher
-				clear_variable = AOW_var_sw_points_bureaucrat
-				clear_variable = AOW_var_sw_points_artisan
-				clear_variable = AOW_var_sw_points_foundry
-				clear_variable = AOW_var_sw_points_chemist
-				clear_variable = AOW_var_sw_points_refiner
-				clear_variable = AOW_var_sw_points_translucer
-				clear_variable = AOW_var_sw_points_soldier
-				clear_variable = AOW_var_sw_points_amenities
-				clear_variable = AOW_var_sw_points_enforcer
-				clear_variable = AOW_var_sw_points_bio_trophy
-			}
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = 45 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_researcher V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_amenities V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_enforcer V = 0 }
-			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+			validate_planet_buildings_and_districts = yes
 		}
 	}
 }

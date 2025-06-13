@@ -376,13 +376,13 @@ country_event = {
 			limit = { any_owned_leader = { is_gestalt_node = yes } }
 			event_target:AOW_target_leader = {
 				remove_all_traits = yes
-				add_trait_no_notify = subclass_official_governor
-				add_trait_no_notify = leader_trait_laquly_gestalt
-				add_trait_no_notify = leader_trait_red_dawn
-				add_trait_no_notify = leader_trait_forge_focus_3 #冶金专精（专精）
-				add_trait_no_notify = leader_trait_pop_focused_3 #高效委派
-				add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
-				add_trait_no_notify = leader_trait_cyborg
+				add_trait = { trait = subclass_official_governor show_message = no }
+				add_trait = { trait = leader_trait_laquly_gestalt show_message = no }
+				add_trait = { trait = leader_trait_red_dawn show_message = no }
+				add_trait = { trait = leader_trait_forge_focus_3 show_message = no } #冶金专精（专精）
+				add_trait = { trait = leader_trait_pop_focused_3 show_message = no } #高效委派
+				add_trait = { trait = leader_trait_bureaucrat show_message = no } #上下同心
+				add_trait = { trait = leader_trait_cyborg show_message = no }
 			}
 		}
 	}
@@ -452,7 +452,7 @@ country_event = {
 			limit = { any_owned_leader = { is_gestalt_node = yes } }
 			custom_tooltip = red_dawn.100.gestalt.hire_custom_tooltip
 			ruler = {
-				add_trait = leader_trait_laquly_node
+				add_trait = { trait = leader_trait_laquly_node }
 			}
 		}
 		hidden_effect = {
@@ -475,13 +475,13 @@ country_event = {
 				limit = { any_owned_leader = { is_gestalt_node = yes } }
 				event_target:AOW_target_leader = {
 					remove_all_traits = yes
-					add_trait_no_notify = subclass_official_governor
-					add_trait_no_notify = leader_trait_laquly_gestalt
-					add_trait_no_notify = leader_trait_red_dawn
-					add_trait_no_notify = leader_trait_forge_focus_3 #冶金专精（专精）
-					add_trait_no_notify = leader_trait_pop_focused_3 #高效委派
-					add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
-					add_trait_no_notify = leader_trait_cyborg
+					add_trait = { trait = subclass_official_governor show_message = no }
+					add_trait = { trait = leader_trait_laquly_gestalt show_message = no }
+					add_trait = { trait = leader_trait_red_dawn show_message = no }
+					add_trait = { trait = leader_trait_forge_focus_3 show_message = no } #冶金专精（专精）
+					add_trait = { trait = leader_trait_pop_focused_3 show_message = no } #高效委派
+					add_trait = { trait = leader_trait_bureaucrat show_message = no } #上下同心
+					add_trait = { trait = leader_trait_cyborg show_message = no }
 				}
 			}
 			create_message = {

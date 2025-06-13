@@ -58,7 +58,7 @@ on_destroy_star_system = {
 # From = 摧毁恒星基地的舰船
 on_starbase_destroyed = {
 	events = {
-		AOW_mega_notification.1166
+		AOW_evt_planetary_blaster_system.106
 	}
 }
 # Called when a Starbase changes owner
@@ -66,7 +66,7 @@ on_starbase_destroyed = {
 # FROM = Former Owner (Country)
 on_starbase_transfer = {
 	events = {
-		AOW_mega_notification.1167
+		AOW_evt_planetary_blaster_system.107
 	}
 }
 
@@ -101,7 +101,7 @@ on_megastructure_ownerless = {
 
 on_yearly_pulse_country = {
 	events = {
-		AOW_mega_notification.2035
+		AOW_evt_psychic_device.110
 		red_dawn.1
 	}
 }

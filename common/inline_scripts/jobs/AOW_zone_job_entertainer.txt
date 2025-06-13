@@ -1,0 +1,18 @@
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			NOT = { has_valid_civic = civic_warrior_culture }
+		}
+	}
+	job_entertainer_add = $AMOUNT$
+}
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+	job_duelist_add = $AMOUNT$
+}

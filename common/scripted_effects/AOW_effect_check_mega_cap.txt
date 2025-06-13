@@ -1,6 +1,7 @@
 #megastructure: on_build_start	巨构建造开始时，检查巨构上限，如果超过上限则返回资源
 
 AOW_effect_check_mega_cap = {
+	optimize_memory
 	from = {
 		if = {
 			limit = {
@@ -63,6 +64,7 @@ AOW_effect_check_mega_cap = {
 	}
 }
 AOW_effect_check_ai_habitat_mega_cap = {
+	optimize_memory
 	from = {
 		if = {
 			limit = { is_ai = yes }

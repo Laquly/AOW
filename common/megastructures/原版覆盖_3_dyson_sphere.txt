@@ -10,15 +10,38 @@ dyson_sphere_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
 			unity = 1000
 		}
-		upkeep = { energy = 5 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 5
+		}
 	}
 	prerequisites = { "tech_dyson_sphere" }
 	potential = { AOW_trigger_mega_potential = { KEY = dyson_sphere } }
 	possible = {
-		exists = starbase
+		hidden_trigger = {
+			exists = starbase
+		}
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_dyson_sphere } }
@@ -67,35 +90,9 @@ dyson_sphere_0 = {
 				fail_text = "requires_no_anomaly"
 				NOT = { has_anomaly = yes }
 			}
-			if = {
-				limit = {
-					from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
-				}
-				custom_tooltip = {#放置处不能有巨构
-					fail_text = "requires_no_existing_megastructure"
-					AOW_trgr_PLNT_existing_megastructure = no
-				}
-			}
-			else_if = {
-				limit = {
-					from = { has_technology = AOW_TECH_hyperdimension_hiding }
-				}
-				custom_tooltip = {#放置处不能有巨构
-					fail_text = "requires_no_existing_megastructure"
-					AOW_trgr_PLNT_megastructure_planet = no
-					NOT = {
-						solar_system = {
-							any_system_megastructure = {
-								planet = { is_same_value = root }
-								OR = {
-									has_megastructure_flag = dyson_sphere
-									has_megastructure_flag = dyson_swarm
-									has_megastructure_flag = no_stacking
-								}
-							}
-						}
-					}
-				}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
 			}
 		}
 	}
@@ -130,36 +127,71 @@ dyson_sphere_0 = {
 			planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 			if = {
 				limit = { planet = { AOW_trgr_PLNT_hyper_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_hyper
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_super_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_super
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_o_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_O
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_b_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_B
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_giant_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_giant
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_a_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_A
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_f_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_F
 				finish_upgrade = yes
 			}
@@ -170,11 +202,21 @@ dyson_sphere_0 = {
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_k_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_K
 				finish_upgrade = yes
 			}
 			else_if = {
 				limit = { planet = { AOW_trgr_PLNT_m_star = yes } }
+				# add_modifier = {
+				# 	modifier = AOW_mod_MEGA_base_build_speed_add
+				# 	mult = AOW_var_country_mega_base_build_speed
+				# 	days = -1
+				# }
 				upgrade_megastructure_to = AOW_MEGA_dyson_sphere_0_M
 				finish_upgrade = yes
 			}
@@ -365,10 +407,7 @@ dyson_sphere_5 = {
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	#show_in_outliner = no
 	outliner_trigger = {
-		exists = owner
-		owner = {
-			has_country_flag = can_build_disco_sphere
-		}
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_sphere }
 	}
 	build_time = 3600
 	use_planet_resource = yes
@@ -438,10 +477,7 @@ dyson_sphere_restored = {
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	#show_in_outliner = no
 	outliner_trigger = {
-		exists = owner
-		owner = {
-			has_country_flag = can_build_disco_sphere
-		}
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_sphere }
 	}
 	build_time = 7200
 	scales_with_planet = yes

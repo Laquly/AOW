@@ -23,8 +23,9 @@ AOW_shipsize_satellite_defense_base = {
 	is_space_station = yes
 	base_buildtime = 720
 	auto_upgrade = no
+	available_to_everyone = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	prerequisites = { "AOW_TECH_satellite_defense_base" }
+	#prerequisites = { "AOW_TECH_satellite_defense_base" }
 	class = shipclass_military_station
 	ship_class_icon_frame = 28
 	icon = ship_size_military_station
@@ -33,6 +34,9 @@ AOW_shipsize_satellite_defense_base = {
 	required_component_set = "combat_computers"
 	potential_construction = { always = no }
 	possible_construction = { always = no }
+	potential_country = {
+		has_technology = AOW_TECH_satellite_defense_base
+	}
 	resources = {
 		category = ships
 		upkeep = {

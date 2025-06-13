@@ -1,6 +1,6 @@
 ﻿l_english:
 
- ap_cosmic_wonders:0"Cosmic Wonder"
+ ap_cosmic_wonders:0"Cosmic Wonders"
  ap_cosmic_wonders_effects:0"Unlock the "Cosmic Wonder" level megastructure technology route.\nA huge and time-consuming super megastructure that requires maintenance costs of dark matter, but can bring us great benefits.\n\n"
  ap_cosmic_wonders_effects_without53:0"$ap_cosmic_wonders_effects$§ETips for the required technologies: §!\n£physics_research£§Y$tech_space_science_5$§! ($mod_station_researchers_produces_mult$: §G+10%§!)\n£physics_research£§Y$tech_basic_science_lab_3$§! (§HUnlocks Building: §!$building_research_lab_3$)\n\n"
  ap_cosmic_wonders_effects_without3:0"$ap_cosmic_wonders_effects$§ETips for the required technology: §!\n£physics_research£§Y$tech_basic_science_lab_3$§! (§HUnlocks Building: §!$building_research_lab_3$)\n\n"
@@ -9,3 +9,5 @@
  ap_era_of_deterrence:0"Era of Deterrence"
  ap_era_of_deterrence_desc:0"As the deterrence theory becomes more popular in our country, some ideas of gigantic weapons that could overturn our cognition have been proposed. They are considered to be the strongest deterrence force in this galaxy. Since we have achieved a leap in the technology of building megastructures, why not integrate it with military technology to achieve a leap in military power?"
  ap_era_of_deterrence_effects:0"\n§EUnlocks Tech Route: §!\n£engineering_research£§Y$tech_planetary_ship$§!§L(A gigantic warship with a planet as its hull, need §B$ap_galactic_wonders$§!)§!\n£physics_research£§Y$AOW_MEGA_starfall_spear$§!§L(A trans-galactic strike weapon powered by a star, need §R$ap_cosmic_wonders$§!)§!\n£society_research£§Y$AOW_MEGA_celestial_shield$§!§L(Provide a large number of defense platform buffs, automatically resist $AOW_MEGA_starfall_spear$’s attack, need §R$ap_cosmic_wonders$§!)§!\n"
+
+ ap_master_builders_effects:"§HUnlocks Edict:§! Improved Mega Construction Efficiency\n$t$—Five edicts that require additional resources to significantly increase the construction speed of megastructures."

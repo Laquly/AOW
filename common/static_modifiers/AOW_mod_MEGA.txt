@@ -12,10 +12,11 @@ AOW_mod_MEGA_build_speed_adjustment = {
 }
 
 
-AOW_mod_test_1 = {
-	megastructures_cost_mult = -1
-	megastructures_alloys_cost_mult = -1
-	megastructures_alloys_cost_add = -100
+AOW_mod_MEGA_base_build_speed_add = {
+	megastructure_build_speed_add = 1
+}
+AOW_mod_MEGA_base_build_speed_reduce = {
+	megastructure_build_speed_add = -1
 }
 AOW_mod_test_2 = {
 	country_cost_mult = -1

@@ -12,10 +12,32 @@ matter_decompressor_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
 			unity = 5000
 		}
-		upkeep = { energy = 5 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		upkeep = {
+			energy = 5
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -48,7 +70,10 @@ matter_decompressor_0 = {
 				fail_text = "AOW_mega_requires_PLNT_BlackHole"
 				is_planet_class = pc_black_hole
 			}
-			AOW_trigger_mega_planet_has_megastructure = { key = matter_decompressor }
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
+			}
 		}
 	}
 
@@ -96,8 +121,32 @@ matter_decompressor_1 = {
 			alloys = 12500
 			unity = 5000
 		}
-		produces = { minerals = 500 }
-		upkeep = { energy = 25 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 12500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 12500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 12500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 25
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -128,11 +177,34 @@ matter_decompressor_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 12500
 			unity = 5000
 		}
-		produces = { minerals = 1000 }
-		upkeep = { energy = 50 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 12500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 12500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 12500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 50
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -163,11 +235,34 @@ matter_decompressor_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 12500
 			unity = 5000
 		}
-		produces = { minerals = 1500 }
-		upkeep = { energy = 75 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 12500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 12500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 12500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			minerals = 1500
+		}
+		upkeep = {
+			energy = 75
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -195,15 +290,41 @@ matter_decompressor_4 = {
 	scale_offset = yes
 	use_planet_resource = yes
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = matter_decompressor }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 12500
 			unity = 5000
 		}
-		produces = { minerals = 2000 }
-		upkeep = { energy = 100 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 12500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 12500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 12500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 100
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -277,15 +398,41 @@ matter_decompressor_restored = {
 	scale_offset = yes
 	use_planet_resource = yes
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = matter_decompressor }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 20000
 			unity = 7500
 		}
-		produces = { minerals = 2000 }
-		upkeep = { energy = 100 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 20000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 20000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 20000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 100
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure

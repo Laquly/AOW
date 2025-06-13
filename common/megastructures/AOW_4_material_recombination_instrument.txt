@@ -97,7 +97,7 @@ AOW_MEGA_material_recombination_instrument_0 = {
 				remove_country_flag = AOW_flag_CNTR_mri_1
 				set_country_flag = AOW_flag_CNTR_mri_2
 			}
-			country_event = { id = AOW_mega_notification.3040 }
+			country_event = { id = AOW_evt_material_recombination_instrument.100 }
 		}
 		fromfrom = {
 			set_megastructure_flag = material_recombination_instrument
@@ -193,7 +193,7 @@ AOW_MEGA_material_recombination_instrument_1 = {
 	upgrade_from = { AOW_MEGA_material_recombination_instrument_0 }
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
-		from = { country_event = { id = AOW_mega_notification.3041 } }
+		from = { country_event = { id = AOW_evt_material_recombination_instrument.101 } }
 		fromfrom = { AOW_eft_MEGA_set_mri_variable = yes }
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}
@@ -283,7 +283,7 @@ AOW_MEGA_material_recombination_instrument_2 = {
 	prerequisites = { "AOW_TECH_material_recombination_instrument" }
 	upgrade_from = { AOW_MEGA_material_recombination_instrument_1 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3042 } }
+		from = { country_event = { id = AOW_evt_material_recombination_instrument.102 } }
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}
 }
@@ -372,7 +372,7 @@ AOW_MEGA_material_recombination_instrument_3 = {
 	prerequisites = { "AOW_TECH_material_recombination_instrument" }
 	upgrade_from = { AOW_MEGA_material_recombination_instrument_2 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3043 } }
+		from = { country_event = { id = AOW_evt_material_recombination_instrument.103 } }
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}
 }
@@ -461,7 +461,7 @@ AOW_MEGA_material_recombination_instrument_4 = {
 	prerequisites = { "AOW_TECH_material_recombination_instrument" }
 	upgrade_from = { AOW_MEGA_material_recombination_instrument_3 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3044 } }
+		from = { country_event = { id = AOW_evt_material_recombination_instrument.104 } }
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}
 }
@@ -554,7 +554,7 @@ AOW_MEGA_material_recombination_instrument_5 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3045 }
+			country_event = { id = AOW_evt_material_recombination_instrument.105 }
 		}
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}

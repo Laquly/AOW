@@ -81,24 +81,41 @@ guiTypes = {
 			}
 		}
 		effectButtonType = {
-			name = "planet_target"
-			#position = { x = 2 y = 166 }
+			name = "button_left_null"
+			position = { x = 2 y = 166 }
+			spriteType = "GFX_AOW_button_starfall_spear_left_down"
+			buttonFont = malgun_goth_24
+			format = center
+			text = AOW_text_starfall_spear_target_null
+			multiline = yes
+			effect = AOW_btn_starfall_spear_type_null
+		}
+		effectButtonType = {
+			name = "button_left_planet"
 			position = { x = 2 y = 166 }
 			spriteType = "GFX_AOW_button_starfall_spear_left_down"
 			buttonFont = "malgun_goth_24"
 			format = center
-			text = AOW_text_btn_planet_target
-			effect = AOW_btn_planet_target
+			text = AOW_text_starfall_spear_target_planet
+			effect = AOW_btn_starfall_spear_type_planet
 		}
 		effectButtonType = {
-			name = "system_target"
-			#position = { x = 237 y = 166 }
+			name = "button_left_system"
+			position = { x = 2 y = 166 }
+			spriteType = "GFX_AOW_button_starfall_spear_left_down"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_starfall_spear_target_system
+			effect = AOW_btn_starfall_spear_type_system
+		}
+		effectButtonType = {
+			name = "button_right"
 			position = { x = 237 y = 166 }
 			spriteType = "GFX_AOW_button_starfall_spear_right_down"
 			buttonFont = "malgun_goth_24"
 			format = center
-			text = AOW_text_btn_system_target
-			effect = AOW_btn_system_target
+			text = AOW_text_clear_all_targets
+			effect = AOW_btn_clear_all_targets
 		}
 		background = {#整体背景
 			name = "background"
@@ -119,8 +136,8 @@ guiTypes = {
 			shortcut = "q"
 		}
 
-		@planet_button_x = 73
-		@system_button_x = 237
+		@button_left_x = 73
+		@button_right_x = 237
 		@target_button_y1 = 235
 		@target_button_y2 = 265
 		@target_button_y3 = 295
@@ -128,9 +145,104 @@ guiTypes = {
 		@target_button_y5 = 355
 		@target_button_y6 = 385
 		@target_button_y7 = 415
+		@target_button_y8 = 445
+		@target_button_y9 = 475
+		@target_button_y10 = 505
+		#显示所选目标
+		effectButtonType = {
+			name = "target_01"
+			position = { x = @button_left_x y = @target_button_y1 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_01
+			effect = AOW_btn_starfall_spear_target_01
+		}
+		effectButtonType = {
+			name = "target_02"
+			position = { x = @button_left_x y = @target_button_y2 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_02
+			effect = AOW_btn_starfall_spear_target_02
+		}
+		effectButtonType = {
+			name = "target_03"
+			position = { x = @button_left_x y = @target_button_y3 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_03
+			effect = AOW_btn_starfall_spear_target_03
+		}
+		effectButtonType = {
+			name = "target_04"
+			position = { x = @button_left_x y = @target_button_y4 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_04
+			effect = AOW_btn_starfall_spear_target_04
+		}
+		effectButtonType = {
+			name = "target_05"
+			position = { x = @button_left_x y = @target_button_y5 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_05
+			effect = AOW_btn_starfall_spear_target_05
+		}
+		effectButtonType = {
+			name = "target_06"
+			position = { x = @button_left_x y = @target_button_y6 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_06
+			effect = AOW_btn_starfall_spear_target_06
+		}
+		effectButtonType = {
+			name = "target_07"
+			position = { x = @button_left_x y = @target_button_y7 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_07
+			effect = AOW_btn_starfall_spear_target_07
+		}
+		effectButtonType = {
+			name = "target_08"
+			position = { x = @button_left_x y = @target_button_y8 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_08
+			effect = AOW_btn_starfall_spear_target_08
+		}
+		effectButtonType = {
+			name = "target_09"
+			position = { x = @button_left_x y = @target_button_y9 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_09
+			effect = AOW_btn_starfall_spear_target_09
+		}
+		effectButtonType = {
+			name = "target_10"
+			position = { x = @button_left_x y = @target_button_y10 }
+			spriteType = "GFX_AOW_button_starfall_spear_target"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_target_10
+			effect = AOW_btn_starfall_spear_target_10
+		}
+		#显示目标可用的打击模式
 		effectButtonType = {#行星目标：模式一
 			name = "mode_planet_01"
-			position = { x = @planet_button_x y = @target_button_y1 }
+			position = { x = @button_right_x y = @target_button_y1 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -139,7 +251,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式二
 			name = "mode_planet_02"
-			position = { x = @planet_button_x y = @target_button_y2 }
+			position = { x = @button_right_x y = @target_button_y2 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -148,7 +260,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式三
 			name = "mode_planet_03"
-			position = { x = @planet_button_x y = @target_button_y3 }
+			position = { x = @button_right_x y = @target_button_y3 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -157,7 +269,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式四
 			name = "mode_planet_04"
-			position = { x = @planet_button_x y = @target_button_y4 }
+			position = { x = @button_right_x y = @target_button_y4 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -166,7 +278,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式五
 			name = "mode_planet_05"
-			position = { x = @planet_button_x y = @target_button_y5 }
+			position = { x = @button_right_x y = @target_button_y5 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -175,7 +287,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式六
 			name = "mode_planet_06"
-			position = { x = @planet_button_x y = @target_button_y6 }
+			position = { x = @button_right_x y = @target_button_y6 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -184,7 +296,7 @@ guiTypes = {
 		}
 		effectButtonType = {#行星目标：模式七
 			name = "mode_planet_07"
-			position = { x = @planet_button_x y = @target_button_y7 }
+			position = { x = @button_right_x y = @target_button_y7 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -194,7 +306,7 @@ guiTypes = {
 
 		effectButtonType = {#星系目标：模式一
 			name = "mode_system_01"
-			position = { x = @system_button_x y = @target_button_y1 }
+			position = { x = @button_right_x y = @target_button_y1 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -203,7 +315,7 @@ guiTypes = {
 		}
 		effectButtonType = {#星系目标：模式二
 			name = "mode_system_02"
-			position = { x = @system_button_x y = @target_button_y2 }
+			position = { x = @button_right_x y = @target_button_y2 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -212,7 +324,7 @@ guiTypes = {
 		}
 		effectButtonType = {#星系目标：模式三
 			name = "mode_system_03"
-			position = { x = @system_button_x y = @target_button_y3 }
+			position = { x = @button_right_x y = @target_button_y3 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -221,7 +333,7 @@ guiTypes = {
 		}
 		effectButtonType = {#星系目标：模式四
 			name = "mode_system_04"
-			position = { x = @system_button_x y = @target_button_y4 }
+			position = { x = @button_right_x y = @target_button_y4 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -230,7 +342,7 @@ guiTypes = {
 		}
 		effectButtonType = {#星系目标：模式五
 			name = "mode_system_05"
-			position = { x = @system_button_x y = @target_button_y5 }
+			position = { x = @button_right_x y = @target_button_y5 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
@@ -239,22 +351,13 @@ guiTypes = {
 		}
 		effectButtonType = {#星系目标：模式六
 			name = "mode_system_06"
-			position = { x = @system_button_x y = @target_button_y6 }
+			position = { x = @button_right_x y = @target_button_y6 }
 			spriteType = "GFX_AOW_button_starfall_spear_mode"
 			buttonFont = "malgun_goth_24"
 			format = center
 			text = AOW_text_btn_system_target_mode_06
 			effect = AOW_btn_system_target_mode_06
 		}
-		# effectButtonType = {#星系目标：模式七
-		# 	name = "mode_system_07"
-		# 	position = { x = @system_button_x y = @target_button_y7 }
-		# 	spriteType = "GFX_AOW_button_starfall_spear_mode"
-		# 	buttonFont = "malgun_goth_24"
-		# 	format = center
-		# 	text = AOW_text_btn_system_target_mode_07
-		# 	effect = AOW_btn_system_target_mode_07
-		# }
 
 ######################################################################
 ######################################################################

@@ -6,13 +6,15 @@
  AOW_MEGA_space_sensor_station:0"Space Sensor Station"
  AOW_MEGA_space_arena:0"Astral Arena"
  AOW_MEGA_asteroid_mining_station:0"Asteroid Mining Station"
+ AOW_MEGA_satellite_defense_base:0"Satellite Defense Base"
+ AOW_MEGA_resource_drilling_station:0"Resource Drilling Station"
 
- AOW_MEGA_advanced_hyperlane_controller:0"Starnet"
+ AOW_MEGA_advanced_hyperlane_controller:0"Star Net"
  AOW_MEGA_artifacts_transcription_palace:0"Artifacts Transcription Palace"
  AOW_MEGA_cemetery_of_martyrs:0"Valhalla"
  AOW_MEGA_dark_matter_curvature_trap:0"Ether Potential Well"
  AOW_MEGA_deep_space_prison:0"Deep Space Prison"
- AOW_MEGA_hyperlane_controller:0"Star Trails"
+ AOW_MEGA_hyperlane_controller:0"Star Trail"
  AOW_MEGA_nanites_activator:0"Nanites Activator"
  AOW_MEGA_nanites_transmutation:0"Nanites Transmutation"
  AOW_MEGA_naval_command_base:0"Naval Command Base"
@@ -23,6 +25,9 @@
  AOW_MEGA_synthetic_food_factory:0"Synthetic Food Factory"
  AOW_MEGA_zro_sublimator:0"Zro Sublimator"
  AOW_MEGA_planetary_blaster_system:0"Planetary Blaster System"
+ AOW_MEGA_plane_siphon:0"Plane Siphon"
+ AOW_MEGA_wonder_construction_bureau:0"Wonder Construction Bureau"
+ AOW_MEGA_biological_cultivation_pod:0"Biological Cultivation Pod"#
 
  AOW_MEGA_ring_world_2:0"Double Ring World"
  AOW_MEGA_void_vortex:0"Void Vortex"
@@ -33,25 +38,19 @@
  AOW_MEGA_curvature_pressurization_field:0"Curvature Pressurization Field"
  AOW_MEGA_celestial_decompressor:0"Celestial Decompressor"
  AOW_MEGA_stellar_eater:0"Stellar Eater"
+ AOW_MEGA_star_guardian:0"Star Guardian"
 
  AOW_MEGA_multi_dimensional_warehouse:0"Multi-dimensional Warehouse"
  AOW_MEGA_ring_world_3:0"Triple Ring World"
  AOW_MEGA_ring_world_4:0"Quadruple Ring World"
  AOW_MEGA_star_transfer:0"Fornax"
- AOW_MEGA_quindecillion_stellar_quantum_matrix:0"Quindecillion Stellar Quantum Matrix"
  AOW_MEGA_heaven_navigation_bureau:0"Celestial Navigation Pharos"
  AOW_MEGA_miraculous_shipyard:0"Miraculous Shipyard"
+ AOW_MEGA_quindecillion_stellar_quantum_matrix:0"Q.S.Q.M."
  AOW_MEGA_material_recombination_instrument:0"Material Recombination Instrument"
  AOW_MEGA_starfall_spear:0"Starfall Spear"
  AOW_MEGA_celestial_shield:0"Celestial Shield"
-
- ############### 特殊项目 ###############
-
- AOW_locator_chain_mega_title:0"£AOW_megastructures£§BMegastructure Locator§!£AOW_megastructures£"
- AOW_locator_chain_mega_desc:0"It is only used to locate megastructures and supports all types of megastructures, including those of other mods."
-
- AOW_locator_sp_mega:0"§Y[this.GetName]§!§L([this.solar_system.GetName])§!"
- AOW_locator_sp_mega_DESC:0"§Y[this.GetName]§! megastructure in §Y[this.solar_system.GetName]§! system."
+ AOW_MEGA_starcage_world:0"Starcage World"
 
  ############### 星基建筑 ###############
 
@@ -73,3 +72,4 @@
  AOW_bypass_advanced_hyperlane_controller_active:0"$AOW_MEGA_advanced_hyperlane_controller$ in the receiving state."
  AOW_bypass_advanced_hyperlane_controller_active_desc:0"This system has a $AOW_MEGA_advanced_hyperlane_controller$ in the receiving state."
 
+ AOW_num_planetary_body_tooltip:"§ENumber of various types of celestial bodies:§!\n$t$—Major Planetary Body:§Y[root.AOW_var_system_num_non_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—Minor Planetary Body:§Y[root.AOW_var_system_num_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—Ordinary Asteroid:§Y[root.AOW_var_system_num_pc_asteroid]§!\n$t$—Crystalline Asteroid:§Y[root.AOW_var_system_num_pc_crystal_asteroid]§!\n$t$—Ice Asteroid:§Y[root.AOW_var_system_num_pc_ice_asteroid]§!\n$t$§L—From MOD "Age of Wonder"§!"

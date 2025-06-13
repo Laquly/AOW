@@ -3,7 +3,7 @@ AOW_MEGA_deep_space_prison_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	build_type = outside_gravity_well
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
 	build_time = @AOW_var_DSP_0_TIME
 	resources = {
@@ -71,7 +71,7 @@ AOW_MEGA_deep_space_prison_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1080 } }
+		from = { country_event = { id = AOW_evt_deep_space_prison.100 } }
 		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_deep_space_prison_@owner }
 	}
 }
@@ -106,7 +106,7 @@ AOW_MEGA_deep_space_prison_1 = {
 	prerequisites = { "AOW_TECH_deep_space_prison" }
 	upgrade_from = { AOW_MEGA_deep_space_prison_0 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1081 } }
+		from = { country_event = { id = AOW_evt_deep_space_prison.101 } }
 	}
 }
 AOW_MEGA_deep_space_prison_2 = {
@@ -140,7 +140,7 @@ AOW_MEGA_deep_space_prison_2 = {
 	prerequisites = { "AOW_TECH_deep_space_prison" }
 	upgrade_from = { AOW_MEGA_deep_space_prison_1 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1082 } }
+		from = { country_event = { id = AOW_evt_deep_space_prison.102 } }
 	}
 }
 AOW_MEGA_deep_space_prison_3 = {
@@ -174,15 +174,17 @@ AOW_MEGA_deep_space_prison_3 = {
 	prerequisites = { "AOW_TECH_deep_space_prison" }
 	upgrade_from = { AOW_MEGA_deep_space_prison_2 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.1083 } }
+		from = { country_event = { id = AOW_evt_deep_space_prison.103 } }
 	}
 }
 AOW_MEGA_deep_space_prison_4 = {
 	entity = "deep_space_prison_4_entity"
 	construction_entity = "deep_space_prison_4_construction_entity"
 	portrait = "GFX_megastructure_mega_prison_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = deep_space_prison }
+	}
 	build_time = @AOW_var_DSP_4_TIME
 	resources = {
 		category = megastructures
@@ -212,7 +214,7 @@ AOW_MEGA_deep_space_prison_4 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = AOW_mega_notification.1084 }
+			country_event = { id = AOW_evt_deep_space_prison.104 }
 		}
 	}
 }

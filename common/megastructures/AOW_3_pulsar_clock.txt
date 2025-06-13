@@ -221,6 +221,9 @@ AOW_MEGA_pulsar_clock_4 = {
 	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = psychic_device }
+	}
 	build_time = @AOW_var_PC_4_TIME
 	resources = {
 		category = megastructures

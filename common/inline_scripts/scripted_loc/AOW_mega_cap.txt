@@ -8,7 +8,7 @@ text = {
             }
         }
     }
-    localization_key = AOW_text_infinite
+    localization_key = AOW_text_inf
 }
 text = {
     trigger = {
@@ -19,7 +19,7 @@ text = {
             }
         }
     }
-    localization_key = AOW_text_disabled
+    localization_key = AOW_text_dis
 }
 text = {
     trigger = {

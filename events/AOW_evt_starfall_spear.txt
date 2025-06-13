@@ -346,17 +346,18 @@ country_event = {#选择打击方式
 	custom_gui = "AOW_starfall_spear_ui"
 	picture_event_data = { room = AOW_starfall_spear_room }
 	immediate = {
-		#清空目标
-		AOW_eft_starfall_spear_cancel_all_targets = { scope = root }
 		#标记发射者、发射巨构、发射巨构下的星球、发射巨构所在的星系
 		save_event_target_as = AOW_tgt_CNTR_starfall_spear
 		event_target:AOW_tgt_MEGA_starfall_spear = {
 			planet = { save_event_target_as = AOW_tgt_PLNT_starfall_spear }
 			solar_system = {
 				save_event_target_as = AOW_tgt_SSTM_starfall_spear
+				clear_global_event_target = AOW_tgt_SSTM_starfall_spear_@root
 				save_global_event_target_as = AOW_tgt_SSTM_starfall_spear_@root
 			}
 		}
+		#清空目标
+		AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }
 	}
 	option = {#退出
 		name = AOW_evt_starfall_spear.500.quit
@@ -367,8 +368,8 @@ country_event = {#选择打击方式
 				AOW_eft_MEGA_set_to_initial_state = yes
 			}
 			country_event = { id = AOW_evt_starfall_spear.503 }#通知：冷却完成
-			#清空目标
-			AOW_eft_starfall_spear_cancel_all_targets = { scope = root }
+			#清空目标和旗子
+			AOW_eft_starfall_spear_cancel_all_targets_and_flags = { scope = root }
 		}
 	}
 	option = {#确认
@@ -469,6 +470,8 @@ country_event = {#选择打击方式
 			AOW_eft_start_launching_at_starfall_spear_target = { target = 08 }
 			AOW_eft_start_launching_at_starfall_spear_target = { target = 09 }
 			AOW_eft_start_launching_at_starfall_spear_target = { target = 10 }
+			#清空目标
+			AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }
 		}
 	}
 }
@@ -798,7 +801,6 @@ system_event = {
 			}
 		}
 		remove_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear #移除正在被打击的标识
-		#AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }#清空目标
 	}
 }
 country_event = {
@@ -1565,7 +1567,6 @@ planet_event = {
 			}
 		}
 		remove_planet_flag = AOW_flag_PLNT_is_being_hit_by_starfall_spear #移除正在被打击的标识
-		#AOW_eft_starfall_spear_cancel_all_targets = { scope = event_target:AOW_tgt_CNTR_starfall_spear }#清空目标
 	}
 }
 country_event = {

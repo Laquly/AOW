@@ -102,7 +102,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
 				remove_country_flag = AOW_flag_CNTR_qsqm_1
 				set_country_flag = AOW_flag_CNTR_qsqm_2
 			}
-			country_event = { id = AOW_mega_notification.3060 }
+			country_event = { id = AOW_evt_qsqm.100 }
 		}
 		fromfrom = {
 			set_megastructure_flag = quindecillion_stellar_quantum_matrix
@@ -202,7 +202,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_1 = {
 	ai_weight = { factor = 10 }
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
-		from = { country_event = { id = AOW_mega_notification.3061 } }
+		from = { country_event = { id = AOW_evt_qsqm.101 } }
 	}
 }
 AOW_MEGA_quindecillion_stellar_quantum_matrix_2 = {
@@ -244,7 +244,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_2 = {
 	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3062 } }
+		from = { country_event = { id = AOW_evt_qsqm.102 } }
 	}
 }
 AOW_MEGA_quindecillion_stellar_quantum_matrix_3 = {
@@ -286,7 +286,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_3 = {
 	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_2 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3063 } }
+		from = { country_event = { id = AOW_evt_qsqm.103 } }
 	}
 }
 AOW_MEGA_quindecillion_stellar_quantum_matrix_4 = {
@@ -328,7 +328,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_4 = {
 	upgrade_from = { AOW_MEGA_quindecillion_stellar_quantum_matrix_3 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3064 } }
+		from = { country_event = { id = AOW_evt_qsqm.104 } }
 	}
 }
 AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
@@ -338,6 +338,9 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
 	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quindecillion_stellar_quantum_matrix }
+	}
 	build_time = @AOW_var_QSQM_5_TIME
 	scales_with_planet = yes
 	resources = {
@@ -376,7 +379,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3065 }
+			country_event = { id = AOW_evt_qsqm.105 }
 		}
 	}
 }
@@ -404,6 +407,9 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_restored = {
 	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quindecillion_stellar_quantum_matrix }
+	}
 	build_time = @AOW_var_QSQM_5_TIME
 	scales_with_planet = yes
 	resources = {
@@ -444,7 +450,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_restored = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3065 }
+			country_event = { id = AOW_evt_qsqm.105 }
 		}
 	}
 }

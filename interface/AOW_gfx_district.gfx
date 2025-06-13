@@ -1,0 +1,23 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_AOW_district_sw_common_star_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/AOW_district_sw_common_star_rectangle.dds"
+		borderSize = { x = 1 y = 1 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+	}
+	corneredTileSpriteType = {
+		name = "GFX_AOW_district_sw_neutron_star_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/AOW_district_sw_neutron_star_rectangle.dds"
+		borderSize = { x = 1 y = 1 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+	}
+	corneredTileSpriteType = {
+		name = "GFX_AOW_district_sw_black_hole_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/AOW_district_sw_black_hole_rectangle.dds"
+		borderSize = { x = 1 y = 1 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+	}
+}

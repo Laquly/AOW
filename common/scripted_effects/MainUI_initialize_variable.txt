@@ -86,6 +86,7 @@ AOW_eft_GLBL_default_mega_cap = {
 		AOW_eft_$TYPE$_mega_cap = { VP = -1 VA = -1 KEY = satellite_defense_base }
 		AOW_eft_$TYPE$_mega_cap = { VP = 5 VA = 5 KEY = dyson_swarm }
 		AOW_eft_$TYPE$_mega_cap = { VP = 5 VA = 5 KEY = orbital_arc_furnace }
+		AOW_eft_$TYPE$_mega_cap = { VP = -1 VA = -1 KEY = resource_drilling_station }
 		#普通巨构
 		AOW_eft_$TYPE$_mega_cap = { VP = -1 VA = -1 KEY = gateway }
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = interstellar_assembly }
@@ -113,6 +114,7 @@ AOW_eft_GLBL_default_mega_cap = {
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = zro_sublimator }
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = plane_siphon }
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = wonder_construction_bureau }
+		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = biological_cultivation_pod }
 		#星河奇迹
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = dyson_sphere }
 		AOW_eft_$TYPE$_mega_cap = { VP = 1 VA = 1 KEY = matter_decompressor }

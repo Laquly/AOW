@@ -13,6 +13,26 @@ quantum_catapult_0 = {
 			alloys = 2000
 			influence = 300
 		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 2000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 2000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 2000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
 		upkeep = {
 			energy = 25
 		}
@@ -98,7 +118,24 @@ quantum_catapult_1 = {
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 3000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 3000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 3000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 50
@@ -149,7 +186,24 @@ quantum_catapult_2 = {
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 3000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 3000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 3000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 60
@@ -196,11 +250,31 @@ quantum_catapult_3 = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 1800
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 75
@@ -273,11 +347,31 @@ quantum_catapult_restored = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 50
@@ -390,7 +484,24 @@ quantum_catapult_restored_slingshot = {
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 2500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 2500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 2500
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 30
@@ -457,11 +568,31 @@ quantum_catapult_improved_slingshot = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	entity_offset = { x = 0 y = 0 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = quantum_catapult }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
 			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 50

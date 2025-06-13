@@ -11,7 +11,7 @@ AOW_btn_$KEY$_ai_quick_switch = {#已禁用
 #玩家
 AOW_btn_$KEY$_player_quick_switch = {#切换：禁用、无限
 	allow = { always = yes }
-	potential = { from = { check_variable = { which = AOW_var_page value = 4 } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
 	effect = {
 		if = {
 			limit = {

@@ -1,6 +1,132 @@
+#巨构拆除回收
 AOW_var_megastructure_dismantle_refund = {
-    base = 0
-    add = modifier:megastructure_dismantle_refund_mult
-    min = 0
-    max = 1
+	base = 0
+	add = modifier:megastructure_dismantle_refund_mult
+	min = 0
+	max = 1
+}
+#发射星系和目标星系的总和距离
+AOW_var_total_system_distance = {
+	base = 0
+	modifier = {
+		is_variable_set = AOW_var_system_distance_01
+		add = AOW_var_system_distance_01
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_02
+		add = AOW_var_system_distance_02
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_03
+		add = AOW_var_system_distance_03
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_04
+		add = AOW_var_system_distance_04
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_05
+		add = AOW_var_system_distance_05
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_06
+		add = AOW_var_system_distance_06
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_07
+		add = AOW_var_system_distance_07
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_08
+		add = AOW_var_system_distance_08
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_09
+		add = AOW_var_system_distance_09
+	}
+	modifier = {
+		is_variable_set = AOW_var_system_distance_10
+		add = AOW_var_system_distance_10
+	}
+}
+AOW_var_total_system_distance_square = {
+	base = 0
+	add = value:AOW_var_total_system_distance
+	pow = 2
+}
+
+#坠星天矛当前所选目标数量
+AOW_var_starfall_spear_num_of_targets = {
+	base = 0
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_01_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_02_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_03_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_04_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_05_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_06_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_07_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_08_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_09_@$scope$
+		add = 1
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_10_@$scope$
+		add = 1
+	}
+	max = 10
+}
+#坠星天矛星系目标数量，这样写是希望能通过比较灵活的修正来增加可选上限
+AOW_var_starfall_spear_system_target_capacity = {
+	base = 1
+	add = from.modifier:starfall_spear_system_target_add #修正：坠星天矛可选星系数量
+	max = 10
+}
+AOW_var_starfall_spear_system_target_capacity_desc = {
+	base = 1
+	add = modifier:starfall_spear_system_target_add #修正：坠星天矛可选星系数量
+	max = 10
+}
+#坠星天矛行星目标数量，这样写是希望能通过比较灵活的修正来增加可选上限
+AOW_var_starfall_spear_planet_target_capacity = {
+	base = 2
+	add = from.modifier:starfall_spear_planet_target_add #修正：坠星天矛可选行星数量
+	max = 10
+}
+AOW_var_starfall_spear_planet_target_capacity_desc = {
+	base = 2
+	add = modifier:starfall_spear_planet_target_add #修正：坠星天矛可选行星数量
+	max = 10
+}
+AOW_var_virtuality_jobs_mult = {
+	base = 1
+	modifier = {
+		exists = owner
+		owner = { has_active_tradition = tr_virtuality_4 }
+		mult = 1.5
+	}
 }

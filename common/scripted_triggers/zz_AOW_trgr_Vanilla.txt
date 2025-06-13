@@ -56,12 +56,12 @@ can_build_megastructures = {
 		has_technology = tech_ring_world
 	}
 }
-#has_no_non_gate_megastructure = {
-#	OR = {
-#		has_any_megastructure = no
-#		any_system_megastructure = { NOT = { exists = planet } }
-#	}
-#}
+has_no_non_gate_megastructure = {
+	OR = {
+		has_any_megastructure = no
+		any_system_megastructure = { NOT = { exists = planet } }
+	}
+}
 can_dismantle_megastructure = {
 	is_upgrading = no
 	solar_system = {

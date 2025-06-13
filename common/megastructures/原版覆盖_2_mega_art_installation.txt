@@ -10,10 +10,31 @@ mega_art_installation_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
 			unity = 2500
 		}
-		upkeep = { energy = 5 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 5
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -108,11 +129,34 @@ mega_art_installation_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		produces = { unity = 100 }
-		upkeep = { energy = 10 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			unity = 100
+		}
+		upkeep = {
+			energy = 10
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -126,6 +170,7 @@ mega_art_installation_1 = {
 	prerequisites = { tech_mega_art }
 	country_modifier = {
 		planet_amenities_mult = 0.05
+		planetary_ascension_cost_mult = -0.05
 	}
 	ai_weight = {
 		modifier = { factor = 0	from = { is_at_war = yes } }
@@ -147,11 +192,34 @@ mega_art_installation_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		produces = { unity = 200 }
-		upkeep = { energy = 20 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			unity = 200
+		}
+		upkeep = {
+			energy = 20
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -164,7 +232,8 @@ mega_art_installation_2 = {
 	upgrade_from = { mega_art_installation_1 }
 	prerequisites = { "tech_mega_art" }
 	country_modifier = {
-		planet_amenities_mult = 0.10
+		planet_amenities_mult = 0.1
+		planetary_ascension_cost_mult = -0.1
 	}
 	ai_weight = {
 		modifier = { factor = 0	from = { is_at_war = yes } }
@@ -186,11 +255,34 @@ mega_art_installation_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		produces = { unity = 300 }
-		upkeep = { energy = 30 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			unity = 300
+		}
+		upkeep = {
+			energy = 30
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -205,6 +297,7 @@ mega_art_installation_3 = {
 	show_prereqs = yes
 	country_modifier = {
 		planet_amenities_mult = 0.15
+		planetary_ascension_cost_mult = -0.15
 	}
 	ai_weight = {
 		modifier = { factor = 0	from = { is_at_war = yes } }
@@ -226,6 +319,9 @@ mega_art_installation_4 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = mega_art_installation }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -250,6 +346,7 @@ mega_art_installation_4 = {
 	possible = { from = { has_ancrel = yes } }
 	country_modifier = {
 		planet_amenities_mult = 0.2
+		planetary_ascension_cost_mult = -0.2
 	}
 	ai_weight = {
 		factor = 10
@@ -312,11 +409,34 @@ mega_art_installation_restored = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 3200
 		}
-		produces = { unity = 300 }
-		upkeep = { energy = 30 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		produces = {
+			unity = 300
+		}
+		upkeep = {
+			energy = 30
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -330,6 +450,7 @@ mega_art_installation_restored = {
 	possible = { from = { has_technology = tech_mega_engineering } }
 	country_modifier = {
 		planet_amenities_mult = 0.15
+		planetary_ascension_cost_mult = -0.15
 	}
 	ai_weight = {
 		modifier = { factor = 0	from = { is_at_war = yes } }
@@ -366,6 +487,9 @@ mega_art_installation_restored_2 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = mega_art_installation }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
@@ -389,6 +513,7 @@ mega_art_installation_restored_2 = {
 	show_prereqs = no
 	country_modifier = {
 		planet_amenities_mult = 0.2
+		planetary_ascension_cost_mult = -0.2
 	}
 	ai_weight = {
 		modifier = { factor = 0	from = { is_at_war = yes } }

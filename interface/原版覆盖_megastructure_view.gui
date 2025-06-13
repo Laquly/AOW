@@ -1,14 +1,14 @@
 #这里饱含了针对所有巨构（包括其他MOD）的定位功能、奇观拓展的大量自带功能
 #一旦被覆盖，将全部失效，还请看到这里的各位modder们手下留情，谢谢！
 
-#It is full of positioning functions for all megastructures (including other MODS), and a large number of built-in functions of Age Of Wonder. 
+#It is full of positioning functions for all megastructures (including other MODS), and a large number of built-in functions of Age Of Wonder.
 #Once it is covered, it will all become invalid. Please see that modders here shows mercy. Thank you!
 
 guiTypes = {
 	containerWindowType = {
 		name = "megastructure_view"
-		position = { x = 35 y = -91 }
-		size = { width = 660 height = 640 }
+		position = { x = 35 y = -80 }
+		size = { width = 660 height = 670 }
 		orientation = lower_left
 		origo = lower_left
 		moveable = yes
@@ -77,13 +77,45 @@ guiTypes = {
 			pdx_tooltip = "TOOLTIP_AMBIENT_OBJECT_FOCUS"
 			clicksound = "back_click"
 		}
+		effectButtonType = {#定位按钮
+			name = "AOW_locator_button"
+			position = { x = -118 y = 16 }
+			spriteType = "GFX_button_planet"
+			orientation = upper_right
+			effect = AOW_btn_view_ui_locator
+			clicksound = interface
+			oversound = mouse_over
+			shortcut = "r"
+		}
 		buttonType = {#拆除按钮
 			name = "dismantle"
 			spriteType = "GFX_dismantle_megastructure"
-			position = { x = -118 y = 16 }
+			position = { x = -154 y = 16 }
 			orientation = upper_right
 			pdx_tooltip = "DISMANTLE"
 			clicksound = "back_click"
+			shortcut = "del"
+		}
+		effectButtonType = {
+			name = "mega_outliner_default"
+			position = { x = -46 y = 52 }
+			spriteType = "GFX_AOW_mega_outliner_default"
+			orientation = upper_right
+			effect = AOW_btn_view_ui_outliner_default
+		}
+		effectButtonType = {
+			name = "mega_outliner_show"
+			position = { x = -46 y = 52 }
+			spriteType = "GFX_AOW_mega_outliner_show"
+			orientation = upper_right
+			effect = AOW_btn_view_ui_outliner_show
+		}
+		effectButtonType = {
+			name = "mega_outliner_hide"
+			position = { x = -46 y = 52 }
+			spriteType = "GFX_AOW_mega_outliner_hide"
+			orientation = upper_right
+			effect = AOW_btn_view_ui_outliner_hide
 		}
 
 		iconType = {#下划线
@@ -113,16 +145,274 @@ guiTypes = {
 		containerWindowType = {#巨构按钮界面
 			name = "megastructure_tab"
 			size = { width = 100% height = 100% }
-			effectButtonType = {#定位按钮
-				name = "AOW_locator_button"
-				position = { x = -46 y = 52 }
-				spriteType = "GFX_button_planet"
-				orientation = upper_right
-				effect = AOW_btn_view_ui_locator
-				clicksound = interface
-				oversound = mouse_over
+			containerWindowType = {
+				name = "megastructure_portrait_window"
+				size = { width = 560 height = 188 }
+				position = { x = 0 y = 43 }
+				orientation = center_up
+				origo = center_up
+				clipping = yes
+				iconType = {#巨构背景图
+					name = "megastructure_portrait"
+					spriteType = "GFX_megastructure_construction_background"
+					position = { x = -270 y = 12 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "black_frame"
+					spriteType = "GFX_planetview_black_frame"
+					position = { x = -270 y = 13 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "stripes_1"
+					spriteType = "GFX_planetview_stripes_1"
+					position = { x = -276 y = 12 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {#巨构背景图边框
+					name = "city_frame"
+					spriteType = "GFX_city_frame"
+					position = { x = -275 y = 9 }
+					orientation = center_up
+				}
 			}
-
+			containerWindowType = {#背景
+				name = "desc_background"
+				size = { width = 600 height = 410 }
+				position = { x = 0 y = 220 }
+				orientation = center_up
+				origo = center_up
+				containerWindowType = {#巨构介绍的背景
+					name = "desc_box"
+					size = { width = 600 height = 125 }
+					position = { x = 0 y = 15 }
+					orientation = center_up
+					origo = center_up
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#效果背景
+					name = "effects_box_background"
+					size = { width = 600 height = 80 }
+					position = { x = 0 y = 150 }
+					background = {
+						name = "effects_box_background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#产出背景
+					name = "production_box_background"
+					size = { width = 295 height = 80 }
+					position = { x = 0 y = 240 }
+					background = {
+						name = "production_box_background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#维护费背景
+					name = "upkeep_boxbackground"
+					size = { width = 295 height = 80 }
+					position = { x = 305 y = 240 }
+					background = {
+						name = "upkeep_boxbackground"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#升级背景
+					name = "upgrades_box"
+					size = { width = 600 height = 110 }
+					position = { x = 0 y = 330 }
+					background = {#背景
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+			}
+			### CONTENT ###
+			@text_y = 400
+			@desc_y = 420
+			@desc_w = 193
+			@desc_h = 70
+			@effect_x = 32
+			@production_x = 235
+			@upkeep_x = 439
+			instantTextBoxType = {#巨构介绍
+				name = "desc"
+				font = "malgun_goth_24"
+				position = { x = 35 y = 240 }
+				maxWidth = 590
+				maxHeight = 120
+				text = ""
+				format = center
+				text_color_code = "W"
+				scrollbarType = "standardtext_slider_small"
+			}
+			instantTextBoxType = {#效果
+				name = "effects_header_x"
+				font = "cg_16b"
+				position = { x = 30 y = 373 }
+				maxWidth = 600
+				maxHeight = 20
+				fixedSize = yes
+				text = "EFFECTS"
+				format = center
+				vertical_alignment = center
+			}
+			instantTextBoxType = {#效果介绍
+				name = "effects_desc"
+				font = "cg_16b"
+				position = { x = 30 y = 390 }
+				maxWidth = 600
+				maxHeight = 60
+				fixedSize = yes
+				text = "EFFECTS"
+				format = center
+			}
+			containerWindowType = {#产出
+				name = "production_box"
+				position = { x = 30 y = 460 }
+				size = { width = 295 height = 80 }
+				instantTextBoxType = {
+					name = "production_header_x"
+					font = "cg_16b"
+					text = "PRODUCTION"
+					#appendText = ":"
+					position = { x = 0 y = 3 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					vertical_alignment = center
+					text_color_code = "G"
+				}
+				instantTextBoxType = {
+					name = "production_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = 297
+					maxHeight = 60
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#维护费
+				name = "upkeep_box"
+				position = { x = 335 y = 460 }
+				size = { width = 295 height = 80 }
+				instantTextBoxType = {
+					name = "upkeep_header_x"
+					font = "cg_16b"
+					text = "MAINTENANCE"
+					#appendText = ":"
+					position = { x = 0 y = 3 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					vertical_alignment = center
+					text_color_code = "R"
+				}
+				instantTextBoxType = {
+					name = "upkeep_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = 297
+					maxHeight = 60
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#可能的升级选项
+				name = "possible_upgrades_content"
+				position = { x = 40 y = 560 }
+				size = { width = 580 height = 90 }
+				smoothListboxType = {#升级按钮
+					name = "upgrades"
+					position = { x = 0 y = 0 }
+					size = { x = 580 y = 90 }
+					spacing = 3
+					scrollbarType = "standardtext_slider_small"
+					offset = { x = 0 y = 0 }
+				}
+			}
+			containerWindowType = {#升级进度
+				name = "upgrading_content"
+				position = { x = 30 y = 550 }
+				size = { width = 600 height = 80 }
+				iconType = {#升级进度条
+					name = "upgrade_progress"
+					spriteType = "GFX_AOW_progressbar"
+					position = { x = 10 y = 10 }
+				}
+				instantTextBoxType = {#升级剩余时间
+					name = "upgrade_remaining"
+					font = "malgun_goth_24"
+					position = { x = 0 y = 13 }
+					maxWidth = 600
+					maxHeight = 30
+					fixedSize = yes
+					format = center
+					text = "(clock) X days remaining."
+					alwaysTransparent = yes
+				}
+			}
+			containerWindowType = {#前往收藏
+				name = "grand_archive_details"
+				position = { x = 0 y = 390 }
+				size = { width = 100% height = 40% }
+				buttonType = {
+					name = "goto_collection"
+					size = { x = 316 y = 69 }
+					position = { x = -132 y = 40 }
+					orientation = center
+					spriteType = "GFX_standard_button_240_34_button"
+					buttonFont = "cg_16b"
+					text = "GOTO_COLLECTION"
+					font = "cg_16b"
+					clicksound = planet_view_menu_click_01
+					oversound = mouse_over
+				}
+			}
+			containerWindowType = {#拆除进度
+				name = "dismantle_window"
+				position = { x = 30 y = 550 }
+				size = { width = 600 height = 80 }
+				iconType = {#拆除进度条
+					name = "dismantle_progress"
+					spriteType = "GFX_AOW_progressbar"
+					position = { x = 10 y = 10 }
+				}
+				instantTextBoxType = {#文字“拆除进度”
+					name = "dismantle_title"
+					font = "malgun_goth_24" #"cg_16b"
+					position = { x = 0 y = 13 }
+					text = "DISMANTLE_IN_PROGRESS"
+					maxWidth = 600
+					maxHeight = 30
+					fixedSize = yes
+					format = center
+					alwaysTransparent = yes
+				}
+				buttonType = {#停止拆除按钮
+					name = "abort_dismantle"
+					size = { x = 264 y = 35 }
+					position = { x = 169 y = 42 }
+					spriteType = "GFX_standard_button_240_34_button"
+					buttonFont = "cg_16b"
+					text = "ABORT"
+					font = "cg_16b"
+					clicksound = planet_view_menu_click_01
+					oversound = mouse_over
+				}
+			}
 			effectButtonType = {#行星开采器产出切换
 				name = "AOW_pms_consumer_goods"
 				position = { x = -46 y = 88 }
@@ -141,7 +431,6 @@ guiTypes = {
 				clicksound = interface
 				oversound = mouse_over
 			}
-
 			effectButtonType = {#行星波动炮升级
 				name = "AOW_pbs_upgrade"
 				position = { x = -46 y = 88 }
@@ -151,7 +440,6 @@ guiTypes = {
 				clicksound = interface
 				oversound = mouse_over
 			}
-
 			effectButtonType = {#物质重组仪
 				name = "AOW_mri_open"
 				position = { x = -46 y = 88 }
@@ -177,8 +465,8 @@ guiTypes = {
 				effectButtonType = {
 					name = "AOW_mri_bg"
 					position = { x = 0 y = 0 }
-					size = { width = 164 height = 554 }
-					spriteType = "GFX_tiles_dark_area_cut_8"
+					size = { width = 164 height = 584 }
+					spriteType = "GFX_AOW_filled_dark_area_cut_8"
 					effect = AOW_btn_view_ui_mri_background
 				}
 			}
@@ -939,283 +1227,6 @@ guiTypes = {
 					format = center
 				}
 			}
-
-			containerWindowType = {
-				name = "megastructure_portrait_window"
-				size = { width = 560 height = 188 }
-				position = { x = 0 y = 40 }
-				orientation = center_up
-				origo = center_up
-				clipping = yes
-				iconType = {#巨构背景图
-					name = "megastructure_portrait"
-					spriteType = "GFX_megastructure_construction_background"
-					position = { x = -270 y = 12 }
-					orientation = center_up
-					alwaysTransparent = yes
-				}
-				iconType = {#巨构背景图边框
-					name = "black_frame"
-					spriteType = "GFX_planetview_black_frame"
-					position = { x = -270 y = 13 }
-					orientation = center_up
-					alwaysTransparent = yes
-				}
-				iconType = {#巨构背景图边框
-					name = "stripes_1"
-					spriteType = "GFX_planetview_stripes_1"
-					position = { x = -276 y = 12 }
-					orientation = center_up
-					alwaysTransparent = yes
-				}
-				iconType = {#巨构背景图边框
-					name = "city_frame"
-					spriteType = "GFX_city_frame"
-					position = { x = -275 y = 9 }
-					orientation = center_up
-				}
-			}
-			containerWindowType = {
-				name = "desc_background"
-				size = { width = 600 height = 410 }
-				position = { x = 0 y = 220 }
-				orientation = center_up
-				origo = center_up
-				containerWindowType = {#巨构介绍的背景
-					name = "desc_box"
-					size = { width = 600 height = 150 }
-					position = { x = 0 y = 15 }
-					orientation = center_up
-					origo = center_up
-					background = {
-						name = "background"
-						spriteType = "GFX_tiles_dark_area_cut_8"
-					}
-				}
-				@box_y = 175
-				containerWindowType = {#效果背景
-					name = "effects_box"
-					size = { width = 193 height = 90 }
-					position = { x = 0 y = @box_y }
-				}
-				containerWindowType = {#效果背景
-					#name = "effects_box"
-					name = "effects_box_background"
-					size = { width = 193 height = 90 }
-					position = { x = 0 y = @box_y }
-					background = {
-						name = "background"
-						spriteType = "GFX_tiles_dark_area_cut_8"
-					}
-				}
-				containerWindowType = {#产出背景
-					name = "production_box_background"
-					size = { width = 193 height = 90 }
-					position = { x = 203 y = @box_y }
-					background = {
-						name = "background"
-						spriteType = "GFX_tiles_dark_area_cut_8"
-					}
-				}
-				containerWindowType = {#维护费背景
-					name = "upkeep_boxbackground"
-					size = { width = 193 height = 90 }
-					position = { x = 407 y = @box_y }
-					background = {
-						name = "background"
-						spriteType = "GFX_tiles_dark_area_cut_8"
-					}
-				}
-				containerWindowType = {#升级背景
-					name = "upgrades_box"
-					size = { width = 600 height = 130 }
-					position = { x = 0 y = 275 }
-					#orientation = center_up
-					#origo = center_up
-					background = {#背景
-						name = "background"
-						spriteType = "GFX_tiles_dark_area_cut_8"
-					}
-				}
-			}
-			### CONTENT ###
-			@text_y = 400
-			@desc_y = 420
-			@desc_w = 193
-			@desc_h = 70
-			@effect_x = 32
-			@production_x = 235
-			@upkeep_x = 439
-			instantTextBoxType = {#巨构介绍
-				name = "desc"
-				font = "malgun_goth_24"
-				position = { x = 35 y = 245 }
-				maxWidth = 590
-				maxHeight = 145
-				text = ""
-				format = center
-				text_color_code = "W"
-				scrollbarType = "standardtext_slider_small"
-			}
-			instantTextBoxType = {#效果
-				name = "effects_header"
-				font = "cg_16b"
-				position = { x = @effect_x y = @text_y }
-				maxWidth = @desc_w
-				maxHeight = 20
-				fixedSize = yes
-				text = "EFFECTS"
-				format = center
-			}
-			instantTextBoxType = {#效果介绍
-				name = "effects_desc"
-				font = "cg_16b"
-				position = { x = @effect_x y = @desc_y }
-				maxWidth = @desc_w
-				maxHeight = @desc_h
-				fixedSize = yes
-				text = "EFFECTS"
-				format = center
-			}
-			containerWindowType = {#产出
-				name = "production_box"
-				position = { x = @production_x y = @text_y }
-				size = { width = @desc_w height = 90 }
-				instantTextBoxType = {
-					name = "production_header"
-					font = "cg_16b"
-					text = "PRODUCTION"
-					appendText = ":"
-					position = { x = 0 y = 0 }
-					maxWidth = @desc_w
-					maxHeight = 20
-					fixedSize = yes
-					format = center
-					text_color_code = "G"
-				}
-				instantTextBoxType = {
-					name = "production_amount"
-					font = "cg_16b"
-					position = { x = 0 y = 20 }
-					text = "10"
-					maxWidth = @desc_w
-					maxHeight = @desc_h
-					fixedSize = yes
-					format = center
-				}
-			}
-			containerWindowType = {#维护费
-				name = "upkeep_box"
-				position = { x = @upkeep_x y = @text_y }
-				size = { width = @desc_w height = 90 }
-				instantTextBoxType = {
-					name = "upkeep_header"
-					font = "cg_16b"
-					text = "MAINTENANCE"
-					appendText = ":"
-					position = { x = 0 y = 0 }
-					maxWidth = @desc_w
-					maxHeight = 20
-					fixedSize = yes
-					format = center
-					text_color_code = "R"
-				}
-				instantTextBoxType = {
-					name = "upkeep_amount"
-					font = "cg_16b"
-					position = { x = 0 y = 20 }
-					text = "10"
-					maxWidth = @desc_w
-					maxHeight = @desc_h
-					fixedSize = yes
-					format = center
-				}
-			}
-			containerWindowType = {#可能的升级选项
-				name = "possible_upgrades_content"
-				position = { x = 0 y = 500 }
-				size = { width = 600 height = 170 }
-				orientation = center_up
-				origo = center_up
-				smoothListboxType = {#升级按钮
-					name = "upgrades"
-					position = { x = 10 y = 5 }
-					size = { x = 580 y = 128 }
-					borderSize = { x = 0 y = 0 }
-					spacing = 0
-					scrollbarType = "standardlistbox_slider"
-					offset = { x = 0 y = 0 }
-				}
-			}
-			containerWindowType = {#升级进度
-				name = "upgrading_content"
-				position = { x = 0 y = 500 }
-				size = { width = 600 height = 170 }
-				iconType = {#升级进度条
-					name = "upgrade_progress"
-					spriteType = "GFX_AOW_progressbar"
-					position = { x = 40 y = 5 }
-				}
-				instantTextBoxType = {#升级剩余时间
-					name = "upgrade_remaining"
-					font = "malgun_goth_24"
-					position = { x = 40 y = 7 }
-					maxWidth = 580
-					maxHeight = 30
-					fixedSize = yes
-					format = center
-					text = "(clock) X days remaining."
-					alwaysTransparent = yes
-				}
-			}
-			containerWindowType = {#前往收藏
-				name = "grand_archive_details"
-				position = { x = 0 y = 347 }
-				size = { width = 100% height = 40% }
-				buttonType = {
-					name = "goto_collection"
-					size = { x = 316 y = 69 }
-					position = { x = -132 y = 30 }
-					orientation = center
-					spriteType = "GFX_standard_button_240_34_button"
-					buttonFont = "cg_16b"
-					text = "GOTO_COLLECTION"
-					font = "cg_16b"
-					clicksound = planet_view_menu_click_01
-					oversound = mouse_over
-				}
-			}
-			containerWindowType = {#拆除进度
-				name = "dismantle_window"
-				position = { x = 0 y = 545 }
-				iconType = {#拆除进度条
-					name = "dismantle_progress"
-					spriteType = "GFX_AOW_progressbar"
-					position = { x = 40 y = 0 }
-				}
-				instantTextBoxType = {#文字“拆除进度”
-					name = "dismantle_title"
-					font = "malgun_goth_24" #"cg_16b"
-					position = { x = 40 y = 2 }
-					text = "DISMANTLE_IN_PROGRESS"
-					maxWidth = 580
-					maxHeight = 30
-					fixedSize = yes
-					format = center
-					alwaysTransparent = yes
-				}
-				buttonType = {#停止拆除按钮
-					name = "abort_dismantle"
-					size = { x = 264 y = 35 }
-					position = { x = 198 y = 25 }
-					spriteType = "GFX_standard_button_240_34_button"
-					buttonFont = "cg_16b"
-					text = "ABORT"
-					font = "cg_16b"
-					clicksound = planet_view_menu_click_01
-					oversound = mouse_over
-				}
-			}
 		}
 		containerWindowType = {#船坞按钮界面
 			name = "shipyard_tab"
@@ -1237,7 +1248,7 @@ guiTypes = {
 					orientation = LOWER_LEFT
 				}
 				instantTextBoxType = {
-					name = "shipyard_capacity"
+					name = "module_capacity"
 					position = { x = 70 y = -50 }
 					font = "malgun_goth_24"
 					text = "STARBASE_SHIPYARD_CAPACITY"
@@ -1299,10 +1310,10 @@ guiTypes = {
 				}
 				gridBoxType = {
 					name = "modifiers_grid"
-					position = { x = 6 y = -40 }
-					size = { width = 248 height = 30 }
+					position = { x = 5 y = -40 }
+					size = { width = 275 height = 30 }
 					format = "UPPER_LEFT"
-					slotSize = { width = 91 height = 30 }
+					slotSize = { width = 95 height = 30 }
 					add_horizontal = yes
 					max_slots_horizontal = 3
 					orientation = LOWER_LEFT
@@ -1364,7 +1375,7 @@ guiTypes = {
 	containerWindowType = {#侧边舰船选项列表
 		name = "megastructure_side_view"
 		position = { x = 663 y = 9 }
-		size = { width = 400 height = 632 }
+		size = { width = 460 height = 661 }
 		background = {
 			name = "planet_view_spaceport_construction_panel_background"
 			quadTextureSprite = "GFX_tile_large_bg_plain"#"GFX_ui_tile_large_bg_plain"
@@ -1387,9 +1398,9 @@ guiTypes = {
 			name = "title"
 			font = "malgun_goth_24"
 			text = "STARBASE_SHIPS"
-			position = { x = 10 y = 10 }
-			maxWidth = 380
-			maxHeight = 20
+			position = { x = 0 y = 10 }
+			maxWidth = 460
+			maxHeight = 25
 			fixedSize = yes
 			format = CENTER
 		}
@@ -1403,17 +1414,15 @@ guiTypes = {
 		}
 		smoothListboxType = {
 			name = "entries_list"
-			position = { x = 10 y = 53 }
-			size = { x = 378 y = 606 }
+			position = { x = 15 y = 50 }
+			size = { x = 430 y = 595 }
 			scrollbarType = "standardlistbox_slider"
-			borderSize = { x = 0 y = 0 }
-			offset = { x = -3 y = 0 }
-			spacing = 1
+			spacing = 3
 		}
 	}
 	containerWindowType = {#升级按钮
 		name = "megastructure_upgrade_entry"
-		size = { width = 580 height = 32 }
+		size = { width = 580 height = 30 }
 		background = {#背景
 			name = "bg"
 			position = { x = 0 y = 0 }
@@ -1423,9 +1432,9 @@ guiTypes = {
 		instantTextBoxType = {#升级的巨构名字
 			name = "title"
 			font = "cg_16b"
-			position = { x = 10 y = 0 }
-			maxWidth = 300
-			maxHeight = 32
+			position = { x = 5 y = 5 }
+			maxWidth = 570
+			maxHeight = 25
 			format = left
 			vertical_alignment = center
 			text_color_code = "H"
@@ -1435,9 +1444,9 @@ guiTypes = {
 		instantTextBoxType = {#升级所需时间和花费
 			name = "cost"
 			font = "cg_16b"
-			position = { x = 170 y = 0 }
-			maxWidth = 400
-			maxHeight = 32
+			position = { x = 5 y = 5 }
+			maxWidth = 570
+			maxHeight = 25
 			format = right
 			vertical_alignment = center
 			text = "DBG_MEGA_STRUCTURE_GUI_TEXT"

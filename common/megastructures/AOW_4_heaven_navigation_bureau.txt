@@ -104,7 +104,7 @@ AOW_MEGA_heaven_navigation_bureau_0 = {
 				remove_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_1
 				set_country_flag = AOW_flag_CNTR_heaven_navigation_bureau_2
 			}
-			country_event = { id = AOW_mega_notification.3030 }
+			country_event = { id = AOW_evt_heaven_navigation_bureau.100 }
 		}
 		fromfrom = {
 			set_megastructure_flag = heaven_navigation_bureau
@@ -153,7 +153,7 @@ AOW_MEGA_heaven_navigation_bureau_1 = {
 	upgrade_from = { AOW_MEGA_heaven_navigation_bureau_0 }
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
-		from = { country_event = { id = AOW_mega_notification.3031 } }
+		from = { country_event = { id = AOW_evt_heaven_navigation_bureau.101 } }
 	}
 }
 AOW_MEGA_heaven_navigation_bureau_2 = {
@@ -194,7 +194,7 @@ AOW_MEGA_heaven_navigation_bureau_2 = {
 	prerequisites = { "AOW_TECH_heaven_navigation_bureau" }
 	upgrade_from = { AOW_MEGA_heaven_navigation_bureau_1 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3032 } }
+		from = { country_event = { id = AOW_evt_heaven_navigation_bureau.102 } }
 	}
 }
 AOW_MEGA_heaven_navigation_bureau_3 = {
@@ -235,7 +235,7 @@ AOW_MEGA_heaven_navigation_bureau_3 = {
 	prerequisites = { "AOW_TECH_heaven_navigation_bureau" }
 	upgrade_from = { AOW_MEGA_heaven_navigation_bureau_2 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3033 } }
+		from = { country_event = { id = AOW_evt_heaven_navigation_bureau.103 } }
 	}
 }
 AOW_MEGA_heaven_navigation_bureau_4 = {
@@ -276,7 +276,7 @@ AOW_MEGA_heaven_navigation_bureau_4 = {
 	prerequisites = { "AOW_TECH_heaven_navigation_bureau" }
 	upgrade_from = { AOW_MEGA_heaven_navigation_bureau_3 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.3034 } }
+		from = { country_event = { id = AOW_evt_heaven_navigation_bureau.104 } }
 	}
 }
 AOW_MEGA_heaven_navigation_bureau_5 = {
@@ -288,6 +288,9 @@ AOW_MEGA_heaven_navigation_bureau_5 = {
 	use_planet_resource = yes
 	build_time = @AOW_var_HNB_5_TIME
 	scales_with_planet = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = heaven_navigation_bureau }
+	}
 	resources = {
 		category = megastructures
 		produces = {
@@ -327,7 +330,7 @@ AOW_MEGA_heaven_navigation_bureau_5 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.3035 }
+			country_event = { id = AOW_evt_heaven_navigation_bureau.105 }
 		}
 	}
 }

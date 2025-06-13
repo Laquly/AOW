@@ -1,17 +1,46 @@
+AOW_btn_starfall_spear_type_null = {
+	potential = {
+		NOR = {
+			exists = event_target:AOW_starfall_spear_target_01_@from
+			exists = event_target:AOW_starfall_spear_target_02_@from
+			exists = event_target:AOW_starfall_spear_target_03_@from
+			exists = event_target:AOW_starfall_spear_target_04_@from
+			exists = event_target:AOW_starfall_spear_target_05_@from
+			exists = event_target:AOW_starfall_spear_target_06_@from
+			exists = event_target:AOW_starfall_spear_target_07_@from
+			exists = event_target:AOW_starfall_spear_target_08_@from
+			exists = event_target:AOW_starfall_spear_target_09_@from
+			exists = event_target:AOW_starfall_spear_target_10_@from
+		}
+	}
+	allow = { always = yes }
+}
+AOW_btn_starfall_spear_type_planet = {
+	potential = {
+		AOW_trgr_has_starfall_spear_target_type = { type = planet scope = from }
+	}
+	allow = { always = yes }
+}
+AOW_btn_starfall_spear_type_system = {
+	potential = {
+		AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = from }
+	}
+	allow = { always = yes }
+}
 AOW_btn_clear_all_targets = {
 	potential = { always = yes }
 	allow = { always = yes }
 	effect = {
-		AOW_eft_starfall_spear_cancel_target = { target = 01 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 02 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 03 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 04 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 05 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 06 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 07 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 08 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 09 scope = from }
-		AOW_eft_starfall_spear_cancel_target = { target = 10 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 01 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 02 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 03 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 04 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 05 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 06 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 07 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 08 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 09 scope = from }
+		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 10 scope = from }
 	}
 }
 
@@ -47,8 +76,10 @@ AOW_btn_system_target_mode_02 = {#净世圣灭
 			fail_text = "AOW_starfall_spear_requires_has_colony"
 			this.solar_system = {
 				any_system_planet = {
-					is_colony = yes
-					num_pops >= 1
+					OR = {
+						pop_amount > 0
+						is_planet_class = pc_infested
+					}
 				}
 			}
 		}

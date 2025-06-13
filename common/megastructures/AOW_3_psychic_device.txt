@@ -78,8 +78,6 @@ AOW_MEGA_psychic_device_0 = {
 	# from = country
 	ai_weight = {
 		weight = 500
-		#资源限制
-		modifier = { factor = 0	from = { has_monthly_income = { resource = sr_zro value < @AOW_var_PD_3_UPKP_zro } } }
 		#位置限制
 		modifier = { factor = 0.1	starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
 		modifier = { factor = 0.1	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
@@ -91,7 +89,7 @@ AOW_MEGA_psychic_device_0 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2030 } }
+		from = { country_event = { id = AOW_evt_psychic_device.100 } }
 		fromfrom = {
 			set_megastructure_flag = psychic_device
 			set_megastructure_flag = AOW_flag_MEGA_psychic_device_@owner
@@ -138,7 +136,7 @@ AOW_MEGA_psychic_device_1 = {
 		}
 	}
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2031 } }
+		from = { country_event = { id = AOW_evt_psychic_device.101 } }
 	}
 }
 AOW_MEGA_psychic_device_2 = {
@@ -175,7 +173,7 @@ AOW_MEGA_psychic_device_2 = {
 	upgrade_from = { AOW_MEGA_psychic_device_1 }
 	ai_weight = { factor = 10 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2032 } }
+		from = { country_event = { id = AOW_evt_psychic_device.102 } }
 	}
 }
 AOW_MEGA_psychic_device_3 = {
@@ -184,6 +182,9 @@ AOW_MEGA_psychic_device_3 = {
 	portrait = "GFX_megastructure_psychic_device_background"
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = psychic_device }
+	}
 	build_time = @AOW_var_PD_3_TIME
 	resources = {
 		category = megastructures
@@ -193,16 +194,16 @@ AOW_MEGA_psychic_device_3 = {
 			unity = @AOW_var_PD_3_COST_unity
 		}
 		produces = {
-			sr_dark_matter = @AOW_var_PD_3_PRDC_darkmatter
+			sr_zro = @AOW_var_PD_3_PRDC_zro
 		}
 		produces = {
 			trigger = { owner = { has_relic = r_zro_crystal } }
-			sr_dark_matter = @AOW_var_PD_3_PRDC_darkmatter
+			sr_zro = @AOW_var_PD_3_PRDC_zro
 		}
 		upkeep = {
 			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
 			energy = @AOW_var_PD_3_UPKP_energy
-			sr_zro = @AOW_var_PD_3_UPKP_zro
+			alloys = @AOW_var_PD_3_UPKP_alloys
 		}
 	}
 	country_modifier = {
@@ -210,7 +211,7 @@ AOW_MEGA_psychic_device_3 = {
 		show_only_custom_tooltip = no
 		shroud_delve_cooldown = -0.1
 		planet_psionic_jobs_produces_mult = 0.2
-		pop_government_ethic_attraction = @AOW_var_PD_3_pop_government_ethic_attraction
+		pop_government_ethic_attraction = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure_with_effects
@@ -274,7 +275,7 @@ AOW_MEGA_psychic_device_3 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2033 }
+			country_event = { id = AOW_evt_psychic_device.103 }
 		}
 	}
 }

@@ -1,12 +1,4 @@
 spriteTypes = {#控制面板的图形
-	spriteType = {#平衡数值减
-		name = "GFX_AOW_mega_num_left"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_mega_num_left.dds"
-	}
-	spriteType = {#平衡数值加
-		name = "GFX_AOW_mega_num_right"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_mega_num_right.dds"
-	}
 	spriteType = {#巨构花费按钮
 		name = "GFX_AOW_button_mega_cost"
 		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_mega_cost.dds"
@@ -27,11 +19,6 @@ spriteTypes = {#控制面板的图形
 		name = "GFX_AOW_button_mega_build_speed"
 		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_mega_build_speed.dds"
 	}
-	spriteType = {#平衡数值背景
-		name = "GFX_AOW_bg_balance_var"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_bg_balance_var.dds"
-		alwaystransparent = yes
-	}
 	spriteType = {#进入按钮
 		name = "GFX_AOW_button_enter"
 		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_enter.dds"
@@ -51,158 +38,122 @@ spriteTypes = {#控制面板的图形
 			animationframes = { 1 2 3 }
 		}
 	}
-	#巨构
-	spriteType = {#巨构禁用
-		name = "GFX_AOW_button_disable"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_disable.dds"
+
+	corneredTileSpriteType = {
+		name = "GFX_AOW_ribbon_white"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/ribbon_white.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
-	spriteType = {#巨构启用
-		name = "GFX_AOW_button_enable"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_enable.dds"
+	corneredTileSpriteType = {#绿色飘带
+		name = "GFX_AOW_ribbon_green"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/ribbon_green.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
-	spriteType = {#巨构数值无限
-		name = "GFX_AOW_button_infinite"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_infinite.dds"
+	corneredTileSpriteType = {#黄色飘带
+		name = "GFX_AOW_ribbon_yellow"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/ribbon_yellow.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
-	spriteType = {#AI数值-
-		name = "GFX_AOW_button_ai_left"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_left.dds"
+	corneredTileSpriteType = {#蓝色飘带
+		name = "GFX_AOW_ribbon_blue"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/ribbon_blue.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
-	spriteType = {#AI数值+
-		name = "GFX_AOW_button_ai_right"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_right.dds"
+	corneredTileSpriteType = {#红色飘带
+		name = "GFX_AOW_ribbon_red"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/ribbon_red.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
-	spriteType = {#玩家数值-
-		name = "GFX_AOW_button_player_left"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_left.dds"
+	spriteType = {#翻页按钮
+		name = "GFX_AOW_button_page_turning"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/button_page_turning.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
 	}
-	spriteType = {#玩家数值+
-		name = "GFX_AOW_button_player_right"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_right.dds"
+	spriteType = {#翻页按钮：激活
+		name = "GFX_AOW_button_page_active"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/button_page_active.dds"
 	}
-	spriteType = {#巨构单元背景
+
+	spriteType = {#巨构单元边框
 		name = "GFX_AOW_bg_mega_unit"
 		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_bg_mega_unit.dds"
 	}
-	spriteType = {#巨构数值背景
-		name = "GFX_AOW_bg_mega_var"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_bg_mega_var.dds"
+	spriteType = {#数值单元边框
+		name = "GFX_AOW_bg_num_unit"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/AOW_bg_num_unit.dds"
+	}
+
+	spriteType = {#玩家数值背景
+		name = "GFX_AOW_bg_mega_var_player"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/bg_mega_var_player.dds"
+	}
+	spriteType = {#AI数值背景
+		name = "GFX_AOW_bg_mega_var_ai"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/bg_mega_var_ai.dds"
+	}
+	spriteType = {#玩家数值-大
+		name = "GFX_AOW_arrow_mega_left_player"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_mega_left_blue.dds"
+	}
+	spriteType = {#AI数值-大
+		name = "GFX_AOW_arrow_mega_left_ai"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_mega_left_yellow.dds"
+	}
+	spriteType = {#玩家数值+大
+		name = "GFX_AOW_arrow_mega_right_player"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_mega_right_blue.dds"
+	}
+	spriteType = {#AI数值+大
+		name = "GFX_AOW_arrow_mega_right_ai"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_mega_right_yellow.dds"
+	}
+	spriteType = {#玩家数值-
+		name = "GFX_AOW_button_player_left"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_left_blue.dds"
+	}
+	spriteType = {#AI数值-
+		name = "GFX_AOW_button_ai_left"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_left_yellow.dds"
+	}
+	spriteType = {#玩家数值+
+		name = "GFX_AOW_button_player_right"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_right_blue.dds"
+	}
+	spriteType = {#AI数值+
+		name = "GFX_AOW_button_ai_right"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/arrow_right_yellow.dds"
+	}
+
+	spriteType = {#总览隐藏
+		name = "GFX_AOW_button_outliner_hide"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/outliner_hide.dds"
+	}
+	spriteType = {#总览显示
+		name = "GFX_AOW_button_outliner_show"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/outliner_show.dds"
+	}
+	spriteType = {#总览特殊
+		name = "GFX_AOW_button_outliner_special"
+		textureFile = "gfx/interface/AOW_ui_icons/UI_main/outliner_special.dds"
+	}
+
+	spriteType = {#AI数值设置按钮
+		name = "GFX_AOW_button_value_ai"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_value_ai.dds"
+	}
+	spriteType = {#玩家数值设置按钮
+		name = "GFX_AOW_button_value_player"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_value_player.dds"
 	}
 
 	spriteType = {
-		name = "GFX_AOW_button_ai_0"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_0.dds"
+		name = "GFX_AOW_button_value_ai"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_value_ai.dds"
 	}
 	spriteType = {
-		name = "GFX_AOW_button_ai_1"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_1.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_ai_2"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_2.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_ai_3"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_3.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_ai_4"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_4.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_ai_5"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_5.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_ai_inf"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_ai_inf.dds"
-	}
-
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_0"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_0.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_1"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_1.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_2"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_2.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_3"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_3.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_4"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_4.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_5"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_5.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_ai_inf"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_ai_inf.dds"
-	}
-
-	spriteType = {
-		name = "GFX_AOW_button_player_0"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_0.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_1"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_1.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_2"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_2.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_3"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_3.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_4"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_4.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_5"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_5.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_player_inf"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_player_inf.dds"
-	}
-
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_0"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_0.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_1"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_1.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_2"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_2.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_3"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_3.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_4"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_4.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_5"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_5.dds"
-	}
-	spriteType = {
-		name = "GFX_AOW_button_sub_player_inf"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_sub_player_inf.dds"
+		name = "GFX_AOW_button_value_player"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_value_player.dds"
 	}
 
 	#预设按钮
@@ -255,12 +206,6 @@ spriteTypes = {#控制面板的图形
 	}
 
 	#打赏
-	spriteType = {#打赏按钮
-		name = "GFX_AOW_button_donation"
-		texturefile = "gfx/interface/AOW_ui_icons/UI_main/AOW_button_donation.dds"
-		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
-		noOfFrames = 3
-	}
 	spriteType = {
 		name = "GFX_text_AOW_Alipay"
 		textureFile = "gfx/interface/AOW_ui_icons/UI_main/Alipay.dds"
@@ -268,19 +213,5 @@ spriteTypes = {#控制面板的图形
 	spriteType = {
 		name = "GFX_text_AOW_Wechat"
 		textureFile = "gfx/interface/AOW_ui_icons/UI_main/Wechat.dds"
-	}
-
-
-	spriteType = {
-		name = "GFX_bg_bulletin_board_upper"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_bulletin_board/upper.dds"
-	}
-	spriteType = {
-		name = "GFX_bg_bulletin_board_left"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_bulletin_board/left.dds"
-	}
-	spriteType = {
-		name = "GFX_bg_bulletin_board_right"
-		textureFile = "gfx/interface/AOW_ui_icons/UI_bulletin_board/right.dds"
 	}
 }

@@ -13,7 +13,29 @@ strategic_coordination_center_0 = {
 			alloys = 5000
 			unity = 2500
 		}
-		upkeep = { energy = 5 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 5
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -26,7 +48,9 @@ strategic_coordination_center_0 = {
 	prerequisites = { "tech_strategic_coordination" }
 	potential = { AOW_trigger_mega_potential = { KEY = strategic_coordination_center } }
 	possible = {
-		exists = starbase
+		hidden_trigger = {
+			exists = starbase
+		}
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_strategic_coordination_center } }
@@ -106,10 +130,31 @@ strategic_coordination_center_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		upkeep = { energy = 25 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 25
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -145,10 +190,31 @@ strategic_coordination_center_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		upkeep = { energy = 50 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 50
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -181,14 +247,38 @@ strategic_coordination_center_3 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = strategic_coordination_center }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 2500
 		}
-		upkeep = { energy = 75 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 75
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -261,14 +351,38 @@ strategic_coordination_center_restored = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = strategic_coordination_center }
+	}
 	build_time = 4800
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 15000
 			unity = 3200
 		}
-		upkeep = { energy = 75 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 15000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 75
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure

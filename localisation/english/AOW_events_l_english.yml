@@ -17,20 +17,8 @@
  AOW_ap.1.desc:0"The research department spent a long time looking for a way to enter multi-dimensional space stably, and tried to place building structures across dimensions many times, but most of them ended in failure. However, scientists finally found a substance in the materials we discovered that can help us enter multi-dimensional space stably - §YThe Dark Matter§!.\n\nDuring this exploration process, we unexpectedly discovered that the potential of the unique substance’s twisted spacetime curvature can be used to open up stable wormhole connections to enter multi-dimensional space. In addition, economists predict that our demand for dark matter may increase sharply in the coming era.\n\nThe research department also developed a brand new megastructure, which is not large enough to span galaxies, but uses the latest theoretical achievements. They suggested that we use this megastructure for the initial experiment."
  AOW_ap.1.a:0"Our empire has taken another step towards a greater direction!"
 
- ###################################### 拆除巨构 #########################################
-
- AOW_dismantle.1.name:0"Demolish The Megastructure"
- AOW_dismantle.1.desc:0"[from.GetName] may be a bit too obtrusive here, or it may hinder the construction of other megastructures. Anyway, we can now choose to demolish this megastructure."
- AOW_dismantle.1.quit:0"Forget it."
- AOW_dismantle.1.a:0"§YDemolish the megastructure directly.§!"
- AOW_dismantle.1.a.tooltip:0"It will be demolished instantly, without any additional resource costs or resource recovery."
-
  ###################################### 0 #########################################
- AOW_mega_construction_title:0"Construction of [fromfromfrom.GetName]"
- AOW_mega_upgraded_title:0"[fromfromfrom.GetName] Under Construction"
- AOW_mega_completed_title:0"[fromfromfrom.GetName] Construction Completed"
  AOW_mega_restored_title:0"[fromfromfrom.GetName] Repair Completed"
-
  AOW_mega_notification_title:0"§H[fromfromfrom.GetName]§! Construction Completed"
  AOW_mega_others_notification_title:0"[from.GetName] is building §H[fromfromfromfrom.GetName]§!"
 
@@ -55,17 +43,17 @@
 
  ###################################### 1 #########################################
 
- AOW_mega_notification.1010.desc:0"There are always some planets in the universe that are not suitable for living, but the natural minerals contained in these planets can still contribute to us.\n\nFor example, the minerals on [fromfromfrom.planet.GetName] are very suitable for our needs. Therefore, in order to make the best use of them, we must develop the full value of these planets.\n\nIn addition, some planets that can only produce minerals can choose to upgrade to consumer goods in the final stage of this giant structure (empires that do not use consumer goods cannot be enabled) or continue to produce only minerals."
- AOW_mega_notification.1010.a:0"Extract minerals from all over the planet!"
- AOW_mega_notification.1011.desc:0"The construction of a circular space station around this planet’s orbit has been completed. This circular space station is equipped with several mining laser emitters and countless small mining drone command centers.\n\nAfterward, the planet’s minerals will be collected jointly by the laser mining device and the mining drone."
- AOW_mega_notification.1011.a:0"Aim at the planet…"
- AOW_mega_notification.1012.desc:0"The circular space station is firing mining lasers at full power, and countless mining drones are searching for minerals day and night. Our $AOW_MEGA_planetary_mining_station$ has been partially completed!"
- AOW_mega_notification.1012.molten.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the molten planet.\n\nBecause there are very unstable $volatile_motes$ inside the molten planet, we have adjusted the power of the mining laser so that it can safely collect the potential $volatile_motes$ on the planet.\n\nIn addition, since the molten planet itself is a huge heat source, we have also installed thermal insulation protection and thermal energy generation devices on the mining drones. The drones can directly use the heat of the molten planet to supply energy to themselves when performing mining tasks, and can also store excess energy and transport it to the outside world."
- AOW_mega_notification.1012.toxic.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the toxic planet.\n\nBecause there are considerable reserves of alien natural gas inside the toxic planet, we have adjusted the power of the mining laser so that it can more professionally collect the potential alien natural gas on the planet."
- AOW_mega_notification.1012.hothouse.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the greenhouse planet.\n\nBecause there are considerable reserves of alien natural gas inside the greenhouse planet, we have adjusted the power of the mining laser so that it can more professionally collect the potential alien natural gas on the planet."
+ AOW_evt_planetary_mining_station.100.desc:0"There are always some planets in the universe that are not suitable for living, but the natural minerals contained in these planets can still contribute to us.\n\nFor example, the minerals on [fromfromfrom.planet.GetName] are very suitable for our needs. Therefore, in order to make the best use of them, we must develop the full value of these planets.\n\nIn addition, some planets that can only produce minerals can choose to upgrade to consumer goods in the final stage of this giant structure (empires that do not use consumer goods cannot be enabled) or continue to produce only minerals."
+ AOW_evt_planetary_mining_station.100.a:0"Extract minerals from all over the planet!"
+ AOW_evt_planetary_mining_station.101.desc:0"The construction of a circular space station around this planet’s orbit has been completed. This circular space station is equipped with several mining laser emitters and countless small mining drone command centers.\n\nAfterward, the planet’s minerals will be collected jointly by the laser mining device and the mining drone."
+ AOW_evt_planetary_mining_station.101.a:0"Aim at the planet…"
+ AOW_evt_planetary_mining_station.102.desc:0"The circular space station is firing mining lasers at full power, and countless mining drones are searching for minerals day and night. Our $AOW_MEGA_planetary_mining_station$ has been partially completed!"
+ AOW_evt_planetary_mining_station.102.molten.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the molten planet.\n\nBecause there are very unstable $volatile_motes$ inside the molten planet, we have adjusted the power of the mining laser so that it can safely collect the potential $volatile_motes$ on the planet.\n\nIn addition, since the molten planet itself is a huge heat source, we have also installed thermal insulation protection and thermal energy generation devices on the mining drones. The drones can directly use the heat of the molten planet to supply energy to themselves when performing mining tasks, and can also store excess energy and transport it to the outside world."
+ AOW_evt_planetary_mining_station.102.toxic.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the toxic planet.\n\nBecause there are considerable reserves of alien natural gas inside the toxic planet, we have adjusted the power of the mining laser so that it can more professionally collect the potential alien natural gas on the planet."
+ AOW_evt_planetary_mining_station.102.hothouse.desc:0"We have upgraded $AOW_MEGA_planetary_mining_station$ for the special resource distribution of the greenhouse planet.\n\nBecause there are considerable reserves of alien natural gas inside the greenhouse planet, we have adjusted the power of the mining laser so that it can more professionally collect the potential alien natural gas on the planet."
 
 
- AOW_mega_notification.1013.desc:0"We have built a larger circular space station above the existing one, which can store more energy to give mining lasers and mining drones longer endurance and higher efficiency. It can also transmit the collected minerals to the upper circular space station through light transmission, where they can be refined."
+ AOW_evt_planetary_mining_station.103.desc:0"We have built a larger circular space station above the existing one, which can store more energy to give mining lasers and mining drones longer endurance and higher efficiency. It can also transmit the collected minerals to the upper circular space station through light transmission, where they can be refined."
 
  ###################################### 其他 #########################################
 

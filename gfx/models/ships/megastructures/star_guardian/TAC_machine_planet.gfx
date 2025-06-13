@@ -3,4 +3,15 @@ objectTypes = {
 		name = "TAC_machine_planet_mesh"
 		file = "gfx/models/ships/megastructures/star_guardian/TAC_machine_planet.mesh"
 	}
+	pdxmesh = {#护盾
+		name = "sg_triangle_shield"
+		file = "gfx/models/ships/megastructures/celestial_shield/triangle_shield.mesh"
+		scale = 1.0
+		meshsettings = {
+			name = "shield1Shape"
+			index = 0
+			texture_diffuse = "sg_triangle_shield.dds"
+			shader = "PdxMeshAlphaAdditive"
+		}
+	}
 }

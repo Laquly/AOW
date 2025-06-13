@@ -1,33 +1,6 @@
 ##############################################################################
 #物理学
 ##############################################################################
-
-#巨舰牵引力场
-AOW_TECH_giant_warship_traction_field = {
-	area = physics
-	cost = @tier5cost3
-	tier = 5
-	category = { field_manipulation }
-	ai_update_type = all
-	weight = @tier5weight3
-	is_rare = yes
-	potential = {
-		always = no
-	}
-	prereqfor_desc = {
-		custom = {
-			title = AOW_TECH_giant_warship_traction_field_effect
-			desc = AOW_TECH_giant_warship_traction_field_effect_desc
-		}
-	}
-	weight_modifier = {
-		factor = 0
-	}
-	ai_weight = {
-		factor = 0
-	}
-}
-
 #曲率增压场
 AOW_TECH_curvature_pressurization_field = {
 	area = physics
@@ -331,24 +304,24 @@ AOW_TECH_star_guardian = {
 	tier = 5
 	category = { military_theory }
 	ai_update_type = all
-	potential = { always = no }
-	#prerequisites = { "tech_mega_engineering" }
-	weight = @tier5weight3
+	prerequisites = { "tech_habitat_1" "tech_mega_engineering" }
+	weight = 0 #@tier5weight3
 	is_rare = yes
-	weight_modifier = {
-		factor = 0.25
-		modifier = {
-			factor = 0
-			NOT = { AOW_trigger_mega_potential = { KEY = star_guardian } }
-		}
-		modifier = {
-			factor = 0
-			NOT = { has_galactic_wonders = yes }
-		}
-	}
-	ai_weight = {
-		factor = 10
-	}
+	potential = { always = no }
+	# weight_modifier = {
+	# 	factor = 0.25
+	# 	modifier = {
+	# 		factor = 0
+	# 		NOT = { AOW_trigger_mega_potential = { KEY = star_guardian } }
+	# 	}
+	# 	modifier = {
+	# 		factor = 0
+	# 		NOT = { has_galactic_wonders = yes }
+	# 	}
+	# }
+	# ai_weight = {
+	# 	factor = 10
+	# }
 }
 ##############################################################################
 #工程学

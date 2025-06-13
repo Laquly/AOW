@@ -1,34 +1,39 @@
 #AI禁用
 AOW_btn_set_ai_mega1_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_0
 		AOW_eft_GLBL_set_ai_mega1_cap_0 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_0
 		AOW_eft_GLBL_set_ai_mega2_cap_0 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_0
 		AOW_eft_GLBL_set_ai_mega3_cap_0 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_0
 		AOW_eft_GLBL_set_ai_mega4_cap_0 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_0
 		AOW_eft_GLBL_set_ai_mega_cap_0 = yes
@@ -36,35 +41,40 @@ AOW_btn_set_ai_mega_cap_0 = {
 }
 #AI 1
 AOW_btn_set_ai_mega1_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_1
 		AOW_eft_GLBL_set_ai_mega1_cap_1 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_1
 		AOW_eft_GLBL_set_ai_mega2_cap_1 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_1
 		AOW_eft_GLBL_set_ai_mega3_cap_1 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_1
 		AOW_eft_GLBL_set_ai_mega4_cap_1 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_1
 		AOW_eft_GLBL_set_ai_mega_cap_1 = yes
@@ -72,35 +82,40 @@ AOW_btn_set_ai_mega_cap_1 = {
 }
 #AI 2
 AOW_btn_set_ai_mega1_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_2
 		AOW_eft_GLBL_set_ai_mega1_cap_2 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_2
 		AOW_eft_GLBL_set_ai_mega2_cap_2 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_2
 		AOW_eft_GLBL_set_ai_mega3_cap_2 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_2
 		AOW_eft_GLBL_set_ai_mega4_cap_2 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_2
 		AOW_eft_GLBL_set_ai_mega_cap_2 = yes
@@ -108,35 +123,40 @@ AOW_btn_set_ai_mega_cap_2 = {
 }
 #AI 3
 AOW_btn_set_ai_mega1_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_3
 		AOW_eft_GLBL_set_ai_mega1_cap_3 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_3
 		AOW_eft_GLBL_set_ai_mega2_cap_3 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_3
 		AOW_eft_GLBL_set_ai_mega3_cap_3 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_3
 		AOW_eft_GLBL_set_ai_mega4_cap_3 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_3
 		AOW_eft_GLBL_set_ai_mega_cap_3 = yes
@@ -144,35 +164,40 @@ AOW_btn_set_ai_mega_cap_3 = {
 }
 #AI 4
 AOW_btn_set_ai_mega1_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_4
 		AOW_eft_GLBL_set_ai_mega1_cap_4 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_4
 		AOW_eft_GLBL_set_ai_mega2_cap_4 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_4
 		AOW_eft_GLBL_set_ai_mega3_cap_4 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_4
 		AOW_eft_GLBL_set_ai_mega4_cap_4 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_4
 		AOW_eft_GLBL_set_ai_mega_cap_4 = yes
@@ -180,35 +205,40 @@ AOW_btn_set_ai_mega_cap_4 = {
 }
 #AI 5
 AOW_btn_set_ai_mega1_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_5
 		AOW_eft_GLBL_set_ai_mega1_cap_5 = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_5
 		AOW_eft_GLBL_set_ai_mega2_cap_5 = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_5
 		AOW_eft_GLBL_set_ai_mega3_cap_5 = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_5
 		AOW_eft_GLBL_set_ai_mega4_cap_5 = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_5
 		AOW_eft_GLBL_set_ai_mega_cap_5 = yes
@@ -216,35 +246,40 @@ AOW_btn_set_ai_mega_cap_5 = {
 }
 #AI无限
 AOW_btn_set_ai_mega1_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega1_cap_infinite
 		AOW_eft_GLBL_set_ai_mega1_cap_infinite = yes
 	}
 }
 AOW_btn_set_ai_mega2_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega2_cap_infinite
 		AOW_eft_GLBL_set_ai_mega2_cap_infinite = yes
 	}
 }
 AOW_btn_set_ai_mega3_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega3_cap_infinite
 		AOW_eft_GLBL_set_ai_mega3_cap_infinite = yes
 	}
 }
 AOW_btn_set_ai_mega4_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega4_cap_infinite
 		AOW_eft_GLBL_set_ai_mega4_cap_infinite = yes
 	}
 }
 AOW_btn_set_ai_mega_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_ai_mega_cap_infinite
 		AOW_eft_GLBL_set_ai_mega_cap_infinite = yes
@@ -253,35 +288,40 @@ AOW_btn_set_ai_mega_cap_infinite = {
 
 #玩家禁用
 AOW_btn_set_player_mega1_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_0
 		AOW_eft_GLBL_set_player_mega1_cap_0 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_0
 		AOW_eft_GLBL_set_player_mega2_cap_0 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_0
 		AOW_eft_GLBL_set_player_mega3_cap_0 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_0
 		AOW_eft_GLBL_set_player_mega4_cap_0 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_0 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_0
 		AOW_eft_GLBL_set_player_mega_cap_0 = yes
@@ -289,35 +329,40 @@ AOW_btn_set_player_mega_cap_0 = {
 }
 #玩家1
 AOW_btn_set_player_mega1_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_1
 		AOW_eft_GLBL_set_player_mega1_cap_1 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_1
 		AOW_eft_GLBL_set_player_mega2_cap_1 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_1
 		AOW_eft_GLBL_set_player_mega3_cap_1 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_1
 		AOW_eft_GLBL_set_player_mega4_cap_1 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_1 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_1
 		AOW_eft_GLBL_set_player_mega_cap_1 = yes
@@ -325,35 +370,40 @@ AOW_btn_set_player_mega_cap_1 = {
 }
 #玩家2
 AOW_btn_set_player_mega1_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_2
 		AOW_eft_GLBL_set_player_mega1_cap_2 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_2
 		AOW_eft_GLBL_set_player_mega2_cap_2 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_2
 		AOW_eft_GLBL_set_player_mega3_cap_2 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_2
 		AOW_eft_GLBL_set_player_mega4_cap_2 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_2 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_2
 		AOW_eft_GLBL_set_player_mega_cap_2 = yes
@@ -361,35 +411,40 @@ AOW_btn_set_player_mega_cap_2 = {
 }
 #玩家3
 AOW_btn_set_player_mega1_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_3
 		AOW_eft_GLBL_set_player_mega1_cap_3 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_3
 		AOW_eft_GLBL_set_player_mega2_cap_3 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_3
 		AOW_eft_GLBL_set_player_mega3_cap_3 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_3
 		AOW_eft_GLBL_set_player_mega4_cap_3 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_3 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_3
 		AOW_eft_GLBL_set_player_mega_cap_3 = yes
@@ -397,35 +452,40 @@ AOW_btn_set_player_mega_cap_3 = {
 }
 #玩家4
 AOW_btn_set_player_mega1_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_4
 		AOW_eft_GLBL_set_player_mega1_cap_4 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_4
 		AOW_eft_GLBL_set_player_mega2_cap_4 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_4
 		AOW_eft_GLBL_set_player_mega3_cap_4 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_4
 		AOW_eft_GLBL_set_player_mega4_cap_4 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_4 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_4
 		AOW_eft_GLBL_set_player_mega_cap_4 = yes
@@ -433,35 +493,40 @@ AOW_btn_set_player_mega_cap_4 = {
 }
 #玩家5
 AOW_btn_set_player_mega1_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_5
 		AOW_eft_GLBL_set_player_mega1_cap_5 = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_5
 		AOW_eft_GLBL_set_player_mega2_cap_5 = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_5
 		AOW_eft_GLBL_set_player_mega3_cap_5 = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_5
 		AOW_eft_GLBL_set_player_mega4_cap_5 = yes
 	}
 }
 AOW_btn_set_player_mega_cap_5 = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_5
 		AOW_eft_GLBL_set_player_mega_cap_5 = yes
@@ -469,35 +534,40 @@ AOW_btn_set_player_mega_cap_5 = {
 }
 #玩家无限
 AOW_btn_set_player_mega1_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega1_cap_infinite
 		AOW_eft_GLBL_set_player_mega1_cap_infinite = yes
 	}
 }
 AOW_btn_set_player_mega2_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega2_cap_infinite
 		AOW_eft_GLBL_set_player_mega2_cap_infinite = yes
 	}
 }
 AOW_btn_set_player_mega3_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega3_cap_infinite
 		AOW_eft_GLBL_set_player_mega3_cap_infinite = yes
 	}
 }
 AOW_btn_set_player_mega4_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega4_cap_infinite
 		AOW_eft_GLBL_set_player_mega4_cap_infinite = yes
 	}
 }
 AOW_btn_set_player_mega_cap_infinite = {
-	potential = { from = { NOT = { has_country_flag = AOW_flag_CNTR_hide_main_interface } } }
+	potential = { from = { check_variable = { which = AOW_var_page value = 3 } } }
+	allow = { always = yes }
 	effect = {
 		custom_tooltip = AOW_text_set_player_mega_cap_infinite
 		AOW_eft_GLBL_set_player_mega_cap_infinite = yes

@@ -12,6 +12,14 @@ spriteTypes = {
 		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_mode.dds"
 	}
 	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_target"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_target.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_target_mode"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_target_mode.dds"
+	}
+	spriteType = {
 		name = "GFX_AOW_button_starfall_spear_center"
 		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_center.dds"
 	}

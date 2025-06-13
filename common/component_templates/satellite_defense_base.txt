@@ -103,7 +103,7 @@ utility_component_template = {
     prerequisites = { "tech_fission_power" }
     component_set = "power_core"
     size_restriction = { AOW_shipsize_satellite_defense_base }
-    upgrades_to = "AOW_SDB_FUSION_REACTOR"
+    upgrades_to = "AOW_SDB_COLD_FUSION_REACTOR"
     ai_weight = { weight = 1 }
 }
 utility_component_template = {

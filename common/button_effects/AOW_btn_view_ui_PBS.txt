@@ -36,7 +36,7 @@ AOW_btn_view_ui_pbs_upgrade = {
 		}
 		custom_tooltip = btn_effect_planetary_blaster_system_upgrade
 		hidden_effect = {
-			from = { country_event = { id = AOW_mega_notification.1168 } }
+			from = { country_event = { id = AOW_evt_planetary_blaster_system.108 } }
 			planet = {
 				if = {
 					limit = {

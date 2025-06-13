@@ -15,6 +15,13 @@ AOW_mod_PLNT_stellar_spectrum = {
 	icon_frame = 1
 }
 
+#资源钻取站
+AOW_mod_PLNT_resource_drilling_station = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_resource_drilling_station.dds"
+	icon_frame = 1
+	station_gatherers_produces_mult = 1
+}
+
 #死亡地狱
 AOW_mod_PLNT_hell_of_death = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"

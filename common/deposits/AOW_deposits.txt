@@ -117,21 +117,22 @@ AOW_d_starcage_world = {
 	category = deposit_cat_rare
 	triggered_planet_modifier = {
 		potential = { check_variable = { which = AOW_var_PLNT_starcage_world_level value = 1 } }
-		planet_jobs_produces_mult = 0.05
-	}
-	triggered_planet_modifier = {
-		potential = { check_variable = { which = AOW_var_PLNT_starcage_world_level value = 2 } }
 		planet_jobs_produces_mult = 0.1
 	}
 	triggered_planet_modifier = {
+		potential = { check_variable = { which = AOW_var_PLNT_starcage_world_level value = 2 } }
+		planet_jobs_produces_mult = 0.3
+	}
+	triggered_planet_modifier = {
 		potential = { check_variable = { which = AOW_var_PLNT_starcage_world_level value = 3 } }
-		planet_jobs_produces_mult = 0.2
+		planet_jobs_produces_mult = 0.7
 	}
 	triggered_planet_modifier = {
 		potential = { has_planet_flag = AOW_flag_PLNT_starcage_world_perfect }
-		pop_housing_usage_mult = -0.2
-		pop_amenities_usage_mult = -0.2
-		planet_jobs_upkeep_mult = -0.2
+		planet_jobs_produces_mult = 0.3
+		planet_jobs_upkeep_mult = -0.25
+		pop_housing_usage_mult = -0.25
+		pop_amenities_usage_mult = -0.25
 	}
 	drop_weight = { weight = 0 }
 }

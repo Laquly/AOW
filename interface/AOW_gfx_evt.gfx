@@ -13,6 +13,13 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	#星空守护者
+	spriteType = {
+		name = "GFX_evt_AOW_MEGA_star_guardian"
+		texturefile = "gfx/event_pictures/AOW_MEGA_star_guardian.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
 	#奇观建设局
 	spriteType = {
 		name = "GFX_evt_AOW_MEGA_wonder_construction_bureau"

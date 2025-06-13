@@ -107,7 +107,7 @@ AOW_MEGA_star_picker_0 = {
 				remove_country_flag = AOW_flag_CNTR_star_picker_1
 				set_country_flag = AOW_flag_CNTR_star_picker_2
 			}
-			country_event = { id = AOW_mega_notification.2020 }
+			country_event = { id = AOW_evt_star_picker.100 }
 		}
 		fromfrom = {
 			set_megastructure_flag = star_picker
@@ -149,7 +149,7 @@ AOW_MEGA_star_picker_1 = {
 	upgrade_from = { AOW_MEGA_star_picker_0 }
 	prerequisites = { "AOW_TECH_star_picker" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2021 } }
+		from = { country_event = { id = AOW_evt_star_picker.101 } }
 	}
 }
 AOW_MEGA_star_picker_2 = {
@@ -189,7 +189,7 @@ AOW_MEGA_star_picker_2 = {
 	upgrade_from = { AOW_MEGA_star_picker_1 }
 	prerequisites = { "AOW_TECH_star_picker" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2022 } }
+		from = { country_event = { id = AOW_evt_star_picker.102 } }
 	}
 }
 AOW_MEGA_star_picker_3 = {
@@ -229,7 +229,7 @@ AOW_MEGA_star_picker_3 = {
 	upgrade_from = { AOW_MEGA_star_picker_2 }
 	prerequisites = { "AOW_TECH_star_picker" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2023 } }
+		from = { country_event = { id = AOW_evt_star_picker.103 } }
 	}
 }
 AOW_MEGA_star_picker_4 = {
@@ -269,7 +269,7 @@ AOW_MEGA_star_picker_4 = {
 	upgrade_from = { AOW_MEGA_star_picker_3 }
 	prerequisites = { "AOW_TECH_star_picker" }
 	on_build_complete = {
-		from = { country_event = { id = AOW_mega_notification.2024 } }
+		from = { country_event = { id = AOW_evt_star_picker.104 } }
 	}
 }
 AOW_MEGA_star_picker_5 = {
@@ -280,6 +280,9 @@ AOW_MEGA_star_picker_5 = {
 	show_in_outliner = no
 	scales_with_planet = yes
 	use_planet_resource = yes
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = star_picker }
+	}
 	resources = {
 		category = megastructures
 		cost = {
@@ -314,7 +317,7 @@ AOW_MEGA_star_picker_5 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_mega_notification.2025 }
+			country_event = { id = AOW_evt_star_picker.105 }
 		}
 	}
 }

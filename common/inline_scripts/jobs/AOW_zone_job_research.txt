@@ -1,0 +1,78 @@
+#常规
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			NOT = {
+				has_country_flag = fallen_empire_1
+			}
+		}
+	}
+	job_physicist_add = $AMOUNT$
+	job_biologist_add = $AMOUNT$
+	job_engineer_add = $AMOUNT$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_virtuality_4
+			is_regular_empire = yes
+			NOT = {
+				has_country_flag = fallen_empire_1
+			}
+		}
+	}
+	job_physicist_add = $AMOUNT$
+	job_biologist_add = $AMOUNT$
+	job_engineer_add = $AMOUNT$
+	mult = 0.5
+}
+#格式塔
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	job_calculator_physicist_add = $AMOUNT$
+	job_calculator_biologist_add = $AMOUNT$
+	job_calculator_engineer_add = $AMOUNT$
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_virtuality_4
+			is_gestalt = yes
+		}
+	}
+	job_calculator_physicist_add = $AMOUNT$
+	job_calculator_biologist_add = $AMOUNT$
+	job_calculator_engineer_add = $AMOUNT$
+	mult = 0.5
+}
+#堕落
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_country_flag = fallen_empire_1
+		}
+	}
+	job_fe_archivist_add = $AMOUNT$
+	mult = 3
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_active_tradition = tr_virtuality_4
+			has_country_flag = fallen_empire_1
+		}
+	}
+	job_fe_archivist_add = $AMOUNT$
+	mult = 1.5
+}

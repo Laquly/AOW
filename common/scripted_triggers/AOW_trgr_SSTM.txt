@@ -39,13 +39,12 @@ AOW_trgr_SSTM_has_habitable_planets = {
 #星系有非人工、非土著的殖民地
 AOW_trgr_SSTM_has_non_artificial_non_primitive_colony = {
 	any_system_planet = {
-		OR = {
-			has_colony_progress > 0
-			is_colony = yes
-		}
+		is_colony = yes
 		is_artificial = no
 		exists = owner
-		owner = { is_primitive = no }
+		owner = {
+			is_primitive = no
+		}
 	}
 }
 #可以侵略性干扰土著

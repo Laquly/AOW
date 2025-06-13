@@ -14,18 +14,28 @@ spriteTypes = {
 		name = "GFX_megastructure_space_sensor_station_background"
 		textureFile = "gfx/interface/planetview/space_sensor_station.dds"
 	}
+	#资源钻取站
+	spriteType = {
+		name = "GFX_megastructure_resource_drilling_station_background"
+		textureFile = "gfx/interface/planetview/resource_drilling_station.dds"
+	}
 
+	#星空守护者
+	spriteType = {
+		name = "GFX_megastructure_star_guardian_background"
+		textureFile = "gfx/interface/planetview/star_guardian.dds"
+	}
 	#奇观建设局
 	spriteType = {
 		name = "GFX_megastructure_wonder_construction_bureau_background"
 		textureFile = "gfx/interface/planetview/wonder_construction_bureau.dds"
 	}
-	#暗物质曲率陷阱
+	#以太势阱
 	spriteType = {
 		name = "GFX_megastructure_dark_matter_curvature_trap_background"
 		textureFile = "gfx/interface/planetview/dark_matter_curvature_trap.dds"
 	}
-	#文物誊录宫
+	#银河珍宝馆
 	spriteType = {
 		name = "GFX_megastructure_artifacts_transcription_palace_background"
 		textureFile = "gfx/interface/planetview/artifacts_transcription_palace.dds"

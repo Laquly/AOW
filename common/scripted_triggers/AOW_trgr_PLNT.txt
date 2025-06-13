@@ -1,3 +1,194 @@
+#以下是根据恒星光谱图进行分类的，但为了游戏性，有些恒星不得不粗略归类于某个具体光谱...
+#真实情况请以现实世界为基准，本分类不严谨，仅供参考！不具备学术研究价值！
+#The following is the classification according to the star spectrum, but for the sake of gameplay, some stars have to be roughly classified into a specific spectrum
+#Please take the real world as the benchmark. This classification is not rigorous and is for reference only! No academic research value!
+
+#luminosity
+#光度
+AOW_trgr_PLNT_hyper_star = {
+	OR = {
+		is_planet_class = pc_o_hyper_star
+		is_planet_class = pc_m_hyper_star
+		is_planet_class = pc_lbv_blue_star
+		is_planet_class = pc_lbv_green_star
+		is_planet_class = pc_lbv_red_star
+		is_planet_class = pc_w_azure_star
+		is_planet_class = pc_w_red_star
+		is_planet_class = pc_w_green_star
+		is_planet_class = pc_w_purple_star
+	}
+}
+
+AOW_trgr_PLNT_super_star = {
+	OR = {
+		AOW_trgr_PLNT_o_super_star = yes
+		AOW_trgr_PLNT_b_super_star = yes
+		AOW_trgr_PLNT_a_super_star = yes
+		AOW_trgr_PLNT_f_super_star = yes
+		AOW_trgr_PLNT_g_super_star = yes
+		AOW_trgr_PLNT_k_super_star = yes
+		AOW_trgr_PLNT_m_super_star = yes
+	}
+}
+AOW_trgr_PLNT_o_super_star = {
+	is_planet_class = pc_o_super_star
+}
+AOW_trgr_PLNT_b_super_star = {
+	is_planet_class = pc_b_super_star
+}
+AOW_trgr_PLNT_a_super_star = {
+	is_planet_class = pc_a_super_star
+}
+AOW_trgr_PLNT_f_super_star = {
+	is_planet_class = pc_f_super_star
+}
+AOW_trgr_PLNT_g_super_star = {
+	OR = {
+		is_planet_class = pc_g_super_star
+		is_planet_class = pc_fu_star
+	}
+}
+AOW_trgr_PLNT_k_super_star = {
+	is_planet_class = pc_k_super_star
+}
+AOW_trgr_PLNT_m_super_star = {
+	is_planet_class = pc_m_super_star
+}
+
+AOW_trgr_PLNT_o_star = {
+	is_planet_class = pc_o_star
+}
+AOW_trgr_PLNT_b_star = {
+	OR = {
+		is_planet_class = pc_b_star
+		is_planet_class = pc_ae_star
+	}
+}
+AOW_trgr_PLNT_giant_star = {
+	OR = {
+		is_planet_class = pc_g_giant_star
+		is_planet_class = pc_k_giant_star
+		is_planet_class = pc_s_giant_star
+		is_planet_class = pc_m_giant_star
+		is_planet_class = pc_c_giant_star
+	}
+}
+AOW_trgr_PLNT_a_star = {
+	is_planet_class = pc_a_star
+}
+AOW_trgr_PLNT_f_star = {
+	OR = {
+		is_planet_class = pc_f_star
+		is_planet_class = pc_tt_white_star
+	}
+}
+AOW_trgr_PLNT_g_star = {
+	OR = {
+		is_planet_class = pc_g_star
+		is_planet_class = pc_tt_orange_star
+	}
+}
+AOW_trgr_PLNT_k_star = {
+	OR = {
+		is_planet_class = pc_k_star
+		is_planet_class = pc_tt_red_star
+	}
+}
+AOW_trgr_PLNT_m_star = {
+	is_planet_class = pc_m_star
+}
+#光谱
+AOW_trgr_PLNT_o_spectrum = {#O
+	OR = {
+		is_planet_class = pc_o_hyper_star
+		is_planet_class = pc_lbv_blue_star
+		is_planet_class = pc_lbv_green_star
+		is_planet_class = pc_lbv_red_star
+		is_planet_class = pc_w_azure_star
+		is_planet_class = pc_w_red_star
+		is_planet_class = pc_w_green_star
+		is_planet_class = pc_w_purple_star
+		is_planet_class = pc_o_super_star
+		is_planet_class = pc_o_star
+	}
+}
+AOW_trgr_PLNT_b_spectrum = {#B
+	OR = {
+		is_planet_class = pc_b_super_star
+		is_planet_class = pc_b_star
+		is_planet_class = pc_ae_star
+	}
+}
+AOW_trgr_PLNT_a_spectrum = {#A
+	OR = {
+		is_planet_class = pc_a_super_star
+		is_planet_class = pc_a_star
+	}
+}
+AOW_trgr_PLNT_f_spectrum = {#F
+	OR = {
+		is_planet_class = pc_f_super_star
+		is_planet_class = pc_f_star
+		is_planet_class = pc_tt_white_star
+	}
+}
+AOW_trgr_PLNT_g_spectrum = {#G
+	OR = {
+		is_planet_class = pc_g_super_star
+		is_planet_class = pc_fu_star
+		is_planet_class = pc_g_giant_star
+		is_planet_class = pc_g_star
+		is_planet_class = pc_tt_orange_star
+	}
+}
+AOW_trgr_PLNT_k_spectrum = {#K
+	OR = {
+		is_planet_class = pc_k_super_star
+		is_planet_class = pc_k_giant_star
+		is_planet_class = pc_s_giant_star
+		is_planet_class = pc_k_star
+		is_planet_class = pc_tt_red_star
+	}
+}
+AOW_trgr_PLNT_m_spectrum = {#M
+	OR = {
+		is_planet_class = pc_m_hyper_star
+		is_planet_class = pc_m_super_star
+		is_planet_class = pc_m_giant_star
+		is_planet_class = pc_c_giant_star
+		is_planet_class = pc_m_star
+	}
+}
+AOW_trgr_PLNT_brown_dwarf = {#褐矮星
+	OR = {
+		is_planet_class = pc_l_star
+		is_planet_class = pc_t_star
+		is_planet_class = pc_y_star
+	}
+}
+#pc_d_star
+#pc_protostar
+#光谱分类为OBAFGKM的恒星
+AOW_trgr_PLNT_obafgkm_star = {
+	OR = {
+		AOW_trgr_PLNT_o_spectrum = yes
+		AOW_trgr_PLNT_b_spectrum = yes
+		AOW_trgr_PLNT_a_spectrum = yes
+		AOW_trgr_PLNT_f_spectrum = yes
+		AOW_trgr_PLNT_g_spectrum = yes
+		AOW_trgr_PLNT_k_spectrum = yes
+		AOW_trgr_PLNT_m_spectrum = yes
+	}
+}
+#由中子构成的恒星
+AOW_trgr_PLNT_composed_of_neutron = {
+	OR = {
+		is_planet_class = pc_neutron_star
+		is_planet_class = pc_pulsar
+		is_planet_class = pc_magnetar #磁星
+	}
+}
+
 #普通星球
 AOW_trgr_PLNT_ordinary_planet = {
 	OR = {
@@ -83,46 +274,12 @@ AOW_trgr_PLNT_has_dyson_swarm = {
 	solar_system = {
 		any_system_megastructure = {
 			planet = { is_same_value = prevprevprev }
-			OR = {
-				is_megastructure_type = dyson_swarm_1
-				is_megastructure_type = dyson_swarm_2
-				is_megastructure_type = dyson_swarm_3
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_hyper
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_hyper
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_hyper
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_super
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_super
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_super
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_o
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_o
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_o
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_b
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_b
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_b
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_giant
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_giant
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_giant
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_a
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_a
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_a
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_f
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_f
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_f
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_g
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_g
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_g
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_k
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_k
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_k
-				is_megastructure_type = AOW_MEGA_dyson_swarm_1_m
-				is_megastructure_type = AOW_MEGA_dyson_swarm_2_m
-				is_megastructure_type = AOW_MEGA_dyson_swarm_3_m
-			}
+			AOW_trgr_MEGA_is_dyson_swarm = yes
 		}
 	}
 }
-
-is_pc_starcage_world = {
+#是星笼世界
+AOW_trgr_PLNT_is_starcage_world = {
 	OR = {
 		is_planet_class = pc_starcage_world
 		is_planet_class = pc_starcage_world_common_star

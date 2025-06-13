@@ -1,10 +1,7 @@
 #恒星吞噬者
 AOW_btn_stellar_eater_prerequisites = {
 	potential = {
-		from = {
-			check_variable = { which = AOW_var_page value >= 3 }
-			check_variable = { which = AOW_var_page value <= 4 }
-		}
+		from = { check_variable = { which = AOW_var_page value = 3 } }
 	}
 	allow = {
 		custom_tooltip = AOW_text_stellar_eater_desc

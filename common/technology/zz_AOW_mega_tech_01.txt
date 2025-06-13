@@ -1,27 +1,6 @@
 ##############################################################################
 #物理学
 ##############################################################################
-#极速超空间中继器
-AOW_TECH_faster_hyper_relay = {
-	cost = @tier4cost3
-	area = physics
-	tier = 4
-	category = { particles }
-	#prerequisites = { tech_hyper_relays tech_gateway_activation }
-	weight = @tier4weight3
-	is_rare = yes
-	# modifier = {
-	# 	relay_bypass_empire_windup_mult = 1
-	# }
-	potential = { always = no }
-	weight_modifier = {
-		factor = 0
-	}
-	ai_weight = {
-		factor = 0
-	}
-}
-
 #时空曲率操纵
 AOW_TECH_spatiotemporal_curvature_manipulation = {
 	cost = @tier5cost3
@@ -37,7 +16,7 @@ AOW_TECH_spatiotemporal_curvature_manipulation = {
 		factor = 20
 	}
 }
-#暗物质曲率陷阱
+#以太势阱
 AOW_TECH_dark_matter_curvature_trap = {
 	cost = @tier5cost3
 	area = physics
@@ -313,7 +292,7 @@ AOW_TECH_hyperlane_controller = {
 #星网
 AOW_TECH_advanced_hyperlane_controller = {
 	area = physics
-	cost = @tier6cost1
+	cost = @tier5cost3
 	tier = 5
 	category = { field_manipulation }
 	ai_update_type = all
@@ -620,6 +599,45 @@ AOW_TECH_synthetic_food_factory = {
 		factor = 10
 	}
 }
+# AOW_TECH_biological_cultivation_pod = {
+# 	cost = @tier5cost3
+# 	area = society
+# 	tier = 5
+# 	category = { biology }
+# 	is_rare = yes
+# 	potential = { always = no }
+# 	prerequisites = { "tech_mega_engineering" "tech_alien_cloning" }
+# 	weight = @tier5weight3
+# 	weight_modifier = {
+# 		modifier = {
+# 			factor = 0
+# 			NOT = { AOW_trigger_mega_potential = { KEY = biological_cultivation_pod } }
+# 		}
+# 		modifier = {
+# 			factor = 2
+# 			has_galactic_wonders = yes
+# 		}
+# 		modifier = {
+# 			factor = 6
+# 			has_ascension_perk = ap_master_builders
+# 		}
+# 		modifier = {
+# 			factor = 9
+# 			has_ascension_perk = ap_technological_ascendancy
+# 		}
+# 		modifier = {
+# 			factor = @federation_perk_factor
+# 			has_federation = yes
+# 			federation = {
+# 				has_federation_perk = rare_tech_boost
+# 				any_member = { has_technology = AOW_TECH_biological_cultivation_pod }
+# 			}
+# 		}
+# 	}
+# 	ai_weight = {
+# 		factor = 10
+# 	}
+# }
 #泽珞升华器
 AOW_TECH_zro_sublimator = {
 	cost = @tier5cost3
@@ -717,7 +735,7 @@ AOW_TECH_improved_construction_efficiency_2 = {
 	}
 }
 
-#行星开采站
+#行星开采器
 AOW_TECH_planetary_mining_station = {
 	cost = @tier5cost3
 	area = engineering
@@ -769,7 +787,6 @@ AOW_TECH_wonder_construction_bureau = {
 	tier = 5
 	category = { industry }
 	is_rare = yes
-	#potential = { always = no }
 	prerequisites = { "tech_mine_living_metal" "tech_mega_engineering" }
 	weight = @tier5weight3
 	weight_modifier = {

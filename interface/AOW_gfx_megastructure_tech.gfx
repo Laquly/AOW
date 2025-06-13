@@ -21,15 +21,25 @@ spriteTypes = {
 		name = "GFX_AOW_MEGA_satellite_defense_base_1_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_satellite_defense_base.dds"
 	}
+	#资源钻取站
+	spriteType = {
+		name = "GFX_AOW_MEGA_resource_drilling_station_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_resource_drilling_station.dds"
+	}
 
 	##################################### 普通巨构 #####################################
 
+	#星空守护者
+	spriteType = {
+		name = "GFX_AOW_MEGA_star_guardian_0_build_icon"
+		texturefile = "gfx/interface/icons/technologies/AOW_TECH_star_guardian.dds"
+	}
 	#奇观建设局
 	spriteType = {
 		name = "GFX_AOW_MEGA_wonder_construction_bureau_0_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_wonder_construction_bureau.dds"
 	}
-	#暗物质曲率陷阱
+	#以太势阱
 	spriteType = {
 		name = "GFX_AOW_MEGA_dark_matter_curvature_trap_0_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_dark_matter_curvature_trap.dds"
@@ -84,7 +94,7 @@ spriteTypes = {
 		name = "GFX_AOW_MEGA_zro_sublimator_0_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_zro_sublimator.dds"
 	}
-	#星云精炼厂
+	#星云精炼中心
 	spriteType = {
 		name = "GFX_AOW_MEGA_nebula_refining_center_0_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_nebula_refining_center.dds"

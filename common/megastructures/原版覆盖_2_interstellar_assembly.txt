@@ -10,10 +10,31 @@ interstellar_assembly_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
 			unity = 2500
 		}
-		upkeep = { energy = 5 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 5
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -106,10 +127,31 @@ interstellar_assembly_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 10000
 			unity = 2500
 		}
-		upkeep = { energy = 10 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 10
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -148,10 +190,31 @@ interstellar_assembly_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 10000
 			unity = 2500
 		}
-		upkeep = { energy = 20 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 20
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -167,6 +230,7 @@ interstellar_assembly_2 = {
 	prerequisites = { "tech_interstellar_assembly" }
 	country_modifier = {
 		diplo_weight_mult = 0.20
+		empire_size_mult = -0.05
 		envoys_add = 1
 		# enables triggered_opinion_of_interstellar_assembly_2
 	}
@@ -191,10 +255,32 @@ interstellar_assembly_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 10000
 			unity = 2500
 		}
-		upkeep = { energy = 30 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		upkeep = {
+			energy = 30
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -210,6 +296,7 @@ interstellar_assembly_3 = {
 	prerequisites = { "tech_interstellar_assembly" }
 	country_modifier = {
 		diplo_weight_mult = 0.30
+		empire_size_mult = -0.05
 		envoys_add = 1
 		# enables triggered_opinion_of_interstellar_assembly_3
 	}
@@ -231,14 +318,38 @@ interstellar_assembly_4 = {
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
 	show_in_outliner = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = interstellar_assembly }
+	}
 	build_time = 1800
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 10000
 			unity = 2500
 		}
-		upkeep = { energy = 40 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 40
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -255,6 +366,7 @@ interstellar_assembly_4 = {
 	show_prereqs = yes
 	country_modifier = {
 		diplo_weight_mult = 0.40
+		empire_size_mult = -0.10
 		envoys_add = 2
 		# enables triggered_opinion_of_interstellar_assembly_4
 	}
@@ -316,14 +428,38 @@ interstellar_assembly_restored = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = interstellar_assembly }
+	}
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 10000
 			unity = 3200
 		}
-		upkeep = { energy = 40 }
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = {
+			energy = 40
+		}
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -339,6 +475,7 @@ interstellar_assembly_restored = {
 	possible = { from = { has_technology = tech_mega_engineering } }
 	country_modifier = {
 		diplo_weight_mult = 0.40
+		empire_size_mult = -0.10
 		envoys_add = 2
 		# enables triggered_opinion_of_interstellar_assembly_4
 	}

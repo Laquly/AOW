@@ -296,8 +296,8 @@ AOW_eft_start_launching_at_starfall_spear_target = {
 		}
 	}
 }
-#取消目标
-AOW_eft_starfall_spear_cancel_target = {
+#取消目标和旗子
+AOW_eft_starfall_spear_cancel_target_and_flag = {
 	if = {
 		limit = { exists = event_target:AOW_starfall_spear_target_$target$_@$scope$ }
 		event_target:AOW_starfall_spear_target_$target$_@$scope$ = {
@@ -330,6 +330,25 @@ AOW_eft_starfall_spear_cancel_target = {
 			clear_global_event_target = AOW_starfall_spear_target_$target$_@$scope$
 		}
 	}
+}
+#取消目标
+AOW_eft_starfall_spear_cancel_target = {
+	if = {
+		limit = { exists = event_target:AOW_starfall_spear_target_$target$_@$scope$ }
+		clear_global_event_target = AOW_starfall_spear_target_$target$_@$scope$
+	}
+}
+AOW_eft_starfall_spear_cancel_all_targets_and_flags = {
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 01 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 02 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 03 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 04 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 05 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 06 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 07 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 08 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 09 scope = $scope$ }
+	AOW_eft_starfall_spear_cancel_target_and_flag = { target = 10 scope = $scope$ }
 }
 AOW_eft_starfall_spear_cancel_all_targets = {
 	AOW_eft_starfall_spear_cancel_target = { target = 01 scope = $scope$ }

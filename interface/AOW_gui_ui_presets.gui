@@ -558,13 +558,13 @@ guiTypes = {
 				effect = AOW_btn_preinstall_ShiYouZaiDaWa
 			}
 			effectButtonType = {
-				name = AOW_btn_preinstall_YuanBanShaoJiaQiang
+				name = AOW_btn_preinstall_ShiQuDeFeng
 				position = { x = @p_x2 y = @p_y13 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
-				text = AOW_btn_preinstall_YuanBanShaoJiaQiang
-				effect = AOW_btn_preinstall_YuanBanShaoJiaQiang
+				text = AOW_btn_preinstall_ShiQuDeFeng
+				effect = AOW_btn_preinstall_ShiQuDeFeng
 			}
 			effectButtonType = {
 				name = AOW_btn_preinstall_XiaoBaiTan
@@ -963,13 +963,13 @@ guiTypes = {
 				effect = AOW_btn_preinstall_ZhangSanDePeiZhi
 			}
 			effectButtonType = {
-				name = AOW_btn_preinstall_HuaHuaDeUI
+				name = AOW_btn_preinstall_TaoTaoUI
 				position = { x = @p_x3 y = @p_y24 }
 				spriteType = GFX_AOW_button_preinstall
 				buttonFont = cg_16b
 				format = center
-				text = AOW_btn_preinstall_HuaHuaDeUI
-				effect = AOW_btn_preinstall_HuaHuaDeUI
+				text = AOW_btn_preinstall_TaoTaoUI
+				effect = AOW_btn_preinstall_TaoTaoUI
 			}
 			effectButtonType = {
 				name = AOW_btn_preinstall_ZiYuanChongZu

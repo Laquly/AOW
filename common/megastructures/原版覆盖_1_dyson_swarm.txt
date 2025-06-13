@@ -13,10 +13,28 @@ dyson_swarm_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 500
 			unity = 1000
 		}
-
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
 		upkeep = {
 			alloys = 5
 		}
@@ -59,35 +77,9 @@ dyson_swarm_1 = {
 				fail_text = "requires_no_anomaly"
 				NOT = { has_anomaly = yes }
 			}
-			if = {
-				limit = {
-					from = { NOT = { has_technology = AOW_TECH_hyperdimension_hiding } }
-				}
-				custom_tooltip = {#放置处不能有巨构
-					fail_text = "requires_no_existing_megastructure"
-					AOW_trgr_PLNT_existing_megastructure = no
-				}
-			}
-			else_if = {
-				limit = {
-					from = { has_technology = AOW_TECH_hyperdimension_hiding }
-				}
-				custom_tooltip = {#放置处不能有巨构
-					fail_text = "requires_no_existing_megastructure"
-					AOW_trgr_PLNT_megastructure_planet = no
-					NOT = {
-						solar_system = {
-							any_system_megastructure = {
-								planet = { is_same_value = root }
-								OR = {
-									has_megastructure_flag = dyson_sphere
-									has_megastructure_flag = dyson_swarm
-									has_megastructure_flag = no_stacking
-								}
-							}
-						}
-					}
-				}
+			custom_tooltip = {#放置处不能有巨构
+				fail_text = "requires_no_existing_megastructure"
+				AOW_trgr_PLNT_existing_megastructure = no
 			}
 			if = {
 				limit = {
@@ -217,9 +209,29 @@ dyson_swarm_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1000
 			unity = 2500
 		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
 		upkeep = {
 			alloys = 10
 		}
@@ -263,10 +275,7 @@ dyson_swarm_3 = {
 	scale_offset = yes
 	place_entity_on_planet_plane = yes
 	outliner_trigger = {
-		exists = owner
-		owner = { has_technology = tech_dyson_sphere }
-		AOW_trgr_SSTM_has_non_artificial_non_primitive_colony = no
-		AOW_trgr_SSTM_can_aggressively_interfere_with_pre_ftl = yes
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_swarm }
 	}
 	construction_blocks_and_blocked_by = none
 	use_planet_resource = yes
@@ -274,9 +283,29 @@ dyson_swarm_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1500
 			unity = 5000
 		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1500
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
 		upkeep = {
 			alloys = 20
 		}
