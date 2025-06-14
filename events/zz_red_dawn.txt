@@ -372,19 +372,6 @@ country_event = {
 			limit = { has_country_flag = AOW_flag_CNTR_laquly_snail }
 			create_dummy_leader_laquly = { portrait = red_dawn_snail gender = indeterminable }
 		}
-		if = {
-			limit = { any_owned_leader = { is_gestalt_node = yes } }
-			event_target:AOW_target_leader = {
-				remove_all_traits = yes
-				add_trait = { trait = subclass_official_governor show_message = no }
-				add_trait = { trait = leader_trait_laquly_gestalt show_message = no }
-				add_trait = { trait = leader_trait_red_dawn show_message = no }
-				add_trait = { trait = leader_trait_forge_focus_3 show_message = no } #冶金专精（专精）
-				add_trait = { trait = leader_trait_pop_focused_3 show_message = no } #高效委派
-				add_trait = { trait = leader_trait_bureaucrat show_message = no } #上下同心
-				add_trait = { trait = leader_trait_cyborg show_message = no }
-			}
-		}
 	}
 	picture_event_data = {
 		portrait = event_target:AOW_target_leader
@@ -470,19 +457,6 @@ country_event = {
 			if = {
 				limit = { has_country_flag = AOW_flag_CNTR_laquly_snail }
 				create_leader_laquly = { portrait = red_dawn_snail gender = indeterminable }
-			}
-			if = {
-				limit = { any_owned_leader = { is_gestalt_node = yes } }
-				event_target:AOW_target_leader = {
-					remove_all_traits = yes
-					add_trait = { trait = subclass_official_governor show_message = no }
-					add_trait = { trait = leader_trait_laquly_gestalt show_message = no }
-					add_trait = { trait = leader_trait_red_dawn show_message = no }
-					add_trait = { trait = leader_trait_forge_focus_3 show_message = no } #冶金专精（专精）
-					add_trait = { trait = leader_trait_pop_focused_3 show_message = no } #高效委派
-					add_trait = { trait = leader_trait_bureaucrat show_message = no } #上下同心
-					add_trait = { trait = leader_trait_cyborg show_message = no }
-				}
 			}
 			create_message = {
 				type = MESSAGE_RECRUITED_LEADER

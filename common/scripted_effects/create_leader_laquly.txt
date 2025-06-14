@@ -37,13 +37,16 @@ create_leader_laquly = {
 		custom_description = laquly_backstory#领袖背景故事
 		background_ethic = ethic_egalitarian#领袖思潮
 		gender = $gender$#领袖性别，male男、female女、indeterminable无性别
+		randomize_traits = no
 		traits = {
-			trait = subclass_official_economy_councilor #国务顾问
+			trait = subclass_official_governor
 			trait = leader_trait_laquly
+			trait = leader_trait_galvanizer
 			trait = leader_trait_red_dawn
-			trait = leader_trait_cultural_focus_3 #文宣专精（专精）
-			trait = leader_trait_reformer_3 #改革家
-			trait = leader_trait_bureaucrat_2 #上下同心
+			trait = leader_trait_forge_focus_3
+			trait = leader_trait_pop_focused_3
+			trait = leader_trait_distribution_lines_3
+			trait = leader_trait_bureaucrat
 			trait = leader_trait_cyborg
 		}
 		effect = {#设置领袖专属标记、设置领袖肖像
@@ -51,20 +54,8 @@ create_leader_laquly = {
 			set_leader_flag = immune_to_negative_traits
 			set_leader_flag = leader_laquly
 			change_leader_portrait = $portrait$
+			save_event_target_as = AOW_target_leader
 		}
-	}
-	last_created_leader = {
-		set_leader_flag = has_gained_level_trait
-		remove_all_traits = yes#清除自动获得的特质
-		#添加固定的特质
-		add_trait_no_notify = subclass_official_economy_councilor
-		add_trait_no_notify = leader_trait_laquly
-		add_trait_no_notify = leader_trait_red_dawn
-		add_trait_no_notify = leader_trait_cultural_focus_3 #文宣专精（专精）
-		add_trait_no_notify = leader_trait_reformer_3 #改革家
-		add_trait_no_notify = leader_trait_bureaucrat_2 #上下同心
-		add_trait_no_notify = leader_trait_cyborg
-		save_event_target_as = AOW_target_leader
 	}
 }
 

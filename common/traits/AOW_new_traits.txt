@@ -1,30 +1,56 @@
 leader_trait_laquly = {
-	inline_script = {
-		script = trait/icon
-		CLASS = official
-		ICON = "GFX_leader_trait_laquly"
-		RARITY = paragon
-		COUNCIL = triggered
-		TIER = none
+	leader_trait_type = destiny
+	custom_subtitle = paragon_official_trait
+	icon = {
+		layer = {
+			icon = "GFX_trait_bg"
+			color = "trait_bg_default"
+		}
+		layer = {
+			icon = "GFX_trait_glow_destiny"
+			color = "trait_rarity_destiny"
+		}
+		layer = {
+			icon = "GFX_trait_frame_destiny"
+			color = "trait_rarity_destiny"
+		}
+		layer = {
+			icon = GFX_leader_trait_laquly
+			color = "trait_icon_default"
+		}
+		layer = {
+			icon = "GFX_trait_councilor"
+			visible = {
+				is_councilor = yes
+			}
+		}
 	}
-	councilor_modifier = {
+	leader_trait_rarity = paragon
+	sorting_priority = 110
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = { any_owned_leader = { is_gestalt_node = no } }
+		}
 		pop_ethic_egalitarian_attraction_mult = 1
-		pop_happiness = 0.05
-		planet_jobs_unity_produces_mult = 0.5
+		planet_jobs_alloys_produces_mult = 0.25
+		planet_jobs_unity_produces_mult = 0.25
 		megastructure_build_speed_mult = 0.5
 		pop_cat_specialist_political_power = 5
 		pop_cat_worker_political_power = 10
 		pop_cat_slave_political_power = 10
 	}
 	planet_modifier = {
-		pop_category_workers_unity_produces_add = 0.5
-		pop_category_specialists_unity_produces_add = 0.5
-		pop_happiness = 0.05
+		pop_happiness = 0.1
+		planet_amenities_mult = 0.1
+		planet_jobs_alloys_produces_mult = 0.25
+		planet_jobs_unity_produces_mult = 0.25
 	}
 	sector_modifier = {
-		pop_category_workers_unity_produces_add = 0.25
-		pop_category_specialists_unity_produces_add = 0.25
 		pop_happiness = 0.05
+		planet_amenities_mult = 0.05
+		planet_jobs_alloys_produces_mult = 0.125
+		planet_jobs_unity_produces_mult = 0.125
 	}
 	leader_class = { official }
 	background_icon = "GFX_leader_background_destiny_1"
@@ -63,8 +89,10 @@ leader_trait_laquly_node = {
 		TIER = none
 	}
 	councilor_modifier = {
+		planet_stability_add = 10
+		planet_jobs_alloys_produces_mult = 0.25
+		planet_jobs_unity_produces_mult = 0.25
 		megastructure_build_speed_mult = 0.5
-		country_megastructure_build_cap_add = 1
 	}
 	leader_class = { commander scientist official }
 	background_icon = "GFX_leader_background_destiny_1"

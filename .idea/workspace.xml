@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e51fdb5e-2fa4-452c-ac5f-0cdd2b78c5fc" name="更改" comment="大更新" />
+    <list default="true" id="e51fdb5e-2fa4-452c-ac5f-0cdd2b78c5fc" name="更改" comment="大更新">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/create_leader_laquly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/create_leader_laquly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/traits/AOW_new_traits.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/traits/AOW_new_traits.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/AOW_evts_core.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/AOW_evts_core.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/zz_red_dawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/zz_red_dawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_l_simp_chinese.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/simp_chinese/AOW_main_ui_l_simp_chinese.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,12 +21,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Laquly/AOW.git",
-    "accountId": "7edab548-c2b2-4044-bd5e-3a0e9df9a3a5"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Laquly&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Laquly/AOW.git&quot;,
+    &quot;accountId&quot;: &quot;7edab548-c2b2-4044-bd5e-3a0e9df9a3a5&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/interface/AOW_gui_ui_main.gui" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -69,11 +83,19 @@
       <option name="project" value="LOCAL" />
       <updated>1749842337656</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="大更新">
+      <option name="closed" value="true" />
+      <created>1749842818677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749842818677</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="大更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="大更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
