@@ -23,7 +23,7 @@ guiTypes = {
 		origo = center
 		moveable = yes
 		@main_ui_width = 1220
-		size = { width = @main_ui_width height = 92% }
+		size = { width = @main_ui_width height = 85% }
 
 		@container_width_6 = 1425
 		@container_width_7 = 1630
