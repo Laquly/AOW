@@ -6,7 +6,7 @@
 ######################## 小型巨构 ########################
 
 #星光竞技场
-@AOW_var_SA_1_TIME = 360
+@AOW_var_SA_1_TIME = 720
 @AOW_var_SA_1_COST_alloys = 500
 @AOW_var_SA_1_COST_unity = 750
 @AOW_var_SA_1_UPKP_energy = 10
@@ -14,7 +14,7 @@
 @AOW_var_SA_1_PRDC_research = 10
 
 #星状开采站
-@AOW_var_AMS_1_TIME = 360
+@AOW_var_AMS_1_TIME = 720
 @AOW_var_AMS_1_COST_alloys = 500
 @AOW_var_AMS_1_COST_unity = 500
 @AOW_var_AMS_1_UPKP_energy = 10
@@ -27,25 +27,20 @@
 @AOW_var_AMS_1_PRDC_crystal_IceAsteroid = 2
 
 #星空传感站
-@AOW_var_SSS_1_time = 360
+@AOW_var_SSS_1_time = 720
 @AOW_var_SSS_1_COST_alloys = 500
 @AOW_var_SSS_1_COST_unity = 500
 @AOW_var_SSS_1_UPKP_energy = 5
 @AOW_var_SSS_1_sensor_range = 8
 @AOW_var_SSS_1_hyperlane_range = 10
 
-#卫星防御基地
-@AOW_var_SDB_1_TIME = 900
-@AOW_var_SDB_1_COST_alloys = 1000
-@AOW_var_SDB_1_COST_unity = 500
-
 #资源钻取站
-@AOW_var_RDS_0_TIME = 360
+@AOW_var_RDS_0_TIME = 720
 @AOW_var_RDS_0_COST_alloys = 500
 @AOW_var_RDS_0_COST_unity = 500
 @AOW_var_RDS_0_UPKP_energy = 10
-@AOW_var_RDS_1_TIME = 360
-@AOW_var_RDS_1_COST_energy = 1000
+@AOW_var_RDS_1_TIME = 720
+@AOW_var_RDS_1_COST_energy = 5000
 
 ######################## 普通巨构 ########################
 #奇观建设局
@@ -433,17 +428,16 @@
 #繁荣贸易站
 @AOW_var_PTS_0_TIME = 1800
 @AOW_var_PTS_0_COST_alloys = 5000
-@AOW_var_PTS_0_COST_unity = 2500
+@AOW_var_PTS_0_COST_unity = 2000
 @AOW_var_PTS_0_UPKP_energy = 5
 @AOW_var_PTS_1_TIME = 1800
-@AOW_var_PTS_1_COST_alloys = 10000
-@AOW_var_PTS_1_COST_unity = 2500
+@AOW_var_PTS_1_COST_alloys = 7500
+@AOW_var_PTS_1_COST_unity = 2000
 @AOW_var_PTS_1_UPKP_energy = 25
 @AOW_var_PTS_1_envoys_add = 1
 @AOW_var_PTS_2_TIME = 1800
-@AOW_var_PTS_2_COST_alloys = 10000
-@AOW_var_PTS_2_COST_crystals = 250
-@AOW_var_PTS_2_COST_unity = 2500
+@AOW_var_PTS_2_COST_alloys = 7500
+@AOW_var_PTS_2_COST_unity = 2000
 @AOW_var_PTS_2_UPKP_energy = 50
 @AOW_var_PTS_2_UPKP_crystals = 10
 @AOW_var_PTS_2_envoys_add = 1
@@ -451,9 +445,8 @@
 @AOW_var_PTS_2_planet_jobs_trade_produces_mult = 0.05
 @AOW_var_PTS_2_branch_office_value_mult = 0.05
 @AOW_var_PTS_3_TIME = 1800
-@AOW_var_PTS_3_COST_alloys = 10000
-@AOW_var_PTS_3_COST_crystals = 250
-@AOW_var_PTS_3_COST_unity = 2500
+@AOW_var_PTS_3_COST_alloys = 7500
+@AOW_var_PTS_3_COST_unity = 2000
 @AOW_var_PTS_3_UPKP_energy = 75
 @AOW_var_PTS_3_UPKP_crystals = 20
 @AOW_var_PTS_3_PRDC_unity = 100
@@ -461,16 +454,16 @@
 @AOW_var_PTS_3_planet_jobs_trade_produces_mult = 0.1
 @AOW_var_PTS_3_branch_office_value_mult = 0.1
 @AOW_var_PTS_4_TIME = 1800
-@AOW_var_PTS_4_COST_energy = 5000
-@AOW_var_PTS_4_COST_influence = 150
+@AOW_var_PTS_4_COST_alloys = 7500
+@AOW_var_PTS_4_COST_unity = 2000
 @AOW_var_PTS_4_UPKP_energy = 100
 @AOW_var_PTS_4_PRDC_unity = 200
 @AOW_var_PTS_4_envoys_add = 1
 @AOW_var_PTS_4_planet_jobs_trade_produces_mult = 0.2
 @AOW_var_PTS_4_branch_office_value_mult = 0.2
 @AOW_var_PTS_5_TIME = 1800
-@AOW_var_PTS_5_COST_energy = 5000
-@AOW_var_PTS_5_COST_influence = 150
+@AOW_var_PTS_5_COST_minerals = 5000
+@AOW_var_PTS_5_COST_influence = 100
 @AOW_var_PTS_5_UPKP_energy = 100
 @AOW_var_PTS_5_PRDC_unity = 300
 @AOW_var_PTS_5_envoys_add = 1
@@ -712,17 +705,20 @@
 @AOW_var_PD_1_COST_zro = 250
 @AOW_var_PD_1_COST_unity = 7000
 @AOW_var_PD_1_UPKP_energy = 25
+@AOW_var_PD_1_PRDC_unity = 100
 @AOW_var_PD_1_pop_government_ethic_attraction = 0.25
 @AOW_var_PD_2_TIME = 3600
 @AOW_var_PD_2_COST_alloys = 15000
 @AOW_var_PD_2_COST_zro = 250
 @AOW_var_PD_2_COST_unity = 7000
 @AOW_var_PD_2_UPKP_energy = 50
+@AOW_var_PD_2_PRDC_unity = 250
 @AOW_var_PD_2_pop_government_ethic_attraction = 0.5
 @AOW_var_PD_3_TIME = 3600
 @AOW_var_PD_3_COST_energy = 10000
 @AOW_var_PD_3_COST_zro = 2000
 @AOW_var_PD_3_COST_unity = 7000
+@AOW_var_PD_3_PRDC_unity = 500
 @AOW_var_PD_3_PRDC_zro = 25
 @AOW_var_PD_3_UPKP_energy = 100
 @AOW_var_PD_3_UPKP_alloys = 50
@@ -1140,12 +1136,12 @@
 
 
 #千载星辰		117.5
-@AOW_var_QSQM_0_TIME = 1800	#5
-@AOW_var_QSQM_1_TIME = 3600	#10	#10
-@AOW_var_QSQM_2_TIME = 5400	#15	#25
-@AOW_var_QSQM_3_TIME = 7200	#20	#45
-@AOW_var_QSQM_4_TIME = 9000	#25	#70
-@AOW_var_QSQM_5_TIME = 10800	#30	#100	#10+15+20+25+30=100
+@AOW_var_QSQM_0_TIME = 1800		#5
+@AOW_var_QSQM_1_TIME = 6480		#10	#10
+@AOW_var_QSQM_2_TIME = 9720		#15	#25
+@AOW_var_QSQM_3_TIME = 12960		#20	#45
+@AOW_var_QSQM_4_TIME = 16200		#25	#70
+@AOW_var_QSQM_5_TIME = 19440	#30	#100	#10+15+20+25+30=100
 @AOW_var_QSQM_0_COST_alloys = 10000
 @AOW_var_QSQM_0_COST_unity = 10000
 @AOW_var_QSQM_0_UPKP_energy = 50
@@ -1187,21 +1183,21 @@
 @AOW_var_QSQM_4_research_speed = 0.35
 @AOW_var_QSQM_5_research_speed = 0.50
 
-#千载星辰特超巨星	3
+#千载星辰特超巨星	4
 @AOW_var_QSQMhs_1_TIME = 10800
 @AOW_var_QSQMhs_2_TIME = 16200
 @AOW_var_QSQMhs_3_TIME = 21600
 @AOW_var_QSQMhs_4_TIME = 27000
 @AOW_var_QSQMhs_5_TIME = 32400
 
-#千载星辰超巨星	2.5
+#千载星辰超巨星	3
 @AOW_var_QSQMss_1_TIME = 9000
 @AOW_var_QSQMss_2_TIME = 13500
 @AOW_var_QSQMss_3_TIME = 18000
 @AOW_var_QSQMss_4_TIME = 22500
 @AOW_var_QSQMss_5_TIME = 27000
 
-#千载星辰O	2.25
+#千载星辰O	2.5
 @AOW_var_QSQMo_1_TIME = 8100
 @AOW_var_QSQMo_2_TIME = 12150
 @AOW_var_QSQMo_3_TIME = 16200
@@ -1215,7 +1211,7 @@
 @AOW_var_QSQMb_4_TIME = 18000
 @AOW_var_QSQMb_5_TIME = 21600
 
-#千载星辰巨星	1.75
+#千载星辰巨星	1.8
 @AOW_var_QSQMgs_1_TIME = 6300
 @AOW_var_QSQMgs_2_TIME = 9450
 @AOW_var_QSQMgs_3_TIME = 12600
@@ -1243,14 +1239,14 @@
 @AOW_var_QSQMg_4_TIME = 9000
 @AOW_var_QSQMg_5_TIME = 10800
 
-#千载星辰K	0.75
+#千载星辰K	0.8
 @AOW_var_QSQMk_1_TIME = 2700
 @AOW_var_QSQMk_2_TIME = 4050
 @AOW_var_QSQMk_3_TIME = 5400
 @AOW_var_QSQMk_4_TIME = 6750
 @AOW_var_QSQMk_5_TIME = 8100
 
-#千载星辰M	0.5
+#千载星辰M	0.6
 @AOW_var_QSQMm_1_TIME = 1800
 @AOW_var_QSQMm_2_TIME = 2700
 @AOW_var_QSQMm_3_TIME = 3600

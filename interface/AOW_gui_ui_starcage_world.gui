@@ -373,8 +373,8 @@ guiTypes = {
 					format = center
 				}
 			}#农夫
-			containerWindowType = {#商贩
-				name = "trader"
+			containerWindowType = {#物理
+				name = "physicist"
 				size = { width = @container_w height = @container_h }
 				position = { x = @container_x1 y = @container_y2 }
 				background = {
@@ -390,32 +390,32 @@ guiTypes = {
 					buttonFont = "cg_16b"
 					format = center
 					alwaysTransparent = yes
-					text = AOW_text_trader
+					text = AOW_text_physicist
 				}
 				effectButtonType = {
 					name = de10
 					position = { x = 1 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_trader_10
+					effect = AOW_btn_view_ui_sw_decrease_physicist_10
 				}
 				effectButtonType = {
 					name = de5
 					position = { x = 23 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_trader_5
+					effect = AOW_btn_view_ui_sw_decrease_physicist_5
 				}
 				effectButtonType = {
 					name = de1
 					position = { x = 45 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_trader_1
+					effect = AOW_btn_view_ui_sw_decrease_physicist_1
 				}
 				effectButtonType = {
 					name = "value"
 					position = { x = 68 y = 27 }
 					effect = AOW_btn_view_ui_sw_default
 					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_trader
+					text = AOW_var_sw_points_physicist
 					buttonFont = malgun_goth_24
 					format = center
 					alwaysTransparent = yes
@@ -424,25 +424,25 @@ guiTypes = {
 					name = in1
 					position = { x = 133 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_trader_1
+					effect = AOW_btn_view_ui_sw_increase_physicist_1
 				}
 				effectButtonType = {
 					name = in5
 					position = { x = 155 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_trader_5
+					effect = AOW_btn_view_ui_sw_increase_physicist_5
 				}
 				effectButtonType = {
 					name = in10
 					position = { x = 177 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_trader_10
+					effect = AOW_btn_view_ui_sw_increase_physicist_10
 				}
 				effectButtonType = {
 					name = reset
 					position = { x = 1 y = 50 }
 					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_trader
+					effect = AOW_btn_view_ui_sw_reset_physicist
 					text = AOW_text_sw_reset_points
 					buttonFont = "cg_16b"
 					format = center
@@ -451,7 +451,7 @@ guiTypes = {
 					name = complete
 					position = { x = 68 y = 50 }
 					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_trader
+					effect = AOW_btn_view_ui_sw_complete_physicist
 					text = AOW_text_sw_complete_points
 					buttonFont = "cg_16b"
 					format = center
@@ -460,14 +460,14 @@ guiTypes = {
 					name = max
 					position = { x = 133 y = 50 }
 					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_trader
+					effect = AOW_btn_view_ui_sw_max_physicist
 					text = AOW_text_sw_max_points
 					buttonFont = "cg_16b"
 					format = center
 				}
-			}#商贩
-			containerWindowType = {#研究
-				name = "researcher"
+			}#物理
+			containerWindowType = {#社会
+				name = "biologist"
 				size = { width = @container_w height = @container_h }
 				position = { x = @container_x2 y = @container_y2 }
 				background = {
@@ -483,32 +483,32 @@ guiTypes = {
 					buttonFont = "cg_16b"
 					format = center
 					alwaysTransparent = yes
-					text = AOW_text_researcher
+					text = AOW_text_biologist
 				}
 				effectButtonType = {
 					name = de10
 					position = { x = 1 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_researcher_10
+					effect = AOW_btn_view_ui_sw_decrease_biologist_10
 				}
 				effectButtonType = {
 					name = de5
 					position = { x = 23 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_researcher_5
+					effect = AOW_btn_view_ui_sw_decrease_biologist_5
 				}
 				effectButtonType = {
 					name = de1
 					position = { x = 45 y = 27 }
 					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_researcher_1
+					effect = AOW_btn_view_ui_sw_decrease_biologist_1
 				}
 				effectButtonType = {
 					name = "value"
 					position = { x = 68 y = 27 }
 					effect = AOW_btn_view_ui_sw_default
 					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_researcher
+					text = AOW_var_sw_points_biologist
 					buttonFont = malgun_goth_24
 					format = center
 					alwaysTransparent = yes
@@ -517,25 +517,25 @@ guiTypes = {
 					name = in1
 					position = { x = 133 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_researcher_1
+					effect = AOW_btn_view_ui_sw_increase_biologist_1
 				}
 				effectButtonType = {
 					name = in5
 					position = { x = 155 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_researcher_5
+					effect = AOW_btn_view_ui_sw_increase_biologist_5
 				}
 				effectButtonType = {
 					name = in10
 					position = { x = 177 y = 27 }
 					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_researcher_10
+					effect = AOW_btn_view_ui_sw_increase_biologist_10
 				}
 				effectButtonType = {
 					name = reset
 					position = { x = 1 y = 50 }
 					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_researcher
+					effect = AOW_btn_view_ui_sw_reset_biologist
 					text = AOW_text_sw_reset_points
 					buttonFont = "cg_16b"
 					format = center
@@ -544,7 +544,7 @@ guiTypes = {
 					name = complete
 					position = { x = 68 y = 50 }
 					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_researcher
+					effect = AOW_btn_view_ui_sw_complete_biologist
 					text = AOW_text_sw_complete_points
 					buttonFont = "cg_16b"
 					format = center
@@ -553,16 +553,202 @@ guiTypes = {
 					name = max
 					position = { x = 133 y = 50 }
 					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_researcher
+					effect = AOW_btn_view_ui_sw_max_biologist
 					text = AOW_text_sw_max_points
 					buttonFont = "cg_16b"
 					format = center
 				}
-			}#研究
+			}#社会
+			containerWindowType = {#工程
+				name = "engineer"
+				size = { width = @container_w height = @container_h }
+				position = { x = @container_x3 y = @container_y2 }
+				background = {
+					name = "background"
+					spriteType = "GFX_starcage_world_bg"
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "title"
+					position = { x = 0 y = 0 } ###
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 200 y = 27 }
+					buttonFont = "cg_16b"
+					format = center
+					alwaysTransparent = yes
+					text = AOW_text_engineer
+				}
+				effectButtonType = {
+					name = de10
+					position = { x = 1 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_engineer_10
+				}
+				effectButtonType = {
+					name = de5
+					position = { x = 23 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_engineer_5
+				}
+				effectButtonType = {
+					name = de1
+					position = { x = 45 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_engineer_1
+				}
+				effectButtonType = {
+					name = "value"
+					position = { x = 68 y = 27 }
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 64 y = 22 }
+					text = AOW_var_sw_points_engineer
+					buttonFont = malgun_goth_24
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = in1
+					position = { x = 133 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_engineer_1
+				}
+				effectButtonType = {
+					name = in5
+					position = { x = 155 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_engineer_5
+				}
+				effectButtonType = {
+					name = in10
+					position = { x = 177 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_engineer_10
+				}
+				effectButtonType = {
+					name = reset
+					position = { x = 1 y = 50 }
+					spriteType = "GFX_starcage_world_reset"
+					effect = AOW_btn_view_ui_sw_reset_engineer
+					text = AOW_text_sw_reset_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = complete
+					position = { x = 68 y = 50 }
+					spriteType = "GFX_starcage_world_complete"
+					effect = AOW_btn_view_ui_sw_complete_engineer
+					text = AOW_text_sw_complete_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = max
+					position = { x = 133 y = 50 }
+					spriteType = "GFX_starcage_world_max"
+					effect = AOW_btn_view_ui_sw_max_engineer
+					text = AOW_text_sw_max_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}#工程
+			containerWindowType = {#士兵
+				name = "soldier"
+				size = { width = @container_w height = @container_h }
+				position = { x = @container_x1 y = @container_y3 }
+				background = {
+					name = "background"
+					spriteType = "GFX_starcage_world_bg"
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "title"
+					position = { x = 0 y = 0 } ###
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 200 y = 27 }
+					buttonFont = "cg_16b"
+					format = center
+					alwaysTransparent = yes
+					text = AOW_text_soldier
+				}
+				effectButtonType = {
+					name = de10
+					position = { x = 1 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_soldier_10
+				}
+				effectButtonType = {
+					name = de5
+					position = { x = 23 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_soldier_5
+				}
+				effectButtonType = {
+					name = de1
+					position = { x = 45 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_soldier_1
+				}
+				effectButtonType = {
+					name = "value"
+					position = { x = 68 y = 27 }
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 64 y = 22 }
+					text = AOW_var_sw_points_soldier
+					buttonFont = malgun_goth_24
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = in1
+					position = { x = 133 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_soldier_1
+				}
+				effectButtonType = {
+					name = in5
+					position = { x = 155 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_soldier_5
+				}
+				effectButtonType = {
+					name = in10
+					position = { x = 177 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_soldier_10
+				}
+				effectButtonType = {
+					name = reset
+					position = { x = 1 y = 50 }
+					spriteType = "GFX_starcage_world_reset"
+					effect = AOW_btn_view_ui_sw_reset_soldier
+					text = AOW_text_sw_reset_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = complete
+					position = { x = 68 y = 50 }
+					spriteType = "GFX_starcage_world_complete"
+					effect = AOW_btn_view_ui_sw_complete_soldier
+					text = AOW_text_sw_complete_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = max
+					position = { x = 133 y = 50 }
+					spriteType = "GFX_starcage_world_max"
+					effect = AOW_btn_view_ui_sw_max_soldier
+					text = AOW_text_sw_max_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}#士兵
 			containerWindowType = {#行政
 				name = "bureaucrat"
 				size = { width = @container_w height = @container_h }
-				position = { x = @container_x3 y = @container_y2 }
+				position = { x = @container_x2 y = @container_y3 }
 				background = {
 					name = "background"
 					spriteType = "GFX_starcage_world_bg"
@@ -652,10 +838,103 @@ guiTypes = {
 					format = center
 				}
 			}#行政
+			containerWindowType = {#商贩
+				name = "trader"
+				size = { width = @container_w height = @container_h }
+				position = { x = @container_x3 y = @container_y3 }
+				background = {
+					name = "background"
+					spriteType = "GFX_starcage_world_bg"
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "title"
+					position = { x = 0 y = 0 } ###
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 200 y = 27 }
+					buttonFont = "cg_16b"
+					format = center
+					alwaysTransparent = yes
+					text = AOW_text_trader
+				}
+				effectButtonType = {
+					name = de10
+					position = { x = 1 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_trader_10
+				}
+				effectButtonType = {
+					name = de5
+					position = { x = 23 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_trader_5
+				}
+				effectButtonType = {
+					name = de1
+					position = { x = 45 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_trader_1
+				}
+				effectButtonType = {
+					name = "value"
+					position = { x = 68 y = 27 }
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 64 y = 22 }
+					text = AOW_var_sw_points_trader
+					buttonFont = malgun_goth_24
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = in1
+					position = { x = 133 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_trader_1
+				}
+				effectButtonType = {
+					name = in5
+					position = { x = 155 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_trader_5
+				}
+				effectButtonType = {
+					name = in10
+					position = { x = 177 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_trader_10
+				}
+				effectButtonType = {
+					name = reset
+					position = { x = 1 y = 50 }
+					spriteType = "GFX_starcage_world_reset"
+					effect = AOW_btn_view_ui_sw_reset_trader
+					text = AOW_text_sw_reset_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = complete
+					position = { x = 68 y = 50 }
+					spriteType = "GFX_starcage_world_complete"
+					effect = AOW_btn_view_ui_sw_complete_trader
+					text = AOW_text_sw_complete_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = max
+					position = { x = 133 y = 50 }
+					spriteType = "GFX_starcage_world_max"
+					effect = AOW_btn_view_ui_sw_max_trader
+					text = AOW_text_sw_max_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}#商贩
 			containerWindowType = {#工匠
 				name = "artisan"
 				size = { width = @container_w height = @container_h }
-				position = { x = @container_x1 y = @container_y3 }
+				position = { x = @container_x1 y = @container_y4 }
 				background = {
 					name = "background"
 					spriteType = "GFX_starcage_world_bg"
@@ -748,7 +1027,7 @@ guiTypes = {
 			containerWindowType = {#冶金
 				name = "foundry"
 				size = { width = @container_w height = @container_h }
-				position = { x = @container_x2 y = @container_y3 }
+				position = { x = @container_x2 y = @container_y4 }
 				background = {
 					name = "background"
 					spriteType = "GFX_starcage_world_bg"
@@ -838,568 +1117,10 @@ guiTypes = {
 					format = center
 				}
 			}#冶金
-			containerWindowType = {#舒适
-				name = "amenities"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x3 y = @container_y3 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_amenities
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_amenities_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_amenities_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_amenities_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_amenities
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_amenities_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_amenities_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_amenities_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_amenities
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_amenities
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_amenities
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#舒适
-			containerWindowType = {#化学
-				name = "chemist"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x1 y = @container_y4 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_chemist
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_chemist_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_chemist_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_chemist_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_chemist
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_chemist_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_chemist_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_chemist_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_chemist
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_chemist
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_chemist
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#化学
-			containerWindowType = {#精炼
-				name = "refiner"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x2 y = @container_y4 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_refiner
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_refiner_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_refiner_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_refiner_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_refiner
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_refiner_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_refiner_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_refiner_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_refiner
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_refiner
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_refiner
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#精炼
-			containerWindowType = {#转化
-				name = "translucer"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x3 y = @container_y4 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_translucer
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_translucer_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_translucer_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_translucer_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_translucer
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_translucer_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_translucer_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_translucer_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_translucer
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_translucer
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_translucer
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#转化
-			containerWindowType = {#士兵
-				name = "soldier"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x1 y = @container_y5 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_soldier
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_soldier_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_soldier_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_soldier_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_soldier
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_soldier_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_soldier_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_soldier_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_soldier
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_soldier
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_soldier
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#士兵
-			containerWindowType = {#警察
-				name = "enforcer"
-				size = { width = @container_w height = @container_h }
-				position = { x = @container_x2 y = @container_y5 }
-				background = {
-					name = "background"
-					spriteType = "GFX_starcage_world_bg"
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = "title"
-					position = { x = 0 y = 0 } ###
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 200 y = 27 }
-					buttonFont = "cg_16b"
-					format = center
-					alwaysTransparent = yes
-					text = AOW_text_enforcer
-				}
-				effectButtonType = {
-					name = de10
-					position = { x = 1 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_enforcer_10
-				}
-				effectButtonType = {
-					name = de5
-					position = { x = 23 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_enforcer_5
-				}
-				effectButtonType = {
-					name = de1
-					position = { x = 45 y = 27 }
-					spriteType = "GFX_starcage_world_decrease"
-					effect = AOW_btn_view_ui_sw_decrease_enforcer_1
-				}
-				effectButtonType = {
-					name = "value"
-					position = { x = 68 y = 27 }
-					effect = AOW_btn_view_ui_sw_default
-					size = { x = 64 y = 22 }
-					text = AOW_var_sw_points_enforcer
-					buttonFont = malgun_goth_24
-					format = center
-					alwaysTransparent = yes
-				}
-				effectButtonType = {
-					name = in1
-					position = { x = 133 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_enforcer_1
-				}
-				effectButtonType = {
-					name = in5
-					position = { x = 155 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_enforcer_5
-				}
-				effectButtonType = {
-					name = in10
-					position = { x = 177 y = 27 }
-					spriteType = "GFX_starcage_world_increase"
-					effect = AOW_btn_view_ui_sw_increase_enforcer_10
-				}
-				effectButtonType = {
-					name = reset
-					position = { x = 1 y = 50 }
-					spriteType = "GFX_starcage_world_reset"
-					effect = AOW_btn_view_ui_sw_reset_enforcer
-					text = AOW_text_sw_reset_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = complete
-					position = { x = 68 y = 50 }
-					spriteType = "GFX_starcage_world_complete"
-					effect = AOW_btn_view_ui_sw_complete_enforcer
-					text = AOW_text_sw_complete_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-				effectButtonType = {
-					name = max
-					position = { x = 133 y = 50 }
-					spriteType = "GFX_starcage_world_max"
-					effect = AOW_btn_view_ui_sw_max_enforcer
-					text = AOW_text_sw_max_points
-					buttonFont = "cg_16b"
-					format = center
-				}
-			}#警察
 			containerWindowType = {#手办
 				name = "bio_trophy"
 				size = { width = @container_w height = @container_h }
-				position = { x = @container_x3 y = @container_y5 }
+				position = { x = @container_x3 y = @container_y4 }
 				background = {
 					name = "background"
 					spriteType = "GFX_starcage_world_bg"
@@ -1489,6 +1210,378 @@ guiTypes = {
 					format = center
 				}
 			}#手办
+			containerWindowType = {#人口
+				name = "healthcare"
+				size = { width = @container_w height = @container_h }
+				position = { x = @container_x1 y = @container_y5 }
+				background = {
+					name = "background"
+					spriteType = "GFX_starcage_world_bg"
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = "title"
+					position = { x = 0 y = 0 } ###
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 200 y = 27 }
+					buttonFont = "cg_16b"
+					format = center
+					alwaysTransparent = yes
+					text = AOW_text_healthcare
+				}
+				effectButtonType = {
+					name = de10
+					position = { x = 1 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_healthcare_10
+				}
+				effectButtonType = {
+					name = de5
+					position = { x = 23 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_healthcare_5
+				}
+				effectButtonType = {
+					name = de1
+					position = { x = 45 y = 27 }
+					spriteType = "GFX_starcage_world_decrease"
+					effect = AOW_btn_view_ui_sw_decrease_healthcare_1
+				}
+				effectButtonType = {
+					name = "value"
+					position = { x = 68 y = 27 }
+					effect = AOW_btn_view_ui_sw_default
+					size = { x = 64 y = 22 }
+					text = AOW_var_sw_points_healthcare
+					buttonFont = malgun_goth_24
+					format = center
+					alwaysTransparent = yes
+				}
+				effectButtonType = {
+					name = in1
+					position = { x = 133 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_healthcare_1
+				}
+				effectButtonType = {
+					name = in5
+					position = { x = 155 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_healthcare_5
+				}
+				effectButtonType = {
+					name = in10
+					position = { x = 177 y = 27 }
+					spriteType = "GFX_starcage_world_increase"
+					effect = AOW_btn_view_ui_sw_increase_healthcare_10
+				}
+				effectButtonType = {
+					name = reset
+					position = { x = 1 y = 50 }
+					spriteType = "GFX_starcage_world_reset"
+					effect = AOW_btn_view_ui_sw_reset_healthcare
+					text = AOW_text_sw_reset_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = complete
+					position = { x = 68 y = 50 }
+					spriteType = "GFX_starcage_world_complete"
+					effect = AOW_btn_view_ui_sw_complete_healthcare
+					text = AOW_text_sw_complete_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+				effectButtonType = {
+					name = max
+					position = { x = 133 y = 50 }
+					spriteType = "GFX_starcage_world_max"
+					effect = AOW_btn_view_ui_sw_max_healthcare
+					text = AOW_text_sw_max_points
+					buttonFont = "cg_16b"
+					format = center
+				}
+			}#人口
+			# containerWindowType = {#化学
+			# 	name = "chemist"
+			# 	size = { width = @container_w height = @container_h }
+			# 	position = { x = @container_x1 y = @container_y5 }
+			# 	background = {
+			# 		name = "background"
+			# 		spriteType = "GFX_starcage_world_bg"
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "title"
+			# 		position = { x = 0 y = 0 } ###
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 200 y = 27 }
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 		text = AOW_text_chemist
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de10
+			# 		position = { x = 1 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_chemist_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de5
+			# 		position = { x = 23 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_chemist_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de1
+			# 		position = { x = 45 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_chemist_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "value"
+			# 		position = { x = 68 y = 27 }
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 64 y = 22 }
+			# 		text = AOW_var_sw_points_chemist
+			# 		buttonFont = malgun_goth_24
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in1
+			# 		position = { x = 133 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_chemist_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in5
+			# 		position = { x = 155 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_chemist_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in10
+			# 		position = { x = 177 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_chemist_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = reset
+			# 		position = { x = 1 y = 50 }
+			# 		spriteType = "GFX_starcage_world_reset"
+			# 		effect = AOW_btn_view_ui_sw_reset_chemist
+			# 		text = AOW_text_sw_reset_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = complete
+			# 		position = { x = 68 y = 50 }
+			# 		spriteType = "GFX_starcage_world_complete"
+			# 		effect = AOW_btn_view_ui_sw_complete_chemist
+			# 		text = AOW_text_sw_complete_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = max
+			# 		position = { x = 133 y = 50 }
+			# 		spriteType = "GFX_starcage_world_max"
+			# 		effect = AOW_btn_view_ui_sw_max_chemist
+			# 		text = AOW_text_sw_max_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# }#化学
+			# containerWindowType = {#精炼
+			# 	name = "refiner"
+			# 	size = { width = @container_w height = @container_h }
+			# 	position = { x = @container_x2 y = @container_y5 }
+			# 	background = {
+			# 		name = "background"
+			# 		spriteType = "GFX_starcage_world_bg"
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "title"
+			# 		position = { x = 0 y = 0 } ###
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 200 y = 27 }
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 		text = AOW_text_refiner
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de10
+			# 		position = { x = 1 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_refiner_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de5
+			# 		position = { x = 23 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_refiner_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de1
+			# 		position = { x = 45 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_refiner_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "value"
+			# 		position = { x = 68 y = 27 }
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 64 y = 22 }
+			# 		text = AOW_var_sw_points_refiner
+			# 		buttonFont = malgun_goth_24
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in1
+			# 		position = { x = 133 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_refiner_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in5
+			# 		position = { x = 155 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_refiner_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in10
+			# 		position = { x = 177 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_refiner_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = reset
+			# 		position = { x = 1 y = 50 }
+			# 		spriteType = "GFX_starcage_world_reset"
+			# 		effect = AOW_btn_view_ui_sw_reset_refiner
+			# 		text = AOW_text_sw_reset_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = complete
+			# 		position = { x = 68 y = 50 }
+			# 		spriteType = "GFX_starcage_world_complete"
+			# 		effect = AOW_btn_view_ui_sw_complete_refiner
+			# 		text = AOW_text_sw_complete_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = max
+			# 		position = { x = 133 y = 50 }
+			# 		spriteType = "GFX_starcage_world_max"
+			# 		effect = AOW_btn_view_ui_sw_max_refiner
+			# 		text = AOW_text_sw_max_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# }#精炼
+			# containerWindowType = {#转化
+			# 	name = "translucer"
+			# 	size = { width = @container_w height = @container_h }
+			# 	position = { x = @container_x3 y = @container_y5 }
+			# 	background = {
+			# 		name = "background"
+			# 		spriteType = "GFX_starcage_world_bg"
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "title"
+			# 		position = { x = 0 y = 0 } ###
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 200 y = 27 }
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 		text = AOW_text_translucer
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de10
+			# 		position = { x = 1 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_translucer_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de5
+			# 		position = { x = 23 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_translucer_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = de1
+			# 		position = { x = 45 y = 27 }
+			# 		spriteType = "GFX_starcage_world_decrease"
+			# 		effect = AOW_btn_view_ui_sw_decrease_translucer_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = "value"
+			# 		position = { x = 68 y = 27 }
+			# 		effect = AOW_btn_view_ui_sw_default
+			# 		size = { x = 64 y = 22 }
+			# 		text = AOW_var_sw_points_translucer
+			# 		buttonFont = malgun_goth_24
+			# 		format = center
+			# 		alwaysTransparent = yes
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in1
+			# 		position = { x = 133 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_translucer_1
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in5
+			# 		position = { x = 155 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_translucer_5
+			# 	}
+			# 	effectButtonType = {
+			# 		name = in10
+			# 		position = { x = 177 y = 27 }
+			# 		spriteType = "GFX_starcage_world_increase"
+			# 		effect = AOW_btn_view_ui_sw_increase_translucer_10
+			# 	}
+			# 	effectButtonType = {
+			# 		name = reset
+			# 		position = { x = 1 y = 50 }
+			# 		spriteType = "GFX_starcage_world_reset"
+			# 		effect = AOW_btn_view_ui_sw_reset_translucer
+			# 		text = AOW_text_sw_reset_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = complete
+			# 		position = { x = 68 y = 50 }
+			# 		spriteType = "GFX_starcage_world_complete"
+			# 		effect = AOW_btn_view_ui_sw_complete_translucer
+			# 		text = AOW_text_sw_complete_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# 	effectButtonType = {
+			# 		name = max
+			# 		position = { x = 133 y = 50 }
+			# 		spriteType = "GFX_starcage_world_max"
+			# 		effect = AOW_btn_view_ui_sw_max_translucer
+			# 		text = AOW_text_sw_max_points
+			# 		buttonFont = "cg_16b"
+			# 		format = center
+			# 	}
+			# }#转化
 		}#主要功能区
 		### 事件选项框 ###
 		containerWindowType = {

@@ -2,16 +2,6 @@
 
 namespace = AOW_prosperous_trade_station
 
-#繁荣贸易站
-planet_event = {
-	id = AOW_prosperous_trade_station.1
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		from = { set_country_flag = AOW_flag_CNTR_branch_office_established }
-	}
-}
-
 #this/root = 本国
 #from = 通知国
 country_event = {

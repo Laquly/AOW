@@ -1,1 +1,0 @@
-@AOW_var_max_mega_cap = 10

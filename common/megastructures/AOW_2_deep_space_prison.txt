@@ -91,9 +91,12 @@ AOW_MEGA_deep_space_prison_1 = {
 		upkeep = {
 			energy = @AOW_var_DSP_1_UPKE_energy
 		}
+		produces = {
+			unity = @AOW_var_DSP_1_PRDC_unity
+		}
 	}
 	country_modifier = {
-		custom_tooltip = AOW_MEGA_deep_space_prison_effects
+		planet_crime_add = -20
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -125,9 +128,12 @@ AOW_MEGA_deep_space_prison_2 = {
 		upkeep = {
 			energy = @AOW_var_DSP_2_UPKE_energy
 		}
+		produces = {
+			unity = @AOW_var_DSP_2_PRDC_unity
+		}
 	}
 	country_modifier = {
-		custom_tooltip = AOW_MEGA_deep_space_prison_effects
+		planet_crime_add = -40
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -159,9 +165,12 @@ AOW_MEGA_deep_space_prison_3 = {
 		upkeep = {
 			energy = @AOW_var_DSP_3_UPKE_energy
 		}
+		produces = {
+			unity = @AOW_var_DSP_3_PRDC_unity
+		}
 	}
 	country_modifier = {
-		custom_tooltip = AOW_MEGA_deep_space_prison_effects
+		planet_crime_add = -60
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -196,9 +205,12 @@ AOW_MEGA_deep_space_prison_4 = {
 		upkeep = {
 			energy = @AOW_var_DSP_4_UPKE_energy
 		}
+		produces = {
+			unity = @AOW_var_DSP_4_PRDC_unity
+		}
 	}
 	country_modifier = {
-		custom_tooltip = AOW_MEGA_deep_space_prison_effects
+		planet_crime_add = -80
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure

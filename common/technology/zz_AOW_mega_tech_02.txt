@@ -336,6 +336,9 @@ AOW_TECH_ring_world_expansion = {
 	prerequisites = { "tech_ring_world" }
 	weight = @tier5weight3
 	is_rare = yes
+	modifier = {
+		megastructure_build_speed_mult = 0.1
+	}
 
 	weight_modifier = {
 		modifier = {

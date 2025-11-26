@@ -137,19 +137,23 @@ AOW_eft_SSTM_destroy_star_system = {
 	every_fleet_in_system = {
 		limit = {
 			NOT = { has_fleet_flag = cannot_be_hit_by_aow_starfall_spear }
-			NOT = {#除了高维恶魔传送门
+		}
+		if = {
+			limit = {
 				exists = owner
 				owner = {
-					OR = {
-						is_country_type = portal_holder
-						#is_country_type = extradimensional
-						#is_country_type = extradimensional_2
-						#is_country_type = extradimensional_3
+					NOT = {#除了高维恶魔传送门
+						OR = {
+							is_country_type = portal_holder
+							#is_country_type = extradimensional
+							#is_country_type = extradimensional_2
+							#is_country_type = extradimensional_3
+						}
 					}
 				}
 			}
+			destroy_fleet = this
 		}
-		destroy_fleet = this
 	}
 	every_system_megastructure = {
 		set_ruined_megastructure = yes

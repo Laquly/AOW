@@ -1,0 +1,2 @@
+name = get_$PorA$_$Key$
+default = AOW_text_dis

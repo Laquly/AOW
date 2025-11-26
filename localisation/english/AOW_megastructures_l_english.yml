@@ -7,7 +7,6 @@
  AOW_MEGA_space_sensor_station_1_CONSTRUCTION_INFO_DELAYED:0"$AOW_MEGA_space_sensor_station$ will take its own system as a dot provide the gain of increased Sensor Range and Hyperlane Range."
  AOW_MEGA_space_sensor_station_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$A station dedicated to observing the surrounding galaxies can also provide some gain for ships through corresponding policy."
  AOW_MEGA_space_sensor_station_1_DESC:0"§YSensor Range§!§G+8§!, §YHyperlane Range§!§G+10§!\nA station dedicated to observing the surrounding galaxies can also provide some gain for ships through corresponding policy."
- AOW_MEGA_space_sensor_station_effects:0"Provide different gain effects through policy §Y$policy_AOW_policy_SSS_ship_modifiers$§!."
 
  AOW_MEGA_space_arena_1:0"$AOW_MEGA_space_arena$"
  AOW_MEGA_space_arena_1_CONSTRUCTION_INFO_DELAYED:0"$AOW_MEGA_space_arena$ will provide unity."
@@ -18,11 +17,6 @@
  AOW_MEGA_asteroid_mining_station_1_CONSTRUCTION_INFO_DELAYED:0"$AOW_MEGA_asteroid_mining_station$ will produce resources of different values according to different asteroids.\nAsteroids: £minerals£ £volatile_motes£, Ice Asteroid: £energy£ £minerals£ £rare_crystals£, Crystal Asteroid: £minerals£ £rare_crystals£."
  AOW_MEGA_asteroid_mining_station_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$A megastructure specialized in mining asteroids can produce different resources according to the type of asteroids.\nAsteroids: £minerals£ £volatile_motes£, Ice Asteroid: £energy£ £minerals£ £rare_crystals£, Crystal Asteroid: £minerals£ £rare_crystals£."
  AOW_MEGA_asteroid_mining_station_1_DESC:0"A mining station with a complete mining system, the surrounding minerals are being transported here continuously, and then transported to all parts of the empire.\n\nIf we have corresponding rare resource mining technology, it will produce some additional rare resources."
-
- AOW_MEGA_satellite_defense_base_1:0"$AOW_MEGA_satellite_defense_base$"
- AOW_MEGA_satellite_defense_base_1_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在§Y小行星§!或§Y卫星§!上\n\n$EFFECTS_HEADER$\n$t$—生成一个不可移动的防御站，提供火力输出。"
- AOW_MEGA_satellite_defense_base_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_1$Using small celestial bodies as command bases and supply stations, providing energy and target guidance for defense stations surrounding their movements."
- AOW_MEGA_satellite_defense_base_1_DESC:0""
 
  AOW_MEGA_resource_drilling_station_0:0"$AOW_MEGA_resource_drilling_station$"
  AOW_MEGA_resource_drilling_station_0_CONSTRUCTION_INFO_DELAYED:0"$REQUIREMENTS_HEADER$\n$t$§R—选中工程船，右键星球建造巨构，以查看建造具体条件§!\n$t$—必须建造在§Y行星§!或§Y卫星§!上\n$t$—不能建造在宜居星球上\n\n$EFFECTS_HEADER$\n$t$—可为所选行星勘探并钻取出可能的稀有资源\n—普通固态星球：£minerals£ £alloys£\n—熔融星球：£minerals£ £volatile_motes£\n—冰封星球：£minerals£ £rare_crystals£\n—剧毒星球：£minerals£ £exotic_gases£\n—气态行星：£energy£ £exotic_gases£"
@@ -435,7 +429,7 @@
  AOW_MEGA_pulsar_clock_3_DESC:0"The third will act as the hour hand of that $AOW_MEGA_pulsar_clock$ for measuring the hours.\n\nThe next step, the last step, will be fully activated to activate this $AOW_MEGA_pulsar_clock$!"
  AOW_MEGA_pulsar_clock_4:0"$AOW_MEGA_pulsar_clock$"
  AOW_MEGA_pulsar_clock_4_DESC:0"A completed $AOW_MEGA_pulsar_clock$, each section of the ring will be calibrated according to the pulse interval of the pulsar time and rotational speed, now the time of this clock is used as the most standard time reference throughout the country, greatly improving management efficiency."
- AOW_MEGA_pulsar_clock_effects:0"Provide gain effects through policy §Y$policy_AOW_policy_PC_country_modifiers$§!."
+ AOW_MEGA_pulsar_clock_effects:0"Provide gain effects through policy §Y$policy_AOW_policy_pulsar_clock$§!."
  AOW_MEGA_pulsar_clock_ruined:0"Ruined $AOW_MEGA_pulsar_clock$"
  AOW_MEGA_pulsar_clock_ruined_MEGASTRUCTURE_DETAILS:0""
  AOW_MEGA_pulsar_clock_ruined_DESC:0"After initial exploration, this slow-rotating megastructure around the pulsar was once used to measure time, and unless we can fix it, it will never work again."

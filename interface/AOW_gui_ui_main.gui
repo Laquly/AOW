@@ -1834,6 +1834,234 @@ guiTypes = {
 					text = AOW_btn_preinstall_AL_1S
 					effect = AOW_btn_preinstall_AL_1S
 				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_XiangChiShuJieXiaoJiao
+					position = { x = @p_x2 y = @p_y26 }
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x1 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x1 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x7 y = @p_y16 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_XiangChiShuJieXiaoJiao
+					effect = AOW_btn_preinstall_XiangChiShuJieXiaoJiao
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_XingBaiQi
+					position = { x = @p_x3 y = @p_y26 }
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x2 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x2 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x8 y = @p_y16 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_XingBaiQi
+					effect = AOW_btn_preinstall_XingBaiQi
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_XianKanLuoHuaWu
+					position = { x = @p_x4 y = @p_y26 }
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x3 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x3 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x1 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_XianKanLuoHuaWu
+					effect = AOW_btn_preinstall_XianKanLuoHuaWu
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_CangShuPVE
+					position = { x = @p_x5 y = @p_y26 }
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x4 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x4 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x2 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_CangShuPVE
+					effect = AOW_btn_preinstall_CangShuPVE
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_LongYeZhongTianYong
+					position = { x = @p_x1 y = @p_y27 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x5 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x5 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x3 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_LongYeZhongTianYong
+					effect = AOW_btn_preinstall_LongYeZhongTianYong
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_SanHuaMao123
+					position = { x = @p_x2 y = @p_y27 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x6 y = @p_y22 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x6 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x4 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_SanHuaMao123
+					effect = AOW_btn_preinstall_SanHuaMao123
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_XinsZiYuZiLe
+					position = { x = @p_x3 y = @p_y27 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x1 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x7 y = @p_y19 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x5 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_XinsZiYuZiLe
+					effect = AOW_btn_preinstall_XinsZiYuZiLe
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_BeiChanDanShangXian
+					position = { x = @p_x4 y = @p_y27 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x2 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x1 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x6 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_BeiChanDanShangXian
+					effect = AOW_btn_preinstall_BeiChanDanShangXian
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_DDYZiYong
+					position = { x = @p_x5 y = @p_y27 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x3 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x2 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x7 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_DDYZiYong
+					effect = AOW_btn_preinstall_DDYZiYong
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_MengHuDeHuLuoBo
+					position = { x = @p_x1 y = @p_y28 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x4 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x3 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x8 y = @p_y17 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_MengHuDeHuLuoBo
+					effect = AOW_btn_preinstall_MengHuDeHuLuoBo
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_057HaoPingHeng
+					position = { x = @p_x2 y = @p_y28 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x5 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x4 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x1 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_057HaoPingHeng
+					effect = AOW_btn_preinstall_057HaoPingHeng
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_YinHeTieMu
+					position = { x = @p_x3 y = @p_y28 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x6 y = @p_y23 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x5 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x2 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_YinHeTieMu
+					effect = AOW_btn_preinstall_YinHeTieMu
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_VinDePeiZhi
+					position = { x = @p_x4 y = @p_y28 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x1 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x6 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x3 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_VinDePeiZhi
+					effect = AOW_btn_preinstall_VinDePeiZhi
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_YeChengWeiDePeiZhi
+					position = { x = @p_x5 y = @p_y28 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x2 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x7 y = @p_y20 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x4 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_YeChengWeiDePeiZhi
+					effect = AOW_btn_preinstall_YeChengWeiDePeiZhi
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_QingYeQingDuMoZheng
+					position = { x = @p_x1 y = @p_y29 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x3 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x1 y = @p_y21 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x5 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_QingYeQingDuMoZheng
+					effect = AOW_btn_preinstall_QingYeQingDuMoZheng
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_HongBiZiXiao
+					position = { x = @p_x2 y = @p_y29 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x4 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x2 y = @p_y21 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x6 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_HongBiZiXiao
+					effect = AOW_btn_preinstall_HongBiZiXiao
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_2232
+					position = { x = @p_x3 y = @p_y29 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x5 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x3 y = @p_y21 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x7 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_2232
+					effect = AOW_btn_preinstall_2232
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_SuHeBaTuoEr
+					position = { x = @p_x4 y = @p_y29 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x6 y = @p_y24 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x4 y = @p_y21 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x8 y = @p_y18 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_SuHeBaTuoEr
+					effect = AOW_btn_preinstall_SuHeBaTuoEr
+				}
+				effectButtonType = {
+					name = AOW_btn_preinstall_SuHeBaTuoEr
+					position = { x = @p_x5 y = @p_y29 }#5
+					if_resolution = { min_width = @container_width_6 position = { x = @p_x1 y = @p_y25 } }#6
+					if_resolution = { min_width = @container_width_7 position = { x = @p_x5 y = @p_y21 } }#7
+					if_resolution = { min_width = @container_width_8 position = { x = @p_x1 y = @p_y19 } }#8
+					spriteType = GFX_AOW_button_preinstall
+					buttonFont = cg_16b
+					format = center
+					text = AOW_btn_preinstall_SuHeBaTuoEr
+					effect = AOW_btn_preinstall_SuHeBaTuoEr
+				}
 			}
 			###############################################################
 			#数值
@@ -2227,7 +2455,7 @@ guiTypes = {
 					effectButtonType = { name = P+++ position = { x = 120 y = 53 } spriteType = GFX_AOW_arrow_mega_right_player effect = AOW_btn_space_sensor_station_player_increase_cap }
 				}
 				containerWindowType = {
-					#卫星防御基地
+					#深空擎天堡
 					name = 1_09
 					position = { x = @unit_x4 y = @unit_y2 }
 					if_resolution = { min_width = @container_width_6	position = { x = @unit_x3 y = @unit_y2 } }#6
@@ -2235,13 +2463,17 @@ guiTypes = {
 					if_resolution = { min_width = @container_width_8	position = { x = @unit_x1 y = @unit_y2 } }#8
 					#if_resolution = { min_width = @container_width_9	position = { x = @unit_x9 y = @unit_y1 } }#9
 					effectButtonType = { name = frame spriteType = GFX_AOW_bg_mega_unit effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
-					effectButtonType = { name = name position = { x = 1 y = 1 } size = { width = 198 height = 25 } buttonText = AOW_MEGA_satellite_defense_base buttonFont = cg_16b format = center effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
-					effectButtonType = { name = outliner position = { x = 147 y = 27 } spriteType = GFX_AOW_button_outliner_special effect = AOW_btn_satellite_defense_base_outliner_special }
-					effectButtonType = { name = icon position = { x = 1 y = 27 } spriteType = GFX_AOW_MEGA_satellite_defense_base_1_build_icon effect = AOW_btn_satellite_defense_base_prerequisites }
-					effectButtonType = { name = A_switch position = { x = 54 y = 27 } spriteType = GFX_AOW_bg_mega_var_ai effect = AOW_btn_satellite_defense_base_ai_quick_switch }
-					effectButtonType = { name = A_value position = { x = 54 y = 27 } size = { width = 92 height = 25 } buttonText = AOW_var_ai_mega_cap_satellite_defense_base buttonFont = malgun_goth_24 effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
-					effectButtonType = { name = P_switch position = { x = 54 y = 53 } spriteType = GFX_AOW_bg_mega_var_player effect = AOW_btn_satellite_defense_base_player_quick_switch }
-					effectButtonType = { name = P_value position = { x = 54 y = 53 } size = { width = 92 height = 25 } buttonText = AOW_var_player_mega_cap_satellite_defense_base buttonFont = malgun_goth_24 effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
+					effectButtonType = { name = name position = { x = 1 y = 1 } size = { width = 198 height = 25 } buttonText = dsc_name buttonFont = cg_16b format = center effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
+					effectButtonType = { name = outliner position = { x = 147 y = 27 } spriteType = GFX_AOW_button_outliner_special effect = AOW_btn_deep_space_citadel_outliner_special }
+					effectButtonType = { name = icon position = { x = 1 y = 27 } spriteType = GFX_deep_space_citadel_0_build_icon effect = AOW_btn_deep_space_citadel_prerequisites }
+					effectButtonType = { name = A_switch position = { x = 54 y = 27 } spriteType = GFX_AOW_bg_mega_var_ai effect = AOW_btn_deep_space_citadel_ai_quick_switch }
+					effectButtonType = { name = A_value position = { x = 54 y = 27 } size = { width = 92 height = 25 } buttonText = AOW_var_ai_mega_cap_deep_space_citadel buttonFont = malgun_goth_24 effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
+					effectButtonType = { name = A--- position = { x = 54 y = 27 } spriteType = GFX_AOW_arrow_mega_left_ai effect = AOW_btn_deep_space_citadel_ai_decrease_cap }
+					effectButtonType = { name = A+++ position = { x = 120 y = 27 } spriteType = GFX_AOW_arrow_mega_right_ai effect = AOW_btn_deep_space_citadel_ai_increase_cap }
+					effectButtonType = { name = P_switch position = { x = 54 y = 53 } spriteType = GFX_AOW_bg_mega_var_player effect = AOW_btn_deep_space_citadel_player_quick_switch }
+					effectButtonType = { name = P_value position = { x = 54 y = 53 } size = { width = 92 height = 25 } buttonText = AOW_var_player_mega_cap_deep_space_citadel buttonFont = malgun_goth_24 effect = AOW_btn_main_ui_values_active alwaysTransparent = yes }
+					effectButtonType = { name = P--- position = { x = 54 y = 53 } spriteType = GFX_AOW_arrow_mega_left_player effect = AOW_btn_deep_space_citadel_player_decrease_cap }
+					effectButtonType = { name = P+++ position = { x = 120 y = 53 } spriteType = GFX_AOW_arrow_mega_right_player effect = AOW_btn_deep_space_citadel_player_increase_cap }
 				}
 				containerWindowType = {
 					#资源钻取站

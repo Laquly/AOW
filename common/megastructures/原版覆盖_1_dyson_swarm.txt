@@ -52,9 +52,7 @@ dyson_swarm_1 = {
 	prerequisites = { "tech_dyson_swarm" }
 	potential = { AOW_trigger_mega_potential = { KEY = dyson_swarm } }
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_dyson_swarm } }

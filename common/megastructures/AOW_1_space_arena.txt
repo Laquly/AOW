@@ -11,7 +11,7 @@ AOW_MEGA_space_arena_1 = {
 	use_planet_resource = yes
 	construction_blocks_and_blocked_by = none
 	build_time = @AOW_var_SA_1_TIME
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MINOR_PLANETARY_BODY"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET_OR_SATELLITE"
 	resources = {
 		category = megastructures
 		cost = {
@@ -95,7 +95,6 @@ AOW_MEGA_space_arena_1 = {
 		from = { country_event = { id = AOW_mega_notification.30 } }
 		fromfrom = {
 			set_megastructure_flag = AOW_flag_MEGA_space_arena_@owner
-			AOW_eft_MEGA_set_variable_cost = { v = @AOW_var_SA_1_COST_alloys }
 		}
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}

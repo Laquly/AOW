@@ -1,0 +1,30 @@
+quindecillion_stellar_quantum_matrix_1 = {
+	localize_with_value_key = yes
+	percentage = no
+	good = yes
+	category = country
+}
+quindecillion_stellar_quantum_matrix_2 = {
+	localize_with_value_key = yes
+	percentage = no
+	good = yes
+	category = country
+}
+quindecillion_stellar_quantum_matrix_3 = {
+	localize_with_value_key = yes
+	percentage = no
+	good = yes
+	category = country
+}
+quindecillion_stellar_quantum_matrix_4 = {
+	localize_with_value_key = yes
+	percentage = no
+	good = yes
+	category = country
+}
+quindecillion_stellar_quantum_matrix_5 = {
+	localize_with_value_key = yes
+	percentage = no
+	good = yes
+	category = country
+}

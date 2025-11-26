@@ -3,7 +3,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_OBAFGKM_STAR_WITHOUT_HABITABLE_PLANET"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_QSQM"
 	build_time = @AOW_var_QSQM_0_TIME
 	resources = {
 		category = megastructures
@@ -13,6 +13,12 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
 		}
 		upkeep = {
 			energy = @AOW_var_QSQM_0_UPKP_energy
+		}
+		produces = {
+			trigger = {
+				is_scope_type = megastructure
+			}
+			unity = 1
 		}
 	}
 	inline_script = {
@@ -26,7 +32,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
 	prerequisites = { "AOW_TECH_quindecillion_stellar_quantum_matrix" }
 	potential = { AOW_trigger_mega_potential = { KEY = quindecillion_stellar_quantum_matrix } }
 	possible = {
-		exists = starbase
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_quindecillion_stellar_quantum_matrix } }
@@ -188,6 +194,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_1 = {
 	}
 	country_modifier = {
 		all_technology_research_speed = @AOW_var_QSQM_1_research_speed
+		quindecillion_stellar_quantum_matrix_1 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -230,7 +237,8 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_2 = {
 		}
 	}
 	country_modifier = {
-		all_technology_research_speed = @AOW_var_QSQM_2_research_speed
+		all_technology_research_speed = 0.13#@AOW_var_QSQM_2_research_speed
+		quindecillion_stellar_quantum_matrix_2 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -273,6 +281,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_3 = {
 	}
 	country_modifier = {
 		all_technology_research_speed = @AOW_var_QSQM_3_research_speed
+		quindecillion_stellar_quantum_matrix_3 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -315,6 +324,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_4 = {
 	}
 	country_modifier = {
 		all_technology_research_speed = @AOW_var_QSQM_4_research_speed
+		quindecillion_stellar_quantum_matrix_4 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -335,7 +345,6 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
 	entity = "qsqm_5_entity"
 	construction_entity = "qsqm_5_construction_entity"
 	portrait = "GFX_megastructure_qsqm_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	outliner_trigger = {
@@ -361,6 +370,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_5 = {
 	}
 	country_modifier = {
 		all_technology_research_speed = @AOW_var_QSQM_5_research_speed
+		quindecillion_stellar_quantum_matrix_5 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -404,7 +414,6 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_ruined = {
 AOW_MEGA_quindecillion_stellar_quantum_matrix_restored = {
 	entity = "qsqm_5_entity"
 	portrait = "GFX_megastructure_qsqm_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	outliner_trigger = {
@@ -430,6 +439,7 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_restored = {
 	}
 	country_modifier = {
 		all_technology_research_speed = @AOW_var_QSQM_5_research_speed
+		quindecillion_stellar_quantum_matrix_5 = 1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure

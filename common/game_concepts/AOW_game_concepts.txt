@@ -1,0 +1,3 @@
+concept_AOW_standard_stars = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_type_f_g.dds"
+}

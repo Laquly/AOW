@@ -1,8 +1,12 @@
 @buildtime = 720
 @zone_cost_minerals = 2000
 @zone_cost_alloys = 1000
-zone_starcage_world_core_base = {
-	icon = GFX_colony_type_industrial
+
+###################################################################
+#核心
+###################################################################
+zone_starcage_world_core_jobs = {
+	icon = GFX_district_specialization_industrial
 	base_buildtime = @zone_buildtime
 	resources = {
 		category = planet_zones
@@ -14,30 +18,18 @@ zone_starcage_world_core_base = {
 	include = {
 		all
 	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_core
+	}
 	district_planet_modifier = {
-		planet_jobs_energy_produces_mult = 0.1
-		planet_jobs_minerals_produces_mult = 0.1
-		planet_jobs_food_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_common_star }
-		planet_jobs_energy_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_jobs_food_produces_mult = -0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_black_hole }
-		planet_jobs_minerals_produces_mult = 0.1
-		planet_jobs_food_produces_mult = -0.1
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+		pop_bonus_workforce_mult = 0.05
+		planet_building_build_speed_mult = 0.05
+		planet_decision_enact_speed_mult = 0.05
 	}
 }
-zone_starcage_world_core_energy = {
-	icon = GFX_resource_energy_large
+zone_starcage_world_core_buildings = {
+	icon = GFX_district_specialization_urban
 	base_buildtime = @zone_buildtime
 	resources = {
 		category = planet_zones
@@ -49,19 +41,18 @@ zone_starcage_world_core_energy = {
 	include = {
 		all
 	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_core
+	}
 	district_planet_modifier = {
-		planet_jobs_energy_produces_mult = 0.3
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_common_star }
-		planet_jobs_energy_produces_mult = 0.3
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+		planet_housing_add = 1000
+		planet_buildings_produces_mult = 0.05
+		planet_building_build_speed_mult = 0.1
 	}
 }
-zone_starcage_world_core_minerals = {
-	icon = GFX_resource_minerals_large
+zone_starcage_world_core_amenities = {
+	icon = GFX_district_specialization_unity
 	base_buildtime = @zone_buildtime
 	resources = {
 		category = planet_zones
@@ -73,346 +64,22 @@ zone_starcage_world_core_minerals = {
 	include = {
 		all
 	}
-	district_planet_modifier = {
-		planet_jobs_minerals_produces_mult = 0.3
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_black_hole }
-		planet_jobs_minerals_produces_mult = 0.3
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_food = {
-	icon = GFX_resource_food_large
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_core
 	}
 	district_planet_modifier = {
-		planet_jobs_food_produces_mult = 0.3
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_jobs_food_produces_mult = -0.2
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_black_hole }
-		planet_jobs_food_produces_mult = -0.2
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_industrial = {
-	icon = GFX_colony_type_industrial
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_metallurgists_alloys_produces_mult = 0.1
-		planet_artisans_consumer_goods_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_metallurgists_alloys_produces_mult = 0.1
-		planet_artisans_consumer_goods_produces_mult = -0.05
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_foundry = {
-	icon = GFX_colony_type_foundry
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_metallurgists_alloys_produces_mult = 0.2
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_metallurgists_alloys_produces_mult = 0.2
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_factory = {
-	icon = GFX_colony_type_factory
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_artisans_consumer_goods_produces_mult = 0.2
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_artisans_consumer_goods_produces_mult = -0.1
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_refinery = {
-	icon = GFX_colony_type_refinery
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_jobs_volatile_motes_produces_mult = 0.1
-		planet_jobs_exotic_gases_produces_mult = 0.1
-		planet_jobs_rare_crystals_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_black_hole }
-		planet_jobs_volatile_motes_produces_mult = 0.05
-		planet_jobs_exotic_gases_produces_mult = 0.05
-		planet_jobs_rare_crystals_produces_mult = 0.05
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_research = {
-	icon = GFX_colony_type_research
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_physicists_produces_mult = 0.2
-		planet_biologists_produces_mult = 0.2
-		planet_engineers_produces_mult = 0.2
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_black_hole }
-		planet_physicists_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_common_star }
-		planet_biologists_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_neutron_star }
-		planet_engineers_produces_mult = 0.1
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_trade = {
-	icon = GFX_resource_trade_large
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_jobs_trade_produces_mult = 0.25
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-}
-zone_starcage_world_core_unity = {
-	icon = GFX_job_bureaucrat
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	include = {
-		all
-	}
-	district_planet_modifier = {
-		planet_bureaucrats_produces_mult = 0.1
+		planet_amenities_add = 1000
 		planet_jobs_unity_produces_mult = 0.1
-	}
-	triggered_district_planet_modifier = {
-		potential = { is_planet_class = pc_starcage_world_common_star }
-		planet_bureaucrats_produces_mult = 0.1
-		planet_jobs_unity_produces_mult = 0.1
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+		planet_decision_enact_speed_mult = 0.1
 	}
 }
 
-
-@planet_housing_add = -900
-#工业
-zone_starcage_world_industrial = {
-	icon = GFX_colony_type_industrial
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
-		industrial
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_alloy
-		AMOUNT = 450
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_goods
-		AMOUNT = 450
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#合金工业
-zone_starcage_world_foundry = {
-	icon = GFX_colony_type_foundry
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
-		foundry
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_alloy
-		AMOUNT = 900
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#消费品工业
-zone_starcage_world_factory = {
-	icon = GFX_colony_type_factory
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
-		factory
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_goods
-		AMOUNT = 900
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#凝聚力
-zone_starcage_world_unity = {
-	icon = GFX_job_bureaucrat
-	base_buildtime = @zone_buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
-		research
-		unity
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_unity
-		AMOUNT = 900
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#研究
-zone_starcage_world_research = {
-	icon = GFX_colony_type_research
+###################################################################
+#次要
+###################################################################
+zone_starcage_world_base = {
+	icon = GFX_district_specialization_hydroponics
 	base_buildtime = @buildtime
 	resources = {
 		category = planet_zones
@@ -422,79 +89,55 @@ zone_starcage_world_research = {
 		}
 	}
 	included_building_sets = {
-		research
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_research
-		AMOUNT = 300
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#贸易
-zone_starcage_world_trade = {
-	icon = GFX_resource_trade_large
-	base_buildtime = @buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
-		urban
-		trade
-		automation
-		origin
-	}
-	inline_script = {
-		script = jobs/AOW_zone_job_trader
-		AMOUNT = 900
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
-	}
-}
-#采矿
-zone_starcage_world_minerals = {
-	icon = GFX_resource_minerals_large
-	base_buildtime = @buildtime
-	resources = {
-		category = planet_zones
-		cost = {
-			minerals = @zone_cost_minerals
-			alloys = @zone_cost_alloys
-		}
-	}
-	included_building_sets = {
+		generator
 		mining
+		farming
+		hydroponics
+		fallen_empire_generator
 		fallen_empire_mining
+		fallen_empire_farming
 		automation
 	}
-	inline_script = {
-		script = jobs/AOW_zone_job_minerals
-		AMOUNT = 900
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
 	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+	swap_type = AOW_district_starcage_world_base
+	swap_type_weight = 5
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_food = yes }
+			is_planet_class = pc_starcage_world_common_star
+		}
+		technician_jobs_bonus_workforce_mult = 0.1
+		miner_jobs_bonus_workforce_mult = 0.1
+		farmer_jobs_bonus_workforce_mult = 0.1
 	}
 	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
+		potential = {
+			exists = owner
+			OR = {
+				owner = { country_uses_food = no }
+				is_planet_class = pc_starcage_world_black_hole
+				is_planet_class = pc_starcage_world_neutron_star
+			}
+		}
+		technician_jobs_bonus_workforce_mult = 0.15
+		miner_jobs_bonus_workforce_mult = 0.15
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_common_star }
+		technician_jobs_bonus_workforce_mult = 0.05
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_black_hole }
+		miner_jobs_bonus_workforce_mult = 0.05
 	}
 }
 #发电
 zone_starcage_world_energy = {
-	icon = GFX_resource_energy_large
+	icon = GFX_district_specialization_energy
 	base_buildtime = @buildtime
 	resources = {
 		category = planet_zones
@@ -508,20 +151,53 @@ zone_starcage_world_energy = {
 		fallen_empire_generator
 		automation
 	}
-	inline_script = {
-		script = jobs/AOW_zone_job_energy
-		AMOUNT = 900
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
 	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+	swap_type = AOW_district_starcage_world_energy
+	swap_type_weight = 5
+	district_planet_modifier = {
+		technician_jobs_bonus_workforce_mult = 0.3
 	}
 	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
+		potential = { is_planet_class = pc_starcage_world_common_star }
+		technician_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#采矿
+zone_starcage_world_minerals = {
+	icon = GFX_district_specialization_minerals
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		mining
+		fallen_empire_mining
+		automation
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_minerals
+	swap_type_weight = 5
+	district_planet_modifier = {
+		miner_jobs_bonus_workforce_mult = 0.3
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_black_hole }
+		miner_jobs_bonus_workforce_mult = 0.05
 	}
 }
 #食物
 zone_starcage_world_food = {
-	icon = GFX_resource_food_large
+	icon = GFX_district_specialization_food_market
 	base_buildtime = @buildtime
 	resources = {
 		category = planet_zones
@@ -536,20 +212,310 @@ zone_starcage_world_food = {
 		automation
 		fallen_empire_farming
 	}
-	inline_script = {
-		script = jobs/AOW_zone_job_food
-		AMOUNT = 900
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
 	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+	swap_type = AOW_district_starcage_world_food
+	swap_type_weight = 5
+	potential = {
+		exists = owner
+		owner = { country_uses_food = yes }
+		is_planet_class = pc_starcage_world_common_star
+	}
+	district_planet_modifier = {
+		farmer_jobs_bonus_workforce_mult = 0.3
 	}
 	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
+		potential = { is_planet_class = pc_starcage_world_common_star }
+		farmer_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#工业
+zone_starcage_world_industrial = {
+	icon = GFX_district_specialization_industrial
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		industrial
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_industrial
+	swap_type_weight = 5
+	potential = {
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+		NOT = { is_planet_class = pc_starcage_world_neutron_star }
+	}
+	district_planet_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.1
+		artisan_jobs_bonus_workforce_mult = 0.1
+	}
+}
+#合金工业
+zone_starcage_world_foundry = {
+	icon = GFX_district_specialization_foundry
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		foundry
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_foundry
+	swap_type_weight = 5
+	district_planet_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.2
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			is_planet_class = pc_starcage_world_neutron_star
+		}
+		foundry_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#消费品工业
+zone_starcage_world_factory = {
+	icon = GFX_district_specialization_factory
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		factory
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_factory
+	swap_type_weight = 5
+	potential = {
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+		NOT = { is_planet_class = pc_starcage_world_neutron_star }
+	}
+	district_planet_modifier = {
+		artisan_jobs_bonus_workforce_mult = 0.2
+	}
+}
+#凝聚力
+zone_starcage_world_unity = {
+	icon = GFX_district_specialization_unity
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_unity
+	swap_type_weight = 5
+	district_planet_modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.2
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			is_planet_class = pc_starcage_world_common_star
+		}
+		foundry_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#研究
+zone_starcage_world_research = {
+	icon = GFX_district_specialization_research
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		research
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_research
+	swap_type_weight = 5
+	district_planet_modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.1
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_common_star }
+		biologist_jobs_bonus_workforce_mult = 0.05
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_black_hole }
+		physicist_jobs_bonus_workforce_mult = 0.05
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_neutron_star }
+		engineer_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#物理
+zone_starcage_world_physicist = {
+	icon = GFX_district_specialization_physics
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		research
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_physicist
+	swap_type_weight = 5
+	district_planet_modifier = {
+		physicist_jobs_bonus_workforce_mult = 0.3
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_black_hole }
+		physicist_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#社会
+zone_starcage_world_biologist = {
+	icon = GFX_district_specialization_society
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		research
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_biologist
+	swap_type_weight = 5
+	district_planet_modifier = {
+		biologist_jobs_bonus_workforce_mult = 0.3
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_common_star }
+		biologist_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#工程
+zone_starcage_world_engineer = {
+	icon = GFX_district_specialization_engineering
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		research
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_engineer
+	swap_type_weight = 5
+	district_planet_modifier = {
+		engineer_jobs_bonus_workforce_mult = 0.3
+	}
+	triggered_district_planet_modifier = {
+		potential = { is_planet_class = pc_starcage_world_neutron_star }
+		engineer_jobs_bonus_workforce_mult = 0.05
+	}
+}
+#贸易
+zone_starcage_world_trade = {
+	icon = GFX_district_specialization_trade
+	base_buildtime = @buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost_minerals
+			alloys = @zone_cost_alloys
+		}
+	}
+	included_building_sets = {
+		urban
+		trade
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
+	}
+	swap_type = AOW_district_starcage_world_trade
+	swap_type_weight = 5
+	district_planet_modifier = {
+		trader_jobs_bonus_workforce_mult = 0.2
 	}
 }
 #堡垒
 zone_starcage_world_fortress = {
-	icon = GFX_colony_type_fortress
+	icon = GFX_district_specialization_fortress
 	base_buildtime = @buildtime
 	resources = {
 		category = planet_zones
@@ -563,14 +529,14 @@ zone_starcage_world_fortress = {
 		automation
 		origin
 	}
-	inline_script = {
-		script = jobs/AOW_zone_job_soldier
-		AMOUNT = 900
+	zone_sets = {
+		zone_starcage_world
+		zone_starcage_world_secondary
 	}
-	planet_modifier = {
-		zone_building_slots_add = 3
-	}
-	triggered_district_planet_modifier = {
-		planet_housing_add = @planet_housing_add
+	swap_type = AOW_district_starcage_world_fortress
+	swap_type_weight = 5
+	district_planet_modifier = {
+		pop_soldier_bonus_workforce_mult = 0.2
+		pop_warrior_drone_bonus_workforce_mult = 0.2
 	}
 }

@@ -1,24 +1,24 @@
 AOW_eft_add_planet_description_modifier = {
-	every_galaxy_planet = {
-		limit = {
-			NOT = { has_modifier = AOW_mod_PLNT_planetary_mining_station }
-			is_moon = no
-			is_star = no
-			OR = {
-				AOW_trgr_PLNT_ordinary_planet = yes
-				is_planet_class = pc_molten
-				is_planet_class = pc_frozen
-				is_planet_class = pc_toxic
-				is_planet_class = pc_ethane_ocean #乙烷海洋星球
-				is_planet_class = pc_hothouse #温室星球
-				is_planet_class = pc_diamond #金刚石星球
-				is_planet_class = pc_iron #铁星球
-				is_planet_class = pc_chthonian #气陨星核
-				is_planet_class = pc_volcanic #火山星球
-			}
-		}
-		add_modifier = { modifier = AOW_mod_PLNT_planetary_mining_station days = -1 }
-	}
+	# every_galaxy_planet = {
+	# 	limit = {
+	# 		NOT = { has_modifier = AOW_mod_PLNT_planetary_mining_station }
+	# 		is_moon = no
+	# 		is_star = no
+	# 		OR = {
+	# 			AOW_trgr_PLNT_ordinary_planet = yes
+	# 			is_planet_class = pc_molten
+	# 			is_planet_class = pc_frozen
+	# 			is_planet_class = pc_toxic
+	# 			is_planet_class = pc_ethane_ocean #乙烷海洋星球
+	# 			is_planet_class = pc_hothouse #温室星球
+	# 			is_planet_class = pc_diamond #金刚石星球
+	# 			is_planet_class = pc_iron #铁星球
+	# 			is_planet_class = pc_chthonian #气陨星核
+	# 			is_planet_class = pc_volcanic #火山星球
+	# 		}
+	# 	}
+	# 	add_modifier = { modifier = AOW_mod_PLNT_planetary_mining_station days = -1 }
+	# }
 	every_galaxy_planet = {
 		limit = {
 			NOT = { has_modifier = AOW_mod_PLNT_stellar_spectrum }

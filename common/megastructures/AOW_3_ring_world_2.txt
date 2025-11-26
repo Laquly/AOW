@@ -18,7 +18,7 @@ AOW_MEGA_ring_world_2_0 = {
 	inline_script = {
 		script = megastructures/dismantle_megastructure
 		time = 360
-		tech = AOW_TECH_pulsar_clock
+		tech = AOW_TECH_ring_world_2
 		category = megastructures
 		alloys = 5000
 		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
@@ -142,8 +142,7 @@ AOW_MEGA_ring_world_2_2_intermediate = {
 			fail_text = "AOW_mega_requires_SSTM_ringword_confirmed"
 			OR = {
 				has_star_flag = AOW_flag_SSTM_ringworld_independent
-				has_star_flag = AOW_flag_SSTM_ringworld_affiliated
-				has_star_flag = AOW_flag_SSTM_ringworld_auxiliary
+				has_star_flag = AOW_flag_SSTM_ringworld_subsidiary
 			}
 		}
 		NOT = { any_system_planet = { is_planet_class = pc_shattered_ring_habitable } }
@@ -220,14 +219,7 @@ AOW_MEGA_ring_world_2_2_intermediate = {
 			}
 			every_system_planet = {
 				limit = { AOW_trgr_PLNT_ringworld_habitable = yes }
-				if = {#增幅
-					limit = { root = { has_star_flag = AOW_flag_SSTM_ringworld_auxiliary } }
-					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_capacity_growth_facilities }
-				}
-				else_if = {#附属
-					limit = { root = { has_star_flag = AOW_flag_SSTM_ringworld_affiliated } }
-					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
-				}
+				add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
 			}
 		}
 		else_if = {#独立环世界
@@ -438,14 +430,7 @@ AOW_MEGA_ring_world_2_restored = {
 			}
 			every_system_planet = {
 				limit = { AOW_trgr_PLNT_ringworld_habitable = yes }
-				if = {#增幅
-					limit = { root = { has_star_flag = AOW_flag_SSTM_ringworld_auxiliary } }
-					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_capacity_growth_facilities }
-				}
-				else_if = {#附属
-					limit = { root = { has_star_flag = AOW_flag_SSTM_ringworld_affiliated } }
-					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
-				}
+				add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
 			}
 		}
 		else_if = {#独立环世界

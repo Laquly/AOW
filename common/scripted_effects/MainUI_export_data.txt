@@ -37,18 +37,19 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL set_variable = { which = AOW_var_player_mega_build_cap value = \\[this.AOW_var_player_mega_build_cap] }#玩家巨构同时建造上限"
 
 		log = "NULL #小型巨构上限（VP是玩家数值，VA是AI数值）"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_deep_space_citadel] VA = \\[this.AOW_var_ai_mega_cap_deep_space_citadel] KEY = deep_space_citadel }#深空擎天堡"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_dyson_swarm] VA = \\[this.AOW_var_ai_mega_cap_dyson_swarm] KEY = dyson_swarm }#戴森云"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_habitat] VA = \\[this.AOW_var_ai_mega_cap_habitat] KEY = habitat }#居住站"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_hyper_relay] VA = \\[this.AOW_var_ai_mega_cap_hyper_relay] KEY = hyper_relay }#超空间中继器"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_orbital_arc_furnace] VA = \\[this.AOW_var_ai_mega_cap_orbital_arc_furnace] KEY = orbital_arc_furnace }#电弧熔炉"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_orbital_ring] VA = \\[this.AOW_var_ai_mega_cap_orbital_ring] KEY = orbital_ring }#星环"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_asteroid_mining_station] VA = \\[this.AOW_var_ai_mega_cap_asteroid_mining_station] KEY = asteroid_mining_station }#星状开采站"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_space_arena] VA = \\[this.AOW_var_ai_mega_cap_space_arena] KEY = space_arena }#星光竞技场"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_space_sensor_station] VA = \\[this.AOW_var_ai_mega_cap_space_sensor_station] KEY = space_sensor_station }#星空传感站"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_habitat] VA = \\[this.AOW_var_ai_mega_cap_habitat] KEY = habitat }#居住站"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_hyper_relay] VA = \\[this.AOW_var_ai_mega_cap_hyper_relay] KEY = hyper_relay }#超空间中继器"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_orbital_ring] VA = \\[this.AOW_var_ai_mega_cap_orbital_ring] KEY = orbital_ring }#星环"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_gateway] VA = \\[this.AOW_var_ai_mega_cap_gateway] KEY = gateway }#星门"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_satellite_defense_base] VA = \\[this.AOW_var_ai_mega_cap_satellite_defense_base] KEY = satellite_defense_base }#卫星防御基地"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_dyson_swarm] VA = \\[this.AOW_var_ai_mega_cap_dyson_swarm] KEY = dyson_swarm }#戴森云"
-		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_orbital_arc_furnace] VA = \\[this.AOW_var_ai_mega_cap_orbital_arc_furnace] KEY = orbital_arc_furnace }#电弧熔炉"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_resource_drilling_station] VA = \\[this.AOW_var_ai_mega_cap_resource_drilling_station] KEY = resource_drilling_station }#资源钻取站"
+		
 		log = "NULL #普通巨构上限（VP是玩家数值，VA是AI数值）"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_gateway] VA = \\[this.AOW_var_ai_mega_cap_gateway] KEY = gateway }#星门"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_interstellar_assembly] VA = \\[this.AOW_var_ai_mega_cap_interstellar_assembly] KEY = interstellar_assembly }#星际集会"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_mega_art_installation] VA = \\[this.AOW_var_ai_mega_cap_mega_art_installation] KEY = mega_art_installation }#巨构艺术"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_mega_shipyard] VA = \\[this.AOW_var_ai_mega_cap_mega_shipyard] KEY = mega_shipyard }#巨型船坞"
@@ -74,6 +75,7 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_zro_sublimator] VA = \\[this.AOW_var_ai_mega_cap_zro_sublimator] KEY = zro_sublimator }#泽珞升华器"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_plane_siphon] VA = \\[this.AOW_var_ai_mega_cap_plane_siphon] KEY = plane_siphon }#位面虹吸器"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_wonder_construction_bureau] VA = \\[this.AOW_var_ai_mega_cap_wonder_construction_bureau] KEY = wonder_construction_bureau }#奇观建设局"
+		
 		log = "NULL #星河奇迹上限（VP是玩家数值，VA是AI数值）"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_dyson_sphere] VA = \\[this.AOW_var_ai_mega_cap_dyson_sphere] KEY = dyson_sphere }#戴森球"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_matter_decompressor] VA = \\[this.AOW_var_ai_mega_cap_matter_decompressor] KEY = matter_decompressor }#物质解压器"
@@ -89,6 +91,7 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_star_guardian] VA = \\[this.AOW_var_ai_mega_cap_star_guardian] KEY = star_guardian }#星空守护者"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_ring_world_1] VA = \\[this.AOW_var_ai_mega_cap_ring_world_1] KEY = ring_world_1 }#一环（原版环世界）"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_ring_world_2] VA = \\[this.AOW_var_ai_mega_cap_ring_world_2] KEY = ring_world_2 }#二环"
+
 		log = "NULL #天外神迹上限（VP是玩家数值，VA是AI数值）（VP=-1表示玩家无限，VP=5表示玩家最多建造5个巨构，）"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_multi_dimensional_warehouse] VA = \\[this.AOW_var_ai_mega_cap_multi_dimensional_warehouse] KEY = multi_dimensional_warehouse }#多维仓库"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_heaven_navigation_bureau] VA = \\[this.AOW_var_ai_mega_cap_heaven_navigation_bureau] KEY = heaven_navigation_bureau }#天界领航塔"
@@ -429,5 +432,4 @@ AOW_eft_GLBL_export_data = {
 	}
 	log = "NULL }#"
 	log = "NULL #----------奇观拓展AOW结束导出----------删除以下全部的行"
-	optimize_memory
 }

@@ -5,7 +5,8 @@ mega_shipyard_0 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	#construction_blocks_and_blocked_by = none
-	entity_offset = { x = -27 y = -27 }
+	build_type = inside_gravity_well
+	#entity_offset = { x = -27 y = -27 }
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -68,19 +69,20 @@ mega_shipyard_0 = {
 			}
 		}
 	}
-	placement_rules = {
-		planet_possible = {
-			custom_tooltip = {#必须为恒星
-				fail_text = "must_build_around_star"
-				is_star = yes
-			}
-			custom_tooltip = {#不能有异常
-				fail_text = "requires_no_anomaly"
-				NOT = { has_anomaly = yes }
-			}
-			AOW_trigger_mega_planet_has_megastructure = { key = mega_shipyard }
-		}
-	}
+	# placement_rules = {
+	# 	planet_possible = {
+	# 		# custom_tooltip = {#必须为恒星
+	# 		# 	fail_text = "must_build_around_star"
+	# 		# 	is_star = yes
+	# 		# }
+	# 		# custom_tooltip = {#不能有异常
+	# 		# 	fail_text = "requires_no_anomaly"
+	# 		# 	NOT = { has_anomaly = yes }
+	# 		# }
+	# 		# AOW_trigger_mega_planet_has_megastructure = { key = mega_shipyard }
+	# 		always = no
+	# 	}
+	# }
 	# root = system
 	# from = country
 	ai_weight = {
@@ -129,7 +131,7 @@ mega_shipyard_1 = {
 	portrait = GFX_megastructure_construction_background
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -193,7 +195,7 @@ mega_shipyard_2 = {
 	portrait = GFX_megastructure_construction_background
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -257,7 +259,7 @@ mega_shipyard_3 = {
 	portrait = "GFX_megastructure_mega_shipyard_background"
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	outliner_trigger = {
 		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = mega_shipyard }
 	}
@@ -328,7 +330,7 @@ mega_shipyard_permanently_ruined = {
 	construction_entity = "mega_shipyard_01_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	potential = { always = no }
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -349,7 +351,7 @@ mega_shipyard_ruined = {
 	construction_entity = "mega_shipyard_01_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	potential = { always = no }
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -371,7 +373,7 @@ mega_shipyard_restored = {
 	portrait = "GFX_megastructure_mega_shipyard_background"
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
-	entity_offset = { x = -27 y = -27 }
+	#entity_offset = { x = -27 y = -27 }
 	outliner_trigger = {
 		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = mega_shipyard }
 	}

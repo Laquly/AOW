@@ -19,24 +19,6 @@ AOW_eft_starfall_spear_select_target = {
 		save_global_event_target_as = AOW_starfall_spear_target_$target$_@from
 		set_$sp$_flag = AOW_flag_starfall_spear_mode_$mode$_@from
 	}
-	event_target:AOW_starfall_spear_target_$target$_@from = {
-		solar_system = {#目标星系
-			export_trigger_value_to_variable = {
-				trigger = distance
-				parameters = {
-					source = event_target:AOW_tgt_SSTM_starfall_spear_@from #发射星系
-				}
-				variable = AOW_var_system_distance_$target$
-			}
-			event_target:AOW_tgt_SSTM_starfall_spear_@from = {#发射星系
-				set_variable = {
-					which = AOW_var_system_distance_$target$
-					value = prev.AOW_var_system_distance_$target$
-				}
-			}
-			clear_variable = AOW_var_system_distance_$target$
-		}
-	}
 }
 #重新选择打击模式
 AOW_eft_starfall_spear_reselect_target_mode = {
@@ -80,6 +62,7 @@ AOW_eft_starfall_spear_reselect_target_mode = {
 
 #选择行星目标
 AOW_eft_PLNT_starfall_spear_button = {
+	tooltip = { custom_tooltip = AOW_planet_target_cost_$mode$ }
 	custom_tooltip = AOW_planet_target_mode_$mode$_tooltip
 	hidden_effect = {
 		planet = {
@@ -110,6 +93,7 @@ AOW_eft_PLNT_starfall_spear_button = {
 }
 #选择星系目标
 AOW_eft_SSTM_starfall_spear_button = {
+	tooltip = { custom_tooltip = AOW_system_target_cost_$mode$ }
 	custom_tooltip = AOW_system_target_mode_$mode$_tooltip
 	hidden_effect = {
 		solar_system = {
@@ -135,47 +119,6 @@ AOW_eft_SSTM_starfall_spear_button = {
 			AOW_eft_starfall_spear_reselect_target_mode = { target = 08 mode = $mode$ sp = star }
 			AOW_eft_starfall_spear_reselect_target_mode = { target = 09 mode = $mode$ sp = star }
 			AOW_eft_starfall_spear_reselect_target_mode = { target = 10 mode = $mode$ sp = star }
-		}
-	}
-}
-#展示目标名字和打击模式的按钮
-AOW_eft_starfall_spear_target_button = {
-	if = {#点击取消选择
-		limit = { exists = event_target:AOW_starfall_spear_target_$target$_@from }
-		event_target:AOW_starfall_spear_target_$target$_@from = {
-			custom_tooltip = AOW_text_cancel_target
-			if = {
-				limit = { is_scope_type = galactic_object }
-				remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_07_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_08_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_09_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_10_@from
-			}
-			if = {
-				limit = { is_scope_type = planet }
-				remove_planet_flag = AOW_flag_starfall_spear_mode_01_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_02_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_03_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_04_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_05_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_06_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_07_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_08_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_09_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_10_@from
-			}
-			clear_global_event_target = AOW_starfall_spear_target_$target$_@from
-		}
-		hidden_effect = {
-			event_target:AOW_tgt_SSTM_starfall_spear_@from = {
-				clear_variable = AOW_var_system_distance_$target$
-			}
 		}
 	}
 }
@@ -296,6 +239,35 @@ AOW_eft_start_launching_at_starfall_spear_target = {
 		}
 	}
 }
+#展示目标名字和打击模式的按钮
+AOW_eft_starfall_spear_target_button = {
+	if = {#点击取消选择
+		limit = { exists = event_target:AOW_starfall_spear_target_$target$_@from }
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			custom_tooltip = AOW_text_cancel_target
+			if = {
+				limit = { is_scope_type = galactic_object }
+				remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
+				remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
+				remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
+				remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
+				remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
+				remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
+			}
+			if = {
+				limit = { is_scope_type = planet }
+				remove_planet_flag = AOW_flag_starfall_spear_mode_01_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_02_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_03_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_04_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_05_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_06_@from
+				remove_planet_flag = AOW_flag_starfall_spear_mode_07_@from
+			}
+		}
+		clear_global_event_target = AOW_starfall_spear_target_$target$_@from
+	}
+}
 #取消目标和旗子
 AOW_eft_starfall_spear_cancel_target_and_flag = {
 	if = {
@@ -309,10 +281,6 @@ AOW_eft_starfall_spear_cancel_target_and_flag = {
 				remove_star_flag = AOW_flag_starfall_spear_mode_04_@$scope$
 				remove_star_flag = AOW_flag_starfall_spear_mode_05_@$scope$
 				remove_star_flag = AOW_flag_starfall_spear_mode_06_@$scope$
-				remove_star_flag = AOW_flag_starfall_spear_mode_07_@$scope$
-				remove_star_flag = AOW_flag_starfall_spear_mode_08_@$scope$
-				remove_star_flag = AOW_flag_starfall_spear_mode_09_@$scope$
-				remove_star_flag = AOW_flag_starfall_spear_mode_10_@$scope$
 			}
 			if = {
 				limit = { is_scope_type = planet }
@@ -323,12 +291,9 @@ AOW_eft_starfall_spear_cancel_target_and_flag = {
 				remove_planet_flag = AOW_flag_starfall_spear_mode_05_@$scope$
 				remove_planet_flag = AOW_flag_starfall_spear_mode_06_@$scope$
 				remove_planet_flag = AOW_flag_starfall_spear_mode_07_@$scope$
-				remove_planet_flag = AOW_flag_starfall_spear_mode_08_@$scope$
-				remove_planet_flag = AOW_flag_starfall_spear_mode_09_@$scope$
-				remove_planet_flag = AOW_flag_starfall_spear_mode_10_@$scope$
 			}
-			clear_global_event_target = AOW_starfall_spear_target_$target$_@$scope$
 		}
+		clear_global_event_target = AOW_starfall_spear_target_$target$_@$scope$
 	}
 }
 #取消目标

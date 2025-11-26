@@ -12,9 +12,6 @@ AOW_btn_prosperous_trade_station_prerequisites = {
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
 			has_technology = tech_mega_engineering
-			has_technology = tech_galactic_markets
-			has_country_flag = AOW_flag_CNTR_branch_office_established
-			is_gestalt = no
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = AOW_TECH_prosperous_trade_station
 		}

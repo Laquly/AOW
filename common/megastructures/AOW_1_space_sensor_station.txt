@@ -11,7 +11,7 @@ AOW_MEGA_space_sensor_station_1 = {
 	use_planet_resource = yes
 	construction_blocks_and_blocked_by = none
 	build_time = @AOW_var_SSS_1_time
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MINOR_PLANETARY_BODY"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET_OR_SATELLITE"
 	resources = {
 		category = megastructures
 		cost = {
@@ -25,7 +25,11 @@ AOW_MEGA_space_sensor_station_1 = {
 	sensor_range = @AOW_var_SSS_1_sensor_range
 	hyperlane_range = @AOW_var_SSS_1_hyperlane_range
 	country_modifier = {
-		custom_tooltip = AOW_MEGA_space_sensor_station_effects
+		ship_evasion_mult = 0.05
+		ship_accuracy_mult = 0.05
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 3
+		ship_emergency_ftl_min_days_mult = -0.5
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -97,7 +101,6 @@ AOW_MEGA_space_sensor_station_1 = {
 		from = { country_event = { id = AOW_evt_space_sensor_station.100 } }
 		fromfrom = {
 			set_megastructure_flag = AOW_flag_MEGA_space_sensor_station_@owner
-			AOW_eft_MEGA_set_variable_cost = { v = @AOW_var_SSS_1_COST_alloys }
 		}
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 	}

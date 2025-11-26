@@ -43,13 +43,6 @@ entity = {
 	attach = { root = "AOW_MEGA_storm_trigger_tower_3_construction_entity" }
 }
 entity = {
-	name = AOW_MEGA_storm_trigger_tower_4_entity
-	locator = { name = root position = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { root = "AOW_MEGA_storm_trigger_tower_1_entity" }
-	attach = { root = "AOW_MEGA_storm_trigger_tower_2_construction_entity" }
-	attach = { root = "AOW_MEGA_storm_trigger_tower_3_construction_entity" }
-}
-entity = {
 	name = "AOW_MEGA_storm_trigger_tower_4_entity"
 	scale = 20
 	#动画

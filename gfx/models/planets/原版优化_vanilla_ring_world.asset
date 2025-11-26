@@ -8,9 +8,23 @@ entity = {
 	locator = { name = "r1" position = { 225 0 -60.289 } rotation = { 30 0 0 } }
 	locator = { name = "r2" position = { 389.7 0 -225 } rotation = { 60 0 0 } }
 
+	attach = { l2 = "ringworld_habitable_entity_01_entity" }
 	attach = { l1 = "ringworld_habitable_entity_01_entity" }
 	attach = { root = "ringworld_habitable_entity_01_entity" }
-	attach = { r1 = "ringworld_habitable_entity_01_entity" }
+}
+entity = {
+	name = "ringworld_quarter_habitable_entity"
+	cull_radius = 500.0
+	locator = { name = "l2" position = { -389.7 0 -225 } rotation = { -60 0 0 } }
+	locator = { name = "l1" position = { -225 0 -60.289 } rotation = { -30 0 0 } }
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "r1" position = { 225 0 -60.289 } rotation = { 30 0 0 } }
+	locator = { name = "r2" position = { 389.7 0 -225 } rotation = { 60 0 0 } }
+	
+	#attach = { l2 = "ringworld_tech_entity_01_entity" }
+	attach = { l1 = "ringworld_seam_entity_01_entity" }
+	attach = { root = "ringworld_habitable_entity_01_entity" }
+	attach = { r1 = "ringworld_tech_entity_01_entity" }
 }
 entity = {
 	name = "ringworld_habitable_entity_01_entity"
@@ -39,7 +53,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -65,7 +94,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -91,7 +135,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -117,7 +176,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -143,7 +217,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -169,7 +258,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -195,7 +299,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -221,7 +340,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -247,7 +381,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size emissive_recolor_crunch = 2.0 }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -273,7 +422,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size emissive_recolor_crunch = 2.0 }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -299,7 +463,22 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size emissive_recolor_crunch = 2.0 }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }
 entity = {
@@ -325,6 +504,21 @@ entity = {
 		texture_specular = "tropical_03_spec.dds"
 		shader = "PdxMeshTerra"
 	}
-	game_data = { size = @ringworld_segment_size emissive_recolor_crunch = 2.0 }
+	meshsettings = {
+		name = "polySurface34Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_shadow_diffuse.dds"
+		texture_specular = "nospec.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	meshsettings = {
+		name = "polySurface35Shape"
+		index = 0
+		texture_diffuse = "clouds_medium_diffuse.dds"
+		texture_normal = "clouds_medium_normal.dds"
+		texture_specular = "clouds_medium_specular.dds"
+		shader = "PdxMeshRingworldClouds"
+	}
+	game_data = { size = @ringworld_segment_size shader_type = ship }
 	attach = { root = "ringworld_habitable_entity_01_clouds_entity" }
 }

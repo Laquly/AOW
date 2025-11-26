@@ -59,7 +59,7 @@ AOW_var_virtual_pop_capacity = {#环世界虚拟人口容量
 			}
 		}
 		mode = add
-		mult = 50
+		mult = 5000
 	}
 	complex_trigger_modifier = {
 		trigger = count_system_planet
@@ -71,7 +71,7 @@ AOW_var_virtual_pop_capacity = {#环世界虚拟人口容量
 			}
 		}
 		mode = add
-		mult = 75
+		mult = 7500
 	}
 	complex_trigger_modifier = {
 		trigger = count_system_planet
@@ -83,9 +83,9 @@ AOW_var_virtual_pop_capacity = {#环世界虚拟人口容量
 			}
 		}
 		mode = add
-		mult = 100
+		mult = 10000
 	}
-	max = 900
+	max = 90000
 }
 AOW_var_automation_facilities_capacity = {#环世界自动化地块容量
 	base = 0
@@ -239,26 +239,6 @@ AOW_var_mri_remaining_points = {
 	subtract = AOW_var_mri_points_nanites
 	min = 0
 	max = 100
-}
-
-#星笼世界
-AOW_var_sw_all_points = {
-	add = AOW_var_sw_points
-	add = AOW_var_sw_points_technician
-	add = AOW_var_sw_points_miner
-	add = AOW_var_sw_points_farmer
-	add = AOW_var_sw_points_trader
-	add = AOW_var_sw_points_researcher
-	add = AOW_var_sw_points_bureaucrat
-	add = AOW_var_sw_points_artisan
-	add = AOW_var_sw_points_foundry
-	add = AOW_var_sw_points_chemist
-	add = AOW_var_sw_points_refiner
-	add = AOW_var_sw_points_translucer
-	add = AOW_var_sw_points_soldier
-	add = AOW_var_sw_points_amenities
-	add = AOW_var_sw_points_enforcer
-	add = AOW_var_sw_points_bio_trophy
 }
 
 #星系内大型天体数

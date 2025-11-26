@@ -1,5 +1,6 @@
 sh_planetary_ship = {
 	formation_priority = @juggernaut_formation_priority
+	available_to_everyone = yes
 	graphical_culture = no
 	max_speed = 30
 	acceleration = 0.2
@@ -51,6 +52,7 @@ sh_planetary_ship = {
 #巨像主宰型
 planetary_ship_1 = {
 	formation_priority = @juggernaut_formation_priority
+	available_to_everyone = yes
 	graphical_culture = no
 	max_speed = 30
 	acceleration = 0.2
@@ -116,6 +118,7 @@ planetary_ship_1 = {
 #舰队型
 planetary_ship_2 = {
 	formation_priority = @juggernaut_formation_priority
+	available_to_everyone = yes
 	graphical_culture = no
 	max_speed = 30
 	acceleration = 0.2

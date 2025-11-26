@@ -1,4 +1,4 @@
-AOW_btn_starfall_spear_type_null = {
+AOW_btn_starfall_spear_type_capacity = {
 	potential = {
 		NOR = {
 			exists = event_target:AOW_starfall_spear_target_01_@from
@@ -14,33 +14,36 @@ AOW_btn_starfall_spear_type_null = {
 		}
 	}
 	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_starfall_spear_target_capacity_desc
+	}
 }
 AOW_btn_starfall_spear_type_planet = {
 	potential = {
 		AOW_trgr_has_starfall_spear_target_type = { type = planet scope = from }
 	}
 	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_starfall_spear_target_planet_desc
+	}
 }
 AOW_btn_starfall_spear_type_system = {
 	potential = {
 		AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = from }
 	}
 	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_starfall_spear_target_system_desc
+	}
 }
 AOW_btn_clear_all_targets = {
 	potential = { always = yes }
 	allow = { always = yes }
 	effect = {
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 01 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 02 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 03 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 04 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 05 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 06 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 07 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 08 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 09 scope = from }
-		AOW_eft_starfall_spear_cancel_target_and_flag = { target = 10 scope = from }
+		custom_tooltip = AOW_text_clear_all_targets_desc
+		hidden_effect = {
+			AOW_eft_starfall_spear_cancel_all_targets_and_flags = { scope = from }
+		}
 	}
 }
 

@@ -249,6 +249,7 @@ AOW_MEGA_planetary_blaster_system_4 = {
 	scales_with_planet = yes
 	use_planet_resource = yes
 	build_time = @AOW_var_PBS_4_TIME
+	starbase = starbase_level_planetary_blaster_system
 	resources = {
 		category = megastructures
 		cost = {
@@ -275,35 +276,22 @@ AOW_MEGA_planetary_blaster_system_4 = {
 		lm = 0 zo = 0 dm = 0
 	}
 	prerequisites = { "AOW_TECH_planetary_blaster_system" }
-	possible = {
-		custom_tooltip = {
-			fail_text = "btn_requires_only_one_pbs_design"
-			from = {
-				count_owned_design = {
-					limit = { is_ship_size = AOW_shipsize_planetary_blaster_system }
-					count = 1
-				}
-			}
-		}
-	}
 	show_prereqs = yes
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_3 }
 	on_build_complete = {
-		fromfrom.planet = {
-			create_starbase = {
-				size = AOW_shipsize_planetary_blaster_system
-				owner = root.from
-				#module = <starbase_module>
-				#building = <starbase_building>
-				effect = {  }
-			}
-		}
+		# fromfrom.planet = {
+		# 	create_starbase = {
+		# 		size = AOW_shipsize_planetary_blaster_system
+		# 		owner = root.from
+		# 		effect = {  }
+		# 	}
+		# }
 		from = {
 			country_event = { id = AOW_evt_planetary_blaster_system.104 }
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
 		}
-		#remove_megastructure = fromfrom
+		remove_megastructure = fromfrom
 	}
 }
 
@@ -329,7 +317,7 @@ AOW_MEGA_planetary_blaster_system_ruined = {
 	}
 }
 AOW_MEGA_planetary_blaster_system_restored = {
-	entity = AOW_shipsize_frame_entity#"planetary_blaster_system_4_entity"
+	entity = AOW_shipsize_frame_entity
 	portrait = "GFX_megastructure_planetary_blaster_system_background"
 	place_entity_on_planet_plane = yes
 	scales_with_planet = yes
@@ -364,15 +352,6 @@ AOW_MEGA_planetary_blaster_system_restored = {
 	}
 	possible = {
 		from = { has_technology = tech_mega_engineering }
-		custom_tooltip = {
-			fail_text = "btn_requires_only_one_pbs_design"
-			from = {
-				count_owned_design = {
-					limit = { is_ship_size = AOW_shipsize_planetary_blaster_system }
-					count = 1
-				}
-			}
-		}
 	}
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_ruined }
 	on_build_complete = {
@@ -392,6 +371,6 @@ AOW_MEGA_planetary_blaster_system_restored = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = AOW_flag_CNTR_has_built_or_repaired_planetary_blaster_system
 		}
-		#remove_megastructure = fromfrom
+		remove_megastructure = fromfrom
 	}
 }

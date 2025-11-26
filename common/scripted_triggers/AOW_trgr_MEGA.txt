@@ -14,10 +14,20 @@ AOW_trgr_MEGA_finished_mega_outliner_trigger = {
 		limit = { has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner }
 		always = no
 	}
-	else = {#默认，跟随控制面板
-		owner = {
-			NOT = { has_country_flag = AOW_flag_CNTR_$key$_outliner_hide }
+	else_if = {#默认
+		limit = {
+			OR = {
+				NOR = {
+					has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+					has_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+				}
+				AND = {
+					has_megastructure_flag = AOW_flag_MEGA_outliner_hide_@owner
+					has_megastructure_flag = AOW_flag_MEGA_outliner_show_@owner
+				}
+			}
 		}
+		owner = { NOT = { has_country_flag = AOW_flag_CNTR_$key$_outliner_hide } }
 	}
 }
 

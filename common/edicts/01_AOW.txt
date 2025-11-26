@@ -13,10 +13,12 @@ AOW_plane_analysis = {
 		}
 	}
 	modifier = {
-		planet_researchers_physics_research_produces_add = 1
-		planet_researchers_society_research_produces_add = 1
-		planet_researchers_engineering_research_produces_add = 1
-		planet_researchers_astral_threads_upkeep_add = 1
+		planet_physicists_physics_research_produces_add = 3
+		planet_biologists_society_research_produces_add = 3
+		planet_engineers_engineering_research_produces_add = 3
+		planet_physicists_astral_threads_upkeep_add = 1
+		planet_biologists_astral_threads_upkeep_add = 1
+		planet_engineers_astral_threads_upkeep_add = 1
 	}
 	potential = {
 		NOT = { has_deficit = astral_threads }
@@ -40,11 +42,11 @@ AOW_dark_matter_trap = {
 	resources = {
 		category = rare_edicts
 		cost = {
-			sr_dark_matter = 5
+			sr_dark_matter = 10
 			multiplier = value:AOW_var_edict_size
 		}
 		upkeep = {
-			sr_dark_matter = 5
+			sr_dark_matter = 10
 			multiplier = value:AOW_var_edict_size
 		}
 	}

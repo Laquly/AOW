@@ -1,0 +1,145 @@
+AOW_btn_view_ui_sw_max_$type$ = {#最大
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = AOW_requires_our_starcage_world
+			is_scope_type = planet
+			AOW_trgr_PLNT_is_starcage_world = yes
+			exists = owner
+			owner = { is_same_value = from }
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_maximize_$type$
+		hidden_effect = {
+			set_variable = { which = AOW_var_sw_points_technician	value = 0 }
+			set_variable = { which = AOW_var_sw_points_miner	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_farmer	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_trader	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_physicist	value = 0 }
+			set_variable = { which = AOW_var_sw_points_biologist	value = 0 }
+			set_variable = { which = AOW_var_sw_points_engineer		value = 0 }
+			set_variable = { which = AOW_var_sw_points_bureaucrat	value = 0 }
+			set_variable = { which = AOW_var_sw_points_artisan	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_foundry	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_chemist	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_refiner	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_translucer	value = 0 }
+			set_variable = { which = AOW_var_sw_points_soldier	    value = 0 }
+			set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+			set_variable = { which = AOW_var_sw_points_healthcare	value = 0 }
+			set_variable = { which = AOW_var_sw_points  value = 0 }
+			set_variable = { which = AOW_var_sw_points_$type$   value = 30 }
+			if = {
+				limit = {
+					owner = { NOT = { has_valid_civic = civic_machine_servitor } }
+					check_variable = { which = AOW_var_sw_points_bio_trophy	value > 0 }
+				}
+				change_variable = { which = AOW_var_sw_points   value = AOW_var_sw_points_bio_trophy }
+				set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_sw_complete_$type$ = {#补全
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = AOW_requires_our_starcage_world
+			is_scope_type = planet
+			AOW_trgr_PLNT_is_starcage_world = yes
+			exists = owner
+			owner = { is_same_value = from }
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_complete_$type$
+		hidden_effect = {
+			change_variable = { which = AOW_var_sw_points_$type$   value = AOW_var_sw_points }
+			set_variable = { which = AOW_var_sw_points   value = 0 }
+			if = {
+				limit = {
+					owner = { NOT = { has_valid_civic = civic_machine_servitor } }
+					check_variable = { which = AOW_var_sw_points_bio_trophy	value > 0 }
+				}
+				change_variable = { which = AOW_var_sw_points   value = AOW_var_sw_points_bio_trophy }
+				set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_sw_reset_$type$ = {#重置
+	potential = {
+		from = { has_active_event = { AOW_evt_starcage_world.500 } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = AOW_requires_our_starcage_world
+			is_scope_type = planet
+			AOW_trgr_PLNT_is_starcage_world = yes
+			exists = owner
+			owner = { is_same_value = from }
+		}
+	}
+	effect = {
+		custom_tooltip = AOW_text_reset_$type$
+		hidden_effect = {
+			change_variable = { which = AOW_var_sw_points value = AOW_var_sw_points_$type$ }
+			set_variable = { which = AOW_var_sw_points_$type$ value = 0 }
+			if = {
+				limit = {
+					owner = { NOT = { has_valid_civic = civic_machine_servitor } }
+					check_variable = { which = AOW_var_sw_points_bio_trophy	value > 0 }
+				}
+				change_variable = { which = AOW_var_sw_points   value = AOW_var_sw_points_bio_trophy }
+				set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+			}
+		}
+	}
+}
+AOW_btn_view_ui_sw_increase_$type$_10 = {#增加 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = $type$
+		value = 10
+	}
+}
+AOW_btn_view_ui_sw_increase_$type$_5 = {#增加 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = $type$
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_increase_$type$_1 = {#增加 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_increase_sw_points
+		type = $type$
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_$type$_1 = {#减少 1
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = $type$
+		value = 1
+	}
+}
+AOW_btn_view_ui_sw_decrease_$type$_5 = {#减少 5
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = $type$
+		value = 5
+	}
+}
+AOW_btn_view_ui_sw_decrease_$type$_10 = {#减少 10
+	inline_script = {
+		script = megastructures/starcage_world/AOW_decrease_sw_points
+		type = $type$
+		value = 10
+	}
+}

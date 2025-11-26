@@ -20,5 +20,13 @@ effect = {
             change_variable = { which = AOW_var_sw_points value = $value$ }
             change_variable = { which = AOW_var_sw_points_$type$ value = -$value$ }
         }
+        if = {
+            limit = {
+                owner = { NOT = { has_valid_civic = civic_machine_servitor } }
+                check_variable = { which = AOW_var_sw_points_bio_trophy	value > 0 }
+            }
+            change_variable = { which = AOW_var_sw_points   value = AOW_var_sw_points_bio_trophy }
+            set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
+        }
     }
 }

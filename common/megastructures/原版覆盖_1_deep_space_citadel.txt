@@ -9,9 +9,9 @@ deep_space_citadel_0 = {
 	use_planet_resource = no
 	build_time = 1080 # 3 years
 	must_select_ship_design = yes
-
+	
 	starbase = starbase_level_deep_space_citadel_1
-
+	
 	resources = {
 		category = megastructures
 		cost = {
@@ -38,41 +38,34 @@ deep_space_citadel_0 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
-
+	
 	construction_blocks_and_blocked_by = self_type
 	prerequisites = { "tech_deep_space_citadel" }
-
-	potential = {
-		always = yes
-	}
-
+	
+	potential = { AOW_trigger_mega_potential = { KEY = deep_space_citadel } }
+	
 	possible = {
-		hidden_trigger = {
-			exists = starbase
+		hidden_trigger = { exists = starbase }
+		custom_tooltip = {#on_build_start
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_deep_space_citadel } }
 		}
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
 		}
+		# custom_tooltip = {
+		# 	fail_text = "requires_less_than_x_deep_space_citadel"
+		# 	count_ship_in_system = {
+		# 		limit = {
+		# 			is_space_citadel_ship_size = yes
+		# 		}
+		# 		count < from.modifier:deep_space_citadel_limit_add
+		# 	}
+		# }
 		custom_tooltip = {
-			fail_text = "requires_surveyed_system"
-			NOT = {
-				any_system_planet = {
-					is_surveyed = {
-						who = prev.from
-						status = no
-					}
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "requires_less_than_x_deep_space_citadel"
-			count_ship_in_system = {
-				limit = {
-					is_space_citadel_ship_size = yes
-				}
-				count < from.modifier:deep_space_citadel_limit_add
-			}
+			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
+			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_deep_space_citadel } }
 		}
 	}
 	placement_rules = {
@@ -119,6 +112,7 @@ deep_space_citadel_0 = {
 				}
 			}
 		}
+		
 		modifier = {
 			factor = 1.15
 			from = {
@@ -126,7 +120,54 @@ deep_space_citadel_0 = {
 			}
 		}
 	}
-	on_build_start = {}
+	
+	on_build_start = {
+		from = {
+			if = {
+				limit = {
+					is_ai = no
+					event_target:global_event_country = {
+						check_variable = { which = AOW_var_player_mega_cap_deep_space_citadel value > 0 }
+					}
+				}
+				if = {
+					limit = {
+						root = {
+							count_ship_in_system = {
+								limit = {
+									is_space_citadel_ship_size = yes
+								}
+								count >= event_target:global_event_country.AOW_var_player_mega_cap_deep_space_citadel
+							}
+						}
+					}
+					set_timed_country_flag = { flag = AOW_flag_CNTR_no_more_deep_space_citadel days = 2 }
+					country_event = { id = AOW_mega_notification.1 }
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					event_target:global_event_country = {
+						check_variable = { which = AOW_var_ai_mega_cap_deep_space_citadel value > 0 }
+					}
+				}
+				if = {
+					limit = {
+						root = {
+							count_ship_in_system = {
+								limit = {
+									is_space_citadel_ship_size = yes
+								}
+								count >= event_target:global_event_country.AOW_var_ai_mega_cap_deep_space_citadel
+							}
+						}
+					}
+					set_country_flag = AOW_flag_CNTR_no_more_deep_space_citadel
+				}
+			}
+		}
+	}
 	on_build_cancel = {}
 	on_build_complete = {
 		fromfrom = {

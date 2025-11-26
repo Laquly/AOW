@@ -1,5 +1,6 @@
 AOW_shipsize_bunker_ring = {
 	graphical_culture = no
+	available_to_everyone = yes
 	entity = AOW_shipsize_frame_entity
 	max_speed = 10
 	rotation_speed = 20
@@ -23,7 +24,6 @@ AOW_shipsize_bunker_ring = {
 	is_space_station = yes
 	base_buildtime = 720
 	auto_upgrade = no
-	available_to_everyone = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	#prerequisites = { "AOW_TECH_bunker_ring" }
 	class = shipclass_military_station

@@ -1,11 +1,22 @@
-#无限制使用坠星天矛 #对方有这种政策。我方对其评价-200
+#无限制使用坠星天矛 #对方有这种政策。我方对其评价-500
 triggered_AOW_opinion_starfall_spear_unlimited = {
 	trigger = {
 		from = { has_policy_flag = AOW_policy_SS_unlimited }
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = awakened_marauders
+			is_country_type = primitive
+			is_country_type = ratlings
+			is_country_type = default_ev
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
 	}
-	opinion = { base = -200 }
+	opinion = { base = -500 }
 }
-#战争期间使用坠星天矛 #对方有这种政策，且没有跟对方交战。我方对其评价+100
+#战争期间使用坠星天矛 #对方有这种政策，且没有跟对方交战。我方对其评价+200
 triggered_AOW_opinion_starfall_spear_hostility = {
 	trigger = {
 		from = { has_policy_flag = AOW_policy_SS_hostility }
@@ -13,14 +24,36 @@ triggered_AOW_opinion_starfall_spear_hostility = {
 			is_at_war_with = from
 			has_country_flag = AOW_flag_CNTR_was_hit_by_@from
 		}
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = awakened_marauders
+			is_country_type = primitive
+			is_country_type = ratlings
+			is_country_type = default_ev
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
 	}
-	opinion = { base = 100 }
+	opinion = { base = 200 }
 }
-#不首先使用坠星天矛 #对方有这种政策，且没有被对方打击。我方对其评价+150
+#不首先使用坠星天矛 #对方有这种政策，且没有被对方打击。我方对其评价+300
 triggered_AOW_opinion_starfall_spear_no_first_use = {
 	trigger = {
 		from = { has_policy_flag = AOW_policy_SS_no_first_use }
 		NOT = { has_country_flag = AOW_flag_CNTR_was_hit_by_@from }
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = awakened_marauders
+			is_country_type = primitive
+			is_country_type = ratlings
+			is_country_type = default_ev
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
 	}
-	opinion = { base = 150 }
+	opinion = { base = 300 }
 }

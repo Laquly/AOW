@@ -1,6 +1,7 @@
 #御星天炉
 AOW_shipsize_star_transfer = {
 	graphical_culture = no
+	available_to_everyone = yes
 	entity = AOW_shipsize_frame_entity
 	max_speed = 100
 	acceleration = 0.3

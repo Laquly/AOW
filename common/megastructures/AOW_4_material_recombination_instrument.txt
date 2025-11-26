@@ -4,7 +4,7 @@ AOW_MEGA_material_recombination_instrument_0 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	build_time = @AOW_var_MRI_0_TIME
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_BLACKHOLE_WITHOUT_HABITABLE_PLANET"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MATERIAL_RECOMBINATION_INSTRUMENT"
 	resources = {
 		category = megastructures
 		cost = {
@@ -194,7 +194,17 @@ AOW_MEGA_material_recombination_instrument_1 = {
 	on_build_complete = {
 		AOW_eft_SSTM_empty_system = yes
 		from = { country_event = { id = AOW_evt_material_recombination_instrument.101 } }
-		fromfrom = { AOW_eft_MEGA_set_mri_variable = yes }
+		fromfrom = {
+			set_variable = { which = AOW_var_mri_points_alloys value = 100 }
+			set_variable = { which = AOW_var_mri_points_cg value = 0 }
+			set_variable = { which = AOW_var_mri_points_vm value = 0 }
+			set_variable = { which = AOW_var_mri_points_eg value = 0 }
+			set_variable = { which = AOW_var_mri_points_rc value = 0 }
+			set_variable = { which = AOW_var_mri_points_lm value = 0 }
+			set_variable = { which = AOW_var_mri_points_zro value = 0 }
+			set_variable = { which = AOW_var_mri_points_dm value = 0 }
+			set_variable = { which = AOW_var_mri_points_nanites value = 0 }
+		}
 		fromfrom.planet = { set_planet_entity = { entity = "AOW_dormant_black_hole_entity" } }
 	}
 }

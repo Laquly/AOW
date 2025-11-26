@@ -319,7 +319,6 @@ AOW_MEGA_void_vortex_6 = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	build_time = @AOW_var_VV_6_TIME
-	show_in_outliner = no
 	scales_with_planet = yes
 	outliner_trigger = {
 		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = void_vortex }
@@ -389,7 +388,6 @@ AOW_MEGA_void_vortex_restored = {
 	entity = "void_vortex_06_entity"
 	construction_entity = "void_vortex_06_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
-	show_in_outliner = no
 	use_planet_resource = yes
 	build_time = @AOW_var_VVr_TIME
 	scales_with_planet = yes

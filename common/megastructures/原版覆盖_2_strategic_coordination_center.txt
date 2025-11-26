@@ -48,9 +48,7 @@ strategic_coordination_center_0 = {
 	prerequisites = { "tech_strategic_coordination" }
 	potential = { AOW_trigger_mega_potential = { KEY = strategic_coordination_center } }
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_strategic_coordination_center } }

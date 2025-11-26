@@ -86,9 +86,9 @@ guiTypes = {
 			spriteType = "GFX_AOW_button_starfall_spear_left_down"
 			buttonFont = malgun_goth_24
 			format = center
-			text = AOW_text_starfall_spear_target_null
+			text = AOW_text_starfall_spear_target_capacity
 			multiline = yes
-			effect = AOW_btn_starfall_spear_type_null
+			effect = AOW_btn_starfall_spear_type_capacity
 		}
 		effectButtonType = {
 			name = "button_left_planet"

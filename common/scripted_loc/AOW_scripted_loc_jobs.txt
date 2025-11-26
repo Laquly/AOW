@@ -1,3 +1,4 @@
+#技工
 defined_text = {
 	name = GetAowTechnicianPlural
 	text = {
@@ -24,6 +25,7 @@ defined_text = {
 	}
 	default = job_technician_plural_with_icon
 }
+#矿工
 defined_text = {
 	name = GetAowMinerPlural
 	text = {
@@ -50,6 +52,7 @@ defined_text = {
 	}
 	default = job_miner_plural_with_icon
 }
+#农夫
 defined_text = {
 	name = GetAowFarmerPlural
 	text = {
@@ -76,252 +79,64 @@ defined_text = {
 	}
 	default = job_farmer_plural_with_icon
 }
+#物理
 defined_text = {
-	name = GetAowResearcherPlural
+	name = GetAowPhysicistPlural
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = no
 		}
-		localization_key = job_researcher_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_hive_empire = yes
-		}
-		localization_key = job_brain_drone_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_machine_empire = yes
-		}
-		localization_key = job_calculator_plural_with_icon
-	}
-	default = job_researcher_plural_with_icon
-}
-defined_text = {
-	name = GetAowBureaucratPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_spiritualist = no
-			has_make_spiritualist_perk = no
-			is_gestalt = no
-			is_megacorp = no
-			is_worker_coop_empire = no
-		}
-		localization_key = job_bureaucrat_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_spiritualist = no
-			has_make_spiritualist_perk = no
-			is_megacorp = yes
-			is_worker_coop_empire = no
-		}
-		localization_key = job_manager_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_spiritualist = no
-			has_make_spiritualist_perk = no
-			is_worker_coop_empire = yes
-		}
-		localization_key = job_steward_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_machine_empire = yes
-		}
-		localization_key = job_coordinator_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_hive_empire = yes
-		}
-		localization_key = job_synapse_drone_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			OR = {
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-			is_megacorp = no
-			is_death_cult_empire = no
-			NOT = { has_origin = origin_cybernetic_creed }
-		}
-		localization_key = job_priest_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			OR = {
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-			is_megacorp = yes
-			is_death_cult_empire = no
-			NOT = { has_origin = origin_cybernetic_creed }
-		}
-		localization_key = job_preacher_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			OR = {
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-			has_origin = origin_cybernetic_creed
-		}
-		localization_key = job_haruspex_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			OR = {
-				is_spiritualist = yes
-				has_make_spiritualist_perk = yes
-			}
-			is_death_cult_empire = yes
-		}
-		localization_key = job_death_cult_plural_with_icon
-	}
-	default = job_bureaucrat_plural_with_icon
-}
-defined_text = {
-	name = GetAowArtisanPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-			is_crafter_empire = no
-		}
-		localization_key = job_artisan_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-			is_crafter_empire = yes
-		}
-		localization_key = job_artificer_plural_with_icon
+		localization_key = job_physicist_plural_with_icon
 	}
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = yes
 		}
-		localization_key = job_artisan_drone_plural_with_icon
+		localization_key = job_calculator_physicist_plural_with_icon
 	}
-	default = job_artisan_plural_with_icon
+	default = job_physicist_plural_with_icon
 }
+#社会
 defined_text = {
-	name = GetAowFoundryPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-			is_catalytic_empire = no
-		}
-		localization_key = job_foundry_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-			is_catalytic_empire = yes
-		}
-		localization_key = job_catalytic_technician_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_hive_empire = yes
-			is_catalytic_empire = no
-		}
-		localization_key = job_alloy_drone_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_machine_empire = yes
-			is_catalytic_empire = no
-		}
-		localization_key = job_fabricator_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = yes
-			is_catalytic_empire = yes
-		}
-		localization_key = job_catalytic_drone_plural_with_icon
-	}
-	default = job_foundry_plural_with_icon
-}
-defined_text = {
-	name = GetAowChemistPlural
+	name = GetAowBiologistPlural
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = no
 		}
-		localization_key = job_chemist_plural_with_icon
+		localization_key = job_biologist_plural_with_icon
 	}
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = yes
 		}
-		localization_key = job_chemist_drone_plural_with_icon
+		localization_key = job_calculator_biologist_plural_with_icon
 	}
-	default = job_chemist_plural_with_icon
+	default = job_biologist_plural_with_icon
 }
+#工程
 defined_text = {
-	name = GetAowRefinerPlural
+	name = GetAowEngineerPlural
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = no
 		}
-		localization_key = job_gas_refiner_plural_with_icon
+		localization_key = job_engineer_plural_with_icon
 	}
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = yes
 		}
-		localization_key = job_gas_refiner_drone_plural_with_icon
+		localization_key = job_calculator_engineer_plural_with_icon
 	}
-	default = job_gas_refiner_plural_with_icon
+	default = job_engineer_plural_with_icon
 }
-defined_text = {
-	name = GetAowTranslucerPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-		}
-		localization_key = job_translucer_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = yes
-		}
-		localization_key = job_translucer_drone_plural_with_icon
-	}
-	default = job_translucer_plural_with_icon
-}
+#士兵
 defined_text = {
 	name = GetAowSoldierPlural
 	text = {
@@ -340,70 +155,179 @@ defined_text = {
 	}
 	default = job_soldier_plural_with_icon
 }
+#行政
 defined_text = {
-	name = GetAowAmenitiesPlural
+	name = GetAowBureaucratPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_bureaucrat_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_coordinator_plural_with_icon
+	}
+	default = job_bureaucrat_plural_with_icon
+}
+#商贩
+defined_text = {
+	name = GetAowTraderPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_trader_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_logistics_drone_plural_with_icon
+	}
+	default = job_trader_plural_with_icon
+}
+#工匠
+defined_text = {
+	name = GetAowArtisanPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_artisan_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_artisan_drone_plural_with_icon
+	}
+	default = job_artisan_plural_with_icon
+}
+#冶金
+defined_text = {
+	name = GetAowFoundryPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_foundry_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_fabricator_plural_with_icon
+	}
+	default = job_foundry_plural_with_icon
+}
+#颗粒
+defined_text = {
+	name = GetAowChemistPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_chemist_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_chemist_drone_plural_with_icon
+	}
+	default = job_chemist_plural_with_icon
+}
+#气体
+defined_text = {
+	name = GetAowRefinerPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_gas_refiner_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_gas_refiner_drone_plural_with_icon
+	}
+	default = job_gas_refiner_plural_with_icon
+}
+#水晶
+defined_text = {
+	name = GetAowTranslucerPlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = no
+		}
+		localization_key = job_translucer_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_gestalt = yes
+		}
+		localization_key = job_translucer_drone_plural_with_icon
+	}
+	default = job_translucer_plural_with_icon
+}
+#人口
+defined_text = {
+	name = GetAOWHealthcarePlural
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_hive_empire = yes
+		}
+		localization_key = job_spawning_drone_plural_with_icon
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			is_machine_empire = yes
+		}
+		localization_key = job_replicator_plural_with_icon
+	}
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = no
 			NOR = {
-				has_civic = civic_dystopian_society
-				has_valid_civic = civic_warrior_culture
+				owner_species = { has_trait = trait_mechanical }
+				owner_species = { has_trait = trait_machine_unit }
+				has_country_flag = synthetic_empire
 			}
 		}
-		localization_key = job_entertainer_plural_with_icon
+		localization_key = job_healthcare_plural_with_icon
 	}
 	text = {
 		trigger = {
 			is_scope_valid = yes
 			is_gestalt = no
-			NOT = { has_civic = civic_dystopian_society }
-			has_valid_civic = civic_warrior_culture
+			OR = {
+				owner_species = { has_trait = trait_mechanical }
+				owner_species = { has_trait = trait_machine_unit }
+				has_country_flag = synthetic_empire
+			}
 		}
-		localization_key = job_duelist_plural_with_icon
+		localization_key = job_roboticist_plural_with_icon
 	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = yes
-		}
-		localization_key = job_maintenance_drone_plural_with_icon
-	}
-	default = job_entertainer_plural_with_icon
-}
-defined_text = {
-	name = GetAowEnforcerPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-		}
-		localization_key = job_enforcer_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = yes
-		}
-		localization_key = job_patrol_drone_plural_with_icon
-	}
-	default = job_enforcer_plural_with_icon
-}
-defined_text = {
-	name = GetAowEnforcerPlural
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = no
-		}
-		localization_key = job_enforcer_plural_with_icon
-	}
-	text = {
-		trigger = {
-			is_scope_valid = yes
-			is_gestalt = yes
-		}
-		localization_key = job_patrol_drone_plural_with_icon
-	}
-	default = job_enforcer_plural_with_icon
+	default = job_healthcare_plural_with_icon
 }

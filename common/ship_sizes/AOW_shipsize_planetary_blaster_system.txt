@@ -2,11 +2,11 @@ AOW_shipsize_planetary_blaster_system = {
 	graphical_culture = no
 	entity = AOW_shipsize_frame_entity
 	max_speed = 0.0
-	rotation_speed = 10
+	rotation_speed = 1
 	acceleration = 0
 	modifier = {
 		ship_evasion_mult = -1
-		#starbase_defense_platform_capacity_add = 16
+		starbase_defense_platform_capacity_mult = 0.5
 		#starbase_module_capacity_add = 6
 		#starbase_building_capacity_add = 6
 	}
@@ -17,14 +17,21 @@ AOW_shipsize_planetary_blaster_system = {
 		ship_armor_add = 50000
 	}
 	max_hitpoints = 500000
-	base_buildtime = 0
+	base_buildtime = 1800
 	resources = {
-		category = starbase_stations
+		category = starbases
+		cost = {
+			alloys = 1000
+		}
+		upkeep = {
+			energy = 50
+			alloys = 50
+		}
 	}
 
-	combat_size_multiplier = 64
-	size_multiplier = 64
-	fleet_slot_size = 64
+	combat_size_multiplier = 50
+	size_multiplier = 50
+	fleet_slot_size = 50
 	section_slots = { "core" = { locator = "root" } }
 
 	potential_construction = { always = no }
@@ -32,15 +39,17 @@ AOW_shipsize_planetary_blaster_system = {
 	potential_country = {
 		has_technology = AOW_TECH_planetary_blaster_system
 	}
+	#ship_roles = { citadel }
 	is_designable = yes
 	num_target_locators = 0
 	is_space_station = no
 	can_have_federation_design = no
 	is_civilian = no
-	components_add_to_cost = no
+	components_add_to_cost = yes
 	can_disable = no
 	flip_control_on_disable = no
 	auto_upgrade = no
+	available_to_everyone = yes
 
 	enable_default_design = yes
 	class = shipclass_starbase
@@ -54,4 +63,5 @@ AOW_shipsize_planetary_blaster_system = {
 	formation_priority = 1
 	icon_frame = 7
 	scales_with_planet = yes
+	use_shipnames_from = military_station_small
 }

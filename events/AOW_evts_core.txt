@@ -2,7 +2,7 @@
 
 namespace = AOW_core
 
-@AOW_version = 250615
+@AOW_version = 251126
 
 #on_game_start
 event = {
@@ -17,7 +17,6 @@ event = {
 		}
 		AOW_eft_GLBL_default_balance_variable = { TYPE = initialize }
 		AOW_eft_GLBL_default_mega_cap = { TYPE = initialize }
-		set_global_flag = AOW_flag_GLBL_new_starcage_world	#屏蔽星笼世界的旧区划
 		every_playable_country = {
 			limit = { is_ai = no }
 			country_event = { id = AOW_core.15 days = 2 }		#冲突提醒
@@ -38,6 +37,21 @@ event = {
 				coords_from = star
 				planet = star
 			}
+		}
+		random_system = { #修改原版的废弃巨型船坞星系
+			limit  ={ #锁定该星系
+				has_star_flag = ruined_mega_shipyard_system
+				any_system_megastructure = { is_megastructure_type = mega_shipyard_ruined }
+			}
+			random_system_megastructure = {
+				limit = { is_megastructure_type = mega_shipyard_ruined }
+				save_event_target_as = AOW_targert_mega
+			}
+			spawn_megastructure = {
+				type = "mega_shipyard_ruined"
+				coords_from = event_target:AOW_targert_mega
+			}
+			remove_megastructure = event_target:AOW_targert_mega
 		}
 	}
 }
@@ -63,22 +77,35 @@ event = {
 				set_variable = { which = AOW_version value = @AOW_version }
 				every_playable_country = {
 					limit = { is_ai = no }
+					set_variable = { which = AOW_var_page value = 1 }
 					country_event = { id = AOW_core.100 }
-					random_owned_leader = {
-						limit = { has_leader_flag = leader_laquly }
-						remove_all_traits = yes
-						add_trait = { trait = subclass_official_governor show_message = no }
-						add_trait = { trait = leader_trait_laquly show_message = no }
-						add_trait = { trait = leader_trait_galvanizer show_message = no }
-						add_trait = { trait = leader_trait_red_dawn show_message = no }
-						add_trait = { trait = leader_trait_forge_focus_3 show_message = no }
-						add_trait = { trait = leader_trait_pop_focused_3 show_message = no }
-						add_trait = { trait = leader_trait_distribution_lines_3 show_message = no }
-						add_trait = { trait = leader_trait_bureaucrat show_message = no }
-						add_trait = { trait = leader_trait_cyborg show_message = no }
+				}
+				every_system = {
+					limit = {
+						OR = {
+							has_star_flag = AOW_flag_SSTM_ringworld_affiliated
+							has_star_flag = AOW_flag_SSTM_ringworld_auxiliary
+						}
 					}
-					every_owned_leader = {
-						remove_trait = leader_trait_laquly_gestalt
+					remove_star_flag = AOW_flag_SSTM_ringworld_affiliated
+					remove_star_flag = AOW_flag_SSTM_ringworld_auxiliary
+					set_star_flag = AOW_flag_SSTM_ringworld_subsidiary
+				}
+				every_system = {
+					limit = {
+						has_star_flag = AOW_flag_SSTM_ringworld_independent
+					}
+					remove_star_flag = AOW_flag_SSTM_ringworld_independent
+				}
+				every_megastructure = {
+					if = {
+						limit = {
+							OR = {
+								is_megastructure_type = AOW_MEGA_planetary_blaster_system_4
+								is_megastructure_type = AOW_MEGA_planetary_blaster_system_restored
+							}
+						}
+						remove_megastructure = this
 					}
 				}
 			}
@@ -122,6 +149,7 @@ country_event = {
 	id = AOW_core.100
 	title = AOW_core.100.title
 	desc = OK
+	picture = GFX_evt_megastructure_construction
 	is_triggered_only = yes
 	diplomatic = yes
 	custom_gui = "AOW_main_ui"
@@ -139,15 +167,16 @@ country_event = {
 		#初始化设置
 		AOW_eft_GLBL_default_balance_variable = { TYPE = initialize }
 		AOW_eft_GLBL_default_mega_cap = { TYPE = initialize }
-		every_country = {#通知其他玩家
+		#储存当前的巨构上限
+		AOW_eft_record_all_current_mega_cap = yes
+		#通知其他玩家
+		every_country = {
 			limit = {
 				is_ai = no
 				NOT = { is_same_value = root }
 			}
 			country_event = { id = AOW_core.102 }
 		}
-		#储存当前的巨构上限
-		AOW_eft_record_current_mega_cap = yes
 	}
 	option = {
 		custom_gui = "AOW_main_ui_option"
@@ -157,18 +186,9 @@ country_event = {
 	after = {
 		hidden_effect = {
 			#根据设定的平衡变量调整AI和玩家的巨构数值
-			AOW_eft_CNTR_add_ai_mega_cost = yes
-			AOW_eft_CNTR_add_ai_mega_upkp = yes
-			AOW_eft_CNTR_add_ai_mega_prdc = yes
-			AOW_eft_CNTR_add_ai_mega_build_speed = yes
-			AOW_eft_CNTR_add_ai_mega_build_cap = yes
-			AOW_eft_CNTR_add_player_mega_cost = yes
-			AOW_eft_CNTR_add_player_mega_upkp = yes
-			AOW_eft_CNTR_add_player_mega_prdc = yes
-			AOW_eft_CNTR_add_player_mega_build_speed = yes
-			AOW_eft_CNTR_add_player_mega_build_cap = yes
+			AOW_eft_add_balance_variable_modifiers = yes
 			#重置禁止建造的flag
-			AOW_eft_reset_mega_cap_flag = yes
+			AOW_eft_reset_all_mega_cap_flag = yes
 			#强制禁止
 			if = {
 				limit = { has_global_flag = force_disable_aow_megastructure }

@@ -4,6 +4,7 @@ AOW_MEGA_naval_command_base_0 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	build_time = @AOW_var_NCB_0_TIME
+	#build_type = inside_gravity_well
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_NON_HABITABLE_PLANET"
 	resources = {
 		category = megastructures
@@ -43,13 +44,6 @@ AOW_MEGA_naval_command_base_0 = {
 			custom_tooltip = {
 				fail_text = "AOW_mega_PLNT_requires_not_habitable"
 				AOW_trgr_PLNT_is_habitable = no
-			}
-			custom_tooltip = {
-				fail_text = "requires_not_minor_planetary_body"
-				NOR = {
-					is_asteroid = yes
-					is_moon = yes
-				}
 			}
 			custom_tooltip = {
 				fail_text = "requires_not_star"

@@ -1,17 +1,17 @@
 AOW_MEGA_storm_trigger_tower_0 = {
-    entity = "construction_platform_entity"
-    construction_entity = "construction_platform_entity"
+    entity = "AOW_MEGA_storm_trigger_tower_1_entity"
+    construction_entity = "AOW_MEGA_storm_trigger_tower_1_entity"
     portrait = "GFX_megastructure_construction_background"
     place_entity_on_planet_plane = no
-    build_time = @AOW_var_STT_0_TIME
+    build_time = 0 #@AOW_var_STT_0_TIME
     resources = {
         category = megastructures
         cost = {
-            alloys = @AOW_var_STT_0_COST_alloys
-            unity = @AOW_var_STT_0_COST_unity
+            alloys = 0 #@AOW_var_STT_0_COST_alloys
+            unity = 0 #@AOW_var_STT_0_COST_unity
         }
         upkeep = {
-            energy = @AOW_var_STT_0_UPKP_energy
+            energy = 0 #@AOW_var_STT_0_UPKP_energy
         }
     }
     inline_script = {
@@ -23,4 +23,5 @@ AOW_MEGA_storm_trigger_tower_0 = {
         minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
     }
     potential = { always = no }
+    on_build_complete = { remove_megastructure = fromfrom }
 }

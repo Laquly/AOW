@@ -57,6 +57,24 @@ guiTypes = {
 				clicksound = "tab_click"
 				shortcut = "x"
 			}
+			buttonType = {
+				name = "overclocking_tab"
+				quadTextureSprite = "GFX_tab_2_inactive"
+				position = { x = 258 y = 0 }
+				buttonText = "STARBASE_OVERCLOCKING_TAB"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "c"
+			}
+			buttonType = {
+				name = "overclocking_tab_active"
+				quadTextureSprite = "GFX_tab_2_active"
+				position = { x = 258 y = 0 }
+				buttonText = "STARBASE_OVERCLOCKING_TAB"
+				buttonFont = "cg_16b"
+				clicksound = "tab_click"
+				shortcut = "c"
+			}
 		}
 		### WINDOW HEADER ###
 		buttonType = {#关闭按钮
@@ -254,7 +272,7 @@ guiTypes = {
 				scrollbarType = "standardtext_slider_small"
 			}
 			instantTextBoxType = {#效果
-				name = "effects_header_x"
+				name = "effects_header"
 				font = "cg_16b"
 				position = { x = 30 y = 373 }
 				maxWidth = 600
@@ -428,15 +446,6 @@ guiTypes = {
 				spriteType = "GFX_AOW_button_minerals"
 				orientation = upper_right
 				effect = AOW_btn_view_ui_pms_minerals
-				clicksound = interface
-				oversound = mouse_over
-			}
-			effectButtonType = {#行星波动炮升级
-				name = "AOW_pbs_upgrade"
-				position = { x = -46 y = 88 }
-				spriteType = "GFX_fleet_action_button_upgrade"
-				orientation = upper_right
-				effect = AOW_btn_view_ui_pbs_upgrade
 				clicksound = interface
 				oversound = mouse_over
 			}
@@ -1369,6 +1378,264 @@ guiTypes = {
 					alwaysTransparent = yes
 					#text = "STARBASE_OPEN_SHIP_DESIGNS"
 				}
+			}
+		}
+		containerWindowType = {
+			name = "overclocking_tab"
+			size = { width = 100% height = 100% }
+			containerWindowType = {
+				name = "megastructure_portrait_window"
+				size = { width = 560 height = 188 }
+				position = { x = 0 y = 43 }
+				orientation = center_up
+				origo = center_up
+				clipping = yes
+				iconType = {
+					name = "megastructure_portrait"
+					spriteType = "GFX_megastructure_construction_background"
+					position = { x = -270 y = 12 }
+					orientation = center_up
+					scale = 1.0
+				}
+				iconType = {
+					name = "black_frame"
+					spriteType = "GFX_planetview_black_frame"
+					position = { x = -270 y = 13 }
+					orientation = center_up
+				}
+				iconType = {
+					name = "stripes_1"
+					spriteType = "GFX_planetview_stripes_1"
+					position = { x = -276 y = 12 }
+					orientation = center_up
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = "city_frame"
+					spriteType = "GFX_city_frame"
+					position = { x = -275 y = 9 }
+					orientation = center_up
+				}
+			}
+			# buttonType = {
+			# 	name = "box"
+			# 	spriteType = "GFX_tiles_frame_light"
+			# 	position = { x = 6 y = 245 }
+			# 	size = { x = 548 y = 220 }
+			#
+			# 	alwaysTransparent = yes
+			# }
+			containerWindowType = {#背景
+				name = "desc_background"
+				size = { width = 600 height = 410 }
+				position = { x = 0 y = 220 }
+				orientation = center_up
+				origo = center_up
+				containerWindowType = {#巨构介绍的背景
+					name = "desc_box"
+					size = { width = 600 height = 125 }
+					position = { x = 0 y = 15 }
+					orientation = center_up
+					origo = center_up
+					background = {
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#效果背景
+					name = "effects_box_background"
+					size = { width = 600 height = 80 }
+					position = { x = 0 y = 150 }
+					background = {
+						name = "effects_box_background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#产出背景
+					name = "production_box_background"
+					size = { width = 295 height = 80 }
+					position = { x = 0 y = 240 }
+					background = {
+						name = "production_box_background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#维护费背景
+					name = "upkeep_boxbackground"
+					size = { width = 295 height = 80 }
+					position = { x = 305 y = 240 }
+					background = {
+						name = "upkeep_boxbackground"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+				containerWindowType = {#升级背景
+					name = "upgrades_box"
+					size = { width = 600 height = 110 }
+					position = { x = 0 y = 330 }
+					background = {#背景
+						name = "background"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+			}
+			instantTextBoxType = {#超频介绍
+				name = "desc"
+				font = "malgun_goth_24"
+				position = { x = 35 y = 240 }
+				maxWidth = 590
+				maxHeight = 120
+				fixedSize = yes
+				text = "megastructure_overclocking_desc"
+				format = center
+				text_color_code = "W"
+				scrollbarType = "standardtext_slider_small"
+			}
+			containerWindowType = {
+				name = "effects_box"
+				instantTextBoxType = {
+					name = "effects_header"
+					font = "cg_16b"
+					position = { x = 30 y = 373 }
+					maxWidth = 600
+					maxHeight = 20
+					fixedSize = yes
+					text = "EFFECTS"
+					format = center
+					vertical_alignment = center
+				}
+				instantTextBoxType = {
+					name = "effects_desc"
+					font = "cg_16b"
+					position = { x = 30 y = 390 }
+					maxWidth = 600
+					maxHeight = 60
+					fixedSize = yes
+					text = "EFFECTS"
+					format = center
+				}
+			}
+			containerWindowType = {#产出
+				name = "production_box"
+				position = { x = 30 y = 460 }
+				size = { width = 295 height = 80 }
+				instantTextBoxType = {
+					name = "production_header"
+					font = "cg_16b"
+					text = "PRODUCTION"
+					#appendText = ":"
+					position = { x = 0 y = 3 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					vertical_alignment = center
+					text_color_code = "G"
+				}
+				instantTextBoxType = {
+					name = "production_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = 297
+					maxHeight = 60
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#维护费
+				name = "upkeep_box"
+				position = { x = 335 y = 460 }
+				size = { width = 295 height = 80 }
+				instantTextBoxType = {
+					name = "upkeep_header_x"
+					font = "cg_16b"
+					text = "MAINTENANCE"
+					#appendText = ":"
+					position = { x = 0 y = 3 }
+					maxWidth = 295
+					maxHeight = 20
+					fixedSize = yes
+					format = center
+					vertical_alignment = center
+					text_color_code = "R"
+				}
+				instantTextBoxType = {
+					name = "upkeep_amount"
+					font = "cg_16b"
+					position = { x = 0 y = 20 }
+					text = "10"
+					maxWidth = 297
+					maxHeight = 60
+					fixedSize = yes
+					format = center
+				}
+			}
+			containerWindowType = {#超频选项
+				name = "overclocking_content"
+				position = { x = 0 y = 540 }
+				#size = { width = 100% height = 40% }
+				size = { width = 600 height = 90 }
+				orientation = center_up
+				origo = center_up
+				instantTextBoxType = {
+					name = "overclocking_desc"
+					font = "cg_16b"
+					position = { x = 0 y = 15 }
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+				}
+				gridBoxType = {
+					name = "overclocks"
+					position = { x = 10 y = 30 }
+					slotSize = { width = 49 height = 50 }
+					format = "UPPER_LEFT"
+					max_slots_horizontal = 10
+				}
+			}
+		}
+		containerWindowType = {
+			name = "timer_box"
+			position = { x = 0 y = 70 }
+			size = { width = 210 height = 50 }
+			orientation = center_up
+			origo = center_up
+			background = {
+				name = "planet_view_module_spaceport_buildqueue_entry_background"
+				spriteType = "GFX_dark_area_cut"
+			}
+			iconType = {
+				name = "icon"
+				position = { x = 5 y = 5 }
+				spriteType = "GFX_ship_class_small"
+				alwaysTransparent = yes
+				tooltip_mode_enabled = yes
+			}
+			instantTextBoxType = {
+				name = "title"
+				font = "cg_16b"
+				position = { x = 46 y = 3 }
+				maxWidth = 120
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				alwaysTransparent = yes
+			}
+			instantTextBoxType = {
+				name = "time"
+				font = "cg_16b"
+				position = { x = 146 y = 3 }
+				maxWidth = 54
+				maxHeight = 20
+				fixedSize = yes
+				format = right
+			}
+			iconType = {
+				name = "progressbar"
+				spriteType = "GFX_queue_progressbar"
+				position = { x = 5 y = 35 }
+				alwaysTransparent = yes
 			}
 		}
 	}

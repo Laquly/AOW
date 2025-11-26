@@ -3,25 +3,25 @@
  ############### 巨构列表 ###############$$
  #这里的巨构名字决定了所有相关文本的巨构名字，改此处其他地方跟着改变
  #10
- #dyson_swarm 戴森云
  #habitat 居住站
  #hyper_relay 超空间中继器
- #orbital_arc_furnace 电弧熔炉
  #orbital_ring 星环
- AOW_MEGA_space_sensor_station:0"星空传感站"
- AOW_MEGA_space_arena:0"星光竞技场"
+ #dyson_swarm 戴森云
+ #orbital_arc_furnace 电弧熔炉
+ #deep_space_citadel 深空擎天堡
  AOW_MEGA_asteroid_mining_station:0"星状开采站"
- AOW_MEGA_satellite_defense_base:0"卫星防御基地"
- AOW_MEGA_resource_drilling_station:0"资源钻取站"#
+ AOW_MEGA_space_arena:0"星光竞技场"
+ AOW_MEGA_space_sensor_station:0"星空传感站"
+ AOW_MEGA_resource_drilling_station:0"资源钻取站"
  #27
  #gateway 星门
- #interstellar_assembly 星际集会
- #mega_art_installation 巨构艺术设施
  #mega_shipyard 巨型船坞
- #quantum_catapult 量子弹弓
+ #think_tank 科学枢纽
  #spy_orb 哨兵阵列
  #strategic_coordination_center 战略指挥中心
- #think_tank 科学枢纽
+ #interstellar_assembly 星际集会
+ #mega_art_installation 巨构艺术设施
+ #quantum_catapult 量子弹弓
  AOW_MEGA_advanced_hyperlane_controller:0"星网"
  AOW_MEGA_hyperlane_controller:0"星轨"
  AOW_MEGA_artifacts_transcription_palace:0"银河珍宝馆"
@@ -96,3 +96,6 @@
  AOW_bypass_advanced_hyperlane_controller_active_desc:0"这个星系有一个处于接收状态的$AOW_MEGA_advanced_hyperlane_controller$"
 
  AOW_num_planetary_body_tooltip:"§E各种天体类型数目：§!\n$t$—大型天体：§Y[root.AOW_var_system_num_non_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—小型天体：§Y[root.AOW_var_system_num_minor_planetary_body]/[root.AOW_var_system_num_planetary_body]§!\n$t$—普通小行星：§Y[root.AOW_var_system_num_pc_asteroid]§!\n$t$—晶态小行星：§Y[root.AOW_var_system_num_pc_crystal_asteroid]§!\n$t$—冰晶小行星：§Y[root.AOW_var_system_num_pc_ice_asteroid]§!\n$t$§L—天体类型数目数据来自奇观拓展（邀功）§!"
+
+ concept_AOW_standard_stars:"标准恒星"
+ concept_AOW_standard_stars_desc:"特超巨星\n超巨星\nO型恒星\nB型恒星\n巨星\nA型恒星\nF型恒星\nG型恒星\nK型恒星\nM型恒星"

@@ -1,0 +1,84 @@
+# AOW_decision_ring_world_1_expansion = {
+# 	owned_planets_only = yes
+# 	enactment_time = 3600
+# 	icon = AOW_decision_ring_world_1_expansion
+# 	resources = {
+# 		category = decisions
+# 		cost = { alloys = 10000 }
+# 	}
+# 	prerequisites = { "AOW_TECH_ring_world_expansion" }
+# 	allow = {
+# 		NOT = { is_planet_class = pc_shattered_ring_habitable }
+# 		solar_system = { NOT = { any_system_planet = { is_planet_class = pc_shattered_ring_habitable } } }
+# 	}
+# 	potential = {
+# 		NOT = { has_planet_flag = AOW_flag_PLNT_ring_world_1_expanded }
+# 		is_planet_class = pc_ringworld_habitable
+# 	}
+# 	effect = {
+# 		custom_tooltip = AOW_decision_ring_world_1_expansion_effect
+# 		hidden_effect = {
+# 			planet_event = { id = AOW_mega_notification.2001 }
+# 			set_planet_flag = AOW_flag_PLNT_ring_world_1_expanded
+# 			if = {
+# 				limit = { has_planet_flag = AOW_flag_PLNT_ringword1_1 }
+# 				solar_system = {
+# 					every_system_planet = {
+# 						limit = {
+# 							has_planet_flag = AOW_flag_PLNT_ringword1_1
+# 						}
+# 						set_planet_entity = {
+# 							entity = "ringworld_habitable_entity_01_entity"
+# 							graphical_culture = root.owner
+# 						}
+# 					}
+# 				}
+# 			}
+# 			else_if = {
+# 				limit = { has_planet_flag = AOW_flag_PLNT_ringword1_2 }
+# 				solar_system = {
+# 					every_system_planet = {
+# 						limit = {
+# 							has_planet_flag = AOW_flag_PLNT_ringword1_2
+# 						}
+# 						set_planet_entity = {
+# 							entity = "ringworld_habitable_entity_01_entity"
+# 							#graphical_culture = root.owner
+# 						}
+# 					}
+# 				}
+# 			}
+# 			else_if = {
+# 				limit = { has_planet_flag = AOW_flag_PLNT_ringword1_3 }
+# 				solar_system = {
+# 					every_system_planet = {
+# 						limit = {
+# 							has_planet_flag = AOW_flag_PLNT_ringword1_3
+# 						}
+# 						set_planet_entity = {
+# 							entity = "ringworld_habitable_entity_01_entity"
+# 							#graphical_culture = root.owner
+# 						}
+# 					}
+# 				}
+# 			}
+# 			else_if = {
+# 				limit = { has_planet_flag = AOW_flag_PLNT_ringword1_4 }
+# 				solar_system = {
+# 					every_system_planet = {
+# 						limit = {
+# 							has_planet_flag = AOW_flag_PLNT_ringword1_4
+# 						}
+# 						set_planet_entity = {
+# 							entity = "ringworld_habitable_entity_01_entity"
+# 							#graphical_culture = root.owner
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_weight = {
+# 		weight = 100
+# 	}
+# }

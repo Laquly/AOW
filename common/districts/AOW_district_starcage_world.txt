@@ -1,11 +1,11 @@
 @district_buildtime = 1080
 @district_cost_alloys = 1000
 @district_cost_sr = 500
-@district_upkeep_energy = 10
+@district_upkeep_energy = 20
 @district_upkeep_alloys = 10
 @district_upkeep_sr = 5
 
-@planet_housing_add = 5000
+@starcage_world_housing_add = 3000
 AOW_district_sw_common_star = {
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
@@ -46,18 +46,9 @@ AOW_district_sw_common_star = {
         AOW_district_sw_neutron_star
     }
     planet_modifier = {
-        planet_housing_add = @planet_housing_add
+        planet_housing_add = @starcage_world_housing_add
     }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_add = 500
-        job_enforcer_add = 500
-    }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_no_happiness_add = 500
-        job_patrol_drone_add = 500
-    }
+	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_sw_neutron_star = {
     base_buildtime = @district_buildtime
@@ -95,18 +86,9 @@ AOW_district_sw_neutron_star = {
         }
     }
     planet_modifier = {
-        planet_housing_add = @planet_housing_add
+        planet_housing_add = @starcage_world_housing_add
     }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_add = 500
-        job_enforcer_add = 500
-    }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_no_happiness_add = 500
-        job_patrol_drone_add = 500
-    }
+	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_sw_black_hole = {
     base_buildtime = @district_buildtime
@@ -144,25 +126,16 @@ AOW_district_sw_black_hole = {
         }
     }
     planet_modifier = {
-        planet_housing_add = @planet_housing_add
+        planet_housing_add = @starcage_world_housing_add
     }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_add = 500
-        job_enforcer_add = 500
-    }
-    triggered_planet_modifier = {
-        potential = { is_gestalt = no }
-        planet_amenities_no_happiness_add = 500
-        job_patrol_drone_add = 500
-    }
+	inline_script = districts/AOW_district_starcage_world_jobs
 }
+
 AOW_district_starcage_world_1 = {
-    base_buildtime = @district_buildtime
+    icon = district_city
     is_capped_by_modifier = no
-    #default_starting_district = yes
     zone_slots = {
-        slot_starcage_world_production
+        slot_starcage_world_secondary
     }
     show_on_uncolonized = {
         uses_district_set = AOW_district_starcage_world
@@ -170,27 +143,28 @@ AOW_district_starcage_world_1 = {
     potential = {
         uses_district_set = AOW_district_starcage_world
     }
+    base_buildtime = 1080
     resources = {
         category = planet_districts
         cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
+            alloys = 1000
+            volatile_motes = 500
+            exotic_gases = 500
+            rare_crystals = 500
         }
         upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
+            energy = 10
+            alloys = 10
         }
     }
-    planet_modifier = { planet_housing_add = @planet_housing_add }
+    planet_modifier = { planet_housing_add = 3000 }
+	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_starcage_world_2 = {
-    base_buildtime = @district_buildtime
+    icon = district_city
     is_capped_by_modifier = no
-    #default_starting_district = yes
     zone_slots = {
-        slot_starcage_world_production
+        slot_starcage_world_secondary
     }
     show_on_uncolonized = {
         uses_district_set = AOW_district_starcage_world
@@ -198,27 +172,28 @@ AOW_district_starcage_world_2 = {
     potential = {
         uses_district_set = AOW_district_starcage_world
     }
+    base_buildtime = 1080
     resources = {
         category = planet_districts
         cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
+            alloys = 1000
+            volatile_motes = 500
+            exotic_gases = 500
+            rare_crystals = 500
         }
         upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
+            energy = 10
+            alloys = 10
         }
     }
-    planet_modifier = { planet_housing_add = @planet_housing_add }
+    planet_modifier = { planet_housing_add = 3000 }
+	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_starcage_world_3 = {
-    base_buildtime = @district_buildtime
+    icon = district_city
     is_capped_by_modifier = no
-    #default_starting_district = yes
     zone_slots = {
-        slot_starcage_world_production
+        slot_starcage_world_secondary
     }
     show_on_uncolonized = {
         uses_district_set = AOW_district_starcage_world
@@ -226,18 +201,121 @@ AOW_district_starcage_world_3 = {
     potential = {
         uses_district_set = AOW_district_starcage_world
     }
+    base_buildtime = 1080
     resources = {
         category = planet_districts
         cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
+            alloys = 1000
+            volatile_motes = 500
+            exotic_gases = 500
+            rare_crystals = 500
         }
         upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
+            energy = 10
+            alloys = 10
         }
     }
-    planet_modifier = { planet_housing_add = @planet_housing_add }
+    planet_modifier = { planet_housing_add = 3000 }
+	inline_script = districts/AOW_district_starcage_world_jobs
+}
+
+###################################################################
+
+AOW_district_starcage_world_base = {
+    icon = district_city
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_energy = {
+    icon = district_generator
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_minerals = {
+    icon = district_mining
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_food = {
+    icon = district_farming
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_industrial = {
+    icon = district_arcology_mixed_industry
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_foundry = {
+    icon = district_arcology_arms_industry
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_factory = {
+    icon = district_arcology_civilian_industry
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_unity = {
+    icon = district_arcology_administrative
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_research = {
+    icon = district_arcology_research
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_physicist = {
+    icon = district_arcology_research_physics
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_biologist = {
+    icon = district_arcology_research_society
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_engineer = {
+    icon = district_arcology_research_engineering
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_trade = {
+    icon = district_arcology_trade
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_starcage_world_fortress = {
+    icon = district_arcology_fortress
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
 }

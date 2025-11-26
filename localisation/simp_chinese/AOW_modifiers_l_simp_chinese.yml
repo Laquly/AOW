@@ -36,6 +36,8 @@
  mod_upgrading_megastructures_sr_dark_matter_upkeep_add:0 "升级中的巨构£sr_dark_matter£暗物质维护费"
  mod_upgrading_megastructures_upkeep_mult:0 "升级中的巨构维护费"
 
+ soldier_jobs_bonus_workforce_mult: "为士兵岗位$BONUS_WORKFORCE_FOR$"
+ soldier_jobs_bonus_workforce_mult_tt: "$t$—士兵岗位$BONUS_WORKFORCE_FOR$：$VARIABLE|1%=+$"
  ######################################################################
  # Static Modifiers
  ######################################################################
@@ -66,9 +68,24 @@
 
  mod_shipclass_research_station_build_speed_mult:"研究站建造速度"
 
+ mod_quindecillion_stellar_quantum_matrix_1:"$AOW_policy_qsqm_1$"
+ mod_quindecillion_stellar_quantum_matrix_1_short:"£AOW_megastructures£ $mod_quindecillion_stellar_quantum_matrix_1$"
+ mod_quindecillion_stellar_quantum_matrix_2:"$AOW_policy_qsqm_2$"
+ mod_quindecillion_stellar_quantum_matrix_2_short:"£AOW_megastructures£ $mod_quindecillion_stellar_quantum_matrix_2$"
+ mod_quindecillion_stellar_quantum_matrix_3:"$AOW_policy_qsqm_3$"
+ mod_quindecillion_stellar_quantum_matrix_3_short:"£AOW_megastructures£ $mod_quindecillion_stellar_quantum_matrix_3$"
+ mod_quindecillion_stellar_quantum_matrix_4:"$AOW_policy_qsqm_4$"
+ mod_quindecillion_stellar_quantum_matrix_4_short:"£AOW_megastructures£ $mod_quindecillion_stellar_quantum_matrix_4$"
+ mod_quindecillion_stellar_quantum_matrix_5:"$AOW_policy_qsqm_5$"
+ mod_quindecillion_stellar_quantum_matrix_5_short:"£AOW_megastructures£ $mod_quindecillion_stellar_quantum_matrix_5$"
+
  ######################################################################
  # Planetary Modifiers
  ######################################################################
+ AOW_mod_PLNT_show_nameplate:"强制显示星球名字条"
+ AOW_mod_PLNT_show_nameplate_desc:"强制显示星球的名字条，方便玩家选中星球建造巨构，想要消除此修正，需在本星系内任意巨构中点击星球按钮。"
+ btn_effect_show_all_system_planet_nameplate:0"§H显示星球名字条§!\n\n强制显示当前星系中所有星球的名字条，以方便选中星球建造巨构"
+
  AOW_mod_PLNT_hell_of_death:0"死亡地狱"
  AOW_mod_PLNT_hell_of_death_desc:0"这里到处都是残檐断壁和无数的尸体，还残留着一个强大的干扰磁场，任何来到这里的人都会感到崩溃。"
 

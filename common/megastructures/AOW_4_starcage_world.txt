@@ -26,7 +26,7 @@ AOW_MEGA_starcage_world_0 = {
 	prerequisites = { "AOW_TECH_starcage_world" }
 	potential = { AOW_trigger_mega_potential = { KEY = starcage_world } }
 	possible = {
-		exists = starbase
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_starcage_world } }
@@ -71,8 +71,8 @@ AOW_MEGA_starcage_world_0 = {
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
-				fail_text = "must_build_around_star"
-				is_star = yes
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
 			}
 			custom_tooltip = {
 				fail_text = "AOW_mega_requires_PLNT_starcage_world"
@@ -84,10 +84,6 @@ AOW_MEGA_starcage_world_0 = {
 					AOW_trgr_PLNT_composed_of_neutron = yes
 					is_planet_class = pc_black_hole
 				}
-			}
-			custom_tooltip = {
-				fail_text = "requires_no_anomaly"
-				NOT = { has_anomaly = yes }
 			}
 			AOW_trigger_mega_planet_has_megastructure = { key = starcage_world }
 		}

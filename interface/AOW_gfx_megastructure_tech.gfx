@@ -16,11 +16,6 @@ spriteTypes = {
 		name = "GFX_AOW_MEGA_asteroid_mining_station_1_build_icon"
 		texturefile = "gfx/interface/icons/technologies/AOW_TECH_asteroid_mining_station.dds"
 	}
-	#卫星防御基地
-	spriteType = {
-		name = "GFX_AOW_MEGA_satellite_defense_base_1_build_icon"
-		texturefile = "gfx/interface/icons/technologies/AOW_TECH_satellite_defense_base.dds"
-	}
 	#资源钻取站
 	spriteType = {
 		name = "GFX_AOW_MEGA_resource_drilling_station_0_build_icon"

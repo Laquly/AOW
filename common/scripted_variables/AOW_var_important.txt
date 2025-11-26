@@ -1,0 +1,2 @@
+@AOW_var_max_mega_cap = 10 #控制面板中，巨构数量的最大有限上限
+@AOW_var_max_sw_points = 30 #星笼世界，岗位调控的最大点数

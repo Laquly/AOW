@@ -156,11 +156,7 @@ country_event = {
 				has_ethic = ethic_fanatic_militarist
 				has_ethic = ethic_xenophobe
 				has_ethic = ethic_fanatic_xenophobe
-				has_ascension_perk = ap_become_the_crisis
-				AND = {
-					has_ascension_perk = ap_cosmogenesis
-					has_crisis_level = crisis_cosmogenesis_level_5
-				}
+				is_player_crisis = yes
 				if = {
 					limit = { has_global_flag = has_wsg_mod }
 					has_ascension_perk = ap_wg_crisis
@@ -364,99 +360,89 @@ country_event = {#选择打击方式
 		custom_tooltip = AOW_evt_starfall_spear.500.quit.tooltip
 		custom_gui = AOW_starfall_spear_ui_option_quit
 		hidden_effect = {
+			#清空目标和旗子
+			AOW_eft_starfall_spear_cancel_all_targets_and_flags = { scope = root }
 			event_target:AOW_tgt_MEGA_starfall_spear = {#坠星天矛恢复待机状态
 				AOW_eft_MEGA_set_to_initial_state = yes
 			}
 			country_event = { id = AOW_evt_starfall_spear.503 }#通知：冷却完成
-			#清空目标和旗子
-			AOW_eft_starfall_spear_cancel_all_targets_and_flags = { scope = root }
 		}
 	}
 	option = {#确认
 		name = AOW_evt_starfall_spear.500.confirm
-		custom_gui = AOW_starfall_spear_ui_option_confirm
 		allow = {
-			hidden_trigger = {#发射坠星天矛一定要有坠星天矛
+			custom_tooltip = {#发射坠星天矛一定要有坠星天矛
+				fail_text = "AOW_starfall_spear_requires_exists_launcher"
 				exists = event_target:AOW_tgt_MEGA_starfall_spear
 			}
-			@planet_energy = 0.08
-			@planet_dark_matter = 100
-			@system_energy = 0.2
-			@system_dark_matter = 1000
-			@planet_energy_cost = -0.08
-			@planet_dark_matter_cost = -100
-			@system_energy_cost = -0.2
-			@system_dark_matter_cost = -1000
+			custom_tooltip = {#至少选择一个目标
+				fail_text = "AOW_starfall_spear_requires_has_target"
+				OR = {
+					exists = event_target:AOW_starfall_spear_target_01_@root
+					exists = event_target:AOW_starfall_spear_target_02_@root
+					exists = event_target:AOW_starfall_spear_target_03_@root
+					exists = event_target:AOW_starfall_spear_target_04_@root
+					exists = event_target:AOW_starfall_spear_target_05_@root
+					exists = event_target:AOW_starfall_spear_target_06_@root
+					exists = event_target:AOW_starfall_spear_target_07_@root
+					exists = event_target:AOW_starfall_spear_target_08_@root
+					exists = event_target:AOW_starfall_spear_target_09_@root
+					exists = event_target:AOW_starfall_spear_target_10_@root
+				}
+			}
 			if = {
 				limit = {
-					OR = {
-						exists = event_target:AOW_starfall_spear_target_01_@root
-						exists = event_target:AOW_starfall_spear_target_02_@root
-						exists = event_target:AOW_starfall_spear_target_03_@root
-						exists = event_target:AOW_starfall_spear_target_04_@root
-						exists = event_target:AOW_starfall_spear_target_05_@root
-						exists = event_target:AOW_starfall_spear_target_06_@root
-						exists = event_target:AOW_starfall_spear_target_07_@root
-						exists = event_target:AOW_starfall_spear_target_08_@root
-						exists = event_target:AOW_starfall_spear_target_09_@root
-						exists = event_target:AOW_starfall_spear_target_10_@root
-					}
-				}
-				if = {
-					limit = { AOW_trgr_has_starfall_spear_target_type = { type = planet scope = root } }
 					resource_stockpile_compare = {
 						resource = energy
-						value >= @planet_energy
-						mult = from.value:AOW_var_total_system_distance_square
-					}
-					resource_stockpile_compare = {
-						resource = sr_dark_matter
-						value >= @planet_dark_matter
-						mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
+						value < 1
+						mult = value:AOW_var_starfall_spear_energy_total_cost
 					}
 				}
-				if = {
-					limit = { AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = root } }
-					resource_stockpile_compare = {
-						resource = energy
-						value >= @system_energy
-						mult = from.value:AOW_var_total_system_distance_square
-					}
-					resource_stockpile_compare = {
-						resource = sr_dark_matter
-						value >= @system_dark_matter
-						mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
-					}
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 1
+					mult = value:AOW_var_starfall_spear_energy_total_cost
 				}
 			}
-			else = {
-				custom_tooltip = {
-					fail_text = "AOW_starfall_spear_requires_has_target"
-					always = no
+			if = {
+				limit = {
+					resource_stockpile_compare = {
+						resource = sr_dark_matter
+						value < 1
+						mult = value:AOW_var_starfall_spear_darkmatter_total_cost
+					}
+				}
+				resource_stockpile_compare = {
+					resource = sr_dark_matter
+					value >= value:AOW_var_starfall_spear_darkmatter_total_cost
 				}
 			}
 		}
+		custom_gui = AOW_starfall_spear_ui_option_confirm
 		custom_tooltip = AOW_evt_starfall_spear.500.confirm.tooltip
 		if = {
-			limit = { AOW_trgr_has_starfall_spear_target_type = { type = planet scope = root } }
+			limit = {
+				OR = {
+					exists = event_target:AOW_starfall_spear_target_01_@root
+					exists = event_target:AOW_starfall_spear_target_02_@root
+					exists = event_target:AOW_starfall_spear_target_03_@root
+					exists = event_target:AOW_starfall_spear_target_04_@root
+					exists = event_target:AOW_starfall_spear_target_05_@root
+					exists = event_target:AOW_starfall_spear_target_06_@root
+					exists = event_target:AOW_starfall_spear_target_07_@root
+					exists = event_target:AOW_starfall_spear_target_08_@root
+					exists = event_target:AOW_starfall_spear_target_09_@root
+					exists = event_target:AOW_starfall_spear_target_10_@root
+				}
+			}
+			custom_tooltip = AOW_evt_starfall_spear.500.confirm.total_cost
 			add_resource = {
-				energy = @planet_energy_cost
-				mult = from.value:AOW_var_total_system_distance_square
+				energy = -1
+				mult = value:AOW_var_starfall_spear_energy_total_cost
 			}
 			add_resource = {
-				sr_dark_matter = @planet_dark_matter_cost
-				mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
-			}
-		}
-		if = {
-			limit = { AOW_trgr_has_starfall_spear_target_type = { type = galactic_object scope = root } }
-			add_resource = {
-				energy = @system_energy_cost
-				mult = from.value:AOW_var_total_system_distance_square
-			}
-			add_resource = {
-				sr_dark_matter = @system_dark_matter_cost
-				mult = value:AOW_var_starfall_spear_num_of_targets|scope|root|
+				sr_dark_matter = -1
+				mult = value:AOW_var_starfall_spear_darkmatter_total_cost
 			}
 		}
 		hidden_effect = {

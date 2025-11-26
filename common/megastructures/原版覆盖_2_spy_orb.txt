@@ -295,7 +295,6 @@ spy_orb_4 = {
 	entity = "spyorb_phase_04_entity"
 	construction_entity = "spyorb_phase_04_construction_entity"
 	portrait = "GFX_megastructure_spy_orb_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = @entity_x y = @entity_y }

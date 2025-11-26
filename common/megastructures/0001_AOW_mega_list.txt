@@ -2,14 +2,13 @@
 #因为工程船的巨构建造列表是根据【优先级在上的巨构排序】而排序的。
 #不是你文件怎么排序，工程船那里就怎么排序的
 
+	habitat_central_complex = {}
+	hyper_relay = {}
+	orbital_ring = {}
+	dyson_swarm_1 = {}
+	orbital_arc_furnace_1 = {}
+	deep_space_citadel_0 = {}
 AOW_MEGA_asteroid_mining_station_1 = {}
 AOW_MEGA_resource_drilling_station_0 = {}
 AOW_MEGA_space_arena_1 = {}
 AOW_MEGA_space_sensor_station_1 = {}
-AOW_MEGA_satellite_defense_base_1 = {}
-	dyson_swarm_1 = {}
-	orbital_arc_furnace_1 = {}
-	hyper_relay = {}
-	orbital_ring = {}
-	habitat_central_complex = {}
-	deep_space_citadel_0 = {}

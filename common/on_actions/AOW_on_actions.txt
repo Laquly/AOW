@@ -27,11 +27,11 @@ on_tech_increased = {
 
 # THIS = 被建立分部的星球
 # FROM = 建立分部的国家
-on_branch_office_established = {
-	events = {
-		AOW_prosperous_trade_station.1	#建立分部，设置country_flag
-	}
-}
+# on_branch_office_established = {
+# 	events = {
+# 		AOW_prosperous_trade_station.1	#建立分部，设置country_flag
+# 	}
+# }
 
 # Scope = 舰船
 # From = 星系

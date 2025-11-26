@@ -8,7 +8,11 @@ wg_starfall_spear = {
 		from = { is_galactic_emperor = yes }
 		imperial_authority >= 100
 	}
-
+	
+	forbidden_peace_offers = {
+		demand_surrender = ""
+		surrender = ""
+	}
 	allowed_peace_offers = {
 		status_quo
 	}
@@ -54,7 +58,11 @@ wg_end_threat_starfall_spear = {
 		from = { is_galactic_emperor = yes }
 		imperial_authority >= 100
 	}
-
+	
+	forbidden_peace_offers = {
+		demand_surrender = ""
+		surrender = ""
+	}
 	allowed_peace_offers = {
 		status_quo
 	}

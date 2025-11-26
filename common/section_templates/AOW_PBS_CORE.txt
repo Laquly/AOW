@@ -4,7 +4,7 @@ ship_section_template = {
 
 	fits_on_slot = "core"
 	should_draw_components = yes
-	entity = "planetary_blaster_system_4_static_entity" #"AOW_shipsize_frame_entity"
+	entity = "planetary_blaster_system_4_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = { name = "T1" template = "invisible_titanic_fixed" locatorname = "root" }
@@ -53,7 +53,7 @@ ship_section_template = {
 
 	fits_on_slot = "core"
 	should_draw_components = yes
-	entity = "planetary_blaster_system_4_static_entity" #"AOW_shipsize_frame_entity"
+	entity = "planetary_blaster_system_4_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = { name = "T1" template = "invisible_titanic_fixed" locatorname = "root" }
@@ -98,7 +98,7 @@ ship_section_template = {
 
 	fits_on_slot = "core"
 	should_draw_components = yes
-	entity = "planetary_blaster_system_4_static_entity" #"AOW_shipsize_frame_entity"
+	entity = "planetary_blaster_system_4_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = { name = "T1" template = "invisible_titanic_fixed" locatorname = "root" }
@@ -147,7 +147,7 @@ ship_section_template = {
 
 	fits_on_slot = "core"
 	should_draw_components = yes
-	entity = "planetary_blaster_system_4_static_entity" #"AOW_shipsize_frame_entity"
+	entity = "planetary_blaster_system_4_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = { name = "T1" template = "invisible_titanic_fixed" locatorname = "root" }

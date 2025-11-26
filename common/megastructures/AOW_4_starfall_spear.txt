@@ -5,7 +5,7 @@ AOW_MEGA_starfall_spear_0 = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = 25 y = 25 }
 	build_time = @AOW_var_SS_0_TIME
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_SINGLE_OBAFGKM_STAR_WITHOUT_HABITABLE_PLANET"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_STARFALL_SPEAR"
 	resources = {
 		category = megastructures
 		cost = {
@@ -397,8 +397,8 @@ AOW_MEGA_starfall_spear_launch = {#发射
 			save_event_target_as = AOW_tgt_MEGA_starfall_spear
 		}
 		from = {
-			country_event = { id = AOW_evt_starfall_spear.500 }#选取
 			country_event = { id = AOW_evt_starfall_spear.501 }#教程
+			country_event = { id = AOW_evt_starfall_spear.500 }#选取
 		}
 	}
 }

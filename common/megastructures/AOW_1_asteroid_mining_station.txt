@@ -11,7 +11,7 @@ AOW_MEGA_asteroid_mining_station_1 = {
 	scales_with_planet = yes
 	use_planet_resource = yes
 	build_time = @AOW_var_AMS_1_TIME
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_ASTEROID"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_ASTEROID_MINING_STATION"
 	resources = {
 		category = megastructures
 		cost = {
@@ -134,7 +134,6 @@ AOW_MEGA_asteroid_mining_station_1 = {
 		from = { country_event = { id = AOW_evt_asteroid_mining_station.100 } }
 		fromfrom = {
 			set_megastructure_flag = AOW_flag_MEGA_asteroid_mining_station_@owner
-			AOW_eft_MEGA_set_variable_cost = { v = @AOW_var_AMS_1_COST_alloys }
 		}
 		fromfrom.planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 		if = {#适配原版的小行星蜂巢事件

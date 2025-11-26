@@ -3,6 +3,7 @@
 @SE_scale = 0.9
 entity = {#外环
 	name = "se_ring_1_entity"
+	cull_radius = 1
 	pdxmesh = "cs_small_ring_mesh"
 }
 entity = {

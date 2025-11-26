@@ -1,0 +1,388 @@
+#保底
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_enforcer_add = 100
+	mult = AOW_var_sw_points
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+		}
+	}
+	job_patrol_drone_add = 100
+	mult = AOW_var_sw_points
+}#格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	planet_housing_add = -100
+	job_bio_trophy_add = 100
+	mult = AOW_var_sw_points
+}#格式塔
+
+#能量币 AOW_var_sw_points_technician
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+	job_technician_add = 100
+	mult = AOW_var_sw_points_technician
+}#常规
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_technician_drone_add = 100
+	mult = AOW_var_sw_points_technician
+}#格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_fallen_empire_spiritualist = yes }
+	}
+	job_fe_acolyte_generator_add = 100
+	mult = AOW_var_sw_points_technician
+}#唯心堕落
+
+#矿物 AOW_var_sw_points_miner
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+	job_miner_add = 100
+	mult = AOW_var_sw_points_miner
+}#常规
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_mining_drone_add = 100
+	mult = AOW_var_sw_points_miner
+}#格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_fallen_empire_spiritualist = yes }
+	}
+	job_fe_acolyte_mine_add = 100
+	mult = AOW_var_sw_points_miner
+}#唯心堕落
+
+#食物 AOW_var_sw_points_farmer
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+	job_farmer_add = 100
+	mult = AOW_var_sw_points_farmer
+}#常规
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_agri_drone_add = 100
+	mult = AOW_var_sw_points_farmer
+}#格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_fallen_empire_spiritualist = yes }
+	}
+	job_fe_acolyte_farm_add = 100
+	mult = AOW_var_sw_points_farmer
+}#唯心堕落
+
+#贸易 AOW_var_sw_points_trader
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_fallen_empire = no
+		}
+	}
+	job_trader_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_mercantile_commercial_enterprise|job|trader|
+}
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	job_logistics_drone_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_logistics_2|job|trader|
+}
+
+#物理 AOW_var_sw_points_physicist
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_physicist_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|physicist|
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_calculator_physicist_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|physicist|
+}#格式塔
+
+#社会 AOW_var_sw_points_biologist
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_biologist_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|biologist|
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_calculator_biologist_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|biologist|
+}#格式塔
+
+#工程 AOW_var_sw_points_engineer
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_engineer_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|engineer|
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_calculator_engineer_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|engineer|
+}#格式塔
+
+#行政 AOW_var_sw_points_bureaucrat
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_bureaucrat_add = 100
+	mult = value:AOW_var_tradition_with_starcage_world_mult|tradition|tr_virtuality_4|job|bureaucrat|
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_coordinator_add = 100
+	mult = AOW_var_sw_points_bureaucrat
+}#格式塔
+
+#消费 AOW_var_sw_points_artisan
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+	}
+	job_artisan_add = 100
+	mult = AOW_var_sw_points_artisan
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	job_artisan_drone_add = 100
+	mult = AOW_var_sw_points_artisan
+}#格式塔
+
+#合金 AOW_var_sw_points_foundry
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+	}
+	job_foundry_add = 100
+	mult = AOW_var_sw_points_foundry
+}#非格式塔
+triggered_planet_modifier = {#格式塔
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	job_fabricator_add = 100
+	mult = AOW_var_sw_points_foundry
+}#格式塔
+
+#颗粒 AOW_var_sw_points_chemist
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_chemist_add = 100
+	mult = AOW_var_sw_points_chemist
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_chemist_drone_add = 100
+	mult = AOW_var_sw_points_chemist
+}#格式塔
+
+#气体 AOW_var_sw_points_refiner
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_gas_refiner_add = 100
+	mult = AOW_var_sw_points_refiner
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_gas_refiner_drone_add = 100
+	mult = AOW_var_sw_points_refiner
+}#格式塔
+
+#水晶 AOW_var_sw_points_translucer
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_translucer_add = 100
+	mult = AOW_var_sw_points_translucer
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_translucer_drone_add = 100
+	mult = AOW_var_sw_points_translucer
+}#格式塔
+
+#士兵 AOW_var_sw_points_soldier
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_soldier_add = 100
+	mult = AOW_var_sw_points_soldier
+}#非格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_warrior_drone_add = 100
+	mult = AOW_var_sw_points_soldier
+}#格式塔
+
+#手办 AOW_var_sw_points_bio_trophy
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	planet_housing_add = -100
+	job_bio_trophy_add = 100
+	mult = AOW_var_sw_points_bio_trophy
+}#机仆
+
+
+
+#人口 AOW_var_sw_points_healthcare
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+	}
+	job_spawning_drone_add = 100
+	mult = AOW_var_sw_points_healthcare
+}#蜂巢
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	job_replicator_add = 100
+	mult = AOW_var_sw_points_healthcare
+}#智械
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			NOR = {
+				owner_species = { has_trait = trait_mechanical }
+				owner_species = { has_trait = trait_machine_unit }
+				has_country_flag = synthetic_empire
+			}
+		}
+	}
+	job_healthcare_add = 100
+	mult = AOW_var_sw_points_healthcare
+}#非合成人
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			OR = {
+				owner_species = { has_trait = trait_mechanical }
+				owner_species = { has_trait = trait_machine_unit }
+				has_country_flag = synthetic_empire
+			}
+		}
+	}
+	job_roboticist_add = 100
+	mult = AOW_var_sw_points_healthcare
+}#合成人

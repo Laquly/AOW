@@ -33,9 +33,7 @@ behemoth_egg = {
 	}
 
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
@@ -208,9 +206,7 @@ behemoth_fleet_egg = {
 		always = no
 	}
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
@@ -444,9 +440,7 @@ behemoth_chrysalis = {
 		always = no
 	}
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
@@ -541,9 +535,7 @@ behemoth_chrysalis_big = {
 		always = no
 	}
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from

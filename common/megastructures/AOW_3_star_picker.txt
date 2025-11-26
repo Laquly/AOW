@@ -277,7 +277,6 @@ AOW_MEGA_star_picker_5 = {
 	construction_entity = "star_picker_05_construction_entity"
 	portrait = "GFX_megastructure_star_picker_background"
 	build_time = @AOW_var_SP_5_TIME
-	show_in_outliner = no
 	scales_with_planet = yes
 	use_planet_resource = yes
 	outliner_trigger = {

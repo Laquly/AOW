@@ -1,23 +1,39 @@
+AOW_d_ringworld_management_center = {
+	is_for_colonizable = yes
+	icon = AOW_d_ringworld_capacity_growth_facilities
+	category = deposit_cat_rare
+	drop_weight = { weight = 0 }
+}
+
 AOW_d_ringworld_districts_management_center = {
 	is_for_colonizable = yes
 	icon = AOW_d_ringworld_capacity_growth_facilities
 	category = deposit_cat_rare
 	triggered_planet_modifier = {
+		potential = {
+			solar_system = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
+		}
 		planet_max_districts_add = 5
-		planet_housing_add = 20
-		planet_amenities_add = 20
+		planet_housing_add = 2000
+		planet_amenities_add = 2000
 		multiplier = value:AOW_var_num_of_ringworld2
 	}
 	triggered_planet_modifier = {
+		potential = {
+			solar_system = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
+		}
 		planet_max_districts_add = 7.5
-		planet_housing_add = 30
-		planet_amenities_add = 30
+		planet_housing_add = 3000
+		planet_amenities_add = 3000
 		multiplier = value:AOW_var_num_of_ringworld3
 	}
 	triggered_planet_modifier = {
+		potential = {
+			solar_system = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
+		}
 		planet_max_districts_add = 10
-		planet_housing_add = 40
-		planet_amenities_add = 40
+		planet_housing_add = 4000
+		planet_amenities_add = 4000
 		multiplier = value:AOW_var_num_of_ringworld4
 	}
 	drop_weight = { weight = 0 }
@@ -26,89 +42,12 @@ AOW_d_ringworld_capacity_growth_facilities = {
 	is_for_colonizable = yes
 	icon = AOW_d_ringworld_capacity_growth_facilities
 	category = deposit_cat_rare
-	triggered_planet_modifier = {
-		planet_jobs_produces_mult = 0.005
-		planet_amenities_add = 2
-		planet_housing_add = -0.1
-		multiplier = AOW_var_PLNT_virtual_pops
-	}
-	resources = {
-		category = planet_jobs
-		produces = {
-			unity = 5
-			mult = AOW_var_PLNT_virtual_pops
-		}
-		upkeep = {
-			energy = 5
-			mult = AOW_var_PLNT_virtual_pops
-		}
-	}
 	drop_weight = { weight = 0 }
 }
 AOW_d_ringworld_automation_facilities = {
 	is_for_colonizable = yes
 	icon = AOW_d_ringworld_automation_facilities
 	category = deposit_cat_rare
-	resources = {
-		category = planet_districts
-		produces = {
-			#trigger = { exists = owner owner = { is_gestalt = yes } }
-			energy = 120
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_generator|
-		}
-		produces = {
-			#trigger = { exists = owner owner = { is_gestalt = no } }
-			energy = 120
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_commercial|
-		}
-		produces = {
-			food = 120
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_farming|
-		}
-		produces = {
-			trigger = {
-				OR = {
-					has_designation = col_foundry
-					has_designation = col_capital_foundry
-				}
-			}
-			alloys = 60
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_industrial|
-		}
-		produces = {
-			trigger = {
-				OR = {
-					has_designation = col_factory
-					has_designation = col_capital_factory
-				}
-			}
-			consumer_goods = 120
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_industrial|
-		}
-		produces = {
-			trigger = {
-				NOT = { has_designation = col_foundry }
-				NOT = { has_designation = col_capital_foundry }
-				NOT = { has_designation = col_factory }
-				NOT = { has_designation = col_capital_factory }
-			}
-			alloys = 30
-			consumer_goods = 60
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_industrial|
-		}
-		produces = {
-			physics_research = 80
-			society_research = 80
-			engineering_research = 80
-			mult = planet.value:AOW_var_proportion_of_ringworld_districts|TYPE|district_rw_science|
-		}
-		upkeep = {
-			energy = 20
-			minerals = 20
-			alloys = 10
-			#multiplier = planet.value:AOW_var_non_city_ringworld_districts
-		}
-	}
 	drop_weight = { weight = 0 }
 }
 AOW_d_starcage_world = {
@@ -133,6 +72,30 @@ AOW_d_starcage_world = {
 		planet_jobs_upkeep_mult = -0.25
 		pop_housing_usage_mult = -0.25
 		pop_amenities_usage_mult = -0.25
+	}
+	drop_weight = { weight = 0 }
+}
+
+AOW_d_virtual_population_management_center = {
+	is_for_colonizable = yes
+	icon = AOW_d_ringworld_automation_facilities
+	category = deposit_cat_rare
+	triggered_planet_modifier = {
+		pop_bonus_workforce_mult = 0.005
+		planet_amenities_add = 2
+		planet_housing_add = -0.1
+		multiplier = AOW_var_PLNT_virtual_pops
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 5
+			mult = AOW_var_PLNT_virtual_pops
+		}
+		upkeep = {
+			energy = 5
+			mult = AOW_var_PLNT_virtual_pops
+		}
 	}
 	drop_weight = { weight = 0 }
 }

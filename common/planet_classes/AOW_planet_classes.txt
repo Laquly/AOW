@@ -10,9 +10,7 @@ pc_starcage_world_common_star = {
     show_city = no
     #fixed_city_level = 6
     modifier = {
-        pop_environment_tolerance = 1.0
         planet_resettlement_unemployed_destination_mult = 2
-        pop_demotion_time_mult = -1
 
         planet_structures_upkeep_mult = 0.25
 
@@ -54,9 +52,7 @@ pc_starcage_world_neutron_star = {
     show_city = no
     #fixed_city_level = 6
     modifier = {
-        pop_environment_tolerance = 1.0
         planet_resettlement_unemployed_destination_mult = 2
-        pop_demotion_time_mult = -1
 
         planet_structures_energy_upkeep_mult = 1
 
@@ -65,7 +61,6 @@ pc_starcage_world_neutron_star = {
         planet_technician_energy_produces_add = 2
         planet_miners_minerals_produces_add = 2
         planet_miners_alloys_produces_add = 2
-        planet_artisans_consumer_goods_produces_add = 1
         planet_metallurgists_alloys_produces_add = 4
 
         planet_engineers_engineering_research_produces_add = 2
@@ -98,9 +93,7 @@ pc_starcage_world_black_hole = {
     show_city = no
     #fixed_city_level = 6
     modifier = {
-        pop_environment_tolerance = 1.0
         planet_resettlement_unemployed_destination_mult = 2
-        pop_demotion_time_mult = -1
 
         planet_structures_alloys_upkeep_mult = 1
 
@@ -110,9 +103,9 @@ pc_starcage_world_black_hole = {
         planet_miners_minerals_produces_add = 4
         planet_artisans_consumer_goods_produces_add = 2
         planet_metallurgists_alloys_produces_add = 2
-        planet_artisans_exotic_gases_produces_add = 0.5
-        planet_artisans_rare_crystals_produces_add = 0.5
-        planet_artisans_volatile_motes_produces_add = 0.5
+        planet_jobs_exotic_gases_produces_add = 0.2
+        planet_jobs_rare_crystals_produces_add = 0.2
+        planet_jobs_volatile_motes_produces_add = 0.2
 
         planet_physicists_sr_dark_matter_produces_add = 1
         planet_physicists_physics_research_produces_add = 2
@@ -150,6 +143,7 @@ pc_star_guardian = {
     #fixed_city_level = 6
     modifier = {
         pop_environment_tolerance = 1.0
+        planet_colony_development_speed_mult = 1
         planet_stability_add = 10
         pop_amenities_usage_mult = -0.5
         planet_orbital_bombardment_damage = -0.5
@@ -157,8 +151,7 @@ pc_star_guardian = {
         army_defense_damage_mult = 1
         army_defense_health_mult = 1
         planet_army_build_speed_mult = 1
-        planet_colony_development_speed_mult = 1
-        planet_soldiers_unity_produces_add = 1
+        pop_soldier_bonus_workforce_mult = 0.5
     }
     spawn_odds = 0
     extra_orbit_size = 0

@@ -48,9 +48,7 @@ ring_world_1 = {
 		AOW_trigger_mega_potential = { KEY = ring_world_1 }
 	}
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_ring_world_1 } }
@@ -275,6 +273,7 @@ ring_world_3_intermediate = {
 				}
 				set_all_comms_surveyed = yes
 				set_planet_flag = megastructure
+				save_event_target_as = ring_section_tech
 			}
 		}
 		spawn_planet = {
@@ -292,6 +291,7 @@ ring_world_3_intermediate = {
 				}
 				set_all_comms_surveyed = yes
 				set_planet_flag = megastructure
+				save_event_target_as = ring_section_seam
 			}
 		}
 		spawn_planet = {
@@ -313,6 +313,12 @@ ring_world_3_intermediate = {
 				save_event_target_as = ring_section
 				trigger_megastructure_icon = yes
 				set_planet_flag = megastructure
+				if = {
+					limit = {
+						solar_system = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
+					}
+					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
+				}
 			}
 		}
 		#fromfrom.planet = { set_planet_flag = has_megastructure }
@@ -334,7 +340,12 @@ ring_world_3_intermediate = {
 				NOT = { has_star_flag = ring_section_1 }
 			}
 			set_star_flag = ring_section_1
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_A" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_1 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_1 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_A"
+				set_planet_flag = AOW_flag_PLNT_ringword1_1
+			}
 			break = yes
 		}
 		if = {
@@ -343,7 +354,12 @@ ring_world_3_intermediate = {
 				NOT = { has_star_flag = ring_section_2 }
 			}
 			set_star_flag = ring_section_2
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_B" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_2 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_2 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_B"
+				set_planet_flag = AOW_flag_PLNT_ringword1_2
+			}
 			break = yes
 		}
 		if = {
@@ -352,7 +368,12 @@ ring_world_3_intermediate = {
 				NOT = { has_star_flag = ring_section_3 }
 			}
 			set_star_flag = ring_section_3
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_3 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_3 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_C"
+				set_planet_flag = AOW_flag_PLNT_ringword1_3
+			}
 			break = yes
 		}
 		if = {
@@ -360,7 +381,12 @@ ring_world_3_intermediate = {
 			remove_star_flag = ring_section_1
 			remove_star_flag = ring_section_2
 			remove_star_flag = ring_section_3
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_4 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_4 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_D"
+				set_planet_flag = AOW_flag_PLNT_ringword1_4
+			}
 			break = yes
 		}
 	}
@@ -428,121 +454,65 @@ ring_world_restored = {
 			}
 			destroy_ambient_object = this
 		}
-		if = { #傻逼蠢驴，破碎环世界起源的环世界非得是歪的，害得老子必须适配一下
-			limit = { has_star_flag = empire_home_system }
-			spawn_planet = {
-				class = "pc_ringworld_tech"
-				location = fromfrom
-				orbit_angle_offset = -30
-				init_effect = {
-					set_name = "NAME_Ring_Section"
-					set_planet_entity = {
-						entity = "ringworld_tech_entity_01_entity"
-						graphical_culture = fromfrom
-					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					set_planet_flag = megastructure
+		spawn_planet = {
+			class = "pc_ringworld_tech"
+			location = fromfrom
+			orbit_angle_offset = 30
+			init_effect = {
+				set_name = "NAME_Ring_Section"
+				set_planet_entity = {
+					entity = "ringworld_tech_entity_01_entity"
+					graphical_culture = fromfrom
 				}
-			}
-			spawn_planet = {
-				class = "pc_ringworld_seam"
-				location = fromfrom
-				init_effect = {
-					set_name = "NAME_Ring_Section"
-					set_planet_entity = {
-						entity = "ringworld_seam_entity_01_entity"
-						graphical_culture = fromfrom
-					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					set_planet_flag = megastructure
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
 				}
-			}
-			spawn_planet = {
-				class = "pc_ringworld_habitable"
-				location = fromfrom
-				orbit_angle_offset = 30
-				init_effect = {
-					set_name = "NAME_Habitable_Section_A"
-					set_planet_entity = {
-						entity = "ringworld_habitable_entity_01_entity"
-						graphical_culture = fromfrom
-					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					clear_blockers = yes
-					save_event_target_as = ring_section
-					trigger_megastructure_icon = yes
-					set_planet_flag = megastructure
-				}
+				set_all_comms_surveyed = yes
+				set_planet_flag = megastructure
 			}
 		}
-		else_if = {
-			limit = { NOT = { has_star_flag = empire_home_system } }
-			spawn_planet = {
-				class = "pc_ringworld_tech"
-				location = fromfrom
-				orbit_angle_offset = 30
-				init_effect = {
-					set_name = "NAME_Ring_Section"
-					set_planet_entity = {
-						entity = "ringworld_tech_entity_01_entity"
-						graphical_culture = fromfrom
-					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					set_planet_flag = megastructure
+		spawn_planet = {
+			class = "pc_ringworld_seam"
+			location = fromfrom
+			init_effect = {
+				set_name = "NAME_Ring_Section"
+				set_planet_entity = {
+					entity = "ringworld_seam_entity_01_entity"
+					graphical_culture = fromfrom
 				}
-			}
-			spawn_planet = {
-				class = "pc_ringworld_seam"
-				location = fromfrom
-				init_effect = {
-					set_name = "NAME_Ring_Section"
-					set_planet_entity = {
-						entity = "ringworld_seam_entity_01_entity"
-						graphical_culture = fromfrom
-					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					set_planet_flag = megastructure
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
 				}
+				set_all_comms_surveyed = yes
+				set_planet_flag = megastructure
 			}
-			spawn_planet = {
-				class = "pc_ringworld_habitable"
-				location = fromfrom
-				orbit_angle_offset = -30
-				init_effect = {
-					set_name = "NAME_Habitable_Section_A"
-					set_planet_entity = {
-						entity = "ringworld_habitable_entity_01_entity"
-						graphical_culture = fromfrom
+		}
+		spawn_planet = {
+			class = "pc_ringworld_habitable"
+			location = fromfrom
+			orbit_angle_offset = -30
+			init_effect = {
+				set_name = "NAME_Habitable_Section_A"
+				set_planet_entity = {
+					entity = "ringworld_habitable_entity_01_entity"
+					graphical_culture = fromfrom
+				}
+				set_surveyed = {
+					surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				clear_blockers = yes
+				save_event_target_as = ring_section
+				trigger_megastructure_icon = yes
+				set_planet_flag = megastructure
+				if = {
+					limit = {
+						solar_system = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
 					}
-					set_surveyed = {
-						surveyed = yes
-						surveyor = FROM
-					}
-					set_all_comms_surveyed = yes
-					clear_blockers = yes
-					save_event_target_as = ring_section
-					trigger_megastructure_icon = yes
-					set_planet_flag = megastructure
+					add_deposit_if_missing = { DEPOSIT = AOW_d_ringworld_districts_management_center }
 				}
 			}
 		}
@@ -557,7 +527,12 @@ ring_world_restored = {
 				NOT = { has_star_flag = ring_section_1 }
 			}
 			set_star_flag = ring_section_1
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_A" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_1 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_1 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_A"
+				set_planet_flag = AOW_flag_PLNT_ringword1_1
+			}
 			break = yes
 		}
 		if = {
@@ -566,7 +541,12 @@ ring_world_restored = {
 				NOT = { has_star_flag = ring_section_2 }
 			}
 			set_star_flag = ring_section_2
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_B" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_2 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_2 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_B"
+				set_planet_flag = AOW_flag_PLNT_ringword1_2
+			}
 			break = yes
 		}
 		if = {
@@ -575,7 +555,12 @@ ring_world_restored = {
 				NOT = { has_star_flag = ring_section_3 }
 			}
 			set_star_flag = ring_section_3
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_3 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_3 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_C"
+				set_planet_flag = AOW_flag_PLNT_ringword1_3
+			}
 			break = yes
 		}
 		if = {
@@ -583,7 +568,12 @@ ring_world_restored = {
 			remove_star_flag = ring_section_1
 			remove_star_flag = ring_section_2
 			remove_star_flag = ring_section_3
-			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			event_target:ring_section_tech = { set_planet_flag = AOW_flag_PLNT_ringword1_4 }
+			event_target:ring_section_seam = { set_planet_flag = AOW_flag_PLNT_ringword1_4 }
+			event_target:ring_section = {
+				set_name = "NAME_Habitable_Section_D"
+				set_planet_flag = AOW_flag_PLNT_ringword1_4
+			}
 			break = yes
 		}
 	}

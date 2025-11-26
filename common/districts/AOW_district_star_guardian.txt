@@ -8,6 +8,11 @@ AOW_district_sg_housing = {
     icon = district_arcology_housing
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
+    zone_slots = {
+        slot_city_government
+        slot_star_guardian_core
+        slot_star_guardian_core
+    }
     show_on_uncolonized = {
         uses_district_set = AOW_district_star_guardian
     }
@@ -24,12 +29,33 @@ AOW_district_sg_housing = {
         }
     }
     planet_modifier = {
-        planet_housing_add = 500
+        planet_housing_add = 1000
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = no }
+        }
+        modifier = {
+            job_soldier_add = 500
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_warrior_drone_add = 500
+        }
     }
 }
 AOW_district_sg_fortress = {
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
+    zone_slots = {
+        slot_star_guardian_secondary
+    }
     show_on_uncolonized = {
         uses_district_set = AOW_district_star_guardian
     }
@@ -48,7 +74,7 @@ AOW_district_sg_fortress = {
         }
     }
     planet_modifier = {
-        planet_housing_add = 10
+        planet_housing_add = 1000
     }
     triggered_planet_modifier = {
         potential = {
@@ -68,24 +94,13 @@ AOW_district_sg_fortress = {
             job_warrior_drone_add = 6
         }
     }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        text = job_warrior_drone_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        text = job_soldier_effect_desc
-    }
 }
 AOW_district_sg_order = {
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
+    zone_slots = {
+        slot_star_guardian_secondary
+    }
     show_on_uncolonized = {
         uses_district_set = AOW_district_star_guardian
     }
@@ -123,20 +138,5 @@ AOW_district_sg_order = {
         modifier = {
             job_patrol_drone_add = 6
         }
-    }
-
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        text = job_enforcer_effect_desc
-    }
-    triggered_desc = {
-        trigger = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        text = job_patrol_drone_effect_desc
     }
 }

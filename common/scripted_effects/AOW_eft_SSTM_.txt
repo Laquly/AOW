@@ -17,3 +17,11 @@ AOW_eft_SSTM_remove_planet_flag_has_megastructure = {
 		remove_planet_flag = has_planet_remover_megastructure #如果拆除基址，根据此flag，移除非原有flag
 	}
 }
+AOW_eft_PLNT_dismantle_orbital_station = {
+	if = {
+		limit = { has_orbital_station = yes }
+		orbital_station = {
+			dismantle = yes
+		}
+	}
+}

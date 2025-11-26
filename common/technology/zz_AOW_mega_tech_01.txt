@@ -351,18 +351,13 @@ AOW_TECH_prosperous_trade_station = {
 	tier = 5
 	category = { statecraft }
 	ai_update_type = all
-	prerequisites = { "tech_mega_engineering" "tech_galactic_markets" }
-	potential = { is_gestalt = no }
+	prerequisites = { "tech_mega_engineering" }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
 		modifier = {
 			factor = 0
 			NOT = { AOW_trigger_mega_potential = { KEY = prosperous_trade_station } }
-		}
-		modifier = {
-			factor = 0
-			NOT = { has_country_flag = AOW_flag_CNTR_branch_office_established }
 		}
 		modifier = {
 			factor = 2

@@ -3,6 +3,9 @@
  ###################################################################################################
  #其他科技
  ###################################################################################################
+ AOW_TECH_spatiotemporal_curvature_manipulation:0"时空曲率操纵§L（前置科技：£physics_research£$tech_mine_dark_matter$）§!"
+ AOW_TECH_spatiotemporal_curvature_manipulation_desc:0"对于暗物质的最新研究理论已经指出，少量的暗物质就拥有足以大幅扭曲时空曲率的潜力。一旦掌握了这一力量，那带来的收益将是颠覆性的。"
+
  AOW_TECH_improved_construction_efficiency_1:0"巨构建设效率提升：能量供应"
  AOW_TECH_improved_construction_efficiency_1_desc:0"为升级中的巨构供应额外能量可使得建设效率得到一定的提升。"
  AOW_TECH_improved_construction_efficiency_2:0"巨构建设效率提升：合金供应"
@@ -14,6 +17,28 @@
  AOW_TECH_improved_construction_efficiency_5:0"巨构建设效率提升：全面提升"
  AOW_TECH_improved_construction_efficiency_5_desc:0"如果能量供应、合金供应、齐心协力和曲率掌控全部启用，我们会发现各个系统在互相配合方面还存在着较大的短板，而该方案就可以全方位整合并优化整个建设过程中的各个系统，其中的所有遗漏之处和可改进之处均会被一一修复。"
 
+ AOW_TECH_engineering_intelligence_core:0"工程智能核心"
+ AOW_TECH_engineering_intelligence_core_desc:0"工程智能核心"
+
+ AOW_TECH_megastructure_construction_agreement:0"巨构建设协议"
+ AOW_TECH_megastructure_construction_agreement_desc:0"巨构建设协议"
+
+ AOW_TECH_automatic_copy_unit:0"自主复制单元"
+ AOW_TECH_automatic_copy_unit_desc:0"自主复制单元"
+
+ AOW_TECH_multidimensional_space_channel:0"多维空间通道"
+ AOW_TECH_multidimensional_space_channel_desc:0"通过扭曲时空曲率，打通通往各个多维空间的稳定通道，需要大量的暗物质维护。"
+
+ AOW_TECH_dimension_hiding:0"维度褶皱"
+ AOW_TECH_dimension_hiding_desc:0"多维空间是一个很好的容纳各种巨构设施的地方。因此在现实维度中，可以通过使维度空间产生褶皱，将两个巨构设施建设地很近，甚至重叠。"
+ AOW_TECH_dimension_hiding_effect_title:0"§H解锁功能：§!维度褶皱"
+ AOW_TECH_dimension_hiding_effect_desc:0"§H维度褶皱§!\n\n我们现在可以将§Y戴森球§!、§Y$AOW_MEGA_star_picker$§!、§Y$AOW_MEGA_zero_element_furnace$§!建造在大多数的多恒星星系中，即使建造完后的巨构看起来像是§Y重叠§!了。\n\n注意：这些恒星级巨构建造在多恒星星系时，会因为受到多个引力源的强大引力拉扯，§R需要额外的£alloys£合金作为维护费§!；\n因需要维持在维度褶皱中的形态，§R需要额外的£energy£能量币作为维护费§!。"
+
+ AOW_TECH_hyperdimension_hiding:0"超维褶皱"
+ AOW_TECH_hyperdimension_hiding_desc:0"进一步强化我们对于维度空间的控制能力，我们可以允许那些庞大的巨构互相共存。"
+ AOW_TECH_hyperdimension_hiding_effect_1_title:0"后期流畅度: §G+10%§!"
+ AOW_TECH_hyperdimension_hiding_effect_2_title:0"§H解锁特性：§!超维褶皱"
+ AOW_TECH_hyperdimension_hiding_effect_2_desc:0"§H超维褶皱§!\n允许大部分恒星巨构建造在同一恒星上；\n允许大部分恒星巨构建造在多恒星星系；\n部分会清空星系的巨构不再移除行星。"
  ###################################################################################################
  #小型巨构
  ###################################################################################################
@@ -28,16 +53,6 @@
  AOW_TECH_asteroid_mining_station_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_asteroid_mining_station$"
  AOW_TECH_asteroid_mining_station_effect_desc:0"§H$AOW_MEGA_asteroid_mining_station$§!\n\n只能建造在小行星上，根据小行星类型产出不同种类的资源；\n\n§H普通小行星：§!£minerals£50, £volatile_motes£2\n§H冰晶小行星：§!£energy£25, £minerals£25, £rare_crystals£2\n§H晶态小行星：§!£minerals£50, £rare_crystals£2"
 
- AOW_TECH_satellite_defense_base:0"$AOW_MEGA_satellite_defense_base$"
- AOW_TECH_satellite_defense_base_desc:0"一种大型防御平台，其战斗力可以随着战舰科技的提升而提升，由于体积较小，只适合建造在小型天体上。"
- AOW_TECH_satellite_defense_base_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_satellite_defense_base$"
- AOW_TECH_satellite_defense_base_effect_desc:0"§H$AOW_MEGA_satellite_defense_base$§!\n\n只能建造在小行星或卫星上，生成一个不可移动的防御站，提供火力输出。"
- AOW_TECH_satellite_defense_base_hull_1:0"改进$AOW_MEGA_satellite_defense_base$船体"
- AOW_TECH_satellite_defense_base_hull_1_desc:0"基于最近战舰科技的突破，我们的$AOW_MEGA_satellite_defense_base$在防御性能方面也得到了一定的提升。"
- AOW_TECH_satellite_defense_base_hull_2:0"先进$AOW_MEGA_satellite_defense_base$船体"
- AOW_TECH_satellite_defense_base_hull_2_desc:0"基于最近战舰科技的突破，我们的$AOW_MEGA_satellite_defense_base$在防御性能方面也得到了一定的提升。"
- mod_shipsize_AOW_shipsize_satellite_defense_base_hull_add:0"$AOW_MEGA_satellite_defense_base$船体值"
-
  AOW_TECH_resource_drilling_station:"$AOW_MEGA_resource_drilling_station$"
  AOW_TECH_resource_drilling_station_desc:"对于行星内部的结构，我们通常知之甚少。传统的办法不能直观地展现它们具体的成分以及构造从而造成了许多浪费和损失。但在运用相控阵探测阵列后，可扫描行星的活动状态并即时分析，我们就能够发现原本难以探测到的的矿物存储。"
  AOW_TECH_resource_drilling_station_effect_title:"§H解锁巨型结构：§!$AOW_MEGA_resource_drilling_station$"
@@ -46,9 +61,6 @@
  ###################################################################################################
  #普通巨构
  ###################################################################################################
- AOW_TECH_spatiotemporal_curvature_manipulation:0"时空曲率操纵§L（前置科技：£physics_research£$tech_mine_dark_matter$）§!"
- AOW_TECH_spatiotemporal_curvature_manipulation_desc:0"对于暗物质的最新研究理论已经指出，少量的暗物质就拥有足以大幅扭曲时空曲率的潜力。一旦掌握了这一力量，那带来的收益将是颠覆性的。"
-
  AOW_TECH_dark_matter_curvature_trap:0"$AOW_MEGA_dark_matter_curvature_trap$"
  AOW_TECH_dark_matter_curvature_trap_desc:0"利用暗物质创造时空畸变点，我们可以创造出更多的暗物质，为我们更先进的科技提供资源支持。暗物质将会是未来科技革命的血液。"
 
@@ -161,29 +173,6 @@
 
  AOW_TECH_ring_world_4:0"$AOW_MEGA_ring_world_4$"
  AOW_TECH_ring_world_4_desc:0""
-
- AOW_TECH_engineering_intelligence_core:0"工程智能核心"
- AOW_TECH_engineering_intelligence_core_desc:0"工程智能核心"
-
- AOW_TECH_megastructure_construction_agreement:0"巨构建设协议"
- AOW_TECH_megastructure_construction_agreement_desc:0"巨构建设协议"
-
- AOW_TECH_automatic_copy_unit:0"自主复制单元"
- AOW_TECH_automatic_copy_unit_desc:0"自主复制单元"
-
- AOW_TECH_multidimensional_space_channel:0"多维空间通道"
- AOW_TECH_multidimensional_space_channel_desc:0"通过扭曲时空曲率，打通通往各个多维空间的稳定通道，需要大量的暗物质维护。"
-
- AOW_TECH_dimension_hiding:0"维度褶皱"
- AOW_TECH_dimension_hiding_desc:0"多维空间是一个很好的容纳各种巨构设施的地方。因此在现实维度中，可以通过使维度空间产生褶皱，将两个巨构设施建设地很近，甚至重叠。"
- AOW_TECH_dimension_hiding_effect_title:0"§H解锁功能：§!维度褶皱"
- AOW_TECH_dimension_hiding_effect_desc:0"§H维度褶皱§!\n\n我们现在可以将§Y戴森球§!、§Y$AOW_MEGA_star_picker$§!、§Y$AOW_MEGA_zero_element_furnace$§!建造在大多数的多恒星星系中，即使建造完后的巨构看起来像是§Y重叠§!了。\n\n注意：这些恒星级巨构建造在多恒星星系时，会因为受到多个引力源的强大引力拉扯，§R需要额外的£alloys£合金作为维护费§!；\n因需要维持在维度褶皱中的形态，§R需要额外的£energy£能量币作为维护费§!。"
-
- AOW_TECH_hyperdimension_hiding:0"超维褶皱"
- AOW_TECH_hyperdimension_hiding_desc:0"进一步强化我们对于维度空间的控制能力，我们可以允许那些庞大的巨构互相共存。"
- AOW_TECH_hyperdimension_hiding_effect_1_title:0"后期流畅度: §G+10%§!"
- AOW_TECH_hyperdimension_hiding_effect_2_title:0"§H解锁特性：§!超维褶皱"
- AOW_TECH_hyperdimension_hiding_effect_2_desc:0"§H超维褶皱§!\n允许大部分恒星巨构建造在同一恒星上；\n允许大部分恒星巨构建造在多恒星星系；\n部分会清空星系的巨构不再移除行星。"
 
  AOW_TECH_multi_dimensional_warehouse:0"$AOW_MEGA_multi_dimensional_warehouse$"
  AOW_TECH_multi_dimensional_warehouse_desc:0"多维空间的应用大大拓宽了我们能伸展手脚的空间，首先能做到的便是把我们的物资储存在多维空间，但这仍需要一个本维度空间的框架来放在物资丢失。"

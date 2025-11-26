@@ -42,9 +42,7 @@ orbital_ring = {
 		AOW_trigger_mega_potential = { KEY = orbital_ring }
 	}
 	possible = {
-		hidden_trigger = {
-			exists = starbase
-		}
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from

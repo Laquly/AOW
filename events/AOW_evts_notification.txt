@@ -116,21 +116,6 @@ country_event = {
 	}
 }
 
-#卫星防御基地
-namespace = AOW_evt_satellite_defense_base
-country_event = {
-	id = AOW_evt_satellite_defense_base.100
-	title = AOW_evt_satellite_defense_base.100.title
-	desc = AOW_evt_satellite_defense_base.100.desc
-	is_triggered_only = yes
-	picture = GFX_evt_megastructure_construction
-	show_sound = event_construction
-	location = fromfromfrom
-	option = {
-		name = AOW_evt_satellite_defense_base.100.a
-	}
-}
-
 #资源钻取站
 namespace = AOW_evt_resource_drilling_station
 country_event = {
@@ -1154,7 +1139,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
 	show_sound = event_dyson_sphere_build_start
-	location = fromfromfrom
+	location = event_target:AOW_target_planet
 	option = {
 		name = AOW_evt_planetary_blaster_system.100.a
 	}
@@ -1437,29 +1422,36 @@ country_event = {
 country_event = {
 	id = AOW_evt_ring_world.111
 	title = AOW_evt_ring_world.111.title
-	desc = AOW_evt_ring_world.111.desc
+	desc = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
+		text = AOW_evt_ring_world.111.a.desc
+	}
+	desc = {
+		trigger = { from = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } }
+		text = AOW_evt_ring_world.111.b.desc
+	}
 	picture = GFX_evt_ringworld
 	show_sound = event_ringworld_build_upgrade
 	location = from
 	is_triggered_only = yes
-	trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 	after = {
 		from = { set_star_flag = AOW_flag_SSTM_ringworld_confirmed }
 	}
 	option = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 		name = AOW_evt_ring_world.111.a
 		custom_tooltip = AOW_evt_ring_world.111.a.tooltip
 		from = { set_star_flag = AOW_flag_SSTM_ringworld_independent }
 	}
 	option = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 		name = AOW_evt_ring_world.111.b
 		custom_tooltip = AOW_evt_ring_world.111.b.tooltip
-		from = { set_star_flag = AOW_flag_SSTM_ringworld_affiliated }
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
 	}
 	option = {
-		name = AOW_evt_ring_world.111.c
-		custom_tooltip = AOW_evt_ring_world.111.c.tooltip
-		from = { set_star_flag = AOW_flag_SSTM_ringworld_auxiliary }
+		trigger = { from = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } }
+		name = OK
 	}
 }
 country_event = {
@@ -1473,12 +1465,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.112.a
 		if = {
-			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_affiliated } }
-			custom_tooltip = AOW_evt_ring_world.112.b.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
 		}
 		if = {
-			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_auxiliary } }
-			custom_tooltip = AOW_evt_ring_world.112.c.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1501,12 +1493,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.113.a
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.113.b.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
 		}
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.113.c.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1561,8 +1553,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.122.a
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.122.a.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
+		}
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1585,8 +1581,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.123.a
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.123.a.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
+		}
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1641,8 +1641,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.132.a
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.132.a.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
+		}
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1665,8 +1669,12 @@ country_event = {
 	option = {
 		name = AOW_evt_ring_world.133.a
 		if = {
-			limit = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent } } }
-			custom_tooltip = AOW_evt_ring_world.133.a.tooltip
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_independent } }
+			custom_tooltip = AOW_evt_ring_world.112.a1.tooltip
+		}
+		if = {
+			limit = { from = { has_star_flag = AOW_flag_SSTM_ringworld_subsidiary } }
+			custom_tooltip = AOW_evt_ring_world.112.a2.tooltip
 		}
 	}
 }
@@ -1735,31 +1743,38 @@ ship_event = {
 country_event = {
 	id = AOW_evt_ring_world.210
 	title = AOW_evt_ring_world.210.title
-	desc = AOW_evt_ring_world.210.desc
+	desc = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
+		text = AOW_evt_ring_world.210.a.desc
+	}
+	desc = {
+		trigger = { from = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } }
+		text = AOW_evt_ring_world.210.b.desc
+	}
 	picture = GFX_evt_unknown_ships
 	show_sound = event_ringworld_build_start
 	location = from
 	is_triggered_only = yes
-	trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 	immediate = { hidden_effect = { fromfromfrom = { set_halted = -1 } } }
 	after = {
 		hidden_effect = { fromfromfrom = { set_halted = 0 } }
 		from = { set_star_flag = AOW_flag_SSTM_ringworld_confirmed }
 	}
 	option = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 		name = AOW_evt_ring_world.111.a
 		custom_tooltip = AOW_evt_ring_world.111.a.tooltip
 		from = { set_star_flag = AOW_flag_SSTM_ringworld_independent }
 	}
 	option = {
+		trigger = { from = { NOT = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } } }
 		name = AOW_evt_ring_world.111.b
 		custom_tooltip = AOW_evt_ring_world.111.b.tooltip
-		from = { set_star_flag = AOW_flag_SSTM_ringworld_affiliated }
+		from = { set_star_flag = AOW_flag_SSTM_ringworld_subsidiary }
 	}
 	option = {
-		name = AOW_evt_ring_world.111.c
-		custom_tooltip = AOW_evt_ring_world.111.c.tooltip
-		from = { set_star_flag = AOW_flag_SSTM_ringworld_auxiliary }
+		trigger = { from = { has_star_flag = AOW_flag_SSTM_ringworld_confirmed } }
+		name = OK
 	}
 }
 country_event = {

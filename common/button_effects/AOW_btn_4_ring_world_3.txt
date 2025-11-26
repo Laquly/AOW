@@ -15,6 +15,7 @@ AOW_btn_ring_world_3_prerequisites = {
 			has_ascension_perk = ap_cosmic_wonders
 			has_technology = AOW_TECH_ring_world_2
 			custom_tooltip = AOW_text_final_requirements
+			has_technology = AOW_TECH_multi_dimensional_warehouse
 			has_technology = AOW_TECH_ring_world_3
 		}
 	}

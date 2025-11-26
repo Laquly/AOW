@@ -4,7 +4,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_aura_bombardment"
 	icon_frame = 1
-	power = 250000
+	power = 100000
 	resources = {
 		category = ship_components
 	}
@@ -40,7 +40,6 @@ weapon_component_template = {
 	
 	firing_arc = 10.0
 	min_range = 20.0
-	use_ship_kill_target = no
 	component_set = "AOW_PBS_WAVE_BEAM"
 	tags = { weapon_type_energy }
 	projectile_gfx = "stellarite_titan_laser"
@@ -74,7 +73,6 @@ weapon_component_template = {
 	
 	firing_arc = 360.0
 	min_range = 10.0
-	use_ship_kill_target = no
 	component_set = "AOW_PBS_RIPPER_LIGHT_BEAM"
 	tags = { weapon_type_energy }
 	projectile_gfx = "particle_lance"

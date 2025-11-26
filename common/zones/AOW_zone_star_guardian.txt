@@ -2,7 +2,7 @@
 @zone_cost_minerals = 1000
 #堡垒
 zone_star_guardian_fortress = {
-	icon = GFX_colony_type_fortress
+	icon = GFX_district_specialization_fortress
 	base_buildtime = @buildtime
 	potential = { # planet scope
 		hidden_trigger = { exists = owner }
@@ -29,18 +29,15 @@ zone_star_guardian_fortress = {
 	}
 	inline_script = {
 		script = jobs/AOW_zone_job_soldier
-		AMOUNT = 1500
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+		AMOUNT = 1000
 	}
 	triggered_district_planet_modifier = {
-		planet_housing_add = -1500
+		planet_housing_add = -1000
 	}
 }
 #秩序
 zone_star_guardian_order = {
-	icon = GFX_colony_type_fortress
+	icon = GFX_district_specialization_broken_shackles_memorial
 	base_buildtime = @buildtime
 	potential = { # planet scope
 		hidden_trigger = { exists = owner }
@@ -61,12 +58,9 @@ zone_star_guardian_order = {
 	}
 	inline_script = {
 		script = jobs/AOW_zone_job_enforcer
-		AMOUNT = 1500
-	}
-	planet_modifier = {
-		zone_building_slots_add = 3
+		AMOUNT = 1000
 	}
 	triggered_district_planet_modifier = {
-		planet_housing_add = -1500
+		planet_housing_add = -1000
 	}
 }

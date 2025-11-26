@@ -281,7 +281,6 @@ AOW_trgr_PLNT_has_dyson_swarm = {
 #是星笼世界
 AOW_trgr_PLNT_is_starcage_world = {
 	OR = {
-		is_planet_class = pc_starcage_world
 		is_planet_class = pc_starcage_world_common_star
 		is_planet_class = pc_starcage_world_neutron_star
 		is_planet_class = pc_starcage_world_black_hole

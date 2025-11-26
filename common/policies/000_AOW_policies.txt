@@ -29,11 +29,7 @@ AOW_policy_starfall_spear = {
 				has_ethic = ethic_fanatic_militarist
 				has_ethic = ethic_xenophobe
 				has_ethic = ethic_fanatic_xenophobe
-				has_ascension_perk = ap_become_the_crisis
-				AND = {
-					has_ascension_perk = ap_cosmogenesis
-					has_crisis_level = crisis_cosmogenesis_level_5
-				}
+				is_player_crisis = yes
 				if = {
 					limit = { has_global_flag = has_wsg_mod }
 					has_ascension_perk = ap_wg_crisis

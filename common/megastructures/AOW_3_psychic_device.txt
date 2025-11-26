@@ -115,6 +115,9 @@ AOW_MEGA_psychic_device_1 = {
 			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
 			energy = @AOW_var_PD_1_UPKP_energy
 		}
+		produces = {
+			unity = @AOW_var_PD_1_PRDC_unity
+		}
 	}
 	country_modifier = {
 		pop_government_ethic_attraction = @AOW_var_PD_1_pop_government_ethic_attraction
@@ -157,6 +160,9 @@ AOW_MEGA_psychic_device_2 = {
 			trigger = { owner = { NOT = { has_relic = r_zro_crystal } } }
 			energy = @AOW_var_PD_2_UPKP_energy
 		}
+		produces = {
+			unity = @AOW_var_PD_2_PRDC_unity
+		}
 	}
 	country_modifier = {
 		pop_government_ethic_attraction = @AOW_var_PD_2_pop_government_ethic_attraction
@@ -194,6 +200,7 @@ AOW_MEGA_psychic_device_3 = {
 			unity = @AOW_var_PD_3_COST_unity
 		}
 		produces = {
+			unity = @AOW_var_PD_3_PRDC_unity
 			sr_zro = @AOW_var_PD_3_PRDC_zro
 		}
 		produces = {
@@ -209,8 +216,8 @@ AOW_MEGA_psychic_device_3 = {
 	country_modifier = {
 		custom_tooltip = AOW_MEGA_psychic_device_effects
 		show_only_custom_tooltip = no
-		shroud_delve_cooldown = -0.1
-		planet_psionic_jobs_produces_mult = 0.2
+		shroud_delve_cooldown = -0.2
+		psionic_pop_bonus_workforce_mult = 0.2
 		pop_government_ethic_attraction = 1
 	}
 	inline_script = {
@@ -237,7 +244,10 @@ AOW_MEGA_psychic_device_3 = {
 		every_system_planet = {
 			limit = { AOW_trgr_PLNT_is_habitable = no }
 			AOW_eft_PLNT_dismantle_orbital_station = yes
-			clear_deposits = yes
+			if = {
+				limit = { NOT = { is_planet_class = pc_shrouded } }
+				clear_deposits = yes
+			}
 		}
 		every_system_planet = {
 			limit = {

@@ -1,11 +1,9 @@
 starbase_level_planetary_blaster_system = {#行星波动炮
 	ship_size = AOW_shipsize_planetary_blaster_system
-	level_weight = 1
-	ai_weight = { weight = 1 }
+	level_weight = 3
+	ai_weight = { weight = 3 }
 	potential_home_base = no
-	show_in_outliner = no
-	collects_trade = no
+	show_in_outliner = yes
 	portrait = "GFX_megastructure_planetary_blaster_system_background"
-	special_construction = yes
-	downgrade_potential = { always = no }
+	can_always_dismantle = yes
 }

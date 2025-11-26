@@ -5,55 +5,6 @@ AOW_var_megastructure_dismantle_refund = {
 	min = 0
 	max = 1
 }
-#发射星系和目标星系的总和距离
-AOW_var_total_system_distance = {
-	base = 0
-	modifier = {
-		is_variable_set = AOW_var_system_distance_01
-		add = AOW_var_system_distance_01
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_02
-		add = AOW_var_system_distance_02
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_03
-		add = AOW_var_system_distance_03
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_04
-		add = AOW_var_system_distance_04
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_05
-		add = AOW_var_system_distance_05
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_06
-		add = AOW_var_system_distance_06
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_07
-		add = AOW_var_system_distance_07
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_08
-		add = AOW_var_system_distance_08
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_09
-		add = AOW_var_system_distance_09
-	}
-	modifier = {
-		is_variable_set = AOW_var_system_distance_10
-		add = AOW_var_system_distance_10
-	}
-}
-AOW_var_total_system_distance_square = {
-	base = 0
-	add = value:AOW_var_total_system_distance
-	pow = 2
-}
 
 #坠星天矛当前所选目标数量
 AOW_var_starfall_spear_num_of_targets = {
@@ -100,6 +51,163 @@ AOW_var_starfall_spear_num_of_targets = {
 	}
 	max = 10
 }
+
+#坠星天矛暗物质花费
+AOW_var_starfall_spear_darkmatter_cost = {
+	base = 0
+	#行星
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+		}
+		add = @AOW_var_sfs_planet_dark_matter
+	}
+	#星系
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+		}
+		add = @AOW_var_sfs_system_dark_matter
+	}
+}
+AOW_var_starfall_spear_darkmatter_total_cost = {
+	base = 0
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|01|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|02|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|03|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|04|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|05|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|06|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|07|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|08|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|09|
+	add = value:AOW_var_starfall_spear_darkmatter_cost|num|10|
+}
+#坠星天矛能量币花费
+AOW_var_starfall_spear_energy_cost = {
+	base = 0
+	#行星
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_01_@root
+		}
+		add = @AOW_var_sfs_planet_energy_01
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_02_@root
+		}
+		add = @AOW_var_sfs_planet_energy_02
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_03_@root
+		}
+		add = @AOW_var_sfs_planet_energy_03
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_04_@root
+		}
+		add = @AOW_var_sfs_planet_energy_04
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_05_@root
+		}
+		add = @AOW_var_sfs_planet_energy_05
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_06_@root
+		}
+		add = @AOW_var_sfs_planet_energy_06
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = planet
+			has_planet_flag = AOW_flag_starfall_spear_mode_07_@root
+		}
+		add = @AOW_var_sfs_planet_energy_07
+	}
+	#星系
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_01_@root
+		}
+		add = @AOW_var_sfs_system_energy_01
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_02_@root
+		}
+		add = @AOW_var_sfs_system_energy_02
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_03_@root
+		}
+		add = @AOW_var_sfs_system_energy_03
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_04_@root
+		}
+		add = @AOW_var_sfs_system_energy_04
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_05_@root
+		}
+		add = @AOW_var_sfs_system_energy_05
+	}
+	modifier = {
+		exists = event_target:AOW_starfall_spear_target_$num$_@root
+		event_target:AOW_starfall_spear_target_$num$_@root = {
+			is_scope_type = galactic_object
+			has_star_flag = AOW_flag_starfall_spear_mode_06_@root
+		}
+		add = @AOW_var_sfs_system_energy_06
+	}
+}
+AOW_var_starfall_spear_energy_total_cost = {
+	base = 0
+	add = value:AOW_var_starfall_spear_energy_cost|num|01|
+	add = value:AOW_var_starfall_spear_energy_cost|num|02|
+	add = value:AOW_var_starfall_spear_energy_cost|num|03|
+	add = value:AOW_var_starfall_spear_energy_cost|num|04|
+	add = value:AOW_var_starfall_spear_energy_cost|num|05|
+	add = value:AOW_var_starfall_spear_energy_cost|num|06|
+	add = value:AOW_var_starfall_spear_energy_cost|num|07|
+	add = value:AOW_var_starfall_spear_energy_cost|num|08|
+	add = value:AOW_var_starfall_spear_energy_cost|num|09|
+	add = value:AOW_var_starfall_spear_energy_cost|num|10|
+}
 #坠星天矛星系目标数量，这样写是希望能通过比较灵活的修正来增加可选上限
 AOW_var_starfall_spear_system_target_capacity = {
 	base = 1
@@ -122,6 +230,8 @@ AOW_var_starfall_spear_planet_target_capacity_desc = {
 	add = modifier:starfall_spear_planet_target_add #修正：坠星天矛可选行星数量
 	max = 10
 }
+
+#虚拟传统
 AOW_var_virtuality_jobs_mult = {
 	base = 1
 	modifier = {
@@ -129,4 +239,14 @@ AOW_var_virtuality_jobs_mult = {
 		owner = { has_active_tradition = tr_virtuality_4 }
 		mult = 1.5
 	}
+}
+#传统+星笼世界
+AOW_var_tradition_with_starcage_world_mult = {
+	base = 1
+	modifier = {
+		exists = owner
+		owner = { has_active_tradition = $tradition$ }
+		mult = 1.5
+	}
+	mult = AOW_var_sw_points_$job$
 }

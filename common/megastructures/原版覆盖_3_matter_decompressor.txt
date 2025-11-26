@@ -118,7 +118,6 @@ matter_decompressor_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 12500
 			unity = 5000
 		}
 		cost = {

@@ -5,7 +5,7 @@ AOW_MEGA_star_transfer_0 = {
 	place_entity_on_planet_plane = no
 	build_type = outside_gravity_well
 	build_time = @AOW_var_ST_0_TIME
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_STAR_TRANSFER"
 	resources = {
 		category = megastructures
 		cost = {
@@ -30,7 +30,7 @@ AOW_MEGA_star_transfer_0 = {
 		AOW_trigger_mega_potential = {  KEY = star_transfer }
 	}
 	possible = {
-		exists = starbase
+		hidden_trigger = { exists = starbase }
 		custom_tooltip = {#必须要在国境内
 			fail_text = "requires_inside_border"
 			is_inside_border = from

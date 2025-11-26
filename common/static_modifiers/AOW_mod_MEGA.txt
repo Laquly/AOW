@@ -8,7 +8,7 @@ AOW_mod_MEGA_reduce_power = {
 }
 
 AOW_mod_MEGA_build_speed_adjustment = {
-	megastructure_build_speed_mult = 0.01
+	megastructure_build_speed_mult = 1
 }
 
 
@@ -19,6 +19,39 @@ AOW_mod_MEGA_base_build_speed_reduce = {
 	megastructure_build_speed_add = -1
 }
 AOW_mod_test_2 = {
-	country_cost_mult = -1
-	country_alloys_cost_mult = -1
+	country_cost_mult = -0.1
+	country_alloys_cost_mult = -0.1
+	megastructures_alloys_cost_mult = -0.1
+}
+
+
+AOW_mod_MEGA_hyper_star = {
+	megastructure_build_speed_add = -0.55
+}
+AOW_mod_MEGA_super_star = {
+	megastructure_build_speed_add = -0.4
+}
+AOW_mod_MEGA_o_star = {
+	megastructure_build_speed_add = -0.28
+}
+AOW_mod_MEGA_b_star = {
+	megastructure_build_speed_add = -0.1
+}
+AOW_mod_MEGA_giant_star = {
+	megastructure_build_speed_add = 0
+}
+AOW_mod_MEGA_a_star = {
+	megastructure_build_speed_add = 0.2
+}
+AOW_mod_MEGA_f_star = {
+	megastructure_build_speed_add = 0.44
+}
+AOW_mod_MEGA_g_star = {
+	megastructure_build_speed_add = 0.8
+}
+AOW_mod_MEGA_k_star = {
+	megastructure_build_speed_add = 1.25
+}
+AOW_mod_MEGA_m_star = {
+	megastructure_build_speed_add = 2
 }

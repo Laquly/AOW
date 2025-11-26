@@ -26,8 +26,7 @@ AOW_MEGA_star_guardian_0 = {
 	}
 	prerequisites = { "AOW_TECH_star_guardian" }
 	potential = {
-		always = no
-		#AOW_trigger_mega_potential = { KEY = star_guardian }
+		AOW_trigger_mega_potential = { KEY = star_guardian }
 	}
 	possible = {
 		exists = starbase
@@ -175,13 +174,14 @@ AOW_MEGA_star_guardian_3 = {
 					set_all_comms_surveyed = yes
 					set_planet_flag = megastructure
 					save_event_target_as = AOW_target_planet
+					trigger_megastructure_icon = yes
 				}
 			}
-			spawn_megastructure = {
-				type = AOW_MEGA_star_guardian_3
-				owner = from
-				planet = event_target:AOW_target_planet
-			}
+			# spawn_megastructure = {
+			# 	type = AOW_MEGA_star_guardian_3
+			# 	owner = from
+			# 	planet = event_target:AOW_target_planet
+			# }
 			from = { country_event = { id = AOW_evt_star_guardian.103 } }
 			remove_megastructure = fromfrom
 		}

@@ -104,6 +104,10 @@
  AOW_text_outliner_show_desc:0"§H显示模式：§!\n在总览中§G显示§!§Y已完工§!阶段\n未完工时：在总览中显示\n已完工时：在总览中显示\n\n§E点击切换至隐藏模式§!§R（此选项仅对玩家生效）§!\n\n§L可在巨构中设置单独隐藏或单独显示§!"
  AOW_text_outliner_special_desc:0"此巨构切换显示模式或隐藏模式无意义，§R因此无法切换§!\n\n§L可在巨构中设置单独隐藏或单独显示§!"
 
+ AOW_text_outliner_default:"总览图标显示\n当前状态：跟随控制面板"
+ AOW_text_outliner_show:"总览图标显示\n当前状态：强制显示"
+ AOW_text_outliner_hide:"总览图标显示\n当前状态：强制隐藏"
+ 
  #条件
  AOW_requires_need_dlc_Utopia:0"需要DLC§Y乌托邦§!"
  AOW_requires_has_seen_gateway_or_lgate:0"见过§Y星门§!或§YL星门§!"
@@ -119,7 +123,7 @@
  AOW_var_ai_mega_cap_space_sensor_station:0"§Y[get_ai_space_sensor_station]§!"
  AOW_var_player_mega_cap_space_sensor_station:0"§E[get_player_space_sensor_station]§!"
  #星光竞技场
- AOW_text_space_arena_desc:0"§H名字：§!$AOW_MEGA_space_arena$\n§H类别：§!增益类\n§H作用：§!生产少量凝聚力"
+ AOW_text_space_arena_desc:0"§H名字：§!$AOW_MEGA_space_arena$\n§H类别：§!增益类\n§H作用：§!生产凝聚力和少量科研点数。"
  AOW_var_ai_mega_cap_space_arena:0"§Y[get_ai_space_arena]§!"
  AOW_var_player_mega_cap_space_arena:0"§E[get_player_space_arena]§!"
  #星状开采站
@@ -130,10 +134,10 @@
  AOW_text_resource_drilling_station_desc:0"§H名字：§!$AOW_MEGA_resource_drilling_station$\n§H类别：§!生产类\n§H作用：§!可建造在行星和卫星上，包括固态行星和气态行星，能勘探出所选行星的隐藏资源"
  AOW_var_ai_mega_cap_resource_drilling_station:0"§Y[get_ai_resource_drilling_station]§!"
  AOW_var_player_mega_cap_resource_drilling_station:0"§E[get_player_resource_drilling_station]§!"
- #卫星防御基地
- AOW_text_satellite_defense_base_desc:0"§H名字：§!$AOW_MEGA_satellite_defense_base$\n§H类别：§!军事类\n§H作用：§!只能建造在小行星或卫星上，生成一个不可移动的防御站，提供火力输出。"
- AOW_var_ai_mega_cap_satellite_defense_base:0"§Y[get_ai_satellite_defense_base]§!"
- AOW_var_player_mega_cap_satellite_defense_base:0"§E[get_player_satellite_defense_base]§!"
+ #深空擎天堡
+ AOW_text_deep_space_citadel_desc:0"§H名字：§!$dsc_name$\n§H类别：§!军事类\n§H作用：§!可建造在星系内随意位置，但不能离星球太近，属于恒星基地，可升级。"
+ AOW_var_ai_mega_cap_deep_space_citadel:0"§Y[get_ai_deep_space_citadel]§!"
+ AOW_var_player_mega_cap_deep_space_citadel:0"§E[get_player_deep_space_citadel]§!"
  #戴森云
  AOW_text_dyson_swarm_desc:0"§H名字：§!$dyson_swarm_3$\n§H类别：§!生产类\n§H作用：§!大幅提升恒星的天然资源产出，恒星自带的天然资源越多，最终产出越多"
  AOW_var_ai_mega_cap_dyson_swarm:0"§Y[get_ai_dyson_swarm]§!"

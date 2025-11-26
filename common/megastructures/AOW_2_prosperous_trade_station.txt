@@ -18,7 +18,6 @@ AOW_MEGA_prosperous_trade_station_0 = {
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	potential = {
-		has_country_flag = AOW_flag_CNTR_branch_office_established
 		AOW_trigger_mega_potential = { KEY = prosperous_trade_station }
 	}
 	possible = {
@@ -100,9 +99,13 @@ AOW_MEGA_prosperous_trade_station_1 = {
 		upkeep = {
 			energy = @AOW_var_PTS_1_UPKP_energy
 		}
+		produces = {
+			trade = 200
+		}
 	}
 	country_modifier = {
-		envoys_add = @AOW_var_PTS_1_envoys_add
+		envoys_add = 1
+		country_trade_produces_mult = 0.05
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	upgrade_from = { AOW_MEGA_prosperous_trade_station_0 }
@@ -123,21 +126,18 @@ AOW_MEGA_prosperous_trade_station_2 = {
 		category = megastructures
 		cost = {
 			alloys = @AOW_var_PTS_2_COST_alloys
-			rare_crystals = @AOW_var_PTS_2_COST_crystals
 			unity = @AOW_var_PTS_2_COST_unity
 		}
 		upkeep = {
 			energy = @AOW_var_PTS_2_UPKP_energy
-			rare_crystals = @AOW_var_PTS_2_UPKP_crystals
+		}
+		produces = {
+			trade = 400
 		}
 	}
 	country_modifier = {
-		envoys_add = @AOW_var_PTS_2_envoys_add
-		planet_jobs_trade_produces_mult = @AOW_var_PTS_2_planet_jobs_trade_produces_mult
-		branch_office_value_mult = @AOW_var_PTS_2_branch_office_value_mult
-	}
-	station_modifier = {
-		trade_value_add = @AOW_var_PTS_2_trade_value_add
+		envoys_add = 1
+		country_trade_produces_mult = 0.1
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	upgrade_from = { AOW_MEGA_prosperous_trade_station_1 }
@@ -158,21 +158,18 @@ AOW_MEGA_prosperous_trade_station_3 = {
 		category = megastructures
 		cost = {
 			alloys = @AOW_var_PTS_3_COST_alloys
-			rare_crystals = @AOW_var_PTS_3_COST_crystals
 			unity = @AOW_var_PTS_3_COST_unity
 		}
 		upkeep = {
 			energy = @AOW_var_PTS_3_UPKP_energy
-			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
 		}
 		produces = {
-			unity = @AOW_var_PTS_3_PRDC_unity
+			trade = 600
 		}
 	}
 	country_modifier = {
-		envoys_add = @AOW_var_PTS_3_envoys_add
-		planet_jobs_trade_produces_mult = @AOW_var_PTS_3_planet_jobs_trade_produces_mult
-		branch_office_value_mult = @AOW_var_PTS_3_branch_office_value_mult
+		envoys_add = 1
+		country_trade_produces_mult = 0.15
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	upgrade_from = { AOW_MEGA_prosperous_trade_station_2 }
@@ -182,8 +179,8 @@ AOW_MEGA_prosperous_trade_station_3 = {
 	}
 }
 AOW_MEGA_prosperous_trade_station_4 = {
-	entity = "prosperous_trade_station_3_entity"
-	construction_entity = ""
+	entity = "prosperous_trade_station_4_entity"
+	construction_entity = "prosperous_trade_station_4_construction_entity"
 	portrait = "GFX_megastructure_prosperous_trade_station_background"
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
@@ -192,21 +189,20 @@ AOW_MEGA_prosperous_trade_station_4 = {
 	resources = {
 		category = megastructures
 		cost = {
-			energy = @AOW_var_PTS_4_COST_energy
-			influence = @AOW_var_PTS_4_COST_influence
+			alloys = @AOW_var_PTS_4_COST_alloys
+			unity = @AOW_var_PTS_4_COST_unity
 		}
 		upkeep = {
 			energy = @AOW_var_PTS_4_UPKP_energy
-			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
 		}
 		produces = {
-			unity = @AOW_var_PTS_4_PRDC_unity
+			trade = 800
 		}
 	}
 	country_modifier = {
-		envoys_add = @AOW_var_PTS_4_envoys_add
-		planet_jobs_trade_produces_mult = @AOW_var_PTS_4_planet_jobs_trade_produces_mult
-		branch_office_value_mult = @AOW_var_PTS_4_branch_office_value_mult
+		envoys_add = 1
+		country_trade_produces_mult = 0.2
+		country_trade_fee = -0.05
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	upgrade_from = { AOW_MEGA_prosperous_trade_station_3 }
@@ -216,8 +212,8 @@ AOW_MEGA_prosperous_trade_station_4 = {
 	}
 }
 AOW_MEGA_prosperous_trade_station_5 = {
-	entity = "prosperous_trade_station_3_entity"
-	construction_entity = ""
+	entity = "prosperous_trade_station_5_entity"
+	construction_entity = "prosperous_trade_station_5_construction_entity"
 	portrait = "GFX_megastructure_prosperous_trade_station_background"
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
@@ -229,21 +225,20 @@ AOW_MEGA_prosperous_trade_station_5 = {
 	resources = {
 		category = megastructures
 		cost = {
-			energy = @AOW_var_PTS_5_COST_energy
+			minerals = @AOW_var_PTS_5_COST_minerals
 			influence = @AOW_var_PTS_5_COST_influence
 		}
 		upkeep = {
 			energy = @AOW_var_PTS_5_UPKP_energy
-			rare_crystals = @AOW_var_PTS_3_UPKP_crystals
 		}
 		produces = {
-			unity = @AOW_var_PTS_5_PRDC_unity
+			trade = 1000
 		}
 	}
 	country_modifier = {
-		envoys_add = @AOW_var_PTS_5_envoys_add
-		planet_jobs_trade_produces_mult = @AOW_var_PTS_5_planet_jobs_trade_produces_mult
-		branch_office_value_mult = @AOW_var_PTS_5_branch_office_value_mult
+		envoys_add = 1
+		country_trade_produces_mult = 0.25
+		country_trade_fee = -0.1
 	}
 	prerequisites = { "AOW_TECH_prosperous_trade_station" }
 	show_prereqs = yes

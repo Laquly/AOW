@@ -8,7 +8,7 @@ AOW_MEGA_resource_drilling_station_0 = {
     use_planet_resource = yes
     construction_blocks_and_blocked_by = none
     build_time = @AOW_var_RDS_0_TIME
-    custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MINOR_PLANETARY_BODY"
+    custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_RESOURCE_DRILLING_STATION"
     resources = {
         category = megastructures
         cost = {
@@ -51,9 +51,11 @@ AOW_MEGA_resource_drilling_station_0 = {
                 AOW_trgr_PLNT_is_habitable = no
             }
             custom_tooltip = {
-                fail_text = "AOW_mega_requires_PLNT_ordinary_planets_or_gas_giant"
+                fail_text = "AOW_mega_requires_PLNT_resource_drilling_station"
                 OR = {
                     AOW_trgr_PLNT_ordinary_planet = yes
+                    is_planet_class = pc_gray_goo
+                    is_planet_class = pc_shrouded
                     is_planet_class = pc_iron#铁星球
                     is_planet_class = pc_chthonian#气陨星核
                     is_planet_class = pc_hydrocarbon#烃
@@ -92,10 +94,6 @@ AOW_MEGA_resource_drilling_station_0 = {
                     }
                 }
             }
-            # custom_tooltip = {#放置处不能有巨构
-            #     fail_text = "requires_no_existing_megastructure"
-            #     AOW_trgr_PLNT_existing_megastructure = no
-            # }
         }
     }
     # root = system
@@ -195,6 +193,18 @@ AOW_MEGA_resource_drilling_station_1 = {
                 }
                 add_deposit = d_energy_2
                 add_deposit = d_exotic_gases_1
+            }
+            else_if = {
+                limit = {
+                    is_planet_class = pc_gray_goo
+                }
+                add_deposit = d_nanites_deposit
+            }
+            else_if = {
+                limit = {
+                    is_planet_class = pc_shrouded
+                }
+                add_deposit = d_zro_deposit_3
             }
             random_list = {
                 1 = { add_deposit = d_living_metal_deposit }

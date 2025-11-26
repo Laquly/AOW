@@ -30,7 +30,7 @@ AOW_btn_$KEY$_player_quick_switch = {#切换：禁用、无限
 		else_if = {
 			limit = {
 				event_target:global_event_country = {
-					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value < 0 }
+					check_variable = { which = AOW_var_player_mega_cap_$KEY$ value != 0 }
 				}
 			}
 			custom_tooltip = AOW_text_player_mega_is_infinite
