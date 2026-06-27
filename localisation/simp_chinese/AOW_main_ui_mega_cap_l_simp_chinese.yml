@@ -93,11 +93,13 @@
  AOW_text_ai_mega_is_enabled:0"§G允许AI建造该巨构§!\n\n§E点击快捷切换状态§!"
  AOW_text_ai_mega_is_infinite:0"§r允许AI无限建造该巨构§!\n\n§E点击快捷切换状态§!"
 
+ AOW_text_0:"0"
  AOW_text_1:"1"
  AOW_text_2:"2"
  AOW_text_3:"3"
  AOW_text_4:"4"
  AOW_text_5:"5"
+ AOW_text_6:"6"
  AOW_text_inf:"∞"
  AOW_text_dis:"×"
  AOW_text_outliner_hide_desc:0"§H隐藏模式：§!\n在总览中§R隐藏§!§Y已完工§!阶段\n未完工时：在总览中显示\n已完工时：在总览中隐藏\n\n§E点击切换至显示模式§!§R（此选项仅对玩家生效）§!\n\n§L可在巨构中设置单独隐藏或单独显示§!"
@@ -158,6 +160,10 @@
  AOW_text_habitat_desc:0"§H名字：§!$habitat_0$\n§H类别：§!居住类\n§H作用：§!生成1个宜居轨道居住站，还可以根据下方星球所蕴含的资源生成额外区划或者地块"
  AOW_var_ai_mega_cap_habitat:0"§Y[get_ai_habitat]§!"
  AOW_var_player_mega_cap_habitat:0"§E[get_player_habitat]§!"
+ #星际大炮
+ AOW_text_dyson_gun_desc:"§H名字：§!$dyson_gun_0$\n§H类别：§!军事类\n§H作用：§!消耗当前库存所有能量币，对目标星系造成舰船伤害和星球加热"
+ AOW_var_ai_mega_cap_dyson_gun:0"§Y[get_ai_dyson_gun]§!"
+ AOW_var_player_mega_cap_dyson_gun:0"§E[get_player_dyson_gun]§!"
  ################################################################
  ######普通巨构
  ################################################################

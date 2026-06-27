@@ -33,8 +33,8 @@ leader_trait_laquly = {
 			owner = { any_owned_leader = { is_gestalt_node = no } }
 		}
 		pop_ethic_egalitarian_attraction_mult = 1
-		country_alloys_produces_mult = 0.25
-		country_unity_produces_mult = 0.25
+		country_alloys_produces_mult = 0.1
+		country_unity_produces_mult = 0.1
 		megastructure_build_speed_mult = 0.5
 		pop_cat_specialist_political_power = 5
 		pop_cat_worker_political_power = 10
@@ -70,31 +70,12 @@ leader_trait_laquly_node = {
 	}
 	councilor_modifier = {
 		planet_stability_add = 10
-		country_alloys_produces_mult = 0.25
-		country_unity_produces_mult = 0.25
+		country_alloys_produces_mult = 0.1
+		country_unity_produces_mult = 0.1
 		megastructure_build_speed_mult = 0.5
 	}
 	leader_class = { commander scientist official }
 	background_icon = "GFX_leader_background_destiny_1"
-	initial = no
-	randomized = no
-}
-leader_trait_red_dawn = {
-	inline_script = {
-		script = trait/icon
-		CLASS = leader
-		ICON = "GFX_leader_trait_red_dawn"
-		RARITY = common
-		COUNCIL = no
-		TIER = none
-	}
-	self_modifier = {
-		species_leader_exp_gain = 1
-		leaders_upkeep_mult = -0.5
-		leader_lifespan_add = 500
-		negative_traits_leader = -5
-	}
-	leader_class = { commander scientist official }
 	initial = no
 	randomized = no
 }

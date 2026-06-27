@@ -11,7 +11,6 @@ AOW_btn_quantum_catapult_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			has_overlord_dlc = yes
 			has_technology = tech_mega_engineering
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = tech_quantum_catapult

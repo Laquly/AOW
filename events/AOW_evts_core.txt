@@ -2,7 +2,7 @@
 
 namespace = AOW_core
 
-@AOW_version = 251126
+@AOW_version = 260627
 
 #on_game_start
 event = {
@@ -79,34 +79,6 @@ event = {
 					limit = { is_ai = no }
 					set_variable = { which = AOW_var_page value = 1 }
 					country_event = { id = AOW_core.100 }
-				}
-				every_system = {
-					limit = {
-						OR = {
-							has_star_flag = AOW_flag_SSTM_ringworld_affiliated
-							has_star_flag = AOW_flag_SSTM_ringworld_auxiliary
-						}
-					}
-					remove_star_flag = AOW_flag_SSTM_ringworld_affiliated
-					remove_star_flag = AOW_flag_SSTM_ringworld_auxiliary
-					set_star_flag = AOW_flag_SSTM_ringworld_subsidiary
-				}
-				every_system = {
-					limit = {
-						has_star_flag = AOW_flag_SSTM_ringworld_independent
-					}
-					remove_star_flag = AOW_flag_SSTM_ringworld_independent
-				}
-				every_megastructure = {
-					if = {
-						limit = {
-							OR = {
-								is_megastructure_type = AOW_MEGA_planetary_blaster_system_4
-								is_megastructure_type = AOW_MEGA_planetary_blaster_system_restored
-							}
-						}
-						remove_megastructure = this
-					}
 				}
 			}
 		}

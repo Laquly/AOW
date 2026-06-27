@@ -11,6 +11,7 @@ AOW_btn_naval_command_base_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = AOW_TECH_naval_command_base

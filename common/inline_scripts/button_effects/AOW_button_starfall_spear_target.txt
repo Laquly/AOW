@@ -1,0 +1,107 @@
+AOW_btn_starfall_spear_target_$target$ = {
+	potential = { exists = event_target:AOW_starfall_spear_target_$target$_@from }
+	allow = { always = yes }
+	effect = {
+		if = {#点击取消选择
+			limit = { exists = event_target:AOW_starfall_spear_target_$target$_@from }
+			event_target:AOW_starfall_spear_target_$target$_@from = {
+				custom_tooltip = AOW_text_cancel_target
+				if = {
+					limit = { is_scope_type = galactic_object }
+					remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
+					remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
+				}
+				if = {
+					limit = { is_scope_type = planet }
+					remove_planet_flag = AOW_flag_starfall_spear_mode_01_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_02_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_03_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_04_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_05_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_06_@from
+					remove_planet_flag = AOW_flag_starfall_spear_mode_07_@from
+				}
+			}
+			clear_global_event_target = AOW_starfall_spear_target_$target$_@from
+		}
+	}
+}
+AOW_btn_starfall_spear_system_strike_range_$target$ = {#范围打击切换按钮
+	potential = {
+		has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			is_scope_type = galactic_object
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		custom_tooltip = AOW_text_increase_system_strike_range
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			hidden_effect = {
+				if = {#重置
+					limit = {
+						check_variable_arithmetic = {
+							which = value:AOW_var_starfall_spear_current_system_strike_range
+							value >= value:AOW_var_starfall_spear_system_strike_range
+						}
+					}
+					remove_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@from
+					remove_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@from
+					remove_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@from
+					remove_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@from
+					remove_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@from
+				}
+				else_if = {#增加
+					limit = {
+						check_variable_arithmetic = {
+							which = value:AOW_var_starfall_spear_current_system_strike_range
+							value < value:AOW_var_starfall_spear_system_strike_range
+						}
+					}
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@from
+							}
+							set_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@from
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@from
+							}
+							set_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@from
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@from
+							}
+							set_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@from
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@from
+							}
+							set_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@from
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@from
+							}
+							set_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@from
+						}
+					}
+				}
+			}
+		}
+	}
+}

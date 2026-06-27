@@ -37,198 +37,25 @@ AOW_decision_starcage_world = {
 	}
 }
 
-
-
-
-
-# AOW_decision_ring_world_2_expansion = {
-# 	owned_planets_only = yes
-# 	enactment_time = 7200
-# 	icon = AOW_decision_ring_world_2_expansion
-# 	resources = {
-# 		category = decisions
-# 		cost = { alloys = 20000 }
-# 	}
-# 	prerequisites = { "AOW_TECH_ring_world_expansion" }
-# 	potential = {
-# 		NOT = { has_planet_flag = AOW_flag_PLNT_ring_world_2_expanded }
-# 		NOT = { is_planet_class = pc_shattered_ring_habitable }
-# 		AOW_trgr_PLNT_ringworld_habitable = yes
-# 		solar_system = {
-# 			OR = {
-# 				NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent }
-# 				AND = {
-# 					has_star_flag = AOW_flag_SSTM_ringworld_independent
-# 					root = { planet_size = 20 }
-# 				}
-# 			}
-# 			count_system_planet = {#有2个pc_ringworld_tech或pc_ringworld_seam
-# 				limit = {
-# 					OR = {
-# 						is_planet_class = pc_ringworld_tech
-# 						is_planet_class = pc_ringworld_seam
-# 					}
-# 					planet_size = 20
-# 					NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 				}
-# 				count >= 2
-# 			}
-# 		}
-# 	}
-# 	effect = {
-# 		custom_tooltip = AOW_decision_ring_world_2_expansion_effect
-# 		hidden_effect = {
-# 			planet_event = { id = AOW_mega_notification.2002 }
-# 			set_planet_flag = AOW_flag_PLNT_ring_world_2_expanded
-# 			solar_system = {
-# 				while = {
-# 					count = 2
-# 					random_system_planet = {
-# 						limit = {
-# 							OR = {
-# 								is_planet_class = pc_ringworld_tech
-# 								is_planet_class = pc_ringworld_seam
-# 							}
-# 							planet_size = 20
-# 							NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 						}
-# 						set_planet_entity = { entity = "AOW_ringworld2_habitable_entity" }
-# 						set_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_weight = {
-# 		weight = 100
-# 	}
-# }
-
-# AOW_decision_ring_world_3_expansion = {
-# 	owned_planets_only = yes
-# 	enactment_time = 10800
-# 	icon = AOW_decision_ring_world_3_expansion
-# 	resources = {
-# 		category = decisions
-# 		cost = { alloys = 30000 }
-# 	}
-# 	prerequisites = { "AOW_TECH_ring_world_expansion" }
-# 	potential = {
-# 		NOT = { has_planet_flag = AOW_flag_PLNT_ring_world_3_expanded }
-# 		NOT = { is_planet_class = pc_shattered_ring_habitable }
-# 		AOW_trgr_PLNT_ringworld_habitable = yes
-# 		solar_system = {
-# 			OR = {
-# 				NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent }
-# 				AND = {
-# 					has_star_flag = AOW_flag_SSTM_ringworld_independent
-# 					root = { planet_size = 30 }
-# 				}
-# 			}
-# 			count_system_planet = {#有2个pc_ringworld_tech或pc_ringworld_seam
-# 				limit = {
-# 					OR = {
-# 						is_planet_class = pc_ringworld_tech
-# 						is_planet_class = pc_ringworld_seam
-# 					}
-# 					planet_size = 30
-# 					NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 				}
-# 				count >= 2
-# 			}
-# 		}
-# 	}
-# 	effect = {
-# 		custom_tooltip = AOW_decision_ring_world_3_expansion_effect
-# 		hidden_effect = {
-# 			planet_event = { id = AOW_mega_notification.2003 }
-# 			set_planet_flag = AOW_flag_PLNT_ring_world_3_expanded
-# 			solar_system = {
-# 				while = {
-# 					count = 2
-# 					random_system_planet = {
-# 						limit = {
-# 							OR = {
-# 								is_planet_class = pc_ringworld_tech
-# 								is_planet_class = pc_ringworld_seam
-# 							}
-# 							planet_size = 30
-# 							NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 						}
-# 						set_planet_entity = { entity = "AOW_ringworld3_habitable_entity" }
-# 						set_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_weight = {
-# 		weight = 100
-# 	}
-# }
-
-# AOW_decision_ring_world_4_expansion = {
-# 	owned_planets_only = yes
-# 	enactment_time = 14400
-# 	icon = AOW_decision_ring_world_4_expansion
-# 	resources = {
-# 		category = decisions
-# 		cost = { alloys = 40000 }
-# 	}
-# 	prerequisites = { "AOW_TECH_ring_world_expansion" }
-# 	potential = {
-# 		NOT = { has_planet_flag = AOW_flag_PLNT_ring_world_4_expanded }
-# 		NOT = { is_planet_class = pc_shattered_ring_habitable }
-# 		AOW_trgr_PLNT_ringworld_habitable = yes
-# 		solar_system = {
-# 			OR = {
-# 				NOT = { has_star_flag = AOW_flag_SSTM_ringworld_independent }
-# 				AND = {
-# 					has_star_flag = AOW_flag_SSTM_ringworld_independent
-# 					root = { planet_size = 40 }
-# 				}
-# 			}
-# 			count_system_planet = {#有2个pc_ringworld_tech或pc_ringworld_seam
-# 				limit = {
-# 					OR = {
-# 						is_planet_class = pc_ringworld_tech
-# 						is_planet_class = pc_ringworld_seam
-# 					}
-# 					planet_size = 40
-# 					NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 				}
-# 				count >= 2
-# 			}
-# 		}
-# 	}
-# 	effect = {
-# 		custom_tooltip = AOW_decision_ring_world_4_expansion_effect
-# 		hidden_effect = {
-# 			planet_event = { id = AOW_mega_notification.2004 }
-# 			set_planet_flag = AOW_flag_PLNT_ring_world_4_expanded
-# 			solar_system = {
-# 				while = {
-# 					count = 2
-# 					random_system_planet = {
-# 						limit = {
-# 							OR = {
-# 								is_planet_class = pc_ringworld_tech
-# 								is_planet_class = pc_ringworld_seam
-# 							}
-# 							planet_size = 40
-# 							NOT = { has_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable }
-# 						}
-# 						set_planet_entity = { entity = "AOW_ringworld4_habitable_entity" }
-# 						set_planet_flag = AOW_flag_PLNT_fake_ringworld_habitable
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_weight = {
-# 		weight = 100
-# 	}
-# }
+AOW_decision_virtual_population_transformation = {
+	owned_planets_only = yes
+	resources = {
+		category = decisions
+	}
+	potential = { always = no }
+	effect = {
+		random_owned_pop_group = {
+			limit = {
+				can_think = yes
+			}
+			kill_pop_group = {
+				pop_group = this
+				amount = 100
+			}
+		}
+		change_variable = { which = AOW_var_PLNT_virtual_pops value = 1 }
+	}
+}
 
 AOW_decision_remove_stellar_variation = {
 	owned_planets_only = yes

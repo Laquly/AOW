@@ -118,6 +118,22 @@ AOW_trgr_PLNT_starfall_spear_button = {
 		}
 	}
 	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_no_contingency_fleets_and_planet"
+		if = {
+			limit = { has_planet_flag = crisis_vital_planet }
+			solar_system = {
+				NOT = {
+					any_fleet_in_system = {
+						exists = owner
+						owner = {
+							is_country_type = ai_empire
+						}
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
 		fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
 		this = { planet = { NOT = { has_planet_flag = AOW_flag_PLNT_is_being_hit_by_starfall_spear } } }
 	}
@@ -234,7 +250,6 @@ AOW_trgr_SSTM_starfall_spear_button = {
 			solar_system = {
 				OR = {
 					NOT = { exists = space_owner }
-					space_owner = { is_same_value = root.from }
 					space_owner = { is_hostile = root.from }
 				}
 			}
@@ -247,18 +262,12 @@ AOW_trgr_SSTM_starfall_spear_button = {
 			solar_system = {
 				OR = {
 					NOT = { exists = space_owner }
-					space_owner = { is_same_value = root.from }
 					space_owner = {
 						is_hostile = root.from
 						OR = {
 							root.from = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
-							has_ascension_perk = ap_become_the_crisis
-							has_crisis_level = crisis_cosmogenesis_level_2
-							if = {
-								limit = { has_global_flag = has_wsg_mod }
-								has_ascension_perk = ap_wg_crisis
-							}
 							is_crisis_faction = yes
+							is_player_crisis = yes
 						}
 					}
 				}
@@ -286,6 +295,24 @@ AOW_trgr_SSTM_starfall_spear_button = {
 		}
 	}
 	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_no_contingency_fleets_and_planet"
+		solar_system = {
+			if = {
+				limit = {
+					any_system_planet = { has_planet_flag = crisis_vital_planet }
+				}
+				NOT = {
+					any_fleet_in_system = {
+						exists = owner
+						owner = {
+							is_country_type = ai_empire
+						}
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
 		fail_text = "AOW_starfall_spear_requires_no_error"
 		solar_system = {
 			NOR = {
@@ -296,4 +323,109 @@ AOW_trgr_SSTM_starfall_spear_button = {
 		}
 	}
 	custom_tooltip = AOW_system_target_mode_$mode$_tooltip
+}
+#目标星系
+AOW_trgr_SSTM_target_starfall_spear_system = {
+	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_cannot_be_being_hitted"
+		NOR = {
+			has_star_flag = AOW_flag_SSTM_is_being_hit_by_starfall_spear
+			any_system_planet = { has_planet_flag = AOW_flag_PLNT_is_being_hit_by_starfall_spear }
+		}
+	}
+	if = {
+		limit = {
+			exists = space_owner
+			space_owner = { NOT = { is_same_value = root } }
+		}
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_has_communication_with_space_owner"
+			space_owner = { has_communications = root }
+		}
+	}
+	if = {#不能是自家星系或盟友星系
+		limit = { root = { has_policy_flag = AOW_policy_SS_unlimited } }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_our_or_allys"
+			NOT = {
+				space_owner = {
+					OR = {
+						is_same_value = root
+						is_in_federation_with = root
+						is_overlord_to = root
+						from = { is_overlord_to = root }
+					}
+				}
+			}
+		}
+	}
+	else_if = {#要么无主星系，要么敌对星系
+		limit = { root = { has_policy_flag = AOW_policy_SS_hostility } }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_owner_or_hostile"
+			OR = {
+				NOT = { exists = space_owner }
+				space_owner = { is_hostile = root }
+			}
+		}
+	}
+	else_if = {#要么无主星系，要么敌对星系，且被星系拥有者打击过
+		limit = { root = { has_policy_flag = AOW_policy_SS_no_first_use } }
+		custom_tooltip = {
+			fail_text = "AOW_starfall_spear_requires_no_first_use"
+			OR = {
+				NOT = { exists = space_owner }
+				space_owner = {
+					is_hostile = root
+					OR = {
+						root = { has_country_flag = AOW_flag_CNTR_was_hit_by_@prev }
+						is_crisis_faction = yes
+						is_player_crisis = yes
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_no_crisis_sphere"
+		NOT = {
+			any_system_megastructure = {
+				OR = {
+					is_megastructure_type = crisis_sphere_0
+					is_megastructure_type = crisis_sphere_1
+					is_megastructure_type = crisis_sphere_2
+					is_megastructure_type = crisis_sphere_3
+					is_megastructure_type = crisis_sphere_4
+					AND = {
+						is_megastructure_type = crisis_sphere_ruined
+						is_upgrading = yes
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_no_contingency_fleets_and_planet"
+		if = {
+			limit = {
+				any_system_planet = { has_planet_flag = crisis_vital_planet }
+			}
+			NOT = {
+				any_fleet_in_system = {
+					exists = owner
+					owner = {
+						is_country_type = ai_empire
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "AOW_starfall_spear_requires_no_error"
+		NOR = {
+			is_star_class = sc_kuat
+			has_star_flag = kuat_military_base_system_home
+			has_star_flag = cannot_be_hit_by_aow_starfall_spear#其他模组可以用这个flag
+		}
+	}
 }

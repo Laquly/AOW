@@ -1,5 +1,8 @@
 ﻿l_simp_chinese:
 
+ ap_category_megastructures: "巨构"
+ ap_category_megastructures_desc: "巨构是一种庞大而独特的太空巨型工程技术，在太空环境下超大规模地利用某项技术能使我们的帝国获得远超星辰的力量。"
+
  ap_cosmic_wonders:0"天外神迹"
  ap_cosmic_wonders_desc:0"人外有人，天外有天。超越巨构的，自然是我们将建造的，足亦横跨星系的超巨型结构。"
  ap_cosmic_wonders_effects:0"解锁§Y天外神迹§!级别的巨构科技路线\n一种花费巨大、耗时巨长的超巨型结构，需要以暗物质作为维护费，但可以为我们带来极大的收益。\n\n"

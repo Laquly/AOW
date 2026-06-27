@@ -4,8 +4,40 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/pc_starcage_world.dds"
 	}
 	spriteType = {
+		name = "GFX_planet_type_starcage_world_big"
+		textureFile = "gfx/interface/icons/pc_starcage_world_big.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_common_star"
+		textureFile = "gfx/interface/icons/pc_starcage_world_common_star.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_common_star_big"
+		textureFile = "gfx/interface/icons/pc_starcage_world_common_star_big.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_neutron_star"
+		textureFile = "gfx/interface/icons/pc_starcage_world_neutron_star.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_neutron_star_big"
+		textureFile = "gfx/interface/icons/pc_starcage_world_neutron_star_big.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_black_hole"
+		textureFile = "gfx/interface/icons/pc_starcage_world_black_hole.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_starcage_world_black_hole_big"
+		textureFile = "gfx/interface/icons/pc_starcage_world_black_hole_big.dds"
+	}
+	spriteType = {
 		name = "GFX_planet_type_star_guardian"
 		textureFile = "gfx/interface/icons/pc_star_guardian.dds"
+	}
+	spriteType = {
+		name = "GFX_planet_type_star_guardian_big"
+		textureFile = "gfx/interface/icons/pc_star_guardian_big.dds"
 	}
 
 	spriteType = {

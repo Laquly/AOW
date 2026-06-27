@@ -1,321 +1,371 @@
 @district_buildtime = 1080
+@district_cost_minerals = 500
 @district_cost_alloys = 1000
 @district_cost_sr = 500
 @district_upkeep_energy = 20
 @district_upkeep_alloys = 10
 @district_upkeep_sr = 5
 
+@starcage_world_core_housing_add = 10000
 @starcage_world_housing_add = 3000
 AOW_district_sw_common_star = {
-    base_buildtime = @district_buildtime
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_city_government
-        slot_starcage_world_core
-        slot_starcage_world_core
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_common_star
-            has_planet_flag = AOW_flag_PLNT_sw_common
-        }
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_common_star
-            has_planet_flag = AOW_flag_PLNT_sw_common
-        }
-    }
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
-        }
-        upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
-        }
-    }
-    convert_to = {
-        AOW_district_sw_black_hole
-        AOW_district_sw_neutron_star
-    }
-    planet_modifier = {
-        planet_housing_add = @starcage_world_housing_add
-    }
+	base_buildtime = @district_buildtime
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_city_government
+		slot_starcage_world_core
+		slot_starcage_world_core
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_common_star
+			has_planet_flag = AOW_flag_PLNT_sw_common
+		}
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_common_star
+			has_planet_flag = AOW_flag_PLNT_sw_common
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	convert_to = {
+		AOW_district_sw_black_hole
+		AOW_district_sw_neutron_star
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_core_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_sw_neutron_star = {
-    base_buildtime = @district_buildtime
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_city_government
-        slot_starcage_world_core
-        slot_starcage_world_core
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_neutron_star
-            has_planet_flag = AOW_flag_PLNT_sw_neutron
-        }
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_neutron_star
-            has_planet_flag = AOW_flag_PLNT_sw_neutron
-        }
-    }
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
-        }
-        upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
-        }
-    }
-    planet_modifier = {
-        planet_housing_add = @starcage_world_housing_add
-    }
+	base_buildtime = @district_buildtime
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_city_government
+		slot_starcage_world_core
+		slot_starcage_world_core
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_neutron_star
+			has_planet_flag = AOW_flag_PLNT_sw_neutron
+		}
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_neutron_star
+			has_planet_flag = AOW_flag_PLNT_sw_neutron
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_core_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_sw_black_hole = {
-    base_buildtime = @district_buildtime
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_city_government
-        slot_starcage_world_core
-        slot_starcage_world_core
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_black_hole
-            has_planet_flag = AOW_flag_PLNT_sw_black
-        }
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-        OR = {
-            is_planet_class = pc_starcage_world_black_hole
-            has_planet_flag = AOW_flag_PLNT_sw_black
-        }
-    }
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = @district_cost_alloys
-            volatile_motes = @district_cost_sr
-            exotic_gases = @district_cost_sr
-            rare_crystals = @district_cost_sr
-        }
-        upkeep = {
-            energy = @district_upkeep_energy
-            alloys = @district_upkeep_alloys
-        }
-    }
-    planet_modifier = {
-        planet_housing_add = @starcage_world_housing_add
-    }
+	base_buildtime = @district_buildtime
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_city_government
+		slot_starcage_world_core
+		slot_starcage_world_core
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_black_hole
+			has_planet_flag = AOW_flag_PLNT_sw_black
+		}
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+		OR = {
+			is_planet_class = pc_starcage_world_black_hole
+			has_planet_flag = AOW_flag_PLNT_sw_black
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_core_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 
 AOW_district_starcage_world_1 = {
-    icon = district_city
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_starcage_world_secondary
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    base_buildtime = 1080
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = 1000
-            volatile_motes = 500
-            exotic_gases = 500
-            rare_crystals = 500
-        }
-        upkeep = {
-            energy = 10
-            alloys = 10
-        }
-    }
-    planet_modifier = { planet_housing_add = 3000 }
+	icon = district_city
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_starcage_world_secondary
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	base_buildtime = @district_buildtime
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_starcage_world_2 = {
-    icon = district_city
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_starcage_world_secondary
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    base_buildtime = 1080
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = 1000
-            volatile_motes = 500
-            exotic_gases = 500
-            rare_crystals = 500
-        }
-        upkeep = {
-            energy = 10
-            alloys = 10
-        }
-    }
-    planet_modifier = { planet_housing_add = 3000 }
+	icon = district_city
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_starcage_world_secondary
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	base_buildtime = @district_buildtime
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 AOW_district_starcage_world_3 = {
-    icon = district_city
-    is_capped_by_modifier = no
-    zone_slots = {
-        slot_starcage_world_secondary
-    }
-    show_on_uncolonized = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    potential = {
-        uses_district_set = AOW_district_starcage_world
-    }
-    base_buildtime = 1080
-    resources = {
-        category = planet_districts
-        cost = {
-            alloys = 1000
-            volatile_motes = 500
-            exotic_gases = 500
-            rare_crystals = 500
-        }
-        upkeep = {
-            energy = 10
-            alloys = 10
-        }
-    }
-    planet_modifier = { planet_housing_add = 3000 }
+	icon = district_city
+	is_capped_by_modifier = no
+	zone_slots = {
+		slot_starcage_world_secondary
+	}
+	show_on_uncolonized = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	potential = {
+		uses_district_set = AOW_district_starcage_world
+	}
+	base_buildtime = @district_buildtime
+	resources = {
+		category = planet_districts
+		cost = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			minerals = @district_cost_minerals
+		}
+		cost = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			alloys = @district_cost_alloys
+			volatile_motes = @district_cost_sr
+			exotic_gases = @district_cost_sr
+			rare_crystals = @district_cost_sr
+		}
+		upkeep = {
+			trigger = { NOT = { is_planet_class = pc_shattered_starcage_world } }
+			energy = @district_upkeep_energy
+			alloys = @district_upkeep_alloys
+		}
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = @starcage_world_housing_add
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
 	inline_script = districts/AOW_district_starcage_world_jobs
 }
 
 ###################################################################
 
 AOW_district_starcage_world_base = {
-    icon = district_city
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_city
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_energy = {
-    icon = district_generator
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_generator
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_minerals = {
-    icon = district_mining
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_mining
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_food = {
-    icon = district_farming
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_farming
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_industrial = {
-    icon = district_arcology_mixed_industry
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_mixed_industry
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_foundry = {
-    icon = district_arcology_arms_industry
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_arms_industry
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_factory = {
-    icon = district_arcology_civilian_industry
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_civilian_industry
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_unity = {
-    icon = district_arcology_administrative
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_administrative
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_research = {
-    icon = district_arcology_research
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_research
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_physicist = {
-    icon = district_arcology_research_physics
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_research_physics
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_biologist = {
-    icon = district_arcology_research_society
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_research_society
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_engineer = {
-    icon = district_arcology_research_engineering
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_research_engineering
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_trade = {
-    icon = district_arcology_trade
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_trade
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }
 AOW_district_starcage_world_fortress = {
-    icon = district_arcology_fortress
-    is_capped_by_modifier = no
-    zone_slots = { slot_empty }
-    show_on_uncolonized = { always = no }
-    potential = { always = no }
+	icon = district_arcology_fortress
+	is_capped_by_modifier = no
+	zone_slots = { slot_empty }
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
 }

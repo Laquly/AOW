@@ -361,73 +361,43 @@ AOW_btn_planet_target_mode_07 = {#降智光束
 #############################################################################
 #目标
 #############################################################################
-AOW_btn_starfall_spear_target_01 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_01_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 01 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 01
 }
-AOW_btn_starfall_spear_target_02 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_02_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 02 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 02
 }
-AOW_btn_starfall_spear_target_03 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_03_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 03 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 03
 }
-AOW_btn_starfall_spear_target_04 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_04_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 04 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 04
 }
-AOW_btn_starfall_spear_target_05 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_05_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 05 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 05
 }
-AOW_btn_starfall_spear_target_06 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_06_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 06 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 06
 }
-AOW_btn_starfall_spear_target_07 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_07_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 07 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 07
 }
-AOW_btn_starfall_spear_target_08 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_08_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 08 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 08
 }
-AOW_btn_starfall_spear_target_09 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_09_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 09 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 09
 }
-AOW_btn_starfall_spear_target_10 = {
-	potential = { exists = event_target:AOW_starfall_spear_target_10_@from }
-	allow = { always = yes }
-	effect = {
-		AOW_eft_starfall_spear_target_button = { target = 10 }
-	}
+inline_script = {
+	script = button_effects/AOW_button_starfall_spear_target
+	target = 10
 }

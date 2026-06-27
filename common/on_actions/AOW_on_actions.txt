@@ -4,6 +4,12 @@ on_game_start = {
 	}
 }
 
+on_game_start_country = {
+	events = {
+		AOW_evt_starcage_world.400
+	}
+}
+
 #重新载入存档触发的事件
 on_single_player_save_game_load = {
 	events = {

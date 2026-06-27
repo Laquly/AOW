@@ -11,7 +11,7 @@ AOW_btn_interstellar_assembly_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			has_megacorp = yes
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = tech_interstellar_assembly

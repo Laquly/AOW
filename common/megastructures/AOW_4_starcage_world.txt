@@ -112,11 +112,12 @@ AOW_MEGA_starcage_world_0 = {
 	}
 }
 AOW_MEGA_starcage_world_1 = {
-	entity = "construction_platform_entity"
-	construction_entity = "construction_platform_entity"
+	entity = "starcage_world_01_entity"
+	construction_entity = "starcage_world_01_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
+	scales_with_planet = yes
 	build_time = @AOW_var_SW_1_TIME
 	resources = {
 		category = megastructures
@@ -145,10 +146,11 @@ AOW_MEGA_starcage_world_1 = {
 	}
 }
 AOW_MEGA_starcage_world_2 = {
-	entity = "starcage_world_01_entity"
-	construction_entity = "starcage_world_01_entity"
+	entity = "starcage_world_02_entity"
+	construction_entity = "starcage_world_02_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	use_planet_resource = yes
+	scales_with_planet = yes
 	build_time = @AOW_var_SW_2_TIME
 	resources = {
 		category = megastructures
@@ -175,7 +177,6 @@ AOW_MEGA_starcage_world_2 = {
 			size = 7
 			has_ring = no
 			init_effect = {
-				set_planet_entity = { entity = "pc_starcage_world_01_entity" }
 				set_surveyed = {
 					surveyed = yes
 					surveyor = FROM
@@ -222,6 +223,7 @@ AOW_MEGA_starcage_world_2 = {
 					set_name = "pc_starcage_world_black_hole"
 					add_district = AOW_district_sw_black_hole
 				}
+				set_planet_entity = { entity = AOW_empty_entity }
 				add_deposit = AOW_d_starcage_world
 				set_owner = fromfrom.owner
 				set_controller = fromfrom.owner
@@ -234,10 +236,11 @@ AOW_MEGA_starcage_world_2 = {
 	}
 }
 AOW_MEGA_starcage_world_3 = {
-	entity = "starcage_world_02_entity"
-	construction_entity = "starcage_world_02_construction_entity"
+	entity = "starcage_world_03_entity"
+	construction_entity = "starcage_world_03_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	use_planet_resource = yes
+	scales_with_planet = yes
 	build_time = @AOW_var_SW_3_TIME
 	resources = {
 		category = megastructures
@@ -272,10 +275,11 @@ AOW_MEGA_starcage_world_3 = {
 	}
 }
 AOW_MEGA_starcage_world_4 = {
-	entity = "starcage_world_03_entity"
-	construction_entity = "starcage_world_03_construction_entity"
+	entity = "starcage_world_04_entity"
+	construction_entity = "starcage_world_04_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	use_planet_resource = yes
+	scales_with_planet = yes
 	build_time = @AOW_var_SW_4_TIME
 	resources = {
 		category = megastructures
@@ -310,10 +314,11 @@ AOW_MEGA_starcage_world_4 = {
 	}
 }
 AOW_MEGA_starcage_world_5 = {
-	entity = "starcage_world_04_entity"
-	#construction_entity = "starcage_world_03_construction_entity"
+	entity = "starcage_world_05_entity"
+	construction_entity = "starcage_world_05_construction_entity"
 	portrait = "GFX_megastructure_starcage_world_background"
 	use_planet_resource = yes
+	scales_with_planet = yes
 	outliner_trigger = {
 		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = starcage_world }
 	}
@@ -332,11 +337,20 @@ AOW_MEGA_starcage_world_5 = {
 	}
 	prerequisites = { "AOW_TECH_starcage_world" }
 	show_prereqs = yes
-	upgrade_from = { AOW_MEGA_starcage_world_4 }
+	upgrade_from = { AOW_MEGA_starcage_world_4 AOW_MEGA_starcage_world_ruined_04 }
 	on_build_complete = {
-		from = { country_event = { id = AOW_evt_starcage_world.105 } }
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = has_built_or_repaired_galactic_wonders
+			country_event = { id = AOW_evt_starcage_world.105 }
+		}
 		random_system_planet = {
-			limit = { has_planet_flag = AOW_flag_PLNT_starcage_world_@fromfrom }
+			limit = {
+				OR = {
+					has_planet_flag = AOW_flag_PLNT_origin_starcage_world
+					has_planet_flag = AOW_flag_PLNT_starcage_world_@fromfrom
+				}
+			}
 			set_planet_flag = AOW_flag_PLNT_starcage_world_perfect
 			if = {
 				limit = { has_owner = no }
@@ -347,6 +361,255 @@ AOW_MEGA_starcage_world_5 = {
 				}
 			}
 			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+
+AOW_MEGA_starcage_world_ruined_01 = {
+	entity = "starcage_world_ruined_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	use_planet_resource = yes
+	scales_with_planet = yes
+	show_in_outliner = yes
+	resources = {
+		category = megastructures
+	}
+	potential = { always = no }
+}
+AOW_MEGA_starcage_world_ruined_02 = {
+	entity = "starcage_world_ruined_02_entity"
+	portrait = "GFX_megastructure_construction_background"
+	use_planet_resource = yes
+	scales_with_planet = yes
+	show_in_outliner = yes
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 20000
+			minerals = 20000
+			alloys = 10000
+		}
+	}
+	possible = {
+		from = {
+			has_technology = tech_mega_engineering
+		}
+	}
+	upgrade_from = { AOW_MEGA_starcage_world_ruined_01 }
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = AOW_evt_starcage_world.110 }
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = AOW_flag_PLNT_origin_starcage_world }
+			set_planet_flag = AOW_flag_PLNT_starcage_world_@owner
+			if = {
+				limit = { NOT = { has_deposit = AOW_d_starcage_world } }
+				add_deposit = AOW_d_starcage_world
+			}
+			if = {#恒星
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_common_star }
+				}
+				change_pc = pc_starcage_world_common_star
+				export_trigger_value_to_variable = {
+					trigger = num_districts
+					parameters = { type = AOW_district_sw_common_star }
+					variable = AOW_var_district_sw_common_star
+				}
+				while = {
+					count = value:AOW_var_starcage_world_old_districts|v|AOW_var_district_sw_common_star|
+					remove_district = AOW_district_sw_common_star
+				}
+				while = {
+					count = value:AOW_var_starcage_world_new_districts|v|AOW_var_district_sw_common_star|
+					add_district = AOW_district_sw_common_star
+				}
+				clear_variable = AOW_var_district_sw_common_star
+			}
+			if = {#中子
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_neutron_star }
+				}
+				change_pc = pc_starcage_world_neutron_star
+				remove_modifier = AOW_mod_PLNT_neutron_star_magnetic_field
+				export_trigger_value_to_variable = {
+					trigger = num_districts
+					parameters = { type = AOW_district_sw_neutron_star }
+					variable = AOW_var_district_sw_neutron_star
+				}
+				while = {
+					count = value:AOW_var_starcage_world_old_districts|v|AOW_var_district_sw_neutron_star|
+					remove_district = AOW_district_sw_neutron_star
+				}
+				while = {
+					count = value:AOW_var_starcage_world_new_districts|v|AOW_var_district_sw_neutron_star|
+					add_district = AOW_district_sw_neutron_star
+				}
+				clear_variable = AOW_var_district_sw_neutron_star
+			}
+			
+			export_trigger_value_to_variable = {
+				trigger = num_districts
+				parameters = { type = AOW_district_starcage_world_1 }
+				variable = AOW_var_district_starcage_world_1
+			}
+			while = {
+				count = value:AOW_var_starcage_world_old_districts|v|AOW_var_district_starcage_world_1|
+				remove_district = AOW_district_starcage_world_1
+			}
+			while = {
+				count = value:AOW_var_starcage_world_new_districts|v|AOW_var_district_starcage_world_1|
+				add_district = AOW_district_starcage_world_1
+			}
+			clear_variable = AOW_var_district_starcage_world_1
+			
+			export_trigger_value_to_variable = {
+				trigger = num_districts
+				parameters = { type = AOW_district_starcage_world_2 }
+				variable = AOW_var_district_starcage_world_2
+			}
+			while = {
+				count = value:AOW_var_starcage_world_old_districts|v|AOW_var_district_starcage_world_2|
+				remove_district = AOW_district_starcage_world_2
+			}
+			while = {
+				count = value:AOW_var_starcage_world_new_districts|v|AOW_var_district_starcage_world_2|
+				add_district = AOW_district_starcage_world_2
+			}
+			clear_variable = AOW_var_district_starcage_world_2
+			
+			export_trigger_value_to_variable = {
+				trigger = num_districts
+				parameters = { type = AOW_district_starcage_world_3 }
+				variable = AOW_var_district_starcage_world_3
+			}
+			while = {
+				count = value:AOW_var_starcage_world_old_districts|v|AOW_var_district_starcage_world_3|
+				remove_district = AOW_district_starcage_world_3
+			}
+			while = {
+				count = value:AOW_var_starcage_world_new_districts|v|AOW_var_district_starcage_world_3|
+				add_district = AOW_district_starcage_world_3
+			}
+			clear_variable = AOW_var_district_starcage_world_3
+			
+			set_planet_size = 7
+			set_variable = { which = AOW_var_PLNT_starcage_world_level value = 1 }
+		}
+	}
+}
+AOW_MEGA_starcage_world_ruined_03 = {
+	entity = "starcage_world_ruined_03_entity"
+	portrait = "GFX_megastructure_construction_background"
+	use_planet_resource = yes
+	scales_with_planet = yes
+	show_in_outliner = yes
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 20000
+			minerals = 20000
+			alloys = 10000
+		}
+	}
+	possible = {
+		from = {
+			custom_tooltip = {
+				fail_text = "requires_ap_galactic_wonders"
+				OR = {
+					has_galactic_wonders = yes
+					has_ascension_perk = ap_galactic_wonders
+					has_ascension_perk = ap_galactic_wonders_utopia
+					has_ascension_perk = ap_galactic_wonders_megacorp
+					has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+				}
+			}
+		}
+	}
+	upgrade_from = { AOW_MEGA_starcage_world_ruined_02 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_evt_starcage_world.111 }
+			set_country_flag = has_built_or_repaired_galactic_wonders
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = AOW_flag_PLNT_origin_starcage_world }
+			if = {
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_common_star }
+				}
+				change_pc = pc_starcage_world_common_star
+			}
+			if = {
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_neutron_star }
+				}
+				change_pc = pc_starcage_world_neutron_star
+			}
+			if = {
+				limit = { NOT = { has_deposit = AOW_d_starcage_world } }
+				add_deposit = AOW_d_starcage_world
+			}
+			set_planet_size = 21
+			set_variable = { which = AOW_var_PLNT_starcage_world_level value = 2 }
+		}
+	}
+}
+AOW_MEGA_starcage_world_ruined_04 = {
+	entity = "starcage_world_ruined_04_entity"
+	portrait = "GFX_megastructure_construction_background"
+	use_planet_resource = yes
+	scales_with_planet = yes
+	show_in_outliner = yes
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 20000
+			minerals = 20000
+			alloys = 10000
+		}
+	}
+	possible = {
+		from = {
+			has_ascension_perk = ap_cosmic_wonders
+		}
+	}
+	upgrade_from = { AOW_MEGA_starcage_world_ruined_03 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_evt_starcage_world.112 }
+			set_country_flag = has_built_or_repaired_galactic_wonders
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = AOW_flag_PLNT_origin_starcage_world }
+			if = {
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_common_star }
+				}
+				change_pc = pc_starcage_world_common_star
+			}
+			if = {
+				limit = {
+					solar_system = { has_star_flag = AOW_flag_SSTM_origin_starcage_world_neutron_star }
+				}
+				change_pc = pc_starcage_world_neutron_star
+			}
+			if = {
+				limit = { NOT = { has_deposit = AOW_d_starcage_world } }
+				add_deposit = AOW_d_starcage_world
+			}
+			set_planet_size = 50
+			set_variable = { which = AOW_var_PLNT_starcage_world_level value = 3 }
+		}
+		every_ambient_object = {
+			limit = { is_ambient_object_type = large_debris_object }
+			destroy_ambient_object = this
 		}
 	}
 }

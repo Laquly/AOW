@@ -135,7 +135,8 @@ guiTypes = {
 			buttonFont = "cg_16b"
 			shortcut = "q"
 		}
-
+		
+		@button_var = 44
 		@button_left_x = 73
 		@button_right_x = 237
 		@target_button_y1 = 235
@@ -150,6 +151,15 @@ guiTypes = {
 		@target_button_y10 = 505
 		#显示所选目标
 		effectButtonType = {
+			name = "var_01"
+			position = { x = @button_var y = @target_button_y1 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_01
+			effect = AOW_btn_starfall_spear_system_strike_range_01
+		}
+		effectButtonType = {
 			name = "target_01"
 			position = { x = @button_left_x y = @target_button_y1 }
 			spriteType = "GFX_AOW_button_starfall_spear_target"
@@ -157,6 +167,16 @@ guiTypes = {
 			format = center
 			text = AOW_text_target_01
 			effect = AOW_btn_starfall_spear_target_01
+		}
+		
+		effectButtonType = {
+			name = "var_02"
+			position = { x = @button_var y = @target_button_y2 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_02
+			effect = AOW_btn_starfall_spear_system_strike_range_02
 		}
 		effectButtonType = {
 			name = "target_02"
@@ -167,6 +187,16 @@ guiTypes = {
 			text = AOW_text_target_02
 			effect = AOW_btn_starfall_spear_target_02
 		}
+		
+		effectButtonType = {
+			name = "var_03"
+			position = { x = @button_var y = @target_button_y3 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_03
+			effect = AOW_btn_starfall_spear_system_strike_range_03
+		}
 		effectButtonType = {
 			name = "target_03"
 			position = { x = @button_left_x y = @target_button_y3 }
@@ -175,6 +205,16 @@ guiTypes = {
 			format = center
 			text = AOW_text_target_03
 			effect = AOW_btn_starfall_spear_target_03
+		}
+		
+		effectButtonType = {
+			name = "var_04"
+			position = { x = @button_var y = @target_button_y4 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_04
+			effect = AOW_btn_starfall_spear_system_strike_range_04
 		}
 		effectButtonType = {
 			name = "target_04"
@@ -185,6 +225,16 @@ guiTypes = {
 			text = AOW_text_target_04
 			effect = AOW_btn_starfall_spear_target_04
 		}
+		
+		effectButtonType = {
+			name = "var_05"
+			position = { x = @button_var y = @target_button_y5 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_05
+			effect = AOW_btn_starfall_spear_system_strike_range_05
+		}
 		effectButtonType = {
 			name = "target_05"
 			position = { x = @button_left_x y = @target_button_y5 }
@@ -193,6 +243,16 @@ guiTypes = {
 			format = center
 			text = AOW_text_target_05
 			effect = AOW_btn_starfall_spear_target_05
+		}
+		
+		effectButtonType = {
+			name = "var_06"
+			position = { x = @button_var y = @target_button_y6 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_06
+			effect = AOW_btn_starfall_spear_system_strike_range_06
 		}
 		effectButtonType = {
 			name = "target_06"
@@ -203,6 +263,16 @@ guiTypes = {
 			text = AOW_text_target_06
 			effect = AOW_btn_starfall_spear_target_06
 		}
+		
+		effectButtonType = {
+			name = "var_07"
+			position = { x = @button_var y = @target_button_y7 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_07
+			effect = AOW_btn_starfall_spear_system_strike_range_07
+		}
 		effectButtonType = {
 			name = "target_07"
 			position = { x = @button_left_x y = @target_button_y7 }
@@ -211,6 +281,16 @@ guiTypes = {
 			format = center
 			text = AOW_text_target_07
 			effect = AOW_btn_starfall_spear_target_07
+		}
+		
+		effectButtonType = {
+			name = "var_08"
+			position = { x = @button_var y = @target_button_y8 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_08
+			effect = AOW_btn_starfall_spear_system_strike_range_08
 		}
 		effectButtonType = {
 			name = "target_08"
@@ -221,6 +301,16 @@ guiTypes = {
 			text = AOW_text_target_08
 			effect = AOW_btn_starfall_spear_target_08
 		}
+		
+		effectButtonType = {
+			name = "var_09"
+			position = { x = @button_var y = @target_button_y9 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_09
+			effect = AOW_btn_starfall_spear_system_strike_range_09
+		}
 		effectButtonType = {
 			name = "target_09"
 			position = { x = @button_left_x y = @target_button_y9 }
@@ -229,6 +319,16 @@ guiTypes = {
 			format = center
 			text = AOW_text_target_09
 			effect = AOW_btn_starfall_spear_target_09
+		}
+		
+		effectButtonType = {
+			name = "var_10"
+			position = { x = @button_var y = @target_button_y10 }
+			spriteType = "GFX_AOW_button_starfall_spear_system_strike_range"
+			buttonFont = "malgun_goth_24"
+			format = center
+			text = AOW_text_system_strike_range_10
+			effect = AOW_btn_starfall_spear_system_strike_range_10
 		}
 		effectButtonType = {
 			name = "target_10"

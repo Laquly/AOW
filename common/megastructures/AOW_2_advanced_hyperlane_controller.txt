@@ -29,7 +29,7 @@ AOW_MEGA_advanced_hyperlane_controller = {
 	}
 	show_prereqs = yes
 	possible = {
-		exists = starbase
+		inline_script = megastructures/system_ownership_or_waystation_check
 		custom_tooltip = {#必须要在国境内
 			fail_text = "requires_inside_border"
 			is_inside_border = from

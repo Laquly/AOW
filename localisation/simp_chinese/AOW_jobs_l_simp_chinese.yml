@@ -8,3 +8,5 @@
  job_translucer_drone_plural_with_icon:"£job_translucer_drone£$job_translucer_drone_plural$"
  job_artisan_drone_plural_with_icon:"[artisan_drone.GetIcon] [artisan_drone.GetNamePlural]"
  job_warrior_drone_plural_with_icon:"[warrior_drone.GetIcon] [warrior_drone.GetNamePlural]"
+
+ job_calculator_engineer_plural_with_icon1: "[calculator_engineer.GetIcon][calculator_engineer.GetNamePlural]"

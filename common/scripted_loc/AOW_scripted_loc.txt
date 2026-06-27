@@ -259,3 +259,74 @@ defined_text = {
 	name = GetStarfallSpearPlanetTargetCapacity
 	value = value:AOW_var_starfall_spear_planet_target_capacity_desc
 }
+#坠星天矛当前打击范围
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange01
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 01
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange02
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 02
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange03
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 03
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange04
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 04
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange05
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 05
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange06
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 06
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange07
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 07
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange08
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 08
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange09
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 09
+	}
+}
+defined_text = {
+	name = GetStarfallSpearCurrentSystemStrikeRange10
+	inline_script = {
+		script = scripted_loc/AOW_starfall_spear_system_strike_range
+		target = 10
+	}
+}

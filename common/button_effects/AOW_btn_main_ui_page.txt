@@ -145,3 +145,23 @@ AOW_btn_hyperdimension_hiding = {
 		}
 	}
 }
+AOW_btn_starfall_spear_system_strike_range = {
+	potential = {
+		from = {
+			check_variable = { which = AOW_var_page value = 4 }
+		}
+	}
+	allow = { always = yes }
+	effect = {
+		if = {
+			limit = { NOT = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range} }
+			set_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range
+			custom_tooltip = AOW_text_can_research_starfall_spear_system_strike_range
+		}
+		else_if = {
+			limit = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range}
+			remove_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range
+			custom_tooltip = AOW_text_cannot_research_starfall_spear_system_strike_range
+		}
+	}
+}

@@ -69,6 +69,7 @@ AOW_MEGA_curvature_pressurization_field_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
+		set_star_flag = conduit_excluded
 		from = { country_event = { id = AOW_evt_curvature_pressurization_field.100 } }
 		fromfrom = {
 			set_megastructure_flag = curvature_pressurization_field
@@ -149,7 +150,7 @@ AOW_MEGA_curvature_pressurization_field_2 = {
 		}
 	}
 }
-AOW_MEGA_curvature_pressurization_field_3_black_hole = {
+AOW_MEGA_curvature_pressurization_field_3 = {
 	entity = "curvature_pressurization_field_03_entity"
 	construction_entity = "curvature_pressurization_field_03_construction_entity"
 	portrait = "GFX_megastructure_curvature_pressurization_field_background"
@@ -167,162 +168,95 @@ AOW_MEGA_curvature_pressurization_field_3_black_hole = {
 	}
 	upgrade_from = { AOW_MEGA_curvature_pressurization_field_2 }
 	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
-	show_prereqs = yes
-	on_build_complete = {
-		fromfrom.planet = { change_pc = pc_black_hole }
-		if = {
-			limit = {
-				NOT = {
-					any_system_planet = {
-						is_star = yes
-						NOT = { is_planet_class = pc_black_hole }
-					}
-				}
-			}
-			set_star_class = sc_black_hole
-		}
+	on_build_start = {
+		fromfrom = { set_halted = -1 }
 		from = {
-			set_country_flag = has_built_or_repaired_megastructure
-			set_country_flag = has_built_or_repaired_galactic_wonders
 			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
 		}
-		remove_megastructure = fromfrom
-		every_system_planet = {
-			limit = {
-				OR = {
-					is_planet_class = pc_molten
-					is_planet_class = pc_toxic
+	}
+	on_build_complete = {
+		if = {
+			limit = { fromfrom = { has_megastructure_flag = AOW_flag_MEGA_change_to_black_hole } }
+			fromfrom.planet = { change_pc = pc_black_hole }
+			if = {
+				limit = {
+					NOT = {
+						any_system_planet = {
+							is_star = yes
+							NOT = { is_planet_class = pc_black_hole }
+						}
+					}
 				}
+				set_star_class = sc_black_hole
 			}
-			change_pc = pc_frozen
+			every_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_molten
+						is_planet_class = pc_toxic
+					}
+				}
+				change_pc = pc_frozen
+			}
+			every_system_planet = {
+				limit = { is_planet_class = pc_barren }
+				change_pc = pc_barren_cold
+			}
 		}
-		every_system_planet = {
-			limit = { is_planet_class = pc_barren }
-			change_pc = pc_barren_cold
+		else_if = {
+			limit = { fromfrom = { has_megastructure_flag = AOW_flag_MEGA_change_to_neutron_star } }
+			fromfrom.planet = { change_pc = pc_neutron_star }
+			if = {
+				limit = {
+					NOT = {
+						any_system_planet = {
+							is_star = yes
+							NOT = { is_planet_class = pc_neutron_star }
+						}
+					}
+				}
+				set_star_class = sc_neutron_star
+			}
+		}
+		else_if = {
+			limit = { fromfrom = { has_megastructure_flag = AOW_flag_MEGA_change_to_pulsar } }
+			fromfrom.planet = { change_pc = pc_pulsar }
+			if = {
+				limit = {
+					NOT = {
+						any_system_planet = {
+							is_star = yes
+							NOT = { is_planet_class = pc_pulsar }
+						}
+					}
+				}
+				set_star_class = sc_pulsar
+			}
+		}
+		else_if = {
+			limit = { fromfrom = { has_megastructure_flag = AOW_flag_MEGA_change_to_magnetar } }
+			fromfrom.planet = { change_pc = pc_magnetar }
+			if = {
+				limit = {
+					NOT = {
+						any_system_planet = {
+							is_star = yes
+							NOT = { is_planet_class = pc_magnetar }
+						}
+					}
+				}
+				set_star_class = sc_magnetar
+			}
 		}
 		every_system_planet = {
 			limit = { has_modifier = terraforming_candidate }
 			remove_modifier = terraforming_candidate
 		}
-	}
-}
-AOW_MEGA_curvature_pressurization_field_3_neutron_star = {
-	entity = "curvature_pressurization_field_03_entity"
-	construction_entity = "curvature_pressurization_field_03_construction_entity"
-	portrait = "GFX_megastructure_curvature_pressurization_field_background"
-	place_entity_on_planet_plane = yes
-	use_planet_resource = yes
-	build_time = @AOW_var_CPF_3_TIME
-	scales_with_planet = yes
-	resources = {
-		category = megastructures
-		cost = {
-			energy = @AOW_var_CPF_3_COST_energy_NeutronStar
-			sr_dark_matter = @AOW_var_CPF_3_COST_darkmatter_NeutronStar
-			unity = @AOW_var_CPF_3_COST_unity
-		}
-	}
-	upgrade_from = { AOW_MEGA_curvature_pressurization_field_2 }
-	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
-	show_prereqs = yes
-	on_build_complete = {
-		fromfrom.planet = { change_pc = pc_neutron_star }
-		if = {
-			limit = {
-				NOT = {
-					any_system_planet = {
-						is_star = yes
-						NOT = { is_planet_class = pc_neutron_star }
-					}
-				}
-			}
-			set_star_class = sc_neutron_star
-		}
+		remove_star_flag = conduit_excluded
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
-		}
-		remove_megastructure = fromfrom
-	}
-}
-AOW_MEGA_curvature_pressurization_field_3_pulsar = {
-	entity = "curvature_pressurization_field_03_entity"
-	construction_entity = "curvature_pressurization_field_03_construction_entity"
-	portrait = "GFX_megastructure_curvature_pressurization_field_background"
-	place_entity_on_planet_plane = yes
-	use_planet_resource = yes
-	build_time = @AOW_var_CPF_3_TIME
-	scales_with_planet = yes
-	resources = {
-		category = megastructures
-		cost = {
-			energy = @AOW_var_CPF_3_COST_energy_Pulsar
-			sr_dark_matter = @AOW_var_CPF_3_COST_darkmatter_Pulsar
-			unity = @AOW_var_CPF_3_COST_unity
-		}
-	}
-	upgrade_from = { AOW_MEGA_curvature_pressurization_field_2 }
-	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
-	show_prereqs = yes
-	on_build_complete = {
-		fromfrom.planet = { change_pc = pc_pulsar }
-		if = {
-			limit = {
-				NOT = {
-					any_system_planet = {
-						is_star = yes
-						NOT = { is_planet_class = pc_pulsar }
-					}
-				}
-			}
-			set_star_class = sc_pulsar
-		}
-		from = {
-			set_country_flag = has_built_or_repaired_megastructure
-			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
-		}
-		remove_megastructure = fromfrom
-	}
-}
-AOW_MEGA_curvature_pressurization_field_3_magnetar = {
-	entity = "curvature_pressurization_field_03_entity"
-	construction_entity = "curvature_pressurization_field_03_construction_entity"
-	portrait = "GFX_megastructure_curvature_pressurization_field_background"
-	place_entity_on_planet_plane = yes
-	use_planet_resource = yes
-	build_time = @AOW_var_CPF_3_TIME
-	scales_with_planet = yes
-	resources = {
-		category = megastructures
-		cost = {
-			energy = @AOW_var_CPF_3_COST_energy_Magnetar
-			sr_dark_matter = @AOW_var_CPF_3_COST_darkmatter_Magnetar
-			unity = @AOW_var_CPF_3_COST_unity
-		}
-	}
-	upgrade_from = { AOW_MEGA_curvature_pressurization_field_2 }
-	potential = { has_global_flag = has_real_space_mod }
-	prerequisites = { "AOW_TECH_curvature_pressurization_field" }
-	#show_prereqs = yes
-	on_build_complete = {
-		fromfrom.planet = { change_pc = pc_magnetar }
-		if = {
-			limit = {
-				NOT = {
-					any_system_planet = {
-						is_star = yes
-						NOT = { is_planet_class = pc_magnetar }
-					}
-				}
-			}
-			set_star_class = sc_magnetar
-		}
-		from = {
-			set_country_flag = has_built_or_repaired_megastructure
-			set_country_flag = has_built_or_repaired_galactic_wonders
-			country_event = { id = AOW_evt_curvature_pressurization_field.103 }
+			country_event = { id = AOW_evt_curvature_pressurization_field.104 }
 		}
 		remove_megastructure = fromfrom
 	}

@@ -2,6 +2,9 @@
 
  #MEGASTRUCTURE_BUILD_OUTSIDE_GRAVITY_WELL:0"$TRIGGER_FAIL$不能将此巨构建造在恒星系的重力井内"
 
+ MEGASTRUCTURE_TOOLTIP_PRODUCTION_HEADER: "\n§E产出：§!\n"
+ MEGASTRUCTURE_TOOLTIP_MAINTENANCE_HEADER: "§E维护：§!\n"
+
  cosmogenesis_world_0_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_crisis$一座计算设施，可以有效消耗人口来产生§Y研究点§!和§Y超然逻辑§!。"
  cosmogenesis_needle_MEGASTRUCTURE_DETAILS: "$AOW_mega_lv_crisis$为了飞升到我们自己创造的现实中，必须在永远离开这个宇宙之前，让我们的整个文明登上视界刺针。"
 
@@ -26,8 +29,3 @@
  matter_decompressor_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$这个§Y$matter_decompressor_4$§!将黑洞的引力聚焦于一处，形成了一个引力钻头，我们可以用这个钻头从黑洞的奇点中钻取物质，并转化为£minerals£矿物。"
  ring_world_1_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$一个§Y$pc_ringworld_habitable$§!容纳了数个行星大小的区块，但需要拆除星系中其他的行星天体作为材料。"
  dyson_sphere_0_MEGASTRUCTURE_DETAILS:0"$AOW_mega_lv_3$一个§Y$dyson_sphere_5$§!完全的包裹住一个特定的恒星，直接将恒星辐射输出转化为£energy£能量币。"
-
-
-
- admiral_trait: "§c领袖特质§!\n£admiral£舰队司令类别"
- scientist_trait: "§c领袖特质§!\n£scientist£科学官类别"

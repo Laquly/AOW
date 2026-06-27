@@ -1,8 +1,6 @@
 AOW_btn_view_ui_locator = { #显示星球名字条用的，方便玩家选中被巨构遮挡的星球
 	potential = {
-		this = {
-			is_scope_type = megastructure
-		}
+		is_scope_type = megastructure
 		solar_system = {
 			any_system_planet = {
 				exists = this

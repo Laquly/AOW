@@ -11,6 +11,7 @@ AOW_btn_deep_space_prison_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			OR = {
 				has_technology = tech_artificial_moral_codes

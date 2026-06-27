@@ -151,6 +151,21 @@ defined_text = {
         Key = habitat
     }
 }
+#星际大炮
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap_standard
+        PorA = ai
+        Key = dyson_gun
+    }
+}
+defined_text = {
+    inline_script = {
+        script = scripted_loc/AOW_mega_cap_standard
+        PorA = player
+        Key = dyson_gun
+    }
+}
 ################################################################
 ######普通巨构
 ################################################################

@@ -11,7 +11,7 @@ AOW_btn_celestial_shield_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			host_has_dlc = "Apocalypse"
+			is_nomadic = no
 			has_ascension_perk = ap_cosmic_wonders
 			has_ascension_perk = ap_era_of_deterrence
 			has_technology = AOW_TECH_planetary_blaster_system

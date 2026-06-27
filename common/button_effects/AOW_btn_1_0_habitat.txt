@@ -18,6 +18,8 @@ AOW_btn_habitat_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
+			is_wilderness_empire = no
+			is_nomadic = no
 			has_technology = tech_starbase_3
 			OR = {
 				has_origin = origin_void_dwellers

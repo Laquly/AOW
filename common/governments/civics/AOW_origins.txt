@@ -1,0 +1,56 @@
+origin_starcage_world_common_star = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_origin_starcage_world_common_star.dds"
+	picture = GFX_origin_starcage_world
+	starting_colony = pc_shattered_starcage_world
+	habitability_preference = pc_shattered_starcage_world
+	initializers = { origin_starcage_world_common_star_start }
+	max_once_global = yes
+	non_colonizable_planet_class_neighbor = yes
+	preferred_planet_class_neighbor = no
+	potential = {
+		always = yes
+	}
+	possible = {
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+	description = "origin_starcage_world_common_star_effects"
+	negative_description = "origin_starcage_world_common_star_negative_effects"
+	flags = { custom_start_screen }
+	advanced_start = yes
+	random_weight = {
+		base = 0
+	}
+}
+origin_starcage_world_neutron_star = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_origin_starcage_world_common_star.dds"
+	picture = GFX_origin_starcage_world
+	starting_colony = pc_shattered_starcage_world
+	habitability_preference = pc_shattered_starcage_world
+	initializers = { origin_starcage_world_neutron_star_start }
+	max_once_global = yes
+	non_colonizable_planet_class_neighbor = yes
+	preferred_planet_class_neighbor = no
+	potential = {
+		always = yes
+	}
+	possible = {
+		#authority = { value = auth_machine_intelligence }
+		species_archetype = {
+			value = MACHINE
+		}
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+	description = "origin_starcage_world_neutron_star_effects"
+	negative_description = "origin_starcage_world_neutron_star_negative_effects"
+	flags = { custom_start_screen }
+	advanced_start = yes
+	random_weight = {
+		base = 0
+	}
+}

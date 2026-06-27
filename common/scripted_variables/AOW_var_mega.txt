@@ -113,13 +113,13 @@
 @AOW_var_NCB_2_COST_alloys = 15000
 @AOW_var_NCB_2_COST_unity = 2500
 @AOW_var_NCB_2_UPKP_energy = 75
-@AOW_var_NCB_2_naval_cap_add = 200
+@AOW_var_NCB_2_naval_cap_add = 300
 @AOW_var_NCB_2_command_limit_add = 20
 @AOW_var_NCB_3_TIME = 3600
 @AOW_var_NCB_3_COST_alloys = 15000
 @AOW_var_NCB_3_COST_unity = 2500
 @AOW_var_NCB_3_UPKP_energy = 100
-@AOW_var_NCB_3_naval_cap_add = 300
+@AOW_var_NCB_3_naval_cap_add = 500
 @AOW_var_NCB_3_command_limit_add = 30
 
 #银河珍宝馆
@@ -345,27 +345,33 @@
 @AOW_var_DSP_1_TIME = 1800
 @AOW_var_DSP_1_COST_alloys = 7500
 @AOW_var_DSP_1_COST_energy = 3000
-@AOW_var_DSP_1_COST_unity = 2500
+@AOW_var_DSP_1_COST_unity = 2000
 @AOW_var_DSP_1_PRDC_unity = 50
-@AOW_var_DSP_1_UPKE_energy = 25
+@AOW_var_DSP_1_UPKE_energy = 20
 @AOW_var_DSP_2_TIME = 1800
 @AOW_var_DSP_2_COST_alloys = 7500
 @AOW_var_DSP_2_COST_energy = 3000
-@AOW_var_DSP_2_COST_unity = 2500
+@AOW_var_DSP_2_COST_unity = 2000
 @AOW_var_DSP_2_PRDC_unity = 100
-@AOW_var_DSP_2_UPKE_energy = 50
+@AOW_var_DSP_2_UPKE_energy = 40
 @AOW_var_DSP_3_TIME = 1800
 @AOW_var_DSP_3_COST_alloys = 7500
 @AOW_var_DSP_3_COST_energy = 3000
-@AOW_var_DSP_3_COST_unity = 2500
+@AOW_var_DSP_3_COST_unity = 2000
 @AOW_var_DSP_3_PRDC_unity = 150
-@AOW_var_DSP_3_UPKE_energy = 75
+@AOW_var_DSP_3_UPKE_energy = 60
 @AOW_var_DSP_4_TIME = 1800
 @AOW_var_DSP_4_COST_alloys = 7500
-@AOW_var_DSP_4_COST_energy = 9000
-@AOW_var_DSP_4_COST_unity = 2500
+@AOW_var_DSP_4_COST_energy = 3000
+@AOW_var_DSP_4_COST_unity = 2000
 @AOW_var_DSP_4_PRDC_unity = 200
-@AOW_var_DSP_4_UPKE_energy = 100
+@AOW_var_DSP_4_UPKE_energy = 80
+@AOW_var_DSP_5_TIME = 1800
+@AOW_var_DSP_5_COST_alloys = 7500
+@AOW_var_DSP_5_COST_energy = 10000
+@AOW_var_DSP_5_COST_unity = 2000
+@AOW_var_DSP_5_PRDC_unity = 250
+@AOW_var_DSP_5_UPKE_energy = 100
 
 #星轨
 @AOW_var_HC_TIME = 900
@@ -705,22 +711,20 @@
 @AOW_var_PD_1_COST_zro = 250
 @AOW_var_PD_1_COST_unity = 7000
 @AOW_var_PD_1_UPKP_energy = 25
-@AOW_var_PD_1_PRDC_unity = 100
-@AOW_var_PD_1_pop_government_ethic_attraction = 0.25
+@AOW_var_PD_1_PRDC_unity = 50
 @AOW_var_PD_2_TIME = 3600
 @AOW_var_PD_2_COST_alloys = 15000
 @AOW_var_PD_2_COST_zro = 250
 @AOW_var_PD_2_COST_unity = 7000
 @AOW_var_PD_2_UPKP_energy = 50
-@AOW_var_PD_2_PRDC_unity = 250
-@AOW_var_PD_2_pop_government_ethic_attraction = 0.5
+@AOW_var_PD_2_PRDC_unity = 100
 @AOW_var_PD_3_TIME = 3600
-@AOW_var_PD_3_COST_energy = 10000
+@AOW_var_PD_3_COST_energy = 20000
 @AOW_var_PD_3_COST_zro = 2000
 @AOW_var_PD_3_COST_unity = 7000
-@AOW_var_PD_3_PRDC_unity = 500
-@AOW_var_PD_3_PRDC_zro = 25
-@AOW_var_PD_3_UPKP_energy = 100
+@AOW_var_PD_3_PRDC_unity = 200
+@AOW_var_PD_3_PRDC_zro = 50
+@AOW_var_PD_3_UPKP_energy = 200
 @AOW_var_PD_3_UPKP_alloys = 50
 
 #脉冲时记

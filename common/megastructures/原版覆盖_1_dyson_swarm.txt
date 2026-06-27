@@ -9,31 +9,11 @@ dyson_swarm_1 = {
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
 	build_time = 1080 # 3 years
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_DYSON_SPHERE"
 	resources = {
 		category = megastructures
 		cost = {
 			unity = 1000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			alloys = 5
@@ -49,17 +29,25 @@ dyson_swarm_1 = {
 		alloys = 500
 		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
 	}
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_DYSON_SPHERE"
+	tooltip_show_star_resources = yes
+	tooltip_best_systems_header = "MEGASTRUCTURE_DYSON_SWARM_BEST_SYSTEMS_TOOLTIP_HEADER"
+	tooltip_system_filter = {
+		any_system_planet = {
+			OR = {
+				AOW_trgr_PLNT_obafgkm_star = yes
+				is_planet_class = pc_rift_star
+			}
+			has_any_megastructure = no
+		}
+	}
 	prerequisites = { "tech_dyson_swarm" }
 	potential = { AOW_trigger_mega_potential = { KEY = dyson_swarm } }
 	possible = {
-		hidden_trigger = { exists = starbase }
+		inline_script = megastructures/system_ownership_or_waystation_check
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_dyson_swarm } }
-		}
-		custom_tooltip = {
-			fail_text = "requires_inside_border"
-			is_inside_border = from
 		}
 	}
 	placement_rules = {
@@ -99,14 +87,52 @@ dyson_swarm_1 = {
 		factor = 5
 		modifier = {
 			factor = 0.1
-			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+			from = {
+				is_nomadic = no
+			}
+			starbase = {
+				NOT = {
+					has_starbase_size >= starbase_starfortress
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_nomadic = yes
+			}
+			NOT = {
+				any_fleet_in_system = {
+					OR = {
+						is_ship_size = starbase_waystation_2
+						is_ship_size = starbase_waystation_3
+					}
+					owner? = {
+						is_same_value = from
+					}
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
-			any_neighbor_system = {
-				exists = owner
+			from = {
+				is_nomadic = yes
+			}
+			owner? = {
 				NOT = {
-					owner = { is_same_value = from }
+					benefits_from_waystation_network = {
+						NOMAD = from
+						SYSTEM_OWNER = this
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				check_variable = {
+					which = dyson_swarm_counter
+					value >= value:dyson_swarm_limit
 				}
 			}
 		}
@@ -137,57 +163,6 @@ dyson_swarm_1 = {
 			planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
 			set_megastructure_flag = dyson_swarm
 			set_megastructure_flag = AOW_flag_MEGA_dyson_swarm_@owner
-			if = {
-				limit = { planet = { AOW_trgr_PLNT_hyper_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_hyper
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_super_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_super
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_o_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_o
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_b_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_b
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_giant_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_giant
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_a_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_a
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_f_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_f
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_g_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_g
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_k_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_k
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_m_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_dyson_swarm_1_m
-				finish_upgrade = yes
-			}
-			else = {}
 		}
 	}
 }
@@ -210,26 +185,8 @@ dyson_swarm_2 = {
 			unity = 2500
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 1000
 		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 1000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 1000
-			mult = @halved_alloy_to_food_cost_ratio
-		}
-
 		upkeep = {
 			alloys = 10
 		}
@@ -284,26 +241,8 @@ dyson_swarm_3 = {
 			unity = 5000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 1500
 		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 1500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 1500
-			mult = @halved_alloy_to_food_cost_ratio
-		}
-
 		upkeep = {
 			alloys = 20
 		}

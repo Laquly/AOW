@@ -279,13 +279,9 @@ AOW_MEGA_planetary_blaster_system_4 = {
 	show_prereqs = yes
 	upgrade_from = { AOW_MEGA_planetary_blaster_system_3 }
 	on_build_complete = {
-		# fromfrom.planet = {
-		# 	create_starbase = {
-		# 		size = AOW_shipsize_planetary_blaster_system
-		# 		owner = root.from
-		# 		effect = {  }
-		# 	}
-		# }
+		fromfrom.planet = {
+			save_event_target_as = AOW_tgt_PLNT_planetary_blaster_system
+		}
 		from = {
 			country_event = { id = AOW_evt_planetary_blaster_system.104 }
 			set_country_flag = has_built_or_repaired_megastructure

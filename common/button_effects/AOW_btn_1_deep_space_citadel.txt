@@ -11,7 +11,8 @@ AOW_btn_deep_space_citadel_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			host_has_dlc = "BioGenesis"
+			has_biogenesis_dlc = yes
+			is_nomadic = no
 			has_technology = tech_starbase_3
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = tech_deep_space_citadel

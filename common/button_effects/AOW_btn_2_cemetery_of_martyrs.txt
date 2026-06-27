@@ -11,6 +11,7 @@ AOW_btn_cemetery_of_martyrs_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = AOW_TECH_cemetery_of_martyrs

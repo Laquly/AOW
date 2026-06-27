@@ -43,14 +43,10 @@ AOW_MEGA_space_sensor_station_1 = {
 	potential = { AOW_trigger_mega_potential = { KEY = space_sensor_station } }
 	show_prereqs = yes
 	possible = {
-		exists = starbase
+		inline_script = megastructures/system_ownership_or_waystation_check
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_space_sensor_station } }
-		}
-		custom_tooltip = {#必须要在国境内
-			fail_text = "requires_inside_border"
-			is_inside_border = from
 		}
 		custom_tooltip = {#一个星系只能造一个
 			fail_text = "AOW_mega_requires_SSTM_no_space_sensor_station"

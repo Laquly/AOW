@@ -1187,7 +1187,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_AOW_MEGA_planetary_blaster_system
 	show_sound = event_dyson_sphere_build_complete
-	location = fromfromfrom
+	location = event_target:AOW_tgt_PLNT_planetary_blaster_system
 	option = {
 		name = AOW_evt_planetary_blaster_system.104.a
 	}
@@ -2439,21 +2439,52 @@ country_event = {
 country_event = {
 	id = AOW_evt_curvature_pressurization_field.103
 	title = AOW_evt_curvature_pressurization_field.103.title
+	desc = AOW_evt_curvature_pressurization_field.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_curvature_pressurization_field
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_curvature_pressurization_field.103.a
+		fromfromfrom = { set_megastructure_flag = AOW_flag_MEGA_change_to_black_hole }
+	}
+	option = {
+		name = AOW_evt_curvature_pressurization_field.103.b
+		fromfromfrom = { set_megastructure_flag = AOW_flag_MEGA_change_to_neutron_star }
+	}
+	option = {
+		name = AOW_evt_curvature_pressurization_field.103.c
+		fromfromfrom = { set_megastructure_flag = AOW_flag_MEGA_change_to_pulsar }
+	}
+	option = {
+		name = AOW_evt_curvature_pressurization_field.103.d
+		trigger = { has_global_flag = has_real_space_mod }
+		fromfromfrom = { set_megastructure_flag = AOW_flag_MEGA_change_to_magnetar }
+	}
+	after = {
+		hidden_effect = {
+			fromfromfrom = { set_halted = 0 }
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_curvature_pressurization_field.104
+	title = AOW_evt_curvature_pressurization_field.104.title
 	desc = {
 		trigger = { from = { is_star_class = sc_black_hole } }
-		text = AOW_evt_curvature_pressurization_field.103.a.desc
+		text = AOW_evt_curvature_pressurization_field.104.a.desc
 	}
 	desc = {
 		trigger = { from = { is_star_class = sc_neutron_star } }
-		text = AOW_evt_curvature_pressurization_field.103.b.desc
+		text = AOW_evt_curvature_pressurization_field.104.b.desc
 	}
 	desc = {
 		trigger = { from = { is_star_class = sc_pulsar } }
-		text = AOW_evt_curvature_pressurization_field.103.c.desc
+		text = AOW_evt_curvature_pressurization_field.104.c.desc
 	}
 	desc = {
 		trigger = { from = { is_star_class = sc_magnetar } }
-		text = AOW_evt_curvature_pressurization_field.103.d.desc
+		text = AOW_evt_curvature_pressurization_field.104.d.desc
 	}
 	is_triggered_only = yes
 	picture = {
@@ -2481,7 +2512,7 @@ country_event = {
 		# }
 	}
 	option = {
-		name = AOW_evt_curvature_pressurization_field.103.a
+		name = AOW_evt_curvature_pressurization_field.104.a
 	}
 }
 
@@ -3149,6 +3180,263 @@ country_event = {
 	location = fromfromfrom
 	option = {
 		name = AOW_evt_starcage_world.105.a
+		if = {
+			limit = { has_origin = origin_starcage_world_common_star }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier5researchreward
+				min = @tier5researchmin
+				max = @tier5researchmax
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AOW_evt_starcage_world.110
+	title = AOW_evt_starcage_world.110.title
+	desc = {
+		trigger = {
+			OR = {
+				has_origin = origin_starcage_world_common_star
+				has_origin = origin_starcage_world_neutron_star
+			}
+		}
+		text = AOW_evt_starcage_world.110.a.desc
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_origin = origin_starcage_world_common_star
+					has_origin = origin_starcage_world_neutron_star
+				}
+			}
+		}
+		text = AOW_evt_starcage_world.110.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_starcage_world
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_starcage_world.110.a
+		if = {
+			limit = { has_origin = origin_starcage_world_common_star }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_starcage_world.111
+	title = AOW_evt_starcage_world.111.title
+	desc = {
+		trigger = {
+			OR = {
+				has_origin = origin_starcage_world_common_star
+				has_origin = origin_starcage_world_neutron_star
+			}
+		}
+		text = AOW_evt_starcage_world.111.a.desc
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_origin = origin_starcage_world_common_star
+					has_origin = origin_starcage_world_neutron_star
+				}
+			}
+		}
+		text = AOW_evt_starcage_world.111.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_starcage_world
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_starcage_world.111.a
+		if = {
+			limit = { has_origin = origin_starcage_world_common_star }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_starcage_world.112
+	title = AOW_evt_starcage_world.112.title
+	desc = {
+		trigger = {
+			OR = {
+				has_origin = origin_starcage_world_common_star
+				has_origin = origin_starcage_world_neutron_star
+			}
+		}
+		text = AOW_evt_starcage_world.112.a.desc
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_origin = origin_starcage_world_common_star
+					has_origin = origin_starcage_world_neutron_star
+				}
+			}
+		}
+		text = AOW_evt_starcage_world.112.b.desc
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_AOW_MEGA_starcage_world
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = fromfromfrom
+	option = {
+		name = AOW_evt_starcage_world.112.a
+		if = {
+			limit = { has_origin = origin_starcage_world_common_star }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier5researchreward
+				min = @tier5researchmin
+				max = @tier5researchmax
+			}
+		}
+	}
+}
+country_event = {
+	id = AOW_evt_starcage_world.400
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_origin = origin_starcage_world_common_star
+			has_origin = origin_starcage_world_neutron_star
+		}
+	}
+	immediate = {
+		capital_scope = {
+			set_planet_flag = AOW_flag_PLNT_starcage_world_@owner
+			add_deposit = AOW_d_shattered_starcage_world
+			add_deposit = AOW_d_shattered_starcage_world_blocker_1
+			add_deposit = AOW_d_shattered_starcage_world_blocker_1
+			add_deposit = AOW_d_shattered_starcage_world_blocker_1
+			add_deposit = AOW_d_shattered_starcage_world_blocker_2
+			add_deposit = AOW_d_shattered_starcage_world_blocker_2
+			add_deposit = AOW_d_shattered_starcage_world_blocker_2
+			add_deposit = AOW_d_shattered_starcage_world_blocker_3
+			add_deposit = AOW_d_shattered_starcage_world_blocker_4
+			remove_all_districts = yes
+			if = {
+				limit = {
+					owner = { has_origin = origin_starcage_world_common_star }
+				}
+				add_district = AOW_district_sw_common_star
+				add_district = AOW_district_sw_common_star
+				add_district = AOW_district_sw_common_star
+				add_zone = { district = AOW_district_sw_common_star zone = zone_starcage_world_core_jobs }
+				add_zone = { district = AOW_district_sw_common_star zone = zone_starcage_world_core_amenities }
+			}
+			if = {
+				limit = {
+					owner = { has_origin = origin_starcage_world_neutron_star }
+				}
+				add_modifier = { modifier = AOW_mod_PLNT_neutron_star_magnetic_field days = -1 }
+				add_district = AOW_district_sw_neutron_star
+				add_district = AOW_district_sw_neutron_star
+				add_district = AOW_district_sw_neutron_star
+				add_zone = { district = AOW_district_sw_neutron_star zone = zone_starcage_world_core_jobs }
+				add_zone = { district = AOW_district_sw_neutron_star zone = zone_starcage_world_core_amenities }
+			}
+			add_district = AOW_district_starcage_world_1
+			add_district = AOW_district_starcage_world_2
+			add_district = AOW_district_starcage_world_3
+			add_zone = { district = AOW_district_starcage_world_1 zone = zone_starcage_world_base }
+			add_zone = { district = AOW_district_starcage_world_2 zone = zone_starcage_world_industrial }
+			add_zone = { district = AOW_district_starcage_world_3 zone = zone_starcage_world_research }
+			set_variable = { which = AOW_var_sw_points value = 0 }
+			if = {
+				limit = {
+					owner = {
+						country_uses_food = yes
+						country_uses_consumer_goods = yes
+					}
+				}
+				set_variable = { which = AOW_var_sw_points_technician value = 4 }
+				set_variable = { which = AOW_var_sw_points_technician value = 4 }
+				set_variable = { which = AOW_var_sw_points_miner value = 6 }
+				set_variable = { which = AOW_var_sw_points_farmer value = 8 }
+				set_variable = { which = AOW_var_sw_points_trader value = 0 }
+				set_variable = { which = AOW_var_sw_points_physicist value = 2 }
+				set_variable = { which = AOW_var_sw_points_biologist value = 2 }
+				set_variable = { which = AOW_var_sw_points_engineer value = 2 }
+				set_variable = { which = AOW_var_sw_points_bureaucrat value = 2 }
+				set_variable = { which = AOW_var_sw_points_artisan value = 2 }
+				set_variable = { which = AOW_var_sw_points_foundry value = 2 }
+				set_variable = { which = AOW_var_sw_points_chemist value = 0 }
+				set_variable = { which = AOW_var_sw_points_refiner value = 0 }
+				set_variable = { which = AOW_var_sw_points_translucer value = 0 }
+				set_variable = { which = AOW_var_sw_points_soldier value = 0 }
+				set_variable = { which = AOW_var_sw_points_bio_trophy value = 0 }
+				set_variable = { which = AOW_var_sw_points_healthcare value = 0 }
+			}
+			if = {
+				limit = {
+					owner = {
+						country_uses_food = no
+						country_uses_consumer_goods = yes
+					}
+				}
+				set_variable = { which = AOW_var_sw_points_technician value = 4 }
+				set_variable = { which = AOW_var_sw_points_miner value = 14 }
+				set_variable = { which = AOW_var_sw_points_farmer value = 0 }
+				set_variable = { which = AOW_var_sw_points_trader value = 0 }
+				set_variable = { which = AOW_var_sw_points_physicist value = 2 }
+				set_variable = { which = AOW_var_sw_points_biologist value = 2 }
+				set_variable = { which = AOW_var_sw_points_engineer value = 2 }
+				set_variable = { which = AOW_var_sw_points_bureaucrat value = 2 }
+				set_variable = { which = AOW_var_sw_points_artisan value = 2 }
+				set_variable = { which = AOW_var_sw_points_foundry value = 2 }
+				set_variable = { which = AOW_var_sw_points_chemist value = 0 }
+				set_variable = { which = AOW_var_sw_points_refiner value = 0 }
+				set_variable = { which = AOW_var_sw_points_translucer value = 0 }
+				set_variable = { which = AOW_var_sw_points_soldier value = 0 }
+				set_variable = { which = AOW_var_sw_points_bio_trophy value = 0 }
+				set_variable = { which = AOW_var_sw_points_healthcare value = 0 }
+			}
+			if = {
+				limit = {
+					owner = {
+						country_uses_food = no
+						country_uses_consumer_goods = no
+					}
+				}
+				set_variable = { which = AOW_var_sw_points_technician value = 10 }
+				set_variable = { which = AOW_var_sw_points_miner value = 7 }
+				set_variable = { which = AOW_var_sw_points_farmer value = 0 }
+				set_variable = { which = AOW_var_sw_points_trader value = 0 }
+				set_variable = { which = AOW_var_sw_points_physicist value = 2 }
+				set_variable = { which = AOW_var_sw_points_biologist value = 2 }
+				set_variable = { which = AOW_var_sw_points_engineer value = 2 }
+				set_variable = { which = AOW_var_sw_points_bureaucrat value = 2 }
+				set_variable = { which = AOW_var_sw_points_artisan value = 0 }
+				set_variable = { which = AOW_var_sw_points_foundry value = 3 }
+				set_variable = { which = AOW_var_sw_points_chemist value = 0 }
+				set_variable = { which = AOW_var_sw_points_refiner value = 0 }
+				set_variable = { which = AOW_var_sw_points_translucer value = 0 }
+				set_variable = { which = AOW_var_sw_points_soldier value = 0 }
+				set_variable = { which = AOW_var_sw_points_bio_trophy value = 0 }
+				set_variable = { which = AOW_var_sw_points_healthcare value = 2 }
+			}
+		}
 	}
 }
 country_event = {

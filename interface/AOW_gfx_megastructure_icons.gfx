@@ -1,4 +1,63 @@
 spriteTypes = {
+	#资源钻取站
+	spriteType = {
+		name = "GFX_AOW_MEGA_resource_drilling_station_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/resource_drilling_station.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_resource_drilling_station_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/resource_drilling_station.dds"
+	}
+	#奇观建设局
+	spriteType = {
+		name = "GFX_AOW_MEGA_wonder_construction_bureau_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/wonder_construction_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_wonder_construction_bureau_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/wonder_construction_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_wonder_construction_bureau_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/wonder_construction_bureau.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_wonder_construction_bureau_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/wonder_construction_bureau.dds"
+	}
+	#星笼世界
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_0_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_1_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_2_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_3_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_5_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_ruined_01_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world_ruined.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_starcage_world_ruined_02_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/starcage_world_ruined.dds"
+	}
 	#环世界
 	spriteType = {
 		name = "GFX_AOW_MEGA_ring_world_2_0_outliner_icon"
@@ -168,6 +227,10 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_AOW_MEGA_deep_space_prison_4_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
+	}
+	spriteType = {
+		name = "GFX_AOW_MEGA_deep_space_prison_5_outliner_icon"
 		textureFile = "gfx/interface/icons/megastructures/deep_space_prison.dds"
 	}
 	#行星聚变炮

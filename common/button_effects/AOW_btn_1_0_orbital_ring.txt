@@ -12,6 +12,7 @@ AOW_btn_orbital_ring_prerequisites = {
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
 			has_overlord_dlc = yes
+			is_nomadic = no
 			has_technology = tech_starbase_3
 			has_technology = tech_galactic_administration
 			has_technology = tech_planetary_infrastructure_1

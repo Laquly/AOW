@@ -4,7 +4,6 @@ matter_decompressor_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	#construction_blocks_and_blocked_by = none
 	entity_offset = { x = -20 y = -20 }
 	rotate_to_center = no
 	scale_offset = yes
@@ -12,29 +11,9 @@ matter_decompressor_0 = {
 	resources = {
 		category = megastructures
 		cost = {
+			alloys = 5000
 			unity = 5000
 		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
-			alloys = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 5000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 5000
-			mult = @halved_alloy_to_food_cost_ratio
-		}
-
 		upkeep = {
 			energy = 5
 		}
@@ -76,7 +55,6 @@ matter_decompressor_0 = {
 			}
 		}
 	}
-
 	# root = system
 	# from = country
 	ai_weight = {
@@ -118,27 +96,8 @@ matter_decompressor_1 = {
 	resources = {
 		category = megastructures
 		cost = {
+			alloys = 12500
 			unity = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
-			alloys = 12500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 12500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 12500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		produces = {
 			minerals = 500
@@ -177,26 +136,7 @@ matter_decompressor_2 = {
 		category = megastructures
 		cost = {
 			unity = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 12500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 12500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 12500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		produces = {
 			minerals = 1000
@@ -235,26 +175,7 @@ matter_decompressor_3 = {
 		category = megastructures
 		cost = {
 			unity = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 12500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 12500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 12500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		produces = {
 			minerals = 1500
@@ -283,7 +204,6 @@ matter_decompressor_4 = {
 	entity = "matter_decompressor_stage_4_entity"
 	construction_entity = "matter_decompressor_stage_4_construction_entity"
 	portrait = "GFX_megastructure_matter_decompressor_background"
-	show_in_outliner = no
 	entity_offset = { x = -20 y = -20 }
 	rotate_to_center = yes
 	scale_offset = yes
@@ -297,26 +217,7 @@ matter_decompressor_4 = {
 		category = megastructures
 		cost = {
 			unity = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 12500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 12500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 12500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		produces = {
 			minerals = 2000
@@ -340,7 +241,6 @@ matter_decompressor_4 = {
 		set_star_flag = matter_decompressor_built
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			set_country_flag = has_built_or_repaired_galactic_wonders
 			country_event = { id = mega.9013 }
 		}
 	}
@@ -391,7 +291,6 @@ matter_decompressor_restored = {
 	entity = "matter_decompressor_stage_4_entity"
 	construction_entity = "matter_decompressor_stage_4_construction_entity"
 	portrait = "GFX_megastructure_matter_decompressor_background"
-	show_in_outliner = no
 	entity_offset = { x = -20 y = -20 }
 	rotate_to_center = yes
 	scale_offset = yes
@@ -405,26 +304,7 @@ matter_decompressor_restored = {
 		category = megastructures
 		cost = {
 			unity = 7500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 20000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 20000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 20000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		produces = {
 			minerals = 2000

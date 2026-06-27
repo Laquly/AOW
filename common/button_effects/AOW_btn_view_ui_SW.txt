@@ -50,7 +50,7 @@ AOW_btn_view_ui_sw_repair = {#修复
 			set_variable = { which = AOW_var_sw_points_refiner	    value = 0 }
 			set_variable = { which = AOW_var_sw_points_translucer	value = 0 }
 			set_variable = { which = AOW_var_sw_points_healthcare	value = 0 }
-			set_variable = { which = AOW_var_sw_points  value = 30 }
+			set_variable = { which = AOW_var_sw_points  value = @AOW_var_max_sw_points }
 		}
 	}
 }

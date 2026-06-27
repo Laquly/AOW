@@ -11,7 +11,7 @@ AOW_btn_mega_shipyard_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			host_has_dlc = "Federations"
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			custom_tooltip = AOW_text_final_requirements
 			has_technology = tech_mega_shipyard

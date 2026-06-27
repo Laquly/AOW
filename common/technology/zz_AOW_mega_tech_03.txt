@@ -161,6 +161,7 @@ AOW_TECH_starfall_spear = {
 	tier = 6
 	category = { field_manipulation }
 	prerequisites = { "tech_dyson_sphere" "AOW_TECH_star_picker" "AOW_TECH_multi_dimensional_warehouse" }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	is_dangerous = yes
@@ -194,6 +195,7 @@ AOW_TECH_starfall_spear_cooldown_1 = {
 	tier = 7
 	category = { computing }
 	prerequisites = { AOW_TECH_starfall_spear }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	modifier = {
@@ -214,6 +216,7 @@ AOW_TECH_starfall_spear_cooldown_2 = {
 	tier = 7
 	category = { particles }
 	prerequisites = { AOW_TECH_starfall_spear_cooldown_1 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight2
 	is_rare = yes
 	modifier = {
@@ -234,6 +237,7 @@ AOW_TECH_starfall_spear_cooldown_3 = {
 	tier = 7
 	category = { particles }
 	prerequisites = { AOW_TECH_starfall_spear_cooldown_2 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight3
 	is_rare = yes
 	modifier = {
@@ -254,6 +258,7 @@ AOW_TECH_starfall_spear_cooldown_4 = {
 	tier = 7
 	category = { particles }
 	prerequisites = { AOW_TECH_starfall_spear_cooldown_3 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight3
 	is_rare = yes
 	modifier = {
@@ -274,6 +279,7 @@ AOW_TECH_starfall_spear_cooldown_5 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear_cooldown_4 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight3
 	is_rare = yes
 	modifier = {
@@ -294,6 +300,7 @@ AOW_TECH_starfall_spear_target_capacity_1 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	modifier = {
@@ -314,6 +321,7 @@ AOW_TECH_starfall_spear_target_capacity_2 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear_target_capacity_1 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight2
 	is_rare = yes
 	modifier = {
@@ -334,6 +342,7 @@ AOW_TECH_starfall_spear_target_capacity_3 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear_target_capacity_2 }
+	potential = { is_nomadic = no }
 	weight = @tier7weight3
 	is_rare = yes
 	modifier = {
@@ -354,6 +363,7 @@ AOW_TECH_starfall_spear_target_capacity_4 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear_target_capacity_3 }
+	potential = { is_nomadic = no }
 	weight = @tier8weight1
 	is_rare = yes
 	modifier = {
@@ -374,10 +384,126 @@ AOW_TECH_starfall_spear_target_capacity_5 = {
 	tier = 7
 	category = { field_manipulation }
 	prerequisites = { AOW_TECH_starfall_spear_target_capacity_4 }
+	potential = { is_nomadic = no }
 	weight = @tier8weight2
 	is_rare = yes
 	modifier = {
 		starfall_spear_system_target_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_system_strike_range_1 = {
+	cost = @tier8cost1
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_target_capacity_5 }
+	potential = { is_nomadic = no }
+	weight = @tier8weight1
+	is_rare = yes
+	is_dangerous = yes
+	potential = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+	modifier = {
+		starfall_spear_system_strike_range_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_system_strike_range_2 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_system_strike_range_1 }
+	potential = { is_nomadic = no }
+	weight = @tier8weight2
+	is_rare = yes
+	is_dangerous = yes
+	potential = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+	modifier = {
+		starfall_spear_system_strike_range_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_system_strike_range_3 = {
+	cost = @tier8cost3
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_system_strike_range_2 }
+	potential = { is_nomadic = no }
+	weight = @tier8weight3
+	is_rare = yes
+	is_dangerous = yes
+	potential = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+	modifier = {
+		starfall_spear_system_strike_range_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_system_strike_range_4 = {
+	cost = @tier9cost1
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_system_strike_range_3 }
+	potential = { is_nomadic = no }
+	weight = @tier9weight1
+	is_rare = yes
+	is_dangerous = yes
+	potential = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+	modifier = {
+		starfall_spear_system_strike_range_add = 1
+	}
+	weight_modifier = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_megastructure = AOW_MEGA_starfall_spear_standby }
+		}
+	}
+	ai_weight = { factor = 10 }
+}
+AOW_TECH_starfall_spear_system_strike_range_5 = {
+	cost = @tier9cost2
+	area = physics
+	tier = 7
+	category = { field_manipulation }
+	prerequisites = { AOW_TECH_starfall_spear_system_strike_range_4 }
+	potential = { is_nomadic = no }
+	weight = @tier9weight2
+	is_rare = yes
+	is_dangerous = yes
+	potential = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+	modifier = {
+		starfall_spear_system_strike_range_add = 1
 	}
 	weight_modifier = {
 		factor = 10
@@ -399,6 +525,7 @@ AOW_TECH_star_transfer = {
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_curvature_pressurization_field" "AOW_TECH_stellar_eater" "AOW_TECH_celestial_decompressor" }
 	potential = {
 		is_ai = no
+		is_nomadic = no
 		NOT = { has_global_flag = AOW_flag_GLBL_no_star_transfer }
 	}
 	weight = @tier6weight2
@@ -422,6 +549,7 @@ AOW_TECH_quindecillion_stellar_quantum_matrix = {
 	category = { computing }
 	ai_update_type = all
 	prerequisites = { "tech_dyson_sphere" "tech_science_nexus" "AOW_TECH_multi_dimensional_warehouse" }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	weight_modifier = {
@@ -509,6 +637,7 @@ AOW_TECH_heaven_navigation_bureau = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "tech_jump_drive_1" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	is_rare = yes
 	weight_modifier = {
@@ -533,6 +662,7 @@ AOW_TECH_miraculous_shipyard = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "tech_mega_shipyard" "AOW_TECH_star_picker" "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_naval_command_base" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	is_rare = yes
 	weight_modifier = {
@@ -557,6 +687,7 @@ AOW_TECH_celestial_shield = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_planetary_blaster_system" "tech_dyson_sphere" "AOW_TECH_multi_dimensional_warehouse" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	is_rare = yes
 	weight_modifier = {
@@ -585,6 +716,7 @@ AOW_TECH_bunker_ring = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_celestial_shield" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	weight_modifier = {
 		modifier = {
@@ -605,6 +737,7 @@ AOW_TECH_starcage_world = {
 	category = { new_worlds }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "tech_ring_world" "AOW_TECH_void_vortex" "tech_dyson_sphere" "tech_matter_decompressor" "AOW_TECH_zero_element_furnace" "AOW_TECH_star_picker" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	weight_modifier = {
 		modifier = {
@@ -656,6 +789,7 @@ AOW_TECH_material_recombination_instrument = {
 	category = { industry }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	weight_modifier = {
@@ -680,6 +814,7 @@ AOW_TECH_ring_world_3 = {
 	category = { voidcraft }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_ring_world_2" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight2
 	is_rare = yes
 	weight_modifier = {
@@ -704,6 +839,7 @@ AOW_TECH_ring_world_4 = {
 	category = { voidcraft }
 	ai_update_type = all
 	prerequisites = { "AOW_TECH_multi_dimensional_warehouse" "AOW_TECH_ring_world_3" }
+	potential = { is_nomadic = no }
 	weight = @tier7weight1
 	is_rare = yes
 	weight_modifier = {

@@ -60,6 +60,7 @@ AOW_MEGA_celestial_decompressor_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
+		set_star_flag = conduit_excluded
 		from = { country_event = { id = AOW_evt_celestial_decompressor.100 } }
 		fromfrom = {
 			set_megastructure_flag = celestial_decompressor
@@ -161,6 +162,7 @@ AOW_MEGA_celestial_decompressor_3 = {
 			set_country_flag = has_built_or_repaired_galactic_wonders
 			country_event = { id = AOW_evt_celestial_decompressor.103 }
 		}
+		remove_star_flag = conduit_excluded
 		remove_megastructure = fromfrom
 	}
 }

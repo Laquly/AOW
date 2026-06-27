@@ -1,8 +1,7 @@
 @district_buildtime = 600
-@district_cost_minerals = 1000
-@district_cost_sr = 50
+@district_cost_minerals = 2000
 @district_upkeep_energy = 10
-@district_upkeep_sr = 1
+@district_upkeep_alloys = 5
 
 AOW_district_sg_housing = {
     icon = district_arcology_housing
@@ -26,31 +25,15 @@ AOW_district_sg_housing = {
         }
         upkeep = {
             energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
         }
     }
     planet_modifier = {
-        planet_housing_add = 1000
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        modifier = {
-            job_soldier_add = 500
-        }
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_warrior_drone_add = 500
-        }
+        planet_housing_add = 5000
     }
 }
-AOW_district_sg_fortress = {
+AOW_district_star_guardian_1 = {
+    icon = district_city
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
     zone_slots = {
@@ -66,36 +49,18 @@ AOW_district_sg_fortress = {
         category = planet_districts
         cost = {
             minerals = @district_cost_minerals
-            volatile_motes = @district_cost_sr
         }
         upkeep = {
             energy = @district_upkeep_energy
-            volatile_motes = @district_upkeep_sr
+            alloys = @district_upkeep_alloys
         }
     }
     planet_modifier = {
         planet_housing_add = 1000
     }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = no }
-        }
-        modifier = {
-            job_soldier_add = 6
-        }
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_warrior_drone_add = 6
-        }
-    }
 }
-AOW_district_sg_order = {
+AOW_district_star_guardian_2 = {
+    icon = district_city
     base_buildtime = @district_buildtime
     is_capped_by_modifier = no
     zone_slots = {
@@ -111,32 +76,69 @@ AOW_district_sg_order = {
         category = planet_districts
         cost = {
             minerals = @district_cost_minerals
-            volatile_motes = @district_cost_sr
         }
         upkeep = {
             energy = @district_upkeep_energy
-            volatile_motes = @district_upkeep_sr
+            alloys = @district_upkeep_alloys
         }
     }
     planet_modifier = {
-        planet_housing_add = 10
+        planet_housing_add = 1000
     }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = no }
+}
+AOW_district_star_guardian_3 = {
+    icon = district_city
+    base_buildtime = @district_buildtime
+    is_capped_by_modifier = no
+    zone_slots = {
+        slot_star_guardian_secondary
+    }
+    show_on_uncolonized = {
+        uses_district_set = AOW_district_star_guardian
+    }
+    potential = {
+        uses_district_set = AOW_district_star_guardian
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @district_cost_minerals
         }
-        modifier = {
-            job_enforcer_add = 6
+        upkeep = {
+            energy = @district_upkeep_energy
+            alloys = @district_upkeep_alloys
         }
     }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { is_gestalt = yes }
-        }
-        modifier = {
-            job_patrol_drone_add = 6
-        }
+    planet_modifier = {
+        planet_housing_add = 1000
     }
+}
+
+AOW_district_star_guardian_energy = {
+    icon = district_generator
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_star_guardian_alloys = {
+    icon = district_arcology_arms_industry
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_star_guardian_fortress = {
+    icon = district_arcology_fortress
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
+}
+AOW_district_star_guardian_order = {
+    icon = district_resort
+    is_capped_by_modifier = no
+    zone_slots = { slot_empty }
+    show_on_uncolonized = { always = no }
+    potential = { always = no }
 }

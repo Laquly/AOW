@@ -69,6 +69,32 @@ country_event = {
 }
 
 country_event = {
+	id = planetary_ship.41
+	title = planetary_ship.41.name
+	desc = planetary_ship.41.desc
+	picture = GFX_evt_planetary_ship_megastructures_3
+	location = fromfromfrom
+	is_triggered_only = yes
+	option = {
+		name = NAME_planetary_ship_1
+		fromfromfrom = {
+			set_megastructure_flag = planetary_ship_megastructures_4
+		}
+	}
+	option = {
+		name = NAME_planetary_ship_2
+		fromfromfrom = {
+			set_megastructure_flag = planetary_ship_megastructures_5
+		}
+	}
+	after = {
+		hidden_effect = {
+			fromfromfrom = { set_halted = 0 }
+		}
+	}
+}
+
+country_event = {
 	id = planetary_ship.5
 	title = planetary_ship.5.name
 	desc = planetary_ship.5.desc

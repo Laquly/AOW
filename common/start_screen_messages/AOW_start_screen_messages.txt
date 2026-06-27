@@ -1,0 +1,11 @@
+part = {
+	location = 0
+	localization = "START_SCREEN_STARCAGE_WORLD"
+	
+	trigger = {
+		OR = {
+			has_origin = origin_starcage_world_common_star
+			has_origin = origin_starcage_world_neutron_star
+		}
+	}
+}

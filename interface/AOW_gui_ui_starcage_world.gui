@@ -24,7 +24,7 @@ guiTypes = {
 		orientation = center
 		origo = center
 		moveable = yes
-		size = { width = @width1 height = 550 }
+		size = { width = @width1 height = 560 }
 		background = { #整体背景图
 			name = "background"
 			quadTextureSprite = GFX_tile_large_bg_plain
@@ -80,8 +80,9 @@ guiTypes = {
 				effect = AOW_btn_view_ui_sw_default
 				size = { x = 640 y = 50 }
 				text = AOW_var_sw_points
-				buttonFont = "malgun_goth_24"
+				buttonFont = "cg_16b"
 				format = center
+				multiline = yes
 				alwaysTransparent = yes
 			}
 			effectButtonType = {

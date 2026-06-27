@@ -249,10 +249,10 @@ AOW_var_system_num_non_minor_planetary_body = {
 		trigger_scope = solar_system
 		parameters = {
 			limit = {
-				NOR = {
-					is_asteroid = yes
-					is_moon = yes
-				}
+				is_artificial = no
+				is_astral_scar = no
+				is_asteroid = no
+				is_moon = no
 			}
 		}
 		mode = add
@@ -266,6 +266,8 @@ AOW_var_system_num_minor_planetary_body = {
 		trigger_scope = solar_system
 		parameters = {
 			limit = {
+				is_artificial = no
+				is_astral_scar = no
 				OR = {
 					is_asteroid = yes
 					is_moon = yes

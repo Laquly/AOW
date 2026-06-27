@@ -1,0 +1,85 @@
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 0
+			}
+		}
+	}
+	localization_key = AOW_text_0
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 1
+			}
+		}
+	}
+	localization_key = AOW_text_1
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 2
+			}
+		}
+	}
+	localization_key = AOW_text_2
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 3
+			}
+		}
+	}
+	localization_key = AOW_text_3
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 4
+			}
+		}
+	}
+	localization_key = AOW_text_4
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 5
+			}
+		}
+	}
+	localization_key = AOW_text_5
+}
+text = {
+	trigger = {
+		exists = event_target:AOW_starfall_spear_target_$target$_@from
+		event_target:AOW_starfall_spear_target_$target$_@from = {
+			check_variable_arithmetic = {
+				which = value:AOW_var_starfall_spear_current_system_strike_range
+				value = 6
+			}
+		}
+	}
+	localization_key = AOW_text_6
+}
+default = AOW_text_0

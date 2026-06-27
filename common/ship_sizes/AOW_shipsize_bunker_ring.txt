@@ -39,6 +39,8 @@ AOW_shipsize_bunker_ring = {
 	}
 	potential_construction = {
 		is_scope_type = starbase
+		is_waystation_starbase = no
+		is_arkship_starbase = no
 	}
 	possible_construction = {
 		OR = {

@@ -4,7 +4,18 @@
  edict_AOW_control_panel_desc:0"这里可以重新召唤奇观拓展的控制面板。"
 
  #公告
- AOW_text_announcement_desc:0"写于§Y2025年11月25日§!\n始于2021年9月，开发时长约§Y四年§!\nQ群§Y632833071§!（只会在MOD更新时艾特全体成员）\n\n§H对玩家说§!\n\n-适配4.2\n\n-修复了§Y行星波动炮§!无法被生物舰船国家使用的bug，自带50%防御平台容量加成，但是切换设计需要合金和时间\n\n-§Y星笼世界§!增加§Y[GetAOWHealthcarePlural]§!岗位类型\n\n-§Y繁荣贸易站§!模型改进，并改为全部政体均可使用，效果改为增加贸易值产出，减少市场中介费\n\n-§Y千载星辰§!的政策效果增强\n\n-降低了巨构提供的政策在§G性能方面的负载§!（不卡巨构！）\n\n§H对Modder说§!\n\n-对舰队set_fleet_flag=cannot_be_hit_by_aow_starfall_spear可以防止舰队被§Y坠星天矛§!代码杀（但是无法防御高能震荡的减少战斗力的负面buff，毕竟这个只是添加修正，不是代码杀）\n-对星系set_star_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星系\n-对星球set_planet_flag=cannot_be_hit_by_aow_starfall_spear，可防止§Y坠星天矛§!选中该星球\n-has_global_flag=force_adjust_aow_megastructure_cap可强制调整AI巨构上限为0\n-has_global_flag=force_disable_aow_megastructure可强制禁用星轨、星网，并调整玩家的星笼世界和坠星天矛上限为1\n-在dismantle_possible里加上is_upgrading = no，可在巨构升级时禁止拆除功能\n-修改了原版封装can_dismantle_megastructure，加上了is_upgrading = no，可在巨构升级时禁止拆除功能\n-修改了基本上所有原版巨构，与其他同样修改了原版巨构的MOD会产生冲突，最后具体用哪个MOD的修改我也不清楚\n-给巨构生成的人工星球set_planet_flag = is_orbiting_planet_\@fromfrom.planet之后，可通过检测星系中是否有该flag的星球，即可判断工程船所选星球是否有巨构人工星球\n-修改了原版的封装has_ringworld_output_boost\n-修改了事件toxoids.1"
+ AOW_text_announcement_desc:0"写于§Y2026年6月27日§!\n始于2021年9月，开发时长约§Y5年§!\nQ群§Y632833071§!\n\n—补全了星笼世界的星球背景和图标\n\n—修复了掩体星环无法保存设计图的bug，现在需要玩家手动保存一个设计才能建造\n\n—补全了一些舰船的汉化缺失\n\n—修复了巨构御星天炉在星云内没有变成舰船选项的bug\n\n—修复小型巨构无法被游牧修建的bug\n\n—修复曲率增压场、御星天炉、行星战舰，这3个多种升级路线在新版本的适配bug\n\n—新增玩家预设"
+ # 对舰队set_fleet_flag=cannot_be_hit_by_aow_starfall_spear可以防止舰队被坠星天矛代码杀（但是无法防御高能震荡的减少战斗力的负面buff，毕竟这个只是添加修正，不是代码杀）
+ # 对星系set_star_flag=cannot_be_hit_by_aow_starfall_spear，可防止坠星天矛选中该星系
+ # 对星球set_planet_flag=cannot_be_hit_by_aow_starfall_spear，可防止坠星天矛选中该星球
+ # has_global_flag=force_adjust_aow_megastructure_cap可强制调整AI巨构上限为0
+ # has_global_flag=force_disable_aow_megastructure可强制禁用星轨、星网，并调整玩家的星笼世界和坠星天矛上限为1
+ # 在dismantle_possible里加上is_upgrading = no，可在巨构升级时禁止拆除功能
+ # 修改了原版封装can_dismantle_megastructure，加上了is_upgrading = no，可在巨构升级时禁止拆除功能
+ # 修改了基本上所有原版巨构，与其他同样修改了原版巨构的MOD会产生冲突，最后具体用哪个MOD的修改我也不清楚
+ # 给巨构生成的人工星球set_planet_flag = is_orbiting_planet_@fromfrom.planet之后，可通过检测星系中是否有该flag的星球，即可判断工程船所选星球是否有巨构人工星球
+ # 修改了原版的封装has_ringworld_output_boost
+ # 修改了事件toxoids.1
 
  #事件
  AOW_core.100.title:0"奇观拓展：控制面板"
@@ -52,6 +63,9 @@
  AOW_text_can_research_hyperdimension_hiding_title:"研究超维褶皱"
  AOW_text_can_research_hyperdimension_hiding:"§H当前状态：§!§R禁止研究超维褶皱§!\n\n§E点击切换为允许§!"
  AOW_text_cannot_research_hyperdimension_hiding:"§H当前状态：§!§G允许研究超维褶皱§!\n\n§E点击切换为禁止§!"
+ AOW_text_can_research_starfall_spear_system_strike_range_title:"研究坠星天矛范围打击"
+ AOW_text_can_research_starfall_spear_system_strike_range:"§H当前状态：§!§R禁止研究坠星天矛范围打击§!\n\n§E点击切换为允许§!"
+ AOW_text_cannot_research_starfall_spear_system_strike_range:"§H当前状态：§!§G允许研究坠星天矛范围打击§!\n\n§E点击切换为禁止§!"
 
 
  #数值调整

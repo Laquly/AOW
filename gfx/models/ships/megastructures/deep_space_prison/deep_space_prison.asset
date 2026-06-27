@@ -110,6 +110,34 @@ entity = {
 	attach = { loc2 = "deep_space_prison_part_1_entity" }
 	scale = 1
 }
+entity = {
+	name = "deep_space_prison_5_construction_entity"
+	locator = { name = "bk1" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	locator = { name = "bk2" position = { 0 0 0 } rotation ={ 0 90 0 } }
+	locator = { name = "bk3" position = { 0 0 0 } rotation ={ 0 180 0 } }
+	locator = { name = "bk4" position = { 0 0 0 } rotation ={ 0 270 0 } }
+	locator = { name = "bk5" position = { 0 0 0 } rotation ={ 0 180 90 } }
+	locator = { name = "bk6" position = { 0 0 0 } rotation ={ 0 180 -90 } }
+	attach = { bk1 = "deep_space_prison_bk1_entity" }
+	attach = { bk2 = "deep_space_prison_bk1_entity" }
+	attach = { bk3 = "deep_space_prison_bk1_entity" }
+	attach = { bk4 = "deep_space_prison_bk1_entity" }
+	attach = { bk5 = "deep_space_prison_bk1_entity" }
+	attach = { bk6 = "deep_space_prison_bk1_entity" }
+	
+	locator = { name = "loc1" position = { 0 60 0 } rotation ={ 0 -90 0 } }#上
+	locator = { name = "loc2" position = { 0 -60 0 } rotation ={ 0 90 0 } }#下
+	locator = { name = "loc3" position = { 60 0 0 } rotation ={ 90 0 0 } }#左
+	locator = { name = "loc4" position = { -60 0 0 } rotation ={ -90 0 0 } }#右
+	locator = { name = "loc5" position = { 0 0 60 } rotation ={ 0 0 0 } }#前
+	locator = { name = "loc6" position = { 0 0 -60 } rotation ={ 0 180 0 } }#后
+	attach = { loc1 = "deep_space_prison_part_0_entity" }
+	attach = { loc2 = "deep_space_prison_part_0_entity" }
+	attach = { loc3 = "deep_space_prison_part_0_entity" }
+	attach = { loc4 = "deep_space_prison_part_0_entity" }
+	attach = { loc5 = "deep_space_prison_part_0_entity" }
+	attach = { loc6 = "deep_space_prison_part_0_entity" }
+}
 
 
 entity = {
@@ -128,23 +156,17 @@ entity = {
 entity = {
 	name = "deep_space_prison_4_entity"
 	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
-
-	locator = { name = "loc1" position = { 0 0 0 } rotation ={ 0 0 0 } }
-	locator = { name = "loc2" position = { 0 0 0 } rotation ={ 0 90 0 } }
-	locator = { name = "loc3" position = { 0 0 0 } rotation ={ 0 180 0 } }
-	locator = { name = "loc4" position = { 0 0 0 } rotation ={ 0 270 0 } }
-	locator = { name = "loc5" position = { 0 0 0 } rotation ={ 0 180 90 } }
-	locator = { name = "loc6" position = { 0 0 0 } rotation ={ 0 180 -90 } }
-
-	attach = { loc1 = "deep_space_prison_bk1_entity" }
-	attach = { loc2 = "deep_space_prison_bk1_entity" }
-	attach = { loc3 = "deep_space_prison_bk1_entity" }
-	attach = { loc4 = "deep_space_prison_bk1_entity" }
-	attach = { loc5 = "deep_space_prison_bk1_entity" }
-	attach = { loc6 = "deep_space_prison_bk1_entity" }
-
 	attach = { root = "deep_space_prison_1_entity" }
 	attach = { root = "deep_space_prison_2_construction_entity" }
 	attach = { root = "deep_space_prison_3_construction_entity" }
 	attach = { root = "deep_space_prison_4_construction_entity" }
+}
+entity = {
+	name = "deep_space_prison_5_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation ={ 0 0 0 } }
+	attach = { root = "deep_space_prison_1_entity" }
+	attach = { root = "deep_space_prison_2_construction_entity" }
+	attach = { root = "deep_space_prison_3_construction_entity" }
+	attach = { root = "deep_space_prison_4_construction_entity" }
+	attach = { root = "deep_space_prison_5_construction_entity" }
 }

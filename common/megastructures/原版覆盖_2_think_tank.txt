@@ -18,26 +18,8 @@ think_tank_0 = {
 			unity = 5000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 5000
 		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 5000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 5000
-			mult = @halved_alloy_to_food_cost_ratio
-		}
-
 		upkeep = {
 			energy = 5
 		}
@@ -134,24 +116,7 @@ think_tank_1 = {
 			unity = 5000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 15000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 15000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 15000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 25
@@ -191,24 +156,7 @@ think_tank_2 = {
 			unity = 5000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 15000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 15000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 15000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 50
@@ -238,7 +186,6 @@ think_tank_3 = {
 	entity = "thinktank_phase_03_entity"
 	construction_entity = "thinktank_phase_03_entity"
 	portrait = "GFX_megastructure_think_tank_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
@@ -252,24 +199,7 @@ think_tank_3 = {
 			unity = 5000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 15000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 15000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 15000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 75
@@ -304,7 +234,6 @@ think_tank_4 = {
 	entity = "thinktank_phase_03_entity"
 	construction_entity = "thinktank_phase_03_entity"
 	portrait = "GFX_megastructure_think_tank_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
@@ -339,7 +268,6 @@ think_tank_4 = {
 	prerequisites = { "tech_science_nexus" }
 	upgrade_desc = hide
 	potential = { always = no }
-
 }
 
 # Permanently Ruined Science Nexus
@@ -381,7 +309,6 @@ think_tank_restored = {
 	entity = "thinktank_phase_03_entity"
 	construction_entity = "thinktank_phase_03_entity"
 	portrait = "GFX_megastructure_think_tank_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	use_planet_resource = yes
@@ -395,24 +322,7 @@ think_tank_restored = {
 			unity = 3200
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 15000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 15000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 15000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 75

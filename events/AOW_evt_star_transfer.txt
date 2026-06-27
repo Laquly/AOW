@@ -149,6 +149,18 @@ country_event = {#准备改变恒星
 		custom_gui = AOW_new_diplomacy_ui_option
 		hidden_effect = { fromfromfrom = { finish_upgrade = yes } }
 	}
+	option = {#舰船
+		name = AOW_evt_star_transfer.502.ship
+		custom_tooltip = AOW_evt_star_transfer.502.ship.tooltip
+		custom_gui = AOW_new_diplomacy_ui_option
+		hidden_effect = {
+			fromfromfrom = {
+				set_megastructure_flag = AOW_flag_MEGA_change_to_ship
+				hidden_effect = { fromfromfrom = { set_halted = 0 } }
+				finish_upgrade = yes
+			}
+		}
+	}
 	option = {#星云25
 		name = AOW_evt_star_transfer.502.nebula_25
 		custom_tooltip = AOW_evt_star_transfer.502.nebula.tooltip

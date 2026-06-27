@@ -5,6 +5,7 @@ gateway_0 = {
 	place_entity_on_planet_plane = no
 	build_type = outside_gravity_well
 	show_galactic_map_icon = no
+	show_in_outliner = yes
 	overlord_can_upgrade = yes
 	build_time = 1080
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
@@ -12,27 +13,9 @@ gateway_0 = {
 		category = megastructures_gateways
 		cost = {
 			influence = 75
-			energy = 6000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
-			alloys = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 5000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 5000
-			mult = @halved_alloy_to_food_cost_ratio
+			alloys = 2500
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
@@ -49,16 +32,66 @@ gateway_0 = {
 		AOW_trigger_mega_potential = { KEY = gateway }
 	}
 	possible = {
-		hidden_trigger = { exists = starbase }
-		custom_tooltip = {
-			fail_text = "requires_inside_border_or_subject"
-			OR = {
-				is_inside_border = from
-				AND = {
-					exists = owner
-					owner = {
-						is_subject = yes
-						overlord = { is_same_value = from }
+		if = {
+			limit = {
+				from = { is_nomadic = no }
+			}
+			hidden_trigger = {
+				exists = starbase
+			}
+			custom_tooltip = {
+				fail_text = "requires_inside_border_or_subject"
+				OR = {
+					is_inside_border = from
+					AND = {
+						exists = owner
+						owner = {
+							is_subject = yes
+							overlord = { is_same_value = from }
+						}
+					}
+					AND = {
+						from = { has_menace_perk = menp_defender_galcom_2 }
+						exists = solar_system
+						exists = solar_system.owner
+						solar_system.owner = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = { has_subject = prev }
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = requires_tier_2_waystation_on_wayline
+				OR = {
+					any_starbase_in_system = {
+						is_waystation_starbase = yes
+						owner? = {
+						is_same_value = from
+						}
+						any_starbase_in_network = {
+							has_starbase_size >= starbase_waystation_2
+							owner? = {
+							is_same_value = from
+							}
+						}
+					}
+					AND = {
+						from = { has_menace_perk = menp_defender_galcom_2 }
+						exists = solar_system
+						exists = solar_system.owner
+						solar_system.owner = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = { has_subject = prev }
+							}
+						}
 					}
 				}
 			}
@@ -122,29 +155,12 @@ gateway_final = {
 	build_time = 1800
 	resources = {
 		category = megastructures_gateways
-		# cost = {
-		# 	energy = 6000
-		# }
-		# cost = {
-		# 	trigger = {
-		# 		country_uses_bio_ships = no
-		# 	}
-		# 	alloys = 2500
-		# }
-		# cost = {
-		# 	trigger = {
-		# 		country_uses_bio_ships = yes
-		# 	}
-		# 	alloys = 2500
-		# 	mult = 0.5
-		# }
-		# cost = {
-		# 	trigger = {
-		# 		country_uses_bio_ships = yes
-		# 	}
-		# 	food = 2500
-		# 	mult = @halved_alloy_to_food_cost_ratio
-		# }
+		cost = {
+			energy = 6000
+		}
+		cost = {
+			alloys = 2500
+		}
 	}
 	construction_blocks_and_blocked_by = self_type
 	inline_script = {
@@ -163,6 +179,10 @@ gateway_final = {
 			limit = { num_active_gateways = 1 }
 			random_megastructure = {
 				limit = { is_megastructure_type = gateway_ruined }
+				if = {
+					limit = { exists = solar_system.starbase }
+					solar_system.starbase.owner = { set_country_flag = did_not_repair_gateway }
+				}
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
@@ -224,24 +244,7 @@ gateway_restored = {
 			energy = 6000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 2500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 2500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
@@ -306,6 +309,10 @@ gateway_restored = {
 							factor = 2
 							has_origin = origin_galactic_doorstep
 						}
+						modifier = {
+							factor = 0
+							is_ai = yes
+						}
 					}
 					80 = {} # no luck
 				}
@@ -326,15 +333,11 @@ gateway_derelict = {
 	build_type = outside_gravity_well
 	show_galactic_map_icon = no
 	show_in_outliner = yes
-
 	bypass_type = gateway
-
 	potential = {
 		always = no
 	}
-
 	construction_blocks_and_blocked_by = self_type
-
 	on_build_complete = {
 		activate_gateway = fromfrom
 	}
@@ -349,9 +352,7 @@ gateway_ness_ruined = {
 	bypass_type = gateway_ness
 	show_galactic_map_icon = no
 	show_in_outliner = yes
-
 	construction_blocks_and_blocked_by = self_type
-
 	potential = {
 		always = no
 	}
@@ -365,11 +366,9 @@ gateway_ness_restored = {
 	place_entity_on_planet_plane = no
 	show_galactic_map_icon = no
 	show_in_outliner = no
-
 	potential = {
 		has_technology = tech_gateway_activation
 	}
-
 	upgrade_from = {
 		gateway_ness_ruined
 	}
@@ -380,32 +379,15 @@ gateway_ness_restored = {
 			energy = 6000
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 2500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 2500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
 	dismantle_potential = { always = no }
-
 	bypass_type = gateway_ness
 	on_build_complete = {
 		activate_gateway = fromfrom
+		fromfrom = { save_event_target_as = ness_gate }
 		if = {
 			limit = {
 				has_grand_archive_dlc = yes
@@ -417,11 +399,39 @@ gateway_ness_restored = {
 				fromfrom = { has_megastructure_flag = gateway_to_ness_for@root.from }
 			}
 			from = {
-				set_country_flag = activate_gateway_started
+				if = {
+					limit = { has_special_project = ACTIVATE_GATEWAY_PROJECT }
+					complete_special_project = {
+						type = "ACTIVATE_GATEWAY_PROJECT"
+						location = from
+					}
+				}
 				country_event = {
 					id = grand_archive.8400
 					scopes = { from = root.fromfrom }
 				}
+			}
+		}
+		if = {
+			limit = {
+				any_playable_country = {
+					has_origin = origin_treasure_hunters
+					is_nomadic = yes
+					has_country_flag = activating_ness_gate
+				}
+			}
+			random_playable_country = {
+				limit = {
+					has_origin = origin_treasure_hunters
+					is_nomadic = yes
+					has_country_flag = activating_ness_gate
+				}
+				spawn_ness_treasure_system = yes
+				country_event = {
+					id = grand_archive.8400
+					scopes = { from = event_target:ness_gate}
+				}
+				
 			}
 		}
 	}

@@ -40,8 +40,4 @@ spriteTypes = {
 		name = "GFX_leader_trait_laquly"
 		textureFile = "gfx/interface/icons/traits/leader_trait_icons/laquly.dds"
 	}
-	spriteType = {
-		name = "GFX_leader_trait_red_dawn"
-		textureFile = "gfx/interface/icons/traits/leader_trait_icons/red_dawn.dds"
-	}
 }

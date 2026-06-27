@@ -23,6 +23,7 @@ AOW_TECH_dark_matter_curvature_trap = {
 	tier = 5
 	category = { field_manipulation }
 	prerequisites = { "tech_mega_engineering" "AOW_TECH_spatiotemporal_curvature_manipulation" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -43,6 +44,7 @@ AOW_TECH_nebula_refining_center = {
 	category = { particles }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "tech_mine_volatile_motes" "tech_mine_rare_crystals" "tech_mine_exotic_gases" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -56,7 +58,13 @@ AOW_TECH_nebula_refining_center = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -87,6 +95,7 @@ AOW_TECH_plane_siphon = {
 	category = { particles }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "tech_astral_harvesting" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -96,7 +105,13 @@ AOW_TECH_plane_siphon = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -127,6 +142,7 @@ AOW_TECH_orbital_acquisition_system = {
 	category = { field_manipulation }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "tech_mine_exotic_gases" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -136,7 +152,13 @@ AOW_TECH_orbital_acquisition_system = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -167,6 +189,7 @@ AOW_TECH_planetary_blaster_system = {
 	category = { particles }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "tech_combat_computers_2" "tech_ftl_inhibitor" "tech_titans" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -176,7 +199,13 @@ AOW_TECH_planetary_blaster_system = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -207,6 +236,7 @@ AOW_TECH_solid_planetary_energy_release = {
 	category = { particles }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "AOW_TECH_planetary_blaster_system" }
+	potential = { is_nomadic = no }
 	weight = @tier6weight3
 	is_rare = yes
 	prereqfor_desc = {
@@ -222,7 +252,13 @@ AOW_TECH_solid_planetary_energy_release = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -268,7 +304,13 @@ AOW_TECH_hyperlane_controller = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -320,7 +362,13 @@ AOW_TECH_advanced_hyperlane_controller = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -352,6 +400,7 @@ AOW_TECH_prosperous_trade_station = {
 	category = { statecraft }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -361,7 +410,13 @@ AOW_TECH_prosperous_trade_station = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -392,6 +447,7 @@ AOW_TECH_artifacts_transcription_palace = {
 	category = { statecraft }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" "tech_archaeostudies" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -405,7 +461,13 @@ AOW_TECH_artifacts_transcription_palace = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -436,6 +498,7 @@ AOW_TECH_deep_space_prison = {
 	category = { statecraft }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -452,7 +515,13 @@ AOW_TECH_deep_space_prison = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -483,6 +552,7 @@ AOW_TECH_cemetery_of_martyrs = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -492,7 +562,13 @@ AOW_TECH_cemetery_of_martyrs = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -523,6 +599,7 @@ AOW_TECH_naval_command_base = {
 	category = { military_theory }
 	ai_update_type = all
 	prerequisites = { "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	is_rare = yes
 	weight_modifier = {
@@ -532,7 +609,13 @@ AOW_TECH_naval_command_base = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -563,6 +646,7 @@ AOW_TECH_synthetic_food_factory = {
 	category = { biology }
 	is_rare = yes
 	prerequisites = { "tech_mega_engineering" "tech_nano_vitality_crops" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
@@ -571,7 +655,13 @@ AOW_TECH_synthetic_food_factory = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -610,7 +700,13 @@ AOW_TECH_synthetic_food_factory = {
 # 		}
 # 		modifier = {
 # 			factor = 2
-# 			has_galactic_wonders = yes
+# 			OR = {
+# 				has_galactic_wonders = yes
+# 				has_ascension_perk = ap_galactic_wonders
+# 				has_ascension_perk = ap_galactic_wonders_utopia
+# 				has_ascension_perk = ap_galactic_wonders_megacorp
+# 				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+# 			}
 # 		}
 # 		modifier = {
 # 			factor = 6
@@ -641,6 +737,7 @@ AOW_TECH_zro_sublimator = {
 	category = { psionics }
 	is_rare = yes
 	prerequisites = { "AOW_TECH_planetary_mining_station" "tech_mine_zro" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		factor = 0.25
@@ -666,7 +763,13 @@ AOW_TECH_zro_sublimator = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -710,7 +813,13 @@ AOW_TECH_improved_construction_efficiency_2 = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 9
@@ -744,6 +853,7 @@ AOW_TECH_planetary_mining_station = {
 		}
 	}
 	prerequisites = { "AOW_TECH_asteroid_mining_station" "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
@@ -752,7 +862,13 @@ AOW_TECH_planetary_mining_station = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -783,6 +899,7 @@ AOW_TECH_wonder_construction_bureau = {
 	category = { industry }
 	is_rare = yes
 	prerequisites = { "tech_mine_living_metal" "tech_mega_engineering" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
@@ -791,7 +908,13 @@ AOW_TECH_wonder_construction_bureau = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -822,6 +945,7 @@ AOW_TECH_nanites_activator = {
 	category = { materials }
 	is_rare = yes
 	prerequisites = { "tech_mega_engineering" "tech_nanite_transmutation" "tech_volatile_motes" "tech_rare_crystals" "tech_exotic_gases" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
@@ -830,7 +954,13 @@ AOW_TECH_nanites_activator = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -861,6 +991,7 @@ AOW_TECH_nanites_transmutation = {
 	category = { materials }
 	is_rare = yes
 	prerequisites = { "tech_mega_engineering" "tech_nanite_transmutation" }
+	potential = { is_nomadic = no }
 	weight = @tier5weight3
 	weight_modifier = {
 		modifier = {
@@ -869,7 +1000,13 @@ AOW_TECH_nanites_transmutation = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6

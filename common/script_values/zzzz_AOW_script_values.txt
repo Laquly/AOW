@@ -6,6 +6,68 @@ AOW_var_megastructure_dismantle_refund = {
 	max = 1
 }
 
+#坠星天矛打击范围
+AOW_var_starfall_spear_system_strike_range = {
+	base = 0
+	#add = from.modifier:starfall_spear_system_strike_range_add
+	modifier = {
+		from = {
+			has_technology = AOW_TECH_starfall_spear_system_strike_range_1
+		}
+		add = 1
+	}
+	modifier = {
+		from = {
+			has_technology = AOW_TECH_starfall_spear_system_strike_range_2
+		}
+		add = 1
+	}
+	modifier = {
+		from = {
+			has_technology = AOW_TECH_starfall_spear_system_strike_range_3
+		}
+		add = 1
+	}
+	modifier = {
+		from = {
+			has_technology = AOW_TECH_starfall_spear_system_strike_range_4
+		}
+		add = 1
+	}
+	modifier = {
+		from = {
+			has_technology = AOW_TECH_starfall_spear_system_strike_range_5
+		}
+		add = 1
+	}
+	max = 5
+}
+#坠星天矛当前打击范围
+AOW_var_starfall_spear_current_system_strike_range = {
+	base = 0
+	modifier = {
+		has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@from
+		add = 1
+	}
+	modifier = {
+		has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@from
+		add = 1
+	}
+	modifier = {
+		has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@from
+		add = 1
+	}
+	modifier = {
+		has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@from
+		add = 1
+	}
+	modifier = {
+		has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@from
+		add = 1
+	}
+	max = 5
+}
+
 #坠星天矛当前所选目标数量
 AOW_var_starfall_spear_num_of_targets = {
 	base = 0
@@ -231,22 +293,49 @@ AOW_var_starfall_spear_planet_target_capacity_desc = {
 	max = 10
 }
 
-#虚拟传统
-AOW_var_virtuality_jobs_mult = {
-	base = 1
+#星笼世界
+AOW_var_starcage_world_points = {
+	base = 0
+	add = $v$
 	modifier = {
-		exists = owner
-		owner = { has_active_tradition = tr_virtuality_4 }
-		mult = 1.5
+		is_planet_class = pc_shattered_starcage_world
+		mult = @AOW_var_shattered_sw_mult
 	}
 }
+#废弃星笼世界
+AOW_var_shattered_starcage_world_mult = {
+	base = 1
+	modifier = {
+		is_planet_class = pc_shattered_starcage_world
+		mult = @AOW_var_shattered_sw_mult
+	}
+}
+#星笼世界旧区划
+AOW_var_starcage_world_old_districts = {
+	base = 0
+	add = $v$
+	add = -1
+}
+#星笼世界转新区划
+AOW_var_starcage_world_new_districts = {
+	base = 0
+	add = $v$
+	mult = @AOW_var_shattered_sw_mult
+	ceiling = yes
+	add = -1
+}
+
 #传统+星笼世界
 AOW_var_tradition_with_starcage_world_mult = {
-	base = 1
+	base = 0
+	add = $v$
 	modifier = {
 		exists = owner
 		owner = { has_active_tradition = $tradition$ }
 		mult = 1.5
 	}
-	mult = AOW_var_sw_points_$job$
+	modifier = {
+		is_planet_class = pc_shattered_starcage_world
+		mult = @AOW_var_shattered_sw_mult
+	}
 }

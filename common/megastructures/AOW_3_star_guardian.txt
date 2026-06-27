@@ -48,15 +48,15 @@ AOW_MEGA_star_guardian_0 = {
 				has_planet_class = pc_star_guardian
 			}
 		}
-		custom_tooltip = {
-			fail_text = "AOW_mega_requires_SSTM_only_or_and_megastructure_planet"
-			NOT = {
-				any_system_planet = {
-					is_star = no
-					AOW_trgr_PLNT_megastructure_planet = no
-				}
-			}
-		}
+		# custom_tooltip = {
+		# 	fail_text = "AOW_mega_requires_SSTM_only_or_and_megastructure_planet"
+		# 	NOT = {
+		# 		any_system_planet = {
+		# 			is_star = no
+		# 			AOW_trgr_PLNT_megastructure_planet = no
+		# 		}
+		# 	}
+		# }
 	}
 	placement_rules = {
 		planet_possible = {
@@ -66,8 +66,17 @@ AOW_MEGA_star_guardian_0 = {
 	# root = system
 	# from = country
 	ai_weight = {
-		weight = 500
+		weight = 1
 		#位置限制
+		modifier = {
+			add = 500
+			NOT = {
+				any_system_planet = {
+					is_star = no
+					AOW_trgr_PLNT_megastructure_planet = no
+				}
+			}
+		}
 		modifier = { factor = 1.5	AOW_trgr_SSTM_neighbor_didnt_undercontrol = yes }
 		#自身限制
 		modifier = { factor = 1.5	from = { is_pacifist = yes } }
@@ -175,13 +184,16 @@ AOW_MEGA_star_guardian_3 = {
 					set_planet_flag = megastructure
 					save_event_target_as = AOW_target_planet
 					trigger_megastructure_icon = yes
+					remove_all_districts = yes
+					add_district = AOW_district_sg_housing
+					validate_planet_buildings_and_districts = yes
 				}
 			}
-			# spawn_megastructure = {
-			# 	type = AOW_MEGA_star_guardian_3
-			# 	owner = from
-			# 	planet = event_target:AOW_target_planet
-			# }
+			spawn_megastructure = {
+				type = AOW_MEGA_star_guardian_3
+				owner = from
+				planet = event_target:AOW_target_planet
+			}
 			from = { country_event = { id = AOW_evt_star_guardian.103 } }
 			remove_megastructure = fromfrom
 		}

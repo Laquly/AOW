@@ -2,7 +2,11 @@
 #rotation = { X（横平面左右旋转）	Y（竖平面前+后-旋转）	Z（竖平面左右旋转） }
 
 @starcage_world_scale = 60
-
+@starcage_world_1_scale = 0.05
+@starcage_world_2_scale = 0.15
+@starcage_world_3_scale = 0.3
+#holo_globe_edge_entity
+#巨构
 entity = {
 	name = "starcage_world_gaia_entity"
 	pdxmesh = "starcage_world_mesh"
@@ -66,16 +70,49 @@ entity = {
 	}
 	scale = @starcage_world_scale
 }
+
+entity = {#护盾
+	name = "starcage_world_shield_entity"
+	pdxmesh = "bunker_ring_white_shield_mesh"
+	game_data = {
+		uv_animation_direction = { 0.5 0.25 }
+		uv_animation_speed = 1
+	}
+	scale = 1.5
+}
 entity = {
 	name = "starcage_world_01_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { root = "starcage_world_hive_entity" }
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_shield_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 8 looping = yes }
 }
 entity = {
 	name = "starcage_world_02_construction_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { root = "starcage_world_gaia_entity" }
-	scale = 3
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_hive_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 4 looping = yes }
+	scale = @starcage_world_1_scale
+}
+entity = {
+	name = "starcage_world_03_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_gaia_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 2 looping = yes }
+	scale = @starcage_world_2_scale
+}
+entity = {
+	name = "starcage_world_04_construction_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ai_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+	scale = @starcage_world_3_scale
+}
+entity = {
+	name = "starcage_world_05_construction_entity"
 }
 entity = {
 	name = "starcage_world_02_entity"
@@ -84,112 +121,204 @@ entity = {
 	attach = { root = "starcage_world_02_construction_entity" }
 }
 entity = {
-	name = "starcage_world_03_construction_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { root = "starcage_world_ai_entity" }
-	scale = 6
-}
-entity = {
 	name = "starcage_world_03_entity"
 	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
 	attach = { root = "starcage_world_01_entity" }
 	attach = { root = "starcage_world_02_construction_entity" }
 	attach = { root = "starcage_world_03_construction_entity" }
 }
-
-entity = {
-	name = "starcage_world_01_ration_entity"
-	pdxmesh = "ring_world_ration_mesh"
-	default_state = idle
-	attach = { root = starcage_world_01_entity }
-	state = { name = "idle" animation = "idle" animation_speed = 4 looping = yes }
-}
-entity = {
-	name = "starcage_world_02_ration_entity"
-	pdxmesh = "ring_world_ration_mesh"
-	default_state = idle
-	attach = { root = starcage_world_02_construction_entity }
-	state = { name = "idle" animation = "idle" animation_speed = 2 looping = yes }
-}
-entity = {
-	name = "starcage_world_03_ration_entity"
-	pdxmesh = "ring_world_ration_mesh"
-	default_state = idle
-	attach = { root = starcage_world_03_construction_entity }
-	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
-}
 entity = {
 	name = "starcage_world_04_entity"
 	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { root = "starcage_world_01_ration_entity" }
-	attach = { root = "starcage_world_02_ration_entity" }
-	attach = { root = "starcage_world_03_ration_entity" }
+	attach = { root = "starcage_world_01_entity" }
+	attach = { root = "starcage_world_02_construction_entity" }
+	attach = { root = "starcage_world_03_construction_entity" }
+	attach = { root = "starcage_world_04_construction_entity" }
+}
+entity = {
+	name = "starcage_world_05_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "starcage_world_01_entity" }
+	attach = { root = "starcage_world_02_construction_entity" }
+	attach = { root = "starcage_world_03_construction_entity" }
+	attach = { root = "starcage_world_04_construction_entity" }
+	attach = { root = "starcage_world_05_construction_entity" }
 }
 
-
-
-
-entity = {
-	name = "starcage_world_planet_entity"
-	cull_radius = 500.0
+#损毁巨构
+entity = {#完全
+	name = "starcage_world_ruined_complete_entity"
 	pdxmesh = "starcage_world_mesh"
 	meshsettings = {
 		name = "outerShape"
 		index = 0
-		texture_diffuse = "city_planet_arthropoid_01_diffuse.dds"
-		texture_normal = "city_planet_arthropoid_01_normal.dds"
-		texture_specular = "city_planet_arthropoid_01_specular.dds"
+		texture_diffuse = "cold_barren_04_diffuse.dds"
+		texture_normal = "cold_barren_04_normal.dds"
+		texture_specular = "cold_barren_04_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	meshsettings = {
+		name = "innerShape"
+		index = 0
+		texture_diffuse = "barren_01_diffuse.dds"
+		texture_normal = "barren_01_normal.dds"
+		texture_specular = "barren_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = @starcage_world_scale
+}
+entity = {#一半
+	name = "starcage_world_ruined_partial_entity"
+	pdxmesh = "starcage_world_mesh"
+	meshsettings = {
+		name = "outerShape"
+		index = 0
+		texture_diffuse = "cold_barren_04_diffuse.dds"
+		texture_normal = "cold_barren_04_normal.dds"
+		texture_specular = "cold_barren_04_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	meshsettings = {
+		name = "innerShape"
+		index = 0
+		texture_diffuse = "relic_world_01_diffuse.dds"
+		texture_normal = "relic_world_01_normal.dds"
+		texture_specular = "relic_world_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+	scale = @starcage_world_scale
+}
+entity = {
+	name = "starcage_world_ruined_complete_ration_01_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_complete_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 4 looping = yes }
+	scale = @starcage_world_1_scale
+}
+entity = {
+	name = "starcage_world_ruined_complete_ration_02_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_complete_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 2 looping = yes }
+	scale = @starcage_world_2_scale
+}
+entity = {
+	name = "starcage_world_ruined_complete_ration_03_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_complete_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+	scale = @starcage_world_3_scale
+}
+entity = {
+	name = "starcage_world_ruined_partial_ration_01_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_partial_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 4 looping = yes }
+	scale = @starcage_world_1_scale
+}
+entity = {
+	name = "starcage_world_ruined_partial_ration_02_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_partial_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 2 looping = yes }
+	scale = @starcage_world_2_scale
+}
+entity = {
+	name = "starcage_world_ruined_partial_ration_03_entity"
+	pdxmesh = "ring_world_ration_mesh"
+	default_state = idle
+	attach = { root = starcage_world_ruined_partial_entity }
+	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
+	scale = @starcage_world_1_scale
+}
+#损毁巨构
+entity = {
+	name = "starcage_world_ruined_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "starcage_world_ruined_complete_ration_01_entity" }
+	attach = { loc2 = "starcage_world_ruined_complete_ration_02_entity" }
+	attach = { loc3 = "starcage_world_ruined_complete_ration_03_entity" }
+}
+entity = {
+	name = "starcage_world_ruined_01_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "starcage_world_01_entity" }
+	attach = { loc1 = "starcage_world_ruined_partial_ration_01_entity" }
+	attach = { loc2 = "starcage_world_ruined_complete_ration_02_entity" }
+	attach = { loc3 = "starcage_world_ruined_complete_ration_03_entity" }
+}
+entity = {
+	name = "starcage_world_ruined_02_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "starcage_world_01_entity" }
+	attach = { loc1 = "starcage_world_02_construction_entity" }
+	attach = { loc2 = "starcage_world_ruined_complete_ration_02_entity" }
+	attach = { loc3 = "starcage_world_ruined_complete_ration_03_entity" }
+}
+entity = {
+	name = "starcage_world_ruined_03_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "starcage_world_01_entity" }
+	attach = { loc1 = "starcage_world_02_construction_entity" }
+	attach = { loc2 = "starcage_world_03_construction_entity" }
+	attach = { loc3 = "starcage_world_ruined_complete_ration_03_entity" }
+}
+entity = {
+	name = "starcage_world_ruined_04_entity"
+	locator = { name = "loc1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc3" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc1 = "starcage_world_01_entity" }
+	attach = { loc1 = "starcage_world_02_construction_entity" }
+	attach = { loc2 = "starcage_world_03_construction_entity" }
+	attach = { loc3 = "starcage_world_04_construction_entity" }
+}
+
+#星球
+entity = {
+	name = "pc_shattered_starcage_world_1"
+	pdxmesh = "starcage_world_mesh"
+	meshsettings = {
+		name = "outerShape"
+		index = 0
+		texture_diffuse = "cold_barren_04_diffuse.dds"
+		texture_normal = "cold_barren_04_normal.dds"
+		texture_specular = "cold_barren_04_specular.dds"
 		shader = "PdxMeshPlanet"
 	}
 	meshsettings = {
 		name = "innerShape"
 		index = 0
-		texture_diffuse = "gaia_01_diffuse.dds"
-		texture_normal = "tropical_03_normal.dds"
-		texture_specular = "AOW_tropical_03_spec.dds"
+		texture_diffuse = "relic_world_01_diffuse.dds"
+		texture_normal = "relic_world_01_normal.dds"
+		texture_specular = "relic_world_01_specular.dds"
 		shader = "PdxMeshPlanet"
 	}
 	scale = @starcage_world_scale
 }
 entity = {
-	name = "pc_starcage_world_a_entity"
+	name = "pc_shattered_starcage_01_entity"
 	pdxmesh = "ring_world_ration_mesh"
 	default_state = idle
-	attach = { root = starcage_world_planet_entity }
-	state = { name = "idle" animation = "idle" animation_speed = 8 looping = yes }
-	scale = 1
-}
-entity = {
-	name = "pc_starcage_world_01_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 -90 180 } }
-	attach = { root = "pc_starcage_world_a_entity" }
-}
-entity = {
-	name = "pc_starcage_world_b_entity"
-	pdxmesh = "ring_world_ration_mesh"
-	default_state = idle
-	attach = { root = starcage_world_planet_entity }
+	attach = { root = pc_shattered_starcage_world_1 }
 	state = { name = "idle" animation = "idle" animation_speed = 4 looping = yes }
-	scale = 4.5
 }
+
+
 entity = {
-	name = "pc_starcage_world_02_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 -90 180 } }
-	attach = { root = "pc_starcage_world_a_entity" }
-	attach = { root = "pc_starcage_world_b_entity" }
-}
-entity = {
-	name = "pc_starcage_world_c_entity"
-	pdxmesh = "ring_world_ration_mesh"
-	default_state = idle
-	attach = { root = starcage_world_planet_entity }
-	state = { name = "idle" animation = "idle" animation_speed = 1 looping = yes }
-	scale = 9
-}
-entity = {
-	name = "pc_starcage_world_03_entity"
-	locator = { name = "root" position = { 0 0 0 } rotation = { 0 -90 180 } }
-	attach = { root = "pc_starcage_world_a_entity" }
-	attach = { root = "pc_starcage_world_b_entity" }
-	attach = { root = "pc_starcage_world_c_entity" }
+	name = "AOW_empty_entity"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
 }

@@ -4,7 +4,6 @@ ring_world_1 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
-	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_RING_WORLD"
 	build_time = 1800
 	resources = {
 		category = megastructures
@@ -12,24 +11,7 @@ ring_world_1 = {
 			influence = 300
 		}
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 5000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 5000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 5
@@ -43,6 +25,8 @@ ring_world_1 = {
 		alloys = 5000
 		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
 	}
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_RING_WORLD"
+	
 	prerequisites = { "tech_ring_world" }
 	potential = {
 		AOW_trigger_mega_potential = { KEY = ring_world_1 }
@@ -81,6 +65,12 @@ ring_world_1 = {
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
+				fail_text = "requires_no_protostar"
+				NOT = {
+					is_planet_class = pc_protostar
+				}
+			}
+			custom_tooltip = {
 				fail_text = "must_build_around_star"
 				is_star = yes
 			}
@@ -90,7 +80,7 @@ ring_world_1 = {
 			}
 			custom_tooltip = {
 				fail_text = "requires_planets_for_material"
-				solar_system = { any_system_planet = { NOT = { is_star = yes } } }
+				hidden:solar_system = { any_system_planet = { NOT = { is_star = yes } } }
 			}
 			if = {
 				limit = { has_global_flag = has_real_space_mod }
@@ -126,32 +116,15 @@ ring_world_2_intermediate = {
 	entity = ""
 	construction_entity = "ringworld_seam_entity_01_full_entity"
 	portrait = "GFX_megastructure_construction_background"
-
+	show_galactic_map_icon = no
+	show_in_outliner = no
 	build_time = 4800
 	resources = {
 		category = megastructures
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
-
 	upgrade_from = {
 		ring_world_1
 	}
@@ -171,6 +144,7 @@ ring_world_2_intermediate = {
 				set_planet_size = 25
 			}
 		}
+		set_asteroid_belt = { radius = 0 }
 		remove_megastructure = fromfrom
 		spawn_megastructure = {
 			name = "NAME_Ring_Section_A"
@@ -209,9 +183,6 @@ ring_world_2_intermediate = {
 ring_world_2 = {
 	entity = "ringworld_3x_seams_entity"
 	portrait = "GFX_megastructure_construction_background"
-	resources = {
-		category = megastructures
-	}
 	upgrade_from = {
 		ring_world_2_intermediate
 	}
@@ -224,38 +195,20 @@ ring_world_3_intermediate = {
 	construction_entity = "ringworld_phase_3_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 3600
+	show_galactic_map_icon = no
+	show_in_outliner = no
 	resources = {
 		category = megastructures
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
-
 	upgrade_from = {
 		ring_world_2
 	}
-
 	prerequisites = { "tech_ring_world" }
 	show_prereqs = yes
 	prereq_name = "RING_WORLD_SHOW_NAME"
-
 	on_build_complete = {
 		spawn_planet = {
 			class = "pc_ringworld_tech"
@@ -323,6 +276,7 @@ ring_world_3_intermediate = {
 		}
 		#fromfrom.planet = { set_planet_flag = has_megastructure }
 		from = {
+			set_country_flag = has_ring_world
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
 		}
@@ -404,28 +358,13 @@ ring_world_restored = {
 	entity = ""
 	construction_entity = "ringworld_phase_3_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
+	show_galactic_map_icon = no
+	show_in_outliner = no
 	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
 	upgrade_from = { ring_world_ruined }
@@ -457,7 +396,7 @@ ring_world_restored = {
 		spawn_planet = {
 			class = "pc_ringworld_tech"
 			location = fromfrom
-			orbit_angle_offset = 30
+			orbit_angle_offset = -30
 			init_effect = {
 				set_name = "NAME_Ring_Section"
 				set_planet_entity = {
@@ -492,7 +431,7 @@ ring_world_restored = {
 		spawn_planet = {
 			class = "pc_ringworld_habitable"
 			location = fromfrom
-			orbit_angle_offset = -30
+			orbit_angle_offset = 30
 			init_effect = {
 				set_name = "NAME_Habitable_Section_A"
 				set_planet_entity = {
@@ -521,6 +460,7 @@ ring_world_restored = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = has_built_or_repaired_galactic_wonders
 			country_event = { id = utopia.2017 }
+			set_country_flag = has_ring_world
 		}
 		if = {
 			limit = {

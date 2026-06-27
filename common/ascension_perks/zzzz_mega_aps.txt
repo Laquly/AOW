@@ -17,7 +17,7 @@ ap_master_builders = {
 		country_megastructure_build_cap_add = 1
 	}
 	potential = {
-		host_has_dlc = "Utopia"
+		is_nomadic = no
 		NOT = {
 			has_ascension_perk = ap_master_builders
 		}
@@ -30,13 +30,19 @@ ap_master_builders = {
 		}
 		modifier = {
 			factor = 3
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 	}
 }
 ap_galactic_wonders_utopia = {
 	on_enabled = {
-		custom_tooltip = "add_research_options_galactic_wonders_utopia"
+		custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp"
 		hidden_effect = {
 			if = {
 				limit = {
@@ -50,62 +56,72 @@ ap_galactic_wonders_utopia = {
 				}
 				add_research_option = tech_dyson_sphere
 			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_matter_decompressor }
+				}
+				add_research_option = tech_matter_decompressor
+			}
 		}
 	}
-	possible = {
-		custom_tooltip = {
-			fail_text = "requires_mega_engineering"
-			has_technology = tech_mega_engineering
-		}
-		custom_tooltip = {
-			fail_text = "requires_built_or_repaired_megastructure"
-			has_country_flag = has_built_or_repaired_megastructure
-		}
-	}
-	potential = {
-		host_has_dlc = "Utopia"
-		NOR = {
-			host_has_dlc = "Megacorp"
-			has_ascension_perk = ap_galactic_wonders_utopia
-		}
-	}
-	ai_weight = {
-		factor = 5000
-	}
+	potential = { always = no }
 }
 
 ap_galactic_wonders_megacorp = {
 	on_enabled = {
-		if = {
-			limit = {
-				NOT = { has_technology = tech_matter_decompressor }
+		custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp"
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_technology = tech_ring_world }
+				}
+				add_research_option = tech_ring_world
 			}
-			add_research_option = tech_matter_decompressor
+			if = {
+				limit = {
+					NOT = { has_technology = tech_dyson_sphere }
+				}
+				add_research_option = tech_dyson_sphere
+			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_matter_decompressor }
+				}
+				add_research_option = tech_matter_decompressor
+			}
 		}
 	}
-	possible = {
-		custom_tooltip = {
-			fail_text = "requires_mega_engineering"
-			has_technology = tech_mega_engineering
-		}
-		custom_tooltip = {
-			fail_text = "requires_built_or_repaired_megastructure"
-			has_country_flag = has_built_or_repaired_megastructure
-		}
-	}
-	potential = {
-		host_has_dlc = "Megacorp"
-		NOR = {
-			host_has_dlc = "Utopia"
-			has_ascension_perk = ap_galactic_wonders_megacorp
-		}
-	}
-	ai_weight = {
-		factor = 5000
-	}
+	potential = { always = no }
 }
 
 ap_galactic_wonders_utopia_and_megacorp = {
+	on_enabled = {
+		custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp"
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_technology = tech_ring_world }
+				}
+				add_research_option = tech_ring_world
+			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_dyson_sphere }
+				}
+				add_research_option = tech_dyson_sphere
+			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_matter_decompressor }
+				}
+				add_research_option = tech_matter_decompressor
+			}
+		}
+	}
+	potential = { always = no }
+}
+
+ap_galactic_wonders = {
 	on_enabled = {
 		custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp"
 		hidden_effect = {
@@ -138,16 +154,30 @@ ap_galactic_wonders_utopia_and_megacorp = {
 			fail_text = "requires_built_or_repaired_megastructure"
 			has_country_flag = has_built_or_repaired_megastructure
 		}
-
 	}
 	potential = {
-		host_has_dlc = "Utopia"
-		host_has_dlc = "Megacorp"
+		is_nomadic = no
 		NOT = {
-			has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			has_ascension_perk = ap_galactic_wonders
 		}
 	}
 	ai_weight = {
-		factor = 5000
+		factor = 20
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_materialist
+		}
 	}
 }

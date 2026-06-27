@@ -223,6 +223,76 @@ AOW_eft_PLNT_starfall_spear_start_launching = {
 		space_owner = { country_event = { id = AOW_evt_starfall_spear.512 } }
 	}
 }
+#复制星系flag
+AOW_eft_SSTM_starfall_spear_copy_flag = {
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_01_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_01_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_02_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_02_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_03_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_03_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_04_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_04_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_05_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_05_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_06_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_06_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_07_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_07_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_08_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_08_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_09_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_09_@root
+	}
+	if = {
+		limit = {
+			event_target:AOW_starfall_spear_target_$target$_@root = { has_star_flag = AOW_flag_starfall_spear_mode_10_@root }
+		}
+		set_star_flag = AOW_flag_starfall_spear_mode_10_@root
+	}
+}
+AOW_eft_target_of_range_strikes = {
+	if = {
+		limit = { AOW_trgr_SSTM_target_starfall_spear_system = yes }
+		AOW_eft_SSTM_starfall_spear_copy_flag = { target = $target$ }
+		AOW_eft_SSTM_starfall_spear_start_launching = yes
+	}
+}
 #开始对目标发射
 AOW_eft_start_launching_at_starfall_spear_target = {
 	if = {
@@ -231,41 +301,117 @@ AOW_eft_start_launching_at_starfall_spear_target = {
 			if = {
 				limit = { is_scope_type = galactic_object }
 				AOW_eft_SSTM_starfall_spear_start_launching = yes
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 1
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@root
+						}
+					}
+					every_neighbor_system = {
+						AOW_eft_target_of_range_strikes = { target = $target$ }
+					}
+				}
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 2
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@root
+						}
+					}
+					every_neighbor_system = {
+						AOW_eft_target_of_range_strikes = { target = $target$ }
+						every_neighbor_system = {
+							AOW_eft_target_of_range_strikes = { target = $target$ }
+						}
+					}
+				}
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 3
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@root
+						}
+					}
+					every_neighbor_system = {
+						AOW_eft_target_of_range_strikes = { target = $target$ }
+						every_neighbor_system = {
+							AOW_eft_target_of_range_strikes = { target = $target$ }
+							every_neighbor_system = {
+								AOW_eft_target_of_range_strikes = { target = $target$ }
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 4
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@root
+						}
+					}
+					every_neighbor_system = {
+						AOW_eft_target_of_range_strikes = { target = $target$ }
+						every_neighbor_system = {
+							AOW_eft_target_of_range_strikes = { target = $target$ }
+							every_neighbor_system = {
+								AOW_eft_target_of_range_strikes = { target = $target$ }
+								every_neighbor_system = {
+									AOW_eft_target_of_range_strikes = { target = $target$ }
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 5
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_1_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_2_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_3_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_4_@root
+							has_star_flag = AOW_flag_SSTM_starfall_spear_system_strike_range_5_@root
+						}
+					}
+					every_neighbor_system = {
+						AOW_eft_target_of_range_strikes = { target = $target$ }
+						every_neighbor_system = {
+							AOW_eft_target_of_range_strikes = { target = $target$ }
+							every_neighbor_system = {
+								AOW_eft_target_of_range_strikes = { target = $target$ }
+								every_neighbor_system = {
+									AOW_eft_target_of_range_strikes = { target = $target$ }
+									every_neighbor_system = {
+										AOW_eft_target_of_range_strikes = { target = $target$ }
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 			if = {
 				limit = { is_scope_type = planet }
 				AOW_eft_PLNT_starfall_spear_start_launching = yes
 			}
 		}
-	}
-}
-#展示目标名字和打击模式的按钮
-AOW_eft_starfall_spear_target_button = {
-	if = {#点击取消选择
-		limit = { exists = event_target:AOW_starfall_spear_target_$target$_@from }
-		event_target:AOW_starfall_spear_target_$target$_@from = {
-			custom_tooltip = AOW_text_cancel_target
-			if = {
-				limit = { is_scope_type = galactic_object }
-				remove_star_flag = AOW_flag_starfall_spear_mode_01_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_02_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_03_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_04_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_05_@from
-				remove_star_flag = AOW_flag_starfall_spear_mode_06_@from
-			}
-			if = {
-				limit = { is_scope_type = planet }
-				remove_planet_flag = AOW_flag_starfall_spear_mode_01_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_02_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_03_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_04_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_05_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_06_@from
-				remove_planet_flag = AOW_flag_starfall_spear_mode_07_@from
-			}
-		}
-		clear_global_event_target = AOW_starfall_spear_target_$target$_@from
 	}
 }
 #取消目标和旗子

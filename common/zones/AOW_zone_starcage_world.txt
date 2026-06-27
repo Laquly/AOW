@@ -108,6 +108,25 @@ zone_starcage_world_base = {
 		potential = {
 			exists = owner
 			owner = { country_uses_food = yes }
+			is_planet_class = pc_shattered_starcage_world
+		}
+		technician_jobs_bonus_workforce_mult = 0.1
+		miner_jobs_bonus_workforce_mult = 0.1
+		farmer_jobs_bonus_workforce_mult = 0.1
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_food = no }
+			is_planet_class = pc_shattered_starcage_world
+		}
+		technician_jobs_bonus_workforce_mult = 0.15
+		miner_jobs_bonus_workforce_mult = 0.15
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_food = yes }
 			is_planet_class = pc_starcage_world_common_star
 		}
 		technician_jobs_bonus_workforce_mult = 0.1
@@ -197,7 +216,7 @@ zone_starcage_world_minerals = {
 }
 #食物
 zone_starcage_world_food = {
-	icon = GFX_district_specialization_food_market
+	icon = GFX_district_specialization_food
 	base_buildtime = @buildtime
 	resources = {
 		category = planet_zones
@@ -253,14 +272,20 @@ zone_starcage_world_industrial = {
 	}
 	swap_type = AOW_district_starcage_world_industrial
 	swap_type_weight = 5
-	potential = {
-		exists = owner
-		owner = { country_uses_consumer_goods = yes }
-		NOT = { is_planet_class = pc_starcage_world_neutron_star }
-	}
-	district_planet_modifier = {
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_consumer_goods = yes }
+		}
 		foundry_jobs_bonus_workforce_mult = 0.1
 		artisan_jobs_bonus_workforce_mult = 0.1
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_consumer_goods = no }
+		}
+		foundry_jobs_bonus_workforce_mult = 0.2
 	}
 }
 #合金工业

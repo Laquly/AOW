@@ -1,127 +1,221 @@
-# Colony
 col_starcage_world_production = {
-    icon = col_starcage_world_production
-    potential = {
-        exists = owner
-        AOW_trgr_PLNT_is_starcage_world = yes
-    }
-    triggered_planet_modifier = {
-        potential = { is_capital = yes }
-        planet_stability_add = 5
-    }
-    planet_modifier = {
-        planet_jobs_produces_mult = 0.25
-        planet_buildings_produces_mult = 0.25
-        planet_building_capacity_add = 1
-        logistic_growth_mult = 0.1
-        planet_pop_assembly_mult = 0.1
-        bonus_pop_growth = 0.1
-    }
-    weight_modifier = {
-        base = 9500
-    }
+	icon = col_starcage_world_production
+	potential = {
+		exists = owner
+		NOT = { is_planet_class = pc_shattered_starcage_world }
+		AOW_trgr_PLNT_is_starcage_world = yes
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 5
+	}
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.25
+		planet_buildings_produces_mult = 0.25
+		planet_building_capacity_add = 1
+		logistic_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		bonus_pop_growth = 0.1
+	}
+	weight_modifier = {
+		base = 9500
+	}
 }
 col_starcage_world_maintenance = {
-    icon = col_starcage_world_maintenance
-    potential = {
-        exists = owner
-        AOW_trgr_PLNT_is_starcage_world = yes
-    }
-    triggered_planet_modifier = {
-        potential = { is_capital = yes }
-        planet_stability_add = 5
-    }
-    planet_modifier = {
-        planet_jobs_produces_mult = 0.125
-        planet_jobs_upkeep_mult = -0.2
-        planet_buildings_produces_mult = 0.125
-        planet_structures_upkeep_mult = -0.2
-        planet_building_capacity_add = 1
-        logistic_growth_mult = 0.1
-        planet_pop_assembly_mult = 0.1
-        bonus_pop_growth_mult = 0.1
-    }
-    weight_modifier = {
-        base = 9000
-    }
+	icon = col_starcage_world_maintenance
+	potential = {
+		exists = owner
+		NOT = { is_planet_class = pc_shattered_starcage_world }
+		AOW_trgr_PLNT_is_starcage_world = yes
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 5
+	}
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.125
+		planet_jobs_upkeep_mult = -0.2
+		planet_buildings_produces_mult = 0.125
+		planet_structures_upkeep_mult = -0.2
+		planet_building_capacity_add = 1
+		logistic_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+	}
+	weight_modifier = {
+		base = 9000
+	}
 }
 col_starcage_world_construction = {
-    icon = col_starcage_world_construction
-    potential = {
-        exists = owner
-        AOW_trgr_PLNT_is_starcage_world = yes
-    }
-    triggered_planet_modifier = {
-        potential = { is_capital = yes }
-        planet_stability_add = 5
-    }
-    planet_modifier = {
-        planet_housing_mult = 0.1
-        planet_buildings_produces_mult = 0.3
-        planet_structures_upkeep_mult = -0.25
-        planet_building_build_speed_mult = 0.5
-        planet_building_capacity_add = 1
-        logistic_growth_mult = 0.1
-        planet_pop_assembly_mult = 0.1
-        bonus_pop_growth_mult = 0.1
-    }
-    weight_modifier = {
-        base = 9000
-        modifier = {
-            factor = 2
-            has_building_construction = yes
-        }
-        modifier = {
-            add = 1000
-            free_housing <= 0
-        }
-        modifier = {
-            add = 1000
-            free_housing <= 2000
-        }
-    }
+	icon = col_starcage_world_construction
+	potential = {
+		exists = owner
+		NOT = { is_planet_class = pc_shattered_starcage_world }
+		AOW_trgr_PLNT_is_starcage_world = yes
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 5
+	}
+	planet_modifier = {
+		planet_housing_mult = 0.1
+		planet_buildings_produces_mult = 0.3
+		planet_structures_upkeep_mult = -0.25
+		planet_building_build_speed_mult = 0.5
+		planet_building_capacity_add = 1
+		logistic_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+	}
+	weight_modifier = {
+		base = 9000
+		modifier = {
+			factor = 2
+			has_building_construction = yes
+		}
+		modifier = {
+			add = 1000
+			free_housing <= 0
+		}
+		modifier = {
+			add = 1000
+			free_housing <= 2000
+		}
+	}
 }
 col_starcage_world_unity = {
-    icon = GFX_col_starcage_world_unity
-    potential = {
-        exists = owner
-        AOW_trgr_PLNT_is_starcage_world = yes
-    }
-    triggered_planet_modifier = {
-        potential = { is_capital = yes }
-        planet_stability_add = 10
-    }
-    triggered_planet_modifier = {
-        potential = { is_capital = no }
-        planet_stability_add = 5
-    }
-    planet_modifier = {
-        planet_amenities_mult = 0.1
-        planet_jobs_unity_produces_mult = 0.5
-        planet_jobs_unity_upkeep_mult = -0.25
-        planet_decision_enact_speed_mult = 0.5
-        planet_building_capacity_add = 1
-        logistic_growth_mult = 0.1
-        planet_pop_assembly_mult = 0.1
-        bonus_pop_growth_mult = 0.1
-    }
-    weight_modifier = {
-        base = 9000
-        modifier = {
-            add = 1000
-            free_amenities <= 0
-        }
-        modifier = {
-            add = 1000
-            free_amenities <= 2000
-        }
-        modifier = {
-            add = 750
-            planet_stability < 25
-        }
-        modifier = {
-            add = 500
-            planet_stability < 30
-        }
-    }
+	icon = GFX_col_starcage_world_unity
+	potential = {
+		exists = owner
+		NOT = { is_planet_class = pc_shattered_starcage_world }
+		AOW_trgr_PLNT_is_starcage_world = yes
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = no }
+		planet_stability_add = 5
+	}
+	triggered_planet_modifier = {
+		planet_amenities_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.5
+		planet_jobs_unity_upkeep_mult = -0.25
+		planet_decision_enact_speed_mult = 0.5
+		planet_building_capacity_add = 1
+		logistic_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		mult = value:AOW_var_shattered_starcage_world_mult
+	}
+	weight_modifier = {
+		base = 9000
+		modifier = {
+			add = 1000
+			free_amenities <= 0
+		}
+		modifier = {
+			add = 1000
+			free_amenities <= 2000
+		}
+		modifier = {
+			add = 750
+			planet_stability < 25
+		}
+		modifier = {
+			add = 500
+			planet_stability < 30
+		}
+	}
+}
+
+
+col_star_guardian_energy = {
+	icon = GFX_colony_type_generator
+	potential = {
+		exists = owner
+		uses_district_set = AOW_district_star_guardian
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 20
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = no }
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		technician_jobs_bonus_workforce_mult = 0.25
+	}
+	weight_modifier = {
+		base = 9000
+	}
+}
+col_star_guardian_alloys = {
+	icon = GFX_colony_type_foundry
+	potential = {
+		exists = owner
+		uses_district_set = AOW_district_star_guardian
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 20
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = no }
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.25
+	}
+	weight_modifier = {
+		base = 9000
+	}
+}
+col_star_guardian_defense = {
+	icon = GFX_colony_type_fortress
+	potential = {
+		exists = owner
+		uses_district_set = AOW_district_star_guardian
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 20
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = no }
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		planet_orbital_bombardment_damage = -0.25
+		planet_storm_devastation_mult = -0.25
+		army_defense_damage_mult = 0.5
+		army_defense_health_mult = 0.5
+	}
+	weight_modifier = {
+		base = 9000
+	}
+}
+col_star_guardian_construction = {
+	icon = GFX_colony_type_industrial
+	potential = {
+		exists = owner
+		uses_district_set = AOW_district_star_guardian
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		planet_stability_add = 20
+	}
+	triggered_planet_modifier = {
+		potential = { is_capital = no }
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		planet_building_build_speed_mult = 0.5
+		planet_army_build_speed_mult = 0.5
+	}
+	weight_modifier = {
+		base = 10000
+	}
 }

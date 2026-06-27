@@ -114,56 +114,6 @@ AOW_MEGA_quindecillion_stellar_quantum_matrix_0 = {
 			set_megastructure_flag = quindecillion_stellar_quantum_matrix
 			set_megastructure_flag = AOW_flag_MEGA_quindecillion_stellar_quantum_matrix_@owner
 			planet = { AOW_eft_PLNT_dismantle_orbital_station = yes }
-			if = {
-				limit = { planet = { AOW_trgr_PLNT_hyper_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_hyper
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_super_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_super
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_o_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_O
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_b_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_B
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_giant_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_giant
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_a_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_A
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_f_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_F
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_g_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_G
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_k_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_K
-				finish_upgrade = yes
-			}
-			else_if = {
-				limit = { planet = { AOW_trgr_PLNT_m_star = yes } }
-				upgrade_megastructure_to = AOW_MEGA_qsqm_0_M
-				finish_upgrade = yes
-			}
 		}
 		AOW_eft_SSTM_set_planet_flag_has_megastructure = yes #如果有会移除行星的巨构，则该星系不能再在行星上建造巨构了
 	}

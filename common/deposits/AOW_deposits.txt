@@ -50,9 +50,148 @@ AOW_d_ringworld_automation_facilities = {
 	category = deposit_cat_rare
 	drop_weight = { weight = 0 }
 }
+
+
+
+
+
+
+AOW_d_shattered_starcage_world_blocker_1 = {
+	icon = d_broken_spire
+	time = 360
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = { always = no }
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	on_cleared = {
+		owner = {
+			add_resource = { alloys = 500 }
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+	inline_script = deposits/ai_weight_pop_creating_blocker
+}
+AOW_d_shattered_starcage_world_blocker_2 = {
+	icon = d_city_ruins
+	time = 360
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = { always = no }
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	on_cleared = {
+		owner = {
+			add_resource = { minerals = 1000 }
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+	inline_script = deposits/ai_weight_pop_creating_blocker
+}
+AOW_d_shattered_starcage_world_blocker_3 = {
+	icon = d_bogplants
+	time = 1080
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = { always = no }
+	planet_modifier = {
+		planet_max_districts_add = -10
+		habitability_ceil_add = -0.1
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 5000
+			minerals = 1000
+		}
+	}
+	inline_script = deposits/ai_weight_pop_creating_blocker
+}
+AOW_d_shattered_starcage_world_blocker_4 = {
+	icon = d_mining_tunnels
+	time = 1080
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = { always = no }
+	planet_modifier = {
+		planet_max_districts_add = -10
+		habitability_ceil_add = -0.1
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+			minerals = 5000
+		}
+	}
+	inline_script = deposits/ai_weight_pop_creating_blocker
+}
+AOW_d_shattered_starcage_world = {
+	is_for_colonizable = yes
+	icon = d_ruined_sanctum_of_the_lost
+	category = deposit_cat_rare
+	triggered_planet_modifier = {
+		potential = { is_planet_class = pc_shattered_starcage_world }
+		planet_AOW_district_sw_common_star_build_speed_mult = 1
+		planet_AOW_district_sw_neutron_star_build_speed_mult = 1
+		planet_AOW_district_sw_black_hole_build_speed_mult = 1
+		planet_AOW_district_starcage_world_1_build_speed_mult = 1
+		planet_AOW_district_starcage_world_2_build_speed_mult = 1
+		planet_AOW_district_starcage_world_3_build_speed_mult = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_starcage_world_common_star }
+			OR = {
+				is_planet_class = pc_starcage_world_common_star
+				is_planet_class = pc_starcage_world_neutron_star
+				is_planet_class = pc_starcage_world_black_hole
+			}
+		}
+		planet_stability_add = 10
+		planet_amenities_mult = 0.2
+		planet_jobs_produces_mult = 0.1
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = { is_planet_class = pc_shattered_starcage_world }
+			energy = 10
+			minerals = 20
+			physics_research = 10
+			society_research = 10
+			engineering_research = 20
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_origin = origin_starcage_world_common_star }
+				is_variable_set = AOW_var_PLNT_starcage_world_level
+			}
+			unity = 100
+			mult = AOW_var_PLNT_starcage_world_level
+		}
+	}
+	drop_weight = { weight = 0 }
+}
 AOW_d_starcage_world = {
 	is_for_colonizable = yes
-	icon = AOW_d_ringworld_automation_facilities
+	icon = AOW_d_starcage_world
 	category = deposit_cat_rare
 	triggered_planet_modifier = {
 		potential = { check_variable = { which = AOW_var_PLNT_starcage_world_level value = 1 } }
@@ -82,8 +221,8 @@ AOW_d_virtual_population_management_center = {
 	category = deposit_cat_rare
 	triggered_planet_modifier = {
 		pop_bonus_workforce_mult = 0.005
-		planet_amenities_add = 2
-		planet_housing_add = -0.1
+		planet_amenities_add = 200
+		planet_housing_add = -10
 		multiplier = AOW_var_PLNT_virtual_pops
 	}
 	resources = {

@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_origin_starcage_world"
+		texturefile = "gfx/event_pictures/origins/origin_starcage_world_common_star.dds"
+		alwaystransparent = yes
+	}
+}

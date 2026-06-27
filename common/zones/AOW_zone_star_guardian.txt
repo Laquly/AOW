@@ -1,44 +1,156 @@
-@buildtime = 360
-@zone_cost_minerals = 1000
+@core_buildtime = 360
+@core_zone_cost_minerals = 1000
+
+@secondary_buildtime = 720
+@secondary_zone_cost_minerals = 2000
 #堡垒
-zone_star_guardian_fortress = {
+zone_star_guardian_core_fortress = {
 	icon = GFX_district_specialization_fortress
-	base_buildtime = @buildtime
+	base_buildtime = @core_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @core_zone_cost_minerals
+		}
+	}
+	include = {
+		all
+	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_core
+	}
+	inline_script = {
+		script = jobs/AOW_zone_job_soldier
+		AMOUNT = 500
+	}
+	triggered_district_planet_modifier = {
+		planet_housing_add = -500
+	}
+}
+#秩序
+zone_star_guardian_core_order = {
+	icon = GFX_district_specialization_broken_shackles_memorial
+	base_buildtime = @core_buildtime
 	potential = { # planet scope
 		hidden_trigger = { exists = owner }
-		owner = {
-			is_wilderness_empire = no
-		}
 	}
 	unlock = { # planet scope
 		hidden_trigger = { exists = owner }
-		owner = {
-			is_wilderness_empire = no
-		}
 	}
 	resources = {
 		category = planet_zones
 		cost = {
-			minerals = @zone_cost_minerals
+			minerals = @core_zone_cost_minerals
+		}
+	}
+	include = {
+		all
+	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_core
+	}
+	inline_script = {
+		script = jobs/AOW_zone_job_enforcer
+		AMOUNT = 500
+	}
+	triggered_district_planet_modifier = {
+		planet_housing_add = -500
+	}
+}
+
+#发电
+zone_star_guardian_secondary_energy = {
+	icon = GFX_district_specialization_energy
+	base_buildtime = @secondary_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @secondary_zone_cost_minerals
+		}
+	}
+	included_building_sets = {
+		generator
+		fallen_empire_generator
+		automation
+	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_secondary
+	}
+	inline_script = {
+		script = jobs/AOW_zone_job_energy
+		AMOUNT = 1000
+	}
+	swap_type = AOW_district_star_guardian_energy
+	swap_type_weight = 5
+	triggered_district_planet_modifier = {
+		planet_housing_add = -1000
+	}
+}
+#合金
+zone_star_guardian_secondary_alloys = {
+	icon = GFX_district_specialization_foundry
+	base_buildtime = @secondary_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @secondary_zone_cost_minerals
+		}
+	}
+	included_building_sets = {
+		foundry
+		automation
+		origin
+	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_secondary
+	}
+	inline_script = {
+		script = jobs/AOW_zone_job_alloy
+		AMOUNT = 1000
+	}
+	swap_type = AOW_district_star_guardian_alloys
+	swap_type_weight = 5
+	triggered_district_planet_modifier = {
+		planet_housing_add = -1000
+	}
+}
+#堡垒
+zone_star_guardian_secondary_fortress = {
+	icon = GFX_district_specialization_fortress
+	base_buildtime = @secondary_buildtime
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @secondary_zone_cost_minerals
 		}
 	}
 	included_building_sets = {
 		fortress
 		automation
 		origin
+	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_secondary
 	}
 	inline_script = {
 		script = jobs/AOW_zone_job_soldier
 		AMOUNT = 1000
 	}
+	swap_type = AOW_district_star_guardian_fortress
+	swap_type_weight = 5
 	triggered_district_planet_modifier = {
 		planet_housing_add = -1000
 	}
 }
 #秩序
-zone_star_guardian_order = {
+zone_star_guardian_secondary_order = {
 	icon = GFX_district_specialization_broken_shackles_memorial
-	base_buildtime = @buildtime
+	base_buildtime = @secondary_buildtime
 	potential = { # planet scope
 		hidden_trigger = { exists = owner }
 	}
@@ -48,7 +160,7 @@ zone_star_guardian_order = {
 	resources = {
 		category = planet_zones
 		cost = {
-			minerals = @zone_cost_minerals
+			minerals = @secondary_zone_cost_minerals
 		}
 	}
 	included_building_sets = {
@@ -56,10 +168,16 @@ zone_star_guardian_order = {
 		automation
 		origin
 	}
+	zone_sets = {
+		zone_star_guardian
+		zone_star_guardian_secondary
+	}
 	inline_script = {
 		script = jobs/AOW_zone_job_enforcer
 		AMOUNT = 1000
 	}
+	swap_type = AOW_district_star_guardian_order
+	swap_type_weight = 5
 	triggered_district_planet_modifier = {
 		planet_housing_add = -1000
 	}

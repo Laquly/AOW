@@ -97,6 +97,7 @@ AOW_MEGA_deep_space_prison_1 = {
 	}
 	country_modifier = {
 		planet_crime_add = -20
+		planet_crime_mult = -0.1
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -134,6 +135,7 @@ AOW_MEGA_deep_space_prison_2 = {
 	}
 	country_modifier = {
 		planet_crime_add = -40
+		planet_crime_mult = -0.2
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -171,6 +173,7 @@ AOW_MEGA_deep_space_prison_3 = {
 	}
 	country_modifier = {
 		planet_crime_add = -60
+		planet_crime_mult = -0.3
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -191,9 +194,6 @@ AOW_MEGA_deep_space_prison_4 = {
 	construction_entity = "deep_space_prison_4_construction_entity"
 	portrait = "GFX_megastructure_mega_prison_background"
 	place_entity_on_planet_plane = no
-	outliner_trigger = {
-		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = deep_space_prison }
-	}
 	build_time = @AOW_var_DSP_4_TIME
 	resources = {
 		category = megastructures
@@ -211,6 +211,50 @@ AOW_MEGA_deep_space_prison_4 = {
 	}
 	country_modifier = {
 		planet_crime_add = -80
+		planet_crime_mult = -0.4
+	}
+	inline_script = {
+		script = megastructures/dismantle_megastructure
+		time = 360
+		tech = AOW_TECH_deep_space_prison
+		category = megastructures
+		alloys = @AOW_var_DSP_4_COST_alloys
+		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
+	}
+	prerequisites = { "AOW_TECH_deep_space_prison" }
+	upgrade_from = { AOW_MEGA_deep_space_prison_3 }
+	on_build_complete = {
+		from = {
+			country_event = { id = AOW_evt_deep_space_prison.104 }
+		}
+	}
+}
+AOW_MEGA_deep_space_prison_5 = {
+	entity = "deep_space_prison_5_entity"
+	construction_entity = "deep_space_prison_5_construction_entity"
+	portrait = "GFX_megastructure_mega_prison_background"
+	place_entity_on_planet_plane = no
+	outliner_trigger = {
+		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = deep_space_prison }
+	}
+	build_time = @AOW_var_DSP_5_TIME
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AOW_var_DSP_5_COST_alloys
+			energy = @AOW_var_DSP_5_COST_energy
+			unity = @AOW_var_DSP_5_COST_unity
+		}
+		upkeep = {
+			energy = @AOW_var_DSP_5_UPKE_energy
+		}
+		produces = {
+			unity = @AOW_var_DSP_5_PRDC_unity
+		}
+	}
+	country_modifier = {
+		planet_crime_add = -100
+		planet_crime_mult = -0.5
 	}
 	inline_script = {
 		script = megastructures/dismantle_megastructure
@@ -222,7 +266,7 @@ AOW_MEGA_deep_space_prison_4 = {
 	}
 	prerequisites = { "AOW_TECH_deep_space_prison" }
 	show_prereqs = yes
-	upgrade_from = { AOW_MEGA_deep_space_prison_3 }
+	upgrade_from = { AOW_MEGA_deep_space_prison_4 }
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure

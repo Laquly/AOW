@@ -1,7 +1,7 @@
 hyper_relay = {
 	entity = "hyper_relay_entity"
 	construction_entity = "hyper_relay_entity"
-	portrait = "GFX_megastructure_construction_background"
+	portrait = "GFX_megastructure_hyper_relay_background"
 	place_entity_on_planet_plane = no
 	build_type = outside_gravity_well
 	show_galactic_map_icon = no
@@ -11,30 +11,20 @@ hyper_relay = {
 		category = megastructures_hyper_relay
 		cost = {
 			trigger = {
-				NOT = { has_country_flag = flash_forge_hyper_relay_activated }
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 			}
 			rare_crystals = 100
 			influence = 25
 		}
 		cost = {
 			trigger = {
-				country_uses_bio_ships = no
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 			}
 			alloys = 500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2
@@ -55,16 +45,119 @@ hyper_relay = {
 		AOW_trigger_mega_potential = { KEY = hyper_relay }
 	}
 	possible = {
-		exists = starbase
+		if = {
+			limit = {
+				from = {
+					is_nomadic = no
+				}
+			}
+			hidden_trigger = {
+				exists = starbase
+			}
+			custom_tooltip = {
+				fail_text = "requires_inside_border_or_subject"
+				OR = {
+					is_inside_border = from
+					AND = {
+						owner? = {
+							is_subject = yes
+							overlord = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						from = {
+							has_menace_perk = menp_defender_galcom_2
+						}
+						solar_system.owner? = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = {
+									has_subject = prev
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = requires_tier_2_waystation_on_wayline_or_subject
+				OR = {
+					any_starbase_in_system = {
+						is_waystation_starbase = yes
+						owner? = {
+						is_same_value = from
+						}
+						any_starbase_in_network = {
+							has_starbase_size >= starbase_waystation_2
+							owner? = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						exists = starbase
+						owner? = {
+							is_subject = yes
+							overlord = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						from = {
+							has_menace_perk = menp_defender_galcom_2
+						}
+						solar_system.owner? = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = {
+									has_subject = prev
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 		custom_tooltip = {
-			fail_text = "requires_inside_border_or_subject"
+			fail_text = "requires_surveyed_system" # or is in my subject's territory
 			OR = {
-				is_inside_border = from
+				NOT = {
+					any_system_planet = {
+						is_surveyed = {
+							who = prev.from
+							status = no
+						}
+					}
+				}
 				AND = {
-					exists = owner
-					owner = {
+					exists = starbase
+					owner? = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = {
+							is_same_value = from
+						}
+					}
+				}
+				AND = {
+					exists = starbase
+					from = {
+						has_menace_perk = menp_defender_galcom_2
+					}
+					solar_system.owner? = {
+						OR = {
+							has_defensive_pact = from
+							is_in_federation_with = from
+							from = {
+								has_subject = prev
+							}
+						}
 					}
 				}
 			}
@@ -84,15 +177,31 @@ hyper_relay = {
 			}
 		}
 	}
-	placement_rules = {
-		planet_possible = {
-			always = no
-		}
+	context_menu_potential = {
+		has_any_hyper_relay = no
 	}
 	# root = system
 	# from = country
 	ai_weight = {
 		factor = 5
+		
+		modifier = {
+			factor = 0
+			from = {
+				is_nomadic = yes
+			}
+			NOT = {
+				any_fleet_in_system = {
+					OR = {
+						is_ship_size = starbase_waystation_2
+						is_ship_size = starbase_waystation_3
+					}
+					owner? = {
+						is_same_value = from
+					}
+				}
+			}
+		}
 		modifier = {
 			factor = 3
 			is_capital_system = yes
@@ -100,31 +209,16 @@ hyper_relay = {
 		modifier = {
 			factor = 1.5
 			any_neighbor_system = {
-				OR = {
-					has_megastructure = hyper_relay
-					has_megastructure = hyper_relay_restored
-				}
+				has_hyper_relay = yes
 			}
 		}
-
 		modifier = {
 			factor = 1.5
-			count_system_colony = {
+			count_system_planet_colony = {
 				count > 0
 			}
 		}
-
-		# non-gestalt empires will prefer building along trade routes, since those connect colonies to the capital
-		# this may occasionally catch other empire's trade routes that clip our territory, but pirates will eventually appear there so it's fine
-		modifier = {
-			factor = 0.2
-			from = {
-				is_gestalt = no
-			}
-			is_capital_system = no
-		}
 	}
-
 	bypass_type = relay_bypass
 	on_build_queued = {
 		fromfrom = {
@@ -176,11 +270,9 @@ hyper_relay_restored = {
 	show_galactic_map_icon = no
 	show_in_outliner = no
 	bypass_type = relay_bypass
-
 	potential = {
 		has_technology = tech_hyper_relays
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_tech_hyper_drive_2"
@@ -196,26 +288,7 @@ hyper_relay_restored = {
 		cost = {
 			rare_crystals = 100
 			energy = 500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 500
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 500
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 2

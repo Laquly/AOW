@@ -41,3 +41,12 @@ AOW_mod_PLNT_stellar_variation = {
 	habitability_ceil_add = -0.5
 	habitability_floor_add = -2
 }
+
+#中子星磁场
+AOW_mod_PLNT_neutron_star_magnetic_field = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_star_neutron.dds"
+	icon_frame = 2
+	planet_jobs_physics_research_produces_mult = 0.3
+	planet_jobs_engineering_research_produces_mult = 0.15
+	habitability_ceil_add = -0.1
+}

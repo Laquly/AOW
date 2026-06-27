@@ -11,6 +11,7 @@ AOW_btn_dark_matter_curvature_trap_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			has_technology = AOW_TECH_spatiotemporal_curvature_manipulation
 			custom_tooltip = AOW_text_final_requirements

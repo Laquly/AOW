@@ -471,7 +471,17 @@ country_event = {
 				}
 				variable = {
 					key = "border"
-					value = "GFX_border_veteran"
+					value = "GFX_border_legendary"
+				}
+			}
+			event_target:AOW_target_leader = {
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = trigger:has_total_skill
+							value = 1
+						}
+					}
 				}
 			}
 		}

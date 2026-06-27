@@ -4,33 +4,13 @@ interstellar_assembly_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	#construction_blocks_and_blocked_by = none
 	entity_offset = { x = -27 y = -27 }
 	build_time = 1800
 	resources = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 5000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 5000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 5000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 5
@@ -128,38 +108,11 @@ interstellar_assembly_1 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 10
 		}
-	}
-	inline_script = {
-		script = megastructures/dismantle_megastructure
-		time = 360
-		tech = tech_interstellar_assembly
-		category = megastructures
-		alloys = 10000
-		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
 	}
 	upgrade_from = {
 		interstellar_assembly_0
@@ -191,26 +144,7 @@ interstellar_assembly_2 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 20
@@ -256,28 +190,8 @@ interstellar_assembly_3 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
 		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
-		}
-
 		upkeep = {
 			energy = 30
 		}
@@ -317,7 +231,6 @@ interstellar_assembly_4 = {
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
-	show_in_outliner = no
 	outliner_trigger = {
 		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = interstellar_assembly }
 	}
@@ -326,26 +239,7 @@ interstellar_assembly_4 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 40
@@ -379,6 +273,7 @@ interstellar_assembly_4 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			country_event = { id = mega.9009 }
+			set_country_flag = has_assembly
 		}
 	}
 }
@@ -424,7 +319,6 @@ interstellar_assembly_restored = {
 	entity = "interstellar_assembly_stage_4_entity"
 	construction_entity = "interstellar_assembly_stage_4_entity"
 	portrait = "GFX_megastructure_interstellar_assembly_background"
-	show_in_outliner = no
 	place_entity_on_planet_plane = no
 	use_planet_resource = yes
 	entity_offset = { x = -27 y = -27 }
@@ -436,26 +330,7 @@ interstellar_assembly_restored = {
 		category = megastructures
 		cost = {
 			unity = 3200
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 40
@@ -501,6 +376,7 @@ interstellar_assembly_restored = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			country_event = { id = mega.9131 }
+			set_country_flag = has_assembly
 		}
 	}
 }

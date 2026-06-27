@@ -83,14 +83,10 @@ AOW_MEGA_asteroid_mining_station_1 = {
 	prerequisites = { "AOW_TECH_asteroid_mining_station" }
 	potential = { AOW_trigger_mega_potential = { KEY = asteroid_mining_station } }
 	possible = {
-		exists = starbase
+		inline_script = megastructures/system_ownership_or_waystation_check
 		custom_tooltip = {#on_build_start
 			fail_text = "AOW_mega_requires_CNTR_no_more_megastructure"
 			from = { NOT = { has_country_flag = AOW_flag_CNTR_no_more_asteroid_mining_station } }
-		}
-		custom_tooltip = {#必须要在国境内
-			fail_text = "requires_inside_border"
-			is_inside_border = from
 		}
 	}
 	placement_rules = {

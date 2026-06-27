@@ -22,6 +22,14 @@ AOW_eft_GLBL_export_data = {
 		limit = { NOT = { has_global_flag = AOW_flag_GLBL_hyperdimension_hiding } }
 		log = "NULL remove_global_flag = AOW_flag_GLBL_hyperdimension_hiding#禁止研究超维褶皱"
 	}
+	if = {
+		limit = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range }
+		log = "NULL set_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range#允许研究坠星天矛范围打击"
+	}
+	else_if = {
+		limit = { NOT = { has_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range } }
+		log = "NULL remove_global_flag = AOW_flag_GLBL_starfall_spear_system_strike_range#禁止研究坠星天矛范围打击"
+	}
 	log = "NULL #平衡数值"
 	log = "NULL event_target:global_event_country = {"
 	event_target:global_event_country = {
@@ -47,6 +55,7 @@ AOW_eft_GLBL_export_data = {
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_space_arena] VA = \\[this.AOW_var_ai_mega_cap_space_arena] KEY = space_arena }#星光竞技场"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_space_sensor_station] VA = \\[this.AOW_var_ai_mega_cap_space_sensor_station] KEY = space_sensor_station }#星空传感站"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_resource_drilling_station] VA = \\[this.AOW_var_ai_mega_cap_resource_drilling_station] KEY = resource_drilling_station }#资源钻取站"
+		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_dyson_gun] VA = \\[this.AOW_var_ai_mega_cap_dyson_gun] KEY = dyson_gun }#星际大炮"
 		
 		log = "NULL #普通巨构上限（VP是玩家数值，VA是AI数值）"
 		log = "NULL AOW_eft_set_mega_cap = { VP = \\[this.AOW_var_player_mega_cap_gateway] VA = \\[this.AOW_var_ai_mega_cap_gateway] KEY = gateway }#星门"

@@ -51,7 +51,7 @@
  AOW_TECH_asteroid_mining_station:0"$AOW_MEGA_asteroid_mining_station$"
  AOW_TECH_asteroid_mining_station_desc:0"小行星周围的矿藏非常丰富，在其周围建立一套拥有完整采矿系统的装置可以更加方便地采集并运输这些矿物。"
  AOW_TECH_asteroid_mining_station_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_asteroid_mining_station$"
- AOW_TECH_asteroid_mining_station_effect_desc:0"§H$AOW_MEGA_asteroid_mining_station$§!\n\n只能建造在小行星上，根据小行星类型产出不同种类的资源；\n\n§H普通小行星：§!£minerals£50, £volatile_motes£2\n§H冰晶小行星：§!£energy£25, £minerals£25, £rare_crystals£2\n§H晶态小行星：§!£minerals£50, £rare_crystals£2"
+ AOW_TECH_asteroid_mining_station_effect_desc:0"§H$AOW_MEGA_asteroid_mining_station$§!\n\n只能建造在小行星上，根据小行星类型产出不同种类的资源\n\n§H普通小行星：§!£minerals£$@AOW_var_AMS_1_PRDC_minerals_Asteroid|0$, £volatile_motes£$@AOW_var_AMS_1_PRDC_motes_Asteroid|0$\n§H冰晶小行星：§!£energy£$@AOW_var_AMS_1_PRDC_energy_IceAsteroid|0$, £minerals£$@AOW_var_AMS_1_PRDC_minerals_IceAsteroid|0$, £rare_crystals£$@AOW_var_AMS_1_PRDC_crystal_IceAsteroid|0$\n§H晶态小行星：§!£minerals£$@AOW_var_AMS_1_PRDC_minerals_CrystalAsteroid|0$, £rare_crystals£$@AOW_var_AMS_1_PRDC_crystal_CrystalAsteroid|0$"
 
  AOW_TECH_resource_drilling_station:"$AOW_MEGA_resource_drilling_station$"
  AOW_TECH_resource_drilling_station_desc:"对于行星内部的结构，我们通常知之甚少。传统的办法不能直观地展现它们具体的成分以及构造从而造成了许多浪费和损失。但在运用相控阵探测阵列后，可扫描行星的活动状态并即时分析，我们就能够发现原本难以探测到的的矿物存储。"
@@ -67,7 +67,7 @@
  AOW_TECH_planetary_mining_station:0"$AOW_MEGA_planetary_mining_station$"
  AOW_TECH_planetary_mining_station_desc:0"有些星球其本身就是一个无与伦比的大型矿物，因此，建造一个足以采集全球矿物的轨道开采站是非常有必要的。"
  AOW_TECH_planetary_mining_station_effect_title:0"§H解锁巨型结构：§!$AOW_MEGA_planetary_mining_station$"
- AOW_TECH_planetary_mining_station_effect_desc:0"§H$AOW_MEGA_planetary_mining_station$§!\n\n可以建造在大部分的固态星球上，并开采整个星球的资源。具体建造地点和产出数据，可以查看星球上的$AOW_MEGA_planetary_mining_station$说明。"
+ AOW_TECH_planetary_mining_station_effect_desc:0"§H$AOW_MEGA_planetary_mining_station$§!\n\n可以建造在大部分的固态星球上，并开采整个星球的资源。"
 
  AOW_TECH_orbital_acquisition_system:0"$AOW_MEGA_orbital_acquisition_system$"
  AOW_TECH_orbital_acquisition_system_desc:0"气态巨行星拥有丰富的气体资源和清洁能源，在其轨道上建造一个围绕行星运转的采集系统可以方面我们使用电磁网和远程无人机等装置来捕获这些资源。"

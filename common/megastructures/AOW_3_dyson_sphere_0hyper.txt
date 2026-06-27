@@ -1,179 +1,3 @@
-AOW_MEGA_dyson_swarm_1_hyper = {
-	entity = "dyson_swarm_phase_1_entity"
-	construction_entity = "dyson_swarm_phase_1_entity"
-	portrait = "GFX_megastructure_dyson_swarm_background"
-	entity_offset = { x = -0.1 y = -0.1 }
-	rotate_to_center = no
-	scale_offset = yes
-	place_entity_on_planet_plane = yes
-	use_planet_resource = yes
-	build_time = 0
-	resources = {
-		category = megastructures
-		upkeep = { alloys = 5 }
-	}
-	construction_blocks_and_blocked_by = none
-	inline_script = {
-		script = megastructures/dismantle_megastructure_with_effects
-		time = 360
-		tech = tech_dyson_swarm
-		category = megastructures
-		key = dyson_swarm
-		alloys = 500
-		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
-	}
-	prerequisites = { "tech_dyson_swarm" }
-	upgrade_from = { dyson_swarm_1 }
-	upgrade_desc = hide
-	country_modifier = { custom_tooltip = dyson_swarm_1_mod_tooltip }
-	on_build_complete = {
-		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_dyson_swarm_@owner }
-		fromfrom.planet = {
-			remove_modifier = dyson_swarm_1_mod
-			remove_modifier = dyson_swarm_2_mod
-			remove_modifier = dyson_swarm_3_mod
-			add_modifier = {
-				modifier = dyson_swarm_1_mod
-				days = -1
-			}
-		}
-	}
-}
-AOW_MEGA_dyson_swarm_2_hyper = {
-	entity = "dyson_swarm_phase_2_entity"
-	construction_entity = "dyson_swarm_phase_2_entity"
-	portrait = "GFX_megastructure_dyson_swarm_background"
-	entity_offset = { x = -0.1 y = -0.1 }
-	rotate_to_center = no
-	scale_offset = yes
-	place_entity_on_planet_plane = yes
-	use_planet_resource = yes
-	build_time = 1080 # 3 years
-	resources = {
-		category = megastructures
-		cost = {
-			alloys = 1000
-			unity = 2500
-		}
-		upkeep = { alloys = 10 }
-	}
-	construction_blocks_and_blocked_by = none
-	inline_script = {
-		script = megastructures/dismantle_megastructure_with_effects
-		time = 360
-		tech = tech_dyson_swarm
-		category = megastructures
-		key = dyson_swarm
-		alloys = 1000
-		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
-	}
-	upgrade_from = { AOW_MEGA_dyson_swarm_1_hyper dyson_swarm_2 }
-	upgrade_desc = hide
-	prerequisites = { "tech_dyson_swarm" }
-	country_modifier = { custom_tooltip = dyson_swarm_2_mod_tooltip }
-	on_build_complete = {
-		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_dyson_swarm_@owner }
-		fromfrom.planet = {
-			remove_modifier = dyson_swarm_1_mod
-			remove_modifier = dyson_swarm_2_mod
-			remove_modifier = dyson_swarm_3_mod
-			add_modifier = {
-				modifier = dyson_swarm_2_mod
-				days = -1
-			}
-		}
-	}
-}
-AOW_MEGA_dyson_swarm_3_hyper = {
-	entity = "dyson_swarm_phase_3_entity"
-	construction_entity = "dyson_swarm_phase_3_entity"
-	portrait = "GFX_megastructure_dyson_swarm_background"
-	entity_offset = { x = -0.1 y = -0.1 }
-	rotate_to_center = no
-	scale_offset = yes
-	place_entity_on_planet_plane = yes
-	outliner_trigger = {
-		AOW_trgr_MEGA_finished_mega_outliner_trigger = { key = dyson_swarm }
-	}
-	construction_blocks_and_blocked_by = none
-	use_planet_resource = yes
-	build_time = 1080 # 3 years
-	resources = {
-		category = megastructures
-		cost = {
-			alloys = 1500
-			unity = 5000
-		}
-		upkeep = {
-			alloys = 20
-		}
-	}
-	inline_script = {
-		script = megastructures/dismantle_megastructure_with_effects
-		time = 360
-		tech = tech_dyson_swarm
-		category = megastructures
-		key = dyson_swarm
-		alloys = 1500
-		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
-	}
-	upgrade_from = { AOW_MEGA_dyson_swarm_2_hyper }
-	upgrade_desc = hide
-	prerequisites = { "tech_dyson_swarm" }
-	country_modifier = { custom_tooltip = dyson_swarm_3_mod_tooltip }
-	on_build_complete = {
-		fromfrom = { set_megastructure_flag = AOW_flag_MEGA_dyson_swarm_@owner }
-		fromfrom.planet = {
-			remove_modifier = dyson_swarm_1_mod
-			remove_modifier = dyson_swarm_2_mod
-			remove_modifier = dyson_swarm_3_mod
-			add_modifier = {
-				modifier = dyson_swarm_3_mod
-				days = -1
-			}
-		}
-		if = {
-			limit = {
-				any_system_megastructure = {
-					OR = {
-						is_megastructure_type = orbital_arc_furnace_4
-						is_megastructure_type = orbital_arc_furnace_restored
-					}
-				}
-			}
-			from = {
-				set_country_flag = burning_brightly_achievement
-			}
-		}
-	}
-}
-
-
-AOW_MEGA_dyson_sphere_0_hyper = {
-	entity = "construction_platform_entity"
-	construction_entity = "construction_platform_entity"
-	portrait = "GFX_megastructure_construction_background"
-	place_entity_on_planet_plane = no
-	entity_offset = { x = -7 y = -7 }
-	build_time = 0
-	resources = {
-		category = megastructures
-		upkeep = { energy = @AOW_var_DS_UPKP_energy }
-	}
-	inline_script = {
-		script = megastructures/dismantle_megastructure
-		time = 360
-		tech = tech_dyson_sphere
-		category = megastructures
-		alloys = 5000
-		minerals = 0 vm = 0 eg = 0 rc = 0 lm = 0 zo = 0 dm = 0
-	}
-	upgrade_from = { dyson_sphere_0 }
-	upgrade_desc = hide
-	prerequisites = { "tech_dyson_sphere" }
-	potential = { always = no }
-	ai_weight = { factor = 0 }
-}
 AOW_MEGA_dyson_sphere_1_hyper = {
 	entity = "AOW_new_dyson_sphere_phase_01_entity"
 	construction_entity = "AOW_new_dyson_sphere_frame_entity"
@@ -205,7 +29,8 @@ AOW_MEGA_dyson_sphere_1_hyper = {
 			AOW_trgr_SSTM_can_aggressively_interfere_with_pre_ftl = yes
 		}
 	}
-	upgrade_from = { AOW_MEGA_dyson_sphere_0_hyper }
+	potential = { fromfrom.planet = { AOW_trgr_PLNT_hyper_star = yes } }
+	upgrade_from = { dyson_sphere_0 }
 	upgrade_desc = hide
 	prerequisites = { "tech_dyson_sphere" }
 	on_build_complete = {
@@ -250,9 +75,10 @@ AOW_MEGA_dyson_sphere_2_hyper = {
 			AOW_trgr_SSTM_can_aggressively_interfere_with_pre_ftl = yes
 		}
 	}
+	potential = { fromfrom.planet = { AOW_trgr_PLNT_hyper_star = yes } }
 	upgrade_from = {
 		AOW_MEGA_dyson_sphere_1_hyper
-		AOW_MEGA_dyson_swarm_3_hyper
+		dyson_swarm_3
 	}
 	upgrade_desc = hide
 	prerequisites = { "tech_dyson_sphere" }

@@ -12,26 +12,7 @@ mega_shipyard_0 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 3000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 3000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 3000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 5
@@ -137,26 +118,7 @@ mega_shipyard_1 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 10
@@ -201,26 +163,7 @@ mega_shipyard_2 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 20
@@ -268,26 +211,7 @@ mega_shipyard_3 = {
 		category = megastructures
 		cost = {
 			unity = 2500
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 40
@@ -320,6 +244,7 @@ mega_shipyard_3 = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			country_event = { id = feda.3 }
+			country_event = { id = focus.665 }
 		}
 	}
 }
@@ -382,26 +307,7 @@ mega_shipyard_restored = {
 		category = megastructures
 		cost = {
 			unity = 3200
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = no
-			}
 			alloys = 10000
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			alloys = 10000
-			mult = 0.5
-		}
-		cost = {
-			trigger = {
-				country_uses_bio_ships = yes
-			}
-			food = 10000
-			mult = @halved_alloy_to_food_cost_ratio
 		}
 		upkeep = {
 			energy = 40
@@ -446,6 +352,7 @@ mega_shipyard_restored = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			country_event = { id = feda.6 }
+			country_event = { id = focus.665 }
 		}
 		fromfrom = { set_megastructure_flag = mega_shipyard }
 	}

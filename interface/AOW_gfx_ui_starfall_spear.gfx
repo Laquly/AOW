@@ -39,6 +39,10 @@ spriteTypes = {
 		name = "GFX_AOW_button_starfall_spear_right_up"
 		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_right_up.dds"
 	}
+	spriteType = {
+		name = "GFX_AOW_button_starfall_spear_system_strike_range"
+		texturefile = "gfx/interface/AOW_ui_icons/UI_starfall_spear/AOW_button_starfall_spear_system_strike_range.dds"
+	}
 
 	spriteType = {
 		name = "AOW_button_starfall_spear_tutorial_bg"

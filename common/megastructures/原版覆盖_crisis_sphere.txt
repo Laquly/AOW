@@ -1,6 +1,7 @@
 crisis_sphere_0 = {
 	entity = "AOW_new_dyson_sphere_phase_01_entity"
 	portrait = "GFX_megastructure_construction_background"
+	use_planet_resource = yes
 	build_time = 3600
 	scales_with_planet = yes
 	resources = {
@@ -13,15 +14,12 @@ crisis_sphere_0 = {
 			energy = 100
 		}
 	}
-
 	country_modifier = {
-		country_naval_cap_add = 100
+		country_naval_cap_add = 200
 	}
-
 	upgrade_from = {
 		crisis_sphere_ruined
 	}
-
 	potential = { #you may upgrade a ruined one if you have lost yours
 		has_crisis_level = crisis_level_5
 		NOT = {
@@ -36,7 +34,6 @@ crisis_sphere_0 = {
 			}
 		}
 	}
-
 	on_build_complete = {
 		fromfrom = {
 			solar_system.star = {
@@ -65,6 +62,7 @@ crisis_sphere_1 = {
 	build_time = 3600
 	scales_with_planet = yes
 	victory_score = 1000
+	use_planet_resource = yes
 	resources = {
 		category = megastructures
 		cost = {
@@ -75,15 +73,12 @@ crisis_sphere_1 = {
 			energy = 200
 		}
 	}
-
 	country_modifier = {
-		country_naval_cap_add = 150
+		country_naval_cap_add = 300
 	}
-
 	upgrade_from = {
 		crisis_sphere_0
 	}
-
 	on_build_complete = {
 		fromfrom = { set_megastructure_flag = crisis_sphere }
 		from = {
@@ -99,6 +94,7 @@ crisis_sphere_2 = {
 	build_time = 3600
 	scales_with_planet = yes
 	victory_score = 2500
+	use_planet_resource = yes
 	resources = {
 		category = megastructures
 		cost = {
@@ -109,15 +105,12 @@ crisis_sphere_2 = {
 			energy = 400
 		}
 	}
-
 	country_modifier = {
-		country_naval_cap_add = 200
+		country_naval_cap_add = 400
 	}
-
 	upgrade_from = {
 		crisis_sphere_1
 	}
-
 	on_build_complete = {
 		fromfrom = { set_megastructure_flag = crisis_sphere }
 		from = {
@@ -134,6 +127,7 @@ crisis_sphere_3 = {
 	build_time = 3600
 	scales_with_planet = yes
 	victory_score = 5000
+	use_planet_resource = yes
 	resources = {
 		category = megastructures
 		cost = {
@@ -144,15 +138,12 @@ crisis_sphere_3 = {
 			energy = 800
 		}
 	}
-
 	country_modifier = {
-		country_naval_cap_add = 250
+		country_naval_cap_add = 500
 	}
-
 	upgrade_from = {
 		crisis_sphere_2
 	}
-
 	on_build_complete = {
 		fromfrom = { set_megastructure_flag = crisis_sphere }
 		from = {
@@ -170,17 +161,16 @@ crisis_sphere_4 = {
 	build_time = 3600
 	scales_with_planet = yes
 	victory_score = 10000
+	use_planet_resource = yes
 	resources = {
 		category = megastructures
 		cost = {
 			sr_dark_matter = 50000
 		}
 	}
-
 	upgrade_from = {
 		crisis_sphere_3
 	}
-
 	on_build_complete = {
 		fromfrom = { set_megastructure_flag = crisis_sphere }
 		from = {
@@ -191,7 +181,7 @@ crisis_sphere_4 = {
 
 # Ruined Crisis Engine
 crisis_sphere_ruined = {
-	entity = "AOW_new_dyson_sphere_destroyed_entity"
+	entity = "dyson_sphere_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
 	potential = { always = no }
 }

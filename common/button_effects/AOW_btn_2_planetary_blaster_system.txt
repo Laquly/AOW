@@ -11,7 +11,7 @@ AOW_btn_planetary_blaster_system_prerequisites = {
 		}
 		else = {
 			custom_tooltip = AOW_text_prerequisite_requirements
-			host_has_dlc = "Apocalypse"
+			is_nomadic = no
 			has_technology = tech_mega_engineering
 			has_technology = tech_combat_computers_2
 			has_technology = tech_ftl_inhibitor

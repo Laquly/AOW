@@ -1,0 +1,260 @@
+origin_starcage_world_common_star_start = {
+	flags = { empire_home_system AOW_flag_SSTM_origin_starcage_world AOW_flag_SSTM_origin_starcage_world_common_star }
+	usage = origin
+	class = "sc_g"
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 25
+		init_effect = {
+			while = {
+				count = 30
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 40
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 50
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 80
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 70
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 120
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 90
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 160
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_shattered_starcage_world"
+		orbit_angle = 0
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		starting_planet = yes
+		size = 40
+		flags = { ignore_startup_effect megastructure AOW_flag_PLNT_origin_starcage_world AOW_flag_PLNT_sw_common }
+		init_effect = {
+			prevent_anomaly = yes
+			trigger_megastructure_icon = yes
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = @AOW_var_max_sw_points }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_physicist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_biologist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_engineer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_healthcare V = 0 }
+		}
+	}
+	planet = {
+		class = "pc_shattered"
+		orbit_distance = 250
+		size = 10
+		has_ring = no
+		init_effect = {
+			add_deposit = d_minerals_5
+		}
+	}
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		spawn_megastructure = {
+			type = AOW_MEGA_starcage_world_ruined_01
+			planet = star
+			init_effect = {
+				set_megastructure_flag = starcage_world
+				set_megastructure_flag = AOW_flag_MEGA_origin_starcage_world
+			}
+		}
+	}
+}
+origin_starcage_world_neutron_star_start = {
+	flags = { empire_home_system AOW_flag_SSTM_origin_starcage_world AOW_flag_SSTM_origin_starcage_world_neutron_star }
+	usage = origin
+	class = "sc_neutron_star"
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 25
+		init_effect = {
+			while = {
+				count = 30
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 40
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 50
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 80
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 70
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 120
+						angle = random
+					}
+				}
+			}
+			while = {
+				count = 90
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = { min = 10 max = -25 }
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 160
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_shattered_starcage_world"
+		orbit_angle = 0
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		starting_planet = yes
+		size = 40
+		flags = { ignore_startup_effect megastructure AOW_flag_PLNT_origin_starcage_world AOW_flag_PLNT_sw_neutron }
+		init_effect = {
+			prevent_anomaly = yes
+			trigger_megastructure_icon = yes
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points V = @AOW_var_max_sw_points }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_technician V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_miner V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_farmer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_trader V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_physicist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_biologist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_engineer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bureaucrat V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_artisan V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_foundry V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_chemist V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_refiner V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_translucer V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_soldier V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_bio_trophy V = 0 }
+			AOW_eft_initialize_variable = { KEY = AOW_var_sw_points_healthcare V = 0 }
+		}
+	}
+	planet = {
+		class = "pc_shattered"
+		orbit_distance = 250
+		size = 10
+		has_ring = no
+		init_effect = {
+			add_deposit = d_minerals_5
+		}
+	}
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		spawn_megastructure = {
+			type = AOW_MEGA_starcage_world_ruined_01
+			planet = star
+			init_effect = {
+				set_megastructure_flag = starcage_world
+				set_megastructure_flag = AOW_flag_MEGA_origin_starcage_world
+			}
+		}
+	}
+}

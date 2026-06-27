@@ -31,7 +31,7 @@ AOW_btn_view_ui_sw_max_$type$ = {#最大
 			set_variable = { which = AOW_var_sw_points_bio_trophy	value = 0 }
 			set_variable = { which = AOW_var_sw_points_healthcare	value = 0 }
 			set_variable = { which = AOW_var_sw_points  value = 0 }
-			set_variable = { which = AOW_var_sw_points_$type$   value = 30 }
+			set_variable = { which = AOW_var_sw_points_$type$   value = @AOW_var_max_sw_points }
 			if = {
 				limit = {
 					owner = { NOT = { has_valid_civic = civic_machine_servitor } }

@@ -17,7 +17,13 @@ AOW_TECH_space_sensor_station = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -60,7 +66,13 @@ AOW_TECH_space_arena = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -109,7 +121,13 @@ AOW_TECH_asteroid_mining_station = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -154,7 +172,13 @@ AOW_TECH_resource_drilling_station = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 6
@@ -193,7 +217,13 @@ AOW_TECH_improved_construction_efficiency_1 = {
 		}
 		modifier = {
 			factor = 2
-			has_galactic_wonders = yes
+			OR = {
+				has_galactic_wonders = yes
+				has_ascension_perk = ap_galactic_wonders
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
 		}
 		modifier = {
 			factor = 9
